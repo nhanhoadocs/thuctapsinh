@@ -1,0 +1,46 @@
+- Main page: https://www.sonatype.com/
+  - Docs: https://help.sonatype.com/repomanager3
+  https://help.sonatype.com/learning
+- Introduction:
+https://www.sonatype.com/nexus-repository-sonatype
+https://help.sonatype.com/learning/repository-manager-3/repository-management-basics
+https://www.sonatype.com/nexus-repository-oss
+https://www.sonatype.com/download-oss-sonatype
+https://www.sonatype.com/nexus-repository-oss-vs.-pro-features
+
+- Preinstall:
+https://help.sonatype.com/repomanager3/system-requirements
+https://stackoverflow.com/questions/4667483/how-is-the-default-java-heap-size-determined
+https://docs.oracle.com/javase/7/docs/technotes/tools/solaris/java.html
+
+- Install:
+https://help.sonatype.com/repomanager3/installation
+https://drmanalo.github.io/blog/2017/installing-nexus-centos7.html
+https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#install-oracle-java-8
+https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
+https://www.tecmint.com/install-apache-maven-on-centos-7/
+https://www.rosehosting.com/blog/how-to-install-maven-on-ubuntu-16-04/
+https://help.sonatype.com/repomanager3/download/download-archives---repository-manager-3
+https://blog.sonatype.com/nexus-repository-manager-3.5
+https://help.sonatype.com/repomanager3/yum-repositories
+
+- Configuration:
+https://help.sonatype.com/repomanager3/user-interface
+https://help.sonatype.com/repomanager3/configuration
+
+- APT repository:
+https://github.com/sonatype-nexus-community/nexus-repository-apt
+https://www.tecmint.com/install-apache-maven-on-centos-7/
+https://cwiki.apache.org/confluence/display/MAVEN/Tutorial%3A+Build+a+JAR+file+with+Maven+in+5+minutes
+https://gist.github.com/fajrif/1265203
+
+- Repo:
+http://archive.ubuntu.com/ubuntu
+http://mirror.centos.org/centos/
+
+- Backup and Restore:
+https://help.sonatype.com/repomanager3/backup-and-restore
+
+- https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/sec-using_yum_variables
+
