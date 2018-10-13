@@ -37,7 +37,7 @@ https://gist.github.com/fajrif/1265203
 
 - Repo:
 http://archive.ubuntu.com/ubuntu
-http://mirror.centos.org/centos/
+http://mirror.centos.org/
 
 - Backup and Restore:
 https://help.sonatype.com/repomanager3/backup-and-restore
@@ -46,7 +46,15 @@ https://help.sonatype.com/repomanager3/backup-and-restore
 https://support.sonatype.com/hc/en-us/articles/115002930827-Accessing-the-OrientDB-Console
 https://www.tutorialspoint.com/orientdb/orientdb_list_database.htm
 
+- High availability:
+https://help.sonatype.com/repomanager3/high-availability
+https://www.howtoforge.com/nfs-server-and-client-on-centos-7
+https://www.howtoforge.com/tutorial/how-to-setup-haproxy-as-load-balancer-for-nginx-on-centos-7/
 
+- Upgrade:
+https://help.sonatype.com/repomanager3/upgrading
+https://support.sonatype.com/hc/en-us/articles/115000350007?_ga=2.95303260.1152670193.1539393087-1437833224.1538193633
+https://support.sonatype.com/hc/en-us/articles/231723267
 
 
 

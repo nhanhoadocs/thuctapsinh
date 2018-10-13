@@ -8,6 +8,7 @@
 - [5.Giao diện người dùng Nexus](docs/5.Giao-dien-nguoi-dung-Nexus.md)
 - [6.Backup và Restore](docs/6.Backup-va-Restore.md)
 - [7.Nexus database](docs/7.Nexus-database.md)
+- [8.High availability](docs/8.High-availability.md)
 - [Tài liệu tham khảo](docs/Tai-lieu-tham-khao.txt)
 
 
