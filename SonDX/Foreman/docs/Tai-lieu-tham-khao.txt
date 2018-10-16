@@ -1,0 +1,19 @@
+- Mainpage: https://www.theforeman.org/
+  - Docs: https://www.theforeman.org/manuals/1.19/
+
+- Introduction:
+https://www.theforeman.org/introduction.html
+https://blog.codecentric.de/en/2014/04/foreman-complete-lifecycle-management-tool/
+
+- Install:
+https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/install-foreman-on-centos-7-rhel-7-ubuntu-14-04-3.html
+https://www.linuxtechi.com/install-and-configure-foreman-on-centos-7-x/
+
+- 
+https://www.unixmen.com/install-configure-ftp-server-centos-7/
+https://beryju.org/en/blog/getting-started-foreman-part-1
+https://beryju.org/en/blog/getting-started-foreman-part-2
+https://beryju.org/en/blog/getting-started-foreman-part-3
+
+
+
