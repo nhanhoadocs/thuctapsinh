@@ -7,6 +7,9 @@
 - [4.Các khái niệm cơ bản](docs/4.Cac-khainiem-coban.md)
 - [5.Giao diện người dùng Nexus](docs/5.Giao-dien-nguoi-dung-Nexus.md)
 - [6.Backup và Restore](docs/6.Backup-va-Restore.md)
+- [7.Nexus database](docs/7.Nexus-database.md)
+- [8.High availability](docs/8.High-availability.md)
+- [9.Upgrade Nexus Repository](docs/9.Upgrade-Nexus.md)
 - [Tài liệu tham khảo](docs/Tai-lieu-tham-khao.txt)
 
 

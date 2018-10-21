@@ -1,0 +1,37 @@
+- Mainpage: https://www.ansible.com/
+  - Docs: https://docs.ansible.com/
+  https://docs.ansible.com/ansible/2.7/index.html
+- https://github.com/hocchudong/ghichep-ansible
+
+- Introduction:
+https://docs.ansible.com/ansible/2.7/index.html
+https://www.tutorialspoint.com/ansible/
+https://www.ansible.com/use-cases
+https://www.topzenith.com/2018/02/top-10-best-ansible-video-tutorials.html
+
+- Install:
+https://docs.ansible.com/ansible/2.7/installation_guide/
+https://askubuntu.com/questions/493460/how-to-install-add-apt-repository-using-the-terminal
+https://askubuntu.com/questions/1050084/install-python-2-7-6-in-ubuntu-16-04
+
+- Configuration:
+
+- Command:
+https://docs.ansible.com/ansible/2.7/user_guide/intro_adhoc.html
+https://docs.ansible.com/ansible/2.7/user_guide/command_line_tools.html
+https://linoxide.com/linux-how-to/started-ansible-command-line/
+https://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/commands/
+
+- Modules:
+https://docs.ansible.com/ansible/2.7/modules/modules_by_category.html
+
+- Playbooks:
+https://docs.ansible.com/ansible/2.7/user_guide/playbooks.html
+https://github.com/ansible/ansible-examples
+
+- LAB:
+https://github.com/doxuanson/Install-OpenStack/blob/master/Queens/Centos7-1804-KickStart/OPS-setup/UPDATE/ssh_update_hosts.sh
+https://github.com/hocchudong/ghichep-ansible/blob/master/Project/README.md
+
+
+
