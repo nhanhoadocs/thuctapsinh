@@ -1,1 +1,0 @@
-Tìm hiểu về linux
