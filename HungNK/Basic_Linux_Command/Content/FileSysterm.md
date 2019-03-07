@@ -161,11 +161,10 @@ Chẳng hạn khi bạn cài đặt apache từ nguồn, apache nằm dưới /u
 - /dev/fd0 Ổ đĩa mềm đầu tiên 
 - /dev/fd1 Ổ đĩa mềm thứ hai 
 
-<img src="https://github.com/ImKifu/thuctapsinh/blob/master/HungNK/Basic_Linux_Command/Picture/Linux-2.jpg">
 
-![Github](https://github.com/ImKifu/thuctapsinh/blob/master/HungNK/Basic_Linux_Command/Picture/cau-truc-file-linux.png)(&lt;img /&gt;)
+![](../Picture/cau-truc-file-linux.png)
 
-![Text]("https://github.com/ImKifu/thuctapsinh/blob/master/HungNK/Basic_Linux_Command/Picture/cau-truc-file-linux.png")![](https://github.com/ImKifu/thuctapsinh/blob/master/HungNK/Basic_Linux_Command/Picture/cau-truc-file-linux.png)(&lt;img /&gt;)
+
 
 
 
@@ -176,7 +175,29 @@ thư mục tiêu chuẩn cho file hệ thống. Linux hỗ trợ các file hệ 
 Cũ hơn, file hệ thống kiểu legacy ( dành cho Win cũ ) vẫn được hỗ trợ.
 Một số ví dụ mà các file hệ thống vẫn được Linux hỗ trợ là:
 
--ơ
+- Minix
+
+    Minix là hệ thống lâu đời nhất và được cho là đáng tin cậy nhất, 
+nhưng nó khá hạn chế về các tính năng (một số nhãn thời gian (time stamp) bị thiếu, 
+tối đa 30 kí tự tên tập tin) và hạn chế về khả năng (tối đa 64 MB cho mỗi filesystem)
+
+- Xia
+    Xia là phiên bản sửa đổi của hệ thống tập tin minix - nâng cao giới hạn về tên tập tin và kích thước hệ thống tập tin, nhưng không giới thiệu tính năng mới nào cả. Xia cũng không phổ biến lắm nhưng các báo cáo cho thấy hệ thống này hoạt động rất tốt.
+
+- Ext2
+    Ext2 là hệ thống nhiều tính năng nhất của các tập tin hệ thống Linux đời đầu. Nó được thiết kế để dễ dàng tương thích với phiên bản mới, do đó các phiên bản code mới của hệ thống tập tin không yêu cầu viết lại hệ thống tập tin hiện có.
+
+- Ext
+    Là phiên bản cũ hơn của ext2, phiên bản này không tương thích với các phiên bản mới. Nó hầu như không bao giờ được sử dụng trong các cài đặt mới nữa và hầu hết người dùng đều chuyển đổi sang ext2.
+- Ext3
+    Hệ thống tập tin ext3 có tất các tính năng của ext2.
+     Tuy nhiên, sự khác biệt là sự có mặt của journaling. 
+     Điều này cải thiện hiệu suất và thời gian phục hồi phòng khi hệ thống bị treo. 
+     Chính điều đó khiến ext3 phổ biến hơn ext2.
+
+
+
+
 
 
 
@@ -190,4 +211,4 @@ Một số ví dụ mà các file hệ thống vẫn được Linux hỗ trợ l
 
 ngoài ra còn một số hệ thống tập tin cũ hơn :
 
--Min
+-Min`
