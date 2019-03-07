@@ -148,6 +148,7 @@ Chẳng hạn khi bạn cài đặt apache từ nguồn, apache nằm dưới /u
 
 - Ví dụ: /srv/cvs chứa dữ liệu liên quan đến CVS.
 
+![](../Picture/Screenshot_1.png)
 
 <img src="https://github.com/ImKifu/thuctapsinh/blob/master/HungNK/Basic_Linux_Command/Picture/Linux-1.jpg">
 
@@ -182,19 +183,89 @@ nhưng nó khá hạn chế về các tính năng (một số nhãn thời gian 
 tối đa 30 kí tự tên tập tin) và hạn chế về khả năng (tối đa 64 MB cho mỗi filesystem)
 
 - Xia
+
     Xia là phiên bản sửa đổi của hệ thống tập tin minix - nâng cao giới hạn về tên tập tin và kích thước hệ thống tập tin, nhưng không giới thiệu tính năng mới nào cả. Xia cũng không phổ biến lắm nhưng các báo cáo cho thấy hệ thống này hoạt động rất tốt.
 
 - Ext2
+
     Ext2 là hệ thống nhiều tính năng nhất của các tập tin hệ thống Linux đời đầu. Nó được thiết kế để dễ dàng tương thích với phiên bản mới, do đó các phiên bản code mới của hệ thống tập tin không yêu cầu viết lại hệ thống tập tin hiện có.
 
 - Ext
+
     Là phiên bản cũ hơn của ext2, phiên bản này không tương thích với các phiên bản mới. Nó hầu như không bao giờ được sử dụng trong các cài đặt mới nữa và hầu hết người dùng đều chuyển đổi sang ext2.
 - Ext3
+
     Hệ thống tập tin ext3 có tất các tính năng của ext2.
      Tuy nhiên, sự khác biệt là sự có mặt của journaling. 
      Điều này cải thiện hiệu suất và thời gian phục hồi phòng khi hệ thống bị treo. 
      Chính điều đó khiến ext3 phổ biến hơn ext2.
 
+![](../Picture/he-thong-tap-tin-journal.jpg )
+
+- Ext4
+
+    Là sự nâng cấp của Ext3, có thêm checksum
+
+- Btrfs
+    
+    Btrfs là thế hệ tiếp theo của hệ thống tập tin trên Linux,
+ được xây dựng dựa trên hệ thống tập tin COW B-tree, 
+ hiện vẫn đang trong giai đoạn phát triển bởi Oracle.. 
+ Nó cải thiện không gian cũng như thời gian so với các hệ thống tập tin khác 
+ ( ext2, ext3, ext4 ... ) và tăng khả năng quản lý. 
+ Btrfs giải quyết các vấn đề còn thiếu trên các hệ thống tập tin cũ như: 
+ snapshot, checksum dữ liệu, phân vùng và mở rộng trực tiếp ...
+  Mặc dù theo nhiều nguồn thì BtrFS không hoạt động ổn định trên 1 số nền tảng distro nhất định,
+  nhưng với những tính năng ưu việt như trên thì nó vẫn sẽ là sự thay thế cho Ext4 trong tương lai.
+   Do vậy, BtrFS rất phù hợp để hoạt động với server dựa vào hiệu suất làm việc cao, 
+khả năng tạo snapshot nhanh chóng cũng như hỗ trợ nhiều tính năng đa dạng khác. 
+Hiện tại có 1 vài distro đã sử dụng Btrfs mặc định như Fedora 18, openSUSE 13.2 ...
+
+- Vfat
+
+    Đây là phần mở rộng của hệ thống tập tin FAT được gọi là FAT32. 
+Nó hỗ trợ kích thước ổ đĩa lớn hơn FAT. Hầu hết các đĩa Windows đều là vfat.
+
+- Xfs
+   
+    XFS được thiết kế lần đầu bởi Silicon Graphics để hoạt động như một hệ thống tập tin có journaling 64-bit. 
+XFS cũng được thiết kế để duy trì hiệu năng cao với các file lớn và hệ thống tập tin.
+Ngoài ra, hỗ trợ cho một số hệ thống tập tin bên ngoài hoạt động, để dễ dàng trao đổi các file với các hệ điều hành khác. 
+Các hệ thống tập tin bên ngoài hoạt động giống như các chương trình gốc, ngoại trừ việc chúng thường thiếu một số tính năng UNIX thông thường hoặc có những hạn chế kì lạ khác.
+
+
+- NTFS
+
+    Là hệ thống tập tin tiên tiến nhất của Microsoft cung cấp khả năng 
+    truy cập và ổn định tệp nhanh hơn các hệ thống tập tin của Microsoft trước đây.
+
+
+
+
+
+
+
+
+- Reiserfs
+
+    Là một hệ thống tập tin mạnh hơn. Việc sử dụng journaling sẽ làm mất ít dữ liệu hơn. 
+
+- Jfs
+
+    JFS là một hệ thống tập tin có journaling được thiết kế bởi IBM để làm việc trong các môi trường hiệu suất cao.
+
+
+
+
+
+
+- Swap 
+
+     - Swap có thể coi thực sự không phải là 1 dạng file hệ thống, bởi vì cơ chế hoạt động
+      khá khác biệt, được sử dụng dưới 1 dạng bộ nhớ ảo và không có cấu trúc file hệ thống cụ 
+      thể. Không thể kết hợp và đọc dữ liệu được, nhưng lại chỉ có thể được dùng bởi kernel để 
+      ghi thay đổi vào ổ cứng. Thông thường, nó chỉ được sử dụng khi hệ 
+     thống thiếu hụt bộ nhớ RAM hoặc chuyển trạng thái của máy tính về chế độ Hibernate.
 
 
 
@@ -206,9 +277,32 @@ tối đa 30 kí tự tên tập tin) và hạn chế về khả năng (tối đ
 
 
 
-- ext3 ( có hỗ trợ journaling ), ext4 ( đang được sử dụng làm để chạy hệ thống linux ), btrfs, xfs
-- vfat, fat, ntfs ( cho win )
 
-ngoài ra còn một số hệ thống tập tin cũ hơn :
 
--Min`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     Nguồn : https://www.youtube.com/watch?v=g7OkSvioFlU
+
+     https://quantrimang.com/tim-hieu-khai-niem-co-ban-ve-he-thong-file-trong-linux-84900
+
+     https://quantrimang.com/filesystem-la-gi-135173
+
+     https://viblo.asia/p/tim-hieu-ve-he-thong-tap-tin-btrfs-rYvGwagEKVw
+
+     http://notes.viphat.work/so-sanh-cac-he-thong-filesystem
