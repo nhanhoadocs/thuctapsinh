@@ -268,36 +268,60 @@ Các hệ thống tập tin bên ngoài hoạt động giống như các chươn
      thống thiếu hụt bộ nhớ RAM hoặc chuyển trạng thái của máy tính về chế độ Hibernate.
 
 
+## File System Table
+
+Tệp / etc / fstab chứa thông tin về hệ thống tệp. Nó xác định cách các phân vùng 
+và thiết bị lưu trữ sẽ được gắn kết trong hệ thống. 
+Tập tin này sẽ được đọc bởi lệnh mountđể xác định các tùy chọn
+sẽ sử dụng để gắn kết một thiết bị hoặc phân vùng cụ thể. 
+
+Trong /etc/fstab các trường sau được phân tách bằng dấu cách hoặc tab, có tất cả 6 trường :
+
+```
+<file system>	<dir>	<type>	<options>	<dump>	<pass>
+```
+
+
+- file system - xác định thiết bị lưu trữ hoặc phân vùng.
+- dir - biểu thị cho lệnh mount thư mục nơi phân vùng sẽ được gắn kết (<file system>).
+- type - cho biết loại hệ thống tệp của phân vùng hoặc thiết bị. Một số hệ thống tập tin được hỗ trợ. Một số ví dụ là: ext2, ext3, reiserfs, xfs, jfs, smbfs, iso9660, vfat, ntfs, swap, và auto. Tùy chọn autocho phép lệnh mount nhận ra loại hệ thống tệp sẽ sử dụng, tùy chọn này hữu ích trong trường hợp phương tiện quang học (CD / DVD).
+- options - cho biết các tùy chọn được sử dụng bởi lệnh mount trên hệ thống tệp. Một số tùy chọn gắn kết đề cập đến các hệ thống tệp cụ thể, trong khi các tùy chọn khác là chung ( mount (8) ):
+    - auto- Hệ thống tập tin sẽ được gắn tự động trong khi khởi động hệ thống hoặc khi lệnh được khởi chạy mount -a.
+    - noauto - Hệ thống tập tin sẽ không được gắn tự động mà chỉ bằng tay.
+    - exec - Cho phép thực thi các tệp thực thi nằm trên phân vùng (được bật theo mặc định).
+    - noexec - Ức chế khả năng chạy các chương trình từ hệ thống tập tin.
+    - ro - Gắn kết hệ thống tập tin chỉ được đọc.
+    - rw - Hệ thống tập tin được gắn ở chế độ đọc và ghi.
+    - user- Cho phép người dùng gắn kết hệ thống tập tin. Tùy chọn này bao gồm noexec, nosuid, nodevnếu bạn không sử dụng các tùy chọn xung đột.
+    - users - Cho phép người dùng thuộc nhóm người dùng gắn kết hệ thống tập tin.
+    - nousers - Chỉ cho phép gắn kết với người dùng root.
+    - owner - Chỉ cho phép gắn kết với chủ sở hữu của điểm gắn kết.
+    - sync - I / O trên hệ thống tập tin phải đồng bộ.
+    - async - tất cả I / O trên hệ thống tệp phải không đồng bộ.
+    - dev - Giải thích các thiết bị chặn hoặc các thiết bị đặc biệt trong hệ thống tập tin.
+    - nodev - Ngăn chặn việc giải thích các thiết bị khối hoặc các thiết bị ngoại vi đặc biệt trong hệ thống tập tin.
+    - suid- Cho phép sử dụng các hoạt động suid và sgid. Chúng thường được sử dụng để cho phép người dùng của một hệ thống thực thi các chương trình bằng cách tạm thời nâng cao các đặc quyền [1] .
+    - nosuid - Ngăn chặn các hoạt động của Thụy Sĩ và Thụy Sĩ.
+    - noatime- Không cập nhật inode với thời gian truy cập hệ thống tệp. Nó có thể tăng hiệu suất (xem tùy chọnatime ).
+    - nodiratime- Không cập nhật các nút thư mục vào thời gian truy cập hệ thống tệp. Nó có thể tăng hiệu suất (xem tùy chọnatime ).
+    - relatime- Chỉ cập nhật trong nút in lần liên quan đến thay đổi hoặc thay đổi của tệp. Thời gian truy cập chỉ được cập nhật nếu lần truy cập cuối cùng sớm hơn lần sửa đổi cuối cùng (Tương tự noatimenhưng không can thiệp vào các chương trình như mutthọ cần biết nếu một tệp đã được đọc kể từ lần sửa đổi cuối cùng.) hiệu suất (xem tùy chọnatime ).
+    - flush - Đây là một tùy chọn cho hệ thống tệp FAT. Nó được sử dụng để ghi dữ liệu thường xuyên hơn trên đĩa nhằm ngăn chặn các cửa sổ chuyển bị đóng trong khi dữ liệu chưa được ghi.
+    - defaults- Gán cài đặt hệ thống tập tin mặc định cho lệnh mount. Các tùy chọn mặc định ext4là rw, suid, dev, exec, auto, nouser, async.
+- dump - Được sử dụng bởi chương trình kết xuất để quyết định khi nào thực hiện sao lưu. Khi cài đặt hệ thống (nhưng không phải trong trường hợp cài đặt Arch Linux tiêu chuẩn), dump sẽ kiểm tra giá trị và sử dụng số này để quyết định có thực hiện sao lưu hệ thống tệp hay không. Các giá trị được nhập là 0 và 1. Nếu giá trị được đặt thành 0 kết xuất, nó sẽ bỏ qua hệ thống tệp, trong khi nếu được đặt thành 1 kết xuất, sẽ cẩn thận để sao lưu hệ thống tệp. Hầu hết người dùng sẽ không cài đặt kết xuất, do đó, nên để giá trị <dump> thành 0.
+- pass - fsck đọc giá trị của <pass> và xác định thứ tự các hệ thống tệp sẽ được kiểm tra. Các giá trị có thể là 0, 1 và 2. Hệ thống tệp gốc (/) phải có mức ưu tiên cao nhất, 1, các hệ thống tệp khác cần kiểm tra sẽ có giá trị 2. Trong trường hợp giá trị của <pass> được đặt tại 0 hệ thống tập tin sẽ không được kiểm soát bởi fsck.
+
+
+Để xem ví dụ, hãy gõ cat /etc/fstab
+
+Xem thêm về fstab tại : https://www.youtube.com/watch?v=eRW2BhmYQIk
+               https://wiki.archlinux.org/index.php/Fstab_%28Italiano%29#Dischi_esterni
 
 
 
 
+----------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     Nguồn : https://www.youtube.com/watch?v=g7OkSvioFlU
+    Nguồn : https://www.youtube.com/watch?v=g7OkSvioFlU
 
      https://quantrimang.com/tim-hieu-khai-niem-co-ban-ve-he-thong-file-trong-linux-84900
 
