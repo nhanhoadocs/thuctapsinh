@@ -162,7 +162,7 @@ Chẳng hạn khi bạn cài đặt apache từ nguồn, apache nằm dưới /u
 - /dev/fd1 Ổ đĩa mềm thứ hai 
 
 
-![](../Picture/cau-truc-file-linux.png)
+![](../Picture/Linux-2.jpg)
 
 
 
