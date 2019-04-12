@@ -17,5 +17,5 @@
 16. [Fping](https://github.com/duckmak14/linux/blob/master/Fping_mtr/Fping.md)
 17. [Mtr](https://github.com/duckmak14/linux/blob/master/Fping_mtr/mtr.md)
 18. [crontab](https://github.com/duckmak14/linux/blob/master/Crontab/crontab.md)
-19. [](/docs/command_linux.md)
+19. [Lệnh trong linux](/docs/command_linux.md)
 20. [Linux overview (10-24)](linux_overview.md)
