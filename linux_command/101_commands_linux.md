@@ -46,18 +46,24 @@ cd ..
 6. Di chuyển tới thư mục home
 ```
 cd ~
-cd 
-cd $HOME 
 ```
-7. Cấp full quyền cho người sở hữu. Quyền đọc, thực thi cho group và user 
+7.  Di chuyển tới thư mục home
+```
+cd $HOME
+```
+8. Di chuyển tới thư mục home
+```
+cd 
+```
+9. Cấp full quyền cho người sở hữu. Quyền đọc, thực thi cho group và user 
 ```
 chmod 755 (tên file)
 ```
-8. Cấp quyền thực thi cho tất cả user 
+10. Cấp quyền thực thi cho tất cả user 
 ```
 chmod a+x (tên file)
 ```
-9. Thay đổi quyền sở hữu một file hoặc thư mục 
+11. Thay đổi quyền sở hữu một file hoặc thư mục 
 ```
 chown option user:group file/folder
 ```
@@ -72,19 +78,23 @@ drwxr-xr-x. 2 root root         6 16:15  9 Th04 test111
 total 940036
 drwxr-xr-x. 2 anhduc root         6 16:15  9 Th04 test111
 ```
-10. copy file1 thành file2
+12. Tạo ra bản sao của file 
+```
+cp (file(file)).backup
+```
+13. copy file1 thành file2
 ```
 cp (file1) (file2)
 ```
-11. copy thư mục và file trong đó thành thư mục khác 
+14. copy thư mục và file trong đó thành thư mục khác 
 ```
 cp -r <directory1> <directory2>/
 ```
-12. Hiển thị giờ thứ ngày tháng năm của máy tính
+15. Hiển thị giờ thứ ngày tháng năm của máy tính
 ```
 date
 ``` 
-13. Sao lưu dữ liệu 
+16. Sao lưu dữ liệu 
 ```
 dd if=/dev/vda1 of=/root/vda1.anh
 ```
@@ -95,7 +105,7 @@ dd if=/dev/vda1 of=/root/vda1.anh
 601696+0 records out
 308068352 bytes (308 MB) copied, 1,39882 s, 220 MB/s
 ```
-14. Hiển thị không gian đĩa 
+17. Hiển thị không gian đĩa 
 ```
 df -h
 ```
@@ -111,23 +121,23 @@ Trong đó:
     - Avail: Không gian trống 
     - Use: Phần trăm đã sử dụng 
     - Mounted on: Được gắn trên đâu trong cây thư mục root
-15. Lấy thông tin của HDH và ghi vào tệp văn bản 
+18. Lấy thông tin của HDH và ghi vào tệp văn bản 
 ```
 dmesg>dmesg.txt
 ```
-16. Hiển thị thông tin hệ thống 
+19. Hiển thị thông tin hệ thống 
 ```
 dmidecode
 ```
-17. Hiển thị thông tin BIOS
+20. Hiển thị thông tin BIOS
 ```
 dmidecode -t 0
 ```
-18. Hiển thị thông tin CPU 
+21. Hiển thị thông tin CPU 
 ```
 dmidecode -t 4
 ```
-19. Tìm kiếm các gói đã cài đặt liên quan đến `zip`
+22. Tìm kiếm các gói đã cài đặt liên quan đến `zip`
 ```
 anhduc@anhduc:~$ sudo dpkg --get-selections | grep zip  
 bzip2						install
@@ -139,11 +149,11 @@ p7zip-full					install
 unzip						install
 zip						install
 ```
-20. Hiển thị tất cả các gói đã cài đặt 
+23. Hiển thị tất cả các gói đã cài đặt 
 ```
 dpkg -L
 ```
-21. Ước tính không gian đĩa, tệp 
+24. Ước tính không gian đĩa, tệp 
 ```
 du -bh (đường dẫn)
 ```
@@ -152,60 +162,54 @@ du -bh (đường dẫn)
 45	/root/test/
 
 ```
-22. In ra biến môi trường 
+25. In ra biến môi trường 
 ```
 anhduc@anhduc:~$ x=10
 anhduc@anhduc:~$ echo $x
 10 
 ```
-23. Hiển thị biến môi trường 
+26. Hiển thị biến môi trường 
 ```
 env 
 ```
-24. Hiển thị hình ảnh 
+27. Hiển thị hình ảnh 
 ```
 anhduc@anhduc:~/Pictures$ eog hinh-nen-may-tinh-anime-buon-2.jpg
 ```
-25. Thoát khỏi terminal 
+28. Thoát khỏi terminal 
 ```
 exit 
 ```
-26. Hiển thị memory đã sử dụng 
+29. Hiển thị memory đã sử dụng 
 ```
 free
 ```
-27. Hiển thị bản ghi hệ thống 
+30. Hiển thị bản ghi hệ thống 
 ```
 gnome-system-log
 ```
-28. Tìm kiếm một chuỗi trong một file 
+31. Tìm kiếm một chuỗi trong một file 
 ```
 grep <string> <filename>
 ```
-29. Số giây mà hệ điều hành chạy 
+32. Số giây mà hệ điều hành chạy 
 ```
 anhduc@anhduc:~$ grep btime /proc/stat | grep -Eo [[:digit:]]+
 1554705396
 ```
-30. Hiển thị một 1000 lệnh cuối cùng 
+33. Hiển thị một 1000 lệnh cuối cùng 
 ```
 history | less
 ```
-31. Hiển thị tên của máy tính 
+34. Hiển thị tên của máy tính 
 ```
 hostname 
 ```
-32. Hiển thị ngày tháng năm giờ 
+35. Hiển thị ngày tháng năm giờ 
 ```
 anhduc@anhduc:~$ sudo hwclock --show
 2019-04-08 16:55:36.171201+0700
 ```
-33. Hiểu thị uid và gid của user 
-```
-anhduc@anhduc:~$ id
-uid=1000(anhduc) gid=1000(anhduc) groups=1000(anhduc),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),116(lpadmin),126(sambashare),129(libvirt),1001(libvirtd)
-```
-
 36. Hiển thị user id (uid) và group id (gid) của user hiện đang sử dụng
 
 ```
