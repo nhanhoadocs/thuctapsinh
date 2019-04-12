@@ -1,0 +1,20 @@
+#!/bin/sh
+
+PATH_DIR="/root/zabbix"
+Logfile="/root/zabbix/zabbix-backup.log"
+Backupfile="/root/zabbix/backup-file"
+if ( yum list installed | grep -q mysql )
+    then
+        yum install mysql
+    else
+        echo ========================================================================================
+    fi
+cd
+wget https://raw.githubusercontent.com/niemdinhtrong/ghichep-zabbix/master/scripts/tables.txt
+wget https://raw.githubusercontent.com/niemdinhtrong/ghichep-zabbix/master/scripts/zabbix-backup.sh
+chmod +x zabbix-backup.sh
+mkdir $PATH_DIR
+touch $Logfile
+mkdir $Backupfile
+mv zabbix-backup.setup $PATH_DIR
+mv tables.txt $PATH_DIR
