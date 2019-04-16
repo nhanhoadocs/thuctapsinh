@@ -62,13 +62,13 @@ Grafana sử dụng port `3000` vì vậy nếu bạn không stop firewalld thì
 
 Để sử dụng bạn mở trình duyệt web và truy cập `IP-grafana-server:3000`. Bạn sẽ thấy giao diện login như sau:
 
-![](/images/grafana/1.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/grafana/1.png)
 
 Cả username và password mặc định lần đầu đăng nhập là `admin`. Khi đăng nhập lần đầu hệ thống sẽ yêu cầu bạn đổi pass.
 
 Khi login vào bạn sẽ thấy giao diện như sau
 
-![](/images/grafana/2.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/grafana/2.png)
 
 Bạn có thể add data source để hiển thị các biểu đồ thông qua data từ data source mà bạn add vào. Nếu muốn sử dụng grafana để hiển thị các metric từ zabbix server thì bạn cần chạy lệnh sau trên grafana server
 
@@ -80,11 +80,11 @@ systemctl restart grafana-server
 
 Và bây giờ bạn có thể add data source là `zabbix` vào grafana.
 
-![](/images/grafana/3.1.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/grafana/3.1.png)
 
 Cấu hình thông tin đến zabbix server
 
-![](/images/grafana/4.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/grafana/4.png)
 
 Ta có thể thấy một số thông số cần thiết cần phải cấu hình
 
@@ -98,16 +98,16 @@ Bây giờ ta có thể tạo Dashboard để tạo các biểu đồ để quan
 
 Ban đầu bạn cần tạo một Dashboard sau đó tạo các biểu đồ trên đó. Để tạo Dashboard bạn click vào biểu tượng dấu cộng
 
-![](/images/grafana/8.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/grafana/8.png)
 
 Sau đó chọn loại biểu đồ. Để thêm các thông số cho biểu đồ để hiển thị bạn click vào `edit`
 
-![](/images/grafana/6.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/grafana/6.png)
 
 Bạn thêm các metric tương tự như trong zabbix để hiển thị 
 
-![](/images/grafana/7.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/grafana/7.png)
 
 Bạn có thể thêm nhiều biểu đồ trong một màn hình Dashboard
 
-![](/images/grafana/9.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/grafana/9.png)
