@@ -13,3 +13,4 @@
 9. [Cấu hình gửi cảnh báo qua telegram](labs/gui-canh-bao-telegram.md)
 10. [Cấu hình backup và restore](labs/Backup-restore.md)
 11. [Plugin](labs/plugin.md)
+12. [Grafana](labs/grafana.md)
