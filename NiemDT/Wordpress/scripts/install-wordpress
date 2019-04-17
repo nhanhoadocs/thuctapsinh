@@ -1,0 +1,51 @@
+#!/bin/bash
+function 1-may {
+	echo Nhap dia chi cua may cai wordpress:
+	read IP1
+	echo 'OS cua may $IP1 co phai CentOS 7 khong ? (y/n):' 
+	read c1
+	if [ "${c1}" = "y" ]
+	then
+	echo $IP1 > ip-web
+	scp install-all ip-web root@$IP1:/root
+	echo ==========================================================
+	echo 'chay lenh ./install-all sau khi ssh vao'
+	ssh root@$IP1
+	else
+	echo Sorry! Khong cai duoc bang script hay thu cach khac!!!!!!!!!
+	fi
+}
+ 
+function 2-may () {
+	echo Nhap dia chi may Web Server: 
+	read IP2
+	echo Nhap dia chi may MySQL Server:
+	read IP3
+	echo 'OS cua may Web Server va MySQL server co phai CentOS 7 khong ? (y/n):' 
+	read c2
+	if [ "${c2}" = "y" ]
+	then 
+	echo $IP2 > ip-web
+	echo $IP3 > ip-mysql
+	scp install-web ip-web ip-mysql root@$IP2:/root
+	scp install-mysql ip-web root@$IP3:/root
+	echo ==========================================================
+	echo Chay lenh './install-web' tren may Web Server
+	echo ==========================================================
+	echo Chay lenh './install-mysql' tren may MySQL
+	else
+	echo Sorry! Khong cai duoc bang script hay thu cach khac!!!!!!!!!
+	fi
+}
+
+echo Ban muon cai all trong 1 may hay tren 2 may?
+echo '1. Cai tren 1 may'
+echo '2. cai tren 2 may'
+echo 'chon (1 or 2):' 
+read chon
+	if [ "${chon}" = "1" ] 
+	then
+		1-may
+	else
+		2-may
+	fi

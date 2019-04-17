@@ -1,0 +1,69 @@
+#!/bin/bash
+# Cai dat Apache
+
+if ( yum list installed | grep -q httpd )
+    then
+        echo =========================================================
+    else
+        yum install httpd -y
+
+        systemctl start httpd
+
+        systemctl enable httpd
+    fi
+
+
+# Cai PHP
+
+if ( yum list installed | grep -q php )
+    then 
+        systemctl restart httpd 
+    else
+        yum install php php-mysql php-gd php-pear -y 
+
+        systemctl restart httpd 
+    fi
+# Cai wordpress
+
+if ( yum list installed | grep -q wget )
+    then
+        echo =======================================================================
+    else
+        yum install wget
+    fi
+
+cd
+
+cd /var/www/html/
+rm -rf *
+
+wget https://wordpress.org/latest.tar.gz
+
+tar xzvf latest.tar.gz
+
+mv wordpress/* /var/www/html
+
+mv wp-config-sample.php wp-config.php
+
+cd
+
+echo 'Ten database cho wordpress (Enter se mac dinh la wordpress):' 
+read p1
+p1=${p1:-wordpress}
+echo 'Ten user su dung cho wordperss login mysql(Enter se mac dinh la niemdt):'
+read p2
+p2=${p2:-niemdt}
+echo 'Password cho user (Enter se mac dinh la 123456):'
+read p3
+p3=${p3:-123456}
+p4=`cat /root/ip-mysql`
+
+sed -i "s/database_name_here/$p1/g" /var/www/html/wp-config.php
+sed -i "s/username_here/$p2/g" /var/www/html/wp-config.php
+sed -i "s/password_here/$p3/g" /var/www/html/wp-config.php
+sed -i "s/localhost/$p4/g" /var/www/html/wp-config.php
+
+systemctl stop firewalld
+setenforce 0
+
+echo Cai thanh cong!!!!!!!!!!!!
