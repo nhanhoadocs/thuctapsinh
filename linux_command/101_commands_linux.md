@@ -416,3 +416,135 @@ tar czf <dirname>.tgz <dirname>
 ```
 tar xzvf <filename>
 ```
+71. Liệt kê các tiến trình đang được thực thi bằng CPU. Bấm `q` để `quit` và bấm `h` để xem hướng dẫn
+```
+top
+```
+Ngoài ra, với lệnh `top` bạn có thể xem các thông số khác như `ram`, `swap`, `buff/cache`, `sleeping` và `zombie`
+Bạn có thể tải `htop` về để xem với giao diện đẹp hơn `top` và nhiều option hơn.
+
+
+
+72. Tạo một file mới-trống nếu nó chưa tồn tại ở thư mục bạn đang đứng
+```
+touch <filename>
+```
+
+73. In ra tên của `terminal` bạn đang sử dụng
+```
+tty
+```
+74. In ra nhân linux của máy bạn đang dùng
+```
+uname -a
+```
+75. In ra kiến trúc vi sử lý mà máy bạn đang dùng
+```
+uname -m
+```
+76. Trả về tóm tắt câu lệnh là gì từ `man` . Trang `man` là hướng dẫn sử dụng tất cả câu lệnh của Linux
+```
+whatis <commmand>
+```
+77. Trả về vị trí của một chương trình trong hệ thống
+```
+whereis <command>
+```
+78. Tră về đường dẫn của một ứng dụng
+```
+which <command>
+```
+79. In ra những người đang truy cập vào máy
+```
+who
+```
+80. In ra tên mà bạn đang đăng nhập vào máy
+```
+whoammi
+```
+81. In ra những dòng cuối của file `test.log` trong khi vẫn đnang bị viết bởi một chương trình khác
+```
+tail –follow test.log
+```
+82. Bỏ
+
+83. Dùng toán tử `\` trước một khoảng trắng để mở một file mà tên file có dấu cách. Ví dụ ta sẽ mở file là 
+`stupid file name.txt` 
+```
+cat stupid\ file\ name.txt
+```
+84. Kí hiệu kiểu diễn thư mục home của bạn
+```
+~
+```
+85. Bỏ
+
+86. In ra thông tin của CPU
+```
+cat /proc/cpuinfo
+```
+87. In ra thông tin bộ nhớ
+```
+cat /proc/meminfo
+```
+88. In ra các thiết bị kết nối
+```
+cat /proc/net/dev
+```
+89. In ra thông tin hiệu suất
+```
+cat /proc/uptime
+```
+90. In ra phiên bản nhân hệ thống
+```
+cat /proc/version
+```
+91. In ra nội dung của một file
+```
+cat <filename>
+```
+92. In ra các phân vùng
+```
+fdisk -l
+```
+93. In ra các thuộc tính/nén của file hoặc package
+```
+file <package_name>
+```
+94. Tìm file 
+```
+find / -name <filename>
+```
+95. Tạo 1 file nén đuôi .gz
+```
+gzip test.txt
+```
+96. Giải nén 1 file đuôi .gz
+```
+gzip -d test.txt.gz
+```
+97. Hiển thị thông tin chi tiết khi nén bằng opion -l
+```
+gzip -l *.gz
+```
+98. Hiện thị trạng thái của file 
+```
+stat filename.txt
+```
+99. Download a` file từ internet
+```
+wget <link>
+```
+Wget là một công cụ máy tính tạo ra từ GNU Project. 
+Bạn có thể dùng nó để trích xuất dữ liệu và nội dung từ nhiều web servers khác nhau. 
+Tên của nó là kết hợp của World Wide Web và từ get.
+Nó hỗ trợ download qua FTP, SFTP, HTTP, và HTTPS.
+
+100. In ra danh sách 10 người đăng nhập cuối cùng vào máy
+```
+last -n 10
+```
+101. Hiển thị tiến trình của hệ thống dưới dạng `tree`
+```
+pstree
+```
