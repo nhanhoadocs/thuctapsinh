@@ -1,0 +1,108 @@
+#!/bin/bash
+# Cai Apache
+
+if ( yum list installed | grep -q httpd )
+    then
+        yum install httpd -y
+
+        systemctl start httpd
+
+        systemctl enable httpd
+    else
+        echo ================================================================
+    fi
+
+# Cai PHP
+
+
+if ( yum list installed | grep -q php )
+    then 
+        yum install php php-mysql php-gd php-pear -y 
+
+        systemctl restart httpd 
+    else
+        echo ================================================================
+    fi
+
+# Cai mysql
+
+if ( yum list installed | grep -q mysql )
+    then
+         yum remove mysql
+        rm -rf /var/lib/mysql/*
+    else
+       echo =======================================================================
+    fi
+
+if ( yum list installed | grep -q wget )
+    then
+        yum install wget
+    else
+        echo =======================================================================
+    fi
+cd
+ wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+
+rpm -ivh mysql-community-release-el7-5.noarch.rpm
+
+yum install mysql-server
+
+systemctl start mysqld
+
+echo Thiet lap tao khoan root cho MySQL!
+
+mysql_secure_installation
+
+# Tao DB cho wordpress
+
+echo Password cua user root:
+read u1
+echo [mysql] > /root/.my.cnf
+echo user=root >> /root/.my.cnf
+echo password=$u1 >> /root/.my.cnf
+chmod +x /root/.my.cnf
+
+echo 'Ten database cho wordpress (Enter se mac dinh la wordpress):' 
+read p1
+p1=${p1:-wordpress}
+echo 'Ten user su dung cho wordperss login mysql(Enter se mac dinh la niemdt):'
+read p2
+p2=${p2:-niemdt}
+echo 'Password cho user (Enter se mac dinh la 123456):'
+read p3
+p3=${p3:-123456}
+
+mysql -e "create database $p1"
+
+mysql -e "create user '$p2'@'localhost' identified by '$p3'"
+
+mysql -e "grant all privileges on $p1.* to '$p2'@'localhost'"
+
+mysql -e "flush privileges"
+
+# Cai wordpress
+
+cd
+
+cd /var/www/html/
+rm -rf *
+
+wget https://wordpress.org/latest.tar.gz
+
+tar xzvf latest.tar.gz
+
+mv wordpress/* /var/www/html
+
+mv wp-config-sample.php wp-config.php
+
+sed -i "s/database_name_here/$p1/g" /var/www/html/wp-config.php
+sed -i "s/username_here/$p2/g" /var/www/html/wp-config.php
+sed -i "s/password_here/$p3/g" /var/www/html/wp-config.php
+
+systemctl stop firewalld
+
+p5=`cat /root/ip-web`
+
+echo Cai dat thanh cong!!!!!!!!!!!!!!
+
+echo "Truy cap dia chi http://$p5 de cau hinh wordpress"
