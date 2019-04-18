@@ -1,4 +1,4 @@
-# 101 commands 
+﻿# 101 commands 
 1. Sử dụng lệnh trước đó vừa sử dụng 
 ```
 !!
@@ -548,4 +548,4 @@ last -n 10
 ```
 pstree
 ```
-# end
+# Chuc cac ban thanh cong
