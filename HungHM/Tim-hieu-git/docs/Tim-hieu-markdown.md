@@ -7,7 +7,7 @@ https://github.com/hocchudong/git-github-for-sysadmin#thetieude
 ### 2.1 cách 2
 [Githab](https://github.com/hocchudong/git-github-for-sysadmin#thetieude)
 ## 3.Chèn ảnh
-<img src="https://imgur.com/xCwQ9F6">
+<img src="https://imgur.com/VVhaGnV">
 
 ## 4.kí tự in đâm,in nghiêng
 **từ in đậm**
