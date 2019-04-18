@@ -10,7 +10,7 @@ Bạn có thể tạo một dashboard mới hoặc sử dụng dashboard bạn �
 
 Bạn vào một dashboard có thể là dashboard mới hoặc dashboard đã tạo từ trước
 
-![](/images/variables/1.png)
+![](images/variables/1.png)
 
 Chọn `Variables` -> `Add variable`
 
