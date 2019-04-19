@@ -26,7 +26,7 @@ Firewall bao gồm:
 Các thành phần của firewall: 
 
 
-- ![](/images/2019-04-09_10-00.png)
+![](/images/2019-04-09_10-00.png)
 
 
 - Screening Router: là chặng kiểm soát đầu tiên cho LAN
