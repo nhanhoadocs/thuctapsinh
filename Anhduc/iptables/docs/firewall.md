@@ -1,4 +1,4 @@
-# Tìm hiểu về firewall 
+# Tìm hiểu về firewall
 ## mục lục 
 ## 1. Tổng quan về firewall
 ### 1.1) Khái niệm và chứ năng của firewall
