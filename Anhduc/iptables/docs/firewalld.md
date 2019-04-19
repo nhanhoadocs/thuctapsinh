@@ -8,7 +8,7 @@
 - Với việc sử dụng D-Bus interface, các dịch vụ, ứng dụng, người dùng rất dễ dàng để thực hiện các cấu hình đối với firewall bằng cách sử dụng firewall-cmd firewall-config firewall-applet
 - FirewallD quản lý các quy tắc được thiết lập tự động, có tác dụng ngay lập tức mà không làm mất đi các kết nối và session hiện có
 # 3.Cấu trúc 
-![](/images/68747470733a2f2f692e696d6775722e636f6d2f43456b546158432e706e67.png)
+![](https://github.com/duckmak14/thuctapsinh/blob/master/Anhduc/iptables/images/68747470733a2f2f692e696d6775722e636f6d2f43456b546158432e706e67.png)
 
 Firewall có 2 tầng là core layer và D-Bus
 - Core layer sẽ xử oksy các cấu hình và các backends như iptables, ip6tables, ebtables, ipset and the module loader.

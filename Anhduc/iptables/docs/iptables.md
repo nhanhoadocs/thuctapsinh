@@ -81,7 +81,7 @@ trong khi iptables service lưu cấu hình tại `/etc/sysconfig/iptables` và 
 
 Đối với iptables, mỗi một thay đổi đồng nghĩa với việc hủy bỏ toàn bộ các rules cũ và load lại một loạt các rules mới trong file `/etc/sysconfig/iptables`. Trong khi đó với firewalld, chỉ những thay đổi mới được applied. Vì thế firewalld có thể thay đổi cài đặt trong thời gian runtim mà không làm mât bất cứ kết nối nào.
 # 5. Sự khác biệt với firewalld 
-![](/images/687474703a2f2f692e696d6775722e636f6d2f507535734f75372e706e67.png)
+![](https://github.com/duckmak14/thuctapsinh/blob/master/Anhduc/iptables/images/687474703a2f2f692e696d6775722e636f6d2f507535734f75372e706e67.png)
 
 Ta thấy cách hoạt động của 2 thằng firewalld và iptables đều có đặc điểm cả hai cùng sử dụng iptables-tool đê giao tiếp được với netfilter
 
