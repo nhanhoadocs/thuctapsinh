@@ -1,7 +1,12 @@
 # 1.Khái niệm 
-`Netfilter` là packet filtering framework (khung lọc gói tin) bên trong Linux kernel 2.4.x và các phiên bản tiếp theo. Đây là phiên bản nâng cấp của `ipchains` cũng như `ipfwadm` trong những phiên bản linux kernel 2.0.x và 2.2.x. `netfilter` là một danh sách các `hooks` nằm bên trong Linux kernel, nó cho phép kernel modules thực hiện các tác vụ đối với network stack.
+`Netfilter` là packet filtering framework (khung lọc gói tin) bên trong Linux kernel 2.4.x và các phiên bản tiếp theo. `netfilter` là một danh sách các `hooks` nằm bên trong Linux kernel, nó cho phép kernel modules thực hiện các tác vụ đối với network stack.
 
-Iptables được hoạt động dựa trên tập hợp các netfilter và là tường lửa của phiên bản linux kernel 2.4.x
+Iptables được hoạt động dựa trên sự kết nối với netfilter và là tường lửa của phiên bản linux kernel 2.4.x.Đây là phiên bản nâng cấp của `ipchains` của phiên bản 2.2.x. 
+
+Trong ipchains khi chuyển gói tin đi thì cần sử dụng option -o còn khi gói tin đến thì cần sử dụng option -i. Điều đó là không cần thiết khi đến phiên bản iptables vì INPUT sẽ không thể nhìn thấy gói tin gửi đi và ngược lại. 
+
+Như vậy trong `ipchains` muốn xử lý một gói tin sẽ phải chuyển qua tất cả chuỗi INPUT FORWARD OUTPUT còn iptables sẽ không phải đi qua tất cả các chuỗi 
+
 
 Iptables là một gói phần mềm để tạo tường lửa cho máy linux của bạn nó có các chức năng lọc gói tin, nat gói tin qua đó để giúp làm nhiệm vụ bảo mật thông tin cá nhân tránh mất mát thông tin và áp dụng nhưng chính sách đổi với người sử dụng.
 
@@ -81,3 +86,10 @@ trong khi iptables service lưu cấu hình tại `/etc/sysconfig/iptables` và 
 Ta thấy cách hoạt động của 2 thằng firewalld và iptables đều có đặc điểm cả hai cùng sử dụng iptables-tool đê giao tiếp được với netfilter
 
 FirewallD sử dụng “zones” và “services” thay vì “chain” và “rules” trong Iptables.
+
+Cả iptables và firewall đều là một tool được sử dụng với mục đích để gọi xuống iptables và giao tiếp với netfilter
+
+
+[link tham khảo](https://www.netfilter.org/)
+
+

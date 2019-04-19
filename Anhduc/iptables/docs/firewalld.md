@@ -1,5 +1,5 @@
 # 1. Khái niệm
-- Là một phiên bản firewall được cài mặc định trong các phiên bản linux. Mục đích của nó là cải thiện việc quản lý rules bằng cách cho phép thay đổi các cấu hnh mà các kết nối hiện tại không bị ngắt 
+- Là một phiên bản firewall được cài mặc định trong các phiên bản linux. Mục đích của nó là cải thiện việc quản lý rules bằng cách cho phép thay đổi các cấu hình mà các kết nối hiện tại không bị ngắt 
 - Nó hoạt động như một giao diện người dùng cho bộ lọc bộ lọc mạng của nhân Linux. Có hỗ trợ cho các cài đặt tường lửa IPv4, IPv6, Ethernet và IPSet
 - Firewalld là một phần mềm quản lý tường lửa mặc định trong gia đình RHEL 7.
 - Trong Firewalld, zone là một nhóm các quy tắc nhằm chỉ ra những luồng dữ liệu được cho phép, dựa trên mức độ tin tưởng của điểm xuất phát luồng dữ liệu đó trong hệ thống mạng
