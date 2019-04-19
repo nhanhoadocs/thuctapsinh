@@ -1,7 +1,7 @@
 # TÌM HIỂU VỀ NETWORK
 
 ## Mục lục
-[I. Gới Thiệu Chung](#GioiThieuChung)
+[I. Gới Thiệu Chung](#Gioithieuchung)
 
 - [1.1 Mạng truyền thông và công nghệ](#mangtruyenthongvacongnghe)
    - [1.1.2 Mạng máy tính ](#mangmaytinh)
@@ -17,7 +17,8 @@
 
      `Truyền thông mạng máy tính ` là quá trình truyền dữ liệu thiết bị này sang thết bị khác 
    - Khai niệm Mạng(NetWork)
-   - chỉ khái niệm kết nối các thiết bị lại với nhau nhằm chia sẻ thông tinkhái niệm liên qua đến nhiều vấn đề báo gồm:
+
+ ###   chỉ khái niệm kết nối các thiết bị lại với nhau nhằm chia sẻ thông tinkhái niệm liên qua đến nhiều vấn đề báo gồm:
         - Giao thức truyền thông
         - Topo
         - Dịa chỉ
@@ -63,3 +64,7 @@ Liên kết cái tài nguyên máy tính trong một vùng địa lý có kích 
 
 chỉ mạng máy tính nhỏ,sử dụng trong gia đình 
 -  Mạng toàn cấu(GAN)
+
+<img src="https://imgur.com/kCdh1Mq.jpg">
+
+là mạng của các mạng WAN trải rộng trên pham vi toàn cầu
