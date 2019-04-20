@@ -50,7 +50,7 @@ phần trên tôi đã nói về cách để bắt một gói tin để có th�
 ## Kịch bản sử dụng tcpdump 
 Tôi sẽ xin ngừng cấp địa chỉ IP tại máy tính của mình sau đó xin cấp lại địa chỉ IP và bắt gói tin trong quá trình máy tính của tôi xin cấp địa chỉ IP để các bạn có thể thấy phương pháp hoạt động mà chúng ta sử dụng. Ta sẽ sử dụng 2 terminal để có thể vừa bắt gói tin bằng `tcpdump` và vừa xin cấp ip bằng `dhclient`
 
-![](/images/Untitled Diagram.png)
+![](/images/tcpdump.png)
 
 ## Thực hiện 
 Trước khi xin cấp lại địa chỉ Ip thì ta sử dụng lệnh tcpdump để có thể bắt gói tin với giao thức DHCP. Gói tin của giao thức DHCP sử dụng port của UDP để giao tiếp chính vì thế mà ta phải sử dụng lệnh tcpdump như sau 
