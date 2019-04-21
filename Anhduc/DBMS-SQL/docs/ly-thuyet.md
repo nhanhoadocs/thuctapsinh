@@ -32,7 +32,7 @@ Kiến trúc của DBMS gồm 3 tầng
 DBMS được phân loại theo cấu trúc và mô hình dữ liệu.
 - Mô hình hệ quản trị cơ sở dữ liệu quan hệ (RDBMS). Đây là mô hình phổ biết trong DBMS.
 
-![]()
+![](https://github.com/duckmak14/thuctapsinh/blob/master/Anhduc/DBMS-SQL/images/screenshot_2.png)
     - Điểm nổi bật chính của mô hình này là: 
         - Dữ liệu được lưu trữ trong các bảng được gọi là quan hệ .
         - Quan hệ có thể được bình thường hóa.
@@ -41,7 +41,7 @@ DBMS được phân loại theo cấu trúc và mô hình dữ liệu.
         - Mỗi cột trong một quan hệ chứa các giá trị từ cùng một miền.
 - Mô hình quản trị cơ sở dữ liệu thực thể (ER)
 
-![]()
+![](https://github.com/duckmak14/thuctapsinh/blob/master/Anhduc/DBMS-SQL/images/screenshot_1.png)
     - Mô hình ER xác định khung nhìn khái niệm của cơ sở dữ liệu. Nó hoạt động xung quanh các thực thể
 
 # 3. Bảng 
