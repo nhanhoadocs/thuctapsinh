@@ -21,7 +21,7 @@ Hệ quản trị cơ sở dữ liệu (Database Management System-DBMS) là m�
 * Bảo vệ dữ liệu khỏi mất mát bằng các quá trình sao lưu (backup) và phục hồi (recovery).
 ## Kiến trúc của DBMS 
 
-![]()
+![](https://github.com/duckmak14/thuctapsinh/blob/master/Anhduc/DBMS-SQL/images/screenshot.png)
 
 Kiến trúc của DBMS gồm 3 tầng
 - Tầng cơ sở dữ liệu: Ở tầng này, cơ sở dữ liệu nằm cùng với các ngôn ngữ xử lý truy vấn của nó
@@ -31,13 +31,18 @@ Kiến trúc của DBMS gồm 3 tầng
 ## Phân loại DBMS 
 DBMS được phân loại theo cấu trúc và mô hình dữ liệu.
 - Mô hình hệ quản trị cơ sở dữ liệu quan hệ (RDBMS). Đây là mô hình phổ biết trong DBMS.
+
+![]()
     - Điểm nổi bật chính của mô hình này là: 
         - Dữ liệu được lưu trữ trong các bảng được gọi là quan hệ .
         - Quan hệ có thể được bình thường hóa.
         - Trong quan hệ chuẩn hóa, các giá trị được lưu là giá trị nguyên tử.
         - Mỗi hàng trong một mối quan hệ chứa một giá trị duy nhất.
         - Mỗi cột trong một quan hệ chứa các giá trị từ cùng một miền.
+- Mô hình quản trị cơ sở dữ liệu thực thể (ER)
 
+![]()
+    - Mô hình ER xác định khung nhìn khái niệm của cơ sở dữ liệu. Nó hoạt động xung quanh các thực thể
 
 # 3. Bảng 
 Bảng là một đối tượng được sử dụng để tổ chức và lưu trữ dữ liệu. Một cơ sở dữ liệu bao gồm nhiều bảng. Các bảng đều có mối liên hệ với nhau.
@@ -69,7 +74,9 @@ Các dạng chuẩn là các chỉ dẫn để thiết kế các bảng trong CS
 Mục đích của chuẩn hóa là làm giảm dữ liệu dư thừa và các lỗi xảy ra khi cập nhật CSDL. Nhưng điều này làm tăng thời gian truy vấn dữ liệu.
 
 ## 5.1 Dạng chuẩn 1NF: Không có phần tử/nhóm phần tử lặp
-Một bảng được gọi là 1NF khi và chỉ khi toàn bộ các miền giá trị của các cột có mặt trong bảng đều chỉ chứa các giá trị nguyên tử (nguyên tố) và Mỗi hàng phải có một thuộc tính nhận dạng duy nhất (Khóa chính)
+Một bảng được gọi là 1NF: 
+- khi và chỉ khi toàn bộ các miền giá trị của các cột có mặt trong bảng đều chỉ chứa các giá trị nguyên tử (nguyên tố) không được có giá trị NULL 
+- Mỗi hàng phải có một thuộc tính nhận dạng duy nhất (Khóa chính)
 ## 5.2 Dạng chuẩn 2NF
 Mối quan hệ ở dạng chuẩn 2NF nếu:
 - Là 1NF
