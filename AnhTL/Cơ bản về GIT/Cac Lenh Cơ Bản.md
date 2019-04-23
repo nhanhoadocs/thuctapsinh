@@ -1,4 +1,3 @@
-Dear Anh Tuấn
 
 1.
 	 Tạo REPOSITORY 
