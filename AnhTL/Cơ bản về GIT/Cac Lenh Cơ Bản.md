@@ -21,7 +21,7 @@ sử dụng dấu `*` để gom toàn bộ. Sau đó có thể sử dụng lện
 
 - Tiếp theo sẽ đẩy từ Staging area lên local repository.
 
-`$ git push origin master ( origin -  là tên remote || master - là tên (branch ( nhánh ))`
+`$ git push origin master ( origin -  là tên remote || master - là tên (branch - nhánh )`
 
 - như vậy là đã đẩy thành công lên github của mình, và mọi người có thể xem được.
 
