@@ -1,5 +1,5 @@
 
-##1. Tạo REPOSITORY 
+## 1. Tạo REPOSITORY 
 
 `$ git init ( git_example )`
 
@@ -31,7 +31,7 @@ sử dụng dấu `*` để gom toàn bộ. Sau đó có thể sử dụng lện
 `$ git pull ( để đồng bộ về máy )`
 
 	
-##2. GIT LOG
+## 2. GIT LOG
 
 -  Để xem lịch sử của các lần commit ( thay đổi ) ta sử dụng lệnh
 
@@ -56,7 +56,7 @@ sử dụng dấu `*` để gom toàn bộ. Sau đó có thể sử dụng lện
 
            `$ git log --grep : lọc ra các chuỗi trong log và in ra.`
 
-### Lọc log với -- pretty
+- Lọc log với -- pretty
 
 - Tham số -- pretty rất có ích nếu bạn muốn lọc xem một đối tượng nào đó trong lịch sử commit, ví dụ như chỉ xem lời nhắn commit hoặc chỉ xem email của người commit.
 - cách sử dụng tham số --pertty là bạn phải viết kèm tag của nó như sau:
