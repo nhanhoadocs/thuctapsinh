@@ -1,6 +1,5 @@
 
-1.
-	 Tạo REPOSITORY 
+1. Tạo REPOSITORY 
 
    `$ git init ( git_example )`
 
@@ -22,18 +21,17 @@ sử dụng dấu `*` để gom toàn bộ. Sau đó có thể sử dụng lện
    `$ git commit -m "miêu tả"`
 
 - Bây giờ thì ta đã hoàn thành việc commit lần đầu tiên các tập tin mà bạn đã đưa vào kho.
--- Tiếp theo sẽ đẩy từ Staging area lên local repository.
+- Tiếp theo sẽ đẩy từ Staging area lên local repository.
 
       `$ git push origin master ( origin -  là tên remote || master - là tên (branch ( nhánh ))`
 
--- như vậy là đã đẩy thành công lên github của mình, và mọi người có thể xem được.
+- như vậy là đã đẩy thành công lên github của mình, và mọi người có thể xem được.
 
    // nếu như mình hoặc người khác chỉnh sửa trên github.com. thì ta dùng lệnh 
         $ git pull ( để đồng bộ về máy )
 
 	
-2.
-  GIT LOG
+2. GIT LOG
 
 -  Để xem lịch sử của các lần commit ( thay đổi ) ta sử dụng lệnh
 
@@ -68,24 +66,23 @@ sử dụng dấu `*` để gom toàn bộ. Sau đó có thể sử dụng lện
    - Các %tag phải được đặt trong cặp dấu ngoặc kẹp và có thể use nhiều %tag khác nhau.
 
             + Danh sách các %tag
-                %H - mã checksum của commit
-                %h - mã checksum của commit (thu gọn)
-                %T - ?
-                %t - ?
-                %P - ?
-                %p - ?
-                %an - Tên người dùng.
-                %ae - Tên email.    
-                %ad -  thời gian commit.
-                %ar - phút kể từ lúc commit.
-                %cn - tên người commit.
-                %ce - email người commit.
-                %cd - thời gian commit.
-                %cr - thời gian từ lúc lúc commit.
-                %s - Tiêu đề.
+                %H - Commit hash
+                %h - Abbreviated commit hash
+                %T - Tree hash
+                %t - Abbreviated tree hash
+                %P - Parent hashes
+                %p -  Abbreviated parent hashes
+                %an - Author name
+                %ae - Author e-mail   
+                %ad - Author date (format respects the –date=option)
+                %ar - Author date, relative
+                %cn - Committer name
+                %ce - Committer email
+                %cd - Committer date
+                %cr - Committer date, relative
+                %s - Subject
 
-3.
-      undo Commit
+3. undo Commit
 
    - Nếu cần xóa bỏ lần commit trước và cần (undo-hủy) để commit lại thì có thể sử dụng tham số ``--amend`` trong lệnh git commit
 
@@ -94,13 +91,11 @@ sử dụng dấu `*` để gom toàn bộ. Sau đó có thể sử dụng lện
    - Nếu ta đã đưa một tập tin nào đó vào Staging Area nhưng bây giờ muốn loại bỏ ra khỏi đây để không phải bị commit theo thì có thể sử dụng lênh:
 
       `$ git reset HEAD ten_file`
-	
-   - Đánh dấu commit với TAG
 
-       - Nếu bạn commit quá nhiều thì sẽ gây khó khăn cho bạn về sau nếu cần xem lại thông tin của lần commit trước mà bạn có thể gắn thẻ đánh dấu (tag) cho mỗi commit và khi cần xem ta chỉ cần sử dụng lệnh `git show tên_tag` là đã có thông tin rất rõ ràng, ngoài ra nó còn giúp ta dễ dàng diff (đối chiếu) sau này khi không cần nhớ checksum (dù chỉ cần nhớ           vài ký tự đầu tiên) của mỗi commit mà chỉ cần nhớ tag, cũng như có thể tạo thêm branch từ tag để bạn thuận tiện hơn trong việc phân nhánh.
 
-4.
-   - Lightweigh Tag và Annotated Tag
+4. Đánh dấu commit với Tag
+  - Nếu bạn commit quá nhiều thì sẽ gây khó khăn cho bạn về sau nếu cần xem lại thông tin của lần commit trước mà bạn có thể gắn thẻ đánh dấu (tag) cho mỗi commit và khi cần xem ta chỉ cần sử dụng lệnh `git show tên_tag` là đã có thông tin rất rõ ràng, ngoài ra nó còn giúp ta dễ dàng diff (đối chiếu) sau này khi không cần nhớ checksum (dù chỉ cần nhớ vài ký tự đầu tiên) của mỗi commit mà chỉ cần nhớ tag, cũng như có thể tạo thêm branch từ tag để bạn thuận tiện hơn trong việc phân nhánh.
+Lightweigh Tag và Annotated Tag
 
    - Trong Git có 2 kiểu tag chính đó là:
 
