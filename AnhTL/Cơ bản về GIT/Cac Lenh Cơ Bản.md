@@ -23,7 +23,7 @@ sử dụng dấu `*` để gom toàn bộ. Sau đó có thể sử dụng lện
 
 `$ git push origin master ( origin -  là tên remote || master - là tên (branch - nhánh )`
 
-- như vậy là đã đẩy thành công lên github của mình, và mọi người có thể xem được.
+- như vậy là đã đẩy thành công lên github của bạn, và mọi người có thể xem được.
 
    // nếu như mình hoặc người khác chỉnh sửa trên github.com. thì bạn dùng lệnh:
    
