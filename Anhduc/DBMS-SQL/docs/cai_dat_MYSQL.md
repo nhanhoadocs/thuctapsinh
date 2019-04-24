@@ -1,8 +1,8 @@
 Trong RDBMS thì có hai loại chính được sử dụng 
-# 1.Hệ quản trị CSDL quan hệ có cấu trúc(SQL)
+# 1.Hệ quản trị CSDL quan hệ có cấu trúc(MYSQL)
 SQL chính là viết tắt của Structured Query language. Một cơ sở dữ liệu quan hệ xác định các mối quan hệ dưới dạng các bảng. Cơ sở quan hệ dữ liệu có cấu trúc :  MySQL, Oracle, MS SQL Server, Sybase,....
 # 2. Hệ quản trị CSDL  quan hệ phi cấu trúc(NOSQL)
-NoSQL là một DMS phi quan hệ, không yêu cầu một lược đồ cố định, tránh các phép nối, và dễ dàng mở rộng. Cơ sở dữ liệu NoSQL được sử dụng cho các kho dữ liệu phân tán với nhu cầu lưu trữ dữ liệu khổng lồ
+NoSQL là một DMS phi quan hệ, không yêu cầu một lược đồ cố định, tránh các phép nối, và dễ dàng mở rộng. Cơ sở dữ liệu NoSQL được sử dụng cho các kho dữ liệu phân tán với nhu cầu lưu trữ dữ liệu khổng lồ. Mongdb; NOSQL.....
 
 # So sánh SQL và NOSQL 
 | Nội dung    |      SQL           |         NOSQL          |
