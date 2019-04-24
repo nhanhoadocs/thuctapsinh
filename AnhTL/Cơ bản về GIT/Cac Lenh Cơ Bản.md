@@ -6,8 +6,8 @@
 - Ở đoạn trên, nó hiển thị dòng thông báo mình đã khởi tạo một kho Git trống tại đường dẫn như trên. 
 Lưu ý rằng thư mục ẩn .git/ là nơi nó sẽ chứa các thiết lập về Git cũng như lưu lại toàn bộ thông tin về kho chứa, bạn không cần đụng chạm gì vào thư mục .git/ này.
 
--  Nếu kho chứa của ta đã có sẵn mã nguồn thì ta cần phải đưa các tập tin về trạng thái Tracked 
-nhằm có thể làm việc được với Git. Để làm việc này, ta sẽ cần sử dụng lệnh `git add tên_file`, có thể 
+-  Nếu kho chứa của bạn đã có sẵn mã nguồn thì bạn cần phải đưa các tập tin về trạng thái Tracked 
+nhằm có thể làm việc được với Git. Để làm việc này, bạn sẽ cần sử dụng lệnh `git add tên_file`, có thể 
 sử dụng dấu `*` để gom toàn bộ. Sau đó có thể sử dụng lệnh git status để xem danh sách các tập tin đã được tracked.
 
 `$ git add README.txt`
@@ -17,7 +17,7 @@ sử dụng dấu `*` để gom toàn bộ. Sau đó có thể sử dụng lện
 
 `$ git commit -m "miêu tả"`
 
-- Bây giờ thì ta đã hoàn thành việc commit lần đầu tiên các tập tin mà bạn đã đưa vào kho.
+- Bây giờ thì bạn đã hoàn thành việc commit lần đầu tiên các tập tin mà bạn đã đưa vào kho.
 
 - Tiếp theo sẽ đẩy từ Staging area lên local repository.
 
@@ -25,26 +25,27 @@ sử dụng dấu `*` để gom toàn bộ. Sau đó có thể sử dụng lện
 
 - như vậy là đã đẩy thành công lên github của mình, và mọi người có thể xem được.
 
-   // nếu như mình hoặc người khác chỉnh sửa trên github.com. thì ta dùng lệnh:
+   // nếu như mình hoặc người khác chỉnh sửa trên github.com. thì bạn dùng lệnh:
+   
 `$ git pull ( để đồng bộ về máy )`
 
 	
 ## 2. GIT LOG
 
--  Để xem lịch sử của các lần commit ( thay đổi ) ta sử dụng lệnh
+-  Để xem lịch sử của các lần commit ( thay đổi ) ban sử dụng lệnh
 
 `$ git log`
 
-- Để xem chi tiết hơn ta thêm -p
+- Để xem chi tiết hơn bạn thêm -p
 
 `$ git log -p`
 
     // nếu log quá dài có thể ấn phím mũi tên để di chuyển hoặc ấn Ctrl + Z để out 
-- Để xem log gần nhất ta thêm tham số -1.
+- Để xem log gần nhất bạn thêm tham số -1.
 
 `$ git log -1`
 
-    - Ta còn có thể xem sử dụng thêm 1 số tùy chọn để xem log tối ưu hơn.
+    - bạn còn có thể xem sử dụng thêm 1 số tùy chọn để xem log tối ưu hơn.
 
            `$ git log --since,  --after : xem các lần commit kể từ ngày nhất định.`
 
@@ -86,13 +87,13 @@ sử dụng dấu `*` để gom toàn bộ. Sau đó có thể sử dụng lện
 
 `$ git commit --amend -m "hehe"`
 
-- Nếu ta đã đưa một tập tin nào đó vào Staging Area nhưng bây giờ muốn loại bỏ ra khỏi đây để không phải bị commit theo thì có thể sử dụng lênh:
+- Nếu bạn đã đưa một tập tin nào đó vào Staging Area nhưng bây giờ muốn loại bỏ ra khỏi đây để không phải bị commit theo thì có thể sử dụng lênh:
 
 `$ git reset HEAD ten_file`
 
 
 ## 4. Đánh dấu commit với Tag
-- Nếu bạn commit quá nhiều thì sẽ gây khó khăn cho bạn về sau nếu cần xem lại thông tin của lần commit trước mà bạn có thể gắn thẻ đánh dấu (tag) cho mỗi commit và khi cần xem ta chỉ cần sử dụng lệnh `git show tên_tag` là đã có thông tin rất rõ ràng, ngoài ra nó còn giúp ta dễ dàng diff (đối chiếu) sau này khi không cần nhớ checksum (dù chỉ cần nhớ vài ký tự đầu tiên) của mỗi commit mà chỉ cần nhớ tag, cũng như có thể tạo thêm branch từ tag để bạn thuận tiện hơn trong việc phân nhánh.
+- Nếu bạn commit quá nhiều thì sẽ gây khó khăn cho bạn về sau nếu cần xem lại thông tin của lần commit trước mà bạn có thể gắn thẻ đánh dấu (tag) cho mỗi commit và khi cần xem ta chỉ cần sử dụng lệnh `git show tên_tag` là đã có thông tin rất rõ ràng, ngoài ra nó còn giúp bạn dễ dàng diff (đối chiếu) sau này khi không cần nhớ checksum (dù chỉ cần nhớ vài ký tự đầu tiên) của mỗi commit mà chỉ cần nhớ tag, cũng như có thể tạo thêm branch từ tag để bạn thuận tiện hơn trong việc phân nhánh.
 Lightweigh Tag và Annotated Tag
 
 - Trong Git có 2 kiểu tag chính đó là:
@@ -128,9 +129,9 @@ Lightweigh Tag và Annotated Tag
 
 - Thêm tag cho các commit cũ.
 
-- Ở trên thì ta chỉ tạo ta tag cho commit cuối cùng của bạn. còn nếu bạn có rất nhiều mà cần gắn tag thì chỉ cần thêm mã checksum ( hoặc 1 đoạn mã checksum ) của lần commit đó
+- Ở trên thì bạn chỉ tạo tag cho commit cuối cùng của bạn. còn nếu bạn có rất nhiều mà cần gắn tag thì chỉ cần thêm mã checksum ( hoặc 1 đoạn mã checksum ) của lần commit đó
 
-- để xem mã checksum các lần commit trước thì ta dùng lệnh:
+- để xem mã checksum các lần commit trước thì bạn dùng lệnh:
 
 `$ git log --pretty=oneline`
 
@@ -142,7 +143,7 @@ Lightweigh Tag và Annotated Tag
 
 `$ git tag`
                     
-- Ta sẽ dùng lệnh git `push --tags` để đẩy toàn bộ tag lên REPO
+- bạn sẽ dùng lệnh git `push --tags` để đẩy toàn bộ tag lên REPO
 
 `$ git push --tags`
 
@@ -151,46 +152,47 @@ Lightweigh Tag và Annotated Tag
 
 - Branch là một phân nhánh trong một cây dự án để để ta có thể sửa toàn bộ mã nguồn mà không ảnh hưởng tới phân nhánh gốc ( master )
 
-- Bây giờ ta có thể truy cập vào dữ liệu mà ta đã commit thông qua tag kèm theo việc tạo 1 Branch mới với lệnh `git checkout -b  tên_branch tên_tag` 
+- Bây giờ bạn có thể truy cập vào dữ liệu mà bạn đã commit thông qua tag kèm theo việc tạo 1 Branch mới với lệnh `git checkout -b  tên_branch tên_tag` 
 
   - Ví dụ mình muốn đưa cái tag a1 vào 1 branch mới tên version1 thì sẽ viết như sau:
 
 `$ git check -b version1 a1-an`
 
-- Lúc này ta đã tự động chuyển qua branch version1 thay vì master ban đầu, kèm theo đó là dữ liệu của commit được gắn tag a1-an
+- Lúc này bạn đã tự động chuyển qua branch version1 thay vì master ban đầu, kèm theo đó là dữ liệu của commit được gắn tag a1-an
 
-- Bây giờ nếu ta muốn làm việc thêm với branch này thì cứ làm việc như khi ta ở nhánh (mặc định(master)) . Để chuyển về lại master, ta gõ lệnh:
+- Bây giờ nếu bạn muốn làm việc thêm với branch này thì cứ làm việc như khi bạn ở nhánh (mặc định(master)) . Để chuyển về lại master, bạn gõ lệnh:
 
 `$ git checkout master`
 
-- Để push cái branch này lên ta có thể sử dụng lệnh:
+- Để push cái branch này lên bạn có thể sử dụng lệnh:
 `$ git push origin version1` 
 
-// origin chính là tên địa chỉ remote của repository mặc định mà Git tự đặt khi ta clone.
+// origin chính là tên địa chỉ remote của repository mặc định mà Git tự đặt khi bạn clone.
 
 	
 ## 6.Sơ lược Remote Repository và Origin
 
 - view lại Github là 1 máy chủ từ REPO từ xa nên mình sẽ gọi nó là Remote Repository, nghĩa là Repository này không nằm trên máy tính của mình.
-- ở phần đó ta đẩy dữ liệu lên Repository bằng cách dùng lệnh git push origin master. master là tên branch - nhánh, nhưng cái oringin trong đoạn đó chính là tên Remote Repository: mặc định khi clone một Repository thì nó tự đặt tên là origin
+- ở phần đó bạn đẩy dữ liệu lên Repository bằng cách dùng lệnh git push origin master. master là tên branch - nhánh, nhưng cái oringin trong đoạn đó chính là tên Remote Repository: mặc định khi clone một Repository thì nó tự đặt tên là origin
 
-- Để kiểm tra tên remote repository thì ta gõ lệnh:
+- Để kiểm tra tên remote repository thì bạn gõ lệnh:
 `$ git remote -v`
 
-  - Trong đó ta có thể thấy cái repository mình đã clone đều được đặt tên là " origin " và mỗi repository ta có 2 hành động
+  - Trong đó bạn có thể thấy cái repository mình đã clone đều được đặt tên là " origin " và mỗi repository bạn có 2 hành động:
 
 ` fetch ( lấy dữ liệu về từ server )`
 ` push ( gửi dữ liệu lên server )`
 - Đổi tên remote
 
-- để đổi tên cho dễ quản lý nếu như ta có nhiều remote repository ta dùng lệnh:
+- để đổi tên cho dễ quản lý nếu như bạn có nhiều remote repository, bạn dùng lệnh:
 
 `$ git remote rename tên_cũ tên_mới`
-- trường hợp ta muốn thêm 1 remote repo để lấy dữ liệu khi cần có thể sử dụng lệnh:
+
+- trường hợp bạn muốn thêm 1 remote repo để lấy dữ liệu khi cần có thể sử dụng lệnh:
 
 `$ git remote add ten_remote URL`
 
-- Sau đó nếu ta muốn lấy dữ liệu từ cái URL vừa thêm kia về chỉ cần sử dụng lệnh:
+- Sau đó nếu bạn muốn lấy dữ liệu từ cái URL vừa thêm kia về chỉ cần sử dụng lệnh:
 
 `$ git fetch ten_remote`
 
@@ -198,7 +200,7 @@ Lightweigh Tag và Annotated Tag
 
 - Còn nếu bạn muốn nó lấy về trực tiếp mà không cần gộp thì sử dụng lệnh git pull tên_remote, tuy nhiên mình khuyến khích bạn nên gộp vào branch khi cần và nhớ cẩn thận trong việc gộp, tốt nhất nên tạo thư mục mới trong thư mục làm việc của bạn rồi vào đó mà lấy về.
 
-### Sự khác nhau giữaclone, fetch và pull
+### Sự khác nhau giữa clone, fetch và pull
 - Có thể bây giờ bạn đã biết được 3 lệnh để lấy dữ liệu về từ repository đó là git clone, git fetch và git pull. Nhưng cả ba loại đều là lấy dữ liệu, thế sự khác nhau của nó là gì?
 
 ### git clone
@@ -214,10 +216,12 @@ Lightweigh Tag và Annotated Tag
 - Chúng ta không chỉ kết nối với một remote repository qua giao thức HTTP hay HTTPS mà còn có thể chọn nhiều giao thức khác, dưới đây là một vài giao thức remote repository.
 
 ### Local Repository
-- Giao thức này nghĩa là bạn kết nối tới một repository nào đó trên chính máy tính của bạn và URL của giao thức sẽ có dạng /path/repository/.
+- Giao thức này nghĩa là khi bạn kết nối tới một repository nào đó trên chính máy tính của bạn và URL của giao thức sẽ có dạng /path/repository/.
 
 ### HTTP Repository
 - Giao thức thông dụng nhất cũng như dễ hiểu nhất, thường được sử dụng nếu bạn dùng các dịch vụ remote repository như Github hay Assembla, nó sẽ bao gồm định dạng http://domain.com/repository.git hoặc https://domain.com/repository.git.
 
 ### SSH Repository
-- Giao thức này thường được dùng trên các nhu cầu tạo một server repository riêng và kết nối thông qua giao thức SSH. Đường dẫn của giao thức này sẽ có dạng là user@server:/path/repository.git. Ở phần cuối serie mình sẽ hướng dẫn bạn cách tạo một repository server riêng và nó là lựa chọn rất tốt nếu bạn làm việc nhóm mà không cần phụ thuộc vào các dịch vụ như Github hay Assembla.
+- Giao thức này thường được dùng trên các nhu cầu tạo một server repository riêng và kết nối thông qua giao thức SSH. Đường dẫn của giao thức này sẽ có dạng là user@server:/path/repository.git. 
+### Lời kết
+- Trong bài này em có thể hiểu được 1 số lệnh cơ bản, và cách chúng hoạt động như thế nào. Trong thời gian tới em sẽ tìm hiểu nhiều hơn về các lệnh nâng cao.
