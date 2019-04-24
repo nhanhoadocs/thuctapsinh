@@ -1,0 +1,76 @@
+ggh# Data Backup
+
+# 1. Lệnh Rsync 
+- Là một công cụ dùng để sao chép và đồng bộ file/ thư mục được dùng rất phổ biết. 
+- Có thể đồng bộ hóa dữ liệu trên local hoặc giữa các server với nhau một cách dễ dàng
+- Các tính năng nổi bật của Rsync 
+    - Sao chép cả symbolic link, user, group, permission giúp bảo toàn dữ liệu
+    - rsync nhanh hơn SCP,  nó dùng thuật toán thông minh chỉ sao lưu những dữ liệu thay đổi 
+    - rsync nén dữ liệu nếu dữ liệu đó không tồn tại trên source 
+    - Đồng bộ dữ liệu giữa hai máy chủ linux từ xa 
+    - rsync bảo mật dữ liệu truyền trên internet vì nó cho phép mã hóa dữ liệu trong quá trình sử dụng transfer 
+    - rsync không yêu cầu quyền super-user 
+    - rsync tiết kiệm băng thông vì dùng file nén 
+    - rsync chỉ sao lưu những gì khác nhau 
+    - rsync có hai loại: 1 là dùng như một lệnh copy bình thường. 2 là ở dạng daemon
+- Cài đặt Rsync 
+    - Trên ubuntu ta dùng lệnh 
+        - ` apt-get install rsync ` 
+    - Trên Red Hat và CentOS 
+        - ` yum install rsync `
+- Sử dụng câu lệnh rsync  
+    - Lệnh cơ bản: `rsync options source destination` 
+        - Source: dữ liệu nguồn 
+        - Destination: dữ liệu đích 
+        - Options : môt số tùy chọn thêm
+    - Các tham số khi viết lệnh `Rsync`
+        - `-v`: hiển thị trạng thái kết quả 
+        - `-r`: copy dữ liệu recursively, nhưng không đảm bảo thông số file 
+        - `-a`: cho phép copy dữ liệu, đồng thời giữ nguyên được tất cả các thông số của thư mục và file
+        - `-z`: nén dữ liệu trước khi truyền đi 
+        - `-e` sử dụng giap thức SSH để mã hóa dư liệu 
+        - `-P` gửi tiếp các file chưa được truyền khi mất kết nối 
+        - `--delete`: xóa dữ liệu ở destination nếu source không tồn tại dữ liệu đó
+        - `--exculede` lọai trừ ra những dữ liệu ko muốn truyền di 
+        - `--max-size` giới hạn những file lớn được đồng bộ 
+        - `--remove-sourrce-file` tự động xóa dữ liệu nguồn sau khi copy xong  
+    - Nếu câu lệnh kết thúc bằng `/` thì sẽ chỉ copy nội dung trong folder còn không sẽ copy cả folder
+# 2 Nén file 
+- Nén 1 file độc lập 
+    - ` tar -cvf ten_nen.tar file_can_nen.txt`
+- Nén 2 file vào một 
+    - `tar -cvf ten_nen.tar file1.txt file2.txt`
+- Lệnh xem danh sách file trong một file nén mà ko cần giải nén 
+    - `tar -tf ten_file.tar`
+- Đuôi zip 
+    - ` zip ten_nen.zip file_nen.txt `: nen 1 file 
+    - `zip -r ten_nen.zip file1_nen.txt file2.txt` : nén nhiều file vào 1 file 
+# 3 Giải nén 
+- Đuôi tar
+    - ` tar -vxf ten_file.tar`
+    - Giải nén vào một thư mục khác: `tar -vxf ten_file.tar -c (đường dẫn đến thư mục)`.
+- Đuôi .tar.gz 
+    - `tar -vxfz ten_file.tar.gz`
+- Đuôi .tar.bz2
+    - `tar -vxfj ten_file.tar.bz2`
+- Đuôi zip 
+    - `unzip -o ten.zip` : giải nén đè lên file nén 
+# 4 copy ổ đĩa ( lệnh dd)
+- Câu lệnh dd thường được sử dụng trong một số trường hợp sau
+    - Sao lưu và phục hồi toàn bộ dữ liệu ổ cứng 
+    - Chuyển đổi định dạng dữ liệu từ ASCII sang EBCDIC và ngược lại 
+    - Sao lưu lại MBR trong máy
+    - Chuyển đổi chữ thường sang chữ in hoa 
+    - Tạo 1 file với size cố định 
+    - Tạo 1 file ISO
+- Cú pháp câu lệnh 
+    - ` dd if=<địa chỉ đầu vào > of=< địa chỉ đầu ra > option=`
+- Các option cơ bản 
+    - `bs`  : quá trình đọc ghi bao nhiêu byte một lần đọc 
+    - `cbs `: chuyển đổi bao nhiều byte một lần 
+    - `count`: Thực hiện bao nhiêu block trong quá trình thực thi câu lệnh 
+    - `if`  : chỉ đường dẫn ghi đầu vào 
+    - `of`  : chỉ đường dẫn ghi đầu ra 
+    - `ibs` : chỉ ra số byte một lần đọc 
+    - `obs` : chỉ ra số byte một lần ghi 
+    - `skip`: bỏ qua bao nhiêu block đầu vào
