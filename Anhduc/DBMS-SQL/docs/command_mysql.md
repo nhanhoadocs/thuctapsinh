@@ -1,5 +1,13 @@
 Các lệnh giúp sử dụng MYSQL
-# I. Thao tác với Database
+# Mục lục 
+I. [Thao tác với database](#a)
+II. [Thao tác với với user](#b)
+III. [Thao tác với table](#c)
+Iv. [Thao tác với cột và hàng](#d)
+
+<a name="a">
+
+# I. Thao tác với Database</a>
 ## 1. Tạo một database
 ```
 CREATE database tên-database;
@@ -22,7 +30,13 @@ DROP database tên-database;
 USE tên-database;
 ```
 ![](../images/MYSQL/screenshot_11.png)
-# II. Thao tác với user 
+
+
+
+
+<a name="b">
+
+# II. Thao tác với user </a>
 ## 1. Tạo ra một user 
 ```
 create user 'user-name'@'IP' identified by 'password';
@@ -58,7 +72,10 @@ mysql> GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost'
 mysql> UPDATE mysql.user SET password=PASSWORD("newpass") WHERE User='username';
 ```
 ![](../images/MYSQL/screenshot_16.png)
-# III. Các thao tác với table 
+
+<a name="c">
+
+# III. Các thao tác với table </a>
 Trong một trường thì có kiểu dữ liệu sẽ được phân ra thì một số kiểu của trường là: 
 - Kiểu số : int; float;...
 - date time: yyyy-mm-dd : ngày tháng năm ; HH:MM:SS (giờ phút giây)
@@ -89,7 +106,9 @@ SELECT * FROM tablename;
 ```
 ![](../images/MYSQL/screenshot_21.png)
 
-# IV. Thao tác với cột và hàng 
+<a name="d">
+
+# IV. Thao tác với cột và hàng </a>
 ## 1. Hiển thị các cột trong bảng 
 ```
 mysql> DESC mytable;

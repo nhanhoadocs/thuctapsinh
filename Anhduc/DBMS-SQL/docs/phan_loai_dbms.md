@@ -29,24 +29,24 @@ MYSQL là một hệ thống quản lý cơ sở dữ liệu quan hệ. Sau khi 
 ## 3.2 Cách cài đặt 
 Mô hình bao gồm 2 VM một máy đóng vai trò là MYSQL server và một máy đóng vai trò là MYSQL client 
 
-![](/images/MYSQL/mysql.png)
+![](../images/MYSQL/mysql.png)
 
 Download file từ trên mạng với link 
 ```
 wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
 ```
 
-![](/images/MYSQL/screenshot_1.png)
+![](../images/MYSQL/screenshot_1.png)
 
 ```
 rpm -ivh mysql-community-release-el7-5.noarch.rpm
 ```
-![](/images/MYSQL/screenshot_2.png)
+![](../images/MYSQL/screenshot_2.png)
 
 ```
 yum install mysql-server
 ```
-![](/images/MYSQL/screenshot_3.png)
+![](../images/MYSQL/screenshot_3.png)
 Sau khi download xong rồi thì chúng ta bât nó lên với dòng lệnh
 ```
 systemctl start mysqld
@@ -55,9 +55,9 @@ systemctl start mysqld
 ```
 mysql_secure_installation
 ```
-![](/images/MYSQL/screenshot_4.png)
+![](../images/MYSQL/screenshot_4.png)
 
-![](/images/MYSQL/screenshot_5.png)
+![](../images/MYSQL/screenshot_5.png)
 
 Ta sẽ giải thích các mục như sau: 
 - Enter current password for root (enter for none): là nhập mật khẩu hiện tại của root hiện tại nó chưa có thì chúng ta chỉ cần enter qua 
@@ -80,7 +80,7 @@ Trong đó ta có:
 - IP : máy có thể truy cập user này muốn  tất cả các user đều đăng nhập được ta để `%`
 - password : là pass để ta đăng nhập 
 
-![](/images/MYSQL/screenshot_6.png)
+![](../images/MYSQL/screenshot_6.png)
 
 Mỗi user đều cần được phân quyền để có thể sử dụng được. Có các quyền cho user sau: 
 - `ALL PRIVILEGES` : Tất cả các quyền 
@@ -94,13 +94,13 @@ Mỗi user đều cần được phân quyền để có thể sử dụng đư�
 
 **Nếu muốn áp dụng cho tất cả các database thì dùng 2 dấu `*` để thay thế**
 
-![](/images/MYSQL/screenshot_7.png)
+![](../images/MYSQL/screenshot_7.png)
 
 Sau đó ta đăng nhập với server bằng client 
 ```
 mysql -u user -p -h IPserver
 ```
 
-![](/images/MYSQL/screenshot_8.png)
+![](../images/MYSQL/screenshot_8.png)
 
 *Ta có thể cho phép user đăng nhập bằng máy khác hoặc có thể cho nó remote ngay bằng một user khác của máy*
