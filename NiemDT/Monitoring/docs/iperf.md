@@ -2,7 +2,7 @@
 
 Để sử dụng được câu lệnh này ta cần mô hình client/server một máy đóng vai trò client và một máy đóng vai trò là server. 
 
-![](/Monitoring/images/iperf/1.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Monitoring/images/iperf/1.png)
 
 Trong mô hình này máy server sẽ lắng nghe kết nối từ máy client gửi đến. Máy client sẽ liên tục gửi các gói tin để test bandwidth của card mạng. Gói tin gửi đi ở đây có thể là TCP hoặc UDP do ta quyết định.
 

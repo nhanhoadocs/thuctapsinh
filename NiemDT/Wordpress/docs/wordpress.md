@@ -34,7 +34,7 @@ Nếu không muốn bạn có thể thực hiện mở port 80 trên Web Server 
 
 ## Mô hình như sau
 
-![](/wordpress/images/wordpress1/1.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Wordpress/images/wordpress1/1.png)
 
 Trong đó 
  * Dải IP 192.168.50.x/24 là dải IP local không thể ra được internet.
@@ -133,7 +133,7 @@ systemctl enable httpd
 
 Kết quả trả về như sau
 
-![](/wordpress/images/wordpress1/2.1.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Wordpress/images/wordpress1/2.1.png)
 
 **Bước 2: Cài PHP**
 
@@ -161,7 +161,7 @@ Mở trình duyệt web truy cập địa chỉ `http://địa chỉ Ip/info.php
 
 Kết quả trả về như sau là thành công
 
-![](/wordpress/images/wordpress1/3.1.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Wordpress/images/wordpress1/3.1.png)
 
 **Bước 3: Cài wordpress**
 
@@ -238,4 +238,4 @@ Bây giờ mở trình duyệt và truy cập địa chỉ của bạn để ti�
 
 Sau khi cấu hình và đăng nhập vào sẽ có được giao diện như sau
 
-![](/wordpress/images/wordpress1/4.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Wordpress/images/wordpress1/4.png)
