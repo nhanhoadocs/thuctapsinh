@@ -15,12 +15,10 @@ sử dụng dấu `*` để gom toàn bộ. Sau đó có thể sử dụng lện
 
 - sau khi tập tin đã được đưa vào trạng thái tracked và nếu một tập tin đã tracked thì nó phải được đưa vào lại `Staging Area `
 
-(giải thích ở bài sau) cũng bằng lệnh git add thì ta mới có thể tiến hành ủy thác (commit) nhằm lưu lại bản chụp các thay đổi. Lệnh commit sẽ có cấu trúc git `commit -m "Lời nhắn"`, lúc này tất cả các tập đang trong trạng thái tracked (file mới) hoặc một
- tập tin đã được tracked nhưng có một sự thay đổi mới thì sẽ được commit.
-
 `$ git commit -m "miêu tả"`
 
 - Bây giờ thì ta đã hoàn thành việc commit lần đầu tiên các tập tin mà bạn đã đưa vào kho.
+
 - Tiếp theo sẽ đẩy từ Staging area lên local repository.
 
 `$ git push origin master ( origin -  là tên remote || master - là tên (branch ( nhánh ))`
