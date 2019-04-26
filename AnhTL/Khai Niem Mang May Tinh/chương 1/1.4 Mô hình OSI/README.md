@@ -11,7 +11,7 @@ Môi lớp sẽ có 1 công việc riêng
 ## Mô ta chi tiết từng lớp.
 ### Lớp 1 - Physical
 - Chức năng là truyền 1 dòng bit (0,1) qua 1 đường truyền cụ thể nào đó, Ví dụ như cáp xoắn đôi UTP, FTP, hay cáp đồng trục, hay cáp quang ... đó chính là vấn đề mà lớp 1 này quy định. 
-  - chung quy lại lớp 1 sẽ xây dựng được 1 đường truyền vậy lý cho các host, và sau khi có đường truyền vật lý rồi, thì làm cách nào để các lớp ở bên trên có thể truy cập vào đường truyền vật lý và chia sẻ đường truyền vật lý trên mạng thì đó là lớp Data Link
+- Lớp 1 sẽ xây dựng được 1 đường truyền vậy lý cho các host, và sau khi có đường truyền vật lý rồi, thì làm cách nào để các lớp ở bên trên có thể truy cập vào đường truyền vật lý và chia sẻ đường truyền vật lý trên mạng thì đó là lớp Data Link
 ### Lớp 2 - Data Link
 - Là lớp liên kết dữ liệu thì sẽ thực hiện chức năng điều khiển truy nhập vào đường truyền vật lý (lớp 1) và nó thực hiện giao tiếp với lớp bên trên là lớp Network.
 Các lớp liên kết dữ liệu định dạng các thông điệp vào một khung dữ liệu(Frame), và thêm vào đó một header chứa các địa chỉ phần cứng nơi nhận và địa chỉ nguồn của nó.Tiêu đề này chịu trách nhiệm cho việc tìm kiếm các thiết bị đích tiếp theo trên một mạng nội bộ.
@@ -34,7 +34,8 @@ Các chức năng LLC bao gồm:
 - Cung cấp cơ chế dò lỗi, sửa lỗi tin cậy và cơ chế phục hồi thông tin.
 
 ### lớp 5 - Session
-- sẽ thực hiện thao tác tuyền thông liên host, thiết lập quản lý và giải phóng các session. không phải ứng dụng muốn join 
+- Lớp này sẽ thực hiện thao tác tuyền thông liên host, thiết lập, duy trì và kết thúc kết nối.
+- Đồng bộ hội thoại.
 ### lớp 6 - Presentation
 - Lớp này sẽ làm nghiệm vụ thông ngôn, đứng ra đảm bảo rằng là dữ liệu từ đầu này gửi đến có thể đọc được ở đầu nhận.
 - Nó sẽ định dạng lại dữ liệu.
