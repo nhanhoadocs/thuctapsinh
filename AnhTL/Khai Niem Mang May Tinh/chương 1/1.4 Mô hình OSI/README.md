@@ -2,6 +2,7 @@
 Mô hình OSI là một trong những công cụ quan trọng nhất để giúp ta nắm bắt cách làm việc của các thiết bị mạng như router, switch, PC ...
 OSI viêt tắt của từ Open System Interconnection (liên kết nối hệ thống mở)
 ![alt](http://www.adminvietnam.org/wp-content/uploads/2016/10/osi.png)
+
 Ví dụ: 1 máy ở Việt Nam muốn gửi tới 1 máy ở Mỹ và 2 máy này của các hãng khác nhau thì sẽ không truyền tin được do các chuẩn của các máy là khác nhau. Thì Mô hình phân lớp OSI sẽ giúp 2 máy này trao đổi được với nhau.
 Mô hình OSI sẽ chia ra làm 7 lớp công việc, mỗi lớp sẽ quy định đặc tính kỹ thuật, tính năng, chuẩn cụ thể mà buộc các nhà sản xuất thiết bị khi tham gia phải tuân theo.
 Nó sẽ đảm bảo tính tương tích về mặt công nghệ, Lúc này thiết bị của các hãng khác nhau sẽ giao tiếp được với nhau
