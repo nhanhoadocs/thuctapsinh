@@ -8,8 +8,8 @@ Mô hình OSI sẽ chia ra làm 7 lớp công việc, mỗi lớp sẽ quy đị
 Nó sẽ đảm bảo tính tương tích về mặt công nghệ, Lúc này thiết bị của các hãng khác nhau sẽ giao tiếp được với nhau
 Các mô hình trong OSI thường được gọi là số thay vì tên (ta sẽ gọi là "lớp 3" thay vì "lớp mạng")
 Môi lớp sẽ có 1 công việc riêng
-### Hiểu mỗi lớp
-#### Lớp 1 - Physical
+## Mô ta chi tiết từng lớp.
+### Lớp 1 - Physical
 - Chức năng là truyền 1 dòng bit (0,1) qua 1 đường truyền cụ thể nào đó, Ví dụ như cáp xoắn đôi UTP, FTP, hay cáp đồng trục, hay cáp quang ... đó chính là vấn đề mà lớp 1 này quy định. 
   - chung quy lại lớp 1 sẽ xây dựng được 1 đường truyền vậy lý cho các host, và sau khi có đường truyền vật lý rồi, thì làm cách nào để các lớp ở bên trên có thể truy cập vào đường truyền vật lý và chia sẻ đường truyền vật lý trên mạng thì đó là lớp Data Link
 ### Lớp 2 - Data Link
