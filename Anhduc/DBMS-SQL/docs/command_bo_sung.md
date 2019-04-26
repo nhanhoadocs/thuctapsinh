@@ -85,3 +85,10 @@ Dùng để chỉ ra khoảng ở dữ của 2 số
 select * from tên-bảng
 where diemthi BETWEEN 8 and 10;
 ```
+# 11. Dùng insert 
+Dùng để chèn dữ liệu vào trong bảng mà ta Muốn 
+```
+INSERT INTO ten_bang ( `truong1`, `truong2`,...`truongN` )
+                       VALUES
+                       ( 'giatri1', 'giatri2',...'giatriN' );
+```
