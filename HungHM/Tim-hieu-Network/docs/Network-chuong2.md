@@ -72,9 +72,11 @@
  - Dịch vụ tên miền 
 <a name ="2"></a>
 2.2 World wide web
+
 <a name ="b1"></a>
 2.2.1 Tổng quan về HTTP (Hyper Text Tranfer Protocol)
     "Giao thưc truyền tải siêu văn bản" là mọt trong những giao thưc chuẩn về Internet được dùng để liên hệ thông tin giữa máy cung cấp dịch vụ (web server) và máy sử dụng (web cline)
+
 <a name ="b2"></a>
 2.2.2 Kết nối liên tục và không liên tục (persistent/nonpersistent)
 
