@@ -39,3 +39,6 @@ DUAN (masoDA, tenDA, diadiemDA, masoDV)
 
 6. 
 ![](../images/lab/screenshot_5.png)
+
+7. 
+![](../images/lab/screenshot_6.png)
