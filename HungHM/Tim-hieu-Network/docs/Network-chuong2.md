@@ -26,10 +26,12 @@
 
 
  ===========================
+
 <a name ="1"></a>
  2.1 Giao thức tầng ứng dụng
+
 <a name ="a"></a>
-    2.1.1 Giao thức tầng ưnnsg dụng
+2.1.1 Giao thức tầng ứng dụng
     Cân phân biệt ứng dụng mạng và giao thức tầng ứng dụng.Giao thức tầng ứng dụng chỉ là 1 phần của ứng dụng mạng .Giao thưc tầng ứng dụng của web-HTTP(Hyper Text Tranfer Prôtcol) định nghĩa các thức truyền thông điệp giữa webcline và web server.Nhưng vậy HTTP chỉ là 1 phần của ứng dụng web
 - Mô hình khác hàng / Người phục vụ (cline/server)
   Giao thức ứng dụng mạng chia thành 2 phần hay 2 phía, phía cline và phía server
@@ -37,6 +39,7 @@
     Ưng dụng bao gồm 2 tiếng trình trên hai thiêt bị khác nhau,liên lạc với nhau qua mạng.Hai tiếng trình liên lác với nhau bằng cách gửi và nhận thông điệp socker của chúng.
 - Địa chỉ tiến trình 
     Để gửi thông điệp cho tiến trình trên máy tính khác thì tiếng trình gửi phải xác định của tiến trình nhận
+
 <a name ="aa"></a>
 2.1.2 Các yêu cầu của ứng dụng 
     Socker là giao diện giữa tiếng trình ứng dụng và thực thể giao vận.Ứng dụng gửi thông điệp qua "cửa"ở sau cánh cửa là thực thể giao vận có trách nghiệm là truyền thông điệp qua mạng máy tính tới "cửa" tiến trình nhận
@@ -129,9 +132,8 @@ CGI là một trong những công nghê đã từng được sử dụng rất r
 - Các kĩ thuật phía Server
 
 Một phương pháp giúp web server tạo nội dung động là công nghệ phía server.Ngày nay có nhiều công nghệ như vậy:
-
-    - ASP(Active Server Pages) là công nghệ của Microsoft có phân mở rộng là .asp
-    - PHP(Personal Home Pages) công nghệ mã nguồn mở phần mở rộng là PHP or PHP3
+   - ASP(Active Server Pages) là công nghệ của Microsoft có phân mở rộng là .asp
+   - PHP(Personal Home Pages) công nghệ mã nguồn mở phần mở rộng là PHP or PHP3
     - JSP(Java Server Pages) dực trên ngôn ngữ lập trình Java có phần mở rộng là .jsp
 
 <a name ="3"></a>
