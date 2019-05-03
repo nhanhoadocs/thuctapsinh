@@ -120,6 +120,22 @@ INSERT INTO ten_bang ( `truong1`, `truong2`,...`truongN` )
                        ( 'giatri1', 'giatri2',...'giatriN' );
 ```
 
+# 12. Sử dụng view 
+`view` Được dùng để để lưu một truy vấn mặc định nào đó như là một bảng.
+Cấu trúc 
+```
+create view `tên view` as truy vấn
+```
+
+ví dụ là ta sẽ tạo ra một view như là một truy vấn bao gồm masonv, hoten, ngaysinh, masodv có cấu trúc như sau 
+
+```
+create view `test` as select masonv, hoten, ngaysinh, masodv from quanly.nhanvien
+```
+sau đó ta đọc view như đọc bảng bằng truy vấn 
+```
+SELECT * FROM `accounts_v_members`;
+```
 
 # LINK THAM KHẢO 
 https://www.w3schools.com/sql/sql_select.asp
