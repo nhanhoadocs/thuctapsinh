@@ -69,7 +69,8 @@
  -  Web
  - Truyền file
  - Thử điện tử
- - Dịch vụ tên miền 
+ - Dịch vụ tên miền
+  
 <a name ="2"></a>
 2.2 World wide web
 
