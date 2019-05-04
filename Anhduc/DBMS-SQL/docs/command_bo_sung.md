@@ -84,10 +84,24 @@ Với thì thứ tự sẽ được sắp xếp theo 2 loại là ASC (tăng d�
 # 7. Sử dụng join
 Được sử dụng để lấy dữ liệu từ nhiều bảng và ghép chúng lại với nhau
 ```
-SELECT a.mssv, a.ten, b.hocphi
-    FROM sinhvienk60 a RIGHT JOIN hocphik60 b
-    where a.ten = b.ten;
+SELECT truong1, truong2 
+    FROM bang1  function JOIN bang 2
+    on bang1.truong = bang2.truong;
 ```
+
+Một số function trong lệnh join 
+- `inner join` : lấy những phần chung của 2 bảng. 
+
+![](../images/lab/bai3/screenshot_11.png)
+
+- `right join` : lấy những phần dữ liệu chung của 2 bảng và bảng 2
+
+![](../images/lab/bai3/screenshot_12.png)
+
+- `left join` : lấy những phần dữ liệu chung của 2 bảng và bảng 1
+
+![](../images/lab/bai3/screenshot_13.png)
+
 
 # 8. Sử dụng Alter 
 Dùng để sửa dữ liệu trường của bảng có thể thêm xóa và sửa đổi được trường của bảng 
