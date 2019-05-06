@@ -11,7 +11,7 @@
 
  [4. Tầng Ứng Dụng (Application Layer)](#al)
  
-![img](https://thietbimangcisco.vn/userfiles/TCP-IP-Model.png)
+ ![img](https://thietbimangcisco.vn/userfiles/TCP-IP-Model.png)
 
 ## Chức năng của các tầng.
 - <a name = "na" >Tầng 1: </a> Tầng truy cập (Network Access Layer) tầng này có thể coi là một tầng riêng biệt hoặc cũng có thể tách nó thành 2 tầng vật lý và tầng liên két dữ liệu như trong mô hình OSI. Nó được sử dụng để truyền gói tin từ tầng mạng đến các Host trong mạng.Các thiết bị vật lý như : Switch, cáp mạng, card mạng HBA-Host Bus Adapter là các thành phần truy cập.
