@@ -35,3 +35,5 @@ Cấu trúc dữ liệu trong TCP/IP
   - Trong tầng giao vận: đơn vị dữ liệu mà TCP gửi xuống gọi là TCP segment.
   - Trong tầng mạng, dữ liệu mà IP gửi xuống tầng dưới gọi là IP Datagram 
   - Trong tầng liên kết, dữ liệu được truyền đi gọi là frame.
+
+
