@@ -150,6 +150,26 @@ sau đó ta đọc view như đọc bảng bằng truy vấn
 ```
 SELECT * FROM `accounts_v_members`;
 ```
+sự khác nhau của view và tables;
+| view | tables |
+|------|--------|
+| được tạo ra từ một truy vấn. không phải là nơi lưu trữ dữ liệu | là nơi lưu trữ dữ liệu nếu xóa đi thì dữ liệu sẽ bị mất đi   |
+| Không tăng kích thước dung lượng của nó lên | sẽ tăng kích thước dung lượng khi ta thêm dữ liệu vào đó |
+| chỉ cho phép đọc dữ liệu không thể chỉnh sửa | có thể chỉnh sửa dữ liệu trên bảng | 
+
+# 13. File log trong mysql
+- Ta sẽ dùng lệnh hoặc sử file `/etc/my.cnf` để có thể enable được file log này lên 
+```
+SET global general_log = 1;
+```
+hoặc sửa file `/etc/my.cnf` ở dưới phần `mysqld`
+```
+general_log_file = /path/to/query.log
+general_log      = 1
+```
+
 
 # LINK THAM KHẢO 
 https://www.w3schools.com/sql/sql_select.asp
+
+https://stackoverflow.com/questions/6479107/how-to-enable-mysql-query-log

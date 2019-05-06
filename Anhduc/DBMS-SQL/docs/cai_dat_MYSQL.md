@@ -92,6 +92,13 @@ Mỗi user đều cần được phân quyền để có thể sử dụng đư�
 - `UPDATE` update dữ liệu trong bảng
 - `GRANT OPTION` được thêm xóa user, quyền của user
 
+*Kiểm tra phiên bản mysql* sử dụng câu lệnh
+```
+select version();
+```
+
+![](../images/lab/screenshot_7.png)
+
 **Nếu muốn áp dụng cho tất cả các database thì dùng 2 dấu `*` để thay thế**
 
 ![](../images/MYSQL/screenshot_7.png)
