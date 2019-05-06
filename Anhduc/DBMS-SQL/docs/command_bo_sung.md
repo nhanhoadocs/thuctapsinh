@@ -169,8 +169,13 @@ general_log_file = /path/to/query.log
 general_log      = 1
 ```
 
+### Giải thích lệnh trong lúc tạo file log: 
+- general_log_file: Tạo bản ghi lịch sử ra một file trong hệ thống 
+- general_log = 1 : Bật chế độ log theo dạng table 
 
 # LINK THAM KHẢO 
 https://www.w3schools.com/sql/sql_select.asp
 
 https://stackoverflow.com/questions/6479107/how-to-enable-mysql-query-log
+
+https://www.w3schools.com/sql/sql_join.asp

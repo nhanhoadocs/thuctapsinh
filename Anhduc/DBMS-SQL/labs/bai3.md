@@ -49,4 +49,7 @@ PHIEUMUON (maBD , masach, ngaymuon, ngaytra, datra)
 
 7. Tạo một view để hiển thị các thông tin về mã bạn đọc, tên bạn đọc và lớp của bạn đọc mượn sách quá hạn. Có thể dùng view này để bố sung dữ liệu vào bảng BANDOC được không?
 - Không thể bổ sung dữ liệu vào bảng bandoc được.
-- 
+- Ta thực hiện lệnh sau: 
+
+![](../images/lab/bai3/screenshot_14.png)
+
