@@ -150,7 +150,8 @@ sau đó ta đọc view như đọc bảng bằng truy vấn
 ```
 SELECT * FROM `accounts_v_members`;
 ```
-sự khác nhau của view và tables;
+sự khác nhau của view và tables
+
 | view | tables |
 |------|--------|
 | được tạo ra từ một truy vấn. không phải là nơi lưu trữ dữ liệu | là nơi lưu trữ dữ liệu nếu xóa đi thì dữ liệu sẽ bị mất đi   |
