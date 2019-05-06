@@ -4,11 +4,11 @@
 
 [2. FTP (File Transfer Protocol)](#FTP)
 
-[3. Telnet (TerminaL Network)] (telnet)
+[3. Telnet (TerminaL Network)](#telnet)
 
-[4. SMTP (Simple Mail Transfer Protocol)](SMTP)
+[4. SMTP (Simple Mail Transfer Protocol)](#SMTP)
 
-[5. POP3 (Post Office Protocol 3)](POP3)
+[5. POP3 (Post Office Protocol 3)](#POP3)
 
 ### <a name="HTTP"> 1. HTTP (HyperText Transfer Protocol) </a>
 
@@ -40,7 +40,7 @@
   - Truyền tải dữ liệu một cách đáng tin cậy và có tính hiệu quả cao.
 
 
-### <a name="Telnet"> 3. Telnet (TerminaL Network) </a>
+### <a name="telnet"> 3. Telnet (TerminaL Network) </a>
 #### Khái Niệm
 
 - Telnet là một giao thức máy tính cung cấp khả năng giao tiếp tương tác hai chiều cho các máy tính trên internet và mạng cục bộ LAN. Telnet được biết đến là giao thức đầu tiên được sử dụng khi internet ra mắt lần đầu vào năm 1969. Telnet cung cấp một giao diện dòng lệnh đáp ứng hầu hết các tiêu chuẩn cơ bản. Dần dần, việc sử dụng Telnet không còn được khuyến khích bởi có sự xuất hiện của SSH, cũng như để đề phòng các nguy cơ về bảo mật nghiêm trọng do telnet thường được sử dụng trên môi trường mạng mở. Ngoài ra, telnet cũng thiếu các chính sách xác thực và khả năng mã hóa dữ liệu.
