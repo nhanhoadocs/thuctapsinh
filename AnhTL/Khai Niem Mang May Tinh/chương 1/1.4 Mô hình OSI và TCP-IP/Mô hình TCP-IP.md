@@ -3,13 +3,13 @@
 ## Tổng quan
 -  TCP/IP là bộ giao thức cho phép kết nối các hệ thống mạng không đồng nhất với nhau. Ngày nay TCP/IP được sử dụng rộng rãi trong mạng cục bộ cũng như mạng toàn cầu. TCP/IP được xem như giản lược của mô hình tham chiếu OSI với 4 tầng như sau:
 
- [1. Tầng Truy cập mạng (Network Access)](na)
+ [1. Tầng Truy cập mạng (Network Access)](#na)
 
- [2. Tầng Mạng (Internet Layer)](il)
+ [2. Tầng Mạng (Internet Layer)](#il)
 
- [3. Tầng Giao Vận (Transport Layer)](tl) 
+ [3. Tầng Giao Vận (Transport Layer)](#tl) 
 
- [4. Tầng Ứng Dụng (Application Layer)](al)
+ [4. Tầng Ứng Dụng (Application Layer)](#al)
 
 ![img](https://thietbimangcisco.vn/userfiles/TCP-IP-Model.png)
 
