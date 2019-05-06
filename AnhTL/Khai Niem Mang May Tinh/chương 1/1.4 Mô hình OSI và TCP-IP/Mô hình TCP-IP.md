@@ -10,7 +10,6 @@
  [3. Tầng Giao Vận (Transport Layer)](#tl) 
 
  [4. Tầng Ứng Dụng (Application Layer)](#al)
-
 ![img](https://thietbimangcisco.vn/userfiles/TCP-IP-Model.png)
 
 ## Chức năng của các tầng.
