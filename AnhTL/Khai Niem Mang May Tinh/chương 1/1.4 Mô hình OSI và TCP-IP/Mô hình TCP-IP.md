@@ -24,13 +24,10 @@
 
 ## Phương thức hoạt động của bộ giao thức của TCP/IP.
  ![img](https://vnpro.vn/wp-content/uploads/2015/11/Qu%C3%A1-tr%C3%ACnh-%C4%91%C3%B3ng-m%E1%BB%9F-g%C3%B3i-d%E1%BB%AF-li%E1%BB%87u-trong-TCP-IP.jpg)
- 
 Quá trình đóng mở gói trong TCP/IP
 
-- Cũng tương tự như trong mô hình OSI, khi truyền dữ liệu , quá trình tiến hành từ tầng trên xuống tầng dưới, qua mỗi tầng dữ liệu được thêm vào thông tin điều khiển gọi là Header. Khi nhận dữ liệu thì quá trình xảy ra ngược lại. dữ liệu được truyền từ tấng dưới lên và qua mỗi tầng thì phần header tương ứng sẽ được lấy đi và khi đến tầng trên cùng thì dữ liệu không còn phần header nữa.
-
+- Cũng tương tự như trong mô hình OSI, khi truyền dữ liệu , quá trình tiến hành từ tầng trên xuống tầng dưới, qua mỗi tầng dữ liệu được them vào thông tin điều khiển gọi là Header. Khi nhận dữ liệu thì quá trình xảy ra ngược lại. dữ liệu được truyền từ tấng dưới lên và qua mỗi tầng thì phần header tương ứng sẽ được lấy đi và khi đến tầng trên cùng thì dữ liệu không còn phần header nữa.
  ![img](https://vnpro.vn/wp-content/uploads/2015/11/C%E1%BA%A5u-tr%C3%BAc-d%E1%BB%AF-li%E1%BB%87u-trong-TCP-IP.jpg)
- 
 Cấu trúc dữ liệu trong TCP/IP
 
 - Hình trên cho ta thấy lược đồ dữ liệu qua các tầng.. Trong hình ta thấy tại các tầng khác nhau dữ liệu được mang những thuật ngữ khác nhau:

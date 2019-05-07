@@ -26,9 +26,9 @@ nó không quan tâm gói tin có đến đích hay không, không biết gói t
 trên đường đi hay không).
 - UDP được sử dụng khi tốc độ là mong muốn và sửa lỗi là không cần thiết. Ví dụ, UDP
 thường được sử dụng cho chương trình phát sóng trực tiếp và trò chơi trực tuyến.
-Ví dụ, giả sử bạn đang xem hình ảnh video trực tiếp. Live Stream phát sóng thường
+Ví dụ, ta đang xem hình ảnh video trực tiếp. Live Stream phát sóng thường
 sử dụng UDP thay vì TCP. Các máy chủ chỉ cần gửi một dòng của các gói tin UDP để
-máy tính xem. Nếu bạn bị mất kết nối trong vài giây, video sẽ đóng băng cho một
-thời điểm và sau đó chuyển đến các bit hiện tại của truyền hình, bỏ qua các bit bạn
+máy tính xem. Nếu ta bị mất kết nối trong vài giây, video sẽ đóng băng cho một
+thời điểm và sau đó chuyển đến các bit hiện tại của truyền hình, bỏ qua các bit ta
 đã bị bỏ qua. Video hoặc âm thanh có thể bị bóp méo một lúc và video tiếp tục chơi
 mà không có dữ liệu bị mất.

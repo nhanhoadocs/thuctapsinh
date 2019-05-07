@@ -33,6 +33,10 @@ OSI là Open Systems Interconnection, kết nối hệ thống mở.
 
 - TCP / IP đáng tin cậy hơn OSI.
 
+- OSI có ranh giới chặt chẽ; TCP/IP không có ranh giới nghiêm ngặt.
+
+- TCP/IP tiếp cận theo chiều ngang, OSI tiếp cận theo chiều dọc.
+
 - Trong tầng ứng dụng, TCP/IP sử dụng cả tầng phiên và tầng trình diễn.
 
 - OSI sử dụng tầng phiên và tầng trình diễn khác nhau.
@@ -40,6 +44,10 @@ OSI là Open Systems Interconnection, kết nối hệ thống mở.
 TCP/IP phát triển giao thức trước sau đó mới phát triển mô hình.
 
 - OSI phát triển mô hình trước sau đó mới phát triển giao thức.
+
+TCP/IP cung cấp hỗ trợ truyền thông không kết nối trong tầng mạng.
+
+- Trong tầng mạng, OSI hỗ trợ kết nối không dây và kết nối định tuyến.
 
 - TCP/IP phụ thuộc vào giao thức, OSI là giao thức độc lập.
 
