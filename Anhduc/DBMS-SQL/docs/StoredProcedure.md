@@ -10,7 +10,7 @@ Trong Mysql Procedure có nghĩ gần như là một hàm trong ngôn ngữ c đ
 - Nếu bạn tạo ra quá nhiều Procedure thì hệ quản trị sẽ sử dụng bộ nhớ để lưu trữ các thủ tục này khá nhiều. 
 - Ngoài ra nếu bạn thực hiện quá nhiều xử lý trong mỗi thủ tục thì đồng nghĩa với việc CPU sẽ làm việc nặng 
 - Nếu sử dụng thủ tục thì sẽ rất khó phát triển trong ứng dụng, gây khó khăn ở mức logic business.
-## Cú pháp của  Stored Procedure
+# 2. Cú pháp của  Stored Procedure
 ```
 DELIMITER $$
 CREATE PROCEDURE procedureName()
@@ -34,7 +34,17 @@ show procedure status;
 ```
 call procedureName();
 ```
-## Biến trong Stored Procedure
+Ví dụ ta sẽ tạo ra một procedure đê truy xuất dữ liệu từ bảng nhân viên trong DB quản lý.
+
+![](../images/screenshot_9.png)
+
+Và kết quả sau khi gọi hàm procedure là nó sẽ hiển thị tất cả dữ liệu bảng nhân viên 
+
+![](../images/screenshot_3.png)
+
+# 3. Biến trong Stored Procedure
+Trong hàm procedure thì nó không chỉ có tác dụng truy vấn dữ liệu mà trong nó cũng có cả các biến và một số thuật toán. Đây là biến trong hàm
+
 Cú pháp 
 ```
 DECLARE variable_name datatype(size) DEFAULT default_value
@@ -45,7 +55,29 @@ Trong đó:
 - `datatype(size)` : là kiểu dữ liệu của biến và kích thước của nó
 - `DEFAULT default_value` : là gán giá trị mặc định cho biến
 
-Để gán giá trị cho biến ta dùng cú pháp
+ví dụ tạo ra một procedure có 1 biến và in ra biến đó bằng cách gọi hàm 
+
+![](../images/screenshot_4.png)
+
+![](../images/screenshot_5.png)
+
+# 4. Truyền tham số trong Procedure
+Cũng như tham số trong ngôn ngữ `C` thì tham số trong Procedure cũng có thể chuyền được giá trị vào, và cũng có kiểu dữ liệu của riêng nó.
+
+Ví dụ ta tạo ra một procedure có khai báo tham số và truyền tham số cho nó và ảnh dưới là kết quả khi ta gọi procedure đó ra.
+
+![](../images/screenshot_6.png)
+
+![](../images/screenshot_7.png)
+
+# 5. Câu lệnh if else trong Procedure
+Cú pháp 
 ```
-SET ten_bien = 12
+IF điều kiện THEN
+    câu lệnh
+   ELSEIF điều kiện THEN
+    câu lệnh 
+   ELSE
+    câu lệnh 
+END IF;
 ```
