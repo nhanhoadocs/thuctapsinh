@@ -81,3 +81,22 @@ IF điều kiện THEN
     câu lệnh 
 END IF;
 ```
+
+Ví dụ tạo một procedure đơn giản để nói về lệnh if đó là ta tạo ra một biến a nếu biến đó là 1 thì in ra màn hình là `điều kiện đúng` nếu không phải thì in ra màn hình là `điều kiện sai`
+
+![](../images/screenshot_8.png)
+
+![](../images/screenshot_10.png)
+
+# 6. câu lệnh case trong Procedure
+Cú pháp 
+```
+CASE  case_expression
+   WHEN điều kiện1 THEN câu lệnh
+   WHEN điều kiện2 THEN câu lệnh
+   ...
+   ELSE câu lệnh
+END CASE;
+```
+
+Dưới đây là một ví dụ nhỏ 
