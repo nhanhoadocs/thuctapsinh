@@ -3,6 +3,7 @@ Tầng Transport của TCP/IP: Cung cấp 2 giao thức cơ bản là TCP, UDP �
 trong hầu hết trong các ứng dụng)
 #### Mục lục
 [1. TCP (Transmission Control Protocol)](#TCP)
+
 [2. UDP (User Datagram Protocol)](#UDP)
 
 ### <a name="TCP"> 1. TCP (Transmission Control Protocol) </a>

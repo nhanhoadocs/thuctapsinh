@@ -11,6 +11,7 @@
 
 [5. POP3 (Post Office Protocol 3)](#POP3)
 
+[6. IMAP (Internet Message Access Protocol)](#IMAP)
 ### <a name="HTTP"> 1. HTTP (HyperText Transfer Protocol) </a>
 
 #### Khái niệm
