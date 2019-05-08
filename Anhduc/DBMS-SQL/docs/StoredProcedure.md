@@ -99,4 +99,8 @@ CASE  case_expression
 END CASE;
 ```
 
-Dưới đây là một ví dụ nhỏ 
+Dưới đây là một ví dụ nhỏ về case trong procedure 
+
+![](../images/screenshot_11.png)
+
+![](../images/screenshot_12.png)
