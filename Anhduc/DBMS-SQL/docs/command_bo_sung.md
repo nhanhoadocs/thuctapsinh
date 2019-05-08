@@ -173,7 +173,7 @@ general_log      = 1
 - general_log_file: Tạo bản ghi lịch sử ra một file trong hệ thống 
 - general_log = 1 : Bật chế độ log theo dạng table 
 
-# 14. Stored Procedure
+
 # LINK THAM KHẢO 
 https://www.w3schools.com/sql/sql_select.asp
 
