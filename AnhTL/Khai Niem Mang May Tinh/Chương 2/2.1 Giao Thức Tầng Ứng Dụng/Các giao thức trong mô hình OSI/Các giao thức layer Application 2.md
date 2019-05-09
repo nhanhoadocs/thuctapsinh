@@ -33,7 +33,7 @@ Khi BGP chạy trên những AS khác nhau thì nó được gọi là Exteral B
 #### Quá Trình hoạt động
 - Bước 1: Máy trạm sẻ phát ra một bản tin broadcast để tìm kiếm DHCP Server để thuê địa chỉ. Client sẻ gửi bản tin broadcast( có chứa địa chỉ MAC của client) với gói tin DHCP Discover lên mạng.
 
-- Bước 2: Nhiều DHCP Server có thể nhận thông điệp và chuẩn bị địa chỉ IP cho máy trạm. Nếu Server có cấu hình địa chỉ IP hợp lệ cho máy trạm. Server sẻ gửi thông điệp “DHCP Offer” chứa địa chỉ MAC của Client đã gửi lên
+- Bước 2: Nhiều DHCP Server có thể nhận thông điệp và chuẩn bị địa chỉ IP cho máy trạm. Nếu Server có cấu hình địa chỉ IP hợp lệ cho máy trạm. Server sẻ gửi thông điệp “DHCP Offer” chứa các thông số cần thiết và gửi về địa MAC của Client đã gửi lên.
   - Địa chỉ IP “Offer”, subnet mask, địa chỉ IP của máy chủ (địa chỉ Gateway) và thời gian cho thuê đến Client, DNS Server…..
 
 - Bước 3: Khi Client nhận được gói tin DHCP Offer và chấp nhận thuê địa chỉ IP trong gói tin Offer. Client sẽ gửi bản tin DHCP Request để yêu cầu DHCP Server cấp phát địa chỉ IP .
