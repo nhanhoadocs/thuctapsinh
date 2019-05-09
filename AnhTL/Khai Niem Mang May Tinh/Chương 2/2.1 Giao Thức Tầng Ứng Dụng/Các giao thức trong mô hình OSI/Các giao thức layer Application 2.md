@@ -1,4 +1,11 @@
-### <a name = "BGP"> 7. BGP (Border Gateway Protocol) </a>
+# Mục Lục
+
+[1. BGP (Border Gateway Protocol)](#BGP)
+[2. DHCP (Dynamic Host Configuration Protocol)](#DHCP)
+[3. DNS (Domain Name System)](#DNS)
+[4. SSH (Secure Shell)](#SSH)
+
+### <a name = "BGP"> 1. BGP (Border Gateway Protocol) </a>
 #### Khái Niệm
 - Giao thức cổng biên (BGP - Border Gateway Protocol) là một giao thức cổng ngoài được tạo ra để trao đổi thông tin định tuyến cho Internet. Bằng cách sử dụng một cấu trúc liên kết tùy ý, BGP có thể kết nối bất kỳ mạng nội bộ nào của các hệ thống tự trị ( AS - Autonomous system).
 - Nó được đặt tên là Giao thức cổng biên bởi vì trong bộ định tuyến BGP này phải giao tiếp với một thiết bị ngang hàng trong một hệ thống tự trị khác thường nằm gần rìa (viền) của hệ thống tự trị. Giao tiếp này xảy ra khi một cặp hệ thống tự trị chấp nhận trao đổi thông tin định tuyến và liên quan đến các bộ định tuyến để trở thành đồng nghiệp BGP.
