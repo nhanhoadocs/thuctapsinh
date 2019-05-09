@@ -58,7 +58,7 @@ Quá trình hoạt động của DHCP.
 
 #### Port
 - Giao thức DNS được khuyến cáo chạy trên nền UDP 53 thay vì TCP 53.
-- Vì TCP 53 bị cắm cờ đỏ do bị tin tặc tấn công.
+- Vì TCP 53 bị cắm cờ đỏ vì trước đó đã bị khai thác và khả năng bị tấn công cao.
 
 #### Cơ chế hoạt động của DNS
 - Có thể tham khảo ở hình dưới đây.
