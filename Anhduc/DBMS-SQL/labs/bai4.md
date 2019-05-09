@@ -27,3 +27,13 @@ Ta có các table như sau
 
 5. Tạo thủ tục lưu trũ để thông qua thủ tục này có thể bổ sung thêm 1 bản ghi vào NHANVIEN (thủ tục phải thực hiện kiểm tra tính hợp lệ của dữ liệu cần)
 
+ta có đoạn tạo thủ tục như sau 
+
+![](../images/screenshot_16.png)
+
+Đây là kết quả của khi nhập dữ liệu không trùng và bị trùng với mã nhân viên trong bảng nhân viên.
+
+![](../images/screenshot_14.png)
+
+![](../images/screenshot_15.png)
+

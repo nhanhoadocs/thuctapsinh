@@ -104,3 +104,15 @@ Dưới đây là một ví dụ nhỏ về case trong procedure
 ![](../images/screenshot_11.png)
 
 ![](../images/screenshot_12.png)
+
+# 7. Vòng lặp while 
+Cú pháp 
+```
+WHILE điều kiện DO
+   các câu lệnh
+END WHILE;
+```
+
+Ví dụ đơn giản về vòng lặp. Ta sẽ tạo ra 2 biến a và b và in tất cả các số nguyên từ (a, b)
+
+![](../images/screenshot_13.png)
