@@ -10,7 +10,9 @@
   - IGP (Interio Gateway Protocol) là giao thức định tuyến bên trong 1 AS như (RIP, IGRP, EIGRP, OSPF...).
   - EGP (Exterio Gateway Protocol) là giao thức trao đổi thông tin giữa các AS khác nhau.
     +EGP là: loại giao thức định tuyến này có khả năng trao đổi các định tuyến từ bên trong và bên ngoài mạng cục bộ của một tổ chức hoặc nhóm cụ thể. 
+    
 ![img](https://vnpro.vn/wp-content/uploads/2015/07/Border-Gateway-Protocol.jpg)
+
 Khi BGP chạy trên những AS khác nhau thì nó được gọi là Exteral BGP – EBGP, chạy trong cùng 1 AS thì gọi là Internal BGP-IBGP
 
 ### <a name = "DHCP"> 8. DHCP (Dynamic Host Configuration Protocol) </a>
