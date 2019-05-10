@@ -41,7 +41,7 @@ trên đường đi hay không).
 - Voice over IP.
 - Game trực tuyến.
 
-#### Bạn có thể tham khảo mô hình dưới đây để có cái nhìn tổng quan hơn về UDP.
+#### Bạn có thể tham khảo đường dẫn dưới đây để có cái nhìn tổng quan hơn về UDP.
 
 [Giao thức UDP](https://coggle.it/diagram/V9Excp31HL0Yw5Wh/t/giao-th%E1%BB%A9c-udp)
 
@@ -94,7 +94,7 @@ lại) .
 - FTP - Port 21.
 - HTTP - port 80.
 
-#### Bạn có thể tham khảo mô hình dưới đây để có cái nhìn tổng quan hơn về TCP.
+#### Bạn có thể tham khảo đường dẫn dưới đây để có cái nhìn tổng quan hơn về TCP.
 
 [Giao Thức TCP](https://coggle.it/diagram/V9A6pZ31HL0Ywa6G/t/giao-th%E1%BB%A9c-tcp)
 
