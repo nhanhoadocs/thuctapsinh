@@ -1,6 +1,6 @@
  # Tìm hiểu về giao thức TCP và UDP và Sự khác nhau giữa 2 giao thức.
 Tầng Transport của TCP/IP: Cung cấp 2 giao thức cơ bản là TCP, UDP được sử dụng
-trong hầu hết trong các ứng dụng)
+trong hầu hết trong các ứng dụng phổ biến hiện nay.
 #### Mục lục
 [1. UDP (User Datagram Protocol)](#UDP)
 
