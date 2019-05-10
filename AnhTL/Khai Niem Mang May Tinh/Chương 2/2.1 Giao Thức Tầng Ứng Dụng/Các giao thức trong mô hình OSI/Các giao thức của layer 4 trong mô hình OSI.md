@@ -62,9 +62,10 @@ lại) .
 
 #### Quá trình bắt tay 3 bước
 - Ngước lại với UDP là TCP phái thiết lập quá trình bắt tay 3 bước trước khi gửi data.
-B1: Client gửi tới máy chủ yêu cầu kết nối.
-B2: server nhận được yêu cầu và gửi trả lại gói tin SYN/ACK để xác nhận kết nối
-B3: Client gửi dữ liệu hồi âm.
+
+  - B1: Client gửi tới máy chủ yêu cầu kết nối.
+  - B2: server nhận được yêu cầu và gửi trả lại gói tin SYN/ACK để xác nhận kết nối
+  - B3: Client gửi dữ liệu hồi âm.
 
 #### Cấu trúc gói tin
 - TCP header: Chứa thông tin về dữ liệu tương ứng.
