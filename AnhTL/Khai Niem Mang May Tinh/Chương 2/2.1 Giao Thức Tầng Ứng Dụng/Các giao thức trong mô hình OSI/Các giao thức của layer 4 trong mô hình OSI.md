@@ -94,11 +94,11 @@ lại) .
 - FTP - Port 21.
 - HTTP - port 80.
 
-#### Bạn có thể tham khảo mô hình dưới đây để có cái nhìn tổng quan hơn về TCP
+#### Bạn có thể tham khảo mô hình dưới đây để có cái nhìn tổng quan hơn về TCP.
 
 [Giao Thức TCP](https://coggle.it/diagram/V9A6pZ31HL0Ywa6G/t/giao-th%E1%BB%A9c-tcp)
 
-# Tổng kết sư khác nhau giữa 2 giao thức UDP và TCP 
+# Tổng kết sự khác nhau giữa 2 giao thức UDP và TCP 
 - Bảng dưới đây tổng kết những sự khác nhau giữa hai giao thức TCP và UDP:
 
 ![img](https://4.bp.blogspot.com/-nSJDYb5M6E4/V_3wOIoVxxI/AAAAAAAARuU/gv5XnvqOc1gvSmomFzqkD9JHqpCVY4hiwCLcB/s1600/udp3.png)
