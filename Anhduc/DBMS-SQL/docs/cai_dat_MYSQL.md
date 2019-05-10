@@ -1,7 +1,16 @@
-Trong RDBMS thì có hai loại chính được sử dụng 
-# 1.Hệ quản trị CSDL quan hệ có cấu trúc(MYSQL)
+# Mục lục
+1. [Hệ quản trị cơ sở dữ liệu có cấu trúc](#a)
+2. [Hệ quản trị cơ sở dữ liệu phi cấu trúc](#b)
+3. [Tìm hiểu về mysql](#c)
+
+<a name="a">
+
+# 1.Hệ quản trị CSDL quan hệ có cấu trúc(MYSQL)</a>
 SQL chính là viết tắt của Structured Query language. Một cơ sở dữ liệu quan hệ xác định các mối quan hệ dưới dạng các bảng. Cơ sở quan hệ dữ liệu có cấu trúc :  MySQL, Oracle, MS SQL Server, Sybase,....
-# 2. Hệ quản trị CSDL  quan hệ phi cấu trúc(NOSQL)
+
+<a name="b">
+
+# 2. Hệ quản trị CSDL  quan hệ phi cấu trúc(NOSQL)</a>
 NoSQL là một DMS phi quan hệ, không yêu cầu một lược đồ cố định, tránh các phép nối, và dễ dàng mở rộng. Cơ sở dữ liệu NoSQL được sử dụng cho các kho dữ liệu phân tán với nhu cầu lưu trữ dữ liệu khổng lồ. Mongdb; NOSQL.....
 
 # So sánh SQL và NOSQL 
@@ -22,7 +31,10 @@ NoSQL là một DMS phi quan hệ, không yêu cầu một lược đồ cố đ
 MYSQL , MSSQL, MARIADB  thuộc loại hệ quản trị cơ sở dữ liệu nào? 
 
 Cả 3 đều thuộc một dạng quan hệ có cấu trúc.
-# 3. Tìm hiểu về MYSQL
+
+<a name="c">
+
+# 3. Tìm hiểu về MYSQL</a>
 ## 3.1 Tổng quan 
 MYSQL là một hệ thống quản lý cơ sở dữ liệu quan hệ. Sau khi được Oracle thì kể từ phiên bản MYSQL  5.7 trở đi các vấn đề phát triển của MYSQL không được mang ra cộng đồng thảo luận và một số còn là mã nguồn đóng 
 
@@ -111,3 +123,8 @@ mysql -u user -p -h IPserver
 ![](../images/MYSQL/screenshot_8.png)
 
 *Ta có thể cho phép user đăng nhập bằng máy khác hoặc có thể cho nó remote ngay bằng một user khác của máy*
+
+
+# link tham khảo 
+
+https://freetuts.net/hoc-mysql/mysql-can-ban

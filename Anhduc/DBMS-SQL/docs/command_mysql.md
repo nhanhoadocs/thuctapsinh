@@ -142,3 +142,7 @@ Giải thích đọc bảng
 - NULL : có được để giá trị null không
 - key : có là key chính hay không
 - default : mặc định của cột là 
+
+# link tham khảo 
+
+https://freetuts.net/hoc-mysql/mysql-can-ban

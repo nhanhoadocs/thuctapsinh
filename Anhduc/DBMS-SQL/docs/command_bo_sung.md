@@ -1,4 +1,20 @@
-# 1. Truy vấn Select 
+# MỤC LỤC
+1. [Truy vấn select](#select)
+2. [Mệnh đề where](#where)
+3. [Lệnh update](#update)
+4. [Lệnh delete](#delete)
+5. [Mệnh đề like](#like)
+6. [Mệnh đề order by](#orderby)
+7. [Truy vấn join](#join)
+8. [Lệnh alter](#alter)
+9. [Sử dụng in](#in)
+10. [Dùng between](#between)
+11. [lệnh insert](#insert)
+12. [Sử dụng view](#view)
+13. [File log trong mysql](#log)
+<a name="select">
+
+# 1. Truy vấn Select</a>
 Dùng để lấy dữ liệu trong các bảng của MYSQL.
 
 Cú pháp 
@@ -29,7 +45,10 @@ ví dụ hiển thị tất cả  dữ liệu trong bang1 thì ta dùng dấu * 
 - `select sum` sẽ trả về giá trị tổng của cột đó. Chỉ áp dụng với kiểu số.
 
 ![](../images/MYSQL/screenshot_32.png)
-# 2. Mệnh đề where
+
+<a name="where">
+
+# 2. Mệnh đề where</a>
 Dùng để thêm điều kiện vào cho câu lệnh
 
 Cú pháp 
@@ -45,7 +64,9 @@ SELECT truong1, truong2,...truongN FROM ten_bang
 
 ![](../images/MYSQL/screenshot_27.png)
 
-# 3. Truy vấn update
+<a name="update">
+
+# 3. Lệnh update</a>
 Dùng để sywar đổi dữ liệu trong bảng của mysql 
 
 Cú pháp
@@ -56,7 +77,10 @@ UPDATE ten_bang SET truong1=giaTri_moi_1, truong2=giaTri_moi_2
 ![](../images/MYSQL/screenshot_15.png)
 
 Khi update thì ở mệnh đề where ta phải ghi điều kiện là khóa chính hoặc khóa ngoại để có thể update chính xác được trường của bản ghi mà ta muốn thay đổi.
-# 4. Truy vấn delete
+
+<a name="delete">
+
+# 4. Lệnh delete</a>
 Dùng để  xóa dữ liệu trong bảng chỉ định; hoặc xóa các user...
 
 Cú pháp
@@ -65,10 +89,14 @@ DELETE FROM ten_bang [Menhde WHERE]
 ```
 ![](../images/MYSQL/screenshot_14.png)
 
-# 5. Mệnh đề like
+<a name="like">
+
+# 5. Mệnh đề like</a>
 Like thường được sử dụng kết hợp với các mệnh đề khác. Hay được dùng chung với WHERE và được thay thế cho dấu bằng. Có thể dùng ký tự `%` để tìm kiếm giống như `*` trong linux.
 
-# 6. Mệnh đề order by
+<a name="orderby">
+
+# 6. Mệnh đề order by</a>
 Dùng để sắp xếp các kết quả trả về sau khi truy vấn 
 
 Cú pháp
@@ -81,7 +109,9 @@ Với thì thứ tự sẽ được sắp xếp theo 2 loại là ASC (tăng d�
 
 ![](../images/MYSQL/screenshot_28.png)
 
-# 7. Sử dụng join
+<a name="join">
+
+# 7. Sử dụng join</a>
 Được sử dụng để lấy dữ liệu từ nhiều bảng và ghép chúng lại với nhau
 ```
 SELECT truong1, truong2 
@@ -102,8 +132,9 @@ Một số function trong lệnh join
 
 ![](../images/lab/bai3/screenshot_13.png)
 
+<a name="alter">
 
-# 8. Sử dụng Alter 
+# 8. Sử dụng Alter</a>
 Dùng để sửa dữ liệu trường của bảng có thể thêm xóa và sửa đổi được trường của bảng 
 
 Cú pháp 
@@ -111,7 +142,10 @@ Cú pháp
 ALTER TABLE tên-bảng change truong cũ trường mới;
 ```
 ![](../images/MYSQL/screenshot_25.png)
-# 9. Sử dụng in
+
+<a name="in">
+
+# 9. Sử dụng in</a>
 Dùng để thay thế cho lệnh or khi viết điều kiện where trong lệnh
 
 Ví dụ muốn chọn những bạn có điểm thi bằng 8.5 9 và 9.5 thay vì viết 3 or thì ta sử dụng in 
@@ -120,13 +154,18 @@ SELECT * FROM sinhvienk58
     WHERE diemthi IN ( 8.50, 9.00, 9.50 );
 ```
 
-# 10. Dùng between
+<a name="between">
+
+# 10. Dùng between</a>
 Dùng để chỉ ra khoảng ở dữ của 2 số 
 ```
 select * from tên-bảng
 where diemthi BETWEEN 8 and 10;
 ```
-# 11. Dùng insert 
+
+<a name="insert">
+
+# 11. Dùng insert</a>
 Dùng để chèn dữ liệu vào trong bảng mà ta Muốn 
 ```
 INSERT INTO ten_bang ( `truong1`, `truong2`,...`truongN` )
@@ -134,7 +173,9 @@ INSERT INTO ten_bang ( `truong1`, `truong2`,...`truongN` )
                        ( 'giatri1', 'giatri2',...'giatriN' );
 ```
 
-# 12. Sử dụng view 
+<a name="view">
+
+# 12. Sử dụng view</a>
 `view` Được dùng để để lưu một truy vấn mặc định nào đó như là một bảng.
 Cấu trúc 
 ```
@@ -158,7 +199,9 @@ sự khác nhau của view và tables
 | Không tăng kích thước dung lượng của nó lên | sẽ tăng kích thước dung lượng khi ta thêm dữ liệu vào đó |
 | chỉ cho phép đọc dữ liệu không thể chỉnh sửa | có thể chỉnh sửa dữ liệu trên bảng | 
 
-# 13. File log trong mysql
+<a name="log">
+
+# 13. File log trong mysql</a>
 - Ta sẽ dùng lệnh hoặc sử file `/etc/my.cnf` để có thể enable được file log này lên 
 ```
 SET global general_log = 1;

@@ -116,3 +116,9 @@ END WHILE;
 Ví dụ đơn giản về vòng lặp. Ta sẽ tạo ra 2 biến a và b và in tất cả các số nguyên từ (a, b)
 
 ![](../images/screenshot_13.png)
+
+
+# link tham khảo 
+
+https://freetuts.net/tao-mysql-stored-procedure-dau-tien-279.html
+
