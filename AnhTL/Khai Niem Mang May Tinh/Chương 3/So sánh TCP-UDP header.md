@@ -86,7 +86,7 @@ tin phản hồi từ người nhận. Nếu không dùng đến thì đặt nó
 - Cờ điều khiển - control flags (tối đa 9 bit)
   - TCP sẽ sử dụng các cờ này để làm quá trình bắt tay 3 bước trước khi gửi data.
   - UDP không có cờ này. 
-  - 
+   
 - Kích thước cửa sổ - Window size (2 byte)
   - Người gửi TCP sử dụng cái này để điểu chỉnh dữ liệu họ gửi đến người nhận trước khi yêu cầu xác nhận lại. 
   - Các thuật nào trong window size này được tích hợp trong giao thức, sẽ tự động tính toán cá giá trị, kích thước để phối hợp các thay đổi giữa người gửi và nhận.
