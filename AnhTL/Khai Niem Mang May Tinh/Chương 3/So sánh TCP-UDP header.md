@@ -25,6 +25,7 @@
 - Các tiêu đề cung cấp thông tin cụ thể:
 
   - Số cổng TCP nguồn và đích là điểm cuối giao tiếp để gửi và nhận thiết bị.
+  
     VD: client từ 1024 - 65535. server từ 1 - 1023
 
   - Người gửi tin nhắn sử dụng số thứ tự để đánh dấu thứ tự của một nhóm tin nhắn (segment).  Cả người gửi và người nhận đều sử dụng trường số xác nhận  để truyền đạt số thứ tự của tin nhắn được nhận gần đây hoặc dự kiến sẽ được gửi.
