@@ -24,26 +24,28 @@
       
 - Các tiêu đề cung cấp thông tin cụ thể:
 
-  - Số cổng TCP nguồn và đích là điểm cuối giao tiếp để gửi và nhận thiết bị.
+  - **Source port number và destination port number** Số cổng TCP nguồn và đích là điểm cuối giao tiếp để gửi và nhận thiết bị.
   
     VD: client từ 1024 - 65535. server từ 1 - 1023
 
-  - Người gửi tin nhắn sử dụng số thứ tự để đánh dấu thứ tự của một nhóm tin nhắn (segment).  Cả người gửi và người nhận đều sử dụng trường số xác nhận  để truyền đạt số thứ tự của tin nhắn được nhận gần đây hoặc dự kiến sẽ được gửi.
+  - **Sequence number** Người gửi tin nhắn sử dụng số thứ tự để đánh dấu thứ tự của một nhóm tin nhắn (segment).  Cả người gửi và người nhận đều sử dụng trường số xác nhận  để truyền đạt số thứ tự của tin nhắn được nhận gần đây hoặc dự kiến sẽ được gửi.
+  
+  - **Acknowledgement number** Nếu cờ ACK bật thì giá trị của trường chính là số thứ tự gói tin tiếp theo mà bên nhận cần.
+  
+  - **Data offset** Trường có độ dài 4 bít qui định độ dài của phần header (tính theo đơn vị từ 32 bít). Phần header có độ dài tối thiểu là 5 từ (160 bit) và tối đa là 15 từ (480 bít).
+
+  - **reverved** Dữ liệu dự trữ trong các header TCP luôn có giá trị bằng 0. Trường này phục vụ mục đích căn chỉnh tổng kích thước tiêu đề (quan trọng đối với hiệu quả xử lý dữ liệu máy tính).
+  
+  - **control flags** TCP sử dụng một bộ sáu cờ điều khiển tiêu chuẩn và ba cờ mở rộng (mỗi bit riêng lẻ (0 là tắt, 1 là bật) đại diện cho bật hoặc tắt ) để quản lý luồng dữ liệu trong các tình huống cụ thể.
+
+  - **Window size** Người gửi TCP sử dụng một số được gọi là kích thước cửa sổ để điều chỉnh lượng dữ liệu họ gửi đến người nhận trước khi yêu cầu xác nhận lại. Nếu kích thước cửa sổ trở nên quá nhỏ, việc truyền dữ liệu mạng sẽ chậm một cách không cần thiết, trong khi nếu kích thước cửa sổ quá lớn, liên kết mạng có thể bị bão hòa (không thể sử dụng cho bất kỳ ứng dụng nào khác) hoặc người nhận có thể không thể xử lý dữ liệu đến nhanh chóng (cũng dẫn đến hiệu suất chậm). Các thuật toán window được tích hợp trong giao thức sẽ tự động tính toán các giá trị kích thước và sử dụng trường tiêu đề TCP này để phối hợp các thay đổi giữa người gửi và người nhận.
+  
+  - **checksum** các giá trị bên trong một tiêu đề TCP được tạo ra bởi người gửi giao thức như một kỹ thuật để giúp người nhận phát hiện tin nhắn được hỏng hoặc giả mạo.
+  
+  - **Urgent pointer** Trường con trỏ khẩn cấp thường được đặt thành 0 và bị bỏ qua, nhưng kết hợp với một trong các cờ điều khiển, nó có thể được sử dụng làm phần bù dữ liệu để đánh dấu một tập hợp con của thông điệp cần xử lý ưu tiên.
+  
+  - **optional data** Việc sử dụng dữ liệu TCP tùy chọn bao gồm hỗ trợ cho các thuật toán xác nhận và mở rộng. Trường này cùng không thuộc về header. Giá trị của trường này là thông tin dành cho các tầng trên (trong mô hình 7 lớp OSI).
    
-  - Trường bù dữ liệu lưu trữ tổng kích thước của header TCP. Một header không sử dụng trường TCP tùy chọn có độ lệch dữ liệu là 5 (đại diện cho 20 byte), trong khi 1 header sử dụng trường tùy chọn có kích thước tối đa và có độ lệch dữ liệu là 15 (đại diện cho 60 byte).
-  
-  - Dữ liệu dự trữ trong các header TCP luôn có giá trị bằng 0. Trường này phục vụ mục đích căn chỉnh tổng kích thước tiêu đề là bội số của bốn byte (quan trọng đối với hiệu quả xử lý dữ liệu máy tính).
-  
-  - TCP sử dụng một bộ sáu cờ điều khiển tiêu chuẩn và ba cờ mở rộng (mỗi bit riêng lẻ đại diện cho bật hoặc tắt ) để quản lý luồng dữ liệu trong các tình huống cụ thể.
-
-  - Người gửi TCP sử dụng một số được gọi là  kích thước cửa sổ để điều chỉnh lượng dữ liệu họ gửi đến người nhận trước khi yêu cầu xác nhận lại. Nếu kích thước cửa sổ trở nên quá nhỏ, việc truyền dữ liệu mạng sẽ chậm một cách không cần thiết, trong khi nếu kích thước cửa sổ quá lớn, liên kết mạng có thể bị bão hòa (không thể sử dụng cho bất kỳ ứng dụng nào khác) hoặc người nhận có thể không thể xử lý dữ liệu đến nhanh chóng (cũng dẫn đến hiệu suất chậm). Các thuật toán cửa sổ được tích hợp trong giao thức sẽ tự động tính toán các giá trị kích thước và sử dụng trường tiêu đề TCP này để phối hợp các thay đổi giữa người gửi và người nhận.
-  
-  - Các checksum giá trị bên trong một tiêu đề TCP được tạo ra bởi người gửi giao thức như một kỹ thuật để giúp người nhận phát hiện tin nhắn được hỏng hoặc giả mạo.
-  
-  - Trường con trỏ khẩn cấp thường được đặt thành 0 và bị bỏ qua, nhưng kết hợp với một trong các cờ điều khiển, nó có thể được sử dụng làm phần bù dữ liệu để đánh dấu một tập hợp con của thông điệp cần xử lý ưu tiên.
-  
-  - Việc sử dụng dữ liệu TCP tùy chọn bao gồm hỗ trợ cho các thuật toán xác nhận và mở rộng cửa sổ đặc biệt.
-
 #### Định dạng tiêu đề UDP
 
 ![img](https://www.gatevidyalay.com/wp-content/uploads/2018/10/UDP-Header.png)
