@@ -34,7 +34,7 @@
   
   - **Data offset** Trường có độ dài 4 bít qui định độ dài của phần header (tính theo đơn vị từ 32 bít). Phần header có độ dài tối thiểu là 5 từ (160 bit) và tối đa là 15 từ (480 bít).
 
-  - **reverved** Dữ liệu dự trữ trong các header TCP luôn có giá trị bằng 0. Trường này phục vụ mục đích căn chỉnh tổng kích thước tiêu đề (quan trọng đối với hiệu quả xử lý dữ liệu máy tính).
+  - **reserved** Dữ liệu dự trữ trong các header TCP luôn có giá trị bằng 0. Trường này phục vụ mục đích căn chỉnh tổng kích thước tiêu đề (quan trọng đối với hiệu quả xử lý dữ liệu máy tính).
   
   - **control flags** TCP sử dụng một bộ sáu cờ điều khiển tiêu chuẩn và ba cờ mở rộng (mỗi bit riêng lẻ (0 là tắt, 1 là bật) đại diện cho bật hoặc tắt ) để quản lý luồng dữ liệu trong các tình huống cụ thể.
 
