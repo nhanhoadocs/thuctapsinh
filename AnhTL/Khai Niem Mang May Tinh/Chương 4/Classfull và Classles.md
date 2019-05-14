@@ -18,7 +18,7 @@ Một điểm cần lưu ý là thuật ngữ “classful network” hay “clas
   - Ví dụ, thay vì nói là “các major network 10.0.0.0/8, 172.16.0.0/16, 192.168.1.0/24…” ta có thể nói “các classful network 10.0.0.0/8, 172.16.0.0/16 hay 192.168.1.0/24…
 - Sau này, khác với IPv4, IPv6 chỉ sử dụng cách đánh địa chỉ classless, không sử dụng cách đánh địa chỉ classful.
 
-### Đây chỉ là khái niệm. Còn thiếu phần lệnh cấu hình và chi tiết.
+### Đây chỉ là khái niệm. Vẫn còn thiếu phần lệnh cấu hình và chi tiết. ( em sẽ update sau )
 Tham Khảo: http://waren.vn/chuyen-de/classful-va-classless.html
 
 # END
