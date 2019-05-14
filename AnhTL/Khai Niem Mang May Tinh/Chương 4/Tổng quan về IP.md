@@ -144,4 +144,12 @@
   
 - Khi các thiết bị sử dụng địa chỉ IP private trong mạng cục bộ muốn truy cập được Internet – môi trường không sử dụng địa chỉ private, công nghệ NAT (Network Address Translation) được cài đặt trên các thiết bị router(đã được gán 1 địa chỉ IP Public) được sử dụng để chuyển IP private thành IP public và ngược lại, giúp cho các thiết bị trong mạng cục bộ vẫn có thể truy cập được Internet.
 
+### IPv6
+- Độ dài 128 bit
+- Viết bằng số thập lục phân, chia thành 8 nhóm, nhóm 2byte, phân cách nhau bằng dấu :
+- Chia thành ba loại
+     - Unicast
+     - Anycast
+     - Multicast
+     
 ## END
