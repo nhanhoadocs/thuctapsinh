@@ -3,6 +3,8 @@
 2. [InnoDB trong MYSQL](#b)
 3. [Storage Engine Default](#e)
 4. [Chuyển đổi Storage Engine của bảng](#c)
+
+
 Trong MYSQL khi tạo ra một bảng thì sẽ có nhiều kiểu Storage Engine(lưu trữ) để ta có thể lựa chọn. Storage Engine ảnh hưởng đến tốc độ truy vấn của DB. Hai Storage Engine có hiệu suất cao được chú ý đến đó là `MyISAM` và `InnoDB` 
 
 <a name='a'>

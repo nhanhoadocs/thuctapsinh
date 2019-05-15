@@ -3,6 +3,11 @@
 - Lưu ý:
     - khi dùng `fdisk` thì nó sẽ xóa hết dữ liệu trong phân vùng. thế nên khi dùng lệnh `fidsk` chú ý sao lưu dữ liệu quan trọng lại rồi mới tiến hành dùng lệnh 
     - Bạn không thể di chuyển các ứng dụng từ phân vùng này qua phân vùng khác mà không gỡ cài đặt.
+
+Một vài định dạng File System trong linux. Một ổ cứng mới sau khi phân vùng cần phải được định dạng một vài định dạng trong linux:
+- Ext: là định dạng file system đầu tiên được thiết kế dành cho linux có tất cả gồm 4 phiên bản từ Ext1 đến Ext4. Hiện nay đa phần người dùng Ext4 vì nó có thể giảm bớt hiện tượng phân mảnh dữ liệu trong ổ cứng, hỗ trợ các file và phân vùng có dung lượng lớn...
+- XFS: Nó khá giống với Ext4 về mốt số mặt. như hạn chế phân vùng dữ liệu, không cho phép các snapshot tự động kết hơp với nhau, hỗ trợ nhiều file dung lượng lớn...
+- JFS: Điểm mạnh của JFS là tiêu tốn tài nguyên hệ thống và đạt hiệu suất hoạt động tốt hơn, tốc độ kiểm tra ổ đĩa nhanh hơn so với các phiên bản Ext
 # 2. Một số option của lệnh fdisk
 - `fdisk -l`: giúp ta liệt kê các danh sách phân vùng của ổ cứng 
 - ![](https://github.com/duckmak14/linux/blob/master/dd_fdisk_mount/fdisk/Screenshot%20from%202018-11-29%2013-54-39.png)

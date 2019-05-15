@@ -1,4 +1,15 @@
-# 1. Tổng quan về Stored Procedure
+# Mục lục 
+1. [Tổng quan về Procedure](#a)
+2. [Cú pháp](#b)
+3. [Biến trong  Procedure](#c)
+4. [Truyền tham số trong Procedure](#d)
+5. [Câu lệnh if else trong Procedure](#e)
+6. [câu lệnh case trong Procedure](#f)
+7. [Vòng lặp while](#g)
+
+<a name='a'>
+
+# 1. Tổng quan về Stored Procedure</a>
 ## Khái niệm 
 Trong Mysql Procedure có nghĩ gần như là một hàm trong ngôn ngữ c để thực hiện những dòng lệnh liên quan ở trong đó
 ## Ưu điểm của Stored Procedure
@@ -10,7 +21,10 @@ Trong Mysql Procedure có nghĩ gần như là một hàm trong ngôn ngữ c đ
 - Nếu bạn tạo ra quá nhiều Procedure thì hệ quản trị sẽ sử dụng bộ nhớ để lưu trữ các thủ tục này khá nhiều. 
 - Ngoài ra nếu bạn thực hiện quá nhiều xử lý trong mỗi thủ tục thì đồng nghĩa với việc CPU sẽ làm việc nặng 
 - Nếu sử dụng thủ tục thì sẽ rất khó phát triển trong ứng dụng, gây khó khăn ở mức logic business.
-# 2. Cú pháp của  Stored Procedure
+
+<a name='b'>
+
+# 2. Cú pháp của  Stored Procedure</a>
 ```
 DELIMITER $$
 CREATE PROCEDURE procedureName()
@@ -42,7 +56,9 @@ Và kết quả sau khi gọi hàm procedure là nó sẽ hiển thị tất c�
 
 ![](../images/screenshot_3.png)
 
-# 3. Biến trong Stored Procedure
+<a name='c'>
+
+# 3. Biến trong Stored Procedure</a>
 Trong hàm procedure thì nó không chỉ có tác dụng truy vấn dữ liệu mà trong nó cũng có cả các biến và một số thuật toán. Đây là biến trong hàm
 
 Cú pháp 
@@ -61,7 +77,9 @@ ví dụ tạo ra một procedure có 1 biến và in ra biến đó bằng các
 
 ![](../images/screenshot_5.png)
 
-# 4. Truyền tham số trong Procedure
+<a name='d'>
+
+# 4. Truyền tham số trong Procedure</a>
 Cũng như tham số trong ngôn ngữ `C` thì tham số trong Procedure cũng có thể chuyền được giá trị vào, và cũng có kiểu dữ liệu của riêng nó.
 
 Ví dụ ta tạo ra một procedure có khai báo tham số và truyền tham số cho nó và ảnh dưới là kết quả khi ta gọi procedure đó ra.
@@ -70,7 +88,9 @@ Ví dụ ta tạo ra một procedure có khai báo tham số và truyền tham s
 
 ![](../images/screenshot_7.png)
 
-# 5. Câu lệnh if else trong Procedure
+<a name='e'>
+
+# 5. Câu lệnh if else trong Procedure</a>
 Cú pháp 
 ```
 IF điều kiện THEN
@@ -88,7 +108,9 @@ Ví dụ tạo một procedure đơn giản để nói về lệnh if đó là t
 
 ![](../images/screenshot_10.png)
 
-# 6. câu lệnh case trong Procedure
+<a name='f'>
+
+# 6. câu lệnh case trong Procedure</a>
 Cú pháp 
 ```
 CASE  case_expression
@@ -105,7 +127,9 @@ Dưới đây là một ví dụ nhỏ về case trong procedure
 
 ![](../images/screenshot_12.png)
 
-# 7. Vòng lặp while 
+<a name='g'>
+
+# 7. Vòng lặp while </a>
 Cú pháp 
 ```
 WHILE điều kiện DO
