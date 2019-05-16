@@ -1,7 +1,7 @@
 # Collision Domain và Broadcast Domain
 
 ##### 1: Collision domain - miền xung đột:
-- Miền xung đột được định nghĩa là vùng mạng mà trong đó các khung phát ra có thể gây xung đột với nhau. Càng nhiều trạm trong cùng một miền xung đột thì sẽ làm tăng sự xung đột và làm giảm tốc độ truyền, vì thế mà miền xung đột có thể gọi là miền băng thông( các trạm trong cùng miền này sẽ chia sẻ băng thông của miền) một trong những nguyên nhân chính làm cho hoạt động của mạng không hiệu quả .Mỗi khi một đụng độ xảy ra trên một mạng, tất cả các hoạt động truyền dừng lại trong một khoảng thời gian.
+- Miền xung đột được định nghĩa là vùng mạng mà trong đó các dữ liệu phát ra có thể gây xung đột với nhau. Càng nhiều trạm trong cùng một miền xung đột thì sẽ làm tăng sự xung đột và làm giảm tốc độ truyền, vì thế mà miền xung đột có thể gọi là miền băng thông( các trạm trong cùng miền này sẽ chia sẻ băng thông của miền) một trong những nguyên nhân chính làm cho hoạt động của mạng không hiệu quả .Mỗi khi một đụng độ xảy ra trên một mạng, tất cả các hoạt động truyền dừng lại trong một khoảng thời gian.
 
 - Các thiết bị như Hub hay các Repeater làm việc ở tầng vật lý nên không nhận ra địa chỉ MAC nên mỗi khi chúng nhận được một tín hiệu từ một cổng nó sẽ phát tin ra tất cả các cổng còn lại, vì vậy hình thành lên các vung xung đột .
 
