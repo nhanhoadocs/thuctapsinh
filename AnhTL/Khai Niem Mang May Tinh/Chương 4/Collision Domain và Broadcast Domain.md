@@ -11,7 +11,7 @@
 
 
 
-![img](http://www.vnpro.vn/wp-content/uploads/2015/08/Mi%E1%BB%81n-%C4%91%E1%BB%A5ng-%C4%91%E1%BB%99.jpg)
+![img](https://cdn.networklessons.com/wp-content/uploads/2016/11/xswitch-each-interface-collision-domain.png.pagespeed.a.ic.BFF6Fw30pG.png)
 
                                 Hình minh họa về collision domain
                                 
