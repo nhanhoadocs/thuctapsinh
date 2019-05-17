@@ -11,8 +11,10 @@
 - [3.2.3 Nguyên tắc truyền dữ liệu](#b3)
 - [3.2.4 Xây dựng dữ liệu tin cậy](#b4)
 - [3.2.5 Giao thức truyền dữ liệu liên tục](#b5)
-- [3.2.6 Go-back-N)](#b6)
+-
 [3.3 TCP-Giao thức giao vân hướng nối](#2)
+- [3.3.1 Chách thức hoạt động của TCP](#c1)
+- [3.3.2 Thủ tục bắt tay 3 bước](#c2)
 
  ===========================
 
@@ -77,6 +79,59 @@ và _sendchỉ rõ ở đây là phí gửi cảu giao thức rdt Bước đầu
 
 - Truyền dữ liệu tin ccậy trên kện truyền tin cậy hoàn toàn (rdt 1.0)
     - Nhân dữ liệu từ tầng trên thông qua sự kiện rdt_rcv(packet)
-    - Tất cả dữ liệu được truyền phía gửi cho phép nhận
+    - Tất cả dữ liệu được truyền phía gửi cho phía nhận
+    - Phía nhận khong cần phải phản hồi cho phía gửi ì chắc chắn không có chuyện gì xẩy ra.
+
+- Truyền dữ liệu cho kênh truyền có lỗi bit(rdt 2.0)
+    - Gia sử kênh truyền có thể sẩy ra lỗi bit 
+       - Sử dụng checksum để kiểm tra lỗi
+       - ACK(Acknowledgement):Bên nhận báo cho bên gửi đã nhận được dữ liệu
+       - NAK(Nagetive Acknowledgement) Bên nhận báo cho bên gửi gói tin bị lỗi 
+- Truyền dữ liệu có lỗi và mất(rdt 3.0)
+    - Giả sử dữ liệu bị lỗi mất gói dữ liệu ,ACK truyền lại chưa đủ 
+        - Bên gửi đợi khoảng thời gian hợp lý cho ACK
+        - Gửi lại nếu khoảng thời gian được yêu cầu mà vẫn không nhận được ACK
+        - Yều cầu đếm thời gian 
+
+<a name ="2"></a>
+3.3 TCP (Giao thức giao vận hướng nối )
+
+- TCP hướng nối vì trước khi đến trình ứng dụng có thể vắt đầu gửi dữ liệu tới tiến trinh khác .Hai tiến trình này phải có thử tục "bắt tay" với nhau.Nghĩa là chúng phải gửi một số gói segment đặc biệt để xác định tham số đảm bảo cho quá trình truyền dữ liệu
+- TCP đảm bảo cho người nhận sẽ nhận được gói tin theo thứ tự được đánh số
+- TCP cung cấp cho ứng dụng cách để truyền và nhận 1 luồn gói thông tin đã được đặt hàng và kiểm tra lỗi qua mạng 
+
+<a name ="c1"></a>
+3.3.1 Chách thức hoạt động của TCP
+
+Khi bạn yêu cầu một trang web trong trình duyệt máy tính sẽ gửi gói tin TCP đén đại chỉ của máy chủ web ,yêu cầu gửi lại trang web.Máy chủ web phản hồi bằng cách gửi một luồn các gói tin TCP,mà trình duyệt web của bạn kết hợp với nhau để tạo thành một trang web
+   Khi click vào liên kết đăng nhập,hoặc làm bất kỳ điều gì khác trình duyệt web của bạn sẽ gửi gói tin TCP tới máy chủ và máy chủ sẽ gửi lại các gói tin cho TCP.
+- So sánh hai giao thức TCP và UDP 
+    - Giống nhau: Đều là giao thức mạng TCP/IP, đều có chức năng kết nối vối nhau và có thể gửi dữ lệu cho nhau
+    - Khác nhau: Các header của UDP và TCP khác nhau ở ích thước (8 và 20 byte)  nguyên nhân chủ yếu là do TCP phải hỗ trợ nhiều chức năng hữu ích hơn(như khả năng khôi phục lỗi ).UDP dùng ít byte hơn cho các phần header  và cần xử lý từ host ít hơn
+- TCP:
+    - Dùng cho mạng WAT
+    - Không cho phép mất gói tin
+    - Đảm bảo việc truyền dữ liệu
+    - Tóc độ truyền thấp hơn UDP
+- UDP
+    - Dùng cho mạng LAN
+    - Cho phép mất dữ liệu
+    - Không đảm bảo
+    - Tốc đọ truyền cao,VoIP truyền tốt qua UDP
+
+<a name ="c2"></a>
+3.3.2 Thủ tục bắt tay 3 bước
+- Gia sử A là người gửi và B là người nhận
+
+B1: A gửi cho B một SYN segment trong đó chứa sequence number(Số thứ tự của A ) của A 
+
+B2: B nhận được một SYN-ACK segment trong đó chưa segment number của B và Vùng ACK= Sequen number của B +1
+
+B3: Khí A nhận được sẽ gửi lại một ACK segment chứa sequen number của A bằng giá trị vùng ACK của B gửi tới và vùng ACK của A  có giá trị numbẻ +1
+
+-> Mục đích của thủ tục bắt tay 3 bước là để trao đổi sequence number và ACK number
+
+
+
 
 
