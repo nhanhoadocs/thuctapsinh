@@ -1,0 +1,1 @@
+kịch bản. Dùng tcpdump bắt gói tin giao thức DNS port 53 
