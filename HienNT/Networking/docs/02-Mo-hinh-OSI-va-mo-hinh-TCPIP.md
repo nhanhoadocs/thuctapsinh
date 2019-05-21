@@ -29,7 +29,7 @@
 - *`Tầng mạng:`* Gán địa chỉ IP, đóng gói dữ liệu và xác định đường đi. Các giao thức được sử dụng:- IP- ARP(Address Resolution Protocol) biên dịch địa chỉ IP máy --> MAC- ICMP(Internet Control Message Protocol): thông báo lỗi trong trường hợp dữ liệu truyền bị hỏng- IGMP(Internet Group Message Protocol): điều khiển truyền thông đa hướng  
 - *`Tầng giao liên mạng:`* gồm các thiết bị phần cứng, công việc chính là gửi và nhận dữ liệu. 1 số giao thức: ATM(Asynchronous Transfer Mode), Ethernet, FDDI(Fiber Distributed Data Interface), Frame-Relay  
 
-> ## **So sánh 2 mô hình OSI và TCP/IP ** 
+> ## **So sánh 2 mô hình OSI và TCP/IP** 
 *Giống nhau:*
   - Cả 2 đều sử dụng mô hình phân lớp 
   - Đều có tầng Application mặc dù dịch vụ khác nhau 
