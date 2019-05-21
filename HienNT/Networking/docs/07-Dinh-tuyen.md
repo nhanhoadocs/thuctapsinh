@@ -1,23 +1,26 @@
-## 1.Khái niệm
-Định tuyến (Routing) là quá trình xác định đường đi tối ưu để đi đến một đích nào đó trên mạng sử dụng thiết bị chuyên dụng Router để định tuyến.  
+# Định tuyến
+> ## **1.Khái niệm**
+- Định tuyến (Routing) là quá trình xác định đường đi tối ưu để đi đến một đích nào đó trên mạng sử dụng thiết bị chuyên dụng Router để định tuyến.  
 
-Bảng định tuyến là bảng chứa tất cả những đường đi tốt nhất đến một đích nào đó tính từ router. Khi cần chuyển tiếp một gói tin, router sẽ xem địa chỉ đích của gói tin, sau đó tra bảng định tuyến và chuyển gói tin đi theo đường tốt nhất tìm được trong bảng. Trong bảng định tuyến có thể bao gồm một tuyến mặc định, được biểu diễn bằng địa chỉ 0.0.0.0 0.0.0.0.  
+- Bảng định tuyến là bảng chứa tất cả những đường đi tốt nhất đến một đích nào đó tính từ router. Khi cần chuyển tiếp một gói tin, router sẽ xem địa chỉ đích của gói tin, sau đó tra bảng định tuyến và chuyển gói tin đi theo đường tốt nhất tìm được trong bảng. Trong bảng định tuyến có thể bao gồm một tuyến mặc định, được biểu diễn bằng địa chỉ 0.0.0.0 0.0.0.0.  
 
-Bảng định tuyến của mỗi giao thức định tuyến là khác nhau, nhưng có thể bao gồm những thông tin sau:
-- Địa chỉ đích của mạng, mạng con hoặc hệ thống.- Địa chỉ IP của router chặng kế tiếp phải đến.
-- Giao tiếp vật lí phải sử dụng để đi đến Router kế tiếp.
-- Subnet mask của địa chỉ đích.
-- Khoảng cách đến đích (ví dụ: số lượng chặng để đến đích).
-- Thời gian (tính theo giây) từ khi Router cập nhật lần cuối.Giao thức định tuyến là ngôn ngữ giao tiếp giữa các router. Một giao thức định tuyến cho phép các router chia sẻ thông tin về các network, router sử dụng các thông tin này để xây dựng và duy trì bảng định tuyến.  
-## 2. Phân loại định tuyến Định tuyến được phân chia thành 2 loại cơ bản:
+- Bảng định tuyến của mỗi giao thức định tuyến là khác nhau, nhưng có thể bao gồm những thông tin sau:
+  - Địa chỉ đích của mạng, mạng con hoặc hệ thống.- Địa chỉ IP của router chặng kế tiếp phải đến.
+  - Giao tiếp vật lí phải sử dụng để đi đến Router kế tiếp.
+  - Subnet mask của địa chỉ đích.
+  - Khoảng cách đến đích (ví dụ: số lượng chặng để đến đích).
+  - Thời gian (tính theo giây) từ khi Router cập nhật lần cuối.Giao thức định tuyến là ngôn ngữ giao tiếp giữa các router. Một giao thức định tuyến cho phép các router chia sẻ thông tin về các network, router sử dụng các thông tin này để xây dựng và duy trì bảng định tuyến. 
+
+> ## **2,Phân loại định tuyến**  
+### Định tuyến được phân chia thành 2 loại cơ bản:
 - *Định tuyến tĩnh(Static Routing):* Việc xây dựng bảng định tuyến của router được thực hiện bằng tay bởi người quản trị.
 - *Định tuyến động(Dynamic Routing):* Việc xây dựng và duy trì trạng thái của bảng định tuyến được thực hiện tự động bởi router. Các router tự trao đổi thông tin về các mạng. Tự chạy một phương thức tính toán nào đó để xác định xem để đi đến các mạng này thì phải sử dụng đường đi nào tối ưu. Các router cần phải chạy giao thức định tuyến để có thể tương tác trao đổi thông tin và tính toán Routing.
 
-Về dynamic routing. Các kĩ thuật định tuyến, chia thành 2 nhóm: định tuyến ngoài ( Exterior Gateway Protocol (EGP)) và định tuyến trong ( Interior Gateway Protocol)- IGP.  
--  EGP: tiêu biểu là giao thức BGP(Border Gateway Protocol) là loại giao thức được dùng để chạy các router thuộc các AS khác nhau phục vụ cho việc trao đổi thông tin giữa các AS(Autonomous System) . Các AS thường là các ISP do tổ chức IANA cấp phát.
-- IGP: gồm các giao thức RIP, OSPF, EIGRP,…. Là giao thức chạy định tuyến giữa các Router nằm bên trong một AS
+   Về dynamic routing. Các kĩ thuật định tuyến, chia thành 2 nhóm: định tuyến ngoài ( Exterior Gateway Protocol (EGP)) và định tuyến trong ( Interior Gateway Protocol)- IGP.  
+     -  EGP: tiêu biểu là giao thức BGP(Border Gateway Protocol) là loại giao thức được dùng để chạy các router thuộc các AS khác nhau phục vụ cho việc trao đổi thông tin giữa các AS(Autonomous System) . Các AS thường là các ISP do tổ chức IANA cấp phát.
+     - IGP: gồm các giao thức RIP, OSPF, EIGRP,…. Là giao thức chạy định tuyến giữa các Router nằm bên trong một AS
 
-**Đối với IGP, ta chia thành nhiều nhánh khác nhau:**  
+### Đối với IGP, ta chia thành nhiều nhánh khác nhau: 
 - Các giao thức gồm 3 loại:
   + Distance – vector : mỗi router gửi cho láng giềng của nó toàn bộ bảng định tuyến của nó theo định kì. Giao thức tiêu biểu là RIP. Đặc thù của hình thức định tuyến này là có khả năng bị loop nên cần một bộ các quy tắc chống loop khá phong phú. Các quy tắc chống loop có thể làm chậm tốc độ hội tụ của giao thức.  
   + Link – state : mỗi router sẽ gửi bản tin trạng thái đường link (LSA) cho các router khác. Các Router sau khi xây dựng xong bảng định tuyến sẻ vẽ ra được một bản đồ mạng của toàn bộ hệ thống. Việc tính toán đinh tuyến thực hiện bằng giải thuật Dijkstra. Tốc độ hội tụ của các giao thức chạy link state là rất nhanh.  
