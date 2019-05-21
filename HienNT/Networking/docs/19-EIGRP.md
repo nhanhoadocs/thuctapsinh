@@ -16,7 +16,7 @@
       - Feasible Successor: là tuyến đường backup cho successor đến cùng một mạng đích. 
       - Feasibility Distance: là tuyến đường có metric thấp nhất để đến đích.  
 
-      <center><img src = "../../../images/CCNA/dual.png">  
+      <center><img src = "../images/CCNA/dual.png">  
 
 > ## **3,Nguyên lý hoạt động**  
 - Neighbor: Các Router sẽ định kì 5s gửi gói tin Hello / thời gian giữ gói tin hello là 15s (holdtimer). Sau 15s nó coi hàng xóm là chết. Hello và Holdtime ở 2 cổng kết nối 2 Router không cần phải giống nhau (OSPF phải giống).  
@@ -41,7 +41,7 @@ metric = ([K1 * bandwidth + (K2 * bandwidth) / (256 - load) + K3 * delay] * [K5 
 ==> Công thức mặc định:  
      `metric = bandwidth + delay`  
 
-   <center><img src = "../../../images/CCNA/eigrp bandwith.jpg"></center> 
+   <center><img src = "../images/CCNA/eigrp bandwith.jpg"></center> 
 
 > ## **5,Cấu trúc lệnh** 
 - Kích hoạt giao thức **EIGRP**  

@@ -7,7 +7,7 @@
 - Hoạt  động của giao thức định tuyến theo trạng thái đường liên kết:  
   - Mỗi router sẽ gửi multicast gói Hello tới các router láng giềng. Gói Hello mang thông tin về các mạng được kết nối trực tiếp vào router.  
 
-  <center><img src = "../../../images/Network/Hello_ospf.png"></center>  
+  <center><img src = "../images/Network/Hello_ospf.png"></center>  
 
    - Sử dụng thuật toán SPF để tính toán và tìm ra đường đi ngắn nhất đến từng mạng.  
    - Lưu kết quả chọn đường trong bảng định tuyến.
@@ -36,21 +36,21 @@
 > ## **3,Thuật ngữ của OSPF**    
 - Link - một cổng trên Router, Link state: trạng thái của 1 đường liên kết giữa 2 router, bao gồm trạng thái của 1 cổng trên router và mối quan hệ giữa nó với router láng giềng kết nối vào cổng đó.  
 
-<center><img src = "../../../images/Network/link link state.png"></center>   
+<center><img src = "../images/Network/link link state.png"></center>   
 
  -  Link-state database (Topolological  database) – danh sách các thông tin về mọi đường liên kết trong vùng.   
- <img src = "../../../images/Network/link state database.png">   
+ <img src = "../images/Network/link state database.png">   
  - Area - tập hợp các mạng và các router có cùng chỉ số danh định vùng. Mỗi router trong 1 vùng chỉ xây dựng cơ sở dữ liệu về trạng thái các đường liên kết trong vùng đó. Các router trong 1 vùng sẽ có trạng thái liên kết giống nhau trong vùng đó. Các router  trong cùng một vùng được gọi là router nội vùng.  
- <img src = "../../../images/Network/area.png">   
+ <img src = "../images/Network/area.png">   
  - Cost -  giá trị chi phí đặt cho một đường liên kết. Giao thức định tuyến theo trạng thái đường liên kết tính chi phí dựa trên băng thông và tốc độ của đường liên kết đó.  
- <img src = "../../../images/Network/cost.png">  
+ <img src = "../images/Network/cost.png">  
  - Routing table - bảng định tuyến là kết quả của thuật toán chọn đường dựa trên cơ sở dữ liệu về trạng thái các đường liên kết.  
- <img src = "../../../images/Network/routing table.png">  
+ <img src = "../images/Network/routing table.png">  
  - Adjacency database – danh sách các router láng giềng có mối quan hệ hai chiều. Mỗi router sẽ có một danh sách khác nhau.   
- <img src = "../../../images/Network/Adjacency database.png">  
+ <img src = "../images/Network/Adjacency database.png">  
  - Design Router (DR) và Backup Designated Router (BDR) là router được tất cả các router khác trong cùng một mạng LAN bầu ra làm đại diện. Mỗi một mạng sẽcó một DR va BDR riêng.  
 
- <img src = "../../../images/Network/DR và BDR.png">  
+ <img src = "../images/Network/DR và BDR.png">  
 
 > ## **4,Các loại mạng OSPF**    
 Giao tiếp OSPF nhận biết 3 loại mạng:
@@ -59,13 +59,13 @@ Giao tiếp OSPF nhận biết 3 loại mạng:
 - Mạng không quảng bá đa truy cập (NBMA-Nonbroadcast multi-access), ví dụ như Frame Relay.
 Mạng thứ 4 là mạng điểm đến nhiều điểm có thể được người quản trị mạng cấu hình cho 1 cổng trên Router   
 
-<img src = "../../../images/Network/3mạngospf.png"> 
+<img src = "../images/Network/3mạngospf.png"> 
 
 > ## **5,Các bước hoạt động của OSPF**   
 
  - Bước 1: Phát hiện các router láng giềng. 
 
- <img src = "../../../images/Network/ospf hello.jpg"> 
+ <img src = "../images/Network/ospf hello.jpg"> 
 
  - Bước 2: Bầu chọn DR và BDR
  - Bước 3: Áp dụng thuật toán SPF vào bảng cơ sở dữ liệu để chọn đường đi tốt nhất.
@@ -83,7 +83,7 @@ giá trị nào trong khoảng từ 1 đến 65.535.
    - Tạo cổng loopback và đặt địa chỉ IP cho nó  
    `Router (config)#interface loopback number`  
 `Router (config-if)#ip address  ip-address subnet-mask`  
-<img src = "../../../images/Network/loopback.png">  
+<img src = "../images/Network/loopback.png">  
 
  Cổng loopback chỉ là một cổng phần mềm. Để xoá cổng loopback dùng dạng no của câu lệnh tạo cổng.   
   - Trong mạng quảng bá đa truy cập có nhiều hơn 2 router do đó OSPF bầu ra 1 router đại diện(DR-Designated Router) làm điểm tập trung tất cả các thông tin quảng cáo và cập nhật trạng thái các đường liên kết. BDR là router đại diện dự phòng. Việc bầu chọn này dựa trên giá trị OSPF ưu tiên của các router, khi các giá trị này bằng nhau thì sẽ xét đến giá trị Router ID, router nào có giá trị ID lớn nhất sẽ được chọn. Có thể thay đổi giá trị ưu tiên của router kết nối vào mạng để thay đổi kết quả bầu chọn DR. Giá trị ưu tiên nằm trong khoảng 0-255, giá trị 0 sẽ làm cho router không được chọn.  
@@ -92,7 +92,7 @@ giá trị nào trong khoảng từ 1 đến 65.535.
   
 `Router#show ip ospf interfacetype number`  
 
-<img src = "../../../images/Network/ospf priority.png">   
+<img src = "../images/Network/ospf priority.png">   
 - Thay đổi giá trị chi phí của OSPF.    
 
   - Cấu hình băng thông đúng cho cổng của 
@@ -105,7 +105,7 @@ Giá trị băng thông mặc định của cổng Serial Cisco là 1,544Mbps ha
    
 `Router (config-if)#ip ospf cost number`   
 
-<img src = "../../../images/Network/ospf cost.png">  
+<img src = "../images/Network/ospf cost.png">  
 
 - Cấu hình quá trình xác minh cho OSPF  
    - Câu lệnh để cấu  hình mật mã xác minh cho một cổng OSPF:   
@@ -118,7 +118,7 @@ Giá trị băng thông mặc định của cổng Serial Cisco là 1,544Mbps ha
    - Sau khi cấu hình mật mã MD5 xong bạn cần bật chế độxác minh message-digest trong OSPF:  
    `Router(config-router)#areaarea-id authentication message-digest `    
 
-   <img src = "../../../images/Network/ospf key.png">  
+   <img src = "../images/Network/ospf key.png">  
 
 - Cấu hình các thông số thời gian của OSPF:
 Mặc định thời gian bất động gấp 4 lần thời gian Hello. Trong mạng OSPF quảng bá, khoảng thời gian Hello mặc định là 10s, khoảng thời gian bất động mặc định là 40s. Trong mạng không quảng bá, khoảng thời gian Hello mặc định là 30s, thời gian bất động mặc định là 120s.   
@@ -126,7 +126,7 @@ Câu lệnh thay đổi cấu hình mặc định:
 `Router (config-if)#ipospf hello-interval seconds`  
 `Router (config-if)#ip ospf dead-interval seconds`   
 
-<img src = "../../../images/Network/ospf time.png">   
+<img src = "../images/Network/ospf time.png">   
 
 - OSPF thực hiện quảng bá đường mặc định   
 Định tuyến OSPF đảm bảo các con đường tới mạng đích trong hệ thống không bị lặp vòng. Để đến được các mạng nằm ngoài hệ thống thì OSPF cần phải biết về mạng đó hoặc là phải có đường mặc định.  
@@ -145,7 +145,7 @@ Sau khi cấu hình đường mặc định xong, bạn cấu hình cho OSPF chu
 
 - Các lệnh clear và debug dùng đểkiểm tra hoạt động OSPF.   
 
-<img src = "../../../images/Network/ospf debug.png">  
+<img src = "../images/Network/ospf debug.png">  
 
 
 

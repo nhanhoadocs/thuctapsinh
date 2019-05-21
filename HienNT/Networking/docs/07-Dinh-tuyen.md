@@ -32,7 +32,7 @@
 
   ![](../../images/Network/dinhtuyen.jpg)
 
-## 3.Giao thức định tuyến  
+> ## **3.Giao thức định tuyến**  
 Các giao thức định tuyến sẽ sử dụng một giá trị gọi là Metric để xác định tuyến đường nào là tốt nhất. Các giao thức định tuyến khác nhau có cách thức xác định chỉ số Metric là khác nhau.  
 Ví dụ:
   - RIP: Metric là Hop-count: số lượng router mà gói tin phải đi qua để đến được mạng đích  
@@ -61,7 +61,7 @@ Serial (BW = 1.544Mbps) -> cost = 64
 
 Khi BGP chạy trên những AS khác nhau thì nó được gọi là Exteral BGP – EBGP, chạy trong cùng 1 AS thì gọi là Internal BGP-IBGP
 
-**4.OSPF(Open Shortest Path First)**
+> ## **4.OSPF(Open Shortest Path First)**
 - Là 1 giao thức định tuyến Link-State, được sử dụng rộng rãi trong các mạng doanh nghiệp có kích thước lớn. Mỗi Router khi chạy giao thức thì sẽ gửi trạng thái đường link của nó cho tất cả các Router trong vùng(area). Sau một thời gian trao đổi thì các Router sẽ đồng nhẩt được bảng cơ sở dữ liệu trạng thái đường link(Link State Database - LSDB) với nhau, mỗi router đều có được bản đồ mạng của cả vùng. Từ bảng LSDB, router sẽ chạy giải thuật Djikstra để tính ra đường đi tối ưu nhất và xây dựng nên bảng định tuyến.
 
 - Hoạt động:
@@ -73,7 +73,7 @@ Khi BGP chạy trên những AS khác nhau thì nó được gọi là Exteral B
   + Trao đổi LSDB:   LSDB phải hoàn toàn giống nhau giữa các router cùng vùng. Các router sẽ không trao đổi với nhau cả một bảng LSDB mà sẽ trao đổi với nhau từng đơn vị thông tin gọi là LSA – Link State Advertisement. Các đơn vị thông tin này lại được chứa trong các gói tin cụ thể gọi là LSU – Link State Update mà các router thực sự trao đổi với nhau.
 
 
-**5.Giao thức EIGRP**
+> ## **5.Giao thức EIGRP**
 - EIGRP(Enhanced Interior Gateway Routing Protocol) là một giao giao thức định tuyến do Cisco phát triển, chỉ chạy trên các sản phẩm của Cisco
 
 - EIGRP được gọi là giao thức hybrid hoặc giao thức Advanced distance vector. EIGRP không sử dụng broadcast để gửi thông tin đến các neighbors mà thay vào đó nó sử dụng multicast hay unicast.

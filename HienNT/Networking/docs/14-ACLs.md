@@ -6,7 +6,7 @@
   - Lọc lưu lượng
   - Phân loại dữ liệu   
 
-  <center><img src = "../../../images/CCNA/ACL/acl.png">  
+  <center><img src = "../images/CCNA/ACL/acl.png">  
 
 
 > ## Phân loại ACL cơ bản  

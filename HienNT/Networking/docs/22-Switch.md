@@ -4,15 +4,15 @@
 - Khi đụng độ xảy ra , các gói tin đang được truyền đều bị phá hủy , các máy truyền sẽ ngưng việc truyền dữ liệu và chờ 1 khoảng thời gian ngẫu nhiên theo quy luật của CSMA / CD ( Carrier Sense Multiple Access with Collision Detection )
 - Nếu đụng độ xảy ra quá nhiều , mạng có thể không hoạt động được .
 
-<center><img src = "../../../images/CCNA/Collision Domain.png"></center> 
+<center><img src = "../images/CCNA/Collision Domain.png"></center> 
 
 > ## **2,Miền quảng bá - Broadcast Doamin** 
 - Miền quảng bá được định nghĩa là tập hợp các thiết bị mà trong đó khi một thiết bị phát đi một frame quảng bá ( khung broadcast) thì tất cả các thiết bị còn lại đều nhận được  
 - Một Broadcast Domain có thể chứa nhiều Collision Domain.
- <center><img src = "../../../images/CCNA/broadcast domain.JPG"></center> 
+ <center><img src = "../images/CCNA/broadcast domain.JPG"></center> 
 
 
- <center><img src = "../../../images/CCNA/sw1.jpg"></center>  
+ <center><img src = "../images/CCNA/sw1.jpg"></center>  
 
 > ## **3,Hoạt động của Switch**  
 - Switch học địa chỉ MAC và bảng MAC từ source MAC của Ethernet Frame khi frame đi vào cổng nào đó của Switch.  

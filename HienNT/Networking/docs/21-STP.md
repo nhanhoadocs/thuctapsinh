@@ -1,18 +1,18 @@
 # Spanning Tree Protocol
 Trong một mạng xảy ra nối vòng (vòng lặp) sẽ xuất hiện các hiện tượng sau:  
-<center><img src = "../../../images/CCNA/loop.png"></center>  
+<center><img src = "../images/CCNA/loop.png"></center>  
 
 - *Broadcast storm:* Là hiện tượng rất nhiều frame chạy liên tục trong môi trường các Switch đấu vòng – dự phòng khi chưa thực hiện chống loop –STP.Làm cho tốc độ hệ thống mạng chậm và có thể làm treo các switch tốc tộ thấp  
 
-<center><img src = "../../../images/CCNA/broadcast storm.jpg"></center>  
+<center><img src = "../images/CCNA/broadcast storm.jpg"></center>  
 
 - *Multi Frame copy:* hiện tượng đa bản sao frame (1 thiết bị nhận rất nhiều frame giống nhau)  
 
-<center><img src = "../../../images/CCNA/multiple frame copies.jpg"></center>    
+<center><img src = "../images/CCNA/multiple frame copies.jpg"></center>    
 
 - *Instability MAC table:* hiện tượng bảng MAC không ổn định.  
 
-<center><img src = "../../../images/CCNA/Instability MAC table.jpg"></center> 
+<center><img src = "../images/CCNA/Instability MAC table.jpg"></center> 
 
 > ## **1,Định nghĩa**  
 - Spanning Tree Protocol là một giao thức ngăn chặn sự lặp vòng được định nghĩa trong chuẩn IEEE.802D  

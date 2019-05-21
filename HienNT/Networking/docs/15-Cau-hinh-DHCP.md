@@ -1,14 +1,14 @@
 # Cấu hình DHCP  
 > ## Mô hình bài lab cấu hình DHCP trên Router để cấp IP cho các PC trong LAN  
 
-<img src = "../../images/Network/mô hình dhcp router.png">  
+<img src = "../images/Network/mô hình dhcp router.png">  
 
 > ### Cấu hình  
 - Cấu hình Router cấp IP động: 
   - Trên Router:
     - Cấu hình cơ bản cho Router : đặt IP 
 
-    <img src = "../../images/Network/dhcp1.png"> 
+    <img src = "../images/Network/dhcp1.png"> 
 
     ``` 
     Code:  
@@ -40,12 +40,12 @@
     ```  
 
 > ## Mô hình bài lab cấu hình cấp địa chỉ IP từ DHCP Server  
-<center><img src = "../../images/Network/dhcp server.png"></center>  
+<center><img src = "../images/Network/dhcp server.png"></center>  
 
 > ### Cấu hình  
 - Khai báo nhóm địa chỉ IP trong tab DHCP của máy chủ như hình: 
 
-<img src = "../../images/Network/config dhcp server.png">  
+<img src = "../images/Network/config dhcp server.png">  
  
  - Cấu hình trên Router 0   
  ```  
@@ -67,7 +67,7 @@ interface GigabitEthernet0/0.20
 interface GigabitEthernet0/1
  ip address 10.6.8.1 255.255.255.252  
  ``` 
- <center><img src = "../../images/Network/dhcpserverr0.png"></center>  
+ <center><img src = "../images/Network/dhcpserverr0.png"></center>  
 
  ```  
  router rip
@@ -78,7 +78,7 @@ interface GigabitEthernet0/1
  network 192.168.20.0
  no auto-summary  
  ```   
-  <center><img src = "../../images/Network/dhcpserverripr0.png"></center>  
+  <center><img src = "../images/Network/dhcpserverripr0.png"></center>  
 
   - Cấu hình trên Router 1:  
   ```  
@@ -130,7 +130,7 @@ interface FastEthernet0/5
  switchport mode trunk  
  ```  
   
-  <center><img src = "../../images/Network/dhcpserversw.png">  
+  <center><img src = "../images/Network/dhcpserversw.png">  
 
   
 

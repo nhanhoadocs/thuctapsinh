@@ -1,3 +1,4 @@
+# Giới thiệu về Router
 ##1.Hệ điều hành  
 - Nhiệm vụ:
   - Định tuyến và chuyển mạch  
@@ -29,10 +30,11 @@ Thiết bị Cisco IOS có 3 chế độ hoạt động:
   - Boot ROM: chỉ có 1 phần Cisco IOS là hoạt động được, cho phép chép được lên bộ nhớ flash --> thay thế phần mềm Cisco IOS trong bộ nhớ Flash. Câu lệnh "copy tftp flash" để chép phần mềm IOS trên TFTP server vào bộ nhớ flash router.
   - Cisco IOS: Thông thường trong quá trình khởi động router, một trong các chế độ trên sẽ được tải lên RAM để chạy. Người quản trị có thể cài đặt giá trị cho thanh ghi để điều khiển chế độ khởi động mặc định router.
 
-## 2.Thiết lập phiên kết nối bằng Hyper Terminal
-## 3.Gõ lại câu lệnh đã sử dụng  
+> ## **2.Thiết lập phiên kết nối bằng Hyper Terminal**
+
+> ## **3.Gõ lại câu lệnh đã sử dụng**  
 Mặc định Router sẽ lưu lại 10 câu lệnh trong bộ đệm. Có thể thay đổi số lượng câu lệnh mà router lưu lại bằng lệnh terminal history size hoặc history size. Tối đa 255 câu lệnh được lưu lại.
-## 4.Những thông tin hiển thị do lệnh show version
+> ## **4.Những thông tin hiển thị do lệnh `show version`**
 	* Phiên bản IOS và 1 ít thông tin đặc trưng
 	* Phiên bản phần mềm Bootstrap ROM
 	* Phiên bản phần mềm Boot ROM

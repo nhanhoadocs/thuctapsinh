@@ -1,3 +1,5 @@
+# Cấu hình Router cơ bản
+
 ### Các chế độ của Router
 - Chế độ người dùng - Router>  
 - Chế độ đặc quyền - Router#
@@ -60,7 +62,7 @@ tải IOS. Router sẽ sử  dụng các câu lệnh này theo thứ tự khi kh
 hệ thống sẽ mặc định là sử  dụng Cisco IOS trong bộ nhớ flash.   
 - Nếu trong bộ nhớ flash cũng không có IOS thì router sẽ cố gắng sử dụng TFTP để tải IOS về. Router sẽ sử dụng giá trị cài đặt cấu hình để biết tên tập tin lưu trên server mạng.  
 
-<center><img src = "../../images/Network/iosrouter.png"></center>
+<center><img src = "../images/Network/iosrouter.png"></center>
 
 # CHƯƠG 6  - ĐỊNH TUYẾN VÀ CÁC GIAO THỨC ĐỊNH TUYẾN 
 
