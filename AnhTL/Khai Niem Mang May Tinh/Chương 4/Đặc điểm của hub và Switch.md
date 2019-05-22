@@ -1,6 +1,6 @@
 # Đặc điểm của Hub và Switch
 
-![img](https://safebytes.com/wp-content/uploads/2016/12/capture111.png)
+![img](https://i1.wp.com/2.bp.blogspot.com/-caV6dnoKfYk/VJVSQApAWPI/AAAAAAAAHJs/CalLN78V1LA/s1600/hub%2Bvs%2Bswitch.png)
 
 #### 1. Hub
 - Hub là thiết bị có khả năng kết nối nhiều máy tính và thiết bị mạng với nhau để tạo nên một mạng phân khúc duy nhất trong trung tâm hệ thống mạng. Đây là thiết bị đóng vai trò trung tâm trong việc thiết lập mạng LAN.
