@@ -143,3 +143,7 @@ influxdb          IN  A   192.168.122.134
 228     IN  PTR         influxdb.com.
 ```
 sau đó ta trỏ DNS của client tới DNS server 
+
+Rồi thử lại bằng lệnh nslookup 
+
+![](../images/labs/install-DNS/screenshot_3.png)
