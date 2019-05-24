@@ -33,4 +33,4 @@
 
 - Nó cũng tránh các vấn đề mà PPPoEoE mắc phải, liên quan đến việc đôi khi cần sử dụng IP MTU từ 1492 byte trở xuống, thấp hơn 1500 byte tiêu chuẩn.
 
-- Việc sử dụng PPPoA so với PPPoE không có ý nghĩa về mặt địa lý; thay vào đó, nó thay đổitùy theo nhà cung cấp.
+- Việc sử dụng PPPoA so với PPPoE không có ý nghĩa về mặt địa lý; thay vào đó, nó thay đổi tùy theo nhà cung cấp.
