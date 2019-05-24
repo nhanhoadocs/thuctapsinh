@@ -109,7 +109,7 @@ thêm vào dòng dữ liệu
 ```
 $TTL 86400
 @   IN  SOA     anhduc.com. nguyenanhduchihi@gmail.com. (
-        2018110201  ;Serial
+        2019052401  ;Serial
         3600        ;Refresh
         1800        ;Retry
         604800      ;Expire
@@ -129,7 +129,7 @@ thêm vào dữ liệu
 ```
 $TTL 86400
 @   IN  SOA     anhduc.com. nguyenanhduchihi.gmail.com. (
-        2018110201  ;Serial
+        2019052401  ;Serial
         3600        ;Refresh
         1800        ;Retry
         604800      ;Expire
@@ -158,7 +158,7 @@ systemctl start named
 ```
 sau đó ta trỏ DNS của client tới DNS server 
 
-Rồi thử lại bằng lệnh nslookup 
+Rồi thử lại bằng lệnh nslookup xem đã có thể kết nối tới DNS server chưa
 
 ![](../images/labs/install-DNS/screenshot_3.png)
 
