@@ -1,0 +1,37 @@
+# CHƯƠNG 4: NETWORK
+
+## Mục lục
+[4.1 Tổng quan về IP](#1)
+ - [4.1.1 Khái niệm ](#a)
+
+[4.2 Địa chỉ IP)](#2)
+
+[4.3 IPV4](#2)
+
+[4.4 Định tuyến(Routing) ](#2)
+- [4.4.1 Định tuyến ](#c1)
+- [4.4.2 Phân loại định tuyến ](#c2)
+- [4.4.3 Thiết bị định tuyến ](#c2)
+
+[4.5 Cơ chế NAT ](#2)
+- [4.5.1 Khái niêm cơ bản ](#c1)
+- [4.5.2 Nghiệm vụ của NAT ](#c2)
+- [4.5.3 Phân loại ](#c2)
+
+ ===========================
+
+ 4.1 Tổng quan về IP
+
+ - Khái niệm: Địa chỉ IP(Internetprotocol) là số định dạng cho một phần cứng mạng,các thiết bị sử dụng địa chỉ IP để liên lạc với nhau qua mạng dựa trên IP như mạng Internet .Hầu hết các địachỉ IP có dạng như sau: 151.101.65.121 -> IPV4. 2001:4860:4860::8844 ->IPV6
+
+ - IP dùng để làm gì
+ IP cung cấp nhân danh cho 1 thiết bị mạng ,tương tự như đ/c nhà diêng.Các thiết bị mạng có các địa chỉ IP khác nhau.
+
+ - Giải thích rõ hơn về địa chỉ IP
+  Đia chỉ IP được chia thành 4 số giới hạn từ 0 -> 255.Mỗi số được lưu bởi một byte -> IP có kích thước là 4 byte được chia thành các lớp địa chỉ có 3 lớp là A,B,C
+
+  4.2 Địa chỉ IP 
+
+  - Anycast: Định hướng đường đi ngắn nhất cho gói tin
+  - Unicast: là thuật ngữ mô tả cách thức truyền tin từ 1 điểm này đến 1 điểm khác .Có một nguồn guwỉ và một nguyồn nhận ,mỗi nguồn thì được xác định một địa mạng
+  - Broadcast: là đại chỉ được sử dụng để làm đích đến của một gói tin khí một host muốn gửi một gói tin đến tất cả các host còn lại trong mạng LAN
