@@ -42,3 +42,8 @@ nslookup -type=any <tên trang web>
 # 6.Tra cứu ngược 
 
 ![](../images/command/nslookup/screenshot_4.png)
+
+# 7. Interactive mode
+
+![](../images/command/dig/screenshot_6.png)
+
