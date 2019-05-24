@@ -135,15 +135,30 @@ $TTL 86400
         604800      ;Expire
         86400       ;Minimum TTL
 )
-@       IN  NS          minhkma.com.
+@       IN  NS          anhduc.com.
 @       IN  PTR         com.
 anhduc            IN  A   192.168.122.228
 influxdb          IN  A   192.168.122.134
 134     IN  PTR         anhduc.com.
 228     IN  PTR         influxdb.com.
 ```
+Tiếp theo chúng ta tắt selinux ở trong file /etc/selonux/config
+
+![](../images/labs/install-DNS/screenshot_4.png)
+
+Chúng ta tắt filewall của DNS server 
+```
+systemctl disable firewalld
+systemctl stop firewalld
+```
+Khởi động DNS 
+```
+systemctl enable named
+systemctl start named
+```
 sau đó ta trỏ DNS của client tới DNS server 
 
 Rồi thử lại bằng lệnh nslookup 
 
 ![](../images/labs/install-DNS/screenshot_3.png)
+
