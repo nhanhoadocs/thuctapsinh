@@ -6,20 +6,21 @@
 
 [4.2 Địa chỉ IP)](#2)
 
-[4.3 IPV4](#2)
+[4.3 IPV4](#3)
 
-[4.4 Định tuyến(Routing) ](#2)
+[4.4 Định tuyến(Routing) ](#4)
 - [4.4.1 Định tuyến ](#c1)
 - [4.4.2 Phân loại định tuyến ](#c2)
-- [4.4.3 Thiết bị định tuyến ](#c2)
+- [4.4.3 Thiết bị định tuyến ](#c3)
 
-[4.5 Cơ chế NAT ](#2)
-- [4.5.1 Khái niêm cơ bản ](#c1)
-- [4.5.2 Nghiệm vụ của NAT ](#c2)
-- [4.5.3 Phân loại ](#c2)
+[4.5 Cơ chế NAT ](#5)
+- [4.5.1 Khái niêm cơ bản ](#c4)
+- [4.5.2 Nghiệm vụ của NAT ](#c5)
+- [4.5.3 Phân loại ](#c6)
 
  ===========================
 
+<a name ="1"></a>
  4.1 Tổng quan về IP
 
  - Khái niệm: Địa chỉ IP(Internetprotocol) là số định dạng cho một phần cứng mạng,các thiết bị sử dụng địa chỉ IP để liên lạc với nhau qua mạng dựa trên IP như mạng Internet .Hầu hết các địachỉ IP có dạng như sau: 151.101.65.121 -> IPV4. 2001:4860:4860::8844 ->IPV6
@@ -30,6 +31,7 @@
  - Giải thích rõ hơn về địa chỉ IP
   Đia chỉ IP được chia thành 4 số giới hạn từ 0 -> 255.Mỗi số được lưu bởi một byte -> IP có kích thước là 4 byte được chia thành các lớp địa chỉ có 3 lớp là A,B,C
 
+<a name ="2"></a>
   4.2 Địa chỉ IP 
 
   - Anycast: Định hướng đường đi ngắn nhất cho gói tin
@@ -48,6 +50,7 @@
     - Host ID: chính là bộ số cuối cùng của địa chỉ IP,dung để xác định thiết bị (như là địa chỉ nhà vậy)
 - MTU (Maximum Tranmission Unit) là kính thước của gói dữ liệu lớn nhất được đo bằng byte.Kích thước thay đổi thuộc vào hình thức mạng và giao thưucs 
 
+<a name ="3"></a>
 4.3 IPV4( Internet Protocol Version 4)
 IPV4 sử dụng 32 bit để đánh địa chỉ và chia thành 4 octest mỗi octest có 8 bit sấp sỉ 1 byte.Mỗi octest được đặt cách nhau bổi các dấu "."
 - Lớp A:
@@ -70,16 +73,22 @@ IPV4 sử dụng 32 bit để đánh địa chỉ và chia thành 4 octest mỗi
     - 4 bit đầu bằng 1111
     - Địa chỉ mạng 240-255
     - 28 bit còn lại chưa rõ
+
+    <a name ="4"></a>
 4.4 Định Tuyến (Routing)
 
+<a name ="c1"></a>
 4.4.1 Định tuyến
 là quý trinhg chọn đường đi trên mạng máy tính để gửi dữ liệu qua đó.Routing chỉ ra hướng đi sự d chuyển của các gói dữ liệu được đánh địa chỉ từ mạng nguồn cảu chúng dướng đến đích cuối thông qua các node trung gian thiết bị phân cướng chuyên dùng được gọi là các Router (bộ định tuyến).Tiến trình đianhj tuyến thường chỉ hướng đi dựa vào bảng định tuyến .Đó là bảng chứa các lộ trình tốt nhất để đến đích khác nhau trên mạng
 
+<a name ="c2"></a>
 4.4.2 Phân loại định tuyến 
 - Định tuyến tĩnh: Việc xác định bảng định tuyến của Routẻ được thực hiện bằng tay bởi ngừi quản trị
 - Định tuyến động: Việc xác định và duy chì trạng thái cảu bagr định tuyến được thực hiện tự động bởi Router
     - Định tuyến trong
     - Định tuyến ngoài 
+
+ <a name ="c3"></a>
 4.4.3 Thiết bị định tuyến
 - Router: cấu tạo
     - CUP-MAIN-RAM-FLASH-Cổng kết nối.
@@ -90,14 +99,20 @@ là quý trinhg chọn đường đi trên mạng máy tính để gửi dữ li
 - Chức năng: Kết nối các thiết bị với nhau bằng cách gửi các gói dữ liệu giữa các thiết bị
 - Hoạt động: Mỗi thiết bị được gán cho một địa chỉ IP .Khi muốn truyền một gói tín thiết bị gửi đến Router địa chỉ IP của thiết bị sẽ giưps Router nhận biết đươc đó là máy nào,và sẽ chuyển tin đó đi đâu
 
+<a name ="5"></a>
 4.5 Cơ chế NAT
+
+<a name ="c4"></a>
 4.5.1 Khái niêm cơ bản
 NAT (Network Address Tranlation) Biên dịch mạng
 - Thay đổi thông tin địa chỉ IPtrong gói tin đang được truyền qua 1 thiết bị định tuyến 
 - cho phép 1 hay nhiều nđại chỉ IP nội miền .được ánh xạ với 1 hay nhiều địa chỉ IP ngoại miền
+
+<a name ="c5"></a>
 4.5.2 Nghiệm vụ của NAT
 NAT giống như một Router , chuyển tiếp các gói tin giưa những lớp mạng khác nhau trên mạng lớn.NAT dịch hay thay đổi 1 hoặc cả 2 địa chỉ bên trong 1 gói tin khi gói tin đó qua 1 Router.Thông thường NAT thường thay đổi đại chỉ thường là đại chỉ riêng(IP Private) cảu 1 kết nối mậngthành địa chỉ công cộng (IP Public)
 
+<a name ="c6"></a>
 4.5.2 Phân loại'
 - NAT tĩnh(Static NAT): là phương thức NAT một đôi một. Một địa chỉ IP Private sẽ được map với một địa chỉ IP Public. 
  - NAT động(Dynamic NAT): Một địa chỉ IP Private sẽ được map với một địa chỉ IP Public trong nhóm địa chỉ IP Public.
