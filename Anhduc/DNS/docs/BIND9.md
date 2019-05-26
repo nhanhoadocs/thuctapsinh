@@ -11,8 +11,7 @@ yum install bind bind-utils
 ```
 2. Thành phần và Cấu trúc của BIND 
 - Theo mặc định thì `/etc/resolv.conf` là nơi mặc định sẽ lưu trữ địa chỉ cổng gateway mà ta đi qua để kết nối tới mạng. Các DNS server sẽ được liệt kê vào đây để forwarders
-- Một name server sử dụng file `/etc/named.conf` để  xác định đường dẫn đến file cấu hình của DNS và xác định một vài chức năng của DNS
-- BIND 9 sẽ đọc file cấu hình nơi mà có các yêu cầu và các đường dẫn tới file cấu hình khác
+- Một name server sử dụng file `/etc/named.conf` để  xác định đường dẫn đến file cấu hình của DNS và xác định một vài chức năng của DNS. BIND 9 sẽ đọc file cấu hình nơi mà có các yêu cầu và các đường dẫn tới file cấu hình khác
 
 3. file cấu hình `/etc/named.conf` và clauses được BIND sử dụng 
 Các clauses
@@ -45,3 +44,17 @@ zone localhostin{
 };
 ```
 Vùng này cho phép phân giải tên localhost thành địa chỉ IP host. Mọi truy vấn cho máy chủ đều được chuyển thành địa chỉ IP 
+
+# Tìm hiểu về các statements
+1. zone statements.
+Cú pháp 
+```
+zone "zone_name" [class] {
+    zone statements;
+};
+```
+`statements type` : Dùng để xác định loại DNS mà chúng ta cấu hình 
+- class : Phần lớn các class là IN tss
+
+2. master statements 
+chỉ có tác dụng với type slave zone và xác định địa chỉ ip port trong DNS server. Slave sẽ dùng địa chỉ IP đó để update zone file của mình 
