@@ -162,3 +162,6 @@ Rồi thử lại bằng lệnh nslookup xem đã có thể kết nối tới DN
 
 ![](../images/labs/install-DNS/screenshot_3.png)
 
+# link tham khảo 
+
+https://github.com/MinhKMA/DNS_note/blob/master/docs/install_dns.md

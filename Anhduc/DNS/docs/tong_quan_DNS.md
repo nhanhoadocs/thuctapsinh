@@ -122,7 +122,7 @@ Ví dụ như bản ghi SPF trong DNS là một dạng bản ghi TXT dùng để
 # 5.Luồng hoạt động trong DNS 
 Có hai luồng hoạt động của DNS: là đệ quy và vòng lặp 
 ## 5.1 Đệ quy 
-![](../images/tong_quan/68747470733a2f2f692e696d6775722e636f6d2f4f544a6f4469622e706e67.png)
+![](../images/labs/tcpdump/screenshot_19.png)
 
 Khi bạn muốn truy cập đến một server trên internet thì máy tính nó sẽ làm việc như sau. Ví dụ MygreatName.com 
 1. Nó sẽ hỏi ÍSP name server địa chỉ của  MygreatName.com 2. ISP name server sẽ check.Nếu như ISP name server có địa chỉ thì sẽ gửi về cho pc 
@@ -144,3 +144,7 @@ https://blog.cloud365.vn/linux/dns-record/#1-soa-start-of-authority
 https://securitydaily.net/tim-hieu-he-thong-ten-mien-dns-domain-name-system/
 
 https://www.unixmen.com/setting-dns-server-centos-7/
+
+https://support.dnsimple.com/articles/ns-record/
+
+https://www.slashroot.in/difference-between-iterative-and-recursive-dns-query

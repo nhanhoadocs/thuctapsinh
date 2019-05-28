@@ -12,6 +12,8 @@ yum install bind bind-utils
 2. Thành phần và Cấu trúc của BIND 
 - Theo mặc định thì `/etc/resolv.conf` là nơi mặc định sẽ lưu trữ địa chỉ cổng gateway mà ta đi qua để kết nối tới mạng. Các DNS server sẽ được liệt kê vào đây để forwarders
 - Một name server sử dụng file `/etc/named.conf` để  xác định đường dẫn đến file cấu hình của DNS và xác định một vài chức năng của DNS. BIND 9 sẽ đọc file cấu hình nơi mà có các yêu cầu và các đường dẫn tới file cấu hình khác
+- File log truy vấn của DNS được lưu ở trong `/var/log/messages`
+- Bật kiểm soát đăng nhập `rndc querylog` sẽ lưu trong file log 
 
 3. file cấu hình `/etc/named.conf` và clauses được BIND sử dụng 
 Các clauses
@@ -29,22 +31,6 @@ Các clauses
 |`view`| Kiểm soát các chức năng của BIND |
 |`zone`| Xác định vùng mà server sẽ hỗ trợ |
 
-Trong file này thì cần các `zone` để có thể hoạt động được chính xác.
-```
-zone "." IN {
-        type hint;
-        file "named.ca";
-};
-```
-Vùng này chỉ hoạt động nếu máy chủ hỗ trợ truy vấn đệ quy. Tập tin thiết lập tên của các máy chủ gốc và liệt kê địa chỉ của họ.Nếu mạng của bạn được kết nối với Internet, hãy named.caliệt kê các máy chủ tên Internet; mặt khác, nó liệt kê các máy chủ tên miền gốc cho mạng cục bộ của bạn
-```
-zone localhostin{
-  type master;
-  file "master.localhost";
-};
-```
-Vùng này cho phép phân giải tên localhost thành địa chỉ IP host. Mọi truy vấn cho máy chủ đều được chuyển thành địa chỉ IP 
-
 # Tìm hiểu về các statements
 1. zone statements.
 Cú pháp 
@@ -54,7 +40,42 @@ zone "zone_name" [class] {
 };
 ```
 `statements type` : Dùng để xác định loại DNS mà chúng ta cấu hình 
-- class : Phần lớn các class là IN tss
+- Các khái niệm về các kiểu DNS. với statements `type`
 
-2. master statements 
+| type|   khái niệm   |
+|-------|-----|
+|master| Là nơi có những bản chính của dữ liệu được lưu trữ |
+|salve| Là nơi có những bản sao dữ liệu của master |
+|hint| Là vùng gợi ý tìm đến root name server. Nếu ko có gợi ý nó sẽ dùng default |
+| forward| 
+
+2. logging statement 
+Có chức năng cấu hình file log của DNS. 
+Cú pháp 
+```
+logging {
+	logging statement;
+};
+```
+Nếu không có statement logging mặc định của nó sẽ là 
+```
+logging {
+     category default { default_syslog; default_debug; };
+     category unmatched { null; };
+};
+```
+- Messages: có mức độ ưu tiên thấp nhất trong các channel
+3. master statements 
 chỉ có tác dụng với type slave zone và xác định địa chỉ ip port trong DNS server. Slave sẽ dùng địa chỉ IP đó để update zone file của mình 
+
+# Một số lệnh trong BIND 9
+
+# Link tham khảo 
+
+http://www.zytrax.com/books/dns/
+
+https://ftp.isc.org/isc/bind9/cur/9.11/doc/arm/Bv9ARM.ch06.html
+
+https://www.cyberciti.biz/faq/start-stop-restart-bind9-linux-command/
+
+https://www.cyberciti.biz/faq/howto-enable-dns-linux-unix-server-logging/
