@@ -47,7 +47,7 @@ zone "zone_name" [class] {
 |master| Là nơi có những bản chính của dữ liệu được lưu trữ |
 |salve| Là nơi có những bản sao dữ liệu của master |
 |hint| Là vùng gợi ý tìm đến root name server. Nếu ko có gợi ý nó sẽ dùng default |
-| forward| 
+| forward| là máy chủ được giao cho |
 
 2. logging statement 
 Có chức năng cấu hình file log của DNS. 
@@ -64,9 +64,8 @@ logging {
      category unmatched { null; };
 };
 ```
-- Messages: có mức độ ưu tiên thấp nhất trong các channel
-3. master statements 
-chỉ có tác dụng với type slave zone và xác định địa chỉ ip port trong DNS server. Slave sẽ dùng địa chỉ IP đó để update zone file của mình 
+- Messages: có mức độ ưu tiên thấp nhất trong các channel 
+- Mỗi một channel sẽ có một file log để lưu trữ riêng. Cần phải chỉ ra file đó mỗi khi tạo ra channel và được lưu trong `/var/log`
 
 # Một số lệnh trong BIND 9
 
