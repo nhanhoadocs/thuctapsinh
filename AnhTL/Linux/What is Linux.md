@@ -28,10 +28,10 @@ Trung tâm phần mềm Ubuntu là một cửa hàng ứng dụng Linux mà mang
   - Tự do nghiên cứu cách chương trình hoạt động, và thay đổi nó để làm cho nó làm những gì ta muốn.
   - Tự do phân phối lại các bản sao để bạn có thể giúp đỡ hàng xóm của mình.
   - Tự do phân phối các bản sao của các phiên bản sửa đổi của bạn cho người khác.
-- Những triết lý này cũng là một trong những lý do chính khiến một tỷ lệ lớn người sử dụng Linux. Đó là về việc tự do lựa chọn mọi thứ.
+- Đó là những lý do chính khiến một tỷ lệ lớn người sử dụng Linux. (tự do lựa chọn mọi thứ).
 
 #### 4. Phân phối trên mạng là gì?
-- Linux có một số phiên bản khác nhau để phù hợp với hầu hết mọi loại người dùng. Từ những người dùng mới đến những người dùng khó tính, ta sẽ tìm thấy Linux phù hợp với nhu cầu của bạn. Các phiên bản này được gọi là bản phân phối (hoặc, ở dạng ngắn, bản phân phối.) Gần như mọi bản phân phối Linux có thể được tải xuống miễn phí, ghi vào đĩa (hoặc ổ USB) và cài đặt (trên bao nhiêu máy tùy thích).
+- Linux có một số phiên bản khác nhau để phù hợp với hầu hết mọi loại người dùng. Ta sẽ tìm thấy Linux phù hợp với nhiều loại nhu cầu. Các phiên bản này được gọi là bản phân phối (hoặc, ở dạng ngắn, bản phân phối.) Gần như mọi bản phân phối Linux có thể được tải xuống miễn phí, ghi vào đĩa (hoặc ổ USB) và cài đặt (trên bao nhiêu máy tùy thích).
 - Các bản phân phối Linux phổ biến nhất là:
 
   - [Ubuntu Linux](https://www.ubuntu.com/)
@@ -53,7 +53,7 @@ Trung tâm phần mềm Ubuntu là một cửa hàng ứng dụng Linux mà mang
   - [CentOS](https://www.centos.org/)
   - [SUSE Enterprise Linux](https://www.suse.com/products/server/)
 
-- Một số bản phân phối máy chủ ở trên là miễn phí (như Ubuntu Server và CentOS) và một số có giá liên quan (như Red Hat Enterprise Linux và SUSE Enterprise Linux). Những người có giá liên quan cũng bao gồm hỗ trợ.
+- Một số bản phân phối máy chủ ở trên là miễn phí (như Ubuntu Server và CentOS) và một số có phí như ( Red Hat Enterprise Linux và SUSE Enterprise Linux).
 
 #### Tài liệu tham khảo.
 https://www.linux.com/what-is-linux
