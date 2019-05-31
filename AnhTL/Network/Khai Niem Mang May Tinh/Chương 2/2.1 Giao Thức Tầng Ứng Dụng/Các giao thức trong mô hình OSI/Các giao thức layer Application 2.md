@@ -50,7 +50,7 @@ Khi BGP chạy trên những AS khác nhau thì nó được gọi là Exteral B
 
 - Bước 4: Cuối cùng, DHCP Server sẻ khẳng định lại với Client bằng bản tin DHCP Acknowledge. Sau đó DHCP Server tiến hành cấp phát địa chỉ IP, subnet mask, địa chỉ Gateway  và các thông tin khác cho Client. Và Client có thể sử dụng trong thời hạn “lease” đã được thiết lập trên DHCP Server. Khi hết hạn “lease” để tiếp tục sử dụng địa chỉ IP thì Client sẻ gửi một bản tin DHCPRequest trực tiếp (unicast) đến DHCP server mà nó đã xin địa chỉ  ban đầu. Nếu DHCP server còn hoạt động, nó sẽ reply bằng một gói tin DHCP-ACK để renew địa chỉ cho DHCP client. Gói tin này bao gồm thông các thông số cấu hình mới cập nhật nhất trên DHCP server.
 
-![img](https://itforvn.com/wp-content/uploads/2017/12/DHCP-packet.jpg)
+![img](https://qph.fs.quoracdn.net/main-qimg-4d40799655a61cbcee6d7b8b0721231c)
 Quá trình hoạt động của DHCP.
 ### <a name = "DNS"> 9. DNS (Domain Name System) </a>
 #### Khái niệm
