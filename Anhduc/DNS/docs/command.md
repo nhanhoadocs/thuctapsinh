@@ -20,6 +20,7 @@
 # II. Command named-check
 1. named-checkconf
 - Được sử dụng để check syntaxyn errors của named configuration file. 
+
 | option |  DESCRIPTION  |
 |--------|---------------|
 | -h     | Tóm tắt cách sử dụng của lệnh và out |
