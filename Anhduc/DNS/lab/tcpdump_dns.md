@@ -96,3 +96,15 @@ Sau khi làm lại như ví dụ 2 thì chỉ còn thấy 2 gói tin. Là do DNS
 ```
 service named restart
 ```
+File lưu trữ cache trong default không có sẵn muốn bật được file này lên thì ta mới có thể đọc được nó 
+```
+rndc dumpdb -cache
+```
+Muốn xóa đi file cache thì ta cần thực thi một vài lệnh để có thể xóa 
+```
+rndc flush
+```
+Muốn cập nhật thay đổi trong file cache thì ta cần sử dụng lệnh 
+```
+rndc dumpdb -cache
+```

@@ -148,3 +148,7 @@ https://www.unixmen.com/setting-dns-server-centos-7/
 https://support.dnsimple.com/articles/ns-record/
 
 https://www.slashroot.in/difference-between-iterative-and-recursive-dns-query
+
+https://www.cloudflare.com/learning/dns/what-is-dns/
+
+https://www.lifewire.com/what-is-a-dns-server-2625854
