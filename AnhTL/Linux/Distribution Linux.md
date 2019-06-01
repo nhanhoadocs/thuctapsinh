@@ -1,15 +1,15 @@
 # Distribution Linux
 
 ### Mục lục
-[1. Khái niệm distro](kn)
-- [1.1 Khái niệm distro](knd)
-- [1.2 Loại hình và xu hướng phát triển](lh)
+[1. Khái niệm distro](#kn)
+- [1.1 Khái niệm distro](#knd)
+- [1.2 Loại hình và xu hướng phát triển](#lh)
 
-[2. Các nhánh distro phổ biến](cacnhanh)
-- [2.1 Debian](debian)
-- [2.2 Fedora](fedora)
+[2. Các nhánh distro phổ biến](#cacnhanh)
+- [2.1 Debian](#debian)
+- [2.2 Fedora](#fedora)
 
-[3. Các nhóm distro phổ biến](cacnhom)
+[3. Các nhóm distro phổ biến](#cacnhom)
 
 ----------
 ## <a name="kn"> 1. Khái niệm distro </a>
