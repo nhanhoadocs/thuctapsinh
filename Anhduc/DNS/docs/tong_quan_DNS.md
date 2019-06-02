@@ -7,6 +7,8 @@ Hệ thống tên miền được sử dụng như một danh bạ của interne
 
 ví dụ tên miền [www.google.com.vn](https://www.google.com.vn/) sẽ dịch sang địa chỉ `IPV4 : 8.8.8.8`. và [www.example.com](https://example.com/) dịch là 93.184.216.34. Ta thấy tên miền sẽ dễ nhớ hơn địa chỉ IP rất nhiều.
 
+Nhờ cách sử dụng DNS nhanh nhất và hữu ích, người dùng không cần phải lưu một danh sách địa chỉ IP của riêng mình. Với mô hình phân cấp hình cây nó cũng dễ dàng quản lý hơn.
+
 # 2. Phân loại DNS 
 Master DNS: Một máy chủ sẽ có một tên miền riêng được đăng ký trên internet. Server này là con server chính cung cấp tên miền cho người sử dụng mạng 
 
