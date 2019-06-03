@@ -62,9 +62,9 @@
     R3(config)#interface se0/0/0
     R3(config-if)#ip add 168.16.30.0 255.255.0.0
     R3(config-if)no shutdown
-    R3(config-if)#exit  
+    R3(config-if)#exit     
 
-```
+``` 
 - Cấu hình RIPv2
 - R1
 ```
