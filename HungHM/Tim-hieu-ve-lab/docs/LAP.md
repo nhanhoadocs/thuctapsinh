@@ -4,7 +4,7 @@
 
 [I.Cách sử dụng packet Tracer](#1)
 
-[II. Ping ](#2)
+[II. Tạo topo và ping các pc vào với nhau ](#2)
 
  ===========================
 
