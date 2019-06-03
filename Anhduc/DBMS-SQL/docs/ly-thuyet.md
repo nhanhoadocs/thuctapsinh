@@ -1,14 +1,21 @@
 # Mục lục 
-[I. Khái niệm](#a)
+1. [Cơ sở dữ liệu](#a)
+2. [DBMS](#b)
+3. [Bảng](#c) 
+4. [Khóa](#d) 
+5. [Dạng chuẩn CSDL](#e)
+6. [Khái niệm SQL](#f) 
+
+
 
 <a name="a">
 
-# I.Một số khái niệm </a>
-
-# 1. Cơ sở dữ liệu
+# 1. Cơ sở dữ liệu</a>
 Là tập hợp các dữ liệu có cấu trúc được lưu trữ trên các thiết bị lưu trữ nhằm phục vụ cho nhiêu mục của một cá nhân hay một tổ chức nào đó
 
-# 2. Hệ quản trị cơ sở dữ liệu(DBMS)
+<a name='b'>
+
+# 2. Hệ quản trị cơ sở dữ liệu(DBMS)</a>
 Một hệ thống quản lý cơ sở dữ liệu lưu trữ dữ liệu theo cách mà việc truy xuất, thao tác và sản xuất thông tin trở nên dễ dàng hơn.
 
 Hệ quản trị cơ sở dữ liệu (Database Management System-DBMS) là một hệ thống được thiết kế dùng để quản trị một cơ sở dữ liệu. Trên đó người dùng có thể định nghĩa, thao tác, và xử lí dữ liệu trong một hệ quản trị CSDL. Hầu hết hệ quản trị cơ sở dữ liệu đều thực hiện các chức năng sau:
@@ -19,32 +26,14 @@ Hệ quản trị cơ sở dữ liệu (Database Management System-DBMS) là m�
 * Cung cấp một cơ chế chỉ mục hiệu quả để truy cập nhanh các dữ liệu lụa chọn.
 * Cung cấp tính nhất quán giữa các bản ghi khác nhau.
 * Bảo vệ dữ liệu khỏi mất mát bằng các quá trình sao lưu (backup) và phục hồi (recovery).
-## Kiến trúc của DBMS 
-
-![](https://github.com/duckmak14/thuctapsinh/blob/master/Anhduc/DBMS-SQL/images/screenshot.png)
-
-Kiến trúc của DBMS gồm 3 tầng
-- Tầng cơ sở dữ liệu: Ở tầng này, cơ sở dữ liệu nằm cùng với các ngôn ngữ xử lý truy vấn của nó
-- Tầng ứng dụng: Ở tầng này nằm trong máy chủ ứng dụng và các chương trình truy cập cơ sở dữ liệu. Đối với người dùng, tầng ứng dụng này trình bày một cái nhìn trừu tượng về cơ sở dữ liệu. Người dùng cuối không biết về bất kỳ sự tồn tại của cơ sở dữ liệu ngoài ứng dụng
-- Tầng người dùng: Người dùng cuối hoạt động trên tầng này và họ không biết gì về bất kỳ sự tồn tại nào của cơ sở dữ liệu ngoài lớp này.
-
 ## Phân loại DBMS 
-DBMS được phân loại theo cấu trúc và mô hình dữ liệu.
-- Mô hình hệ quản trị cơ sở dữ liệu quan hệ (RDBMS). Đây là mô hình phổ biết trong DBMS.
+Hệ quản trị cơ sở dữ liệu quan hệ(RDBMS) được sử dụng phổ biến nhất hiện nay. Và hai loại ngôn ngữ được sử dụng trên nền tảng RDBMS là: 
+- Ngôn ngữ truy vấn có cấu trúc
+- Ngôn ngữ truy vấn phi cấu trúc
 
-![](https://github.com/duckmak14/thuctapsinh/blob/master/Anhduc/DBMS-SQL/images/screenshot_2.png)
-    - Điểm nổi bật chính của mô hình này là: 
-        - Dữ liệu được lưu trữ trong các bảng được gọi là quan hệ .
-        - Quan hệ có thể được bình thường hóa.
-        - Trong quan hệ chuẩn hóa, các giá trị được lưu là giá trị nguyên tử.
-        - Mỗi hàng trong một mối quan hệ chứa một giá trị duy nhất.
-        - Mỗi cột trong một quan hệ chứa các giá trị từ cùng một miền.
-- Mô hình quản trị cơ sở dữ liệu thực thể (ER)
+<a name='c'>
 
-![](https://github.com/duckmak14/thuctapsinh/blob/master/Anhduc/DBMS-SQL/images/screenshot_1.png)
-    - Mô hình ER xác định khung nhìn khái niệm của cơ sở dữ liệu. Nó hoạt động xung quanh các thực thể
-
-# 3. Bảng 
+# 3. Bảng </a>
 Bảng là một đối tượng được sử dụng để tổ chức và lưu trữ dữ liệu. Một cơ sở dữ liệu bao gồm nhiều bảng. Các bảng đều có mối liên hệ với nhau.
 
 ## Mối quan hệ giữa các bảng
@@ -52,8 +41,11 @@ Bảng là một đối tượng được sử dụng để tổ chức và lưu
 
 `Quan hệ 1-n` là quan hệ một bản ghi của bảng A quan hệ với nhiều bản ghi của bảng B
 
-`Quan hệ n-n` là quan hệ nhiều bản ghi của bảng A quan hệ với nhiều bản ghi của bảng B.
-# 4. Khóa 
+`Quan hệ n-m` là quan hệ nhiều bản ghi của bảng A quan hệ với nhiều bản ghi của bảng B.
+
+<a name='d'>
+
+# 4. Khóa </a>
 ## khóa chính
 Khóa chính là để định danh duy nhất mỗi bản ghi trong một bảng của cơ sở dữ liệu.
 
@@ -66,7 +58,9 @@ Khóa ngoại của bảng này được coi như một con trỏ trỏ tới kh
 
 Hay có thể hiểu một trong bảng này có một trường mà trường này lại là khóa chính của một bảng khác. Thì trường đó trong bảng này được gọi là khóa ngoại.
 
-# 5. Dạng chuẩn của CSDL
+<a name='e'>
+
+# 5. Dạng chuẩn của CSDL</a>
 Chuẩn hóa là quá trình phân tách các bảng thành các bảng nhỏ hơn dựa và các phụ thuộc hàm
 
 Các dạng chuẩn là các chỉ dẫn để thiết kế các bảng trong CSDL.
@@ -92,7 +86,9 @@ Một quan hệ ở dạng chuẩn 3NF nếu quan hệ đó:
 - Là 2NF
 - Các thuộc tính không khóa phải phụ thuộc trực tiếp vào khóa chính
 
-# 6. SQL
+<a name='f'>
+
+# 6. SQL</a>
 SQL viết tắt của Structured Query Language (ngôn ngữ truy vấn cấu trúc). công cụ sử dụng để tổ chức, quản lý và truy xuất dữ liệu đuợc lưu trữ trong các cơ sở dữ liệu. SQL là một hệ thống ngôn ngữ bao gồm tập các câu lệnh sử dụng để tương tác với cơ sở dữ liệu quan hệ.
 
 SQL không chỉ dùng để truy xuất dữ liệu mà SQL được sử dụng để điều khiển tất cả các chức năng mà một hệ quản trị cơ sở dữ liệu cung cấp cho người dùng bao gồm:
@@ -103,5 +99,4 @@ SQL không chỉ dùng để truy xuất dữ liệu mà SQL được sử dụn
 - Cho phép người dùng tạo, xóa Database và bảng.
 - Cho phép người dùng tạo view, Procedure, hàm trong một Database.
 - Cho phép người dùng thiết lập quyền truy cập vào bảng, thủ tục và view.
-
 
