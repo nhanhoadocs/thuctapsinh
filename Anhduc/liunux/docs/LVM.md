@@ -54,7 +54,10 @@ d) Quản lý phân vùng trong linux
     - /dev/hda6 (logical)
     - /dev/hda7 (logical)
     - /dev/hda8 (logical)
-- Quản lý phân vùng trên linux
+
+<a name="a">
+
+- Quản lý phân vùng trên linux </a>
     - Lệnh liệt kê các phân vùng `fdisk -l` hoặc `lsblk`
     - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-18%2009-37-59.png)
     - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-18%2009-41-14.png)
@@ -72,7 +75,7 @@ d) Quản lý phân vùng trong linux
             - Cuối cùng, xác định sector cuối của phân vùng. Ấn Enter để chấp nhật sử dụng hết phần ổ đĩa còn trống. Thay vì chỉ định sector, bạn có thể chỉ định kích thước, chữ viết tắt tương ứng: K – Kilobyte, M – Megabyte và G – Gigabyte. Ví dụ, gõ “+5G” cho phân vùng với kích thước 5 Gigabyte. Nếu bạn không gõ đơn vị sau dấu “+”, fdisk sẽ lựa chọn sector làm đơn vị. Ví dụ, nếu bạn gõ “+10000”, fdisk sẽ cộng thêm 10000 sector để làm điểm kết thúc của phân vùng.
             - chọn loại phân vùng 
             - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-22%2008-47-11.png) 
-            - chọn `q` để lưu và thoát
+            - chọn `w` để lưu và thoát
             - `d`: xóa
             - `e`: để thêm một phân vùng extended
         * Note: Mỗi máy chỉ có tối đa 4 phân vùng primary
@@ -80,6 +83,7 @@ d) Quản lý phân vùng trong linux
             - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-22%2009-32-29.png)
             - Muốn sử dụng được phân vùng mới tạo ra thì ta phải mount nó. ta vào file `/etc/fstab` để sửa
             - ![](https://github.com/duckmak14/anh/blob/master/linux/LVM/Screenshot%20from%202018-11-22%2008-54-40.png)
+
 # 2. Ưu nhược điểm của LVM
 - Ưu điểm:
     - Có thể gom nhiều đĩa cứng vật lý lại thành một đĩa ảo dung lượng lớn.

@@ -11,7 +11,7 @@
 # 2. Cách cài đặt 
 ## a) Linear
 - Để cài đặt được `linear logical volume` trước tiên ta phải có `group volume` mà nó chưa cấp cho `logical volume` nào cả. 
-- Sau đó ta dùng lệnh `lvcreate --extenes (số %)FREE --name (tên logical)
+- Sau đó ta dùng lệnh `lvcreate --extents (số %)FREE --name (tên logical)
 - ![](https://github.com/duckmak14/linux/blob/master/linear_striped/Screenshot%20from%202018-11-26%2010-11-48.png)
 - Sau khi tạo xong ta có thể dùng lệnh `lvs` để kiểm tra
 - ![](https://github.com/duckmak14/linux/blob/master/linear_striped/Screenshot%20from%202018-11-26%2010-13-14.png)
@@ -32,7 +32,7 @@
 
 ## b) LVM Stripe
 - Cũng như linear để tạo được một striped thì ta cũng phải có volume group và dung lượng nó trống
-- rồi ta dùng lệnh `lvcreate --extens N%FREE --stripes (số physical) --stripesize (số dung lượng) --name (tên logical) (tên group )`
+- rồi ta dùng lệnh `lvcreate --extents N%FREE --stripes (số physical) --stripesize (số dung lượng) --name (tên logical) (tên group )`
 - ![](https://github.com/duckmak14/linux/blob/master/linear_striped/Screenshot%20from%202018-11-26%2011-19-24.png)
 - Và giờ chúng ta fomat và mount nó lại 
 - ![](https://github.com/duckmak14/linux/blob/master/linear_striped/Screenshot%20from%202018-11-26%2011-20-34.png)
