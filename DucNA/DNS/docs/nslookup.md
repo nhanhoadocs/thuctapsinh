@@ -47,3 +47,24 @@ nslookup -type=any <tên trang web>
 
 ![](../images/command/dig/screenshot_6.png)
 
+# Kiểm tra bản ghi bằng web 
+## 1. DNS checker
+Là một trang web dùng để tra cứu địa chỉ IP của một domain bằng các DNS server trên các khu vực thế giới. Nó sẽ thực hiện truy vấn bản ghi A của trang domain được nhập vào bằng cách trỏ đến các con DNS đã được chỉ định của trang domain
+
+![](../images/labs/slave/screenshot.png) 
+
+Chúng ta có thể tuy chọn xem truy vấn bản ghi nào bằng cách thay thế nó ở bản ghi A cạnh tên domain ta muốn truy vấn 
+
+Bản đồ  sẽ tích những địa điểm DNS mà ta truy vấn tới, bên cạnh là tên các nước đặt DNS ta truy vấn tới
+
+## 2.mxtoolbox
+Là một trang web dùng để check các bản ghi của các domain mà ta muốn biết 
+
+![](../images/labs/slave/screenshot_1.png)
+
+Muốn tìm kiếm thông tin của domain nào ta nhập domain ví dụ `nhanhoa.com` và có thể thay đổi bản ghi bằng cách thay đổi giá trị `DNS Lookup` 
+
+Còn rất nhiều trang web khác có thể check được như thế như các web trong link tham khảo 
+
+# link tham khảo 
+https://www.hongkiat.com/blog/dns-propogation-check/
