@@ -14,7 +14,7 @@
     `` cd ``
 - Di chuyển ra thư mục mẹ của thư mục hiện tại.
 
-    `` cd . . ``
+    `` cd .. ``
 - Hoán đổi vị trí đứng với thư mục này và thư mục mẹ của nó.
 
     `` cd - ``
