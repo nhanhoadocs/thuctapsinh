@@ -1,7 +1,7 @@
  # Chia VLAN 
 ## Mô hình  
 
-![](../images/Vlan/topo.png)
+![topo](../images/Vlan/topo.png)
 
 - Để thực hiện cấu hình Vlan chúng ta thực hiện các bước sau đây :  
 +Đầu tiên cấu hình Vlan trên cả 2 con switch.  
