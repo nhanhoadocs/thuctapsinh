@@ -73,7 +73,7 @@
 
 ![img](https://www.quantrimangdn.com/files/luu%20moc/12-1.png)
 
-17. Khi cài đặt hoàn tất và khởi động lại, màn hình đăng nhập được hiển thị. Ta Xác thực và đăng nhập với tư cách là người dùng root hoặc user vừa tạo.
+17. Khi cài đặt hoàn tất và khởi động lại, màn hình đăng nhập được hiển thị. Ta Xác thực và đăng nhập với tư cách là người dùng user vừa tạo.
 
         CentOS Linux 7 (Core) 
         Kernel 3.10.0-862.el7.x86_64 on an x86_64 
