@@ -1,6 +1,7 @@
  # Chia VLAN 
 ## Mô hình  
 
+
 ![topo](../images/Vlan/topo.png)
 
 - Để thực hiện cấu hình Vlan chúng ta thực hiện các bước sau đây :  
