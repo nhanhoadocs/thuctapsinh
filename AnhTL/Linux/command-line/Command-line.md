@@ -138,6 +138,7 @@
 **12. Hiển thị giờ thứ ngày tháng năm của máy tính**
 
 ``date``
+
 **13. Hiển thị không gian đĩa**
 
 ``df -h``
@@ -172,6 +173,6 @@
 
 `` find -iname "MyCProgram.c" -exec md5sum {} \;``
 
-Tìm tất cả file rỗng trong thư mục home
+- Tìm tất cả file rỗng trong thư mục home
 
-# find ~ -empty
+``# find ~ -empty``
