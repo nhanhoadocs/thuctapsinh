@@ -1,19 +1,19 @@
 # Cấu hình RIPv2
 - Ta có một Topology như hình 
 
-![Topology](../images/Screenshot_3.png)
+![Topology](../images/RIPv2/Screenshot_3.png)
  - Trước tiên chúng ta đặt địa chỉ ip cho từng PC trong topo 
     - IP PC0
 
-    ![ipPC0](../images/Screenshot_1.png)
+    ![ipPC0](../images/RIPv2/Screenshot_1.png)
 
     - IP PC1
 
-    ![ipPC1](../images/Screenshot_2.png)
+    ![ipPC1](../images/RIPv2/Screenshot_2.png)
 
     - IP PC2 
 
-    ![ipPC2](../images/Screenshot_4.png)
+    ![ipPC2](../images/RIPv2/Screenshot_4.png)
 
 - Đặt Ip cho router
 - Router 0 
@@ -99,7 +99,7 @@
 ```
 - Ping 
 
-![Ping](../images/Screenshot_5.png)
+![Ping](../images/RIPv2/Screenshot_5.png)
 
 
 
