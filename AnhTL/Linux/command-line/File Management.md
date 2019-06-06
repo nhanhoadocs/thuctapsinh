@@ -1,4 +1,4 @@
-# Command-line File management
+# File management
 
 ### I. Di chuyển / Liệt kê các tập tin
 
