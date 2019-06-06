@@ -114,6 +114,7 @@
 `` halt -p ``
 
 **10. Kết hợp hai tệp lại với nhau (Join)**
+- **Phải để stt trước mỗi string-line để chúng nhận biết được để join**.
 - Liên kết các lĩnh vực của cả 2 file:
 
 `` join -j file1 file2 ``
@@ -143,8 +144,9 @@
 
 ``df -h``
 
-`` Filesystem               Size   Used   Avail  Use%  Mounted on
-/dev/mapper/centos-root      38G   3.6G   34G    10%   / ``
+`` Filesystem                 Size    Used    Avail   Use%  Mounted on
+
+/dev/mapper/centos-root        38G    3.6G    34G     10%     / ``
 
 - Trong đó: filesystem: tên ổ đĩa. - size: không gian tổng - Used: Không gian đã sử dụng - Avail: Không gian trống - Use: Phần trăm đã sử dụng - Mounted on: Được gắn trên đầu trong cây thư mục root 18. Lấy thông tin của HDH và ghi vào tệp văn bản.
 
@@ -176,3 +178,67 @@
 - Tìm tất cả file rỗng trong thư mục home
 
 ``# find ~ -empty``
+**17. Ước tính không gian đĩa, tệp**
+`` du -h (đường dẫn) ``
+
+or
+
+`` du (đường dẫn) ``
+- Ví dụ:
+
+``
+
+du -h /home/aaz
+4.0K	/home/aaz/akc/aaz
+4.0K	/home/aaz/akc
+8.0K	/home/aaz
+
+``
+- Trong đó: 4.0k là kích thước của thư mực, tính theo byte. Còn Đầu ra của lệnh trên hiển thị số lượng khối đĩa trong thư mục /home/aaz cùng với các thư mục con của nó.
+
+**18. In ra biến môi trường**
+[root@localhost ~]# a=100
+[root@localhost ~]# echo $a
+100
+``echo $PATH ``
+- Biến PATH cho thấy đường dẫn tới các thư mục chứa câu lệnh (chương trình) để chạy khi bạn gõ trên terminal, các mục cách nhau dấu “:” ví dụ /usr/local/sbin; /usr/local/bin...
+
+- Ví dụ khi bạn cài phần mềm ffmpeg (thư viện chuyên chỉnh sửa video, audio …), hay khi các bạn cài phần mềm imagemagick trên Linux thì các chương trình của ffmpeg, imagemagick sẽ được lưu ở mục /usr/local/bin hoặc là ở /sbin …
+
+- Với biến PATH như trên thì bạn không cần biết ffmpeg, imagick cài ở đâu, mỗi khi bạn gõ lệnh ffmpeg hay convert (của imagick) trên terminal thì hệ thống tự biết tìm đến mục chứa nó để chạy.
+
+**19. ssh**
+- Login vào remote host
+
+`` ssh -l jsmith remotehost.example.com ``
+
+- Debug ssh client
+
+`` ssh -v -l jsmith remotehost.example.com ``
+
+- Hiển thị phiên bản ssh
+
+`` $ ssh -V ``
+
+`` OpenSSH_3.9p1, OpenSSL 0.9.7a Feb 19 2003 ``
+
+**20. Check version đang sử dụng.**
+``cat /etc/centos-release``
+``CentOS Linux release 7.6.1810 (Core) ``
+
+**21. Hiển thị memory đã sử dụng**
+`` free ``
+
+**22. Hiển thị số giây mà hệ điều hành chạy**
+``grep btime /proc/stat | grep -Eo [[:digit:]]+``
+``1559725057``
+
+**23. Gán và xem giá trị với echo**
+- Xem giá trị trong file.
+``echo tên_file``
+- Gán giá trị vào gile.
+`` echo giá_trị_cần_gán > tên_file ``
+- Gán giá trị tiếp vào dữ liệu đã có sẵn.
+`` echo giá_trị_cần_gán >> tên_file ``
+
+
