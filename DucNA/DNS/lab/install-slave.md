@@ -248,18 +248,14 @@ Ta thay đổi thông tin của DNS master và để sau một khoảng thời g
 
 Thay đổi thông số sau 
 
-![](../images/labs/slave/screenshot_4.png)
+![](../images/labs/slave/screenshot_8.png)
 
 Sau khi restart lại thì ta sẽ kiểm tra xem DNS slave đã cập nhật hay chưa. Thì ta có một vài cách để chứng minh
 
 - File log được lưu ở trong `/var/log/messages`
 
-![](../images/labs/slave/screenshot_6.png)
+![](../images/labs/slave/screenshot_7.png)
 
 - Kiểm tra bằng client được trỏ đến DNS slave từ đầu tra cứu bản ghi được thêm ở slave 
 
 ![](../images/labs/slave/screenshot_2.png)
-
-- Kiểm tra bằng cách nhìn vào thư mục `/var/named/slaves` nó sẽ hiển thị thêm file vì sau khi tạo ra file mới nó sẽ đổi tên file forward.com cũ và reverse.com cũ
-
-![](../images/labs/slave/screenshot_3.png)

@@ -68,3 +68,6 @@ Còn rất nhiều trang web khác có thể check được như thế như các
 
 # link tham khảo 
 https://www.hongkiat.com/blog/dns-propogation-check/
+
+https://www.cloudns.net/blog/10-most-used-nslookup-commands/
+

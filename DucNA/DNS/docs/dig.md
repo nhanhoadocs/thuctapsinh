@@ -1,6 +1,7 @@
+# Khái niệm 
 Định nghĩa : `dig` là một lệnh dùng để  truy vấn máy chủ DNS để biết thêm thông tin về địa chỉ DNS. Việc sử dụng dig điển hình nhất là chỉ cần truy vấn một máy chủ duy nhất.
 
-# 1.Dig đơn giản 
+1. Dig đơn giản 
 
 ![](../images/command/dig/screenshot_10.png)
 
@@ -47,4 +48,10 @@ Có những người cảm thấy câu trả lời quá dài và chỉ muốn hi
 9. Nếu không muốn gõ các option bớt ở phần hiển thị thì ta sẽ tạo ra file $HOME/.digrc để ghi option ta thường sử dụng 
 
 ![](../images/command/dig/screenshot_5.png)
+
+# Link tham khảo 
+https://www.rootusers.com/12-dig-command-examples-to-query-dns-in-linux/
+
+https://www.tecmint.com/10-linux-dig-domain-information-groper-commands-to-query-dns/
+
 

@@ -1,6 +1,13 @@
 # Mục lục 
+1. [khái niệm](#a)
+2. [phân loại](#b)
+3. [Cấu trúc DNS](#c)
+4. [Zone và Zone file ](#d)
+5. [Luồng hoạt động của DNS](#e)
 
-# 1. Khái niệm về DNS 
+<a name="a">
+
+# 1. Khái niệm về DNS </a>
 DNS là viết tắt của từ Domain Name System(hệ thống tên miền). Được phát minh bởi các sinh viên trường đại học Berkeley của California vào năm 1984. Nó có chức năng dịch một tên sang địa chỉ IP để các máy tính sử dụng nhận dạng trên hệ thống mạng và định vị và xác định các dịch vụ và thiết bị máy tính và ngược lại. Nó liên kết thông tin khác nhau với các tên miền được gán cho mỗi thực thể tham gia.
 
 Hệ thống tên miền được sử dụng như một danh bạ của internet. Con người truy cập thông tin trực tuyến thông qua các tên miền. Mỗi thiết bị được kết nối với Internet có một địa chỉ IP duy nhất mà các máy khác sử dụng để tìm thiết bị. Các máy chủ DNS loại bỏ sự cần thiết của con người để ghi nhớ các địa chỉ IP như 192.168.1.1 
@@ -9,7 +16,9 @@ ví dụ tên miền [www.google.com.vn](https://www.google.com.vn/) sẽ dịch
 
 Nhờ cách sử dụng DNS nhanh nhất và hữu ích, người dùng không cần phải lưu một danh sách địa chỉ IP của riêng mình. Với mô hình phân cấp hình cây nó cũng dễ dàng quản lý hơn.
 
-# 2. Phân loại DNS 
+<a name="b">
+
+# 2. Phân loại DNS </a>
 Master DNS: Một máy chủ sẽ có một tên miền riêng được đăng ký trên internet. Server này là con server chính cung cấp tên miền cho người sử dụng mạng 
 
 Slave DNS : Cũng là một DNS server. Nhưng nó là DNS server dự phòng để phòng trường hợp master DNS server gián đoạn nó sẽ thay thế  master khi các truy vấn từ người dùng vẫn tiếp tục gửi tới và đảm nhiệm vai trò ánh xạ tên miền và địa chỉ IP. Nó sử dụng slave bằng cách sao lưu dữ liệu từ master sang slave 
@@ -18,7 +27,9 @@ Caching DNS : là một server đệm. Khi một quá trình phân giải tên m
 
 Forwarding DNS : Là server chuyển tiếp nhiệm vụ cho server khác làm việc rồi lưu kết quả về  bộ nhớ local 
 
-# 3. Cấu trúc của DNS 
+<a name="c">
+
+# 3. Cấu trúc của DNS </a>
 ![](../images/tong_quan/screenshot.png)
 
 Cấu trúc DNS là mô hình cấu trúc phân cấp hình cây:
@@ -40,7 +51,10 @@ Cấu trúc của URL
     - c : là chỉ nơi miền chính thuộc vào 
 - 3 : Thư mục lưu trữ file 
 - 4 : tên file ta đến
-# 4. Zone và Zone file 
+
+<a name="d">
+
+# 4. Zone và Zone file </a>
 Zone là nơi chứa các bản ghi tài nguyên mô tả domain hoặc subdomain. Được dùng để ánh xạ một tên miền thành một địa chỉ IP  Zone được chia nhỏ ra và phân quyền cho các DNS server khác khi quản lý.
 
 ## Các loại bản ghi trong zone (zone file)
@@ -121,6 +135,8 @@ Mức độ ưu tiên : trường này xác định địa chỉ nào được d
 Bản ghi TXT(text) được sử dụng để cung cấp khả năng liên kết văn bản tùy ý với máy chủ. Chủ yếu dùng trong mục đích xác thực máy chủ với tên miền.
 
 Ví dụ như bản ghi SPF trong DNS là một dạng bản ghi TXT dùng để lưu thông tin khách hàng và dùng để xác thực danh tính mail của khách hàng.
+
+
 # 5.Luồng hoạt động trong DNS 
 Có hai luồng hoạt động của DNS: là đệ quy và vòng lặp 
 ## 5.1 Đệ quy 
