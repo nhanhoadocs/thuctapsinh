@@ -28,12 +28,15 @@ Chỉ các user thuộc loại quản trị viên trong hệ điều hành thì 
 
 **3. Tạo user và thêm vào group**
 - B1: Đăng nhập vào root
+
 `` su root ``
 - B2: tạo user
+
 `` adduser ten_user ``
 - B3: Đặt pass cho user
+
 `` passwd ten_user ``
-- B4: join user vào group wheel có sẵn trong file sudoers của centOs
+- B4: join user vào group wheel có sẵn trong file sudoers của centOS
 ![img](https://scontent.fhan5-6.fna.fbcdn.net/v/t1.15752-9/62015558_368579090677726_2389569660027666432_n.png?_nc_cat=105&_nc_oc=AQmTnluwIo2e8gd1YaWxbbBDFU5rfRgW6ugfIGxGMgS1ZnLsHNwfvkhsDxREFb6WynQ&_nc_ht=scontent.fhan5-6.fna&oh=0080139bf1bdcf479caea3a26526e587&oe=5D55E769)
 
     `` usermod -aG wheel ten_user ``
