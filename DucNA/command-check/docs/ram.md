@@ -10,7 +10,7 @@ Một số đặc điểm của RAM :
 2. Cách kiểm tra trạng thái của Memorry 
 Command `htop` 
 
-![](screenshot_9.png)
+![](../images/screenshot_9.png)
 
 Ô đầu tiên: 
 - `1234` : là số core của máy tính và phần trăm hoạt động

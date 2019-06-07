@@ -1,6 +1,4 @@
-# 1. Khái niệm 
-
-# 2. Cách kiểm tra trạng thái CPU và RAM trong linux
+#  Cách kiểm tra trạng thái CPU và RAM trong linux
 Lệnh top 
 ```
 top - 14:16:30 up  3:29,  1 user,  load average: 0,83, 0,90, 1,11
