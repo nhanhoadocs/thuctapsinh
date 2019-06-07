@@ -35,5 +35,5 @@
     - Card Host-only chỉ có thể giao tiếp với các card Host-only trên các máy ảo khác.
     - Card Host-only không thể giao tiếp với mạng vật lý mà máy tính thật đang kết nối.
 
-  - **Custom**: 
+
 ![img](https://pbs.twimg.com/media/CSZpJyvUYAAeH6L.png)
