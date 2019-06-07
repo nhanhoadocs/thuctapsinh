@@ -1,5 +1,7 @@
 #  Cách kiểm tra trạng thái CPU và RAM trong linux
-Lệnh top 
+Lệnh top : lệnh trên được sử dụng để hiển thị các quy trình Linux. Nó cung cấp một cái nhìn thời gian thực của các tiến trình trong hệ thống đang chạy. 
+
+
 ```
 top - 14:16:30 up  3:29,  1 user,  load average: 0,83, 0,90, 1,11
 Tasks:  88 total,   1 running,  87 sleeping,   0 stopped,   0 zombie

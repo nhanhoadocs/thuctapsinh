@@ -8,7 +8,7 @@ Một số đặc điểm của RAM :
 - Sẽ bị mất đi khi mất điện 
 
 2. Cách kiểm tra trạng thái của Memorry 
-Command `htop` 
+Command `htop` : là một trình xem và quản lý tiến trình của hệ thống. Nó hiển thị một danh sách được cập nhật thường xuyên của các quá trình đang chạy trên máy tính, thường được sắp xếp theo lượng sử dụng CPU
 
 ![](../images/screenshot_9.png)
 
