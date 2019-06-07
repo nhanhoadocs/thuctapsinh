@@ -8,7 +8,7 @@
 - Để làm điều gì đó yêu cầu ta phải có các quyền này.
 
 **1. su**
-- Lệnh su dùng để chuyển sang siêu người dùng - hoặc người dùng root, tức là khi ta chạy lệnh su  ta phải nhập mật khẩu vào. Tuy nhiên, đây là tất cả các lệnh su thực hiện - bạn có thể sử dụng nó để chuyển sang bất kỳ tài khoản người dùng nào. 
+- Lệnh su dùng để chuyển sang siêu người dùng - hoặc người dùng root, tức là khi ta chạy lệnh su  ta phải nhập mật khẩu vào. Tuy nhiên, đây là tất cả các lệnh su thực hiện - ta có thể sử dụng nó để chuyển sang bất kỳ tài khoản người dùng nào. 
   - VD: su user1
   - passwd: 
   - Tức là chuyển sang dùng user1
