@@ -12,10 +12,15 @@
 Lệnh ls -l list ra file với đầy đủ thông tin về quyền truy cập
 
 ``1|`` $ls -l /home/user1
+
 ``2|`` drwxrwxr-x   7 user1 user1   4096 Jun  8 13:38 .vagrant.d/ 
+
 ``3|`` drwxrwxr-x   6 user1 user1   4096 May 13  2013 venv/ 
+
 ``4|`` drwxr-xr-x   6 user1 user1   4096 Jul  4 22:34 Videos/ 
+
 ``5|`` drwxr-xr-x  11 user1 user1   4096 Jun 25 11:22 .vim/
+
 ``6|`` -rw-rw-r--   1 user1 user1   2140 Oct 27  2013 .vimrc
 
 - Dấu (d) và (-). Đây là kiểu file: (d) là directory (thư mục), (-) là file thông thường, l là link …
