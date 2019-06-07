@@ -38,7 +38,7 @@ systemctl stop firewalld
 
 `http://địa-chỉ-IP`
 
-![](/wordpress/images/LAMP/1.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Wordpress/images/LAMP/1.png)
 
 **Cài Mysql**
 
@@ -82,7 +82,7 @@ Mở trình duyệt web truy cập địa chỉ `http://địa chỉ Ip/info.php
 
 Kết quả trả về như sau là thành công
 
-![](/wordpress/images/LAMP/2.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Wordpress/images/LAMP/2.png)
 
 Đến đây đã cài đặt thành công LAMP
 
@@ -162,6 +162,6 @@ Bây giờ mở trình duyệt và truy cập địa chỉ của bạn để ti�
 
 Sau khi cấu hình và đăng nhaaoj vào sẽ có được giao diện như sau
 
-![](/wordpress/images/LAMP/3.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Wordpress/images/LAMP/3.png)
 
 Đến đây đã cài đặt thành công wordpress trên Centos7 bằng LAMP.

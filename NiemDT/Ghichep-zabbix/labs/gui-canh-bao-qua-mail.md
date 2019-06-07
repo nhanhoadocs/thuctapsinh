@@ -53,12 +53,12 @@ Cần lưu ý một vài bước
 
 Bước này bạn chỉ ra tên script dùng để gửi mail
 
-![](/images/mail/01.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/mail/01.png)
 
 Bước này chỉ ra địa chỉ mail nhận cảnh báo
 
-![](/images/mail/02.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/mail/02.png)
 
 Khi thông số vợt quá ngưỡng cảnh báo thì cảnh báo sẽ được gửi về mail của tôi
 
-![](/images/mail/03.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/mail/03.png)

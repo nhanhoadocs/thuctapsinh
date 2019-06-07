@@ -2,7 +2,7 @@
 
 Có rất nhiều câu lệnh có thể kiểm tra được trạng thái của CPU. Có một câu lệnh quen thuộc là là `top` 
 
-![](/Monitoring/images/1.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Monitoring/images/1.png)
 
 Câu lệnh này trả về các thông tin của CPU sau
 
@@ -21,7 +21,7 @@ Câu lệnh này trả về các thông tin của CPU sau
 * `si` xử lý các kết nối phần mềm
 * `st` khoảng thời gian CPU có việc phải làm mà không thể đáp ứng
 
-![](/Monitoring/images/2.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Monitoring/images/2.png)
 
 * `PID` là ID của tiến trình
 * `USER` tên user sử dụng tiến trình
@@ -41,7 +41,7 @@ Câu lệnh này trả về các thông tin của CPU sau
 
 **Giá trị load average**
 
-![](/Monitoring/images/3.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Monitoring/images/3.png)
 
 Ở đây ta thấy có 3 giá trị đây là các giá trị thể hiện số tiến trình trung bình được xử lý trung bình trong các khoảng thời gian lần lượt là 1 phút, 5 phút, 15 phút.
 Để có thể chạy ổn thì giá trị này nên nhỏ hơn hoặc bằng số core của CPU.
@@ -50,7 +50,7 @@ Câu lệnh này trả về các thông tin của CPU sau
 
 Kiểm tra thông số RAM ở đây tôi dùng câu lệnh `free`
 
-![](/Monitoring/images/4.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Monitoring/images/4.png)
 
 Câu lệnh `free -m` hiển thị đơn vị là MB. Câu lệnh này hiển thị cả RAM thực và Swap.
 
@@ -73,7 +73,7 @@ Ta cần cài `nload` trước khi sử dụng nó
 yum install nload
 ```
 
-![](/Monitoring/images/5.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Monitoring/images/5.png)
 
 Kiểm tra được tốc độ vào và ra trên các card của máy.
 
@@ -92,7 +92,7 @@ Trước khi sử dụng được lệnh này ta cần cài đặt gói `sysstat
 yum install sysstat
 ```
 
-![](/Monitoring/images/6.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Monitoring/images/6.png)
 
 * `device` tên thiết bị
 * `tps` số transfers mỗi giây được cấp cho thiết bị. Số này càng cao tức là bộ xử lý càng sử dụng

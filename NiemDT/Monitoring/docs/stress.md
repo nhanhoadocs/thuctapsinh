@@ -18,7 +18,7 @@ yum install stress
 
 Để thấy sự khác biệt tôi dùng câu lệnh `htop` kiểm tra trước khi dùng câu lệnh `stress`
 
-![](/Monitoring/images/stress/1.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Monitoring/images/stress/1.png)
 
 Sau đó tôi sử dụng lệnh `stress` ở terminal còn lại
 
@@ -31,7 +31,7 @@ stress: info: [4362] dispatching hogs: 1 cpu, 0 io, 0 vm, 0 hdd
 
 Theo dõi ta thấy như sau
 
-![](/Monitoring/images/stress/2.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Monitoring/images/stress/2.png)
 
 Ta tiếp tục tăng số process lên để kiểm tra
 
@@ -42,7 +42,7 @@ stress: info: [4414] dispatching hogs: 2 cpu, 0 io, 0 vm, 0 hdd
 
 Ta sẽ thấy như sau
 
-![](/Monitoring/images/stress/3.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Monitoring/images/stress/3.png)
 
 CPU lúc này đã được sử dụng hết công suất
 
@@ -53,7 +53,7 @@ Nếu ta tiếp tục tăng số process lớn hơn số core của CPU có th�
 stress: info: [4434] dispatching hogs: 4 cpu, 0 io, 0 vm, 0 hdd
 ```
 
-![](/Monitoring/images/stress/4.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Monitoring/images/stress/4.png)
 
 Lúc này mỗi process chỉ còn sử dụng 50% CPU nên tốc độ sẽ giảm đi tương ứng
 
@@ -68,7 +68,7 @@ stress: info: [4515] dispatching hogs: 0 cpu, 0 io, 2 vm, 0 hdd
 
 Với câu lệnh này stress tạo ra 2 process mỗi process sẽ sử dụng `256M` RAM để kiểm tra.
 
-![](/Monitoring/images/stress/5.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Monitoring/images/stress/5.png)
 
 Nêú không muốn dùng số RAM mặc định cho mỗi process là `256M` ta có thể chi ra bằng cách dùng thêm option `--vm-bytes`. Bạn cũng có thể đặt lệnh test được chạy trong khoảng thời gian bao lâu bằng cách thêm option `-t`
 
@@ -79,7 +79,7 @@ stress: info: [4639] dispatching hogs: 0 cpu, 0 io, 2 vm, 0 hdd
 
 Câu lệnh này sẽ sinh ra 2 tiến trình và mỗi tiến trình sử dụng `500M` RAM và chạy trong 60s
 
-![](/Monitoring/images/stress/6.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Monitoring/images/stress/6.png)
 
 #### Test disk
 
