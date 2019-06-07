@@ -21,7 +21,6 @@
 - Hai card mạng này có thể được sử dụng để máy thật giao tiếp với các máy tính ảo. Khi “gắn” một card mạng vào một máy ảo, card mạng này có thể được chọn 1 trong 3 loại sau:
 
   - **Bridge**: ở chế độ này, card mạng trên máy ảo được gắn vào VMnet0, VMnet0 này liên kết trực tiếp với card mạng vật lý trên máy thật, máy ảo lúc này sẽ kết nối internet thông qua card mạng vật lý và có chung lớp mạng với card mạng vật lý.
-  
   ![img](https://public.sn2.livefilestore.com/y2pt0QnN_xQOE_pgIJRAxtK5EM-sTUw3tPhgNsDZSts-Qh6fZ0W_qxt6WIiUui_jP8QpGgV0aatQfIFo39L_MjwKRk2v0XHixtbEMALXPlrISQ/briged.png?psid=1)
 
     - Card Bridge trên máy ảo chỉ có thể giao tiếp với card mạng thật trên máy thật.
