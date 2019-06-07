@@ -109,7 +109,7 @@
 
 ### III. Nội dung tập tin
 **1. Đọc nội dung file**
-- Xuất hiện nội dung của ``file1`` trên màn hình ở dạng mã ASCII.
+- Đọc nội dung của file1.
 
 `` cat file1 ``
 
@@ -117,7 +117,7 @@
 
 `` more file1 ``
 
-- << less >> giống như << more >>, nhưng cho phép dùng phím << page Down >>.
+- << less >> giống như << more >>, nhưng cho phép dùng phím << page Down >> ( có thể xem được tên file nén)
 
 `` less file1 ``
 
@@ -195,6 +195,42 @@
 - Giao (+) quyền đọc (r) và quyền thực thi (x) vào bên trong ``thưmục1``, kể cả tất cả các thư mục con của nó (-R), cho tất cả mọi người (a).
 
 `` chmod -R a+rw thưmục1 ``
+
+### V. Nén và giải nén tập tin
+
+**1. Tạo tập tin nén**
+- Tạo tập tin nén << file.txt.gz >>
+
+`` gzip file.txt ``
+
+- Tạo ra một tập tin << archive.tar >> chứa các tập tin `` file1, file2 ``.
+
+`` tar cvf archive.tar file1 file2 ``
+
+- Tạp một tập tin << archive.tar.gz >> dùng << gzip >> để chứa toàn bộ ``thưmục``.
+
+`` tar cvfz archive.tar.gz thưmục ``
+
+
+**2. Giải nén**
+- giải nén tập tin << file.txt >>
+
+`` gunzip file.txt.gz ``
+
+- Giải phóng các tập tin có trong tập tin << archive.tar >>, đồng thời hiển thị các tên tập tin.
+
+`` tar xvf archive.tar ``
+
+- Giải nén các tập tin có trong tập tin << archive.tar.gz >> dùng << gzip >> và << tar >>.
+
+`` tar xvfz archive.tar.gz ``
+
+- Giải nén các tập tin có trong tập tin << archive.tar.bz2 >> dùng << bzip >> và << tar >>
+
+`` tar jxvf archive.tar.bz2 ``
+
+
+
 
 
 
