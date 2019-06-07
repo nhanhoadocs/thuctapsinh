@@ -8,7 +8,7 @@
 - Một card Nat, card này sẽ Nat địa chỉ IP của máy thật ra một địa chỉ khác cho máy ảo sử dụng. Card này cũng có thể kết nối ra bên ngoài Internet.
 - Để xem các card mạng đã có trong VMware Workstation ta chỉ cần bật VMware lên, chọn Edit => Virtual Network Editor
 
-![img(https://camo.githubusercontent.com/685edb82d7771ab1f538102d5af1efb621c9e849/687474703a2f2f692e696d6775722e636f6d2f48513643334e702e706e67)
+![img](https://camo.githubusercontent.com/685edb82d7771ab1f538102d5af1efb621c9e849/687474703a2f2f692e696d6775722e636f6d2f48513643334e702e706e67)
 
 - Ta có thể thấy trong hình card bridge có tên là VMnet0, card Nat có tên là VMnet8
 - Card bridge không có địa chỉ IP do nó sẽ sử dụng dải IP của máy thật. VMware sẽ tự sinh một dải IP và gán cho VMnet8. Trong trường hợp này là dải 192.168.238.0/24.
