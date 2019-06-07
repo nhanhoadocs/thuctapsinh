@@ -1,7 +1,7 @@
 # Phân Quyền
 
 #### Khái niệm.
-- Quyền truy cập ``file`` là một phần quan trọng của linux, nó có vai trò quan trọng trong việc nâng cao tính bảo mật và ổn định trên hệ thống linux. Trên Windows, ví dụ máy tính của ta có 2 user là user1 và user2, thông thường thì mặc định cả hai đều là Administrator. Khi đó cả user1 và user2 đều có mọi quyền truy cập tới mọi file trên hệ thống kể cả những phần của hệ thống. Trên linux thì quyền của 2 user tách biệt hơn và 2 user mặc định sẽ có quyền admin hạn chế hơn. Vì vậy khi virus thâm nhập máy linux nó chỉ có thể chạy chương trình dưới quyền của user1 hoặc user2, nó không thể chạy với quyền root để gây ảnh hưởng rộng hơn trên cả hệ thống.
+- Quyền truy cập ``file`` là một phần quan trọng của linux. Tức là ta có thể phân quyền cho file hoặc thư mục được phép làm gì và không được phép làm gì.
 
 **Ba thuộc tính quyền mọi file trên linux đều có**
 - ``Quyền của người sở hữu``: quy định quyền người sở hữu được làm những thao tác gì với file. Khi mới tạo file thì người sở hữu chính là người tạo file, sau đó có thể đổi chủ sở hữu cho người khác.
