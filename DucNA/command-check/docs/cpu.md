@@ -75,3 +75,15 @@ Hàng thứ 5 (Swap)
 - 1048572 free,    : Lượng Swap Trống    
 - 0 used.          : Lượng Swap Sử dụng 
 - 346520 avail Mem : Dung lượng có sẵn 
+
+
+# Link tham Khảo 
+
+https://www.geeksforgeeks.org/top-command-in-linux-with-examples/
+
+https://unix.stackexchange.com/questions/390518/what-do-the-buff-cache-and-avail-mem-fields-in-top-mean
+
+https://www.tecmint.com/set-linux-process-priority-using-nice-and-renice-commands/
+
+https://tecadmin.net/understanding-linux-top-command-results-uses/
+
