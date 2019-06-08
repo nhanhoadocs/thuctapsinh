@@ -35,3 +35,14 @@ named-checkzone (option) zonename filename
 ![](../images/command/dig/screenshot_20.png)
 
 Hệ thống tên miền (DNS) là danh bạ của Internet. Con người truy cập thông tin trực tuyến thông qua các tên miền. Các trình duyệt web tương tác thông qua các địa chỉ Giao thức Internet (IP). DN S dịch tên miền thành địa chỉ IP để trình duyệt có thể tải tài nguyên Internet.
+
+# Link tham khảo 
+
+https://www.interserver.net/tips/kb/what-and-how-to-use-rndc/
+
+https://ftp.isc.org/isc/bind9/cur/9.11/doc/arm/man.rndc.html
+
+https://tecadmin.net/check-dns-configuration-file-bind/
+
+https://www.cyberciti.biz/tips/howto-linux-unix-check-dns-file-errors.html
+
