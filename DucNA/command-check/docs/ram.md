@@ -30,4 +30,6 @@ Command `htop` : là một trình xem và quản lý tiến trình của hệ th
 
 Command free -m 
 
+
+
 https://www.tecmint.com/set-linux-process-priority-using-nice-and-renice-commands/
