@@ -24,6 +24,7 @@ Lệnh df hiển thị các thông tin và các không gian sử dụng  của d
 ![](../images/screenshot_1.png)
 
 Các option của lệnh df 
+
 | option | DESCRIPTION |
 |----|----|
 | -h | Hiển thị ra size của ổ disk | 

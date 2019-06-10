@@ -42,3 +42,4 @@ Là lệnh dùng để hiển thị dung lượng đã trống và đã sử d�
 |
 
 https://www.tecmint.com/set-linux-process-priority-using-nice-and-renice-commands/
+
