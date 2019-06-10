@@ -29,7 +29,16 @@ Command `htop` : là một trình xem và quản lý tiến trình của hệ th
 Ô thứ 3 giống với command `top`
 
 Command free -m 
+Là lệnh dùng để hiển thị dung lượng đã trống và đã sử dụng trong bộ nhớ 
 
+![](../images/screenshot_2.png)
 
+| Option | DESCRIPTION | 
+|-------|-----------|
+| -b  | Hiển thị kết quả theo byte |
+| -k | Hiển thị kết quả theo kilobyte|
+| -m | Hiển thị kết quả theo megabyte | 
+| -g | Hiển thị kết quả theo gigabyte | 
+|
 
 https://www.tecmint.com/set-linux-process-priority-using-nice-and-renice-commands/

@@ -32,4 +32,4 @@ Các option của lệnh df
 | -t | Chọn kiểu disk để hiển thị |
 | -v | Hiển thị phiên bản của lệnh | 
 | --help | Hiển thị trợ giúp | 
-| -x | Hiển thị disk không của type | 
+| -x | Hiển thị disk không có kiểu type |
