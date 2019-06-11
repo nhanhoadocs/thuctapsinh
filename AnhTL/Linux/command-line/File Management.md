@@ -3,8 +3,11 @@
 ### I. Di chuyển / Liệt kê các tập tin
 
 **1. Hiển thị tên thư mục đang làm việc**
+
 ``pwd``
+
 **2.  di chuyển qua lại các thư mục**
+
 - Di chuyển tới thư mục home << /home/người_dùng >>
 
     `` cd ``
