@@ -68,10 +68,10 @@
     
 **2. Chuyển tên tập tin/ thư mục.**
 `` mv ``
-- chuyển tên file1 thành tên file2.
+- chuyển toàn bộ nội dung của file1 thành file2.
 `` mv file1 file2 ``
 
-- Chuyển tên thưmục1 thành thưmục2.
+- Chuyển toàn bộ nội dung của thưmục1 thành thưmục2.
 `` mv thưmục1 thưmục2 ``
 
 - Chuyển file1 vào thư mục1.
