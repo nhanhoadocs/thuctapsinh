@@ -100,6 +100,7 @@
 **4. Tạo ta một liên kết mang tên ``abc`` đến file1 (nối tắt).**
 
 `` ln -s file1 abc ``
+
 **5. Tìm tập tin mang tên ``file1`` trong `` thưmục1`` kể cả trong các thư mục con.**
 
 `` find thưmục1 -name file1 ``
