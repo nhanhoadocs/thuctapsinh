@@ -1,3 +1,6 @@
+<a name ="Giao thức STP">
+
+
 # Cấu hình STP
 
 - Ta có một Topology như hình:

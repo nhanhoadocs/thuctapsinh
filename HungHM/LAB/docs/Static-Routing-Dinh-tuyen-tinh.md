@@ -1,3 +1,5 @@
+<a name ="Static Routing-Định tuyến Tĩnh">
+
 # Cấu hình Static Routing
 - Ta có một Topology như hình:
 ![](../images/Static_routing/topo.png)
