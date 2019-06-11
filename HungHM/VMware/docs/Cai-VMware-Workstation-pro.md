@@ -10,39 +10,38 @@ Click vào file vừa tải về để bắt đầu cài đặt
 
 Nhấn `Next` 
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/VMware/images/Screenshot_1.png)
+![](../images/VMware/a1.png)
 
 Click vào `I accept the terms in the License Agreement` sau đó nhấn `Next`
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/VMware/images/Screenshot_2.png)
-
+![](../images/VMware/a2.png)
 Nhấn `Next`
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/VMware/images/Screenshot_3.png)
+![](../images/VMware/a3.png)
 
 Nhấn `Next` 
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/VMware/images/Screenshot_4.png)
+![](../images/VMware/a4.png)
 
 Nhấn `Next`
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/VMware/images/Screenshot_5.png)
+![](../images/VMware/a5.png)
 
 Đợi chương trình đang cài đặt
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/VMware/images/Screenshot_6.png)
+![](../images/VMware/a6.png)
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/VMware/images/Screenshot_7.png)
+![](../images/VMware/a7.png)
 
 Lúc này để có thể sử dụn được chương trình bạn phải nhập key. Nhấn `License` để nhập key. Nếu bạn chưa có key bạn có thể nhấn `Finish` để hoàn tất cài đặt nhưng bạn chưa thể sử dụng được chương trình cho đến khi bạn nhaaoj key vào.
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/VMware/images/Screenshot_8.png)
+![](../images/VMware/a8.png)
 
 Bạn nhập Key vào và sau đó nhấn `Enter`
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/VMware/images/Screenshot_9.png)
+![](../images/VMware/a9.png)
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/VMware/images/Screenshot_10.png)
+![](../images/VMware/a10.png)
 
 * Bạn có thể mua key của nhà sản xuất nhưng nếu không có điều kiện bạn có thể tham khảo các key sau*
 
@@ -97,10 +96,10 @@ Lúc này bạn đã cài thành công `WMware worktation`
 
 Ra ngoài Desktop ta thấy biểu tượng
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/VMware/images/Screenshot_11.png)
+![](../images/VMware/a11.png)
 
 click vào đó để làm việc với phần mềm tạo máy ảo VMware
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/VMware/images/Screenshot_12.png)
+![](../images/VMware/a12.png)
 
 ### Cài đặt hoàn tất!!!
