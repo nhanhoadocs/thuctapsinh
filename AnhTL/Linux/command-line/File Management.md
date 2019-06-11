@@ -29,18 +29,30 @@
 `` cd /usr/sbin ``
 
 **3. Liệt kê các danh mục trong thư mục hiện hành**
+
 ``ls``
 - Liệt kê danh mục tập tin trong thư mục 1 cách chi tiết.
+
 `` ls -l ``
+
 - Liệt kê tất cả các tập tin, kể cả các tập tin ẩn (thường có tên bắt đầu bằng một dấu chấm)
+
 `` ls -a ``
+
 - Liệt kê tên các thư mục nằm trong thư mục hiện hành.
+
 `` ls -d ``
+
 - Xếp lại các tập tin theo ngày đã tạo ra, bắt đầu bằng những tập tin mới nhất.
+
 `` ls -t ``
+
 - Xếp lại các tập tin theo kích thước, từ to nhất đến nhỏ nhất.
+
 `` ls -S ``
+
 - Liệt kê theo từng trang một, nhờ tiện ích << more >>
+
 `` ls -l | more ``
 
 ### II. Tập tin và thư mục
@@ -72,12 +84,15 @@
 **2. Chuyển tên tập tin/ thư mục.**
 `` mv ``
 - chuyển toàn bộ nội dung của file1 thành file2.
+
 `` mv file1 file2 ``
 
 - Chuyển toàn bộ nội dung của thưmục1 thành thưmục2.
+
 `` mv thưmục1 thưmục2 ``
 
 - Chuyển file1 vào thư mục1.
+
 `` mv file1 thưmục1 ``
 
 - Chuyển ``file111`` vào ``thưmục1`` rồi đồng thời đổi tên tên tin thành ``file2``.
