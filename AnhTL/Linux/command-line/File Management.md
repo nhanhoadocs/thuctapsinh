@@ -82,6 +82,7 @@
 `` mv file1 thưmục1/file2 ``
 
 **3. xóa bỏ tập tin/ thư mục**
+
 `` rm ``
 
 - Xóa bỏ file trong thư mục hiện hành.
