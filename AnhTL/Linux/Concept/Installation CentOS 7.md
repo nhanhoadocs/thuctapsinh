@@ -82,6 +82,7 @@
 #### Tài liệu tham khảo 
 
 https://www.quantrimangdn.com/blogs/post/cai-dat-he-dieu-hanh-cenos-7
+
 https://www.server-world.info/query?os=CentOS_7&p=install
 
 # END
