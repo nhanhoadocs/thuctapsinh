@@ -27,7 +27,7 @@
         - NAT : Được sử dụng để chia sẻ địa chỉ IP máy chủ.Thực hiện cơ chế NAT để chia sẻ IP ra bên ngoài.
         - Host-Only: chỉ dùng để chia sẻ mạng với máy chủ
         - Custom : Mạng ảo cụ thể
-    ![](../images/VMware/b81.png)
+    ![](../images/VMware/b21.png)
  - Sau khi đã cài đặt xong phần cứng nhấn Finish để tiến hành Installing
     ![](../images/VMware/b10.png)
 
