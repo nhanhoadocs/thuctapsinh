@@ -45,7 +45,7 @@ Hàng đầu tiên :
 - top - 14:16:30 : Thời gian hiện tại 
 -  up  3:29 : Thời gian hệ thống chạy 
 -   1 user : số lượng user đăng nhập 
-- load average: 0,83, 0,90, 1,11 : trong 1,5,15 phút của CPU 
+- load average: Số lượng công việc trong vòng 1 phút 0,83, 0,90, 1,11 : trong 1,5,15 phút. 
 
 Hàng thứ 2:
 - 88 total,   : Tổng số tiến trình 
