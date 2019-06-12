@@ -39,7 +39,7 @@
 - Chọn thành phố và ngày giờ rồi nhấn `done` để tiếp tục.
 - Chọn `Network-Hostname`để bật kết nối mạng cho máy rồi nhấn `Done `để tiếp tục.
 ![](../images/VMware/b14.png)
-![](../images/VMware/b15.png)
+
 - Chọn Root password để cài đặt mật khẩu cho máy chọn `Done` để tiếp tục.
 ![](../images/VMware/b16.png)
 - Nhấn Reboot để khởi động máy ảo vừa tạo
