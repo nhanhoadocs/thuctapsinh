@@ -1,3 +1,5 @@
+<a name ="Cơ chế Card mạng trong VMware"></a>
+
 # Cơ chế card mạng trong VMware
 
 - Switch ảo (Virtual Switch) cũng giống như switch vật lý, một Virtual Switch kết nối các thành phần mạng ảo lại với nhau. Những  switch ảo hay còn gọi là mạng ảo, chúng có tên là VMnet0, VMnet1, VMnet2… một số switch ảo được gắn vào mạng một cách mặc định. 

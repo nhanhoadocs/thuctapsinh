@@ -1,3 +1,5 @@
+ <a name ="Cài đặt ubuntu server">
+
 # Cài đặt ubuntu server 16.04 
 - Tải file ubuntu 16.04 [Tại đây](http://releases.ubuntu.com/16.04/)
 - Mở VMware lên và chọn `Create new virtual machine` để tiến hành cài đặt 
