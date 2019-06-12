@@ -303,7 +303,9 @@
 `` tar -czf - tecmint-14-09-12.tar | wc -c ``
 
   -  lệnh trên hiển thị kích thước của tệp lưu trữ được hiển thị bằng Kilobytes (KB).
+  
 **Note nén và giải nén**
+
 - Các option mà ta lựa chọn để tạo file nén hoặc giải nén đều có các ý nghĩa:
   - c - Tạo một tệp lưu trữ .tar mới.
   - v - Hiển thị rõ ràng tiến trình tập tin .tar.
