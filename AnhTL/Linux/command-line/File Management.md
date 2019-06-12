@@ -57,11 +57,11 @@
 
 ### II. Tập tin và thư mục
 **1. Lệnh dùng để copy (cp)**
- - sao chép từ file1 sang file2.
+ - Sao chép từ file1 sang file2.
  
 `` cp file1 file2``
 
-- chép file vào thự mục.
+- Chép file vào thự mục.
 
 `` cp file thưmục ``
 
@@ -99,13 +99,23 @@
 
 `` mv file1 thưmục1/file2 ``
 
-**3. xóa bỏ tập tin/ thư mục**
+**3. Tạo, xóa bỏ tập tin/ thư mục**
 
-`` rm ``
+- Tạo thư mục.
+
+`` mkdir tên_thưmục ``
+
+- Tạo thư mục ngang hàng.
+
+`` mkdir  {1,2,3,4,5,6,7,8,9,0} ``
+
+- Tạo thư mục cha và con cùng lúc.
+
+`` mkdir -p thưmục1/thưmục2 ``
 
 - Xóa bỏ file trong thư mục hiện hành.
 
-`` rm file ``
+`` rm tên_file ``
 
 - Xóa bỏ thư mục trống mang tên ``thưmục1``.
 
@@ -173,7 +183,7 @@
 `` grep -r chuỗi thưmục1 ``
 
 **5. Ghi thêm nội dung vào file**.
--  Ghi nội dung vào ``file1` ( dùng lệnh này sẽ chèn luôn cả nội dung đã có sẵn trong file ).
+- Ghi nội dung vào ``file1` ( dùng lệnh này sẽ chèn luôn cả nội dung đã có sẵn trong file ).
 
 `` echo nội_dung > file1``
 
@@ -223,19 +233,26 @@
 
 `` gzip file.txt ``
 
+- Tạo tập tin nén << file.txt.bz2 >>
+
+`` bzip2 file.txt ``
+
 - Tạo ra một tập tin << archive.tar >> chứa các tập tin `` file1, file2 ``.
 
 `` tar cvf archive.tar file1 file2 ``
 
-- Tạp một tập tin << archive.tar.gz >> dùng << gzip >> để chứa toàn bộ ``thưmục``.
+- Tạo một tập tin << archive.tar.gz >> dùng << gzip >> để chứa toàn bộ ``thưmục``.
 
 `` tar cvfz archive.tar.gz thưmục ``
 
-
 **2. Giải nén**
-- giải nén tập tin << file.txt >>
+- Giải nén tập tin << file.txt >> có đuôi . gz
 
 `` gunzip file.txt.gz ``
+
+- Giải nén tập tin << file.txt >> có đuôi . bz2
+
+`` bunzip2 file.txt.bz2 ``
 
 - Giải phóng các tập tin có trong tập tin << archive.tar >>, đồng thời hiển thị các tên tập tin.
 
@@ -245,15 +262,35 @@
 
 `` tar xvfz archive.tar.gz ``
 
-- Giải nén các tập tin có trong tập tin << archive.tar.bz2 >> dùng << bzip >> và << tar >>
+- Giải nén các tập tin có trong tập tin << archive.tar.bz2 >> dùng << bzip >> và << tar >>.
 
 `` tar jxvf archive.tar.bz2 ``
 
+**3. Liệt kê nội dung của file nén**
 
+- Liệt kê nội dung của tệp lưu trữ << archive.tar >>.
 
+`` tar tvf archive.tar ``
 
+- Để trích xuất một tệp có tên là << abc.tar >> từ << archive.tar >>.
 
+`` tar xvf archive.tar abc.tar ``
 
+- Trích xuất một tệp tecmintbackup.xml từ tệp lưu trữ tecmintbackup.tar.gz
 
+`` tar zxvf tecmintbackup.tar.gz tecmintbackup.xml``
 
+- Trích xuất nhiều tệp cùng lúc từ file nén.
 
+`` tar xvf tecmint-14-09-12.tar "file 1" "file 2" ``
+**Note nén và giải nén**
+- Các option mà ta lựa chọn để tạo file nén hoặc giải nén đều có các ý nghĩa:
+  - c - Tạo một tệp lưu trữ .tar mới.
+  - v - Hiển thị rõ ràng tiến trình tập tin .tar.
+  - f - Loại tên tệp của tệp lưu trữ.
+  - z - Để tạo một tệp lưu trữ gzip nén ( cả tar.gz và tgz đều giống nhau ).
+  - j - Tạo tập tin lưu trữ tar.bz2
+    - Tính năng bz2 nén và tạo tệp lưu trữ nhỏ hơn kích thước của gzip. Quá trình nén bz2 mất nhiều thời gian hơn để nén và giải nén các tệp nhanh hơn so với gzip ( tar.bz2 và tbz tương tự như tb2).
+  - x - Dùng để giải nén tập tin.
+  - t - dùng để liệt kê nội dụng của tập tin nén.
+   
