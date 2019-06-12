@@ -54,4 +54,4 @@ cat /etc/centos-release
 ![](../images/VMware/b18.png)
 - Kiểm tra ip dùng lệnh `ip a`
 
-![](../images/VMware/b19.png)
+![](../images/VMware/b20.png)
