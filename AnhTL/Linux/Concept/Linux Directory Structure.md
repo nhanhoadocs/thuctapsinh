@@ -93,10 +93,11 @@
     - Ví dụ: Nếu ta đặt các tệp vào /tmp và hệ thống Linux khởi động lại, các tệp của ta sẽ không còn nữa (giống ổ C: trên windows).
   - Thư mục /tmp là nơi để lưu trữ các tệp tạm thời, nhưng ta không nên đặt bất cứ thứ gì vào /tmp nếu muốn giữ lâu dài.
   - /tmp có nghĩa là lưu trữ nhanh với thời gian tồn tại ngắn. Nhiều hệ thống dọn dẹp /tmp rất nhanh - trên một số hệ thống, nó thậm chí còn được gắn dưới dạng đĩa RAM. /var/tmp thường nằm trên một đĩa vật lý, lớn hơn và có thể giữ các tệp tạm thời trong một thời gian dài hơn. Một số hệ thống cũng dọn dẹp /var/tmp, nhưng ít thường xuyên hơn.
-  - Một thư mục /etc/tmpfiles.d. Trong thư mục đó, người ta nên đặt một tệp cấu hình để kiểm soát xem /tmp có bị xóa hay không.
-    - #/etc/tmpfiles.d/tmp.conf
-    -  tmp 1777 root 20d
-  - Thay thế "20d" bằng "-" nếu bạn không bao giờ muốn xóa tệp.
+  - Một thư mục /usr/lib/tmpfiles.d/tmp.conf. Trong thư mục đó, người ta nên đặt một tệp cấu hình để kiểm soát xem /tmp có bị xóa hay không.
+    - /usr/lib/tmpfiles.d/tmp.conf.
+    ![img](https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/64310769_338826636796821_642989018329382912_n.png?_nc_cat=102&_nc_oc=AQlMORKo6vu3kCKUNdNYQ9Hso4brkfuTFYbr9jyEo028OJoros4iTVnyGMkG0MBUljw&_nc_ht=scontent.fhan5-2.fna&oh=4dd1cfbbab1fdd09ade34b744dd2b8d3&oe=5D96C087)
+  - Trên đây là tệp cấu hình mặc định /usr/lib/tmpfiles.d/tmp.conf. Như bạn có thể thấy các thư mục /tmp và /var/tmp được lên lịch để được dọn sạch cứ sau 10 và 30 ngày tương ứng.
+  - Thay thế "10d" bằng "-" nếu bạn không bao giờ muốn xóa tệp.
   - Thư mục /var/tmp được cung cấp cho các chương trình yêu cầu các tệp hoặc thư mục tạm thời được bảo tồn giữa các lần khởi động lại hệ thống. Do đó, dữ liệu được lưu trữ trong /var/tmp thường xuyên hơn dữ liệu trong /tmp.
   - Không được xóa các tệp và thư mục trong /var/tmp khi hệ thống được khởi động. Mặc dù dữ liệu được lưu trữ trong /var/tmp thường bị xóa theo cách cụ thể của trang web, nhưng ta nên xóa ở một khoảng thời gian ít thường xuyên hơn so với /tmp.
   
