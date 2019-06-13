@@ -54,7 +54,7 @@ RAM (Random Access Memory) là bộ nhớ truy xuất ngẫu nhiên. Khi mở m�
 
     - 0 stopped, : Số tiến trình bị dừng lại.
     
-    - 0 zombie : Số tiến đa hoàn thành và đang đợi đọc.
+    - 0 zombie : Số tiến là tiến trình chết, không xác định được chủ. 
 
 **Hàng thứ 3%(Cpu(s)):**
 
