@@ -91,6 +91,8 @@
   - Hầu hết các bản phân phối Linux xóa nội dung /tmp lúc khởi động.
     - Ví dụ: Nếu ta đặt các tệp vào /tmp và hệ thống Linux khởi động lại, các tệp của ta sẽ không còn nữa (giống ổ C: trên windows).
   - Thư mục /tmp là nơi để lưu trữ các tệp tạm thời, nhưng ta không nên đặt bất cứ thứ gì vào /tmp nếu muốn giữ lâu dài.
+  - các thư mục tạm thời là /tmp và /var/tmp. Trình duyệt web định kỳ ghi dữ liệu vào thư mục /tmp trong khi xem và tải xuống trang. Thông thường, /var/tmp dành cho các tệp liên tục (vì nó có thể được bảo toàn trong quá trình khởi động lại) và /tmp dành cho các tệp tạm thời hơn. 
+  - Việc làm sạch /tmp được thực hiện bởi tập lệnh khởi động /etc/init/mounted-tmp.conf
 - **/usr:**
   - Thư mục /usr được gọi là folder của người dùng. Ta sẽ tìm thấy các chương trình nhị phân và  chương trình thực thi liên quan đến người dùng trong thư mục /usr/bin.
     - Ví dụ: các ứng dụng không thiết yếu được đặt trong thư mục /usr/bin thay vì thư mục /bin.
