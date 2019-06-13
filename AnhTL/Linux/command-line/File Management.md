@@ -283,29 +283,7 @@
 - Trích xuất nhiều tệp cùng lúc từ file nén.
 
 `` tar xvf tecmint-14-09-12.tar "file 1" "file 2" ``
-
-**4. Liệt kê nội dung của file nén**
-
-- Thêm file hoặc thư mục vào file nén có sẵn.
-
-`` tar rvf tecmint-14-09-12.tar xyz.txt ``
-
-**5. Xác minh tệp lưu trữ**
-
-- Để xác minh tệp lưu trữ tar, tar.gz và tar.bz2
-
-`` # tar tvfW tecmint-14-09-12.tar ``
-
-**6. Kiểm tra kích thước**
-
-- Kiểm tra kích thước của tệp lưu trữ tar, tar.gz và tar.bz2
-
-`` tar -czf - tecmint-14-09-12.tar | wc -c ``
-
-  -  lệnh trên hiển thị kích thước của tệp lưu trữ được hiển thị bằng Kilobytes (KB).
-  
-**Note: nén và giải nén**
-
+**Note nén và giải nén**
 - Các option mà ta lựa chọn để tạo file nén hoặc giải nén đều có các ý nghĩa:
   - c - Tạo một tệp lưu trữ .tar mới.
   - v - Hiển thị rõ ràng tiến trình tập tin .tar.
@@ -314,7 +292,5 @@
   - j - Tạo tập tin lưu trữ tar.bz2
     - Tính năng bz2 nén và tạo tệp lưu trữ nhỏ hơn kích thước của gzip. Quá trình nén bz2 mất nhiều thời gian hơn để nén và giải nén các tệp nhanh hơn so với gzip ( tar.bz2 và tbz tương tự như tb2).
   - x - Dùng để giải nén tập tin.
-  - t - Dùng để liệt kê nội dụng của tập tin nén.
-  - r - Thêm file hoặc thư mục vào tập tin nén.
-  - w - Xác minh tập tin nén.
+  - t - dùng để liệt kê nội dụng của tập tin nén.
    
