@@ -10,91 +10,91 @@ RAM (Random Access Memory) là bộ nhớ truy xuất ngẫu nhiên. Khi mở m�
 
 **Ta có các thông số sau:**
 
-PID: mã tiến trình mỗi tiến trình có một mã riêng để phân biệt với các mã khác.
+    - PID: mã tiến trình mỗi tiến trình có một mã riêng để phân biệt với các mã khác.
 
-User: là user đang thực hiện tiến trình đó.
+    - User: là user đang thực hiện tiến trình đó.
 
-PR: Mức độ ưu tiên của tiến trình được nhìn thấy bởi kernel.
+    - PR: Mức độ ưu tiên của tiến trình được nhìn thấy bởi kernel.
 
-NI: Mức độ ưu tiên của tiến trình là một khái niệm ở không gian người dùng.
+    - NI: Mức độ ưu tiên của tiến trình là một khái niệm ở không gian người dùng.
 
-VIRT: Lượng RAM ảo mà tiến trình chiếm.
+    - VIRT: Lượng RAM ảo mà tiến trình chiếm.
 
-RES: lượng RAM dùng cho tiến trình.
+    - RES: lượng RAM dùng cho tiến trình.
 
-SHR: Thể hiện dung lượng bộ nhớ dùng chung được sử dụng bởi một tác vụ.
+    - SHR: Thể hiện dung lượng bộ nhớ dùng chung được sử dụng bởi một tác vụ.
 
-s: cho biết trạng thái của quá trình.
+    - s: cho biết trạng thái của quá trình.
 
-%CPU: Phần trăm CPU dùng cho tiến trình.
+    - %CPU: Phần trăm CPU dùng cho tiến trình.
 
-%MEM: phần trăm RAM dùng cho tiến trình.
+    - %MEM: phần trăm RAM dùng cho tiến trình.
 
-TIME+: Thời gian CPU hoàn thành tiến trình.
+    - TIME+: Thời gian CPU hoàn thành tiến trình.
 
-COMMAND: Dòng lệnh để thực hiện tiến trình.
+    - COMMAND: Dòng lệnh để thực hiện tiến trình.
 
 **Hàng đầu tiên:**
 
-top - 15:14:45 : Thời gian hiện tại.
+    - top - 15:14:45 : Thời gian hiện tại.
 
-up 14:21 : Thời gian hệ thống chạy.
+    - up 14:21 : Thời gian hệ thống chạy.
 
-5 user : số lượng user đăng nhập.
+    - 5 user : số lượng user đăng nhập.
 
-load average: 0.00, 0.01, 0.05 : trong 1,5,15 phút của CPU.
+    - load average: 0.00, 0.01, 0.05 : trong 1,5,15 phút của CPU.
 
 **Hàng thứ 2:**
 
-Task: 229 total, : Tổng số tiến trình.
+    - Task: 229 total, : Tổng số tiến trình.
 
-1 running, : Số tiền trình chạy.
+    - 1 running, : Số tiền trình chạy.
 
-228 sleeping, : Số tiến trình không chạy.
+    - 228 sleeping, : Số tiến trình không chạy.
 
-0 stopped, : Số tiến trình bị dừng lại.
-
-0 zombie : Số tiến đa hoàn thành và đang đợi đọc.
+    - 0 stopped, : Số tiến trình bị dừng lại.
+    
+    - 0 zombie : Số tiến đa hoàn thành và đang đợi đọc.
 
 **Hàng thứ 3%(Cpu(s)):**
 
-0.2 us, : %CPU sử dụng bởi tiến trình user.
+    - 0.2 us, : %CPU sử dụng bởi tiến trình user.
 
-0.0 sy, : %CPU sử dụng bởi tiến trình hệ thống.
+    - 0.0 sy, : %CPU sử dụng bởi tiến trình hệ thống.
 
-0.0 ni, : %CPU tiến trình sử dụng bởi cài đặt nice giá trị.
+    - 0.0 ni, : %CPU tiến trình sử dụng bởi cài đặt nice giá trị.
 
-99.8 id, : %CPU trong trạng thái rảnh.
+    - 99.8 id, : %CPU trong trạng thái rảnh.
 
-0.0 wa, : %CPU Sử dụng để chờ hoạt động I/O hoàn thành.
+    - 0.0 wa, : %CPU Sử dụng để chờ hoạt động I/O hoàn thành.
 
-0.0 hi, : %CPU Sử dụng tắt phần cứng.
+    - 0.0 hi, : %CPU Sử dụng tắt phần cứng.
 
-0.0 si, : %CPU Sử dụng tắt phần mềm.
+    - 0.0 si, : %CPU Sử dụng tắt phần mềm.
 
-0.0 st : %CPU Sử dụng Trong môi trường ảo hóa. Lượng CPU được lấy để dùng để chạy máy ảo khác.
+    - 0.0 st : %CPU Sử dụng Trong môi trường ảo hóa. Lượng CPU được lấy để dùng để chạy máy ảo khác.
 
 **Hàng thứ 4:(memory)**
 
-- Tính bằng KiB.
+Tính bằng KiB.
+    
+    - 995924 total, : lượng RAM Tổng.
 
-995924 total, : lượng RAM Tổng.
+    - 89864 free, : lượng RAM Trống.
 
-89864 free, : lượng RAM Trống.
+    - 663560 used, : lượng RAM Được sử dụng.
 
-663560 used, : lượng RAM Được sử dụng.
-
-242500 buff/cache : lượng RAM Đã được cache. Khi một tiến trình chạy thì sẽ được cấp phát một. lượng RAM. Khi mà ta chạy và dừng một tiến trình thì lượng RAM cấp phát đó sẽ được chuyển thành Inactive memory và được cache lại. Khi tiến trình này lặp lại một lần nữa thì Inactive memory sẽ được cung cấp ngay lập tức mà không phải cấp phát lại.
+    - 242500 buff/cache : lượng RAM Đã được cache. Khi một tiến trình chạy thì sẽ được cấp phát một. lượng RAM. Khi mà ta chạy và dừng một tiến trình thì lượng RAM cấp phát đó sẽ được chuyển thành Inactive memory và được cache lại. Khi tiến trình này lặp lại một lần nữa thì Inactive memory sẽ được cung cấp ngay lập tức mà không phải cấp phát lại.
 
 **Hàng thứ 5 (Swap)**
 
-0 total, : Lượng Swap Tổng.
+    - 0 total, : Lượng Swap Tổng.
 
-0 free, : Lượng Swap Trống.
+    - 0 free, : Lượng Swap Trống.
 
-0 used. : Lượng Swap Sử dụng.
+    - 0 used. : Lượng Swap Sử dụng.
 
-102032 avail Mem : Dung lượng có sẵn.
+    - 102032 avail Mem : Dung lượng có sẵn.
 
 ## Option top.
 
