@@ -59,13 +59,30 @@ Tên giao diện [ens33] khác nhau tùy thuộc vào môi trường.
 
 `` ps aux ``
 
+- Hiển thị các tiến trình liên quan đến chương trình khởi động ``soft``
+
+`` ps aux | grep soft ``
+
 - Hiển thị chi tiết các tiến trình được cập nhật liên tục.
 
 `` top ``
 
-- Hiển thị các tiến trình liên quan đến chương trình khởi động ``soft``
+- Để hiển thị phiên bản hiện tại của lệnh trên cùng.
 
-`` ps aux | grep soft ``
+`` top -h ``    
+
+- Để chỉ định độ trễ giữa của lần cập nhật mới nhất.
+
+`` top -d <số giây> ``
+
+- Với lệnh dưới đây, lệnh top sẽ tự động thoát sau 10 lần lặp lại. (bao nhiêu tùy chọn)
+
+`` top -n 10 ``
+
+- Để chỉ hiển thị các quy trình mà người dùng cụ thể đang chạy.
+
+`` top -u <tên người dùng> ``
+
 
 - Báo chấm dứt tiến trình mang số ``pid``
 
@@ -81,8 +98,35 @@ Tên giao diện [ens33] khác nhau tùy thuộc vào môi trường.
 
 - Lệnh để hiển thị ai đã đăng nhập và họ đang làm gì, hiển thị thông tin về người dùng hiện tại trên máy và các quy trình của họ.
 
-`` w ``
+`` w `` 
+    + Nhập lệnh ``man w`` để hiển thị thêm các option.
+      
+- Để tìm ra các tệp thư viện được sử dụng.
 
+`` strace -e open pwd ``
+
+- Hiển thị bản ghi hệ thống.
+
+`` gnome-system-log ``
+
+- Để đếm được thông tin trên một tập tin
+
+`` wc tên_tệp``
+
+- Để in số lượng dòng trong một tệp.
+
+`` wc -l tên_tệp ``
+
+- In số lượng ký tự trong một tệp
+
+`` wc -m tên_tệp ``
+
+- in số byte trong một tệp.
+
+`` wc -c tên_tệp ``
+
+
+![](https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/64699382_2617704338240622_1896494104343216128_n.png?_nc_cat=108&_nc_oc=AQlIznLubg0ANnwKjrBp6Zq1qxTeMEDru7ztSMfDEexkvLMOQhctOVIfdYNQkHACRJc&_nc_ht=scontent.fhan5-5.fna&oh=2ecee7c52854904d8ac4e4445554b225&oe=5D921AAD)
 **III. Gói phần mềm**
 - Tập tin xác định nguồn các kho phần mềm để tải xuống nhằm cài mới hoặc cập nhật hệ thống
 ``  ``
