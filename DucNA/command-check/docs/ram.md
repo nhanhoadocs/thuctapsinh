@@ -40,6 +40,7 @@ Là lệnh dùng để hiển thị dung lượng đã trống và đã sử d�
 | -m | Hiển thị kết quả theo megabyte | 
 | -g | Hiển thị kết quả theo gigabyte | 
 
+**File lưu trữ thông tin của ram cat /proc/meminfo**
 
 https://www.tecmint.com/set-linux-process-priority-using-nice-and-renice-commands/
 

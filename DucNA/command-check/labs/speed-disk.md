@@ -49,5 +49,17 @@ Ta thấy rằng trong vòng 13s mà ổ đĩa mới copy được 562MB. Bây g
 
 ![](../images/labs/cpu/screenshot_11.png)
 
+Tốc độ write của disk được tính ra ở dưới. Tính bằng dung lượng ghi được trên giây
+
 **Kết quả là chưa tới 5s thì đã copy được 1,1GB. Ta thấy rằng khi phải chạy nhiều việc và truy xuất nhiều thì disk sẽ bị ảnh hưởng và sẽ bị chạy chậm đi**
+
+Kiểm tra tốc độ đọc 
+```
+[root@localhost ~]# hdparm -t /dev/vda 
+
+/dev/vda:
+ Timing buffered disk reads: 588 MB in  3.00 seconds = 195.96 MB/sec
+```
+
+https://www.shellhacks.com/disk-speed-test-read-write-hdd-ssd-perfomance-linux/
 

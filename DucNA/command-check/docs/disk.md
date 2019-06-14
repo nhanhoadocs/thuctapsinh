@@ -34,3 +34,12 @@ Các option của lệnh df
 | -v | Hiển thị phiên bản của lệnh | 
 | --help | Hiển thị trợ giúp | 
 | -x | Hiển thị disk không có kiểu type |
+
+### Lệnh iotop 
+Lệnh iotop dùng để  giám sát tốc độ độc ghi của disk 
+
+Trong centos lệnh iotop không có sẵn thế nên ta phải cài đặt gói
+```
+yum install iotop
+```
+

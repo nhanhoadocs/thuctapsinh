@@ -45,7 +45,7 @@ Hàng đầu tiên :
 - top - 14:16:30 : Thời gian hiện tại 
 -  up  3:29 : Thời gian hệ thống chạy 
 -   1 user : số lượng user đăng nhập 
-- load average: Số lượng công việc trong vòng 1 phút 0,83, 0,90, 1,11 : trong 1,5,15 phút. 
+- load average: Số lượng công việc trong vòng 1 phút 0,83, 0,90, 1,11 : trong 1,5,15 phút. Khi có 2 core thì số hoạt động bình thường là dưới 2.0 
 
 Hàng thứ 2:
 - 88 total,   : Tổng số tiến trình 
@@ -76,7 +76,7 @@ Hàng thứ 5 (Swap)
 - 0 used.          : Lượng Swap Sử dụng 
 - 346520 avail Mem : Dung lượng có sẵn 
 
-
+*File lưu trữ thông tin của CPU là `/proc/cpuinfo`*
 # Link tham Khảo 
 
 https://www.geeksforgeeks.org/top-command-in-linux-with-examples/
