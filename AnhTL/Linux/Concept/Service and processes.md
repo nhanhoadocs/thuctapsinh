@@ -12,5 +12,10 @@
   - Quy trình đầu tiên: Mọi quy trình khi bắt đầu chạy ở nền trước theo mặc định, nhập vào từ bàn phím và gửi đầu ra màn hình. 
     - VD: Nhập lệnh pwd 
   - Quá trình Backround: Nó chạy trong nền mà không cần nhập bàn phím và đợi cho đến khi cần nhập bàn phím. Do đó, các quy trình khác có thể được thực hiện song song với quy trình đang chạy trong nền vì chúng không phải đợi quá trình trước đó được hoàn thành. 
-    - VD: Pwd & ls -l
+    - VD: pwd & ls -l
 
+## Tài liệu tham khảo:
+
+https://www.geeksforgeeks.org/processes-in-linuxunix/
+
+## END
