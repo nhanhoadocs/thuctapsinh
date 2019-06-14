@@ -15,13 +15,17 @@
 - MBR có kích thước nhỏ hơn 512 byte. Điều này có ba thành phần:
 
    **1. thông tin bộ tải khởi động chính ( 446 byte ).**
-- cung cấp thông tin về trình tải khởi động và chi tiết vị trí của thông bin bộ tải khởi động thực tế trên đĩa cứng   
+   
+- cung cấp thông tin về trình tải khởi động và chi tiết vị trí của thông bin bộ tải khởi động thực tế trên đĩa cứng 
+
    **2. thông tin bảng phân vùng ( 64 byte ).**
+   
 - MBR chứa 64 byte dữ liệu lưu trữ thông tin bảng phân vùng.
 - Chẳng hạn như bắt đầu và kết thúc của mỗi phân vùng, kích thước của phân vùng, loại phân vùng.
 - Ổ cứng chỉ hỗ trợ 4 phân vùng, điều này là do giới hạn của thông tin trong MBR. Để một phân vùng đại diện cho MBR, nó cần 16 byte không gian trong đó vì vậy nhiều nhất chúng ta sẽ nhận được 4 phân vùng.
 
    **3. kiểm tra xác thực MBR  ( 2 byte cuối ).**
+   
 -  Nó sẽ sao lưu MBR của ta.  Nếu MBR bị hỏng, thì 2 byte xác thực này được sử dụng để lấy lại nó.
 
 - **Khi CPU của ta biết tất cả các chi tiết này, nó sẽ cố gắng phân tích chúng và đọc phần đầu tiên của MBR để tải Giai đoạn thứ 2 của quá trình khởi động.**
