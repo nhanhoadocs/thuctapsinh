@@ -23,7 +23,7 @@ Hình bên trên là lib và lib64 được tham chiếu đến thư mục usr/l
 
 **CÁC THƯ MỤC THƯ VIỆN KHÁC TRONG LINUX**
 - /usr/lib - Tất cả các thư viện phần mềm được cài đặt tại đây. Điều này không chứa mặc định hệ thống hoặc thư viện kernel.
-  -  / usr / lib bao gồm các tệp đối tượng, thư viện và các tệp nhị phân nội bộ không được thực hiện trực tiếp bởi người dùng hoặc tập lệnh shell.
+  -  /usr/lib bao gồm các tệp đối tượng, thư viện và các tệp nhị phân nội bộ không được thực hiện trực tiếp bởi người dùng hoặc tập lệnh shell.
 - /usr/local/lib - Để đặt thêm các tệp thư viện hệ thống tại đây. Những tập tin thư viện có thể được sử dụng bởi các ứng dụng khác nhau.
 
 ### Tài liệu tham khảo
