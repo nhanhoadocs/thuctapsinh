@@ -2,6 +2,7 @@
 **1. Sự khác biệt giữa dịch vụ và quy trình là gì?**
 - Trong Linux, một dịch vụ chỉ là một tên gọi khác của daemon, đó là một ứng dụng khách / máy chủ chạy trong nền. Một dịch vụ liên tục lắng nghe các yêu cầu đến và gửi phản hồi dựa trên yêu cầu được cung cấp. 
   - Daemon: Là chương trình chạy nền giống như các service trên Windows, có thể tắt mở tự động mà không ảnh hưởng gì đến giao diện người dùng.
+  ![](https://2.bp.blogspot.com/-5Zw7yQRF4gE/WBAzHn1cU-I/AAAAAAAADgI/_1Gj0y3xU_AdxpG4UxpviEi0QacA93OBACEw/s1600/Kali%2BLinux%2B2.0-2016-10-26-10-25-04.png)
 - Một tiến trình chỉ đơn giản là một ứng dụng hoặc một tập lệnh có thể chạy ở nền.
   - Ví dụ: khi ta gõ lệnh pwd, được sử dụng để liệt kê vị trí thư mục hiện tại mà người dùng đang ở, thì một quá trình bắt đầu.
   
@@ -17,5 +18,7 @@
 ## Tài liệu tham khảo:
 
 https://www.geeksforgeeks.org/processes-in-linuxunix/
+
+https://www.thekalitools.com/2016/10/daemon-la-gi.html
 
 ## END
