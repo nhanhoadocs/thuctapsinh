@@ -20,10 +20,11 @@
 - MBR chứa 64 byte dữ liệu lưu trữ thông tin bảng phân vùng.
 - Chẳng hạn như bắt đầu và kết thúc của mỗi phân vùng, kích thước của phân vùng, loại phân vùng.
 - Ổ cứng chỉ hỗ trợ 4 phân vùng, điều này là do giới hạn của thông tin trong MBR. Để một phân vùng đại diện cho MBR, nó cần 16 byte không gian trong đó vì vậy nhiều nhất chúng ta sẽ nhận được 4 phân vùng.
+
    **3. kiểm tra xác thực MBR  ( 2 byte cuối ).**
 -  Nó sẽ sao lưu MBR của ta.  Nếu MBR bị hỏng, thì 2 byte xác thực này được sử dụng để lấy lại nó.
 
-**Khi CPU của ta biết tất cả các chi tiết này, nó sẽ cố gắng phân tích chúng và đọc phần đầu tiên của MBR để tải Giai đoạn thứ 2 của quá trình khởi động.**
+- **Khi CPU của ta biết tất cả các chi tiết này, nó sẽ cố gắng phân tích chúng và đọc phần đầu tiên của MBR để tải Giai đoạn thứ 2 của quá trình khởi động.**
 
 **3. GRUB (Grand Unified Bootloader).**
 - Trong giai đoạn này GRUB (Grand Unified Bootloader) nằm trong 30 kilobyte đĩa cứng đầu tiên ngay sau MBR được nạp vào RAM để đọc cấu hình của nó và hiển thị menu khởi động GRUB.
