@@ -54,7 +54,7 @@ RAM (Random Access Memory) là bộ nhớ truy xuất ngẫu nhiên. Khi mở m�
 
     - 0 stopped, : Số tiến trình bị dừng lại.
     
-    - 0 zombie : Số tiến là tiến trình chết, không xác định được chủ. 
+    - 0 zombie : Là một quá trình mà việc thực hiện được hoàn thành nhưng nó vẫn có một mục trong bảng quy trình. Các quy trình zombie thường xảy ra đối với các quy trình con, vì quy trình cha mẹ vẫn cần đọc trạng thái thoát của con. Một khi điều này được thực hiện bằng cách sử dụng lệnh gọi hệ thống chờ, quy trình zombie sẽ bị loại  
 
 **Hàng thứ 3%(Cpu(s)):**
 
