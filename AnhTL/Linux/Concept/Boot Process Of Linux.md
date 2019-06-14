@@ -5,7 +5,7 @@
 ![](https://www.linuxnix.com/wp-content/uploads/2013/04/Linux-Booting-process.png)
 
 **1. Bios**
--  Nó tìm bộ tải khởi động trong đĩa mềm, cd-rom hoặc ổ cứng
+-  Nó tìm bộ tải khởi động trong đĩa mềm, cd-rom hoặc ổ cứng.
 -  Thực hiện việc kiểm tra tính toàn vẹn hệ thống.
 -  tải và thực hiện chương trình bộ tải khởi động.
 -  BIOS tải và thực thi bộ tải khởi động MBR.
@@ -16,7 +16,7 @@
 
    **1. thông tin bộ tải khởi động chính ( 446 byte ).**
    
-- cung cấp thông tin về trình tải khởi động và chi tiết vị trí của thông bin bộ tải khởi động thực tế trên đĩa cứng 
+- cung cấp thông tin về trình tải khởi động và chi tiết vị trí của thông bin bộ tải khởi động thực tế trên đĩa cứng.
 
    **2. thông tin bảng phân vùng ( 64 byte ).**
    
