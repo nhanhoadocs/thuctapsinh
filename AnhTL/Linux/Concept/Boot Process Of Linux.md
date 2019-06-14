@@ -26,7 +26,7 @@
 
    **3. kiểm tra xác thực MBR  ( 2 byte cuối ).**
    
--  Nó sẽ sao lưu MBR của ta.  Nếu MBR bị hỏng, thì 2 byte xác thực này được sử dụng để lấy lại nó.
+-  -  Nếu MBR bị hỏng, kiểm tra xác thực này được sử dụng để lấy nó
 
 - **Khi CPU của ta biết tất cả các chi tiết này, nó sẽ cố gắng phân tích chúng và đọc phần đầu tiên của MBR để tải Giai đoạn thứ 2 của quá trình khởi động.**
 
@@ -38,7 +38,7 @@
 - Khi quyền điều khiển được trao cho kernel, phần trung tâm của tất cả các hệ điều hành và nó đóng vai trò trung gian trung gian của các thành phần phần cứng và phần mềm. Kernel sau khi được nạp vào RAM, nó luôn nằm trên RAM cho đến khi máy bị tắt. Khi Kernel khởi động, nó hoạt động, điều đầu tiên nó làm là thực thi quy trình INIT.
 
 **5. INIT**.
-- Quá trình INIT đọc /etc/inittab là bảng khởi tạo xác định bắt đầu các chương trình hệ thống. INIT sẽ bắt đầu mỗi lần Runlevel và bắt đầu thực thi các tập lệnh tương ứng với runlevel đó.
+- Ngay sau khi nó được tải ở bước 4, nó sẽ tìm init trong sbin ( /sbin/init ) và thực thi nó. Quá trình INIT đọc /etc/inittab là bảng khởi tạo xác định bắt đầu các chương trình hệ thống. INIT sẽ bắt đầu mỗi lần Runlevel và bắt đầu thực thi các tập lệnh tương ứng với runlevel đó.
   -  Runlevel được biểu thị bằng các chữ số đơn và chúng có thể có giá trị từ 0 đến 6:
      - Runlevel 0: Tắt hệ thống.
      - Runlevel 1: Chế độ cứu hộ, người dùng đơn.
