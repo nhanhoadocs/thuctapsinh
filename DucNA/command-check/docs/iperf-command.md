@@ -17,3 +17,4 @@ iperf -s hoặc -c IP  Option
 | -i | Test bằng thông trong số giây chỉ định | 
 | -p | Chỉ ra port kết nối | 
 | -v | Hiển thị phiên bản | 
+|  |
