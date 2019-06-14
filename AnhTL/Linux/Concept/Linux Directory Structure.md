@@ -51,7 +51,7 @@
   - Thư mục chính của người dùng. Mỗi khi người dùng mới được tạo, một thư mục có tên người dùng sẽ được tạo trong thư mục chính có chứa các thư mục khác như Desktop , Tải xuống , Tài liệu...
     - Ví dụ: /home/tuananh, /home/le...
 - **/lib:**
-  - Thư mục /lib chứa các thư viện cần thiết cho các nhị phân cần thiết trong thư mục /bin và /sbin. Các thư viện cần thiết trong thư mục /usr/bin được đặt trong /usr/lib.
+  - Thư mục /lib là một thư mục tệp thư viện chứa tất cả các tệp thư viện hữu ích được sử dụng bởi hệ thống. Nói một cách đơn giản, đây là những tệp hữu ích được sử dụng bởi một ứng dụng hoặc một lệnh hoặc một quy trình để thực hiện đúng nghiệm vụ của nó. Các lệnh trong  tệp thư viện động được đặt ngay trong thư mục /bin hoặc /sbin.
   - /lib Chứa các tệp thư viện hỗ trợ các tệp nhị phân nằm dưới /bin và /sbin.
   - /lib chứa thư viện dùng chung cần thiết để khởi động hệ thống và chạy các lệnh trong hệ thống tệp gốc.
 - **/media:**
