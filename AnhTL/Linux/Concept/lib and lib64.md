@@ -12,6 +12,7 @@
 
 
 ![img](https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/64359143_336648070340649_7665929226452729856_n.png?_nc_cat=108&_nc_oc=AQnuZC5ne1rUYQ7_PidtS5NTrX1m2CPcm3tePPe7YTPXni8-7ij4jxslOLJohd6g2_c&_nc_ht=scontent.fhan5-5.fna&oh=92dcd0e35c993e490313437e88a09738&oe=5D983146)
+
 Hình bên trên là lib và lib64 được tham chiếu đến thư mục usr/lib và usr/lib64.
 
 - VD: Khi ta đang biên dịch trên hệ thống 64 bit , trong đó mặc định là tuân thủ các nhị phân 64 bit, liên kết đến các thư viện 64 bit. Nhị phân được biên dịch thành 32 bit và liên kết tự nhiên đến các thư viện 32 bit. 
