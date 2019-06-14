@@ -43,7 +43,7 @@
 
 `` clear ``
 
--Show địa chỉ IP
+- Show địa chỉ IP
 
 `` nmcli device show ens33 ``
 
