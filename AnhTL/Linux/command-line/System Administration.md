@@ -47,7 +47,7 @@
 
 `` nmcli device show ens33 ``
 
-  - Tên giao diện [ens33] khác nhau tùy thuộc vào môi trường.
+Tên giao diện [ens33] khác nhau tùy thuộc vào môi trường.
   
 **II.Tiến Trình (processus)**
 
