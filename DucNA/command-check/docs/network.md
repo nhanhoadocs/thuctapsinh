@@ -27,6 +27,11 @@ Trong đó :
 # Command netstat 
 Lệnh netstat dùng để  giám sát các kết nối mạng cả đến và đi cũng như bảng định tuyến Presentation
 
+Cài đặt 
+```
+yum -y install net-tools
+```
+
 | option | DESCRIPTION |
 |---|---|
 | -a | Hiển thị tất cả kết nối tcp và udp | 
@@ -36,6 +41,26 @@ Lệnh netstat dùng để  giám sát các kết nối mạng cả đến và �
 | -s | Hiển thị các giao thức  | 
 | -r | Hiển thị bảng định tuyết |
 | -c | Hiển thị liên tục lệnh netstat | 
+
+Ví dụ 
+
+![](../images/labs/network/screenshot_12.png)
+
+Xem Bảng định tuyến 
+
+![](../images/labs/network/screenshot.png)
+
+Với option -l chỉ liệt kê các port lắng nghe
+
+![](../images/labs/network/screenshot_1.png)
+
+Với option -at sử dụng kết nối tcp
+
+![](../images/labs/network/screenshot_2.png)
+
+Hay với -au sử dụng giao thức udp 
+
+![](../images/labs/network/screenshot_3.png)
 
 # link tham khảo 
 
