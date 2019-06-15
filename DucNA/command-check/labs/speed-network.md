@@ -15,9 +15,9 @@ Chuẩn bị :
 
 Cài đặt gói `iperf` lên 2 VM 
 ```
-yum provides iperf
-yum repolist
-yum install iperf
+rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+
+yum -y install iperf
 ```
 Tắt firewall
 ```
