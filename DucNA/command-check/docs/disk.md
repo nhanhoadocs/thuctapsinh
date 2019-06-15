@@ -42,4 +42,13 @@ Trong centos lệnh iotop không có sẵn thế nên ta phải cài đặt gói
 ```
 yum install iotop
 ```
+![](../images/labs/network/2019-06-14_17-13.png)
 
+Trong đó :
+- Total disk read : Tổng lượng đĩa đã đọc 
+- Total disk write : Tổng lượng đĩa đã viết 
+- Current Disk read : hiện tại tốc độ đĩa đọc 
+- Current Disk write : hiện tại tốc độ đĩa viết 
+- User : tài khoản sử dụng 
+- Disk read : Tốc độ đĩa đọc 
+- Disk write : Tốc độ đĩa viết 
