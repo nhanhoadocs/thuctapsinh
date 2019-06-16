@@ -35,20 +35,18 @@ Các option của lệnh df
 | --help | Hiển thị trợ giúp | 
 | -x | Hiển thị disk không có kiểu type |
 
-### Lệnh iotop 
-Lệnh iotop dùng để  giám sát tốc độ độc ghi của disk 
+### IOPS
+IOPS (input/output operations per second) hoạt động input output mỗi giây.  Là một phương pháp đo tốt input và output cho các storage devices máy tính. Hiệu xuất của hệ thống lưu trữ chỉ đo được IOPS khi mà có dữ liệu sử dụng hệ thống lưu trữ. IOPS được đo dưới dạng số nguyên. Nếu chỉ xét theo giá trị IOPS thì không thể đánh giá chính xác được hiệu xuất của storage devices 
 
-Trong centos lệnh iotop không có sẵn thế nên ta phải cài đặt gói
-```
-yum install iotop
-```
-![](../images/labs/network/2019-06-14_17-13.png)
 
-Trong đó :
-- Total disk read : Tổng lượng đĩa đã đọc 
-- Total disk write : Tổng lượng đĩa đã viết 
-- Current Disk read : hiện tại tốc độ đĩa đọc 
-- Current Disk write : hiện tại tốc độ đĩa viết 
-- User : tài khoản sử dụng 
-- Disk read : Tốc độ đĩa đọc 
-- Disk write : Tốc độ đĩa viết 
+
+# link tham khảo 
+https://searchstorage.techtarget.com/definition/IOPS-input-output-operations-per-second
+
+https://storageswiss.com/2015/02/23/what-are-iops-and-should-you-care/
+
+https://en.wikipedia.org/wiki/IOPS
+
+https://www.znetlive.com/blog/monitor-disk-io-windows-linux/
+
+
