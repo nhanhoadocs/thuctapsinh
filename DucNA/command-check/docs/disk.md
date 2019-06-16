@@ -35,11 +35,32 @@ Các option của lệnh df
 | --help | Hiển thị trợ giúp | 
 | -x | Hiển thị disk không có kiểu type |
 
-### IOPS
-IOPS (input/output operations per second) hoạt động input output mỗi giây.  Là một phương pháp đo tốt input và output cho các storage devices máy tính. Hiệu xuất của hệ thống lưu trữ chỉ đo được IOPS khi mà có dữ liệu sử dụng hệ thống lưu trữ. IOPS được đo dưới dạng số nguyên. Nếu chỉ xét theo giá trị IOPS thì không thể đánh giá chính xác được hiệu xuất của storage devices 
+## IOPS
+- IOPS (input/output operations per second) hoạt động input output mỗi giây. Là một phương pháp đo tốt input và output cho các storage devices máy tính. 
+- Hiệu suất của hệ thống lưu trữ chỉ đo được IOPS khi mà có dữ liệu sử dụng hệ thống lưu trữ. IOPS được đo dưới dạng số nguyên. 
+- Nếu chỉ xét theo giá trị IOPS thì không thể đánh giá chính xác được hiệu suất của storage devices. Nó sẽ bị ảnh hưởng bởi kích thước và hiệu suất công việc của nó nhận được 
+- Phần dưới là câu lệnh để giám sát giá trị IOPS của disk trong linux(centos7) 
 
+### IOTOP 
+IOTOP là một lệnh dùng để đo IOPS của storage. Gói này không có sẵn và phải cài đặt với lệnh sau
+```
+yum install iotop 
+```
+![](../images/screenshot_3.png)
 
+Trong đó :
 
+- Total disk read : Tổng lượng đĩa đã đọc
+- Total disk write : Tổng lượng đĩa đã viết
+- Current Disk read : hiện tại tốc độ đĩa đọc
+- Current Disk write : hiện tại tốc độ đĩa viết
+- User : tài khoản sử dụng
+- Disk read : Tốc độ đĩa đọc
+- Disk write : Tốc độ đĩa viết
+- Command : Lệnh thực hiện 
+- TID : ID tiến trình
+- PRIO : Sự ưu tiên 
+- IO> : Phần trăm thời gian thread dành cho việc chờ đợi trên I/O
 # link tham khảo 
 https://searchstorage.techtarget.com/definition/IOPS-input-output-operations-per-second
 
