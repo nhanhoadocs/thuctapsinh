@@ -14,13 +14,11 @@
 - Thông báo khi xảy ra sự cố thông qua (mail, sms,...)
 3. Các phiên bản nagios
 - nagios core = nagios 
-- Nagios Plugins : Được dùng để kiểm tra trạng thái của máy. Nagios sẽ sử dụng kết quả từ plugins để xác định trạng thái của máy.
 - Nagios Log Server : Là một phiên bản dùng để quản lý và giám sát nhật ký doanh nghiệp. 
 - Nagios Fusion : 
 - Nagios XI : Là phần mềm giám sát doanh nghiệp
 - Nagios BPI : Dùng để giám sát các quy trình làm việc 
-5. Các khái niệm trong nagios 
-
+- Nagios Plugins : Được dùng để kiểm tra trạng thái của máy. Nagios sẽ sử dụng kết quả từ plugins để xác định trạng thái của máy.
 
 # Link tham khảo 
 https://en.wikipedia.org/wiki/Nagios
@@ -36,4 +34,6 @@ https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/plugins.html
 https://nsrc.org/workshops/2008/walc/nagios/manual/nagios-3.pdf
 
 https://subscription.packtpub.com/book/application_development/9781783288649/1/ch01lvl1sec12/summary
+
+https://www.nagios.org/projects/nagios-plugins/
 
