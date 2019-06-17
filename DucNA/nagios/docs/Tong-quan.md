@@ -9,9 +9,10 @@
 - Giám sát dịch vụ mạng 
 - Giám sát tài nguyên máy chủ
 - Giám sát phần cứng 
+- Giám sát từ xa 
 - cung cấp đồ thị dữ liệu 
 - cung cấp dịch vụ nagios bằng giao diện web
-- Thông báo khi xảy ra sự cố thông qua (mail, sms,...)
+- Cảnh báo khi xảy ra sự cố thông qua (mail, sms,...)
 3. Các phiên bản nagios
 - nagios core = nagios 
 - Nagios Log Server : Là một phiên bản dùng để quản lý và giám sát nhật ký doanh nghiệp. 
@@ -19,6 +20,10 @@
 - Nagios XI : Là phần mềm giám sát doanh nghiệp 
 - Nagios BPI : Dùng để giám sát các quy trình làm việc 
 - Nagios Plugins : Được dùng để kiểm tra trạng thái của máy. Nagios sẽ sử dụng kết quả từ plugins để xác định trạng thái của máy.
+4. Các khái niệm trong nagios 
+
+4.1 Plugins 
+- 
 
 # Link tham khảo 
 https://en.wikipedia.org/wiki/Nagios
