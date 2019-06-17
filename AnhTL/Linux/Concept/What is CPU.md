@@ -12,19 +12,24 @@
 
 - Các chương trình 32 bit thường được cài đặt vào thư mục C:\Program Files (x86) \folder của Windows 64 bit, trong khi các chương trình 64 bit có xu hướng thường được cài đặt vào thư mục C:\Program Files\folder.
 
-- Đối với linux các chương trình sẽ được lưu trong /opt.
+- Đối với linux các chương trình sẽ được lưu trong /lib và lib64
 
 ### 3. CPU.
 
-![](https://image.slidesharecdn.com/cutovnguynlhotngcpu-120407024039-phpapp02/95/cu-to-v-nguyn-l-hot-ng-cpu-36-728.jpg?cb=1333767045)
-
 ![img](http://4.bp.blogspot.com/-rVmzi7kgprw/VpaWApaNJhI/AAAAAAAAADM/PYn_h8qt6D0/s320/simple_cpu_architecture.png)
 
-- Trên hình vẽ, chúng ta sẽ thấy processor chính là CPU có ba khối cơ bản chính: Control unit sẽ phát ra các tín hiệu read hoặc write đến memory nhằm thông báo cho memory biết CPU muốn lấy data hay ghi data. ALU là khối tính toán cơ bản. ALU sẽ thực hiện các phép tính số học, logic...
+- CPU có ba khối cơ bản chính: 
+  - **Control unit** sẽ phát ra các tín hiệu read hoặc write đến memory nhằm thông báo cho memory biết CPU muốn lấy data hay ghi data. 
 
-- Register dùng để lưu trữ data phép toán phục vụ cho ALU. Register có nhiều loại, có loại để lưu data, có loại để lưu địa chỉ, có loại dùng để lưu cả data và địa chỉ. Chính vì vậy, trên hình vẽ, bạn thấy từ register có đường address bus và data bus chạy đến memory. Con đường này có thể hai chiều với data bus (Khi đọc thì data từ memory chuyển vào register của CPU. Khi ghi thì data từ register sẽ chuyển vào memory) hoặc một chiều với address bus. CPU sẽ ra lệnh cho memory gửi data có địa chỉ mà CPU đó muốn qua address bus hoặc thông báo cho memory chuẩn bị sẵn một ô nhớ có địa chỉ xác định mà CPU chỉ định để ghi data vào đó. Register là một thanh nhớ nằm trong CPU, có tốc độ xử lý nhanh gần hoặc bằng CPU. Chính vì không có đồng bộ về tốc độ giữa các thành phần lưu trữ register với memory với disk nên sẽ có một số khoảng thời gian chết khi mà memory bận không đáp ứng kịp đòi hỏi của CPU. Đây là một sự lãng phí.
+  - **ALU** là khối tính toán cơ bản. ALU sẽ thực hiện các phép tính số học, logic...
+
+  - **Register** dùng để lưu trữ data phép toán phục vụ cho ALU. 
+    - Register có nhiều loại, có loại để lưu data, có loại để lưu địa chỉ, có loại dùng để lưu cả data và địa chỉ. Chính vì vậy, trên hình vẽ, ta thấy từ register có đường address bus và data bus chạy đến memory. Con đường này có thể hai chiều với data bus (Khi đọc thì data từ memory chuyển vào register của CPU. Khi ghi thì data từ register sẽ chuyển vào memory) hoặc một chiều với address bus. CPU sẽ ra lệnh cho Processor gửi data có địa chỉ mà CPU đó muốn qua address bus hoặc thông báo cho memory chuẩn bị sẵn một ô nhớ có địa chỉ xác định mà CPU chỉ định để ghi data vào đó. 
+    - Register là một thanh nhớ nằm trong CPU, có tốc độ xử lý nhanh gần hoặc bằng CPU. Chính vì không có đồng bộ về tốc độ giữa các thành phần lưu trữ register với memory với disk nên sẽ có một số khoảng thời gian chết khi mà memory bận không đáp ứng kịp đòi hỏi của CPU. Đây là một sự lãng phí.
 
 - Hạn chế về công nghệ không cho phép các thiết bị lưu trữ ngoài CPU đạt được tốc độ nhanh bằng CPU nên các kỹ sư đã phải khắc phục bằng cách bổ sung cho CPU các bộ nhớ cache. Bộ nhớ cache sẽ lưu các data thường được sử dụng, CPU sẽ thay vì phải đợi memory cung cấp sẽ tận dụng data trong cache trước.
+
+![](https://image.slidesharecdn.com/cutovnguynlhotngcpu-120407024039-phpapp02/95/cu-to-v-nguyn-l-hot-ng-cpu-36-728.jpg?cb=1333767045)
 
 ### Tài liệu tham khảo:
 
