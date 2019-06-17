@@ -37,3 +37,12 @@ Ví dụ trên là cái chúng ta gọi là pipeline và cho phép Linux kết h
 - ngoài ra còn có câu lệnh find để tìm kiếm trong một thư mục
 
 
+
+
+
+
+
+
+
+
+
