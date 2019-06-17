@@ -43,6 +43,7 @@
      - Runlevel 0: Tắt hệ thống.
      - Runlevel 1: Chế độ cứu hộ, người dùng đơn.
      - Runlevel 2: Đa người dùng, không có NFS.
+     (Dịch vụ (NFS - Network File System) cho phép chia sẻ tập tin cho nhiều người dùng trên cùng mạng và người dùng có thể thao tác như với tập tin trên chính đĩa cứng của mình.)
      - Runlevel 3: Chế độ nhiều người dùng.
      - Runlevel 4: không sử dụng.
      - Runlevel 5: x11 (Nhiều người dùng, mạng được kích hoạt, chế độ đồ họa).
