@@ -3,9 +3,15 @@ Truy cập mạng với tốc độ ra sao đó là điều cần chú ý đến
 # Lệnh ethtool 
 Lệnh ethtool được dùng để check speed tối đa của port mạng 
 
+
 File cat /sys/class/net/enp0s25/speed cũng lưu tốc độ tối đa của port mạng 
 # 1. Command nload 
 Lệnh nload là lệnh dùng để hiển thị thông tin tốc độ của port mạng trong thời gian thực 
+
+Cài đặt ethtool 
+```
+yum install ethtool
+```
 
 Ta cần cài đặt lệnh nload vì ban đầu nó sẽ không có sẵn 
 ```

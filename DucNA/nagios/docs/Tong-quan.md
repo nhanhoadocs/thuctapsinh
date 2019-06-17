@@ -16,7 +16,7 @@
 - nagios core = nagios 
 - Nagios Log Server : Là một phiên bản dùng để quản lý và giám sát nhật ký doanh nghiệp. 
 - Nagios Fusion : 
-- Nagios XI : Là phần mềm giám sát doanh nghiệp
+- Nagios XI : Là phần mềm giám sát doanh nghiệp 
 - Nagios BPI : Dùng để giám sát các quy trình làm việc 
 - Nagios Plugins : Được dùng để kiểm tra trạng thái của máy. Nagios sẽ sử dụng kết quả từ plugins để xác định trạng thái của máy.
 
