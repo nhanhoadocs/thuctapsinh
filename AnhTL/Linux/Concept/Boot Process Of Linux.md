@@ -5,7 +5,7 @@
 ![](https://www.linuxnix.com/wp-content/uploads/2013/04/Linux-Booting-process.png)
 
 **1. Bios**
--  Nó tìm bộ tải khởi động trong đĩa mềm, cd-rom hoặc ổ cứng.
+-  Nó tìm bộ tải khởi động trong các thiết bị đĩa mềm, cd-rom hoặc ổ cứng.
 -  Thực hiện việc kiểm tra tính toàn vẹn hệ thống.
 -  tải và thực hiện chương trình bộ tải khởi động.
 -  BIOS tải và thực thi bộ tải khởi động MBR.
@@ -44,7 +44,9 @@
 - Ngay sau khi nó được tải ở bước 4, nó sẽ tìm init trong sbin ( /sbin/init ) và thực thi nó. Quá trình INIT đọc /etc/inittab là bảng khởi tạo xác định bắt đầu các chương trình hệ thống. INIT sẽ bắt đầu mỗi lần Runlevel và bắt đầu thực thi các tập lệnh tương ứng với runlevel đó.
   -  Runlevel được biểu thị bằng các chữ số đơn và chúng có thể có giá trị từ 0 đến 6:
      - Runlevel 0: Tắt hệ thống.
-     - Runlevel 1: Chế độ cứu hộ, người dùng đơn.
+     - Runlevel 1: Chế độ đơn người dùng, người dùng đơn.
+     
+     (chỉ 1 user dùng, không cần yêu cầu pass, vì chỉ có 1 người dùng )
      - Runlevel 2: Đa người dùng, không có NFS.
      
      (Dịch vụ (NFS - Network File System) cho phép chia sẻ tập tin cho nhiều người dùng trên cùng mạng và người dùng có thể thao tác như với tập tin trên chính đĩa cứng của mình.)
