@@ -23,6 +23,9 @@
 - MBR chứa 64 byte dữ liệu lưu trữ thông tin bảng phân vùng.
 - Chẳng hạn như bắt đầu và kết thúc của mỗi phân vùng, kích thước của phân vùng, loại phân vùng.
 - Ổ cứng chỉ hỗ trợ 4 phân vùng, điều này là do giới hạn của thông tin trong MBR. Để một phân vùng đại diện cho MBR, nó cần 16 byte không gian trong đó vì vậy nhiều nhất chúng ta sẽ nhận được 4 phân vùng.
+  - Primary partition: đây là những phân vùng có thể được dùng để boot hệ điều hành
+  - Extended partition: là vùng dữ liệu còn lại khi ta đã phân chia ra các primary partition, extended partition chứa các logical partition trong đó. Mỗi một ổ đĩa chỉ có thể chứa 1 extended edition.
+  - Logical partition: các phân vùng nhỏ nằm trong extended partition, thường dùng để chứa dữ liệu.
 
    **3. kiểm tra xác thực MBR  ( 2 byte cuối ).**
    
@@ -43,6 +46,7 @@
      - Runlevel 0: Tắt hệ thống.
      - Runlevel 1: Chế độ cứu hộ, người dùng đơn.
      - Runlevel 2: Đa người dùng, không có NFS.
+     
      (Dịch vụ (NFS - Network File System) cho phép chia sẻ tập tin cho nhiều người dùng trên cùng mạng và người dùng có thể thao tác như với tập tin trên chính đĩa cứng của mình.)
      - Runlevel 3: Chế độ nhiều người dùng.
      - Runlevel 4: không sử dụng.
