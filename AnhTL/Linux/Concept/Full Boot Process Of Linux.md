@@ -18,7 +18,9 @@ Vì vậy, trong điều kiện đơn giản, BIOS tải và thực thi bộ t�
 - MBR có kích thước nhỏ hơn 512 byte. Điều này có ba thành phần:
 
    **1. thông tin bộ tải khởi động chính ( 446 byte ).**
+   
    **2. thông tin bảng phân vùng ( 64 byte ).**
+   
    **3. kiểm tra xác thực MBR  ( 2 byte cuối ).**
 
 - **Thông tin bộ tải khởi động chính**: Thông tin này cung cấp thông tin về trình tải khởi động và chi tiết vị trí của thông bin bộ tải khởi động thực tế trên đĩa cứng. Điều này giúp ích cho CPU để tải giai đoạn thứ hai của Trình tải khởi động.
