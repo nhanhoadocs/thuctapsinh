@@ -23,9 +23,9 @@
 
   - **ALU (Arithmetic Logic Unit)** là khối tính toán cơ bản. ALU sẽ thực hiện các phép tính số học, logic...
 
-  - **Register** dùng để lưu trữ data phép toán phục vụ cho ALU. 
-    - Register có nhiều loại, có loại để lưu data, có loại để lưu địa chỉ, có loại dùng để lưu cả data và địa chỉ. Chính vì vậy, trên hình vẽ, ta thấy từ register có đường address bus và data bus chạy đến memory. Con đường này có thể hai chiều với data bus (Khi đọc thì data từ memory chuyển vào register của CPU. Khi ghi thì data từ register sẽ chuyển vào memory) hoặc một chiều với address bus. CPU sẽ ra lệnh cho Processor gửi data có địa chỉ mà CPU đó muốn qua address bus hoặc thông báo cho memory chuẩn bị sẵn một ô nhớ có địa chỉ xác định mà CPU chỉ định để ghi data vào đó. 
-    - Register là một thanh nhớ nằm trong CPU, có tốc độ xử lý nhanh gần hoặc bằng CPU. Chính vì không có đồng bộ về tốc độ giữa các thành phần lưu trữ register với memory với disk nên sẽ có một số khoảng thời gian chết khi mà memory bận không đáp ứng kịp đòi hỏi của CPU. Đây là một sự lãng phí.
+  - **Register** dùng để giao tiếp và lưu trữ data phép toán phục vụ cho ALU. 
+    - trên hình vẽ, ta thấy từ register có đường address bus và data bus chạy đến memory. Con đường này có thể hai chiều với data bus (Khi đọc thì data từ memory chuyển vào register của CPU. Khi ghi thì data từ register sẽ chuyển vào memory) hoặc một chiều với address bus. CPU sẽ ra lệnh cho Processor gửi data có địa chỉ mà CPU đó muốn qua address bus hoặc thông báo cho memory chuẩn bị sẵn một ô nhớ có địa chỉ xác định mà CPU chỉ định để ghi data vào đó. 
+    - Register là một thanh nhớ nằm trong CPU, có tốc độ xử lý nhanh gần hoặc bằng CPU. Chính vì không có đồng bộ về tốc độ giữa các thành phần lưu trữ register với memory với disk nên sẽ có một số khoảng thời gian chết khi mà memory bận không đáp ứng kịp đòi hỏi của CPU.
 
 - Hạn chế về công nghệ không cho phép các thiết bị lưu trữ ngoài CPU đạt được tốc độ nhanh bằng CPU nên các kỹ sư đã phải khắc phục bằng cách bổ sung cho CPU các bộ nhớ cache. Bộ nhớ cache sẽ lưu các data thường được sử dụng, CPU sẽ thay vì phải đợi memory cung cấp sẽ tận dụng data trong cache trước.
 
