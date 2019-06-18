@@ -16,7 +16,7 @@
 
 ### 3. CPU (Central Processing Unit).
 
-![img](http://4.bp.blogspot.com/-rVmzi7kgprw/VpaWApaNJhI/AAAAAAAAADM/PYn_h8qt6D0/s320/simple_cpu_architecture.png)
+![](https://image.slidesharecdn.com/cutovnguynlhotngcpu-120407024039-phpapp02/95/cu-to-v-nguyn-l-hot-ng-cpu-36-728.jpg?cb=1333767045)
 
 - CPU có ba khối cơ bản chính: 
   - **Control unit** sẽ phát ra các tín hiệu read hoặc write đến memory nhằm thông báo cho memory biết CPU muốn lấy data hay ghi data. 
@@ -29,7 +29,7 @@
 
 - Hạn chế về công nghệ không cho phép các thiết bị lưu trữ ngoài CPU đạt được tốc độ nhanh bằng CPU nên các kỹ sư đã phải khắc phục bằng cách bổ sung cho CPU các bộ nhớ cache. Bộ nhớ cache sẽ lưu các data thường được sử dụng, CPU sẽ thay vì phải đợi memory cung cấp sẽ tận dụng data trong cache trước.
 
-![](https://image.slidesharecdn.com/cutovnguynlhotngcpu-120407024039-phpapp02/95/cu-to-v-nguyn-l-hot-ng-cpu-36-728.jpg?cb=1333767045)
+
 
 ### Tài liệu tham khảo:
 
