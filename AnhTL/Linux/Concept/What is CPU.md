@@ -14,7 +14,7 @@
 
 - Đối với linux các chương trình sẽ được lưu trong /lib và lib64
 
-### 3. CPU.
+### 3. CPU (Central Processing Unit).
 
 ![img](http://4.bp.blogspot.com/-rVmzi7kgprw/VpaWApaNJhI/AAAAAAAAADM/PYn_h8qt6D0/s320/simple_cpu_architecture.png)
 
