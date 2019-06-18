@@ -39,7 +39,8 @@ Vì vậy, trong điều kiện đơn giản, BIOS tải và thực thi bộ t�
 - Quá trình init (khởi tạo) là quá trình gốc / cha của tất cả quá trình chạy trong Linux. Quá trình đầu tiên nó chạy là một tập lệnh tại /etc/rc.d/rc.sysinit, sẽ kiểm tra tất cả các thuộc tính hệ thống, phần cứng, hiển thị, SElinux, tải các mô-đun hạt nhân, kiểm tra hệ thống tệp, gắn hệ thống tệp, v.v. -level, script được thực thi để bắt đầu / dừng các quá trình khác nhau để chạy hệ thống và làm cho nó hoạt động. Quá trình INIT đọc /etc/inittab là bảng khởi tạo xác định bắt đầu các chương trình hệ thống. INIT sẽ bắt đầu mỗi lần Runlevel và bắt đầu thực thi các tập lệnh tương ứng với runlevel đó.
 - Runlevel được biểu thị bằng các chữ số đơn và chúng có thể có giá trị từ 0 đến 6:
   - Runlevel 0: Tắt hệ thống.
-  - Runlevel 1: Chế độ cứu hộ, người dùng đơn.
+  - Runlevel 1: Chế độ người dùng đơn.
+    - Chỉ 1 user dùng, do đó không cần yêu cầu password
   - Runlevel 2: Đa người dùng, không có NFS.
   - Runlevel 3: Chế độ nhiều người dùng.
   - Runlevel 4: không sử dụng.
