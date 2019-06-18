@@ -17,6 +17,8 @@
   - Inode không chứa tên file, thư mục.
   - Các con trỏ là thành phần quan trọng nhất: nó cho biết địa chỉ các block lưu nội dung file và tìm đến các block đó có thể truy cập được nội dung file.
 
+- Để hiện thông số về inode ta dùng lệnh: ``stat tên_file``
+
 ![](https://www.slashroot.in/sites/default/files/inode%20structure%20of%20a%20directory.png)  
 
 ### Đơn vị lưu trữ file trên ổ cứng
