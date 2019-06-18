@@ -135,7 +135,10 @@ Mount file-system lái như lúc ban đầu.
 kiểm tra lại size của LV
 ```
 # lvdisplay /dev/vgOne/linearLv
-
+```
 vậy là chúng ta đã giảm kích cỡ LV thành công. Chúng ta có thể cắt 1 Physical Volume ra khỏi Volume Group 
 
 ![](../Picture/lvmadvan12.png)
+
+
+tài liệu tham khảo xem tại [đây](https://www.tecmint.com/extend-and-reduce-lvms-in-linux/)
