@@ -1,5 +1,5 @@
 # Command-line "Sar (System active report)"
-- Được sử dụng để thu thập, báo cáo và lưu CPU , sử dụng bộ nhớ , I / O trong Unix như hệ điều hành. Lệnh SAR tạo ra các báo cáo một cách nhanh chóng và cũng có thể lưu các báo cáo trong các tệp nhật ký.
+- Được sử dụng để thu thập, báo cáo và lưu CPU , sử dụng bộ nhớ , I/O trong Unix. Lệnh SAR tạo ra các báo cáo một cách nhanh chóng và cũng có thể lưu các báo cáo trong các tệp nhật ký.
 
 B1: Đầu tiên ta phải cài dịch vụ: sysstat
 ```
