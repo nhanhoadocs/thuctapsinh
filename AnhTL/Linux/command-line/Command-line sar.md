@@ -59,7 +59,7 @@ Linux 3.10.0-957.el7.x86_64 (localhost.localdomain)     06/19/2019      _x86_64_
 04:05:48 PM     all      0.25      0.00      0.25      0.00      0.00     99.50
 Average:        all      0.05      0.00      0.15      0.00      0.00     99.80
 ```
-Nếu %iowait lớn hơn 0 trong một khoảng thời gian dài hơn thì chúng ta có thể xem xét có một số điểm nghẽn trong hệ thống I/O (Đĩa cứng hoặc Mạng)
+Nếu **%iowait** lớn hơn 0 trong một khoảng thời gian dài hơn thì chúng ta có thể xem xét có một số điểm nghẽn trong hệ thống I/O (Đĩa cứng hoặc Mạng)
 
 - Ví dụ 2: Tạo báo cáo sử dụng bộ nhớ bằng cách sử dụng -r
 ```
