@@ -1,6 +1,6 @@
 # Tổng quan về nagios 
 1. Khái niệm 
-- Nagios(Nagios Ain’t Gonna Insist On Sainthood) Là một phần mềm mà nguồn mở miễn phí của máy tính  dùng để giám sát hệ thống, mạng.   
+- Nagios(Nagios Ain’t Gonna Insist On Sainthood) Là một phần mềm mà nguồn mở miễn phí của máy tính  dùng để giám sát hệ thống, dịch vụ, mạng...
 - Nagios cung cấp dịch vụ giám sát và cảnh bảo cho server. Nó thông báo lần một khi gặp sự cố và lần 2 khi sự cố đã được khắc phục 
 - Ban đầu nagios được thiết kế để chạy trên linux
 - Một chút về lịch sử của nagios: nagios được tạo ra bởi Ethan Galstad và năm 1999 và được biết đến với cái tên `Nestaint`. Đến năm 2002 đã chính thức đổi tên thành nagios. Đến năm 2009 được đổi tên thành `nagios core`
