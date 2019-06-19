@@ -13,7 +13,7 @@ B1: Đầu tiên ta phải cài dịch vụ: sysstat
 [root@localhost ~]# systemctl start sysstat
 [root@localhost ~]# systemctl enable sysstat
 ```
-- Nó thu thập dữ liệu cứ sau 10 phút và tạo báo cáo hàng ngày. Tập tin crontab chịu trách nhiệm thu thập và tạo báo cáo.
+- Nó thu thập dữ liệu cứ sau 10 phút và tạo báo cáo hàng ngày. file crontab chịu trách nhiệm thu thập và tạo báo cáo.
 
 ```
 [user1@localhost ~]$ sudo cat /etc/cron.d/sysstat
@@ -75,3 +75,50 @@ Linux 3.10.0-957.el7.x86_64 (localhost.localdomain)     06/19/2019      _x86_64_
 Average:       101769    894155     89.78        52    156864   4028208    404.47    594194     80268         0
 ```
 **kbcommit & %commit** là bộ nhớ tổng thể được sử dụng bao gồm RAM & Swap.
+
+- Ví dụ 4: Tạo Báo cáo thống kê trang web bằng cách sử dụng -B
+
+`` [ root @ localhost ~] # sar -B 2 5 ``
+
+![](https://www.linuxtechi.com/wp-content/uploads/2015/11/paging-statistics-sar-command1.jpg)
+
+Trong báo cáo **majflts/s** hiển thị các lỗi chính mỗi giây có nghĩa là số trang được tải vào bộ nhớ từ disk, nếu giá trị của nó cao hơn thì ta có thể nói rằng hệ thống đang chạy RAM.
+
+**%vmeff** cho biết số lượng trang được quét mỗi giây, nếu value là 100% thì nó được coi là ổn và khi nó dưới 30% thì có vấn đề với bộ nhớ ảo. Giá trị bằng 0 chỉ ra rằng không có trang nào được quét trong thời gian đó.
+
+- Ví dụ 5: Tạo báo cáo thống kê thiết bị theo khối bằng cách sử dụng -d
+
+Tùy chọn -d trong lệnh sar được sử dụng để hiển thị báo cáo thống kê thiết bị khối. Sử dụng tùy chọn -p cùng với -d làm cho cột dev dễ đọc hơn.
+
+`` [ root @ localhost ~] # sar -d -p 2 4``
+
+![img](https://www.linuxtechi.com/wp-content/uploads/2015/11/block-device-report-sar-command2.jpg)
+
+- Ví dụ 6: Tạo báo cáo thống kê mạng bằng cách sử dụng -n.
+
+Tùy chọn -n trong lệnh sar được sử dụng để tạo báo cáo thống kê mạng. Dưới đây là synatx:
+
+**sar -n {keyword} hoặc {ALL}**
+
+Có thể sử dụng các từ khóa sau: DEV, EDEV, NFS, NFSD, SOCK, IP, EIP, ICMP, EICMP, TCP, ETCP, UDP, SOCK6, IP6, EIP6, ICMP6, EICMP6 & UDP6.
+
+Để tạo tất cả các báo cáo thống kê mạng ta sử dụng lệnh:
+
+``[ root @ localhost ~] # sar -n ALL ``
+
+![](https://www.linuxtechi.com/wp-content/uploads/2015/11/network-statistics-report-sar-command-1024x584.jpg)
+
+- Ví dụ: 7 Đọc tệp nhật ký SAR bằng cách sử dụng -f
+
+ Các tệp nhật ký sar được giữ trong /var/log/sa/saDD, sử dụng tùy chọn -f trong lệnh sar, chúng ta có thể đọc các tệp nhật ký.
+ 
+ **DD là số ngày mà ta muốn chọn để hiển thị, nó sẽ được lưu theo từng ngày từ lúc nó bắt đầu ghi**
+ 
+ ``[ root @ localhost ~] # sar -r -f / var / log / sa / sa26``
+ 
+ ![](https://www.linuxtechi.com/wp-content/uploads/2015/11/reading-sar-log-file2-1024x323.jpg)
+ 
+ # END
+ 
+ ## Chúc Các Bạn Học Tốt
+ 
