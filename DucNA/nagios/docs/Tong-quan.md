@@ -48,20 +48,8 @@
 - Nhược điểm
     - Tốn nhiều thời gian xử lý 
 
-4.4 Macros 
-- Macros cho phép tham chiếu thông tin từ host hoặc service. 
-
-4.5 Host check 
-- Host : là thiết bị chúng ta giám sát và có thể đặt địa chỉ IP 
-- Máy chủ được kiểm tra 
-    - Trong một khoảng thời gian cài đặt sẵn 
-    - Theo yêu cầu của một dịch vụ 
-- host state (trạng thái máy chủ): 
-    - UP
-    - Down
-    - UNREACHABLE
-
-4.5 Service check 
+4.4 Database 
+- Là nơi lưu trữ các loại thông tin của nagios.
 
 5. Cách thức hoạt động của ngaios 
 
