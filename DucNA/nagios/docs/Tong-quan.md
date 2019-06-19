@@ -51,9 +51,15 @@
 4.4 Database 
 - Là nơi lưu trữ các loại thông tin của nagios.
 
-5. Cách thức hoạt động của ngaios 
+5. Cấu trúc của nagios 
 
-![](../images/tong-quan/screen.png)
+![](../images/tong-quan/screen_5.png)
+
+- Bao gồm nagios và plugins 
+
+6. Cách thức hoạt động của ngaios 
+
+![](../images/tong-quan/screen_4.png)
 
 - Apache : là một phần mềm để sử dụng cho webserver của nagios 
 - CGI : là quá trình truyền xử lý yêu cầu của người muốn thực hiện giám sát trạng thái 
