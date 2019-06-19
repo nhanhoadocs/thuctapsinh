@@ -11,7 +11,8 @@
   - Ví dụ với load = 5 => Có 5 process đang chạy hoặc chờ xử lý (Thread running, waiting)
 
 **II. Tại sao không phải là load mà là loadavg?**
- Ví dụ 
+
+ Ví dụ:
 
 - Tại 1 phần trăm giây đầu tiên Load = 0 vì server đang rảnh rỗi
 - Tại phần trăm giây tiếp theo Load = 5 vì thời điểm có 5 proces cần xử lý.
