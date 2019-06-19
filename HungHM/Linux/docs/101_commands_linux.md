@@ -54,7 +54,7 @@ linux
 [root@localhost file2]# 
 ```
 
-4. Liệt kê các danh mục trong thư mục hiện hành
+3. Liệt kê các danh mục trong thư mục hiện hành
 
 `ls`
 ```
@@ -119,7 +119,7 @@ drwxr-xr-x.  19 root root  267 Jun 11 13:08 var
 - Liệt kê theo từng trang một, nhờ tiện ích ( more )
 
 ### II. Tập tin và thư mục
-**1. Lệnh dùng để copy (cp)**
+**4. Lệnh dùng để copy (cp)**
 
  
 `` cp file1 file2``
@@ -187,4 +187,428 @@ day la noi dun cua a1
 
 ```
 
-2. Chuyển tên tập tin/ thư mục. mv
+**5. Chuyển tên tập tin/ thư mục.**
+`` mv ``
+- chuyển toàn bộ nội dung của file1 thành file2.
+
+`` mv file1 file2 ``
+
+- Chuyển toàn bộ nội dung của thưmục1 thành thưmục2.
+
+`` mv thưmục1 thưmục2 ``
+
+- Chuyển file1 vào thư mục1.
+
+`` mv file1 thưmục1 ``
+
+- Chuyển ``file111`` vào ``thưmục1`` rồi đồng thời đổi tên tên tin thành ``file2``.
+
+`` mv file1 thưmục1/file2 ``
+
+**6. Tạo, xóa bỏ tập tin/ thư mục**
+
+- Tạo thư mục.
+
+`` mkdir tên_thưmục ``
+
+- Tạo thư mục ngang hàng.
+
+`` mkdir  {1,2,3,4,5,6,7,8,9,0} ``
+
+- Tạo thư mục cha và con cùng lúc.
+
+`` mkdir -p thưmục1/thưmục2 ``
+
+- Xóa bỏ file trong thư mục hiện hành.
+
+`` rm tên_file ``
+
+- Xóa bỏ thư mục trống mang tên ``thưmục1``.
+
+`` rmdir thưmục1 ``
+
+- Xóa bỏ thư mục mang tên ``thưmục1`` và tất cả các tập tin trong đó. 
+
+`` rm -rf thưmục1 ``
+
+**7. Tạo ta một liên kết mang tên ``abc`` đến file1 (nối tắt).**
+
+`` ln -s file1 abc ``
+
+**8. Tìm tập tin mang tên ``file1`` trong `` thưmục1`` kể cả trong các thư mục con.**
+
+`` find thưmục1 -name file1 ``
+
+**9. So sánh nội dung của 2 tập tin hoặc thư mục.**
+
+`` diff file1 file2``
+
+### III. Nội dung tập tin
+**10. Đọc nội dung file**
+- Đọc nội dung của file1.
+
+`` cat file1 ``
+
+- Xuất hiện nội dung của tập tin ``file1`` trên màn hình theo chế độ từng trang một: ấn phím << enter >> để xuống dòng; ấn phím << space >> để sang thêm 1 trang; ấn phím << q >> để thoát.
+
+`` more file1 ``
+
+- << less >> giống như << more >>, nhưng cho phép dùng phím << page Down >> ( có thể xem được tên file nén)
+
+`` less file1 ``
+
+**11. Đếm số dòng**
+- Xuất hiện n số dòng đầu tiên của tập tin ``file1``.
+
+`` head -n file1 ``
+
+- Xuất hiện số n dòng cuối cùng của tập tin ``file1``.
+
+`` tail -n file1 ``
+
+**12. Soạn thảo tập tin.**
+- Soạn thảo tập tin ``file1``, dùng trình soạn thảo vi.
+
+`` vi file1 ``
+
+- Soạn thảo tập tin ``file1``, dùng trình soạn thảo nano.
+
+`` nano file1 ``
+
+- Soạn thảo tập tin ``file1``, dùng trình soạn thảo gedit
+
+`` gedit file1 ``
+
+13. Cấp quyền thực thi cho tất cả user
+
+`chmod a+x (tên file)`
+
+```
+
+[root@localhost ~]# su user1
+[user1@localhost root]$ su root
+Password:
+[root@localhost ~]#
+
+
+```
+
+14. Thay đổi quyền sở hữu một file hoặc thư mục
+
+`chown option user:group file/folder`
+
+```
+
+[root@localhost file1]# chown user1 a1
+[root@localhost file1]# ll
+total 8
+-rw-r--r--. 1 user1 root 49 Jun 16 23:53 a1
+-rw-r--r--. 1 root  root 49 Jun 17 00:22 a2
+[root@localhost file1]# chmod g+w a1
+[root@localhost file1]# ll
+total 8
+-rw-rw-r--. 1 user1 root 49 Jun 16 23:53 a1
+-rw-r--r--. 1 root  root 49 Jun 17 00:22 a2
+[root@localhost file1]#
+
+```
+
+15. Hiển thị giờ thứ ngày tháng năm của máy tính
+
+` date`
+
+16. Sao lưu dữ liệu
+
+`dd if=/dev/vda1 of=/root/vda1.anh`
+
+ - Ta sao lưu ổ đĩa sang một file ảnh của nó
+ ```
+ 
+[root@localhost hung1]# cd ~
+[root@localhost ~]# dd=/abc/a2 of=/hung1/b1
+[root@localhost ~]#
+
+ ```
+ 17. Hiển thị không gian đĩa
+ 
+ `df -h`
+
+ ```
+ 
+[root@localhost ~]# df -h
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root   18G 1007M   17G   6% /
+devtmpfs                 475M     0  475M   0% /dev
+tmpfs                    487M     0  487M   0% /dev/shm
+tmpfs                    487M  7.7M  479M   2% /run
+tmpfs                    487M     0  487M   0% /sys/fs/cgroup
+/dev/sda1                509M  126M  383M  25% /boot
+tmpfs     
+ ```
+ - Trong đó: - Filesystem: tên ổ đĩa 
+ - Size: không gian tổng 
+ - Used: Không gian đã sử dụng
+- Avail: Không gian trống 
+- Use: Phần trăm đã sử dụng 
+- Mounted on: Được gắn trên đâu trong cây thư mục root 
+
+18. Lấy thông tin của HDH và ghi vào tệp văn bản
+
+```
+dmesg>dmesg.txt
+```
+19. Hiển thị thông tin hệ thống
+
+```
+dmidecode
+```
+20. Hiển thị thông tin BIOS
+```
+dmidecode -t 0
+```
+21. Hiển thị thông tin CPU
+
+```
+dmidecode -t 4
+```
+
+22. Tìm kiếm các gói đã cài đặt liên quan đến` zip`
+```
+anhduc@anhduc:~$ sudo dpkg --get-selections | grep zip  
+bzip2						install
+gzip						install
+libarchive-zip-perl				install
+libperlio-gzip-perl				install
+p7zip						install
+p7zip-full					install
+unzip						install
+zip						install
+```
+23. Hiển thị tất cả các gói đã cài đặt
+```
+dpkg -L
+```
+
+24. Ước tính không gian đĩa, tệp
+
+```
+du -bh (đường dẫn)
+```
+
+```
+[root@localhost ~]# du -bh /root/test/
+45	/root/test/
+```
+25. In ra biến môi trường
+
+```
+
+[root@localhost ~]# x=10
+[root@localhost ~]# echo $x
+10
+[root@localhost ~]#
+
+```
+26. Hiển thị biến môi trường
+
+```
+env
+```
+27. Hiển thị hình ảnh
+
+```
+
+[root@localhost ~]# picturess$ eog hinh-nen-may-tinh-anime-buoi-2.jpg
+
+```
+28. Thoát khỏi terminal
+
+``` 
+exit
+```
+29. Hiển thị memory đã sử dụng
+
+```
+free
+```
+30. Hiển thị bản ghi hệ thống
+
+```
+gnome-system-log
+```
+
+31. Tìm kiếm một chuỗi trong một file
+
+```
+grep <string> <filename>
+```
+
+32. Số giây mà hệ điều hành chạy
+
+```
+
+[root@localhost ~]# grep btime /root/abc
+grep: /root/abc: Is a directory
+[root@localhost ~]#
+
+
+```
+33. Hiển thị một 1000 lệnh cuối cùng
+
+```
+history | less
+```
+
+34. Hiển thị tên của máy tính
+
+```
+hostname
+```
+
+35. Hiển thị ngày tháng năm giờ
+```
+ [root@localhost ~]# sudo hwclock --show
+Mon 17 Jun 2019 11:54:08 AM EDT  -0.791117 seconds
+
+```
+36. Hiển thị user id (uid) và group id (gid) của user hiện đang sử dụng
+
+```
+id
+```
+37. Hiển thị địa chỉ IP và netmask trên máy
+
+```
+ifconfig
+```
+
+38. Hiển thị thông tin của wireless interface
+
+```
+iwconfig
+```
+
+39. Hiển thị thông tin của wireless network
+
+```
+iwconfig
+```
+
+40. Kill process theo tên.
+
+```
+killall process-name
+```
+
+41. Hiển thị khoảng thời gian shutdown gần đây nhất
+
+```
+last -x | grep shutdown | head -1 
+```
+
+42. Logout khỏi user hiện tại
+
+```
+logout
+
+```
+43. Hiển thị các file, thư mục không bị ẩn trong thư mục hiện tại. Có thể sử dụng option `  -a` để hiển thị cả những file bị ẩn.
+
+```
+ls
+```
+44. Hiển thị quyền truy cập đối với tất cả files bên trong thư mục
+
+```
+ls -l filename
+```
+
+45. Hiển thị tất cả các lệnh sẵn có trong trường hợp bạn quên
+
+```
+ls /usr/bin
+```
+46. Hiển thị thêm thông tin về network
+
+```
+lshw -C network
+```
+47. Hiển thị thông tin về USB bus trong hệ thống và các thiết bị kết nối đến nó.
+
+```
+lsusb
+```
+48. Show thông tin phần cứng âm thanh, video, network
+
+```
+lspci -nv | less
+```
+49. Hiển thị thông tin về USB bus trong hệ thống và các thiết bị kết nối đến nó.
+
+```
+lsusb
+```
+50. Đọc hướng dẫn sử dụng của câu lệnh
+
+```
+man <commnda>
+```
+51. Tạo một thư mục tại vị trí chỉ định
+
+```
+mkdir
+```
+52. Chuyển toàn bộ nội dung của thưmục1 thành thưmục2.
+
+```
+mv file1 file2 
+
+```
+
+53. Chuyển file1 vào thư mục1.
+
+```
+ mv file1 thưmục1
+ ```
+
+54. Show bảng định tuyến
+
+```
+netstat -rn
+```
+
+55. In ra các biến môi trường
+
+```
+printenv
+```
+
+56. Hiển thị những process đang chạy được thực thi bởi chính user đang sử dụng
+
+```
+ps -Af
+```
+
+57. Hiển thị thư mục đang đứng
+
+```
+pwd
+```
+58. Xóa file
+
+```
+rm <filename>
+
+```
+
+59. Xóa thư mục và nội dung bên trong thư mục này
+
+```
+rm -rf <dir>
+```
+
+60. Xóa tất cả các file có đuôi .txt trong thư mục đang đứng
+
+```
+rm *.txt
+```
