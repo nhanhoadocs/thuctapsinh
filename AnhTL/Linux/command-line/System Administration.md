@@ -125,6 +125,8 @@ Tên giao diện [ens33] khác nhau tùy thuộc vào môi trường.
 
 `` wc -c tên_tệp ``
 
+![](https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/64699382_2617704338240622_1896494104343216128_n.png?_nc_cat=108&_nc_oc=AQlIznLubg0ANnwKjrBp6Zq1qxTeMEDru7ztSMfDEexkvLMOQhctOVIfdYNQkHACRJc&_nc_ht=scontent.fhan5-5.fna&oh=2ecee7c52854904d8ac4e4445554b225&oe=5D921AAD)
+
 - Theo dõi hiệu suất của các (CPU, Bộ nhớ, I / O ..) trong thời gian thực.
 
 `` sar ``
@@ -137,7 +139,7 @@ Tên giao diện [ens33] khác nhau tùy thuộc vào môi trường.
 
 `` sar 1 3 ``
 
-![](https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/64699382_2617704338240622_1896494104343216128_n.png?_nc_cat=108&_nc_oc=AQlIznLubg0ANnwKjrBp6Zq1qxTeMEDru7ztSMfDEexkvLMOQhctOVIfdYNQkHACRJc&_nc_ht=scontent.fhan5-5.fna&oh=2ecee7c52854904d8ac4e4445554b225&oe=5D921AAD)
+
 **III. Gói phần mềm**
 - Tập tin xác định nguồn các kho phần mềm để tải xuống nhằm cài mới hoặc cập nhật hệ thống
 ``  ``
