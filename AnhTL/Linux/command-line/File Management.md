@@ -283,7 +283,8 @@
 - Trích xuất nhiều tệp cùng lúc từ file nén.
 
 `` tar xvf tecmint-14-09-12.tar "file 1" "file 2" ``
-**Note nén và giải nén**
+
+**Note: nén và giải nén**
 - Các option mà ta lựa chọn để tạo file nén hoặc giải nén đều có các ý nghĩa:
   - c - Tạo một tệp lưu trữ .tar mới.
   - v - Hiển thị rõ ràng tiến trình tập tin .tar.
