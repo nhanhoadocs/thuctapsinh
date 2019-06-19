@@ -18,7 +18,7 @@ RAM (Random Access Memory) là bộ nhớ truy xuất ngẫu nhiên. Khi mở m�
 
     - NI: Mức độ ưu tiên của tiến trình là một khái niệm ở không gian người dùng.
     Giá trị nice -20 thể hiện mức độ ưu tiên cao nhất và giá trị nice là 19 thể hiện mức độ ưu tiên thấp nhất cho một quy trình.
-
+    renice 17 -p 1134 ( Điều này thay đổi giá trị nice của công việc với process id 1134 thành 17. )
     - VIRT: Lượng RAM ảo mà tiến trình chiếm.
 
     - RES: lượng RAM dùng cho tiến trình.
