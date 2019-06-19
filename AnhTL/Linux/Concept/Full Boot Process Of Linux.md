@@ -25,7 +25,7 @@ Vì vậy, trong điều kiện đơn giản, BIOS tải và thực thi bộ t�
 
 - **Thông tin bộ tải khởi động chính**: Thông tin này cung cấp thông tin về trình tải khởi động và chi tiết vị trí của thông bin bộ tải khởi động thực tế trên đĩa cứng. Điều này giúp ích cho CPU để tải giai đoạn thứ hai của Trình tải khởi động.
 - **Thông tin bảng phân vùng**: MBR chứa 64 byte dữ liệu lưu trữ thông tin bảng phân vùng, chẳng hạn như bắt đầu và kết thúc của mỗi phân vùng, kích thước của phân vùng, loại phân vùng. Ổ cứng chỉ hỗ trợ 4 phân vùng, điều này là do giới hạn của thông tin trong MBR. Để một phân vùng đại diện cho MBR, nó cần 16 byte không gian trong đó vì vậy nhiều nhất chúng ta sẽ nhận được 4 phân vùng.
-- ** Kiểm tra xác thực MBR**: Nó sẽ sao lưu MBR của ta.  Nếu MBR bị hỏng, thì 2 byte xác thực này được sử dụng để lấy lại nó.
+- **Kiểm tra xác thực MBR**: Nó sẽ sao lưu MBR của ta.  Nếu MBR bị hỏng, thì 2 byte xác thực này được sử dụng để lấy lại nó.
 - Khi CPU của ta biết tất cả các chi tiết này, nó sẽ cố gắng phân tích chúng và đọc phần đầu tiên của MBR để tải Giai đoạn thứ hai của Trình tải khởi động.
 
 **3. GRUB (Grand Unified Bootloader).**
