@@ -48,6 +48,65 @@
 `` nmcli device show ens33 ``
 
 Tên giao diện [ens33] khác nhau tùy thuộc vào môi trường.
+
+- Show thông tin máy tính.
+
+`` hostnamectl ``
+
+- Show thông tin CPU.
+
+`` lscpu ``
+
+- Show thông tin về RAM
+
+```
+free -h 
+cat /proc/meminfo 
+vmstat -s
+``` 
+
+- Show thông tin disk
+
+```
+[user1@localhost sa]$ df
+Filesystem              1K-blocks    Used Available Use% Mounted on
+/dev/mapper/centos-root  39298308 3794692  35503616  10% /
+devtmpfs                   480848       0    480848   0% /dev
+tmpfs                      497960       0    497960   0% /dev/shm
+tmpfs                      497960   14980    482980   4% /run
+tmpfs                      497960       0    497960   0% /sys/fs/cgroup
+/dev/sda1                  520868  163020    357848  32% /boot
+/dev/mapper/centos-var    2086912  811656   1275256  39% /var
+tmpfs                       99596       4     99592   1% /run/user/42
+tmpfs                       99596      44     99552   1% /run/user/1000
+/dev/sr0                  4480476 4480476         0 100% /run/media/user1/CentOS 7 x86_64
+```
+
+```
+[user1@localhost sa]$ df -h
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root   38G  3.7G   34G  10% /
+devtmpfs                 470M     0  470M   0% /dev
+tmpfs                    487M     0  487M   0% /dev/shm
+tmpfs                    487M   15M  472M   4% /run
+tmpfs                    487M     0  487M   0% /sys/fs/cgroup
+/dev/sda1                509M  160M  350M  32% /boot
+/dev/mapper/centos-var   2.0G  793M  1.3G  39% /var
+tmpfs                     98M  4.0K   98M   1% /run/user/42
+tmpfs                     98M   44K   98M   1% /run/user/1000
+/dev/sr0                 4.3G  4.3G     0 100% /run/media/user1/CentOS 7 x86_64
+```
+- Show thông tin về hệ thống tập tin cụ thể
+
+`` df /dev/sda ``
+
+- Để hiện thêm thông tin về lệnh df.
+
+`` df --help ``
+
+- Kiểm tra phiên bản hệ điều hành.
+
+`` cat /etc/centos-release ``
   
 **II.Tiến Trình (processus)**
 
@@ -82,7 +141,6 @@ Tên giao diện [ens33] khác nhau tùy thuộc vào môi trường.
 - Để chỉ hiển thị các quy trình mà người dùng cụ thể đang chạy.
 
 `` top -u <tên người dùng> ``
-
 
 - Báo chấm dứt tiến trình mang số ``pid``
 
