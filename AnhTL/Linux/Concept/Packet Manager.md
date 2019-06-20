@@ -18,7 +18,7 @@
 
 
 # Một số câu lệnh trong việc cài đặt các gói 
-|              cenOS              |              Ubuntu              |                   Hoạt động của lệnh                |
+|              centOS              |              Ubuntu              |                   Hoạt động của lệnh                |
 |--------------------------------|----------------------------------|-----------------------------------------------------|
 |         rpm -i file.rpm        |      dpkg --install file.deb     |   Cài đặt một gói                                   |
 |         yum insstall file      |      apt-get install flie        |   cài đăt một gói phụ thuộc vào kho lưu trữ         |
