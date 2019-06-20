@@ -8,32 +8,38 @@
 - Sau khi boot vào máy chủ với file iso hoặc đĩa cài đặt Ubuntu Server, chúng ta thực hiện các bước cài đặt như sau:
 
 **B1: Lựa chọn ngôn ngữ**
+
 => Chọn ngôn ngữ mặc định là “English” hoặc ngôn ngữ nào mà bạn mong muốn.
 
 ![](https://vinasupport.com/uploads/bai-viet/Ubuntu/Server-1804/Huong-Dan-Cai-Dat-Ubuntu-Server-18-04-Step-1.png)
 
 **B2: Kiểu bàn phím**
+
 => Chọn mặc định là English US
 
 ![](https://vinasupport.com/uploads/bai-viet/Ubuntu/Server-1804/Huong-Dan-Cai-Dat-Ubuntu-Server-18-04-Step-2.png)
 
 **B3: Ubuntu Platform**
+
 => Chọn “Install Ubuntu”
 
 ![](https://vinasupport.com/uploads/bai-viet/Ubuntu/Server-1804/Huong-Dan-Cai-Dat-Ubuntu-Server-18-04-Step-3.png)
 
 **B4: Cấu hình Network**
+
 => Để mặc định => Bấm [ Done ] để tiếp tục
 - Trên màn hình tiếp theo, chọn ít nhất một card mạng để định cấu hình, nó sẽ tự động cài đặt địa chỉ IP nếu có máy chủ DHCP trong môi trường của bạn.
 
 ![](https://vinasupport.com/uploads/bai-viet/Ubuntu/Server-1804/Huong-Dan-Cai-Dat-Ubuntu-Server-18-04-Step-4.png)
 
 **B5: Cấu hình Proxy Server**
+
 => Có thể cấu hình hoặc, bỏ trống.
 
 ![](https://vinasupport.com/uploads/bai-viet/Ubuntu/Server-1804/Huong-Dan-Cai-Dat-Ubuntu-Server-18-04-Step-5.png)
 
 **B6: Cấu hình Ubuntu Mirror**
+
 => Đây là dường dẫn tên miền đặt máy chủ có chứa các package của Ubuntu, phục vụ cho việc cài đặt, nâng cấp Ubuntu.
 
 ![](https://vinasupport.com/uploads/bai-viet/Ubuntu/Server-1804/Huong-Dan-Cai-Dat-Ubuntu-Server-18-04-Step-6.png)
@@ -43,6 +49,7 @@
 ![](https://vinasupport.com/uploads/bai-viet/Ubuntu/Server-1804/Huong-Dan-Cai-Dat-Ubuntu-Server-18-04-Step-7.png)
 
 **B7: Phân vùng ổ đĩa và hệ thống tệp tin**
+
 => Chọn **Use An Entire Disk** nếu bạn là người mới bắt đầu, còn nếu bạn là 1 "Linux System Professional" thì có thể lựa chọn tùy chọn **Manual** để phân vùng ổ đĩa.
 
 ![](https://vinasupport.com/uploads/bai-viet/Ubuntu/Server-1804/Huong-Dan-Cai-Dat-Ubuntu-Server-18-04-Step-8.png)
