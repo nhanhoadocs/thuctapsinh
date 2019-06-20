@@ -35,3 +35,7 @@
 
 
 # lưu ý: file ở câu lệnh là một gói một ứng dụng một phần mềm mà muốn cài đặt 
+
+## Tham Khảo
+
+https://github.com/duckmak14/linux/blob/master/finish/Packagemanagement.md
