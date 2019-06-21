@@ -136,7 +136,9 @@ Có thể sử dụng các từ khóa sau: DEV, EDEV, NFS, NFSD, SOCK, IP, EIP, 
 - **%idle**: Hiển thị phần trăm mà cpu không hoạt động và hệ thống không có yêu cầu I / O.
 
 **sar -b**
+
 Báo cáo I/O và thống kê tốc độ truyền tải. Các giá trị sau được hiển thị:
+
 - **tps**: Tổng số lần chuyển mỗi giây được phát cho các thiết bị vật lý. Chuyển là một yêu cầu I/O đến một thiết bị vật lý. Nhiều yêu cầu logic có thể được kết hợp thành một yêu cầu I/O duy nhất cho thiết bị. Một sự chuyển giao có kích thước không xác định.
 - **rtps**: Tổng số yêu cầu đọc mỗi giây được cấp cho các thiết bị vật lý.
 - **wtps**: Tổng số yêu cầu ghi mỗi giây được cấp cho các thiết bị vật lý.
