@@ -143,12 +143,24 @@ Theo mô hình web and router 1 down. Còn dưới Router1 sẽ là UNREACHABLE 
     - máy được quay lại từ non-up and non-OK thành up và ok 
 - Hard States
     - Status là non-up hoặc non-OK và đã được kiểm tra lại 
-    - 
+    - Nó sẽ ghi lại trạng thái vào log 
+    - Nagios sẽ xử lý tiến trình với trạng thái của host là hard 
+
+4.11 Time Periods
+- Được sử dụng ở một số chức năng
+    - Đặt lịch trình kiểm tra 
+    - Khi thông báo có thể được gửi đi
+
+4.12 Notifications
+- Thông báo được nagios quyết định khi kiểm tra host hoặc service. Thông báo được xảy ra khi. 
+    - HARD state thay đổi 
+    - Khi SOFT state chuyển thành HARD state 
+- Một số dịnh vụ được sử dụng cho việc thông báo : SMS; yahoo; email; cảnh báo âm thanh...
 5. Cấu trúc của nagios 
 
 ![](../images/tong-quan/screen_5.png)
 
-- Bao gồm nagios và plugins 
+- Bao gồm nagios và plugins. Plugins sẽ làm việc check các thiết bị và rồi trả kết quả về cho nagios xử lý các công việc tiếp theo. 
 
 6. Ưu nhược điểm của nagios 
 - Ưu điểm: 
