@@ -34,7 +34,7 @@
 |         rpm -qf file           |      dpkg --search file          |   Hiển thị các gói mà một file thuộc về             |
 
 
-# lưu ý: file ở câu lệnh là một gói một ứng dụng một phần mềm mà muốn cài đặt 
+# lưu ý: file ở câu lệnh là một gói một ứng dụng hoặc một phần mềm mà muốn cài đặt 
 
 ## Tham Khảo
 
