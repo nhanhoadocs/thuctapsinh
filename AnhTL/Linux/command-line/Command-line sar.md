@@ -118,6 +118,32 @@ Có thể sử dụng các từ khóa sau: DEV, EDEV, NFS, NFSD, SOCK, IP, EIP, 
  
  ![](https://www.linuxtechi.com/wp-content/uploads/2015/11/reading-sar-log-file2-1024x323.jpg)
  
+ # Các thông số trong lệnh "sar"
+
+- sar - Thu thập, báo cáo hoặc lưu thông tin hoạt động hệ thống.
+
+**Sau khi ta gõ lệnh sar kèm theo các option của nó thì sẽ có các thông số sau:**
+- sar -A : nó sẽ hiển thị tất cả các thông số trong các option khác **-bBdqrRSuvwWy**.
+- Trong đây sẽ giải thích tất cả các thông số trong các option của lệnh **sar**: https://linux.die.net/man/1/sar
+
+**sar**
+- **CPU** : Hiển thị số CPU(s) sử dụng.
+- **%user**: Phần trăm CPU mà user sử dụng.      
+- **%nice**: Tỷ lệ sử dụng CPU xảy ra trong khi thực hiện ở chế độ người dùng với mức độ ưu tiên cao tương ứng.
+- **%system**: Phần trăm CPU mà hệ thống sử dụng.       
+- **%iowait**: Hiển thị phần trăm mà CPU chờ trong thời gian mà hệ thống đang xử lý dữ liệu.
+- **%steal**: Hiển thị phần trăm chia sẻ tài nguyên cpu cho máy khác. Chỉ xảy ra trong trường hợp máy ảo.
+- **%idle**: Hiển thị phần trăm mà cpu không hoạt động và hệ thống không có yêu cầu I / O.
+
+**sar -b**
+Báo cáo I/O và thống kê tốc độ truyền tải. Các giá trị sau được hiển thị:
+- **tps**: Tổng số lần chuyển mỗi giây được phát cho các thiết bị vật lý. Chuyển là một yêu cầu I/O đến một thiết bị vật lý. Nhiều yêu cầu logic có thể được kết hợp thành một yêu cầu I/O duy nhất cho thiết bị. Một sự chuyển giao có kích thước không xác định.
+- **rtps**: Tổng số yêu cầu đọc mỗi giây được cấp cho các thiết bị vật lý.
+- **wtps**: Tổng số yêu cầu ghi mỗi giây được cấp cho các thiết bị vật lý.
+- **beard/s**: Tổng lượng dữ liệu được đọc từ các thiết bị theo khối mỗi giây. Các khối tương đương với các cung có 2,4 nhân và mới hơn và do đó có kích thước 512 byte. Với các hạt nhân cũ hơn, một khối có kích thước không xác định.
+- **bwrtn/s**: Tổng lượng dữ liệu được ghi vào các thiết bị theo khối mỗi giây.
+
+ 
  # END
  
  ## Chúc Các Bạn Học Tốt
