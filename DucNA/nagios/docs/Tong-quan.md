@@ -16,10 +16,27 @@
 3. Các phiên bản nagios
 - nagios core = nagios 
 - Nagios Log Server : Là một phiên bản dùng để quản lý và giám sát nhật ký doanh nghiệp. 
-- Nagios Fusion : Khi có nhiều nagios core và nagios XL. fusion được tạo ra để tổng hợp lại tất cả nagios 
+- Nagios Fusion : Khi có nhiều nagios core và nagios XL. fusion được tạo ra để tổng hợp lại tất 
+cả nagios 
 - Nagios XI : Là phần mềm giám sát doanh nghiệp 
 - Nagios BPI : Dùng để giám sát các quy trình làm việc 
 - Nagios Plugins : Được dùng để kiểm tra trạng thái của máy. Nagios sẽ sử dụng kết quả từ plugins để xác định trạng thái của máy.
+- So sánh giữa nagios XI và nagios core thì nagios XI sẽ có tất cả tính năng của nagios core và một số tính năng mà nagios core không có: 
+    - Nagios XI sẽ mất phí 
+    - Có sẵn Install Script 
+    - Dễ dàng tích hợp với các giải pháp khác 
+    - Lịch trình sao lưu tự động 
+    - Upgrade qua web
+    - lưu trữ theo snapshot 
+    - Chức năng Auto-Discovery 
+    - Máy ảo được cấu hình sẵn 
+    - Có app cho điện thoại 
+    - Giám sát quy trình Làm việc 
+    - Có database backend 
+    - Tùy chỉnh người dùng một cách cụ thể 
+    - Khôi phục cấu hình 
+    - Báo cáo theo lịch trình 
+    - Tích hợp google map 
 4. Các khái niệm trong nagios 
 
 4.1 Plugins 
@@ -51,13 +68,98 @@
 4.4 Database 
 - Là nơi lưu trữ các loại thông tin của nagios.
 
+4.5 Macros
+- Cho phép tham chiếu các thông tin từ nhiều nguồn khác nhau ví dụ như host, service,....
+- Nó lưu trữ thông tin như là một biến môi trường. Trước khi câu lệnh được thực hiện nó sẽ tham chiếu đến macros và thực hiện cũng giống như một biến môi trường. Nhưng có các macros không được cung cấp như biến môi trường là $user$ do cần bảo mật thông tin
+
+4.6 Host check 
+- Host là những thiết bị giám sát và đặt được địa chỉ IP 
+- Host được check bởi nagios core daemon dựa vào một số yếu tố
+    - Được check theo lịch trình : làm theo lịch trình được đặt sẵn 
+    - Check theo đường tiếp cận của nó :  
+
+![](../images/tong-quan/screen_6.png)
+
+    - Một dịch vụ thay đổi trạng thái : Khi dịch vụ của một host thay đổi trạng thái 
+- Cache host check : các thông tin sau khi được check xong có thể được cache lại nếu ta sử  dụng tính năng này 
+- Host state : trạng thái của máy chủ bao gồm 3 trạng thái 
+    - UP 
+    - Down
+    - UNREACHABLE 
+- Khi plugins trả về thông tin của host sẽ là 
+    - OK, 
+    - WARNING, 
+    - UNKNOWN,  
+    - CRITICAL.
+- Bảng dịch từ plugins sang nagios 
+
+| plungins | Nagios |
+|----|---|
+| OK | UP |
+| WARNING | UP OR DOWN |
+| UNKNOWN | DOWN |
+| CRITICAL | DOWN | 
+
+- Phân biệt Down và  UNREACHABLE
+
+![](../images/tong-quan/screen_6.png)
+
+Theo mô hình web and router 1 down. Còn dưới Router1 sẽ là UNREACHABLE vì nagios không thể xác định được là down hay up   
+
+4.7 Service Check 
+- Nagios sẽ check theo một số yếu tố 
+    - Theo lịch trình
+    - theo sự phụ thuộc dịch vụ 
+- Một số trạng thái của service 
+    - OK 
+    - WARNING
+    - UNKNOWN
+    - CRITICAL
+- Cache service check : tương tự host service cũng có file cache của nó 
+*Host ane service có một cơ chế kiểm tra lại trại thái. Ta sẽ đặt được số lần kiểm tra lại trong khi cài đặt*
+
+4.8 Active Checks
+- Active Checks có hai tính năng chính 
+    - Chạy theo lịch trình
+    - Chạy bởi nagios core process
+- Active Checks hoạt động 
+    - Khi cần check thì nagios sẽ tạo ra plugins để check 
+    - Sau đó plugins trả lại kết quả cho thằng nagios xử lý 
+
+4.9 Passive Checks
+- Passive Checks 
+    - Được thực hiện bởi một tiến trình hoặc app không phải nagios 
+    - Kết quả được đưa về cho nagios core xử lý 
+    - Được dùng khi nagios không kiểm tra được theo lịch trình 
+
+4.10 state type 
+- State type được xác định bởi 2 yếu tố : 
+    - Status của host hoặc service : OK, WARNING, UP, DOWN, CRITICAL  
+    - type of service : SOFT and HARD 
+- Host và service Ở trạng thái SOFT khi 
+    - status là non-up hoặc non-OK và chưa được kiểm tra lại 
+    - nagios sẽ xử lý tiến trình ở trạng thái này 
+    - Nó sẽ được ghi lại trong log 
+    - máy được quay lại từ non-up and non-OK thành up và ok 
+- Hard States
+    - Status là non-up hoặc non-OK và đã được kiểm tra lại 
+    - 
 5. Cấu trúc của nagios 
 
 ![](../images/tong-quan/screen_5.png)
 
 - Bao gồm nagios và plugins 
 
-6. Cách thức hoạt động của ngaios 
+6. Ưu nhược điểm của nagios 
+- Ưu điểm: 
+    - Miễn phí  
+    - Thích hợp được với nhiều ngôn ngữ 
+    - Có hàng nghìn plugins có sẵn để tích hợp với nagios 
+- Nhược điểm: 
+    - Khá khó khăn khi muốn thêm chức năng phải cấu hình và phải lưu ý việc phù hợp của chức năng đó với môi trường
+    - Giao diện đồ họa cổ điển lâu đời 
+    - Khả năng tự động cập nhật thiết bị trên mạng không có(auto-Discovery)  Dẫn đến việc khó khăn mở rộng 
+7. Cách thức hoạt động của ngaios 
 
 ![](../images/tong-quan/screen_4.png)
 
@@ -66,7 +168,6 @@
 - Nagios : Nơi tạo ra yêu cầu và xử lý thông tin trả lại từ plugins 
 - Pluins : là nơi giám sát sự thay đổi của thiết bị
 - Monitored Elements : Thiết bị yêu cầu giám sát 
-
 
 # Link tham khảo 
 https://en.wikipedia.org/wiki/Nagios
