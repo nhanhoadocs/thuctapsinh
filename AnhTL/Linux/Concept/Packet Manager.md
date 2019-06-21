@@ -23,7 +23,7 @@
 |         rpm -i file.rpm        |      dpkg --install file.deb     |   Cài đặt một gói                                   |
 |         yum insstall file      |      apt-get install flie        |   cài đăt một gói phụ thuộc vào kho lưu trữ         |
 |         rpm -e file.rpm        |      dpkg --remove  file.deb     |   Gỡ một gói                                        |
-|         yum remove file        |      apt-get remove file         |   Gỡ bỏ một máy sử phụ thuộc vào kho lưu trữ        |
+|         yum remove file        |      apt-get remove file         |   Gỡ bỏ một gói phụ thuộc vào kho lưu trữ        |
 |         rpm -U file.rpm        |      dpkg --install file.deb     |   Update một gói có phiên bản mới                   |
 |         yum update file        |      apt-get upgrade file        |   update một gói sử dụng và phụ thuộc kho lưu trữ   |
 |         yum update             |      apt-get dist-upgrade        |   update toàn bộ hệ thống                           |
