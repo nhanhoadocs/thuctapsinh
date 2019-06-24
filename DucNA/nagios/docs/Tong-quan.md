@@ -67,10 +67,12 @@ cả nagios
 
 4.4 Database 
 - Là nơi lưu trữ các loại thông tin của nagios.
+- DB : Bao gồm cả DBMS và DATA. Trong nagios thì sẽ được hỗ trợ 2 DBMS là mysql và postgreSQL. 
 
 4.5 Macros
 - Cho phép tham chiếu các thông tin từ nhiều nguồn khác nhau ví dụ như host, service,....
 - Nó lưu trữ thông tin như là một biến môi trường. Trước khi câu lệnh được thực hiện nó sẽ tham chiếu đến macros và thực hiện cũng giống như một biến môi trường. Nhưng có các macros không được cung cấp như biến môi trường là $user$ do cần bảo mật thông tin
+- Trước khi nagios thực hiện một command nó sẽ kiểm tra macros và nó sẽ thay thế tất cả các macros bằng giá trị tương ứng của chúng
 
 4.6 Host check 
 - Host là những thiết bị giám sát và đặt được địa chỉ IP 
@@ -180,6 +182,14 @@ Theo mô hình web and router 1 down. Còn dưới Router1 sẽ là UNREACHABLE 
 - Nagios : Nơi tạo ra yêu cầu và xử lý thông tin trả lại từ plugins 
 - Pluins : là nơi giám sát sự thay đổi của thiết bị
 - Monitored Elements : Thiết bị yêu cầu giám sát 
+
+- Bước 1: Khi client gửi yêu cầu kiểm tra host hoặc service. Thì Sẽ dùng `Browser` và sử dụng giao thức HTTP để truyền tải thông tin yêu cầu đến web server của nagios 
+- Bước 2: Sau khi web server của nagios  nhận được yêu cầu của client đó. server sẽ xử lý yêu cầu và xác định xem CGI nào cần dùng. CGI sẽ được dùng để vào nagios (DB của nagios) để lấy thông tin cần thiết và trả lại cho client
+- Bước 3: Nagios sẽ xem trong bộ nhớ cache có thông tin của yêu cầu đó không. Nếu có nó sẽ lập tức trả lại cho client. Còn không có thì nagios sẽ tạo ra một plugins để kiểm tra
+- Bước 4: Sau đó plugins sẽ kiểm tra lại và trả lại thông tin cho nagios 
+- Bước 5: Nagios sẽ lưu trữ lại thông tin được trả lại từ plugins và đồng thời cũng sẽ đưa nó vào bộ nhớ cache. 
+- Bước 6: Nagios xác định được các bước phải thực hiện xong sẽ trả lại kết quả cho web server 
+- Bước 7: web server sẽ trả cho client thông tin yêu cầu 
 
 # Link tham khảo 
 https://en.wikipedia.org/wiki/Nagios
