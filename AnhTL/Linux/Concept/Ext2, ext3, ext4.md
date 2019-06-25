@@ -16,14 +16,14 @@
 - Nó được giới thiệu vào năm 2001. Được phát triển bởi Stephen Tweedie.
 - Bắt đầu từ Linux Kernel 2.4.15 ext3 đã có sẵn.
 - Lợi ích chính của ext3 là cho phép ghi nhật ký.
-- Nhật ký có một khu vực dành riêng trong hệ thống tệp, nơi tất cả các thay đổi được theo dõi. Khi hệ thống gặp sự cố, khả năng tham nhũng hệ thống tệp sẽ ít hơn do ghi nhật ký.
+- ``Hệ thống tập tin nhật ký`` là một hệ thống tập tin duy trì một tập tin đặc biệt gọi là`` tạp chí`` được sử dụng để sửa chữa bất kỳ sự không nhất quán nào trong hệ thống tập tin xảy ra do việc tắt máy tính đột ngột và do đó luôn duy trì tính nhất quán bên trong. Việc tắt máy như vậy thường là do sự gián đoạn của nguồn điện hoặc do sự cố phần mềm không thể giải quyết được nếu không khởi động lại.
+- Sau khi khởi động lại từ việc tắt máy đột ngột. Với một hệ thống tập tin ext2 nó sẽ chạy một kiểm tra tính nhất quán và sửa chữa bất kỳ mâu thuẫn nào trước khi hệ thống tập tin có thể được gắn kết (ví dụ, một cách logic gắn vào hệ thống) và khởi động có thể được hoàn thành. Thời gian chờ có thể rất lâu, có thể là vài giờ trong trường hợp hệ thống tập tin có hàng trăm gigabyte . Ngược lại, Ext3 thường không yêu cầu kiểm tra hệ thống tập tin trong quá trình khởi động lại sau khi tắt máy không đúng vì tính nhất quán bên trong được đảm bảo của nó.
+- Ext3 cũng có thể thực hiện công việc bảo vệ tính toàn vẹn dữ liệu tốt hơn đáng kể so với ext2 trong trường hợp tắt hệ thống không đúng cách. 
+  - Trên thực tế việc đảm bảo dữ liệu phù hợp với trạng thái của hệ thống tệp rất quan trọng (loại bỏ dữ liệu bị hỏng xuất hiện trong các tệp được viết lại sau khi tắt máy không đúng cách)
+- Ngoài ra, ext3 thường nhanh hơn ext2, mặc dù thực tế là nó ghi một số dữ liệu nhiều lần. Điều này là do nhật ký của nó tối ưu hóa chuyển động đầu ổ đĩa cứng (HDD) . 
 - Kích thước tệp cá nhân tối đa có thể từ 16 GB đến 2 TB.
 - Tổng kích thước hệ thống tệp ext3 có thể từ 2 TB đến 32 TB.
 - Thư mục có thể chứa tối đa 32.000 thư mục con.
-- Có ba loại nhật ký có sẵn trong hệ thống tệp ext3.
-  - Nhật ký - Siêu dữ liệu và nội dung được lưu trong tạp chí.
-  - Đã đặt hàng - Chỉ siêu dữ liệu được lưu trong tạp chí. Siêu dữ liệu chỉ được ghi lại sau khi ghi nội dung vào đĩa. Đây là mặc định.
-  - WriteBack - Chỉ siêu dữ liệu được lưu trong tạp chí. Siêu dữ liệu có thể được ghi nhật ký trước hoặc sau khi nội dung được ghi vào đĩa.
 - Ta có thể chuyển đổi trực tiếp hệ thống tệp ext2 sang hệ thống tệp ext3 (không cần sao lưu / khôi phục).
 
 **Ext4**
