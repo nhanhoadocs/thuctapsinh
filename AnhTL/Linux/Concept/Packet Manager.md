@@ -21,7 +21,7 @@
 |              centOS              |              Ubuntu              |                   Hoạt động của lệnh                |
 |--------------------------------|----------------------------------|-----------------------------------------------------|
 |         rpm -i file.rpm        |      dpkg --install file.deb     |   Cài đặt một gói                                   |
-|         yum insstall file      |      apt-get install flie        |   cài đăt một gói phụ thuộc vào kho lưu trữ         |
+|         yum install file       |      apt-get install flie        |   cài đăt một gói phụ thuộc vào kho lưu trữ         |
 |         rpm -e file.rpm        |      dpkg --remove  file.deb     |   Gỡ một gói                                        |
 |         yum remove file        |      apt-get remove file         |   Gỡ bỏ một gói phụ thuộc vào kho lưu trữ        |
 |         rpm -U file.rpm        |      dpkg --install file.deb     |   Update một gói có phiên bản mới                   |
