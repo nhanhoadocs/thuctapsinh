@@ -7,17 +7,15 @@ Bước 2: Tắt firewall
 systemctl disable firewall
 systemctl stop firewall 
 ```
-Bước 3: Cài đặt dịch vụ http 
+Bước 3: Cài đặt dịch vụ http, php, wget và một số dịch vụ cần thiết
 ```
 yum install httpd php php-cli gcc glibc glibc-common gd gd-devel net-snmp openssl-devel wget unzip -y
 ```
-Bước 4: Cài đặt nagios 
+Bước 4: Dùng wget để download và cài đặt nagios
 ```
 cd /tmp
 wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.1.1.tar.gz
-wget http://www.nagios-plugins.org/download/nagios-plugins-2.1.1.tar.gz
 tar zxf nagios-4.1.1.tar.gz
-tar zxf nagios-plugins-2.1.1.tar.gz
 cd nagios-4.1.1
 ./configure --with-command-group=nagcmd
 make all
@@ -31,8 +29,11 @@ Bước 5: Tạo ra một user để đăng nhập vào web server
 ```
 htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 ```
-Bước 6: Cài đặt nagios plugins
+Bước 6: Download và Cài đặt nagios plugins
 ```
+cd /tmp
+wget http://www.nagios-plugins.org/download/nagios-plugins-2.1.1.tar.gz
+tar zxf nagios-plugins-2.1.1.tar.gz
 cd /tmp/nagios-plugins-2.1.1
 ./configure --with-nagios-user=nagios --with-nagios-group=nagios --with-openssl
 make all
@@ -45,7 +46,7 @@ service nagios start
 ```
 Bước 8: đăng nhập vào web nagios. Ví dụ 
 ```
-192.168.122.225/nagios 
+192.168.122.225/nagios
 ```
 
 ![](../images/install/screen_7.png)

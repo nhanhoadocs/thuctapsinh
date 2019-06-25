@@ -30,7 +30,8 @@ Biến này dùng để trỏ đến file Object Configuration File
 ```
 cfg_dir=/usr/local/nagios/etc/commands
 ```
-4. 
+4. Status File
+Đây là biến dùng để khai báo file lưu trữ trạng thái của các server 
 
 # Link tham khảo 
 https://nsrc.org/workshops/2008/walc/nagios/manual/nagios-3.pdf
