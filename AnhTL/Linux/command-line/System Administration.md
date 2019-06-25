@@ -100,6 +100,14 @@ tmpfs                     98M   44K   98M   1% /run/user/1000
 
 `` df /dev/sda ``
 
+- Show thông tin về thời tiết.
+
+`` curl -4 http://wttr.in/Cityname ``
+
+- Show thông tin về thời tiết ở vị trí hiện tại.
+
+`` curl wttr.in ``
+
 - Để hiện thêm thông tin về lệnh df.
 
 `` df --help ``
@@ -108,6 +116,7 @@ tmpfs                     98M   44K   98M   1% /run/user/1000
 
 `` cat /etc/centos-release ``
   
+ 
 **II.Tiến Trình (processus)**
 
 - Hiển thị tất cả các tiến trình đã được thực hiện (pid et ppid).
