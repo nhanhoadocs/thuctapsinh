@@ -662,6 +662,17 @@ sudo su
 ```
 tar czf <dirname>.tgz <dirname>
 ```
+
+```
+[root@localhost hung1]# touch {1,2,3}.txt
+[root@localhost hung1]# tar -cvf test.tar 1.txt 2.txt 3.txt
+1.txt
+2.txt
+3.txt
+[root@localhost hung1]# ls
+1.txt  2.txt  3.txt  b1.gz  b2  name.txt  oanh  test.tar
+
+```
 70. Giải nén một file
 
 ```
@@ -722,7 +733,7 @@ who
 80. In ra tên mà bạn đang đăng nhập vào máy
 
 ```
-whoammi
+whoami
 ```
 81. In ra những dòng cuối của file test.log trong khi vẫn đang bị viết bởi một chương trình khác
 
@@ -790,15 +801,15 @@ file <package_name>
 ```
 94. Tìm file 
 ```
-find / -name <filename>
+find -name <filename>
 ```
 95. Tạo 1 file nén đuôi .gz
 ```
-gzip test.txt
+gzip <Tên file cần nén>
 ```
 96. Giải nén 1 file đuôi .gz
 ```
-gzip -d test.txt.gz
+gzip -d <Tên file nén.gz>
 ```
 97. Hiển thị thông tin chi tiết khi nén bằng opion -l
 ```
