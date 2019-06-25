@@ -190,7 +190,12 @@ Theo mô hình web and router 1 down. Còn dưới Router1 sẽ là UNREACHABLE 
 - Bước 5: Nagios sẽ lưu trữ lại thông tin được trả lại từ plugins và đồng thời cũng sẽ đưa nó vào bộ nhớ cache. 
 - Bước 6: Nagios xác định được các bước phải thực hiện xong sẽ trả lại kết quả cho web server 
 - Bước 7: web server sẽ trả cho client thông tin yêu cầu 
-
+8. Một số câu hỏi. 
+- FTP dùng để làm gì? 
+    - FTP là giao thức dùng để truyền tệp tin 
+    - Bạn có thể tải xuống hoặc đẩy tệp tin từ máy này sang máy khác 
+- POP3 : 
+    - Dùng để download email từ mail server xuống mail client  port 110 ( 995 port POP3S ) 
 # Link tham khảo 
 https://en.wikipedia.org/wiki/Nagios
 
