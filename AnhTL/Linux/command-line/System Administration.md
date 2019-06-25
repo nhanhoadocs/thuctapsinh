@@ -108,6 +108,18 @@ tmpfs                     98M   44K   98M   1% /run/user/1000
 
 `` curl wttr.in ``
 
+- Để chỉnh sửa ngày và giờ trên Ubuntu.
+
+`` timedatectl ``
+
+- Để thay đổi sang múi giờ Vietnam (UTC +7).
+
+`` timedatectl set-timezone Asia/Ho_Chi_Minh ``
+
+- Xem danh sách múi giờ bằng lệnh.
+
+`` timedatectl list-timezones ``
+
 - Để hiện thêm thông tin về lệnh df.
 
 `` df --help ``
