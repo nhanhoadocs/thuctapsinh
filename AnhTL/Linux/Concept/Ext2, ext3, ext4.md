@@ -44,3 +44,5 @@
 https://www.thegeekstuff.com/2011/05/ext2-ext3-ext4/
 
 https://en.wikipedia.org/wiki/Ext2
+
+http://www.linfo.org/ext3fs.html
