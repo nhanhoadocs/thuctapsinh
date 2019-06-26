@@ -14,29 +14,36 @@ Btrfs là một hệ thống file hiện đại được phát triển bởi nhi
 ##### Tính năng sao chép cấu trúc dữ liệu
 
 - Btrfs lưu trữ hai bản sao của siêu dữ liệu trên một ổ đĩa, cho phép khôi phục dữ liệu nếu ổ cứng bị hỏng bởi nhiều lí do.
+
 ![](https://synologyvietnam.vn/wp-content/uploads/2018/03/btrfs-1.png)
 
 ##### Tính năng tự khôi phục tập tin
 
 - Các hệ thống lưu trữ truyền thống có thể gặp các lỗi phát sinh tiềm ẩn, dẫn đến dữ liệu bị hỏng mà không có một thông báo lỗi hay cảnh báo nào. Để tránh các lỗi như thế này, Btrfs cung cấp các file checksum cho dữ liệu, sau đó tạo ra bản copy của dữ liệu đó và so sánh file checksum trong quá trình đọc. Khi phát hiện ra sự không phù hợp (sự hư hại dữ liệu ngầm), hệ thống Btrfs sẽ tự động so sánh các tệp hỏng với dữ liệu được sao chép lúc đầu, từ đó khôi phục dữ liệu theo cơ chế RAID (1, 5, 6, 10, F1) hoặc SHR đang hỗ trợ trên ổ đĩa.
+
 ![](https://synologyvietnam.vn/wp-content/uploads/2018/03/btrfs1-1.png)
+
 ##### Bảo vệ dữ liệu
 
 - Btrfs file system giới thiệu một tính năng snapshot cho phép tạo ra một bản copy toàn bộ của một Shared folder tại thời điểm đó. Bằng cách này, nếu xảy ra mất dữ liệu do yếu tố con người, bạn có thể khôi phục dữ liệu nhanh chóng từ bản snapshot trước đó. Điều đặc biệt, bản snapshot chỉ tiêu thụ một lượng bộ nhớ cực thấp nhưng lợi ích mang lại rất lớn.
+
 ![](https://synologyvietnam.vn/wp-content/uploads/2018/03/btrfs2-1.png)
 
 ##### Đảm bảo dữ liệu khi thực hiện backup
 - Các phương pháp backup thông thường sẽ hoạt động theo cơ chế copy dữ liệu, do đó cần một khoảng thời gian để làm điều này. Tuy nhiên, nó dễ dẫn đến dữ liệu không được toàn vẹn do trong quá trình backup, dữ liệu có thể đang được chỉnh sửa. Btrfs sẽ giúp giải quyết vấn đề này bằng cách tạo bản snapshot trước khi tiến hành backup, sau đó dùng bản snapshot để copy. Điều này đảm bảo dữ liệu luôn được toàn vẹn dù bị tác động.
+
 ![](https://www.khuetu.vn/modules/jscomposer/uploads/additional_benefits_02.gif)
 
 ##### Hạn mức (quota) cho các thư mục chia sẻ
 - Ta có thể chỉ định hạn mức cho các thư mục chia sẻ độc lập, do đó, không gian lưu trữ của ta sẽ không bị ảnh hưởng bởi những dữ liệu phình lên bởi 1 thư mục chia sẻ nào đó. Tính năng này hữu ích cho việc kiểm soát không gian lưu trữ khi nhiều phòng ban cùng lưu trữ dữ liệu trên một thiết bị NAS. 
+
 ![](https://www.khuetu.vn/modules/jscomposer/uploads/additional_benefits_03.png)
 
 ##### Nhân bản toàn bộ Share Folder
 
-![](https://synologyvietnam.vn/wp-content/uploads/2018/03/btrfs4-1.png)
 - Với tính năng của Btrfs, ta có thể dễ dàng chọn một Shared Folder trên NAS để nhân bản toàn bộ nội dung một cách nhanh chóng. Điều này rất cần thiết khi tiến hành thử nghiệm việc update phiên bản hay chỉnh sửa database…
+
+![](https://synologyvietnam.vn/wp-content/uploads/2018/03/btrfs4-1.png)
 
 ## Tài liệu tham khảo:
 https://www.khuetu.vn/noi-dung/giai-phap-nas/tim-hieu-ve-chuan-file-he-thong-btrfs-tren-nas-synology
