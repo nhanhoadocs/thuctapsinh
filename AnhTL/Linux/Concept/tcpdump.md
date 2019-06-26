@@ -1,5 +1,5 @@
 # 1. Khái niệm 
-- Tcpdum là phần mềm bắt gói tn trong mạng làm việc trên hầu hết các phiên bản hệ điều hành linux 
+- Tcpdum là phần mềm bắt gói tin trong mạng làm việc trên hầu hết các phiên bản hệ điều hành linux 
 - Tcpdum cho phép bắt và lưu trữ những gói tin bắt được, từ đó chúng ta có thể sử dụng để phân tích
 - Để sử dụng được tcpdump trên linux thì ta cần phải cài đặt 
 - Với ubuntu 
