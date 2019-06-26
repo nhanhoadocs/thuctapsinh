@@ -27,7 +27,7 @@ lsblk
 ```
 ![](https://scontent.fhan5-6.fna.fbcdn.net/v/t1.15752-9/65054393_699349527192687_2971132932262985728_n.png?_nc_cat=105&_nc_oc=AQke3wkyQjjU2xcD8zYad3qzypkYWYYxYYRpjjdS9DFWKHmAX6qApRWPsJdCv-Rd3q0&_nc_ht=scontent.fhan5-6.fna&oh=8c3119712e246f029324c21e9cded373&oe=5DBBE78B)
 
-- Như vậy là ta đã mount được. Bây giờ khi ta thao tác với thư mục /test thì tất cả các dữ liệu ta ghi lên sẽ ghi lên thiết bị ta gán vào dù ta tháo đĩa thiết bị đó ra mang đi nơi khác ta vẫn có thể đọc được dữ liệu đó.
+- Như vậy là ta đã mount được. Bây giờ khi ta thao tác với thư mục /test thì tất cả các dữ liệu ta ghi lên thư mục /test sẽ được ghi lên thiết bị ta gán vào, dù ta tháo đĩa thiết bị đó ra mang đi nơi khác ta vẫn có thể đọc được dữ liệu đó.
 
 - Khi không dùng ta có ngắt kết nối thiết bị với thư mục bằng cách dùng lệnh:
 ```
