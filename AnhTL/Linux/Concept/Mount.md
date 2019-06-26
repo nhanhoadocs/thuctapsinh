@@ -1,7 +1,7 @@
 # Mount
 - Trong Linux để sử dụng được một thiết bị lưu trữ ta phải ``mount`` nó vào một thư mục nào đó để có thể sử dụng. Như vậy ``mount`` là gì?
 - Nếu ta không mount thiết bị lưu trữ vào thì ta không thể sử dụng được nó.
-- Lệnh mount có rất nhiều các option ở đây tôi sẽ nói ví dụ một số option:
+- Lệnh mount có rất nhiều các option ở đây ta sẽ nói ví dụ một số option:
   - ``-h`` để hiển thị các option
   ![](https://scontent.fhan5-7.fna.fbcdn.net/v/t1.15752-9/65631742_354535545210928_8233336097501872128_n.png?_nc_cat=103&_nc_oc=AQm0-EUHM_zmGPk00PJRwxZkqYAHhcPtar8CgTrSmhy0DBoYh8N-6asuaqOX5KilsDQ&_nc_ht=scontent.fhan5-7.fna&oh=d1816e330509d89ae5d30d9e369e3221&oe=5DC2EA47)
 
