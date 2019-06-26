@@ -1,16 +1,22 @@
 Tìm hiểu về VMWare WorkStation
 ====
-## I. Tổng quan
+# Mục lục
+- [1.Tổng quan](#1tổng-quan)
+- [2.Cài đặt phần mềm VMWare Workstation](#2cài-đặt-phần-mềm-vmware-workstation)
+- [3.Cài đặt hệ điều hành trên máy ảo](#3cài-đặt-hệ-điều-hành-trên-máy-ảo)
+- [4.Cài đặt hệ điều hành CentOS trên máy ảo](#4cài-đặt-hệ-điều-hành-centos-trên-máy-ảo)
+- [5.Tài liệu tham khảo](#5tài-liệu-tham-khảo)
+## 1.Tổng quan
 VMWare WorkStation là một phần mềm giúp cài đặt máy ảo để có thể chạy đồng thời trên cùng 1 máy.
 Máy ảo này sẽ hoạt động độc lập với máy tính vật lí nên nó có vai trò trong kết nối mạng, thử nghiệm virus, thử nghiệm hệ điều hành,...
 ![image](images/vm01.png "img1")
-## II. Cài đặt phần mềm VMWare Workstation
+## 2.Cài đặt phần mềm VMWare Workstation
 **Bước 1**: Kiểm tra cấu hình máy tính.
 
  Bạn phải chắc chắn rằng máy tính của mình có đủ cấu hình để có thể cung cấp cho máy ảo của bạn.
 
 **Bước 2**: Tải phần mềm và cài đặt phần mềm.
-## III. Cài đặt hệ điều hành trên máy ảo
+## 3.Cài đặt hệ điều hành trên máy ảo
 **Bước 1**
 
 Đầu tiên bạn phải xác định hệ điều hành mà bạn muốn cài. Bạn có thể tiến hành tải file .iso để có file cài.
@@ -64,7 +70,7 @@ Tại bước này bạn cần quan tâm tới card mạng. Có 3 lựa chọn c
 ![image](images/vm08.png "img8")
 Sau khi cấu hình xong, chọn Finish để kết thúc quá trình tạo máy ảo.
 
-## IV. Cài đặt hệ điều hành CentOS trên máy ảo.
+## 4.Cài đặt hệ điều hành CentOS trên máy ảo.
 Để cài đặt CentOS 7 trên máy ảo, ta tiến hành tạo máy ảo mới như đã hướng dẫn ở mục III.
 
 Sau khi tạo xong, hệ điều hành sẽ khởi động và bạn sẽ tiến hành cài đặt như sau:
@@ -85,7 +91,7 @@ Bạn chọn múi giờ là khu vực mình sinh sống. Ở đây mình chọn 
 ![image](images/vm11.png "img11")
 Sau khi cấu hình xong, bạn đợi một chút để máy tính hoàn tất quá trình cài đặt.
 
-## V. Tài liệu tham khảo
+## 5.Tài liệu tham khảo
 https://tech.vccloud.vn/huong-dan-su-dung-vmware-workstation-15-20181127173115215.htm
 
 https://www.howtoforge.com/tutorial/centos-7-minimal-server/
