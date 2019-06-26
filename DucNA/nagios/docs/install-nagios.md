@@ -64,3 +64,4 @@ https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-mon
 
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-centos-7
 
+https://assets.nagios.com/downloads/nagioscore/docs/Nagios-Core-Installing-On-Centos7.pdf#_ga=2.188291052.55387488.1561424196-743685740.1560686364
