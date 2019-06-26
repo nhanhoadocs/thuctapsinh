@@ -1,4 +1,6 @@
-Mô hình của file config 
+
+
+Mô hình của file config. Trong nagios có 4 file cấu hình chính. Và được liên kết với nhau bởi file cấu hình chính. 
 
 ![](../images/file-config/screen_6.png)
 

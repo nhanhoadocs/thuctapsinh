@@ -1,3 +1,9 @@
+Hướng dẫn cài đặt nagios trên centos7. Chuẩn bị
+- OS : centos 7
+- RAM : 512 ; Disk 10G
+
+Các Bước thực hiện 
+
 Bước 1 : Để có thể sử dụng được dịch vụ thì ta cần tắt selinux đi. Sửa file `/etc/selinux/config` và sử dòng `SELINUX` thành disable  
 ```
 SELINUX=disable
