@@ -1,5 +1,7 @@
 # CÁC HỆ THỐNG FILE CỦA LINUX
 
+- Nói một cách đơn giản, một hệ thống tập tin là cách một ổ đĩa cứng có thể lưu trữ, truy cập và quản lý các tập tin.
+
 **Hệ thống file nhật ký**
 - Hệ thống file nhật ký tránh việc hỏng hệ thống file bằng cách ghi một nhật ký. Nhật ký là một file riêng ghi lại mọi thay đổi của hệ thống file vào một vùng đệm (thay vì ghi thẳng vào hệ thống file trên ổ cứng). Sau từng khoảng thời gian định trước, những thay đổi đó được thực hiện chính thức vào hệ thống file. Nếu giữa khoảng thời gian đó, hệ thống bị tắt đột ngột, file nhật ký sẽ được dùng để khôi phục lại các thông tin chưa lưu và tránh làm hỏng metadata của hệ thống file.
 
