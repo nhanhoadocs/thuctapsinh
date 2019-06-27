@@ -1,0 +1,11 @@
+# Tìm hiểu về DNS 
+1. [Tổng quan về DNS](https://github.com/duckmak14/thuctapsinh/blob/master/DucNA/DNS/docs/tong_quan_DNS.md)
+2. [Tìm hiểu về BIND9](https://github.com/duckmak14/thuctapsinh/blob/master/DucNA/DNS/docs/BIND9.md)
+3. [Install DNS](https://github.com/duckmak14/thuctapsinh/blob/master/DucNA/DNS/lab/install-DNS.md)
+4. [lệnh dig cơ bản](https://github.com/duckmak14/thuctapsinh/blob/master/DucNA/DNS/docs/dig.md)
+5. [Lệnh nslookup cơ bản](https://github.com/duckmak14/thuctapsinh/blob/master/DucNA/DNS/docs/nslookup.md)
+6. [Lệnh check trong bind9](https://github.com/duckmak14/thuctapsinh/blob/master/DucNA/DNS/docs/command.md) 
+7. [Bắt và phân tích gói tin khi truy vấn DNS](https://github.com/duckmak14/thuctapsinh/blob/master/DucNA/DNS/lab/tcpdump_dns.md)
+8. [Tạo ra DNS forward và bắt gói tin phân tích luồng hoạt động](https://github.com/duckmak14/thuctapsinh/blob/master/DucNA/DNS/lab/tcpdump-forward.md)
+9. [Tạo ra slave](https://github.com/duckmak14/thuctapsinh/blob/master/DucNA/DNS/lab/install-slave.md)
+10. [Tài liệu sách](https://github.com/duckmak14/thuctapsinh/tree/master/DucNA/DNS/references)
