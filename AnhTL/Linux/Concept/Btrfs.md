@@ -25,7 +25,7 @@ Btrfs là một hệ thống file hiện đại được phát triển bởi nhi
 
 ##### Bảo vệ dữ liệu
 
-- Btrfs file system giới thiệu một tính năng snapshot cho phép tạo ra một bản copy toàn bộ của một Shared folder tại thời điểm đó. Bằng cách này, nếu xảy ra mất dữ liệu do yếu tố con người, bạn có thể khôi phục dữ liệu nhanh chóng từ bản snapshot trước đó. Điều đặc biệt, bản snapshot chỉ tiêu thụ một lượng bộ nhớ cực thấp nhưng lợi ích mang lại rất lớn.
+- Btrfs file system giới thiệu một tính năng snapshot cho phép tạo ra một bản copy toàn bộ của một Shared folder tại thời điểm đó. Bằng cách này, nếu xảy ra mất dữ liệu do yếu tố con người, ta có thể khôi phục dữ liệu nhanh chóng từ bản snapshot trước đó. Điều đặc biệt, bản snapshot chỉ tiêu thụ một lượng bộ nhớ cực thấp nhưng lợi ích mang lại rất lớn.
 
 ![](https://synologyvietnam.vn/wp-content/uploads/2018/03/btrfs2-1.png)
 
