@@ -26,7 +26,7 @@ Ban đầu những bản phân phối chỉ đơn giản là những tiện ích
 ### 3.1.Debian
 
 Debian là một trong những bản phân phối đầu tiên của Linux. Bản phân phối này được công bố lần đầu vào ngày 16 tháng 8 năm 1993 bởi Ian Murdock, phát hành lần đầu vào ngày 15 tháng 9 năm 1993. Năm 1996, phiên bản ổn định của Debian được phát hành đã trở thành nền tảng cho nhiều bản phân phôi khác được ra đời.
-![Image](/images/debian.png "img01")
+![Image](images/debian.png "img01")
 
 Debian nổi tiếng với hệ thống quản lí gói cao cấp APT (Advanced Packaging Tool). APT là một công cụ cho phép cài đặt các gói từ kho phần mềm. 
 - Aptitude là công cụ yêu cầu người dùng gõ lệnh, có khả năng tìm kiếm gói tốt hơn thông qua metadata.
@@ -35,17 +35,19 @@ Debian nổi tiếng với hệ thống quản lí gói cao cấp APT (Advanced 
 ### 3.2.Ubuntu
 
 Ubuntu là một bản phân phối Linux được xây dựng dựa trên Debian GNU/Linux, và cũng là bản phân phối thông dụng nhất hiện nay chiếm 30% số bản Linux được cài (năm 2007). Bản phát hành đầu tiên của Ubuntu vào ngày 20 tháng 10 năm 2004.
-![Image](/images/ubuntu.png "img02")
+![Image](images/ubuntu.png "img02")
 
 Ubuntu là hệ điều hành mã nguồn mở được tài trợ bởi Canonical Ltd. Họ tạo doanh thu bằng cách hỗ trợ kĩ thuât. Với việc để cho Ubuntu mã nguồn mở, họ đã tận dụng được các nhà phát triển bên ngoài mà không phải tự mình phát triển.
 
 ### 3.3.Fedora
 Fedora là một dự án phát triển dựa theo cộng đồng được phát trienr bởi RedHat. Fedora (hay Fedora Core) được phát triển nhắm tới mục đích tạo ra hệ điều hành mã nguồn mở hoàn chỉnh sử dụng cho các mục đích tổng quát.
-![Image](/images/fedora.png "img03")
+![Image](images/fedora.png "img03")
 Các thiết kế giao diện đơn giản, chương trình cài đặt mang giao diện đồ hoạ. Các gói phần mềm được tải xuống dễ dàng với công cụ Yum.
 
 ## 4.Tài liệu tham khảo
 https://vi.wikipedia.org/wiki/B%E1%BA%A3n_ph%C3%A2n_ph%E1%BB%91i_Linux
+
 https://vi.wikipedia.org/wiki/Debian
+
 https://vi.wikipedia.org/wiki/Ubuntu
 
