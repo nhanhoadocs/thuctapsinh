@@ -3,7 +3,7 @@
 ![](https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/64396151_930598907278922_8680750906674774016_n.png?_nc_cat=110&_nc_oc=AQlMjfdpSbxJKfgTBDrkDJGG__2ECoIgvEPRgSzSLCeJXxg5hQYsSNAcXnLz_T1tckU&_nc_ht=scontent.fhan5-2.fna&oh=f20ccfd11a2556f7e1e0d3a22aa9a983&oe=5DC2827D)
 
 
-**I. Loadavg là gì và được tính toán như nào?****
+**I. Loadavg là gì và được tính toán như nào?**
 - Systemload hay còn gọi là load.
 - Load thể hiện số công việc hiện tại hệ thống đang thực thi.
 - Một server hoàn toàn nhàn rỗi có load là 0
