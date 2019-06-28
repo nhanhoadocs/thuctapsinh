@@ -185,7 +185,13 @@ define host{
  notification_options           d,u,r
  }
  ```
-2. Time Period Definition 
+2. Service Definition 
+- Service là một số dịch vụ để kiểm tra máy chủ. như check ram, disk, cpu hay một số giao thức http, ping ..
+
+| Giá trị | Miêu tả | 
+|----|----|
+
+
 
 
 # Link tham khảo 

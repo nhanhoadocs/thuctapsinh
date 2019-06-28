@@ -6,12 +6,13 @@ Các Bước thực hiện
 
 Bước 1 : Để có thể sử dụng được dịch vụ thì ta cần tắt selinux đi. Sửa file `/etc/selinux/config` và sử dòng `SELINUX` thành disable  
 ```
-SELINUX=disable
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 ```
 Bước 2: Tắt firewall 
 ```
-systemctl disable firewall
-systemctl stop firewall 
+systemctl disable firewalld
+systemctl stop firewalld
 ```
 Bước 3: Cài đặt dịch vụ http, php, wget và một số dịch vụ cần thiết
 ```
