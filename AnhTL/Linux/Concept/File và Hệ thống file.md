@@ -1,4 +1,4 @@
-# File và Hệ thống file
+# Inode và đơn vị lưu trữ.
 
 **1: Inode**
 - Inode là một cấu trúc dữ liệu chứa các metadata của mỗi file, thư mục trong các hệ thống file Linux. Trong một inode có các metadata sau:
