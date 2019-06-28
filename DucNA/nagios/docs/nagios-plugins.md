@@ -116,10 +116,10 @@ vi /usr/local/nagios/etc/hosts.cfg
 ```
 
 ```
-## Default Linux Host Template ##
 define host{
-name                            linux-box
-use                             generic-host
+host_name                       server
+alias                           CentOS 7
+address                         192.168.122.34
 check_period                    24x7
 check_interval                  5
 retry_interval                  1
@@ -132,13 +132,6 @@ contact_groups                  admins
 register                        0
 }
 
-## Default
-define host{
-        use                             linux-box
-        host_name                       server
-        alias                           CentOS 7
-        address                         192.168.122.34
-        }
 
 ```
 - Bước 6: Chỉnh sửa file service 
