@@ -42,7 +42,7 @@
 
 [22. tcpdump](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/tcpdump.md)
 
-[23. Fily system](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/C%C3%81C%20H%E1%BB%86%20TH%E1%BB%90NG%20FILE%20C%E1%BB%A6A%20LINUX.md)0
+[23. Fily system](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/C%C3%81C%20H%E1%BB%86%20TH%E1%BB%90NG%20FILE%20C%E1%BB%A6A%20LINUX.md)
 
 [24. difference between Linux EXT, XFS, BTRFS and ZFS](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/difference%20between%20Linux%20EXT%2C%20XFS%2C%20BTRFS%20and%20ZFS.md)
 
