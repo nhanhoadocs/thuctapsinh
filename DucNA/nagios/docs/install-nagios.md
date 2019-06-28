@@ -17,7 +17,14 @@ Bước 3: Cài đặt dịch vụ http, php, wget và một số dịch vụ c�
 ```
 yum install httpd php php-cli gcc glibc glibc-common gd gd-devel net-snmp openssl-devel wget unzip -y
 ```
-Bước 4: Dùng wget để download và cài đặt nagios
+Bước 4: Tạo user để cho tiến trình xử lý nagios chạy với user đó. 
+```
+useradd nagios
+groupadd nagcmd
+usermod -a -G nagcmd nagios
+usermod -a -G nagcmd apache
+```
+Bước 5: Dùng wget để download và cài đặt nagios
 ```
 cd /tmp
 wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.1.1.tar.gz
@@ -31,11 +38,11 @@ make install-config
 make install-commandmode
 make install-webconf
 ```
-Bước 5: Tạo ra một user để đăng nhập vào web server 
+Bước 6: Tạo ra một user để đăng nhập vào web server.
 ```
 htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 ```
-Bước 6: Download và Cài đặt nagios plugins
+Bước 7: Download và Cài đặt nagios plugins
 ```
 cd /tmp
 wget http://www.nagios-plugins.org/download/nagios-plugins-2.1.1.tar.gz
@@ -45,15 +52,16 @@ cd /tmp/nagios-plugins-2.1.1
 make all
 make install
 ```
-Bước 7: Chạy dịch vụ nagios
+Bước 8: Chạy dịch vụ nagios
 ```
 service httpd start
 service nagios start
 ```
-Bước 8: đăng nhập vào web nagios. Ví dụ 
+Bước 9: đăng nhập vào web nagios. Ví dụ 
 ```
 192.168.122.225/nagios
 ```
+Bước 10: Sử dụng user để đăng nhập trang web như đã cài ở bước 6. Và sau đó ta nhận được kết quả 
 
 ![](../images/install/screen_7.png)
 
