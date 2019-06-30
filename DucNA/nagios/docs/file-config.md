@@ -190,6 +190,23 @@ define host{
 
 | Giá trị | Miêu tả | 
 |----|----|
+| host_name | Máy chủ chạy service này |
+| service_description | Mô tả về service |
+| display_name | Tên hiển thị của service trên web nếu ko có sẽ lấy tên bên trên |
+| check_command | Lệnh để thực hiện kiểm tra service | 
+| initial_state |  Ghi trạng thái ban đầu của service |
+| max_check_attempts | Số lần check lại service khi trạng thái khác OK |
+| check_interval | Khai báo khoảng thời gian giữa hai lần check |
+| retry_interval | Khai báo khoảng thời gian để check lại nếu có dùng biến `max_check_attempts` |
+
+3. Contact Definition 
+| Giá trị | Miêu tả | 
+|----|----|
+| contact_name | xác định tên contact sử dụng để khai báo |
+| alias | Tên để mô tả rõ hơn về contact |
+| host_notifications_enabled | Có bật thông báo liên quan về host không |
+| service_notification_enabled | Có bật thông báo liên quan về service không | 
+| host_notification_period | Chỉ ra khoảng thời gian mà contact nhận được thông báo | 
 
 
 
