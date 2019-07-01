@@ -88,6 +88,7 @@ Nhưng thông thường ta dùng đường dẫn tới file cho đỡ dài và d
 - Để **1** nếu muốn thực hiện việc sao lưu. 
 
 **Cột 6**: Là tùy chọn cho chương trình fsck dò lỗi trên filesystem. 
+Fsck là tiện ích để kiểm tra file system xem có bị hư hỏng không
 - Để **0**: bỏ qua việc kiểm tra. 
 - Để **1**: thực hiện việc kiểm tra.
 
