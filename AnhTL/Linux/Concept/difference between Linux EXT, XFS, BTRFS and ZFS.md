@@ -46,7 +46,7 @@
 - Được thiết kế riêng biệt dành cho các doanh nghiệp có quy mô lớn.
 ```
 
-**XFS** XFS được phát triển bởi Silicon Graphics từ năm 1994 để hoạt động với hệ điều hành riêng biệt của họ, và sau đó chuyển sang Linux trong năm 2001. Khá tương đồng với Ext4 về một số mặt nào đó.
+**XFS** được phát triển bởi Silicon Graphics từ năm 1994 để hoạt động với hệ điều hành riêng biệt của họ, và sau đó chuyển sang Linux trong năm 2001. Khá tương đồng với Ext4 về một số mặt nào đó.
 ```
 - chẳng hạn như hạn chế được tình trạng phân mảnh dữ liệu.
 - không cho phép các snapshot tự động kết hợp với nhau, 
