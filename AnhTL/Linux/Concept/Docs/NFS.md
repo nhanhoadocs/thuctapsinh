@@ -76,6 +76,7 @@ df -h
 
 ### Tóm tắt các bước:
 **Phía Server:**
+
 B1: ``yum install nfs-utils nfs-utils-lib``
 
 B2: viết những thư mục mà ta muốn chia sẻ với client vào ``vi /etc/exports``
@@ -86,6 +87,7 @@ B3: ``service nfs start``
 B4: ``systemctl stop firewalld``
 
 **Phía Client**
+
 B1: `` yum install nfs-utils nfs-utils-lib ``
 
 B2: ``showmount -e ip 192.168.169.137``
