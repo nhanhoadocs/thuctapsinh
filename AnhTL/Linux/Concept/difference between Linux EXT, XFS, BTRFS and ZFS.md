@@ -68,7 +68,6 @@
 
 ![](https://tailieu.123host.vn/wp-content/uploads/2019/04/Screenshot_1-1.png)
 
-**Swap**: Thực sự không phải là 1 dạng file hệ thống, bởi vì cơ chế hoạt động khá khác biệt, được sử dụng dưới 1 dạng bộ nhớ ảo và không có cấu trúc file hệ thống cụ thể. Không thể kết hợp và đọc dữ liệu được, nhưng lại chỉ có thể được dùng bởi kernel để ghi thay đổi vào ổ cứng. Thông thường, nó chỉ được sử dụng khi hệ thống thiếu hụt bộ nhớ RAM hoặc chuyển trạng thái của máy tính về chế độ Hibernate.
 
 Dưới đây là hình ảnh so sánh giữa EXT4, XFS và BTRFS:
 
