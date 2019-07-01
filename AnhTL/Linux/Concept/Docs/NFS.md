@@ -1,21 +1,31 @@
 # NFS (Network File System)
-### 1. Khái niệm
+
+### Mục Lục
+[1. Khái niệm](#1)
+[2. cách cài đặt](#2)
+[3. Thực hành](#3)
+[- server](#3.1)
+[- Client](#3.2)
+[4. Tóm tắt](#4)
+
+
+### <a name="1"> 1. Khái niệm </a>
 - Dịch vụ NFS cho phép chia sẻ tập tin cho nhiều người dùng trên cùng mạng và ta có thể thao tác như tập tin trên chính đĩa cứng của mình.
 - Cần làm được việc này thì sẽ phải có hai máy chạy hệ điều hành linux
   - một máy đóng vai trò là server.
   - một máy đóng vai trò client.
 
-### 2. Cách cài đặt
+### <a name="2"> 2. Cách cài đặt </a>
 - Đối với hệ thống centOS thì ta dùng lệnh:
 ```
 yum install nfs-utils nfs-utils-lib
 ```
-### 3. Thực hành
+### <a name="3"> 3. Thực hành </a>
 - Ví dụ:  Đây là địa chỉ ip của 2 máy.
   - IP server: 192.168.169.137/24
   - IP client: 192.168.169.129/24
   
-**Trên máy server:**
+<a name="3.1"> **Trên máy server:** </a>
 
   - Ta xác định những thư mục mà ta muốn chia sẻ với client. Rồi ta chia sẻ bằng cách sửa file /etc/exports bằng trình soạn thảo vi:
 ```
@@ -51,7 +61,7 @@ systemctl status firewalld
 ```
 ![](https://github.com/niemdinhtrong/NIEMDT/raw/master/linux/images/nfs6.png)
 
-**Trên máy client:**
+<a name="3.2"> **Trên máy client:** </a>
 - Ta cũng cài đặt dịch vụ NFS
 ```
  yum install nfs-utils nfs-utils-lib 
@@ -75,7 +85,7 @@ df -h
 ```
 - Khi không dùng ta có thể umount thư mục đó. Mỗi lần reboot mà muốn sử dụng lại ta phải mount lại. Nếu muốn tự động mount khi hệ thống khởi động ta vào file ``/etc/fstab`` để thêm thông tin giống với disk. Lúc này ta coi thư Data trên máy server như disk trên máy của mình.
 
-### Tóm tắt các bước:
+### <a name="4"> 4. Tóm tắt các bước: </a>
 **Phía Server:**
 
 B1: ``yum install nfs-utils nfs-utils-lib``
