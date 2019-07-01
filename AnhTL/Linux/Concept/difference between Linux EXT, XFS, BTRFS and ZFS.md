@@ -57,3 +57,11 @@
 Dưới đây là hình ảnh so sánh giữa EXT4, XFS và BTRFS:
 
 ![](http://www.electronicdesign.com/sites/electronicdesign.com/files/WTD_Linux_TableNew.gif)
+
+## Tài liệu tham khảo:
+
+https://www.thegeekstuff.com/2011/05/ext2-ext3-ext4/
+
+https://www.electronicdesign.com/industrial/what-s-difference-between-linux-ext-xfs-and-btrfs-file-systems
+
+# END
