@@ -73,6 +73,7 @@ mount 192.168.169.137:/home/kt1 /home
 ```
 df -h
 ```
+- Khi không dùng ta có thể umount thư mục đó. Mỗi lần reboot mà muốn sử dụng lại ta phải mount lại. Nếu muốn tự động mount khi hệ thống khởi động ta vào file ``/etc/fstab`` để thêm thông tin giống với disk. Lúc này ta coi thư Data trên máy server như disk trên máy của mình.
 
 ### Tóm tắt các bước:
 **Phía Server:**
