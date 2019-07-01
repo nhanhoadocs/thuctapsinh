@@ -60,7 +60,7 @@ systemctl status firewalld
 
 - Dùng lệnh ``showmount -e IP_server`` để kiểm tra những thư mục mà server đã export cho những máy nào.
 ```
-showmount -e ip 192.168.169.137
+showmount -e 192.168.169.137
 ```
 ![](https://github.com/niemdinhtrong/NIEMDT/raw/master/linux/images/nfs8.png)
 
@@ -91,7 +91,7 @@ B4: ``systemctl stop firewalld``
 
 B1: `` yum install nfs-utils nfs-utils-lib ``
 
-B2: ``showmount -e ip 192.168.169.137``
+B2: ``showmount -e 192.168.169.137``
 
 B3: ``mount 192.168.169.137:/home/kt1 /home``
 # END
