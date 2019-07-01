@@ -46,13 +46,14 @@
 - Được thiết kế riêng biệt dành cho các doanh nghiệp có quy mô lớn.
 ```
 
-**XFS** là một hệ thống tệp nhật ký 64 bit được phát triển đầu tiên bởi Silicon Graphics. Nó được thiết kế cho I / O song song dựa trên các nhóm phân bổ.  Khá tương đồng với Ext4 về một số mặt nào đó. 
+**XFS** XFS được phát triển bởi Silicon Graphics từ năm 1994 để hoạt động với hệ điều hành riêng biệt của họ, và sau đó chuyển sang Linux trong năm 2001. Khá tương đồng với Ext4 về một số mặt nào đó.
 ```
 - chẳng hạn như hạn chế được tình trạng phân mảnh dữ liệu.
 - không cho phép các snapshot tự động kết hợp với nhau, 
 - Hỗ trợ nhiều file dung lượng lớn, 
 - Có thể thay đổi kích thước file dữ liệu... nhưng không thể shrink – chia nhỏ phân vùng XFS. 
 ```
+
 - Với những đặc điểm như vậy thì XFS khá phù hợp với việc áp dụng vào mô hình server media vì khả năng truyền tải file video rất tốt. Tuy nhiên, nhiều phiên bản distributor yêu cầu phân vùng /boot riêng biệt, hiệu suất hoạt động với các file dung lượng nhỏ không bằng được khi so với các định dạng file hệ thống khác, do vậy sẽ không thể áp dụng với mô hình database, email và một vài loại server có nhiều file log. Nếu dùng với máy tính cá nhân, thì đây cũng không phải là sự lựa chọn tốt nên so sánh với Ext, vì hiệu suất hoạt động không khả thi, ngoài ra cũng không có gì nổi trội về hiệu năng, quản lý so với Ext3/4.
 
 **ZFS (Zettabyte File System)** hiện tại vẫn đang trong giai đoạn phát triển bởi Oracle với nhiều tính năng tương tự như Btrfs và ReiserFS.
