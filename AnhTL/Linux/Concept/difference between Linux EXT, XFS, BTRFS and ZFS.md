@@ -8,6 +8,7 @@
     ![](https://www.ibm.com/developerworks/library/l-journaling-filesystems/figure1.gif)
 
 **Các tùy chọn file system:**
+
 **Ext – Extended file system**: là định dạng file hệ thống đầu tiên được thiết kế dành riêng cho Linux. Có tổng cộng 4 phiên bản và mỗi phiên bản lại có 1 tính năng nổi bật. Phiên bản đầu tiên của Ext là phần nâng cấp từ file hệ thống Minix được sử dụng tại thời điểm đó, nhưng lại không đáp ứng được nhiều tính năng phổ biến ngày nay. Và tại thời điểm này, chúng ta không nên sử dụng Ext vì có nhiều hạn chế, không còn được hỗ trợ trên nhiều distribution.
   
 ![](https://linoxide.com/wp-content/uploads/2012/09/ext.jpg)  
