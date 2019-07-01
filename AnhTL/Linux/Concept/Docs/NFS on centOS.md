@@ -1,21 +1,36 @@
 # NFS (Network File System)
-### 1. Khái niệm
+
+### Mục Lục
+[1. Khái niệm](#1)
+
+[2. cách cài đặt](#2)
+
+[3. Thực hành](#3)
+
+[- server](#3.1)
+
+[- Client](#3.2)
+
+[4. Tóm tắt](#4)
+
+
+### <a name="1"> 1. Khái niệm </a>
 - Dịch vụ NFS cho phép chia sẻ tập tin cho nhiều người dùng trên cùng mạng và ta có thể thao tác như tập tin trên chính đĩa cứng của mình.
 - Cần làm được việc này thì sẽ phải có hai máy chạy hệ điều hành linux
   - một máy đóng vai trò là server.
   - một máy đóng vai trò client.
 
-### 2. Cách cài đặt
+### <a name="2"> 2. Cách cài đặt </a>
 - Đối với hệ thống centOS thì ta dùng lệnh:
 ```
 yum install nfs-utils nfs-utils-lib
 ```
-### 3. Thực hành
+### <a name="3"> 3. Thực hành </a>
 - Ví dụ:  Đây là địa chỉ ip của 2 máy.
   - IP server: 192.168.169.137/24
   - IP client: 192.168.169.129/24
   
-**Trên máy server:**
+<a name="3.1"> **Trên máy server:** </a>
 
   - Ta xác định những thư mục mà ta muốn chia sẻ với client. Rồi ta chia sẻ bằng cách sửa file /etc/exports bằng trình soạn thảo vi:
 ```
@@ -51,7 +66,7 @@ systemctl status firewalld
 ```
 ![](https://github.com/niemdinhtrong/NIEMDT/raw/master/linux/images/nfs6.png)
 
-**Trên máy client:**
+<a name="3.2"> **Trên máy client:** </a>
 - Ta cũng cài đặt dịch vụ NFS
 ```
  yum install nfs-utils nfs-utils-lib 
@@ -60,7 +75,7 @@ systemctl status firewalld
 
 - Dùng lệnh ``showmount -e IP_server`` để kiểm tra những thư mục mà server đã export cho những máy nào.
 ```
-showmount -e ip 192.168.169.137
+showmount -e 192.168.169.137
 ```
 ![](https://github.com/niemdinhtrong/NIEMDT/raw/master/linux/images/nfs8.png)
 
@@ -73,9 +88,11 @@ mount 192.168.169.137:/home/kt1 /home
 ```
 df -h
 ```
+- Khi không dùng ta có thể umount thư mục đó. Mỗi lần reboot mà muốn sử dụng lại ta phải mount lại. Nếu muốn tự động mount khi hệ thống khởi động ta vào file ``/etc/fstab`` để thêm thông tin giống với disk. Lúc này ta coi thư Data trên máy server như disk trên máy của mình.
 
-### Tóm tắt các bước:
+### <a name="4"> 4. Tóm tắt các bước: </a>
 **Phía Server:**
+
 B1: ``yum install nfs-utils nfs-utils-lib``
 
 B2: viết những thư mục mà ta muốn chia sẻ với client vào ``vi /etc/exports``
@@ -85,10 +102,11 @@ B3: ``service nfs start``
 
 B4: ``systemctl stop firewalld``
 
-**Phía Client**
+**Phía Client:**
+
 B1: `` yum install nfs-utils nfs-utils-lib ``
 
-B2: ``showmount -e ip 192.168.169.137``
+B2: ``showmount -e 192.168.169.137``
 
 B3: ``mount 192.168.169.137:/home/kt1 /home``
 # END
