@@ -48,4 +48,4 @@
 
 [25. Swap](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/Swap.md)
 
-[26. NFS on centOS]
+[26. NFS on centOS](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/Docs/NFS%20on%20centOS.md)
