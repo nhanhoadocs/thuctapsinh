@@ -79,4 +79,8 @@ https://www.thegeekstuff.com/2011/05/ext2-ext3-ext4/
 
 https://www.electronicdesign.com/industrial/what-s-difference-between-linux-ext-xfs-and-btrfs-file-systems
 
+https://tailieu.123host.vn/kb/vps/huong-dan-cai-dat-zfs-tren-centos-7.html#ZFS_la_gi
+
+https://docs.docker.com/storage/storagedriver/btrfs-driver/
+
 # END
