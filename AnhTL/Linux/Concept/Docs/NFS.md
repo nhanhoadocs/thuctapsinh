@@ -87,7 +87,7 @@ B3: ``service nfs start``
 
 B4: ``systemctl stop firewalld``
 
-**Phía Client**
+**Phía Client:**
 
 B1: `` yum install nfs-utils nfs-utils-lib ``
 
