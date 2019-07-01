@@ -65,6 +65,7 @@ blkid
 Nhưng thông thường ta dùng đường dẫn tới file cho đỡ dài và dễ hiểu hơn.
 
 **Cột 2**: Cho biết điểm mount.
+
 **Cột 3**: Cho biết định dạng file system của thiết bị.
 - Thông thường là ext3, ext4, ReiserFS, swap, FAT32, NTFS, nfs, xfs, auto...
 
