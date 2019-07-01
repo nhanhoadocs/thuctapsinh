@@ -93,7 +93,9 @@ Fsck là tiện ích để kiểm tra file system xem có bị hư hỏng không
 - Để **0**: bỏ qua việc kiểm tra. 
 - Để **1**: thực hiện việc kiểm tra.
 
-Để làm việc với file /etc/fstab ta có thể sử dụng bất kỳ trình soạn thảo nào có trên máy.Có thể dùng vi. Lệnh vi /etc/fstab
+Để làm việc với file /etc/fstab ta có thể sử dụng bất kỳ trình soạn thảo nào có trên máy.Có thể dùng vi. 
+
+`` vi /etc/fstab ``
 
 ![](https://github.com/niemdinhtrong/NIEMDT/raw/master/linux/images/mo5.png)
 
