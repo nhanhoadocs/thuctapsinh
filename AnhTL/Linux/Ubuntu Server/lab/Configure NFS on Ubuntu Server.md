@@ -32,20 +32,20 @@ Ví dụ: Ta share thư mục /test đến địa chỉ ip client.
 
 Còn nếu muốn share cho tất cả các máy client khác trong cùng dải mạng thì ta sửa địa chỉ ip là: ``192.168.230.0``
 
-- Các option trong ngoặc là các quyền của thư mục mà **server NFS** cho phép **Client NFS** thao tác trên thư mục đó.
+Các option trong ngoặc là các quyền của thư mục mà **server NFS** cho phép **Client NFS** thao tác trên thư mục đó.
 ![](https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/65672552_612250205934877_5729270520692604928_n.png?_nc_cat=110&_nc_oc=AQn4Wp4PkrYEf7NwI6DREFdzeYkzOHLDYBEPP0K2Ev0CLI8da0p3dIVTyJrv-YlsRfc&_nc_ht=scontent.fhan5-2.fna&oh=4092a15d5e3b78afea493827f75f7f9f&oe=5DBDB2F1)
 
-- Các option hay dùng:
+Các option hay dùng:
 ![](https://scontent.fhan5-3.fna.fbcdn.net/v/t1.15752-9/65671578_701868550266208_4139816537349423104_n.png?_nc_cat=106&_nc_oc=AQkL7uOv375NOm5T3etgG9jUdpfhCO2LvwA5GIY_SvrpSF9tzyHgG6yavOyWuPtyb6w&_nc_ht=scontent.fhan5-3.fna&oh=5da0e07cf3ecc8ecb54624e3c24e1d28&oe=5D7A9FA8)
 
 Vẫn còn khá nhiểu option khác.
 
-- Sau khi đã xác định xong các thư mục mà ta muốn share, ta dùng lệnh `` exportfs -a`` để lưu thay đổi 
+Sau khi đã xác định xong các thư mục mà ta muốn share, ta dùng lệnh `` exportfs -a`` để lưu thay đổi 
 ```
 exportfs -a
 ```
 
-- B4: Sau khi đã lưu thay đổi thì ta cần khởi động lại máy chủ NFS:
+- **B4**: Sau khi đã lưu thay đổi thì ta cần khởi động lại máy chủ NFS:
 ```
 systemctl restart nfs-server
 ```
