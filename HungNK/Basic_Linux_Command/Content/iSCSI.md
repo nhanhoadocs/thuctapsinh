@@ -342,4 +342,127 @@ systemctl enable target
 
 ```
 so we done.
------------------------
+
+------------------------------------------
+
+
+### Setting Up the iSCSI Initiator
+
+The iSCSI Initiator or client on RHEL / CentOS 7 is installed with the iscsi-initiator-utils package; you can verify that this is installed on your system using the yum command, as shown in the following example:
+```
+rpm -q iscsi-initiator-utils
+```
+and if not available you can install it using `yum`
+```
+yum -y install iscsi-initiator-utils
+```
+
+#### 1. Setting the iSCSI Initiatorname
+
+For the purpose of this exercise, we will use a separate RHEL 7 system as our initiator and connect it to the existing target. We will need to edit the /etc/iscsi/initiatorname.iscsi file on the new RHEL 7 system to ensure that the name is set to match the name we added to the ACL in the earlier section of this article
+```
+vi /etc/iscsi/initiatorname.iscsi
+```
+
+```
+InitiatorName=iqn.2019-06.vn.com.test:node1
+```
+
+So here we have manually updated the file with the ACL name we used on the iSCSI target.
+
+Next restart the `iscsid` daemon
+```
+systemctl restart iscsid
+```
+#### 2. Discover the LUNs
+When using iSCSI discovery, you need three different arguments:
+
+- type sendtargets: This tells the discovery mode how to find the iSCSI targets.
+
+- portal: This argument tells the iscsiadm command which IP address and port to address to perform the discovery. You can use an IP address or node name as the argument, and optionally, you can specify a port as well. If no port is specified, the default port 3260 is used.
+
+- discover: This argument tells the iscsid service to perform a discovery.
+
+We will use the main client tool `iscsiadm` to discover the iSCSI LUNs on the target.
+
+```
+iscsiadm --mode discovery --type sendtargets --portal 172.16.59.129 --discover
+172.16.59.129:3260,1 iqn.2019-06.vn.com.test:sever
+```
+After the discovery below database is updated
+```
+[root@localhost ~]# ls -l  /var/lib/iscsi/nodes
+total 0
+drw-------. 3 root root 34 11:09  2 Th07 iqn.2019-06.vn.com.test:sever
+```
+```
+[root@localhost ~]# sudo ls -l /var/lib/iscsi/send_targets/172.16.59.129,3260/
+total 4
+lrwxrwxrwx. 1 root root  71 11:09  2 Th07 iqn.2019-06.vn.com.test:sever,172.16.59.129,3260,1,default -> /var/lib/iscsi/nodes/iqn.2019-06.vn.com.test:sever/172.16.59.129,3260,1
+-rw-------. 1 root root 552 11:09  2 Th07 st_config
+```
+
+
+#### 3. Making the connection
+
+Now, we have seen that we can connect to the iSCSI target and have it sent us the configured LUNS. We should now connect to this LUN and use the same command with the following options:
+
+In this command, a few options are used:
+
+- mode node: This specifies iscsiadm to enter “node” mode. This is the mode in which the actual connection with the target can be established.
+- targetname: This specifies the name of the target as discovered when using the iSCSI discovery process.
+- portal: This is the IP address and port on which the target is listening.
+- login: This authenticates to the target and will store credentials as well to ensure that on reboot the connection can be reestablished again.
+
+```
+[root@localhost ~]# iscsiadm --mode node --targetname iqn.2019-06.vn.com.test:sever --login
+Logging in to [iface: default, target: iqn.2019-06.vn.com.test:sever, portal: 172.16.59.129,3260] (multiple)
+Login to [iface: default, target: iqn.2019-06.vn.com.test:sever, portal: 172.16.59.129,3260] successful.
+```
+
+After logging in, a session with the iSCSI target is established. Both the session and the node connection can be monitored, using the `-P` option
+
+```
+[root@localhost ~]# iscsiadm --mode node -P 1
+Target: iqn.2019-06.vn.com.test:sever
+	Portal: 172.16.59.129:3260,1
+		Iface Name: default
+```
+
+After making the connection to the iSCSI target, you’ll see the new SCSI devices as offered by the target. A convenient command to list these commands is `lsscsi`
+
+```
+[root@localhost ~]# lsscsi
+[1:0:0:0]    cd/dvd  NECVMWar VMware IDE CDR10 1.00  /dev/sr0 
+[2:0:0:0]    disk    VMware,  VMware Virtual S 1.0   /dev/sda 
+[3:0:0:0]    disk    LIO-ORG  block_storage    4.0   /dev/sdb 
+```
+Và chúng ta đã kết nối thành công. Chúng ta có thể sử dụng ổ đĩa như trên máy của mình.
+
+```
+[root@localhost ~]# lsblk
+NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda               8:0    0   10G  0 disk 
+├─sda1            8:1    0    1G  0 part /boot
+└─sda2            8:2    0    9G  0 part 
+  ├─centos-root 253:0    0    8G  0 lvm  /
+  └─centos-swap 253:1    0    1G  0 lvm  [SWAP]
+sdb               8:16   0    1G  0 disk 
+sr0              11:0    1  918M  0 rom  
+```
+
+we have finished.
+
+nguồn tham khảo : 
+
+https://www.golinuxcloud.com/configure-iscsi-target-initiator-targetcli-rhel-centos-7/#My_Setup_Details
+
+https://www.hiroom2.com/2017/08/04/centos-7-iscsi-initiator-utils-en/
+
+https://cuongquach.com/iscsi-la-gi-tim-hieu-he-thong-luu-tru-iscsi-san.html#4_Loi_ich_cua_iSCSI_voi_he_thong_luu_tru_SAN
+
+https://github.com/hocchudong/thuctap012017/blob/master/XuanSon/Storage/DAS-NAS-SAN_va_iSCSI-protocol.md#3.3.1
+
+
+
+
