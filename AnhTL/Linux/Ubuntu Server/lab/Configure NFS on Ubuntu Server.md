@@ -76,6 +76,14 @@ df -hT
 ```
 ![](https://scontent.fhan5-4.fna.fbcdn.net/v/t1.15752-9/65454801_508824939685445_658591036787916800_n.png?_nc_cat=104&_nc_oc=AQn1C3i7RDsPbDVXjWgC1KybHg69dG4zd_mMlUp0AlMESiDq5di4ccmVaSb151iNPrk&_nc_ht=scontent.fhan5-4.fna&oh=76c421657d781ef346bc079e110c964c&oe=5DAE5AE0)
 
-- Như vậy là đã có thể sử dụng thư mục mà Server NFS chia sẻ.
+- Nhưng mỗi lần reboot thì hệ thống sẽ umount, để có thể tự động mount mỗi khi reboot ta có thể viết thư mục muốn share vào file ``vi /etc/fstab``
+```
+vi /etc/fstab
+```
+
+VD: ta sẽ tự động share /dev/sdb2 mỗi khi máy reboot.
+![](https://scontent.fhan5-1.fna.fbcdn.net/v/t1.15752-9/66020070_1322001097966114_7383204156560900096_n.png?_nc_cat=109&_nc_oc=AQkVRMDcY3M_BswFhK1k3lhSMSdOAhB3CuoEXlCPgRgNxsu-OO5Enuc32N1yEAkbhNE&_nc_ht=scontent.fhan5-1.fna&oh=8fd80598928f03a192e2dd3eb807d1cc&oe=5D81226B)
+
+****
 
 ## END
