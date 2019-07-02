@@ -41,6 +41,10 @@ yum install nfs-utils nfs-utils-lib
 ```
 /root/test 192.168.169.129(rw)
 ```
+Sau khi chia sẻ thư mục xong ta cần dùng lệnh ``exportfs -a`` để lưu.
+```
+exportfs -a
+```
   - Cần chú ý rằng quyền trên thư mục và quyền bạn cấp ở chỗ export sẽ giao nhau để ra quyền cuối cùng cho client (Tức là nếu trên thư mục bạn cấp cho nhóm người dùng là other chỉ có quyền **r** mà ở phần export bạn cấp cho nó là **rw** thì quyền cuối cùng của client chỉ là **r**).
   - khi khai báo quyền truy cập của client ta cần viết liền. Ví dụ trên nếu khai báo 192.168.169.129(rw) sẽ khác với khai báo 192.168.169.129 (rw) với cách thứ nhất thì option sẽ áp dụng với địa chỉ ip khai báo ở trước đó. Còn với cách thứ 2 thì các quyền của địa chỉ khai báo trước sẽ được chỉ định là mặc định(chỉ có quyền đọc) còn option sẽ áp dụng với những địa chỉ không được khai báo.
   - Có thể có các quyền sau:
