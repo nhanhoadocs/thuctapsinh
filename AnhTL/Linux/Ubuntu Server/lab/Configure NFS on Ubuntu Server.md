@@ -38,7 +38,7 @@ Các option trong ngoặc là các quyền của thư mục mà **server NFS** c
 Các option hay dùng:
 ![](https://scontent.fhan5-3.fna.fbcdn.net/v/t1.15752-9/65671578_701868550266208_4139816537349423104_n.png?_nc_cat=106&_nc_oc=AQkL7uOv375NOm5T3etgG9jUdpfhCO2LvwA5GIY_SvrpSF9tzyHgG6yavOyWuPtyb6w&_nc_ht=scontent.fhan5-3.fna&oh=5da0e07cf3ecc8ecb54624e3c24e1d28&oe=5D7A9FA8)
 
-Vẫn còn khá nhiểu option khác.
+Vẫn còn khá nhiều option khác.
 
 Sau khi đã xác định xong các thư mục mà ta muốn share, ta dùng lệnh `` exportfs -a`` để lưu thay đổi 
 ```
