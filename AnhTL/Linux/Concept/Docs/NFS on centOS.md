@@ -102,9 +102,11 @@ B1: ``yum install nfs-utils nfs-utils-lib``
 B2: viết những thư mục mà ta muốn chia sẻ với client vào ``vi /etc/exports``
 - VD: /home/test 192.168.169.129(rw)
 
-B3: ``service nfs start``
+B3: ``exportfs -a``
 
-B4: ``systemctl stop firewalld``
+B4: ``service nfs start``
+
+B5: ``systemctl stop firewalld``
 
 **Phía Client:**
 
