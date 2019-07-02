@@ -61,7 +61,7 @@ apt -y install nfs-common
  showmount -e 192.168.230.141
 ```
 
-![](https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/65554876_382755689034094_4900267332061888512_n.png?_nc_cat=108&_nc_oc=AQnt3y2J_GlGy8wKbun3y_SDwCzREu47NHnM2svKUZZY2s6SBdIH8X8RVFTH2oMzyTQ&_nc_ht=scontent.fhan5-5.fna&oh=17b42a02a7cb6eff55b9a4c972828b64&oe=5D828109)
+![](https://scontent.fhan5-1.fna.fbcdn.net/v/t1.15752-9/65822895_1048867435502662_2084921728437321728_n.png?_nc_cat=109&_nc_oc=AQn8byyhZLMc98jRxhOBdKMeE0oF98v8AFSCnYW37brvTbD5kH1ilDPy35MoRZf4bTs&_nc_ht=scontent.fhan5-1.fna&oh=ecd71ee416dbc50230cdd1aaa85e504e&oe=5DAEB9C3)
 
 Địa chỉ IP ở trên là địa chỉ ip của **Server NFS**
 
