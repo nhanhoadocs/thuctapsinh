@@ -32,20 +32,20 @@ Ví dụ: Ta share thư mục /test đến địa chỉ ip client.
 
 Còn nếu muốn share cho tất cả các máy client khác trong cùng dải mạng thì ta sửa địa chỉ ip là: ``192.168.230.0``
 
-- Các option trong ngoặc là các quyền của thư mục mà **server NFS** cho phép **Client NFS** thao tác trên thư mục đó.
+Các option trong ngoặc là các quyền của thư mục mà **server NFS** cho phép **Client NFS** thao tác trên thư mục đó.
 ![](https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/65672552_612250205934877_5729270520692604928_n.png?_nc_cat=110&_nc_oc=AQn4Wp4PkrYEf7NwI6DREFdzeYkzOHLDYBEPP0K2Ev0CLI8da0p3dIVTyJrv-YlsRfc&_nc_ht=scontent.fhan5-2.fna&oh=4092a15d5e3b78afea493827f75f7f9f&oe=5DBDB2F1)
 
-- Các option hay dùng:
+Các option hay dùng:
 ![](https://scontent.fhan5-3.fna.fbcdn.net/v/t1.15752-9/65671578_701868550266208_4139816537349423104_n.png?_nc_cat=106&_nc_oc=AQkL7uOv375NOm5T3etgG9jUdpfhCO2LvwA5GIY_SvrpSF9tzyHgG6yavOyWuPtyb6w&_nc_ht=scontent.fhan5-3.fna&oh=5da0e07cf3ecc8ecb54624e3c24e1d28&oe=5D7A9FA8)
 
-Vẫn còn khá nhiểu option khác.
+Vẫn còn khá nhiều option khác.
 
-- Sau khi đã xác định xong các thư mục mà ta muốn share, ta dùng lệnh `` exportfs -a`` để lưu thay đổi 
+Sau khi đã xác định xong các thư mục mà ta muốn share, ta dùng lệnh `` exportfs -a`` để lưu thay đổi 
 ```
 exportfs -a
 ```
 
-- B4: Sau khi đã lưu thay đổi thì ta cần khởi động lại máy chủ NFS:
+- **B4**: Sau khi đã lưu thay đổi thì ta cần khởi động lại máy chủ NFS:
 ```
 systemctl restart nfs-server
 ```
@@ -61,7 +61,7 @@ apt -y install nfs-common
  showmount -e 192.168.230.141
 ```
 
-![](https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/65554876_382755689034094_4900267332061888512_n.png?_nc_cat=108&_nc_oc=AQnt3y2J_GlGy8wKbun3y_SDwCzREu47NHnM2svKUZZY2s6SBdIH8X8RVFTH2oMzyTQ&_nc_ht=scontent.fhan5-5.fna&oh=17b42a02a7cb6eff55b9a4c972828b64&oe=5D828109)
+![](https://scontent.fhan5-1.fna.fbcdn.net/v/t1.15752-9/65822895_1048867435502662_2084921728437321728_n.png?_nc_cat=109&_nc_oc=AQn8byyhZLMc98jRxhOBdKMeE0oF98v8AFSCnYW37brvTbD5kH1ilDPy35MoRZf4bTs&_nc_ht=scontent.fhan5-1.fna&oh=ecd71ee416dbc50230cdd1aaa85e504e&oe=5DAEB9C3)
 
 Địa chỉ IP ở trên là địa chỉ ip của **Server NFS**
 
@@ -76,6 +76,14 @@ df -hT
 ```
 ![](https://scontent.fhan5-4.fna.fbcdn.net/v/t1.15752-9/65454801_508824939685445_658591036787916800_n.png?_nc_cat=104&_nc_oc=AQn1C3i7RDsPbDVXjWgC1KybHg69dG4zd_mMlUp0AlMESiDq5di4ccmVaSb151iNPrk&_nc_ht=scontent.fhan5-4.fna&oh=76c421657d781ef346bc079e110c964c&oe=5DAE5AE0)
 
-- Như vậy là đã có thể sử dụng thư mục mà Server NFS chia sẻ.
+- Nhưng mỗi lần reboot thì hệ thống sẽ umount, để có thể tự động mount mỗi khi reboot ta có thể viết thư mục muốn share vào file ``vi /etc/fstab``
+```
+vi /etc/fstab
+```
+
+VD: ta sẽ tự động share /dev/sdb2 mỗi khi máy reboot.
+![](https://scontent.fhan5-1.fna.fbcdn.net/v/t1.15752-9/66020070_1322001097966114_7383204156560900096_n.png?_nc_cat=109&_nc_oc=AQkVRMDcY3M_BswFhK1k3lhSMSdOAhB3CuoEXlCPgRgNxsu-OO5Enuc32N1yEAkbhNE&_nc_ht=scontent.fhan5-1.fna&oh=8fd80598928f03a192e2dd3eb807d1cc&oe=5D81226B)
+
+****
 
 ## END
