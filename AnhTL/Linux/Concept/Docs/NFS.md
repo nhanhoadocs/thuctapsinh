@@ -42,6 +42,7 @@
   - file **/etc/hosts.deny**
 
 **<a name="2.1.1"> 2.1.1: file /etc/exports </a>**
+
 Dùng để gán thư mục muốn chia sẻ cho client.
 ```
 dir host1(options) host2(options) hostN(options) …
