@@ -6,17 +6,17 @@
 
 - [2.1: file cấu hình, dịch vụ](#2.1)
 
-- [2.1.1: file /etc/exports](#2.1.1)
+  - [2.1.1: file /etc/exports](#2.1.1)
 
-- [2.1.2: File /etc/hosts.allow](#2.1.2)
+  - [2.1.2: File /etc/hosts.allow](#2.1.2)
 
-- [2.1.3: File /etc/hosts.deny](#2.1.3)
+  - [2.1.3: File /etc/hosts.deny](#2.1.3)
 
-[2.2: Các dịch vụ trong NFS](#2.2)
+- [2.2: Các dịch vụ trong NFS](#2.2)
 
-- [2.2.1: Khởi động portmapper](#2.2.1)
+  - [2.2.1: Khởi động portmapper](#2.2.1)
 
-- [2.2.2: Các tiến trình ngầm](#2.2.2)
+  - [2.2.2: Các tiến trình ngầm](#2.2.2)
 
 [2.3: Xác minh rằng NFS đang chạy](#2.3)
 
