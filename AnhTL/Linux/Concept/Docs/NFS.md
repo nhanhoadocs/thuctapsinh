@@ -94,7 +94,7 @@ portmap: 10.10.10.5, 10.10.10.0/24
 - **Portmap**: Quản lý các kết nối, dịch vụ chạy trên port 2049 và 111 ở cả server và client.
 - **NFS**: Khởi động các tiến trình RPC (Remote Procedure Call) khi được yêu cầu để phục vụ cho chia sẻ file, dịch vụ chỉ chạy trên server.
 - **NFS lock**: Sử dụng cho client khóa các file trên NFS server thông qua RPC.
-- 
+
 **<a name="2.2.1"> 2.2.1: Khởi động portmapper </a>**
 
 NFS phụ thuộc vào tiến trình ngầm quản lý các kết nối (portmap hoặc rpc.portmap), chúng cần phải được khởi động trước.
