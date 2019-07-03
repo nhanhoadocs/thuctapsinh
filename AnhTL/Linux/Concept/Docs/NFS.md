@@ -20,6 +20,7 @@
   - file **/etc/hosts.deny**
 
 **2.1.1: file /etc/exports**
+
 Dùng để gán thư mục muốn chia sẻ cho client mà không cần phải chia sẻ lại mỗi khi reboot.
 ```
 dir host1(options) host2(options) hostN(options) …
@@ -52,6 +53,7 @@ Ví dụ 2:
 - **Dòng thứ ba**: Cho phép 2 host được mount thư mục /var/tmp với quyền đọc và ghi.
 
 **2.1.2: File /etc/hosts.allow**
+
 Tập tin này giúp xác định các máy tính trên mạng có thể sử dụng các dịch vụ trên máy của ta. Mỗi dòng trong nội dung file chứa duy nhất 1 danh sách gồm 1 dịch vụ và 1 nhóm các máy tính. Khi server nhận được yêu cầu từ client, các công việc sau sẽ được thực thi:
 
 - Kiểm tra file **host.allow** – nếu client phù hợp với 1 quy tắc được liệt kê tại đây thì nó có quyền truy cập.
@@ -80,6 +82,7 @@ netstat -anp | grep -r portmap
 ```
 
 **2.2.2 Các tiến trình ngầm**
+
 Dịch vụ NFS được hỗ trợ bởi 5 tiến trình ngầm:
 
 - **rpc.nfsd**: thực hiện hầu hết mọi công việc.
@@ -96,6 +99,7 @@ rpc.rquotad
 ```
 
 **2.3: Xác minh rằng NFS đang chạy**
+
 Để xác minh rằng NFS đang chạy, ta truy vấn portmapper với lệnh `` rpcinfo`` để tìm hiểu những dịch vụ mà nó đang cung cấp.
 
 ![](https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/65946969_332215867690086_2991044435006980096_n.png?_nc_cat=102&_nc_oc=AQk1r2-Q--6gJ6m0wp1hSdjGF0XZSjKBDJXO2ZugWlPWO_g2uNq8S9sypDBEeE0v7N8&_nc_ht=scontent.fhan5-2.fna&oh=96a239a5cd9dfa309e527fdfa568498d&oe=5DB54F44)
