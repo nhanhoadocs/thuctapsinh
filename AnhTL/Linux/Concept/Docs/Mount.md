@@ -17,9 +17,9 @@
 - Các định dạng hỗ trợ như: ext2, ext3, ext4, reiserFS, swap, FAT32, NTFS, auto,... Nếu thiết bị đã được định dạng từ trước thì ta có thể bỏ qua option này.
 - Đường dẫn thiết bị là thiết bị ta muốn tiến hành mount. Các thiết bị thường nằm trong /dev
 - Điểm mount là thư mục ta muốn tiến hành gắn thiết bị vào.
-  - VD: Ta muốn tiến hành mount phân vùng /dev/sdb2 của ổ sdb vào thư mục /test.
+  - VD: Ta muốn tiến hành mount phân vùng /dev/sdb2 của ổ sdb vào thư mục /test
 ```  
-mount -t ext4 /dev/sdb2 /test. 
+mount /dev/sdb2 /test
 ``` 
 Sau khi mount xong ta có thể dùng lệnh ``lsblk`` để thấy được thiết bị đó đã có điểm mount.
 ```
