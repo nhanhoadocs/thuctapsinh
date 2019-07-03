@@ -1,4 +1,26 @@
 # NFS (Network File System)
+## Mục lục
+[1. Khái niệm](#1)
+
+[2. NFS Server](#2)
+
+- [2.1: file cấu hình, dịch vụ](#2.1)
+
+- [2.1.1: file /etc/exports](#2.1.1)
+
+- [2.1.2: File /etc/hosts.allow](#2.1.2)
+
+- [2.1.3: File /etc/hosts.deny](#2.1.3)
+
+[2.2: Các dịch vụ trong NFS](#2.2)
+
+- [2.2.1: Khởi động portmapper](#2.2.1)
+
+- [2.2.2: Các tiến trình ngầm](#2.2.2)
+
+[2.3: Xác minh rằng NFS đang chạy](#2.3)
+
+[2.4: Cấu hình NFS](#2.4)
 ### <a name="1"> 1. khái niệm </a>
 
 - NFS là hệ thống cung cấp dịch vụ chia sẻ file phổ biến trong hệ thống mạng Linux và Unix.
@@ -13,14 +35,13 @@
 - Client từ phiên bản kernel 2.2.18 trở đi đều hỗ trợ NFS trên nền TCP
 
 ### <a name="2"> 2. NFS Server </a>
-**2.1: file cấu hình, dịch vụ**
+**<a name="2.1"> 2.1: file cấu hình, dịch vụ </a>**
 - Có ba tập tin cấu hình chính:
   - file **/etc/exports**
   - file  **/etc/hosts.allow**
   - file **/etc/hosts.deny**
 
-**2.1.1: file /etc/exports**
-
+**<a name="2.1.1"> 2.1.1: file /etc/exports </a>**
 Dùng để gán thư mục muốn chia sẻ cho client mà không cần phải chia sẻ lại mỗi khi reboot.
 ```
 dir host1(options) host2(options) hostN(options) …
@@ -52,13 +73,12 @@ Ví dụ 2:
 - **Dòng thứ hai**: Cho phép bất kỳ host nào có địa chỉ IP thuộc subnet 192.168.1.0/24 được mount thư mục /home với quyền đọc và ghi.
 - **Dòng thứ ba**: Cho phép 2 host được mount thư mục /var/tmp với quyền đọc và ghi.
 
-**2.1.2: File /etc/hosts.allow**
-
+**<a name="2.1.2"> 2.1.2: File /etc/hosts.allow </a>**
 Tập tin này giúp xác định các máy tính trên mạng có thể sử dụng các dịch vụ trên máy của ta. Mỗi dòng trong nội dung file chứa duy nhất 1 danh sách gồm 1 dịch vụ và 1 nhóm các máy tính. Khi server nhận được yêu cầu từ client, các công việc sau sẽ được thực thi:
 
 - Kiểm tra file **host.allow** – nếu client phù hợp với 1 quy tắc được liệt kê tại đây thì nó có quyền truy cập.
 
-**2.1.3: File /etc/hosts.deny**
+**<a name="2.1.3"> 2.1.3: File /etc/hosts.deny </a>**
 Ngược lại với file **host.allow** - Nếu client không phù hợp với 1 mục trong **host.allow** server sẽ chuyển sang kiểm tra trong **host.deny** để xem thử client có phù hợp với 1 quy tắc được liệt kê trong đó hay không (host.deny). Nếu phù hợp thì client bị từ chối truy cập.
 - Nếu máy client không khớp với danh sách trong một hoặc hai tệp thì nó được phép truy cập.
 
@@ -66,13 +86,13 @@ Ngược lại với file **host.allow** - Nếu client không phù hợp với 
 ```
 portmap: 10.10.10.5, 10.10.10.0/24
 ```
-**2.2: Các dịch vụ có liên quan**
+**<a name="2.2"> 2.2: Các dịch vụ trong NFS </a>**
 
 - **Portmap**: Quản lý các kết nối, dịch vụ chạy trên port 2049 và 111 ở cả server và client.
 - **NFS**: Khởi động các tiến trình RPC (Remote Procedure Call) khi được yêu cầu để phục vụ cho chia sẻ file, dịch vụ chỉ chạy trên server.
 - **NFS lock**: Sử dụng cho client khóa các file trên NFS server thông qua RPC.
 - 
-**2.2.1 Khởi động portmapper**
+**<a name="2.2.1"> 2.2.1: Khởi động portmapper </a>**
 NFS phụ thuộc vào tiến trình ngầm quản lý các kết nối (portmap hoặc rpc.portmap), chúng cần phải được khởi động trước.
 
 - Nó nên được đặt tại /sbin hoặc trong /usr/sbin. Hầu hết các bản phân phối linux gần đây đều tự khởi động dịch vụ này khi server khởi động. Nhưng vẩn phải đảm bảo nó được khởi động trước khi ta làm việc với NFS.
@@ -81,8 +101,7 @@ NFS phụ thuộc vào tiến trình ngầm quản lý các kết nối (portmap
 netstat -anp | grep -r portmap
 ```
 
-**2.2.2 Các tiến trình ngầm**
-
+**<a name="2.2.2"> 2.2.2: Các tiến trình ngầm </a>**
 Dịch vụ NFS được hỗ trợ bởi 5 tiến trình ngầm:
 
 - **rpc.nfsd**: thực hiện hầu hết mọi công việc.
@@ -98,8 +117,7 @@ rpc.statd, rpc.lockd (nếu cần), và
 rpc.rquotad
 ```
 
-**2.3: Xác minh rằng NFS đang chạy**
-
+**<a name="2.3"> 2.3: Xác minh rằng NFS đang chạy </a>**
 Để xác minh rằng NFS đang chạy, ta truy vấn portmapper với lệnh `` rpcinfo`` để tìm hiểu những dịch vụ mà nó đang cung cấp.
 
 ![](https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/65946969_332215867690086_2991044435006980096_n.png?_nc_cat=102&_nc_oc=AQk1r2-Q--6gJ6m0wp1hSdjGF0XZSjKBDJXO2ZugWlPWO_g2uNq8S9sypDBEeE0v7N8&_nc_ht=scontent.fhan5-2.fna&oh=96a239a5cd9dfa309e527fdfa568498d&oe=5DB54F44)
@@ -109,7 +127,7 @@ rpc.rquotad
 - **Nfs**: Là tiến trình chính, thực thi nhiệm vụ của giao thức NFS, có nhiệm vụ cung cấp cho máy client các tập tin hoặc thư mục được yêu cầu.
 - **nlockmgr**: Là trình quản lý khóa cho Hệ thống tệp mạng NFS.
 
-**2.4 Cấu hình NFS**
+**<a name="2.4"> 2.4: Cấu hình NFS </a>**
 
 [Trên Ubuntu](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Ubuntu%20Server/lab/Configure%20NFS%20on%20Ubuntu%20Server.md)
 
