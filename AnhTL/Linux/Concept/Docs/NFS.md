@@ -75,11 +75,13 @@ Ví dụ 2:
 - **Dòng thứ ba**: Cho phép 2 host được mount thư mục /var/tmp với quyền đọc và ghi.
 
 **<a name="2.1.2"> 2.1.2: File /etc/hosts.allow </a>**
+
 Tập tin này giúp xác định các máy tính trên mạng có thể sử dụng các dịch vụ trên máy của ta. Mỗi dòng trong nội dung file chứa duy nhất 1 danh sách gồm 1 dịch vụ và 1 nhóm các máy tính. Khi server nhận được yêu cầu từ client, các công việc sau sẽ được thực thi:
 
 - Kiểm tra file **host.allow** – nếu client phù hợp với 1 quy tắc được liệt kê tại đây thì nó có quyền truy cập.
 
 **<a name="2.1.3"> 2.1.3: File /etc/hosts.deny </a>**
+
 Ngược lại với file **host.allow** - Nếu client không phù hợp với 1 mục trong **host.allow** server sẽ chuyển sang kiểm tra trong **host.deny** để xem thử client có phù hợp với 1 quy tắc được liệt kê trong đó hay không (host.deny). Nếu phù hợp thì client bị từ chối truy cập.
 - Nếu máy client không khớp với danh sách trong một hoặc hai tệp thì nó được phép truy cập.
 
@@ -94,6 +96,7 @@ portmap: 10.10.10.5, 10.10.10.0/24
 - **NFS lock**: Sử dụng cho client khóa các file trên NFS server thông qua RPC.
 - 
 **<a name="2.2.1"> 2.2.1: Khởi động portmapper </a>**
+
 NFS phụ thuộc vào tiến trình ngầm quản lý các kết nối (portmap hoặc rpc.portmap), chúng cần phải được khởi động trước.
 
 - Nó nên được đặt tại /sbin hoặc trong /usr/sbin. Hầu hết các bản phân phối linux gần đây đều tự khởi động dịch vụ này khi server khởi động. Nhưng vẩn phải đảm bảo nó được khởi động trước khi ta làm việc với NFS.
@@ -103,6 +106,7 @@ netstat -anp | grep -r portmap
 ```
 
 **<a name="2.2.2"> 2.2.2: Các tiến trình ngầm </a>**
+
 Dịch vụ NFS được hỗ trợ bởi 5 tiến trình ngầm:
 
 - **rpc.nfsd**: thực hiện hầu hết mọi công việc.
@@ -120,6 +124,7 @@ rpc.rquotad
 ```
 
 **<a name="2.3"> 2.3: Xác minh rằng NFS đang chạy </a>**
+
 Để xác minh rằng NFS đang chạy, ta truy vấn portmapper với lệnh `` rpcinfo`` để tìm hiểu những dịch vụ mà nó đang cung cấp.
 ```
 rpcinfo -p
