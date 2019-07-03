@@ -42,13 +42,13 @@
   - file **/etc/hosts.deny**
 
 **<a name="2.1.1"> 2.1.1: file /etc/exports </a>**
-Dùng để gán thư mục muốn chia sẻ cho client mà không cần phải chia sẻ lại mỗi khi reboot.
+Dùng để gán thư mục muốn chia sẻ cho client.
 ```
 dir host1(options) host2(options) hostN(options) …
 ```
-- dir : thư mục hoặc file system muốn chia sẻ.
-- host : một hoặc nhiều host được cho phép mount dir. Có thể được định nghĩa là một tên, một nhóm sử dụng ký tự , * hoặc một nhóm sử dụng 1 dải địa chỉ mạng/subnetmask...
-- options : Có nghĩa là **quyền hạn** để client có thể thao tác trên thư mục được chia sẻ.
+- **dir** : Thư mục hoặc file system muốn chia sẻ.
+- **host** : Một hoặc nhiều host được cho phép mount dir. Có thể được định nghĩa là một người dùng, một nhóm sử dụng ký tự , * hoặc một nhóm sử dụng 1 dải địa chỉ mạng/subnetmask...
+- **options** : Có nghĩa là **quyền hạn** để client có thể thao tác trên thư mục được chia sẻ.
 
 Ví dụ: ta chia sẻ thư mục /test2 đến máy client có địa chỉ ip là: ``192.168.230.151`` với các quyền.
 ```
@@ -109,7 +109,8 @@ Dịch vụ NFS được hỗ trợ bởi 5 tiến trình ngầm:
 - **rpc.mountd**: quản lý các yêu cầu gắn kết lúc ban đầu.
 - **rpc.rquotad**: quản lý các hạn mức truy cập file của người sử dụng trên server được truy xuất.
 - **lockd**: được gọi theo yêu cầu của nfsd. Vì thế ta cũng không cần quan tâm lắm tới việc khởi động nó.
-Tuy nhiên trong các bản phân phối linux gần đây đều có kịch bản khởi động cho các tiến trình trên. Tất cả các tiến trình này đều nằm trong gói nfs-utils, nó có thể được lưu giữ trong /sbin hoặc /usr/sbin. Nếu bản phân phối của ta không tích hợp chúng trong kịch bản khởi động, thì ta nên tự thêm chúng vào, cấu hình theo thứ tự sau đây:
+
+Tuy nhiên trong các bản phân phối linux gần đây đều có kịch bản khởi động cho các tiến trình trên. Tất cả các tiến trình này đều nằm trong gói nfs-utils, nó có thể được lưu giữ trong /sbin hoặc /usr/sbin. Nếu bản phân phối của ta không tích hợp chúng trong quá trình khởi động, thì ta nên tự thêm chúng vào, cấu hình theo thứ tự sau đây:
 ```
 rpc.portmap
 rpc.mountd, rpc.nfsd
@@ -119,6 +120,9 @@ rpc.rquotad
 
 **<a name="2.3"> 2.3: Xác minh rằng NFS đang chạy </a>**
 Để xác minh rằng NFS đang chạy, ta truy vấn portmapper với lệnh `` rpcinfo`` để tìm hiểu những dịch vụ mà nó đang cung cấp.
+```
+rpcinfo -p
+```
 
 ![](https://scontent.fhan5-2.fna.fbcdn.net/v/t1.15752-9/65946969_332215867690086_2991044435006980096_n.png?_nc_cat=102&_nc_oc=AQk1r2-Q--6gJ6m0wp1hSdjGF0XZSjKBDJXO2ZugWlPWO_g2uNq8S9sypDBEeE0v7N8&_nc_ht=scontent.fhan5-2.fna&oh=96a239a5cd9dfa309e527fdfa568498d&oe=5DB54F44)
 
