@@ -463,6 +463,6 @@ https://cuongquach.com/iscsi-la-gi-tim-hieu-he-thong-luu-tru-iscsi-san.html#4_Lo
 
 https://github.com/hocchudong/thuctap012017/blob/master/XuanSon/Storage/DAS-NAS-SAN_va_iSCSI-protocol.md#3.3.1
 
-
+https://github.com/hocchudong/thuctap012017/blob/master/TamNT/Tim_hieu_iSCSI.md#1
 
 
