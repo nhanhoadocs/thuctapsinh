@@ -15,7 +15,7 @@
 
 <a name="III-Lệnh làm việc với Linux"></a>  
 ## **III-Lệnh làm việc với Linux**  
-[1.Kiểm tra các thông số cơ bản của 1 server](docs/Co-ban/1.-Kiem-tra-cac-thong-so-co-ban-cua-server.md)  
+[1.Kiểm tra các thông số cơ bản của 1 server](docs/Lenh/1.-Kiem-tra-cac-thong-so-co-ban-cua-server.md)  
 [3.Các câu lệnh cấu hình mạng](docs/Lenh/2.Cac-lenh-ve-IP.md)  
 [3.Lệnh về thêm,sửa,xóa user](docs/Lenh/3.Lenh-them-sua-xoa-user.md)  
 [4.Lệnh làm việc với ổ đĩa](docs/Lenh/4.Lenh-lam-viec-voi-o-dia.md)  
