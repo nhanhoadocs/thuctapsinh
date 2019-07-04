@@ -141,7 +141,7 @@ rpcinfo -p
 
 [Trên Ubuntu](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Ubuntu%20Server/lab/Configure%20NFS%20on%20Ubuntu%20Server.md)
 
-[Trên centOS](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/Concept/Docs/NFS%20on%20centOS.md)
+[Trên centOS](https://github.com/letuananh19/thuctapsinh/blob/master/AnhTL/Linux/CentOS/NFS%20on%20centOS.md)
 
 ### Tài liệu tham khảo:
 
