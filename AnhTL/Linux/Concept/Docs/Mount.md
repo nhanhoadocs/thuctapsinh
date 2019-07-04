@@ -19,7 +19,7 @@
 - Điểm mount là thư mục ta muốn tiến hành gắn thiết bị vào.
   - VD: Ta muốn tiến hành mount phân vùng /dev/sdb2 của ổ sdb vào thư mục /test
 ```  
-mount /dev/sdb2 /test
+mount -t nfs /dev/sdb2 /test
 ``` 
 Sau khi mount xong ta có thể dùng lệnh ``lsblk`` để thấy được thiết bị đó đã có điểm mount.
 ```
