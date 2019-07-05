@@ -68,7 +68,7 @@ apt -y install nfs-common
 - **B3**: Ta cần mount và thư mục vừa được Server chia sẻ vào 1 thư mục khác để có thể sử dụng:
   - VD: ta mount vào thư mục /trap
 ```
-mount 192.168.230.141:/test2 /trap
+mount -t nfs 192.168.230.141:/test2 /trap
 ```
 Sau đó dùng lệnh ``df -hT`` để kiểm tra xem đã mount thành công hay chưa:
 ```
