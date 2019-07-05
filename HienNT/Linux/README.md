@@ -15,14 +15,21 @@
 
 <a name="III-Lệnh làm việc với Linux"></a>  
 ## **III-Lệnh làm việc với Linux**  
-[1.Kiểm tra các thông số cơ bản của 1 server](docs/Lenh/1.Kiem-tra-cac-thong-so-co-ban.md)  
-[3.Các câu lệnh cấu hình mạng](docs/Lenh/2.Cac-lenh-ve-IP.md)  
-[3.Lệnh về thêm,sửa,xóa user](docs/Lenh/3.Lenh-them-sua-xoa-user.md)  
-[4.Lệnh làm việc với ổ đĩa](docs/Lenh/4.Lenh-lam-viec-voi-o-dia.md)  
-[2.Các lệnh thao tác với file](docs/Lenh/5.Cac-lenh-thao-tac-voi-file.md)  
-[6.Lệnh kiểm tra tiến trình](docs/Lenh/6.Lenh-kiem-tra-tien-trinh.md)  
-[7.Lệnh kiểm tra tài nguyên](docs/Lenh/7.Lenh-kiem-tra-tai-nguyen.md)  
-[8.Lệnh troubleshoot](docs/Lenh/8.Lenh-troubleshoot.md)  
+[1.Kiểm tra các thông số cơ bản của 1 server](docs/Co-ban/1.Kiem-tra-cac-thong-so-co-ban.md)
+
+[2.Các lệnh thao tác với file](docs/Co-ban/2.Cac-lenh-thao-tac-voi-file.md)  
+
+[3.Lệnh về thêm,sửa,xóa user](docs/Co-ban/3.Lenh-them-sua-xoa-user.md)  
+
+[4.Các câu lệnh cấu hình mạng](docs/Co-ban/3.Cac-lenh-ve-IP.md)   
+
+[5.Lệnh làm việc với ổ đĩa](docs/Co-ban/4.Lenh-lam-viec-voi-o-dia.md)  
+
+[6.Lệnh kiểm tra tiến trình](docs/Co-ban/6.Lenh-kiem-tra-tien-trinh.md)  
+
+[7.Lệnh kiểm tra tài nguyên](docs/Co-ban/7.Lenh-kiem-tra-tai-nguyen.md)  
+
+[8.Lệnh troubleshoot](docs/Co-ban/8.Lenh-troubleshoot.md)  
 
 <a name="IV-Các giao thức"></a>
 ## **IV-Các giao thức**  
