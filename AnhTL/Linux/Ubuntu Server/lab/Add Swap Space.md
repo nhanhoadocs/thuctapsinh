@@ -51,6 +51,10 @@ mkswap /swapfile
 ```
 swapon /swapfile
 ```
+hoặc để kích hoạt tất cả các tệp swap ta dùng option **-a**
+```
+swapon -a
+```
 Mỗi lần reboot tệp swapfile này sẽ mất, để thực hiện thay đổi vĩnh viễn, ta mở tệp ``/etc/fstab``
 ```
 vi /etc/fstab
