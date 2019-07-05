@@ -6,8 +6,16 @@ Swap được sử dụng để làm RAM ảo cho máy tính và nó có thể s
 **Swap là gì?**
 - Swap (hoán đổi) là một vùng trên ổ đĩa mà nó có thể được sử dụng để lưu trữ các dữ liệu mà không được sử dụng trên bộ nhớ vật lý (RAM). Đây là nơi tạm thời chứa các tài nguyên đang không hoạt động trong bộ nhớ.
 - Swap được sử dụng khi hệ thống của ta quyết định rằng nó cần thêm bộ nhớ RAM cho quá trình hoạt động và bộ nhớ RAM không còn dư để sử dụng. Các tài nguyên và dữ liệu tạm thời không hoạt động trên bộ nhớ RAM sẽ được di chuyển để lưu trữ vào không gian Swap để giải phóng bộ nhớ RAM và sử dụng cho việc khác.
-- Thời gian truy cập vào vùng Swap là chậm hơn rất nhiều, do đó ta không nên coi việc sử dụng Swap là một phương pháp thay thế tốt cho bộ nhớ vật lý (RAM). Swap có thể là một phân vùng dành riêng cho Swap (khuyến nghị), một tập tin Swap hoặc một sự kết hợp của phân vùng và tập tin Swap.
-  - Để xem dung lượng Swap ta có thể dùng lệnh:
+  - Ví dụ: Ta có một máy tính có RAM 8GB. Nếu ta khởi động các chương trình, mọi thứ sẽ vẫn ổn nếu RAM chưa đầy. Nhưng giả sử các chương trình ấy phát sinh thêm các dữ liệu mà ta không xác định được và làm đầy RAM. Nếu không có **swap space** thì ta sẽ phải ngừng hoạt động các chương trình ấy cho đến khi ta giải phóng một số lượng RAM giới hạn của mình bằng cách đóng một số chương trình khác.  
+
+**Kernel**
+- Kernel sử dụng chương trình quản lý bộ nhớ phát hiện các khối, còn gọi là các trang của bộ nhớ trong đó chứa nội dung không được sử dụng gần đây. Chương trình quản lý bộ nhớ hoán đổi đầy đủ các trang của bộ nhớ được sử dụng tương đối ít này ra một phân vùng đặc biệt trên ổ cứng được chỉ định cụ thể cho phân trang. Điều này giải phóng RAM và dành chỗ cho nhiều dữ liệu khác.
+  - Các trang bộ nhớ được hoán đổi vào ổ cứng được theo dõi bởi mã quản lý bộ nhớ của kernel và có thể được phân trang lại vào RAM nếu cần thiết.
+- Tổng dung lượng bộ nhớ trong máy tính Linux là **RAM cộng với dung lượng swap** và được gọi là bộ nhớ ảo.
+
+**Các loại Swap**
+- Linux cung cấp hai loại swap space. Theo mặc định, hầu hết 
+
 ```
 watch -n 1 free -m
 ```
@@ -23,7 +31,10 @@ watch -n 1 free -m
 - Nếu ta không sử dụng **Hibernation** thì kích thước tối thiểu của Swap là “round(sqrt(RAM))” và kích thước tối đa là gấp đôi lượng RAM. Có một nhược điểm khi ta thiết lập kích thước của Swap quá lớn, đó là ta đang lãng phí dung lượng ổ đĩa mặc dù Swap không được sử dụng.
 
 **Ví dụ về kích thước của Swap**
-![](https://static.sitecuatui.com/wp-content/uploads/2015/11/swap-la-gi-swap-trong-he-dieu-hanh-linux-ubuntu.jpg)
+
+![](https://scontent.fhan5-7.fna.fbcdn.net/v/t1.15752-9/66414905_859349591075415_7460111335611695104_n.png?_nc_cat=100&_nc_oc=AQmekrN7fEV-VLIiNhvXI5v_KAxulZo1XYF3X7SFii784cONT0frrwUs1qauUmDjW-A&_nc_ht=scontent.fhan5-7.fna&oh=be31546a54531ec2e429a93e2e7c0465&oe=5DAA9680)
+
 
 ## Tài liệu tham khảo:
+
 https://www.sitecuatui.com/swap-la-gi-swap-trong-he-dieu-hanh-linux-ubuntu-centos/
