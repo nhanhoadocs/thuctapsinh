@@ -11,6 +11,8 @@
 
 [4. Xóa tệp swap](#4)
 
+-----------------
+
 ##### <a name="1"> 1. Kiểm tra </a>
 Kiểm tra xem cài đặt Ubuntu của ta đã được bật swap chưa bằng cách nhập:
 ```
