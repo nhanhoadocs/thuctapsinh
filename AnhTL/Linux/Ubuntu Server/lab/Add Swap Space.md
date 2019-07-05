@@ -78,7 +78,14 @@ free -h
 ### <a name="3"> 3. Giá trị Swappiness </a>
 Swappiness là một thuộc tính nhân Linux xác định tần suất hệ thống sẽ sử dụng. Swappiness có thể có giá trị từ 0 đến 100. Giá trị càng thấp sẽ khiến kernel cố gắng tránh hoán đổi bất cứ khi nào có thể, Trong khi giá trị càng cao sẽ khiến kernel sử dụng không gian hoán đổi mạnh hơn.
 
-- Giá trị swappiness mặc định là **60**. Bạn có thể kiểm tra giá trị swappiness hiện tại bằng cách gõ lệnh sau:
+- Swappiness chấp nhận một giá trị trong khoảng từ 0 đến 100. Các thông số của Swap có thể chỉnh
+
+  - swappiness = 0 – có nghĩ là bình thường swap không sử dụng và nó chỉ được sử dụng khi RAM thực bị tràn (tức hết ram )
+  - swappiness = 10 – Có nghĩa là nếu RAM thực còn 10% thì hệ thống sẽ dùng đến swap
+  - swappiness = 60 – Mặc định
+  - swappiness = 100 – Swap sẽ hoạt động hết mình . ưu tiên như là ram thật
+
+Giá trị swappiness mặc định là **60**. Bạn có thể kiểm tra giá trị swappiness hiện tại bằng cách gõ lệnh sau:
 ```
 cat /proc/sys/vm/swappiness
 ```
