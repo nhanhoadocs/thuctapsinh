@@ -85,7 +85,7 @@ showmount -e 192.168.169.137
 
 - Bây giờ ta thực hiện lệnh ``mount`` để mount nó vào 1 thư mục nào đó thì mới có thể sử dụng được thư mục mà server đã exports. Giống như ta mount ổ cứng bình thường: ``mount ip_server:/thư_mục_exports /thư_mục_cần_mount_tới``. Ở đây ta sẽ mount thư mục mà ta vừa showmount ra thư mục home:
 ```
-mount 192.168.169.137:/home/kt1 /home
+mount -t nfs 192.168.169.137:/home/kt1 /home
 ```
 - Dùng lệnh `` df -h `` để check xem đã mount được chưa:
 
