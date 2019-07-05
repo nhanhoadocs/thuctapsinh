@@ -62,6 +62,7 @@ Như vậy là đã umount thành công!
 blkid
 ```
 ![](https://scontent.fhan5-5.fna.fbcdn.net/v/t1.15752-9/65093189_315602896010645_5503392830476779520_n.png?_nc_cat=108&_nc_oc=AQl90uDymRADR2wWcnZ_zaa7GgxMviUkIJCFjbSaGEIEJokj9OvZWZS4QIm1XFKfGQM&_nc_ht=scontent.fhan5-5.fna&oh=6388214709cd1672eca5d78771efa8d3&oe=5DB94BF2)
+
 Nhưng thông thường ta dùng đường dẫn tới file cho đỡ dài và dễ hiểu hơn.
 
 **Cột 2**: Cho biết điểm mount.
