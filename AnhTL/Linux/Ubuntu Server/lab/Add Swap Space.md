@@ -13,7 +13,7 @@
 
 -----------------
 
-##### <a name="1"> 1. Kiểm tra </a>
+### <a name="1"> 1. Kiểm tra </a>
 Kiểm tra xem cài đặt Ubuntu của ta đã được bật swap chưa bằng cách nhập:
 ```
 swapon --show
@@ -23,7 +23,7 @@ Nếu không hiện ra gì, điều đó có nghĩa là hệ thống của ta kh
 Ngược lại, nếu ta nhận được một file như kiểu dưới đây, có nghĩa là ta đã kích hoạt swap trên máy.
 ![](https://scontent.fhan5-7.fna.fbcdn.net/v/t1.15752-9/66282232_459698367923162_533757769380003840_n.png?_nc_cat=103&_nc_oc=AQkjDyudIwEJ-HUR7qxuapXMdthwPLvYlyJMV9Wo9__QGbcMJSzRSibai_Sg_ugWiCY&_nc_ht=scontent.fhan5-7.fna&oh=4dd3b9794115c5afc2a7cc8e92737e8e&oe=5DC3E15C)
 
-##### <a name="2"> 2. Tạo một tập tin swap </a>
+### <a name="2"> 2. Tạo một tập tin swap </a>
 Đầu tiên ta phải có đặc quyền sudo hoặc là người quản trị thì mới có thể kích hoạt swap.
 
 Trong bài này ta sẽ thêm 1G swap, nếu muốn thêm nhiều swap, ta thay thế 1G bằng kích thước cần thiết.
@@ -71,7 +71,7 @@ free -h
 ```
 ![](https://scontent.fhan5-7.fna.fbcdn.net/v/t1.15752-9/66357423_670378436720318_5280276138512351232_n.png?_nc_cat=103&_nc_oc=AQm7Y1tNWs6uV4PPFRPGL_8ZMwawW1OQtMlTQbDSA9S9D7kx0qSgSS8IRKgF2Mjbxrc&_nc_ht=scontent.fhan5-7.fna&oh=7b3650ac48f6299a946f965a77d5fa0c&oe=5D7B3405)
 
-##### <a name="3"> 3. Giá trị Swappiness </a>
+### <a name="3"> 3. Giá trị Swappiness </a>
 Swappiness là một thuộc tính nhân Linux xác định tần suất hệ thống sẽ sử dụng. Swappiness có thể có giá trị từ 0 đến 100. Giá trị càng thấp sẽ khiến kernel cố gắng tránh hoán đổi bất cứ khi nào có thể, Trong khi giá trị càng cao sẽ khiến kernel sử dụng không gian hoán đổi mạnh hơn.
 
 - Giá trị swappiness mặc định là **60**. Bạn có thể kiểm tra giá trị swappiness hiện tại bằng cách gõ lệnh sau:
@@ -94,7 +94,7 @@ vm.swappiness=10
 
 Giá trị swap tối ưu phụ thuộc vào khối lượng công việc vào hệ thống của ta và cách sử dụng bộ nhớ như thế nào. Ta nên điều chỉnh tham số này theo lần lượt theo từng khoảng cách nhỏ để tìm giá trị tối ưu.
 
-##### <a name="4"> 4. Xóa tệp swap </a>
+### <a name="4"> 4. Xóa tệp swap </a>
 Để hủy kích hoạt và xóa tệp swap, hãy làm theo các bước sau:
 
 **B1**: Đầu tiên ta hủy kích hoạt swap space bằng lệnh:
