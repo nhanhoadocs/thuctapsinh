@@ -1,4 +1,4 @@
-# 1.1.3 Phân loại mạng máy tính.
+# 1.3.1 Phân loại mạng máy tính.
 Có rất nhiều kiểu mạng máy tính khác nhau. Việc phân loại chúng thường dựa trên các đặc điểm chung. Ví dụ, mạng máy tính thường được phân loại theo vùng địa lý ( diện hoạt động ) ( ví dụ: mạng cục bộ, mạng diện rộng,... ); theo mô hình ghép nối mạng) (ví dụ: point-to-point) hay broadcast); hoặc theo kiểu đường truyền thông mà mạng sử dụng các cách chuyển dữ liệu đi (ví dụ mạng chuyển mạch ảo, hay chuyển mạch gói).
 ## Phân loại mạng máy tính dưa trên phạm vi:
 - Mạng máy tính có thể được chia thành:

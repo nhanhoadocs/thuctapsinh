@@ -29,8 +29,8 @@ Lệnh ls -l list ra file với đầy đủ thông tin về quyền truy cập
 
 **Ví dụ file .vimrc thì:**
 
-- Quyền cho chủ (user1) là rw- (đọc, ghi), quyền chạy (thực thi) không có nên hiện '-'.
-- Quyền với nhóm user1 cũng là rw- (đọc, ghi).
+- Quyền cho chủ mang tên user1 là rw- (đọc, ghi), quyền chạy (thực thi) không có nên hiện '-'.
+- Quyền với nhóm mang tên user1 cũng là rw- (đọc, ghi).
 - Các user khác chỉ có quyền đọc : r--;  (quyền ghi write-w và chạy x-execute không có).
 
 **Các quyền truy cập file**
