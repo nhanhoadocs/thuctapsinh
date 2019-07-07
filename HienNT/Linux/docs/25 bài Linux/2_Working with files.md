@@ -8,8 +8,14 @@
  
 - Các dạng chuyển hướng:   
   - Chuyển hướng tới file: là 1 trong 2 cách chuyển hướng đơn giản nhất, bằng cách này dữ liệu sẽ được lưu vào file thay vì in ra màn hình. 
-  - Cú pháp sử dụng:  
-    \- **"<"** --> ghi nội dung ra file từ điểm bắt đầu, nếu file đã có nội dung thì sẽ ghi đè lên file.  
-    \- **"<<"** --> tương tự như "<" nhưng thay vì ghi đè lên file cũ thì sẽ ghi tiếp từ điểm kết thúc của nội dung cũ.  
+    - Cú pháp sử dụng:  
+    \- **">"** --> ghi nội dung ra file từ điểm bắt đầu, nếu file đã có nội dung thì sẽ ghi đè lên file.  
+    \- **">>"** --> tương tự như "<" nhưng thay vì ghi đè lên file cũ thì sẽ ghi tiếp từ điểm kết thúc của nội dung cũ.  
+  - Chuyển hướng từ file: 
+  - Chuyển hướng tới câu lệnh khác: **"|"**  
+  Ví dụ:  
+
+  <img src ="../../images/25 bai linux/chuyenhuongtoicaulenhkhac.png">  
+
     
 
