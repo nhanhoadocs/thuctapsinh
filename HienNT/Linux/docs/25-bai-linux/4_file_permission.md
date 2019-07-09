@@ -56,7 +56,7 @@ kết quả:
 root:$6$VPjOJxdySUjgLpFl$ikOFllvIkdiq1kYlpfskE6l9LZzLG9K0893FJHSQ6k53tBf9chpPIgNBgbyRjhrq.00DIaOqjKvwdJhh6OY1m.::0:99999:7:::
 ```
 
-***Thứ tự thông tin:*** 
+***Thứ tự thông tin:***   
    \- username  
    \- password đã được mã hóa  
    \- Ngày đổi password gần nhất(1/1/1970 + số ngày đến ngày hôm nay)  
@@ -82,25 +82,25 @@ root:$6$VPjOJxdySUjgLpFl$ikOFllvIkdiq1kYlpfskE6l9LZzLG9K0893FJHSQ6k53tBf9chpPIgN
 
 ***Cấu trúc:***  
 **GroupName : Password : GroupID : User1,User2,…**  
- \- GroupName: tên nhóm  
- \- Password: lưu chuỗi password, được ghi là x.  
- \- Group ID: ID của nhóm.  
- \- User1, User2,...: Danh sách các user nằm trong group này, ngăn cách nhau bằng dấu ",".  
+ \- `GroupName:` tên nhóm  
+ \- `Password:` lưu chuỗi password, được ghi là x.  
+ \- `Group ID:` ID của nhóm.  
+ \- `User1, User2,...:` Danh sách các user nằm trong group này, ngăn cách nhau bằng dấu ",".  
 
 > ## 2.Quản lý user  
 - **useradd** - tạo user  
 Options:  
-\- c: comment(chú thích)  
-\- d: home directory(thư mục cá nhân)  
-\- G: đưa user vào group  
-\- M: không tạo thư mục cá nhân  
-\- n: không tạo primary group, user tạo ra sẽ được đưa vào user group  
-\- s: chỉ định shell  
+`-c:` comment(chú thích)  
+`-d:` home directory(thư mục cá nhân)  
+`-G:` đưa user vào group  
+`-M:` không tạo thư mục cá nhân  
+`-n:` không tạo primary group, user tạo ra sẽ được đưa vào user group  
+`-s:` chỉ định shell  
 
 -  **passwd** -  đặt password cho user  
-\- l: lock user  
-\- u: unlock user  
-\- d: disable password
+`-l:` lock user  
+`-u:` unlock user  
+`-d:` disable password
 
 - **userdel** - xóa user
 \- r: xóa luôn thư mục cá nhân  
@@ -122,16 +122,23 @@ Options:
 
 
 > ## 3. Quản lý group  
-groupadd - tạo group  
-groupdel - xóa group  
-- Tạo group: #groupadd [tên group]  
-- Tạo user và đưa vào group đã tồn tại: #useradd -G [tên group] [tên user]  
+`groupadd` - tạo group  
+`groupdel` - xóa group  
+- Tạo group:
+```sh
+groupadd [tên group]
+```  
+- Tạo user và đưa vào group đã tồn tại: 
+```sh
+useradd -G [tên group] [tên user]  
+```
+
 
 # II - File permissions - Quyền truy cập tệp  
-- logout: logout ra khỏi hệ thống  
-- who: các tài khoản đang đăng nhập vào hệ thống  
-- whoami: đang đăng nhập vào hệ thống bằng user nào.  
-- su: đăng nhập vào bằng user khác mà không cần logout, thoát bằng lệnh "exit" 
+- `logout:` logout ra khỏi hệ thống  
+- `who:` các tài khoản đang đăng nhập vào hệ thống  
+- `whoami:` đang đăng nhập vào hệ thống bằng user nào.  
+- `su:` đăng nhập vào bằng user khác mà không cần logout, thoát bằng lệnh "exit" 
 
 > ## 1.Một số khái niệm về quyền truy cập  
 ### Các quyền truy cập file  
@@ -141,7 +148,7 @@ Lệnh `ls -l` list ra file với đầy đủ thông tin về quyền truy cậ
 
 Trong đó: 
 
-\+ *d* là directory(thư mục), dấu *-* là file bình thường, *l* là link.  
+\+ *`d`* là directory(thư mục), dấu *-* là file bình thường, *l* là link.  
 \+ 9 ký hiệu tiếp theo ở  cột đầu: có dạng rwxrwxrwx hoặc rwxr-xr-x là lặp lại 3 lần của rwx (read-write-execute) = quyền đọc, ghi, thực thi đối với file.  
 \+ 3 đối tượng sở hữu là: chủ sở hữu(owner), nhóm sở hữu(group owner) và other.  
 
@@ -178,9 +185,9 @@ chmod <tùy chọn> <chỉsố phân quyền> <tên tập tin/thư mục>
 ``` 
 
 ***Các tùy chọn***:  
--v: Hiển thị báo cáo sau khi chạy lệnh,mỗi lần đổi quyền là một lần hiển thị.  
--c: Giống như trên nhưng chỉ hiển thị khi nó đã làm xong tất cả.  
--R: Áp dụng luôn vào các file/folder trong thư mục được cấp quyền. 
+`-v:` Hiển thị báo cáo sau khi chạy lệnh,mỗi lần đổi quyền là một lần hiển thị.  
+`-c:` Giống như trên nhưng chỉ hiển thị khi nó đã làm xong tất cả.  
+`-R:` Áp dụng luôn vào các file/folder trong thư mục được cấp quyền. 
 
 **chown - thay đổi chủ sở hữu**
 Cú pháp:  
@@ -191,9 +198,9 @@ chown <tùy chọn> <user:group> <tên file/thư mục>
 ```  
 
 ***Các tùy chọn:***  
--v: Hiển thị báo cáo sau khi chạy lệnh,mỗi lần đổi quyền là một lần hiển thị.  
--c: Giống như trên nhưng chỉ hiển thị khi nó đã làm xong tất cả.  
--R: Áp dụng luôn vào các file/folder trong thư mục được cấp quyền.   
+`-v:` Hiển thị báo cáo sau khi chạy lệnh,mỗi lần đổi quyền là một lần hiển thị.  
+`-c:` Giống như trên nhưng chỉ hiển thị khi nó đã làm xong tất cả.  
+`-R:` Áp dụng luôn vào các file/folder trong thư mục được cấp quyền.   
 
 **chgrp - thay đổi nhóm sở hữu**  
 
@@ -203,6 +210,27 @@ Cú pháp:
 chgrp <tùy chọn> <group sở hữu mới> <tên file/thư mục>
 ```  
 
+# III - Một số câu lệnh khác về mật khẩu  
+- Thay đổi mật khẩu của người dùng khác  
+```sh
+sudo passwd username
+```  
+- Khóa mật khẩu tài khoản người dùng  
+```sh
+sudo passwd -l username
+```
+Option khác:   
+        `-u:` mở khóa mật khẩu  
+        `-d:` xóa mật khẩu người dùng  
+
+- Giới hạn thời gian cho mật khẩu người dùng
+```sh
+sudo passwd <tùy chọn> <số ngày> <user>
+```
+Các options:  
+   `-x:` xác định thời gian dùng mật khẩu theo số ngày  
+   `-w:` cảnh báo mật khẩu sẽ hết hạn sau bao lâu  
+   `-e:` user đặt lại mật khẩu ngay khi có sự cố  
 
 
 
