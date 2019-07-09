@@ -186,7 +186,9 @@ chmod <tùy chọn> <chỉsố phân quyền> <tên tập tin/thư mục>
 Cú pháp:  
 
 
-`chown <tùy chọn> <user:group> <tên file/thư mục>`  
+```sh
+chown <tùy chọn> <user:group> <tên file/thư mục>
+```  
 
 ***Các tùy chọn:***  
 -v: Hiển thị báo cáo sau khi chạy lệnh,mỗi lần đổi quyền là một lần hiển thị.  
@@ -197,7 +199,9 @@ Cú pháp:
 
 Cú pháp:  
 
-`chgrp <tùy chọn> <group sở hữu mới> <tên file/thư mục>`  
+```sh
+chgrp <tùy chọn> <group sở hữu mới> <tên file/thư mục>
+```  
 
 
 
