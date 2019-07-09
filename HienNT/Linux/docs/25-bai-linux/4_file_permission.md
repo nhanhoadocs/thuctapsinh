@@ -106,13 +106,12 @@ Options:
 \- r: xóa luôn thư mục cá nhân  
 
 ***Ví dụ:***   
-
-    - Tạo user u1,u2,u3 có home directory là thư mục /home  
+   \- Tạo user u1,u2,u3 có home directory là thư mục /home  
 
 
 <img src = "../../images/25 bai linux/taouser.png">  
 
-    - Tạo user v1 có home directory là thư mục /IT  
+   \- Tạo user v1 có home directory là thư mục /IT  
 
 <img src = "../../images/25 bai linux/taouserthumuc.png">   
 
