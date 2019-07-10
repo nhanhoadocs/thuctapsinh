@@ -178,8 +178,8 @@ Trong đó:
 *Note:* Người dùng phải có quyền thực thi đối với thư mục `bin` thì mới có thể chạy các lệnh `cd,ls,..`  
 
 > ## 2.Thay đổi quyền truy cập  
-**chmod - thay đổi quyền truy cập trên file**  
-- Dùng `chmod` với quyền biểu diễn dưới dạng kí tự. 
+- **chmod - thay đổi quyền truy cập trên file**  
+  \* Dùng `chmod` với quyền biểu diễn dưới dạng kí tự. 
 
 <img src = "../../images/25 bai linux/chmod.png"> 
 
@@ -191,9 +191,10 @@ Ví dụ:
 \- Thêm quyền thực thi file a.txt cho chủ sở hữu:
  ```sh
 chmod u+x a.txt  hoặc #chmod u=x a.txt
-```
+``` 
 
-- Dùng `chmod` với quyền biểu diễn dưới dạng số.  
+\* Dùng `chmod` với quyền biểu diễn dưới dạng số.  
+
 
 <img src = "../../images/25 bai linux/chmodso.png"> 
 
@@ -208,7 +209,7 @@ chmod <tùy chọn> <chỉsố phân quyền> <tên tập tin/thư mục>
 `-c:` Giống như trên nhưng chỉ hiển thị khi nó đã làm xong tất cả.  
 `-R:` Áp dụng luôn vào các file/folder trong thư mục được cấp quyền. 
 
-**chown - thay đổi chủ sở hữu**
+- **chown - thay đổi chủ sở hữu**
 Cú pháp:  
 
 
@@ -221,7 +222,7 @@ chown <tùy chọn> <user:group> <tên file/thư mục>
 `-c:` Giống như trên nhưng chỉ hiển thị khi nó đã làm xong tất cả.  
 `-R:` Áp dụng luôn vào các file/folder trong thư mục được cấp quyền.   
 
-**chgrp - thay đổi nhóm sở hữu**  
+- **chgrp - thay đổi nhóm sở hữu**  
 
 Cú pháp:  
 
@@ -262,7 +263,7 @@ chage -M <day> <user>
 chage -I <day> <user>
 [root@localhost ~]# chage -I 5 u1
 ```
--
+
 
 
 
