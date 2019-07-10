@@ -88,36 +88,46 @@ root:$6$VPjOJxdySUjgLpFl$ikOFllvIkdiq1kYlpfskE6l9LZzLG9K0893FJHSQ6k53tBf9chpPIgN
  \- `User1, User2,...:` Danh sách các user nằm trong group này, ngăn cách nhau bằng dấu ",".  
 
 > ## 2.Quản lý user  
-- **useradd** - tạo user  
-Options:  
-`-c:` comment(chú thích)  
-`-d:` home directory(thư mục cá nhân)  
-`-G:` đưa user vào group  
-`-M:` không tạo thư mục cá nhân  
-`-n:` không tạo primary group, user tạo ra sẽ được đưa vào user group  
-`-s:` chỉ định shell  
-
--  **passwd** -  đặt password cho user  
-`-l:` lock user  
-`-u:` unlock user  
-`-d:` disable password
-
-- **userdel** - xóa user
-\- r: xóa luôn thư mục cá nhân  
-
-***Ví dụ:***   
-   \- Tạo user u1,u2,u3 có home directory là thư mục /home  
-
-
-<img src = "../../images/25 bai linux/taouser.png">  
-
-   \- Tạo user v1 có home directory là thư mục /IT  
-
-<img src = "../../images/25 bai linux/taouserthumuc.png">   
-
-- Đặt password cho user  
-
-<img src = "../../images/25 bai linux/passwd.png">  
+- Lệnh tạo user mới  
+```sh
+useradd <tên user>  
+[root@localhost ~]#useradd u2
+```
+Ngay sau khi tạo user, ta cần tạo mật khẩu cho nó:  
+```sh
+passwd <tên user cần đặt pass>
+[root@localhost ~]#passwd u2
+``` 
+- Tạo user với thư mục tùy chọn  
+```sh
+useradd -d /<tên thư mục>  <tên user>
+[root@localhost ~]# useradd -d /Kithuat u3
+```
+- Tạo user với group tùy chọn(đã tồn tại và chưa tồn tại)
+```sh
+useradd -G <tên group> <tên user>
+[root@localhost ~]# useradd -G Kithuat a1
+```
+- Tạo một user không tạo ra thư mục riêng
+```sh
+useradd -M <tên user>
+[root@localhost ~]# useradd -M u4
+```
+- Tạo user và tự khóa vào ngày nhất định
+```sh
+useradd -e <năm-tháng-ngày> <tên user>
+[root@localhost ~]# useradd -e 2019-8-12 u5
+```
+- Xóa user
+```sh
+userdel <Tên user>
+[root@localhost ~]# userdel u2
+```
+- Kiểm tra user u3 đã có trong group
+```sh
+[root@localhost ~]# grep u3 /etc/passwd
+u3:x:1002:1006::/Kithuat:/bin/bash
+```
 
 
 > ## 3. Quản lý group  
@@ -127,9 +137,19 @@ Options:
 ```sh
 groupadd [tên group]
 ```  
-- Tạo user và đưa vào group đã tồn tại: 
+- Tạo user và đưa vào group (đã tồn tại và chưa tồn tại): 
 ```sh
 useradd -G [tên group] [tên user]  
+```
+- Add user vào group đã tồn tại
+```sh
+usermod -G <tên group> <tên user>
+[root@localhost ~]# usermod -G Kithuat u3
+```
+- List toàn bộ user trong group Kithuat
+```sh
+[root@localhost ~]# cat /etc/group | grep Kithuat
+Kithuat:x:1004:a1,u3
 ```
 
 
@@ -141,7 +161,7 @@ useradd -G [tên group] [tên user]
 
 > ## 1.Một số khái niệm về quyền truy cập  
 ### Các quyền truy cập file  
-Lệnh `ls -l` list ra file với đầy đủ thông tin về quyền truy cập  
+Lệnh `ls -la` hoặc `ls -l` list ra file với đầy đủ thông tin về quyền truy cập  
 
 <img src = "../../images/25 bai linux/ls -l.png">  
 
@@ -222,14 +242,27 @@ Option khác:
         `-u:` mở khóa mật khẩu  
         `-d:` xóa mật khẩu người dùng  
 
-- Giới hạn thời gian cho mật khẩu người dùng
+- Đặt ngày hết hạn cho những tài khoản tạm thời
 ```sh
-sudo passwd <tùy chọn> <số ngày> <user>
+usermod -e Y/M/D <user>
+[root@localhost ~]# usermod -e 2019/11/30 u1
 ```
-Các options:  
-   `-x:` xác định thời gian dùng mật khẩu theo số ngày  
-   `-w:` cảnh báo mật khẩu sẽ hết hạn sau bao lâu  
-   `-e:` user đặt lại mật khẩu ngay khi có sự cố  
+- Giới hạn số ngày tối thiểu để thay đổi password
+```sh
+chage -m <day> <user>
+[root@localhost ~]# chage -m 3 u1
+```
+- Số ngày tối đa để thay đổi password
+```sh
+chage -M <day> <user>
+[root@localhost ~]# chage -M 10 u1
+```
+- Cài đặt thời gian khóa tài khoản sau khi mật khẩu hết hạn
+```sh
+chage -I <day> <user>
+[root@localhost ~]# chage -I 5 u1
+```
+-
 
 
 
@@ -242,6 +275,7 @@ Các options:
 ## TÀI LIỆU THAM KHẢO  
 - [https://support.maxserver.com/](https://support.maxserver.com/009025-H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-ph%C3%A2n-quy%E1%BB%81n-t%E1%BA%ADp-tin-v%C3%A0-th%C6%B0-m%E1%BB%A5c-tr%C3%AAn-Linux)
 - [https://cuongquach.com/](https://cuongquach.com/tao-user-linux-bang-tay.html)
-- [https://support.maxserver.com/](https://support.maxserver.com/009025-H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-ph%C3%A2n-quy%E1%BB%81n-t%E1%BA%ADp-tin-v%C3%A0-th%C6%B0-m%E1%BB%A5c-tr%C3%AAn-Linux)
 - [https://freetuts.net/](https://freetuts.net/cac-quyen-truy-cap-file-va-folder-tren-linux-425.html)
 - [https://support.maxserver.com/](https://support.maxserver.com/767313--H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-qu%E1%BA%A3n-l%C3%BD-User-v%C3%A0-Group-tr%C3%AAn-Linux)
+- [https://sinhvientot.net/](https://sinhvientot.net/huong-dan-quan-tri-user-group-tren-linux/)
+- [https://www.slideshare.net/caotu/](https://www.slideshare.net/caotu/ti-liu-hng-dn-qun-l-user-phn-quyn-trong-ubuntu-linux-10b4-fithou)
