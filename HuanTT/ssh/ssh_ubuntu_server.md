@@ -1,6 +1,16 @@
 Cách kết nối vào máy chủ bằng SSH trên Ubuntu
 ===
 ## Mục lục
+- [1.Tổng quan về SSH](#1.Tổng-quan-về-SSH)
+- [2.Mô hình kết nối SSH](#2.Mô-hình-kết-nối-SSH)
+- [3.Thực hiện SSH bằng mật khẩu](#3.Thực-hiện-SSH-bằng-mật-khẩu)
+- [4.Thực hiện SSH bằng cơ chế key pair](#4.Thực-hiện-SSH-bằng-cơ-chế-key-pair)
+    - [Bước 1: Tạo key pair](#Bước-1:-Tạo-key-pair)
+    - [Bước 2: Gửi key public](#Bước-2:-Gửi-key-public)
+    - [4.3.Gửi key public](#4.3.Gửi-key-public)
+- [5.Một số lưu ý](#5.Một-số-lưu-ý)
+- [6.Tài liệu tham khảo](#6.Tài-liệu-tham-khảo)
+
 Khi làm việc với các máy chủ từ xa, bạn sẽ cần sử dụng giao thức SSH để kết nối và điều khiển máy chủ của bạn. Vậy SSH là gì?
 ## 1.Tổng quan về SSH
 SSH (hay Secure Shell) là một giao thức mạng được mã hoá để vận hành các dịch vụ mạng một cách an toàn. SSH cung cấp một kênh kết nối bảo mật trong mô hình kết nối client-server. SSH sử dụng cổng TCP tiêu chuẩn là 22. Việc sử dụng giao thức SSH để kết nối sẽ tránh được các rủi ro trong việc nghe lén và đánh cắp thông tin.
@@ -35,14 +45,13 @@ $ ssh <người dùng>@<địa chỉ ip>
 Nếu là lần kết nối đầu tiên, thì máy sẽ hỏi lại bạn có muốn tiếp tục hay không. Bạn chỉ cần gõ YES, sau đó nhập pass. Như vậy, bạn đã thục hiện xong việc kết nối.
 
 ## 4.Thực hiện SSH bằng cơ chế key pair
-### 4.1.Giải thích cơ chế key pair
 Đôi khi việc sử dụng password để đăng nhập rất là phức tạp và tiềm ẩn khả năng bị tấn công cao. Vì vậy, bạn có thể thực hiện việc kết nối thông qua sử dụng cơ chế key pair.
 
 ![image](images/ssh1.2.png "img04")
 
-Cơ bản thì ở máy khách sẽ tiến hành tạo cặp key là private key và public key, sau đó sẽ gửi key public tới máy chủ và giữ lại private key. Khi muốn thực hiện đăng nhập từ xa, máy khách sẽ gửi yêu cầu kèm key private tới máy chủ. Máy chủ sẽ tiến hành kiểm tra Private key có trùng với Public Key không. Nếu có thì sẽ đăng nhập thành công.
+Cơ bản thì ở máy khách sẽ tiến hành tạo cặp key là private key và public key, sau đó sẽ gửi key public tới máy chủ và giữ lại private key. Khi muốn thực hiện đăng nhập từ xa, máy khách sẽ gửi yêu cầu kèm key private tới máy chủ. Máy chủ sẽ tiến hành kiểm tra private key có trùng với public Key không. Nếu có thì sẽ đăng nhập thành công.
 
-### 4.2.Tạo key pair
+### Bước 1: Tạo key pair
 
 Đầu tiên, bạn phải tiến hành tạo SSH key trên máy của mình. Ở đây mình sẽ tạo key trên máy Ubuntu. Trên Terminal, bạn gõ:
 
@@ -69,21 +78,17 @@ Tiếp theo là mật khẩu cho key. Bước này sẽ khiến bạn phải xá
 
 Như vậy, bạn đã tạo xong key trên máy của mình. Bây giờ thì tiến hành gửi key public tới máy chủ.
 
-### 4.3.Gửi key public
-Nói chung bước này khá là nhiều bước tuy nhiên có một cách khá đơn giản để thực hiện một mớ các thao tác này đó là sử dụng tiện ích ssh-copy-id. Ngoài ra nếu bạn không muốn sử dụng tiện ích này thì cũng có thể thực hiện một số cách khác như sao chép key qua SSH bằng mật khẩu hay sao chép thủ công.
+### Bước 2: Gửi key public
+Nói chung bước này khá là nhiều bước tuy nhiên có một cách khá đơn giản để thực hiện một mớ các thao tác này đó là sử dụng tiện ích ssh-copy-id. 
 
-Trên đây mình sẽ sử dụng tiện ích ssh-copy-ip để gửi key và tìm hiểu cách thức thực hiện của nó.
-### 4.3.1.Dùng ssh-copy-id để gửi
+> Ngoài ra nếu bạn không muốn sử dụng tiện ích này thì cũng có thể thực hiện một số cách khác như sao chép key qua SSH bằng mật khẩu hay sao chép thủ công.
+
 Đầu tiên, trên cửa sổ Terminal, gõ lệnh:
 
 ```
 $ ssh-copy-id <người dùng>@<địa chỉ ip>
 ```
 
-> Nếu bạn có đặt tên file key khác thì bạn phải thêm cờ -i và tên file đó:
-```
-$ ssh-copy-id -i <tên key> <người dùng>@<địa chỉ ip>
-```
 ![image](images/ssh06.png "img06")
 
 Trên Terminal sẽ hiện một loạt các dòng lệnh, trong đó có các yêu cầu sau.
@@ -108,13 +113,7 @@ $ ssh <người dùng>@<địa chỉ ip>
 
 Như vậy là bạn đã hoàn toàn đăng nhập vào máy server mà không cần nhập mật khẩu.
 
-> nếu bạn đặt tên file key khác, bạn có thể ssh thông qua câu lênh như sau:
-```
-$ ssh -i <địa chỉ key> <người dùng>@<địa chỉ ip>
-```
-
-
-### 4.3.2.Giải thích quy trình gửi
+### * Giải thích bước 2
 
 Sau khi thực hiện copy và ssh thành công, trên máy server 2 sẽ có một số thay đổi như sau.
 
@@ -127,24 +126,31 @@ Terminal sẽ hiện lên như sau:
 
 ![image](images/ssh07.png "img07")
 
-Bạn có thể thấy có 1 thư mục tên là `.ssh` được tạo ra được cấp quyền là 700 (700 là gì thì tìm hiểu về chmod).
+Bạn có thể thấy có 1 thư mục tên là `.ssh` được tạo ra được cấp quyền là 700 (ý nghĩa con số 700 xem ở [đây](https://en.wikipedia.org/wiki/Chmod#Numerical_permissions)).
 
-Đổi đường dẫn tới thư mục này:
+Di chuyển tới thư mục `.ssh`:
 ```
 $ cd .ssh
 $ ll
 ```
 ![image](images/ssh08.png "img08")
+
 Ta thấy có 2 file ở trong thư mục này với các chức năng sau:
 - authorized_keys: được cấp quyền 600, lưu trữ thông tin về key public được gửi.
 - known_hosts: cấp quyền 644, lưu trữ thông tin nhưng máy đã từng đăng nhập bằng.
 
 Như vậy, ta có thể thấy, tiện ích ssh-copy-id đã giúp thực hiện một mớ các thao tác phức tạp về lại một câu lệnh đơn giản và tiện lợi.
-### 4.4.Một số lưu ý
+### 5.Một số lưu ý
 
-Nếu tên file key khác với tên mặc định (không phải id_rsa) bạn phải thêm cờ -i và địa chỉ của file key. Ví dụ:
+Nếu tên file key khác với tên mặc định (không phải id_rsa) bạn phải thêm cờ -i và tên key đó khi thực hiện ssh-copy-id. Ví dụ:
 ```
 $ ssh-copy-id -i abc123 root@172.16.2.167
+```
+
+Khi thực hiện ssh, nếu muốn sử dụng một key khác để đăng nhập, bạn cũng thêm cờ -i kèm theo địa chỉ thư mục chứa key, ví dụ như sau:
+
+```
+$ ssh -i /home/user/abc123 root@172.16.2.167
 ```
 
 Nếu bạn muốn tắt tính năng đăng nhập bằng mật khẩu, chỉ đăng nhập bằng key pair. Bạn phải tiến hành tắt tính năng đó trên file config theo các bước sau:
@@ -170,8 +176,10 @@ PasswordAuthentication no
 $ sudo systemctl restart sshd.service
 ```
 
-## 5.Tài liệu tham khảo
+## 6.Tài liệu tham khảo
 
 https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-centos7
 
 https://www.ssh.com/ssh/copy-id
+
+https://en.wikipedia.org/wiki/Secure_Shell
