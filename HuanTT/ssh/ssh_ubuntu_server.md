@@ -1,15 +1,14 @@
 Cách kết nối vào máy chủ bằng SSH trên Ubuntu
 ===
 ## Mục lục
-- [1.Tổng quan về SSH](#1.Tổng-quan-về-SSH)
-- [2.Mô hình kết nối SSH](#2.Mô-hình-kết-nối-SSH)
-- [3.Thực hiện SSH bằng mật khẩu](#3.Thực-hiện-SSH-bằng-mật-khẩu)
-- [4.Thực hiện SSH bằng cơ chế key pair](#4.Thực-hiện-SSH-bằng-cơ-chế-key-pair)
-    - [Bước 1: Tạo key pair](#Bước-1:-Tạo-key-pair)
-    - [Bước 2: Gửi key public](#Bước-2:-Gửi-key-public)
-    - [4.3.Gửi key public](#4.3.Gửi-key-public)
-- [5.Một số lưu ý](#5.Một-số-lưu-ý)
-- [6.Tài liệu tham khảo](#6.Tài-liệu-tham-khảo)
+- [1.Tổng quan về SSH](#1Tổng-quan-về-SSH)
+- [2.Mô hình kết nối SSH](#2Mô-hình-kết-nối-SSH)
+- [3.Thực hiện SSH bằng mật khẩu](#3Thực-hiện-SSH-bằng-mật-khẩu)
+- [4.Thực hiện SSH bằng cơ chế key pair](#4Thực-hiện-SSH-bằng-cơ-chế-key-pair)
+    - [Bước 1: Tạo key pair](#Bước-1-Tạo-key-pair)
+    - [Bước 2: Gửi key public](#Bước-2-Gửi-key-public)
+- [5.Một số lưu ý](#5Một-số-lưu-ý)
+- [6.Tài liệu tham khảo](#6Tài-liệu-tham-khảo)
 
 Khi làm việc với các máy chủ từ xa, bạn sẽ cần sử dụng giao thức SSH để kết nối và điều khiển máy chủ của bạn. Vậy SSH là gì?
 ## 1.Tổng quan về SSH
