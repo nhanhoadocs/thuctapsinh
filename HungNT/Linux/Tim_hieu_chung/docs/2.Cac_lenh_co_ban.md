@@ -43,7 +43,7 @@ $!/bin/bash
 history -r  
 history > hist.log
 ```  
-sau đó chạy file script và kiểm tra file log :  
+**Sau đó chạy file script và kiểm tra file log :**  
 `source ./history.sh`  
 
 <img src="https://i.imgur.com/Pby0Wox.png">

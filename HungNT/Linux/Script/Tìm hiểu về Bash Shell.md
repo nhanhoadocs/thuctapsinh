@@ -1,11 +1,11 @@
 # TÌM HIỂU VỀ BASH SHELL  
-1. Định nghĩa :  
+**1. Định nghĩa :**  
 - Bash là một ngôn ngữ biên dịch , được sử dụng rộng rãi trên các hệ thống và nhiều nhất là trên GNU/Linux system . Bash viết tắt cho **Bourne-Again-Shell** 
 - Shell là môi trường giao tiếp với người dùng (Terminal). Có nghĩa là shell chấp nhận các lệnh từ bạn (keyboard) và thực thi nó. Nhưng nếu bạn muốn sử dụng nhiều lệnh chỉ bằng một lệnh, thì bạn có thể lưu chuỗi lệnh vào text file và bảo shell thực thi text file này thay vì nhập vào các lệnh. Điều này gọi là shell script.
 
 - Shell script là một chuỗi các lệnh được viết trong plain text file. Shell script giúp thực hiện tự động các lệnh cần làm .
 
-2. Đuôi file và quyền truy cập :  
+**2. Đuôi file và quyền truy cập :**  
  - File script nên để đuôi .sh .  
 - Khi tạo ra file script cần lệnh chmod +x filename để cấp quyền thực thi file .  
 
@@ -20,7 +20,7 @@ ls
 
 ```
 
-3. Biến :  
+**3. Biến :**  
 - Tên biến gồm các chữ  (a - z , A - Z), số  ( 0 - 9) hoặc dấu gạch dưỡi ( _) .Thường  các biến trong bash shell sẽ được viết hoa  .   
 VD :  Các cách đặt tên sau là đúng  
 ```
