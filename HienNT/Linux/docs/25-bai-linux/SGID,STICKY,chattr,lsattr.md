@@ -126,6 +126,7 @@ chattr +a <file>
 
 
 
+
 ## TÀI LIỆU THAM KHẢO  
 - [https://kipalog.com/](https://kipalog.com/posts/SUID-trong-linux)
 - [https://forum.gocit.vn/](https://forum.gocit.vn/threads/suid-sgid-sticky.567/)
