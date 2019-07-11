@@ -89,8 +89,8 @@ Trong đó: 3 số sau(740) thể hiện quyền truy cập và sở hữu file 
 
 > ### SUID/SGID được sử dụng ở đâu?   
 - Trường hợp các lệnh/chương trình/tập lệnh chỉ tài khoản root mới có quyền thực thi. Dùng `SUID` và `SGID` để cấp quyền thực thi cho các user thường.  
-- Trường hợp không muốn cung cấp thông tin đăng nhập của người dùng cụ thể nhưng muốn chạy một chương trình dưới quyền là chủ sở hữu.  
-- Trường hợp không muốn dùng lệnh `sudo` nhưng muốn cấp quyền thực thi cho lệnh/tập lệnh.  
+- Trường hợp không muốn cung cấp thông tin đăng nhập của người dùng cụ thể nhưng muốn chạy một chương trình dưới quyền là chủ sở hữu(nhận các giá trị từ 2 đến 7).  
+- Trường hợp không muốn dùng lệnh `sudo` nhưng muốn cấp quyền thực thi cho lệnh/tập lệnh(nhận các giá trị từ 2 đến 7)  
 
 
 
