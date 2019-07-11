@@ -2,18 +2,18 @@ Tìm hiểu và đăng nhập vào server sử dụng SSH key pair
 ===
 ## Mục lục
 - [1.Tổng quan về SSH](#1.Tổng-quan-về-SSH)
-- [2.Tạo một kết nối SSH](#2.Tạo-một-kết-nối-SSH)
-- [3.Tạo key đăng nhập cho SSH](#3.Tạo-key-đăng-nhập-cho-SSH)
-    - [3.1.Cơ chế key pair](#3.1.Cơ-chế-key-pair)
-    - [3.2.Thực hiện tạo key pair](#3.2.Thực-hiện-tạo-key-pair)
+- [2.2.Tạo kết nối SSH bằng mật khẩu](#2.Tạo-kết-nối-SSH-bằng-mật-khẩu)
+- [3.Tạo kết nối SSH sử dụng key pair](#3.Tạo-kết-nối-SSH-sử-dụng-key-pair)
+    - [3.1.Giải thích cơ chế key pair](#3.1.Giải-thích-cơ-chế-key-pair)
+    - [3.2.Tạo key pair](#3.2.Tạo-key-pair)
     - [3.3.Gửi key public](#3.3.Gửi-key-public)
-        - [3.3.1.Quy trình thực hiện](#3.3.1.Quy-trình-thực-hiện)
-        - [3.3.2.Quy trình gửi key public](#3.3.2.Quy-trình-gửi-key-public)
+        - [3.3.1.Dùng ssh-copy-id để gửi](#3.3.1.Dùng-ssh-copy-id-để-gửi)
+        - [3.3.2.Giải thích quy trình gửi](#3.3.2.Giải-thích-quy-trình-gửi)
     - [3.4.Một số lưu ý](#3.4.Một-số-lưu-ý)
 - [4.Tài liệu tham khảo](#4.Tài-liệu-tham-khảo)
 ## 1.Tổng quan về SSH
 SSH (Secure Shell) là một giao thức được mã hoá để quản trị và giao tiếp với các máy chủ. Trong khi làm việc với máy chủ, bạn sẽ phải làm việc trên cửa sổ Terminal trên máy tính của bạn thông qua SSH. Bài viết này sẽ hướng dẫn bạn cài đặt khoá SSH trên máy chủ **CentOS 7** và thực hiện giao tiếp SSH với máy chủ thông qua phương pháp key pair.
-## 2.Tạo một kết nối SSH
+## 2.Tạo kết nối SSH bằng mật khẩu
 
 Để thực kiện được kết nối SSH với máy chủ, bạn phải chắc chắn ràng máy tính của bạn ping thông với máy chủ. Để kiểm tra, bạn gõ trên máy chủ của bạn:
 
@@ -44,14 +44,14 @@ $ ssh <người dùng>@<địa chỉ ip>
 
 Nếu là lần kết nối đầu tiên, thì nó sẽ hỏi lại bạn có muốn tiếp tục hay không. Bạn chỉ cần gõ YES, sau đó nhập pass. Như vậy, bạn đã thục hiện xong việc kết nối.
 
-## 3.Tạo key đăng nhập cho SSH
-### 3.1.Cơ chế Key pair
+## 3.Tạo kết nối SSH sử dụng key pair
+### 3.1.Giải thích cơ chế key pair
 Đôi khi việc sử dụng password để đăng nhập rất là phức tạp và tiềm ẩn khả năng bị tấn công cao. Vì vậy, bạn có thể thực hiện việc kết nối thông qua sử dụng cơ chế key pair.
 
 ![image](images/ssh04.png "img04")
 
-Cơ bản thì ở máy server 1 sẽ tiến hành tạo cặp key là private key và public key. Sau đó máy 1 sẽ gửi key public tới máy 2 và giữ lại private key. Khi muốn thực hiện đăng nhập từ xa, máy 1 sẽ gửi yêu cầu và key private tới máy 2. Máy 2 sẽ tiến hành kiểm tra Private key có trùng với Public Key không. Nếu có thì sẽ đăng nhập thành công.
-### 3.2.Thực hiện tạo key pair
+Cơ bản thì ở máy server 1 sẽ tiến hành tạo cặp key là private key và public key. Sau đó máy 1 sẽ gửi key public tới máy 2 và giữ lại private key. Khi muốn thực hiện đăng nhập từ xa, máy 1 sẽ gửi yêu cầu kèm key private tới máy 2. Máy 2 sẽ tiến hành kiểm tra Private key có trùng với Public Key không. Nếu có thì sẽ đăng nhập thành công.
+### 3.2.Tạo key pair
 
 Đầu tiên, bạn phải tiến hành tạo SSH key trên máy. Ở đây mình sẽ tạo key trên máy 1. Trên Terminal, bạn gõ:
 
@@ -82,7 +82,7 @@ Như vậy, bạn đã tạo xong key trên máy 1. Bầy giờ thì tiến hàn
 Nói chung bước này khá là nhiều bước tuy nhiên có một cách khá đơn giản để thực hiện một mớ các thao tác này đó là sử dụng tiện ích ssh-copy-id. Ngoài ra nếu bạn không muốn sử dụng tiện ích này thì cũng có thể thực hiện: Sao chép key qua SSH sử dụng mật khẩu hoặc sao chép thủ công.
 
 Trên đây mình sẽ sử dụng tiện ích ssh-copy-ip và tìm hiểu cách thức thực hiện của nó.
-### 3.3.1.Quy trình thực hiện
+### 3.3.1.Dùng ssh-copy-id để gửi
 Đầu tiện, trên cửa sổ Terminal của máy 1, gõ lệnh:
 
 ```
@@ -122,7 +122,7 @@ $ ssh -i <địa chỉ key> <người dùng>@<địa chỉ ip>
 ```
 
 
-### 3.3.2.Quy trình gửi key public
+### 3.3.2.Giải thích quy trình gửi
 
 Sau khi thực hiện copy và ssh thành công, trên máy server 2 sẽ có một số thay đổi như sau.
 
@@ -166,13 +166,13 @@ $ ls
 $ vi sshd_config
 ```
 
-Trong file đó, tìm đến dòng PasswordAuthentication và đổi nó thành NO.
+- Trong file đó, tìm đến dòng PasswordAuthentication và đổi nó thành NO.
 ```
 ...
 PasswordAuthentication no
 ...
 ```
-Sau đó thoát ra ngoài bằng ESC -> gõ :wq (tham khảo thêm tài liệu về Vim). Tiến hành restart lại sshd:
+- Sau đó thoát ra ngoài bằng `ESC` -> gõ `:wq` (tham khảo thêm tài liệu về Vim). Tiến hành restart lại sshd:
 
 ```
 $ sudo systemctl restart sshd.service
