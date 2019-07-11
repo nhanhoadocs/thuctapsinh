@@ -7,28 +7,27 @@ Cách kết nối vào máy chủ bằng SSH trên Ubuntu
 
 3. [Thực hiện SSH bằng mật khẩu](#3Thực-hiện-SSH-bằng-mật-khẩu)
 
-4. [Thực hiện SSH bằng cơ chế key pair](#4Thực-hiện-SSH-bằng-cơ-chế-key-pair)
+4. [Thực hiện SSH bằng cơ chế key pairs](#4Thực-hiện-SSH-bằng-cơ-chế-key-pairs)
 
 5. [Một số lưu ý](#5Một-số-lưu-ý)
 6. [Tài liệu tham khảo](#6Tài-liệu-tham-khảo)
 
-Khi làm việc với các máy chủ từ xa, bạn sẽ cần sử dụng giao thức SSH để kết nối và điều khiển máy chủ của bạn. Vậy SSH là gì?
 ## 1.Tổng quan về SSH
 SSH (hay Secure Shell) là một giao thức mạng được mã hoá để vận hành các dịch vụ mạng một cách an toàn. SSH cung cấp một kênh kết nối bảo mật trong mô hình kết nối client-server. SSH sử dụng cổng TCP tiêu chuẩn là 22. Việc sử dụng giao thức SSH để kết nối sẽ tránh được các rủi ro trong việc nghe lén và đánh cắp thông tin.
 
 Để thực hiện kết nối SSH, bạn có thể làm một vài cách như sau:
 - Sử dụng mật khẩu để xác thực.
-- Sử dụng cơ chế Key pair
+- Sử dụng cơ chế Key pairs
 
 ## 2.Mô hình kết nối SSH
 
 ![image](../images/ssh1.1.png "img01")
 
-Trong bài này, mình sẽ sử dụng một máy khách dùng Ubuntu để kết nối với máy chủ có địa chỉ là `172.16.2.160`.
+Trong bài này, mình sẽ sử dụng một máy khách dùng Ubuntu với user root để kết nối với máy chủ có địa chỉ là `172.16.2.160`.
 
 Về cơ bản, để thực hiện được kết nối này, bạn phải đảm bảo chắc chắn máy tính của bạn phải kết nối được với máy chủ. Để kiểm tra, bạn mở Terminal và gõ:
 ```
-$ ping <địa chỉ ip>
+# ping <địa chỉ ip>
 ```
 ![image](../images/ssh02.png "img02")
 
@@ -38,26 +37,26 @@ Khi đã có kết nối, chúng ta sẽ tiến hành kết nối với máy ch�
 
 Với cách này, bạn cần nắm được mật khẩu đăng nhập người dùng trên máy chủ. Để thực hiện, bạn gõ trên Terminal như sau:
 ```
-$ ssh <người dùng>@<địa chỉ ip>
+# ssh <người dùng>@<địa chỉ ip>
 ```
 
 ![image](../images/ssh03.png "img03")
 
 Nếu là lần kết nối đầu tiên, thì máy sẽ hỏi lại bạn có muốn tiếp tục hay không. Bạn chỉ cần gõ **YES**, sau đó nhập pass. Như vậy, bạn đã thục hiện xong việc kết nối.
 
-## 4.Thực hiện SSH bằng cơ chế key pair
-Đôi khi việc sử dụng password để đăng nhập sẽ khiến bạn mất công nhớ mật khẩu và tiềm ẩn khả năng bị tấn công cao. Vì vậy, bạn có thể thực hiện việc kết nối thông qua sử dụng cơ chế key pair.
+## 4.Thực hiện SSH bằng cơ chế key pairs
+Đôi khi việc sử dụng password để đăng nhập sẽ khiến bạn mất công nhớ mật khẩu và tiềm ẩn khả năng bị tấn công cao. Vì vậy, bạn có thể thực hiện việc kết nối thông qua sử dụng cơ chế key pairs.
 
 ![image](../images/ssh1.2.png "img04")
 
 Cơ bản thì ở máy khách sẽ tiến hành tạo cặp key là private key và public key, sau đó sẽ gửi key public tới máy chủ và giữ lại private key. Khi muốn thực hiện đăng nhập từ xa, máy khách sẽ gửi yêu cầu kèm key private tới máy chủ. Máy chủ sẽ tiến hành kiểm tra private key có trùng với public Key không. Nếu có thì sẽ đăng nhập thành công.
 
-### Bước 1: Tạo key pair
+### Bước 1: Tạo key pairs
 
 Đầu tiên, bạn phải tiến hành tạo SSH key trên máy của mình. Ở đây mình sẽ tạo key trên máy Ubuntu. Trên Terminal, bạn gõ:
 
 ```
-$ ssh-keygen
+# ssh-keygen
 ```
 
 ![image](../images/ssh05.png "img05")
@@ -87,7 +86,7 @@ Nói chung bước này khá là nhiều bước tuy nhiên có một cách khá
 Đầu tiên, trên cửa sổ Terminal, gõ lệnh:
 
 ```
-$ ssh-copy-id <người dùng>@<địa chỉ ip>
+# ssh-copy-id <người dùng>@<địa chỉ ip>
 ```
 
 ![image](../images/ssh06.png "img06")
@@ -109,7 +108,7 @@ Tiếp tục, máy yêu cầu bạn nhập mật khẩu cho máy nhận public k
 Bây giờ, trên cửa sổ Terminal của máy khách, gõ lệnh:
 
 ```
-$ ssh <người dùng>@<địa chỉ ip>
+# ssh <người dùng>@<địa chỉ ip>
 ```
 
 Như vậy là bạn đã hoàn toàn đăng nhập vào máy server mà không cần nhập mật khẩu.
@@ -120,8 +119,8 @@ Sau khi thực hiện copy và ssh thành công, trên máy server 2 sẽ có m�
 
 Đầu tiên, trên terminal của máy chủ (hoặc máy khách đã SSH) gõ:
 ```
-$ cd /root
-$ ll -a
+# cd /root
+# ll -a
 ```
 Terminal sẽ hiện lên như sau:
 
@@ -131,8 +130,8 @@ Bạn có thể thấy có 1 thư mục tên là `.ssh` được tạo ra đư�
 
 Di chuyển tới thư mục `.ssh`:
 ```
-$ cd .ssh
-$ ll
+# cd .ssh
+# ll
 ```
 ![image](../images/ssh08.png "img08")
 
@@ -145,33 +144,33 @@ Như vậy, ta có thể thấy, tiện ích **ssh-copy-id** đã giúp thực h
 
 Nếu tên file key khác với tên mặc định (không phải **id_rsa**) bạn phải thêm cờ **-i** và tên key đó khi thực hiện **ssh-copy-id**. Ví dụ:
 ```
-$ ssh-copy-id -i abc.key root@172.16.2.167
+# ssh-copy-id -i abc.key root@172.16.2.167
 ```
 
 Khi thực hiện ssh, nếu muốn sử dụng một key khác để đăng nhập, bạn cũng thêm cờ **-i** kèm theo địa chỉ thư mục chứa key, ví dụ như sau:
 
 ```
-$ ssh -i /home/user/abc.key root@172.16.2.167
+# ssh -i /home/user/abc.key root@172.16.2.167
 ```
 
-Nếu bạn muốn tắt tính năng đăng nhập bằng mật khẩu, chỉ đăng nhập bằng key pair. Bạn phải tiến hành tắt tính năng đó trên file config theo các bước sau:
-- Di chuyển đến thư mục chứa file config
+Nếu bạn muốn tắt tính năng đăng nhập bằng mật khẩu, chỉ đăng nhập bằng key pairs. Bạn phải tiến hành tắt tính năng đó trên file config theo các bước sau:
+Di chuyển đến thư mục chứa file config
 ```
 # cd /etc/ssh/
 # ls
 ```
-- Dìm file sshd_config và sửa nó với vi
+Tìm file sshd_config và sửa nó với vi
 ```
 # vi sshd_config
 ```
 
-- Trong file đó, tìm đến dòng PasswordAuthentication và đổi nó thành **NO**.
+Trong file đó, tìm đến dòng PasswordAuthentication và đổi nó thành **NO**.
 ```
 ...
 PasswordAuthentication no
 ...
 ```
-- Sau đó thoát ra ngoài bằng `ESC` -> gõ `:wq` (tham khảo thêm tài liệu về Vim). Tiến hành restart lại sshd:
+Sau đó thoát ra ngoài bằng `ESC` -> gõ `:wq` ([tham khảo thêm tài liệu về Vim](https://vim.rtorr.com/)). Tiến hành restart lại sshd:
 
 ```
 # sudo systemctl restart sshd.service
