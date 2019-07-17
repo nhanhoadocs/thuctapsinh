@@ -328,3 +328,196 @@ https://www.hostinger.vn/huong-dan/lam-the-nao-de-cai-dat-ssh-keys/
 
 
 
+# Thực hành bắt gói tin SSH bằng tcpdump 
+
+## Chuẩn bị:
+
+- ít nhất hai máy tính
+- máy tính bắt gói tin cần cài tcpdump
+- các máy cài open-ssh
+
+Ở đây tôi dùng máy bắt gói tin : Ubuntu 19.04 cài white-shark và tcpdump
+và 1 máy CentOS 7 đê ssh đến máy Ubuntu
+
+## Thực hành
+
+### 1. Bước 1 - Kiểm tra
+
+Kiểm tra các máy đang ở dải mạng nào, chung mạng mới có thể bắt gói tin. Ta dùng câu lệnh `ip a`
+
+```
+ip a
+```
+
+- máy bắt gói tin - Ubuntu
+```
+5: vmnet8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UNKNOWN group default qlen 1000
+    link/ether 00:50:56:c0:00:08 brd ff:ff:ff:ff:ff:ff
+    inet 172.16.59.1/24 brd 172.16.59.255 scope global vmnet8
+       valid_lft forever preferred_lft forever
+    inet6 fe80::250:56ff:fec0:8/64 scope link 
+       valid_lft forever preferred_lft forever
+```
+
+- máy Centos
+```
+2: ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 00:0c:29:09:dc:14 brd ff:ff:ff:ff:ff:ff
+    inet 172.16.59.129/24 brd 172.16.59.255 scope global noprefixroute dynamic ens33
+       valid_lft 1797sec preferred_lft 1797sec
+    inet6 fe80::e299:440c:f8d9:794a/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+```
+
+Kiểm tra xem máy SSH trên port nào
+
+Ta dùng câu lệnh
+```
+/etc/ssh/sshd_config
+```
+
+**Chú ý**: chúng ta phải có quyền root
+
+
+```
+#       $OpenBSD: sshd_config,v 1.100 2016/08/15 12:32:04 naddy Exp $
+
+# This is the sshd server system-wide configuration file.  See
+# sshd_config(5) for more information.
+
+# This sshd was compiled with PATH=/usr/local/bin:/usr/bin
+
+# The strategy used for options in the default sshd_config shipped with
+# OpenSSH is to specify options with their default value where
+# possible, but leave them commented.  Uncommented options override the
+# default value.
+
+# If you want to change the port on a SELinux system, you have to tell
+# SELinux about this change.
+# semanage port -a -t ssh_port_t -p tcp #PORTNUMBER
+#
+#Port 22
+#AddressFamily any
+#ListenAddress 0.0.0.0
+#ListenAddress ::
+
+HostKey /etc/ssh/ssh_host_rsa_key
+#HostKey /etc/ssh/ssh_host_dsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+```
+
+Ở đây máy tính đang dùng port mặc định là port 22
+
+### Bước 2
+
+Chúng ta bắt đầu bắt gói tin
+
+- Máy Ubuntu :
+
+```
+sudo tcpdump -i vmnet8 port 22 -w tcpdump_catch.pcap
+tcpdump: listening on vmnet8, link-type EN10MB (Ethernet), capture size 262144 bytes
+^C93 packets captured
+93 packets received by filter
+0 packets dropped by kernel
+```
+
+Với câu lệnh này chúng ta đã ghi lại những gói tin bắt được vào file tcpdump_catch.pcap
+
+Sau này chúng ta sẽ dùng white-shark để đọc file.
+
+- Máy CentOS :
+
+Chúng ta thưc hiện ssh vào máy Ubuntu rồi exit.
+
+```
+[root@sever_01 ~]# ssh root@172.16.59.1
+root@172.16.59.1's password:
+
+[root@sever_01 ~]# ssh imkifu@172.16.59.1
+imkifu@172.16.59.1's password: 
+Welcome to Ubuntu 19.04 (GNU/Linux 5.0.0-20-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+
+12 updates can be installed immediately.
+3 of these updates are security updates.
+
+Last login: Fri Jul 12 10:50:38 2019 from 172.16.59.129
+ imkifu@whoami  ~  exit
+Connection to 172.16.59.1 closed.
+[root@sever_01 ~]# 
+```
+
+Sau đó chúng ta dừng việc bắt gói tin ở máy Ubuntu bằng phím tắt `Ctrl + C`
+
+```
+^C93 packets captured
+93 packets received by filter
+0 packets dropped by kernel
+```
+
+### Bước 3: đọc file
+
+Chúng ta dùng white shark để đọc gói tin đã bắt được. 
+
+#### Giải thích những gói tin bắt được
+
+
+***Step 1: TCP handshake***
+
+![](../Picture/ssh5.png)
+
+Đây chính là quá trình bắt tay ba bước của TCP
+
+Packet số 4 là một gói tin TCP SYN được gửi từ Client CentOS 7 để thiết lập kết nối đến Ubuntu. Sau đó Ubuntu Sever trả lời với gói tin SYN,ACK để nói với Client nó sẵn sàng kết nối. Client sau khi nhận được gói tin trả lời lại gửi thêm 1 gói tin  ACK (acknowledgment) để xác nhận cho Sever biết Client đã nhân được gói tin. Sau đó, chúng ta có 1 kết nối TCP giữa Client và Sever
+
+***Step 2: Client and server protocol exchange***
+
+![](../Picture/ssh6.png)
+
+Các gói 7, 8, 9 và 10 là các gói liên quan đến việc trao đổi thông tin giao thức SSH (Hình 2). Gói 7 là máy khách SSH gửi thông tin giao thức của nó, đó là SSH SSH-2.0-OpenSSH_7.9p1. Thông tin giao thức này cho biết máy khách SSH đang sử dụng SSH phiên bản 2 và sử dụng máy khách OpenSSH phiên bản 7.9p1. Gói 8 là gói ACK (xác nhận) từ máy chủ SSH, cho biết nó đã nhận được thông báo máy khách. 
+
+Gói 9 là máy chủ SSH gửi thông tin giao thức của nó, đó là SSH 
+SSH-2.0-OpenSSH_7.6p1. Thông tin giao thức này cho biết máy chủ SSH đang sử dụng SSH phiên bản 2 và máy chủ SSH đang sử dụng OpenSSH phiên bản 7.6p1 cho các hệ thống dựa trên Ubuntu. Gói 10 là gói ACK (xác nhận) từ máy khách đến máy chủ SSH, cho biết nó đã nhận được thông báo máy chủ.
+
+***Step 3: Client and server key exchange init***
+
+![](../Picture/ssh7.png)
+
+Gói 12 là máy chủ SSH gửi init trao đổi khóa của nó, đó là danh sách các thuật toán mã hóa và nén. Danh sách các thuật toán mã hóa và nén này cho khách hàng biết thuật toán nào máy chủ hỗ trợ để liên lạc
+
+Gói 13 là máy khách SSH gửi init trao đổi khóa của nó, đó là danh sách các thuật toán mã hóa và nén. Danh sách các thuật toán mã hóa và nén này cho máy chủ biết thuật toán nào máy khách hỗ trợ để liên lạc
+
+
+***Step 4: Client and server Diffie-Hellman group exchange***
+
+
+![](../Picture/ssh8.png)
+
+Đây là bước tạo ra key public và key private để hai máy có thể mã hóa và giải mã các gói tin
+
+***Step 5: Initialize SSH tunnel***
+
+![](../Picture/ssh8.png)
+
+Đây là những gói tin đã được mã hóa trong "đường hầm' ssh
+
+***Step 6: TCP teardown***
+
+Đây là bước ngắt kết nối
+
+![](../Picture/ssh10.png)
+
+
+Gói 89 được gửi từ máy khách đến máy chủ SSH, có nghĩa là máy khách muốn ngắt kết nối. 
+
+Gói 91 là gói ACK (xác nhận) từ máy chủ SSH đến máy khách, cho biết nó đã nhận được yêu cầu của máy khách để ngắt kết nối.
+
+Gói 92 là gói FIN, ACK từ máy chủ SSH cho biết nó đang đóng kết nối ở cuối. 
+
+Gói 93 là gói ACK (xác nhận) từ máy khách đến máy chủ SSH, cho biết nó đã nhận được tin nhắn SSH máy chủ SSH để đóng kết nối.

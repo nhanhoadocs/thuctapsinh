@@ -453,6 +453,32 @@ sr0              11:0    1  918M  0 rom
 
 we have finished.
 
+# Tham khảo: cách xóa kết nối
+
+Removing the iSCSI connection
+
+If you need an iSCSI connection not to be restored after reboot, you first have to log out to disconnect the actual session by using below command
+```
+[root@node1 ~]# iscsiadm --mode node --targetname iqn.2018-12.com.example:servers  --portal 10.0.2.13 -u
+Logging out of session [sid: 1, target: iqn.2018-12.com.example:servers, portal: 10.0.2.13,3260]
+Logout of [sid: 1, target: iqn.2018-12.com.example:servers, portal: 10.0.2.13,3260] successful.
+```
+
+Hoặc chúng ta có thể dùng câu lệnh 
+```
+[root@client_01 ~]# iscsiadm -m node -u
+Logging out of session [sid: 1, target: iqn.2019-06.vn.com.test:sever, portal: 172.16.59.129,3260]
+Logout of [sid: 1, target: iqn.2019-06.vn.com.test:sever, portal: 172.16.59.129,3260] successful.
+```
+
+Sau đó chúng ta dùng câu lệnh `lsblk` để kiểm tra và thấy kết nối đã bị ngắt hoàn toàn. Muốn xóa ổ ta phải vào con Sever để xóa iSCSI.
+
+
+
+
+
+
+
 nguồn tham khảo : 
 
 https://www.golinuxcloud.com/configure-iscsi-target-initiator-targetcli-rhel-centos-7/#My_Setup_Details
