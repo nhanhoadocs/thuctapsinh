@@ -29,7 +29,7 @@ Về cơ bản, để thực hiện được kết nối này, bạn phải đ�
 ```
 # ping <địa chỉ ip>
 ```
-![image](../images/ssh02.png "img02")
+![image](../images/ssh02new.png "img02")
 
 Khi đã có kết nối, chúng ta sẽ tiến hành kết nối với máy chủ.
 
@@ -40,7 +40,7 @@ Với cách này, bạn cần nắm được mật khẩu đăng nhập người
 # ssh <người dùng>@<địa chỉ ip>
 ```
 
-![image](../images/ssh03.png "img03")
+![image](../images/ssh03new.png "img03")
 
 Nếu là lần kết nối đầu tiên, thì máy sẽ hỏi lại bạn có muốn tiếp tục hay không. Bạn chỉ cần gõ **YES**, sau đó nhập pass. Như vậy, bạn đã thục hiện xong việc kết nối.
 
@@ -59,7 +59,7 @@ Cơ bản thì ở máy khách sẽ tiến hành tạo cặp key là private key
 # ssh-keygen
 ```
 
-![image](../images/ssh05.png "img05")
+![image](../images/ssh05new.png "img05")
 
 Lập tức trên terminal xuất hiện một số yêu cầu sau:
 
@@ -89,7 +89,7 @@ Nói chung bước này khá là nhiều bước tuy nhiên có một cách khá
 # ssh-copy-id <người dùng>@<địa chỉ ip>
 ```
 
-![image](../images/ssh06.png "img06")
+![image](../images/ssh06new.png "img06")
 
 Trên Terminal sẽ hiện một loạt các dòng lệnh, trong đó có các yêu cầu sau.
 
@@ -150,7 +150,7 @@ Nếu tên file key khác với tên mặc định (không phải **id_rsa**) b�
 Khi thực hiện ssh, nếu muốn sử dụng một key khác để đăng nhập, bạn cũng thêm cờ **-i** kèm theo địa chỉ thư mục chứa key, ví dụ như sau:
 
 ```
-# ssh -i /home/user/abc.key root@172.16.2.167
+# ssh -i /home/user/abc.key user@172.16.2.167
 ```
 
 Nếu bạn muốn tắt tính năng đăng nhập bằng mật khẩu, chỉ đăng nhập bằng key pairs. Bạn phải tiến hành tắt tính năng đó trên file config theo các bước sau:
@@ -178,7 +178,7 @@ Sau đó thoát ra ngoài bằng `ESC` -> gõ `:wq` ([tham khảo thêm tài li�
 
 ## 6.Tài liệu tham khảo
 
-[1. Hướng dẫn SSH bằng key pairs](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-centos7
+[1. Hướng dẫn SSH bằng key pairs](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-1604
 )
 
 [2. Câu lệnh ssh-copy-id](https://www.ssh.com/ssh/copy-id)
