@@ -521,3 +521,5 @@ Gói 91 là gói ACK (xác nhận) từ máy chủ SSH đến máy khách, cho b
 Gói 92 là gói FIN, ACK từ máy chủ SSH cho biết nó đang đóng kết nối ở cuối. 
 
 Gói 93 là gói ACK (xác nhận) từ máy khách đến máy chủ SSH, cho biết nó đã nhận được tin nhắn SSH máy chủ SSH để đóng kết nối.
+
+Nguồn tham khảo : [link](https://holdmybeersecurity.com/2019/04/17/detecting-ssh-brute-forcing-with-zeek/)
