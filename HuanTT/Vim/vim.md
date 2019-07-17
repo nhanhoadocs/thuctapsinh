@@ -31,89 +31,90 @@ Song song với việc sử dụng phím mũi tên quen thuộc, người sử d
 |---|---|---|---|---|---|---|
 |<|v|>||H|J|L|
 
-Để hiển thị số dòng và vị trí dòng ma con trỏ đang đứng, nhấn Ctrl + G.
+Để hiển thị số dòng và vị trí dòng ma con trỏ đang đứng, nhấn `Ctrl + G`.
+
 Để di chuyển tới 1 dòng bất kì, nhấn theo cú pháp:
-> Số + Shift + G
+```
+[Số] + Shift + G
+```
 ### 2.2.Nhóm lệnh lưu và thoát
 
-Khi chưa chắc chắn về bản ghi của mình, bạn có thể huỷ lưu thay đổi và thoái ra ngoài theo lệnh
->:q!
+Khi chưa chắc chắn về bản ghi của mình, bạn có thể huỷ lưu thay đổi và thoái ra ngoài theo lệnh `:q!`
 
-nếu muốn lưu bản ghi của mình, gõ lệnh:
->:w
-
-Hoặc có thể vừa lưu và thoát:
->:wq
-
+Nếu muốn lưu bản ghi của mình, gõ lệnh `:w`, 
+hoặc có thể vừa lưu và thoát `:wq`
 ### 2.3.Nhóm lệnh soạn thảo
 #### 2.3.1.Lệnh thay thế
 
-Để thay thế một kí tự, ta di chuyển con trỏ tới vị trí cần thay thế rồi nhấn r.
+Để thay thế một kí tự, ta di chuyển con trỏ tới vị trí cần thay thế rồi nhấn `r`.
 
-Để thay thế nhiều từ một lúc, nhấn Shift r.
+Để thay thế nhiều từ một lúc, nhấn `Shift r`.
 
 Nếu muốn thay thế nhiều từ giống nhau cùng lúc, ta dùng lệnh:
->:s/cũ/mới
-
+```
+:s/cũ/mới
+```
 Khi đó, lệnh sẽ tìm kiếm và thay thế cụm từ đầu tiên mà con trỏ đến.
 
 Muốn thay thế toàn bộ dòng, gõ:
-
->:s/cũ/mới/g
-
+```
+:s/cũ/mới/g
+```
 Muốn thay thế trong đoạn nào đó, gõ
->:dòng1,dòng2s/cũ/mới/g
-
+```
+:<dòng1>,<dòng2>s/cũ/mới/g
+```
 Muốn thay thế trên toàn bộ file, gõ:
->:%s/cũ/mới/g
-
+```
+:%s/cũ/mới/g
+```
 #### 2.3.2.Lệnh chèn
 
-Để thực hiện chèn một đoạn văn bản, ta nhấn phím i hoặc insert trên bàn phím.
+Để thực hiện chèn một đoạn văn bản, ta nhấn phím `i` hoặc `insert` trên bàn phím.
 
 #### 2.3.3.Lệnh xoá
 
-Để xoá một kí tự, ta di chuyển tới vị trí con trỏ rồi nhấn x.
+Để xoá một kí tự, ta di chuyển tới vị trí con trỏ rồi nhấn `x`.
 
-Để xoá 1 từ (cả khoảng trắng), ta di chuyển con trỏ tới từ cần xoá rồi nhấn dw.
+Để xoá 1 từ (cả khoảng trắng), ta di chuyển con trỏ tới từ cần xoá rồi nhấn `dw`.
 
-Để xoá một từ nhưng không xoá khoảng trắng, ta nhấn de.
+Để xoá một từ nhưng không xoá khoảng trắng, ta nhấn `de`.
 
-Để xoá từ vị trí con trỏ đến hết dòng, ta dùng nhấn d$.
+Để xoá từ vị trí con trỏ đến hết dòng, ta dùng nhấn `d$`.
 
-Để xoá hẳn một dòng, ta nhấn dd.
+Để xoá hẳn một dòng, ta nhấn `dd`.
 
 #### 2.3.4.Nhóm lệnh Undo
 
-Để huỷ bỏ câu lệnh vừa thao tác, ta nhấn u.
+Để huỷ bỏ câu lệnh vừa thao tác, ta nhấn `u`.
 
-Để phục hồi trạng thái ban đầu của một dòng, ta nhấn U.
+Để phục hồi trạng thái ban đầu của một dòng, ta nhấn `shift u`.
 
 #### 2.3.5.Nhóm lệnh paste
 
-Để thực thiện thao tác cut, ta thực hiện xoá 1 kí tự, từ hoặc dòng bằng phím d.
+Để thực thiện thao tác cut, ta thực hiện xoá 1 kí tự, từ hoặc dòng bằng phím `d`.
 
-Khi đó những kí tự vừa xoá sẽ được lưu vào bộ nhớ tạm. Để paste ra cho khác, bạn di chuyển con trỏ tới vị trí cần paste rồi nhấn phím p.
+Khi đó những kí tự vừa xoá sẽ được lưu vào bộ nhớ tạm. Để paste ra cho khác, bạn di chuyển con trỏ tới vị trí cần paste rồi nhấn phím `p`.
 
 #### 2.3.6.Nhóm lệnh copy
 
 Để thực hiện copy ta có thể nhấm phím y với các tuỳ chọn sau:
-- ye: copy từ vị trí con trỏ đến cuối từ.
-- yw: copy từ vị trí con trỏ đến cuối từ(cả khoảng trắng).
-- y$: copy từ vị trí con trỏ đến cuối dòng.
-- yy: copy cả dòng.
+- `ye`: copy từ vị trí con trỏ đến cuối từ.
+- `yw`: copy từ vị trí con trỏ đến cuối từ(cả khoảng trắng).
+- `y$`: copy từ vị trí con trỏ đến cuối dòng.
+- `yy`: copy cả dòng.
 
-Ngoài ra, ta có thể bôi đen nhưng kí tự bằng cách chọn v rồi di chuyển con trỏ. Sau đó nhấn y.
+Ngoài ra, ta có thể bôi đen nhưng kí tự bằng cách chọn `v` rồi di chuyển con trỏ. Sau đó nhấn `y`.
 
-Sau khi copy, chọn p để paste ra vị trí bạn cần.
+Sau khi copy, chọn `p` để paste ra vị trí bạn cần.
 
 #### 2.3.7.Nhóm lệnh tìm kiếm
 
-Để thực hiện câu lệnh tìm kiếm, ta nhấn / sau đó nhấn từ tìm kiếm. Sau khi tìm thấy, con trỏ sẽ trỏ tớ đầu cụm từ đó. 
+Để thực hiện câu lệnh tìm kiếm, ta nhấn `/` sau đó nhấn từ tìm kiếm. Sau khi tìm thấy, con trỏ sẽ trỏ tớ đầu cụm từ đó. 
 
-Nếu muốn tiếp tục tìm kiếm từ đó, nhấn phím n.
+Nếu muốn tiếp tục tìm kiếm từ đó, nhấn phím `n`.
 
-Muốn tìm kiếm ngược lại, nhấn phím ? thay vì /.
+Muốn tìm kiếm ngược lại, nhấn phím `?` thay vì `/`.
 
 ## 3.Tài liệu tham khảo
 https://vi.wikipedia.org/wiki/Vim_(tr%C3%ACnh_so%E1%BA%A1n_th%E1%BA%A3o)
