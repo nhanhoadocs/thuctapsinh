@@ -8,16 +8,16 @@
 ## Các bước cài đặt  
 **<h3>1.Cài đặt Apache</h3>**  
 
-- Apache là nền tảng Web Server mã nguồn mở. Apache bao gồm đầy đủ các tính năng của máy chủ Web bao gồm CGI, SSL và các domain ảo.
+- `Apache` là nền tảng Web Server mã nguồn mở. Apache bao gồm đầy đủ các tính năng của máy chủ Web bao gồm CGI, SSL và các domain ảo.
 - Các bước tiến hành:  
   \- Bước 1: Cài đặt gói `httpd` 
      ```sh
       yum istall -y httpd 
     ``` 
 
-   > `httpd:` là dịch vụ web chính của máy chủ, khi httpd chết thì web bạn cũng chết theo, httpd tạo ra nhiều tiến trình PID(process id-số hiệu tiến trình) để phục vụ website của bạn, càng nhiều tiến trình thì càng tốn ram, khi bị DDOS(Distributed Denial of Service-tấn công từ chối truy cập) thì quá nhiều tiến trình httpd tạo ra có thể dẫn đến VPS treo. httpd thường được cài php vào để phục vụ mã nguồn php. Các lỗi không vào được web phần lớn liên quan đến dịch vụ này. 
+   > `httpd:` là dịch vụ web chính của máy chủ, khi httpd chết thì web bạn cũng chết theo, httpd tạo ra nhiều PID(process id-số hiệu tiến trình) để phục vụ website của bạn, càng nhiều tiến trình thì càng tốn ram, khi bị DDOS(Distributed Denial of Service-tấn công từ chối truy cập) thì quá nhiều tiến trình httpd tạo ra có thể dẫn đến VPS treo. httpd thường được cài php vào để phục vụ mã nguồn php. Các lỗi không vào được web phần lớn liên quan đến dịch vụ này. 
 
-  + option `-y`:   
+  + option `-y`:  khi dùng lệnh `yum install` để cài đặt, bạn sẽ được hỏi để xác nhận là có cài đặt hay không, option `-y` sẽ tự động trả lời yes.
   + Đường dẫn file cấu hình Apache:
     ```sh
       /etc/httpd/etc/httpd.conf
@@ -60,9 +60,45 @@
 
     \- Nếu trong mạng có Firewall hoặc Router, mở port cho Apache Server trong trường hợp muốn truy cập thông qua remote.  
     Câu lệnh: 
+    ```sh
+    [root@hiennt ~]# firewall-cmd --permanent --add-service=http
+    success
+    [root@hiennt ~]# systemctl restart firewalld
+    [root@hiennt ~]#
+    ```  
+- File cấu hình Apache    
+  - File cấu hình Apache: /etc/httpd/conf/httpd.conf  
+  - Thư mục chứa cấu hình phụ Apache: /etc/httpd/conf.d/  
+  - Thư mục log Apache: /var/log/httpd/
+  - Thư mục web mặc định: /var/www/html/  
 
+**<h3>2.Cài đặt MySQL - MariaDB</h3>**  
+`MariaDB` là một nhánh của cộng đồng phát triển hệ thống quản lý cơ sở dữ của hệ quản trị cơ sở dữ liệu quan hệ MySQL. Về cơ bản, nó sẽ tổ chức và cung cấp quyền truy cập vào các cơ sở dữ liệu nơi trang web cần lưu giữ thông tin.   
 
+   \- Bước 1: Lấy ra và cài đặt gói phần mềm  
+   ```sh 
+   [root@hiennt ~]# yum install mariadb-server mariadb  
+   ```  
+   \- Sau khi cài xong, khởi động MariaDB với lệnh:  
+   ```sh
+   [root@hiennt ~]# systemctl start mariadb  
+   ```  
+   \- Đặt password cho MySQL:  
+   ```sh
+   [root@hiennt ~]# mysql_secure_installation  
+   ```  
+   \- Kích hoạt MariaDB bắt đầu khởi động:  
+   ```sh
+   [root@hiennt ~]# systemctl enable mariadb
+   Created symlink from /etc/systemd/system/multi-user.target.wants/mariadb.service to /usr/lib/systemd/system/mariadb.service.  
+   ```  
 
+**<h3>3.Cài đặt PHP</h3>**  
+`PHP` là viết tắt của Hypertext Pre-processor là ngôn ngữ mã nguồn mở, dùng để phát triển Web, có thể được nhúng vào HTML; trước đó là Personal Home Pages - Trang chủ cá nhân.  
+   \- Cài đặt PHP với dòng lệnh:  
+   ```sh  
+   [root@hiennt ~]# yum install php php-mysql php-gd php-pear -y
+   ```     
 
 
 
