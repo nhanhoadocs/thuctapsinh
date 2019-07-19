@@ -19,8 +19,10 @@
 
   + option `-y`:  khi dùng lệnh `yum install` để cài đặt, bạn sẽ được hỏi để xác nhận là có cài đặt hay không, option `-y` sẽ tự động trả lời yes.
   + Đường dẫn file cấu hình Apache:
+
+  
     ```sh
-      /etc/httpd/etc/httpd.conf
+      /etc/httpd/conf/httpd.conf
     ```  
    \- Bước 2: Khởi động **web server Apache** và cấu hình **startup service** cho Apache.  
    ```sh
