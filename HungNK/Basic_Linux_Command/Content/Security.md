@@ -523,3 +523,20 @@ Gói 92 là gói FIN, ACK từ máy chủ SSH cho biết nó đang đóng kết 
 Gói 93 là gói ACK (xác nhận) từ máy khách đến máy chủ SSH, cho biết nó đã nhận được tin nhắn SSH máy chủ SSH để đóng kết nối.
 
 Nguồn tham khảo : [link](https://holdmybeersecurity.com/2019/04/17/detecting-ssh-brute-forcing-with-zeek/)
+
+
+## Kiễm tra port đang mở
+
+- Kiểm tra tập tin /etc/services
+
+- netstat -nan | grep 22
+
+- ss -lnt ( kiểm tra port TCP đang sử dụng )
+
+- ss -lnu ( kiểm tra port UDP đang sử dụng)
+
+Nguồn tham khảo :
+
+https://cuongquach.com/kiem-tra-port-dang-mo-tren-linux.html
+
+https://wiki.matbao.net/kb/cach-kiem-tra-cong-ket-noi-port-dang-hoat-dong-tren-may-chu-linux/
