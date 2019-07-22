@@ -5,7 +5,8 @@
 [**3. Hệ thống tập tin trong Linux**](25-bai-linux/3_filesystem.md)  
 [**4.1. Tìm hiểu về user và group**](25-bai-linux/4.1.user_group.md)  
 [**4.2.Phân quyền với user và group**](25-bai-linux/4.2.permission.md)  
-[**5.Quản lý các gói**](25-bai-linux/5_package_management.md)  
+[**5.1.Quản lý các gói**](25-bai-linux\5.1_package_management.md)  
+[**5.2.Các tùy chọn hay dùng của yum**](25-bai-linux\5.2.25_option_yum_rpm.md)  
  
 
 
