@@ -4,7 +4,12 @@
 
 Samba là dịch vụ của hệ điều hành Linux, chạy trên nền giao thức SMB (Server Message Block) cho phép chia sẻ file và máy in với các máy chạy Windows. SMB là giao thức được các hệ điều hành của Microsoft sử dụng để chia sẻ dữ liệu qua mạng. Linux Samba cũng dựa vào giao thức SMB để viết ra một số tiến trình điển hình như smbd, nmbd, để “nói chuyện “ với các hệ điều hành của Microsoft để người dùng có thể làm việc với máy Linux qua Network Neighborhood.
 
-## 2. Hướng dẫn cấu hình Samba 
+## 2. Mô hình
+
+![](../Picture/Samba4.png)
+
+
+## 3. Hướng dẫn cấu hình Samba trên máy Centos
 
 ### Chuẩn bị 
 - 1 máy centos 7, 1 máy win
@@ -47,7 +52,8 @@ firewall-cmd --reload
 - Tắt hết tường lửa trên máy win
 
 
-## A. Truy cập chế độ công khai
+## `A. Truy cập chế độ công khai`
+## Cấu hình trên Centos
 
 ### 1. Chạy lệnh sau để lưu 1 bản config.
 ```
@@ -178,7 +184,8 @@ Press enter to see a dump of your service definitions
 
 Và chúng ta sẽ tìm thấy máy Centos như trong ảnh. Truy cập và thử tạo file
 
-## B. Truy cập chế độ bảo mật
+## `B. Truy cập chế độ bảo mật`
+## Cấu hình trên Centos
 
 Đầu tiên tạo người dùng và group muốn để bảo mật, sau đó đặt mật khẩu truy cập cho từng người dùng
 ```
@@ -233,6 +240,29 @@ Kiểm tra xem kết nối trên Win đã hoạt động
 
 
 Và chúng ta đã bảo mât được thư mục Secure.
+
+
+Nguồn tham khảo:
+
+https://github.com/thanh474/thuc-tap/blob/master/tim-hieu-va-lab-samba/samba.md
+
+
+https://uet.vnu.edu.vn/~thanhld/lects/netos/Tuan%2015%20-%20SMB.html
+
+
+https://www.tecmint.com/install-samba4-on-centos-7-for-file-sharing-on-windows/
+
+
+https://www.tecmint.com/install-samba4-on-centos-7-for-file-sharing-on-windows/
+
+
+https://sites.google.com/site/anhtt01/bai-viet/centos/samba-server
+
+
+https://www.youtube.com/watch?v=oRHSrnQueak
+
+
+https://www.youtube.com/watch?v=dxUWco22_uk
 
 
 
