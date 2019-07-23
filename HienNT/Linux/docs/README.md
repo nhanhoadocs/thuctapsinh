@@ -11,3 +11,4 @@
 
 
 ### [Hướng dẫn cài đặt LAMP trên CentOS 7](lamp.md)
+### [Tạo tên miền](domain.md)
