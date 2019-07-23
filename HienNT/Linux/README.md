@@ -49,7 +49,7 @@
 [FTP](docs/Cac-dich-vu-co-ban/FTP.md)  
 [LVM](docs/Cac-dich-vu-co-ban/LVM.md)  
 
-## [25 bài về Linux](docs/25-bai-Linux)
+## [25 bài về Linux](Linux\docs\25-bai-linux)
 
 
 
