@@ -40,9 +40,10 @@
     Server built:   Apr 24 2019 13:45:48
     [root@hiennt conf]#
     ```  
+  
     \- Kiểm tra dịch vụ Apache đã lắng nghe cổng 80 chưa:  
     ```sh
-    [root@hiennt conf]# netstat -natp | grep httpd
+    [root@hiennt conf]# netstat -nap | grep httpd
     tcp6       0      0 :::80                   :::*                    LISTEN      13257/httpd
     [root@hiennt conf]#
     ```  
@@ -52,7 +53,23 @@
     ```sh
     [root@hiennt ~]# systemctl stop firewalld
     ```  
-    - Truy cập vào địa chỉ IP của Server để kiểm tra  
+    > #### Firewall, SELinux?
+- `SELinux` là gì?    
+SELinux(Security-Enhanced Linux) là một tính năng của Linux cung cấp cơ chế hỗ trợ các chính sách bảo mật, kiểm soát truy cập vào ứng dụng/file.   
+- `Firewalld` là gì?  
+Firewalld là một phần của hệ thống máy tính hoặc mạng được thiết kế để chặn truy cập trái phép trong khi cho phép liên lạc được ủy quyền. Nó là 1 thiết bị hoặc 1 bộ thiết bị được cấu hình để: cho phép, từ chối, mã hóa, giải mã hoặc ủy quyền tất cả lưu lượng máy tính(vào và ra) giữa các miền bảo mật khác nhau dựa trên 1 bộ quy tắc và tiêu chí.  
+- Tại sao phải tắt Firewall, SELinux?  
+`httpd` chạy port 80, firewalld trên CentOS 7 mặc định block port 80 trên server ==> tắt firewalld/mở port trên server để có thể truy cập dịch vụ web.
+  
+  \- Kiểm tra httpd có đang chạy hay không?  
+  ```sh
+  service httpd status  
+  ```  
+     - Nếu đang chạy thì chạy port bao nhiêu?  
+     ```sh
+     netstat -apn | grep httpd  
+     ```
+  \- Truy cập vào địa chỉ IP của Server để kiểm tra  
     ```sh
      http://192.168.136.129
     ```
@@ -73,6 +90,8 @@
   - Thư mục chứa cấu hình phụ Apache: /etc/httpd/conf.d/  
   - Thư mục log Apache: /var/log/httpd/
   - Thư mục web mặc định: /var/www/html/  
+
+
 
 **<h3>2.Cài đặt MySQL - MariaDB</h3>**  
 `MariaDB` là một nhánh của cộng đồng phát triển hệ thống quản lý cơ sở dữ của hệ quản trị cơ sở dữ liệu quan hệ MySQL. Về cơ bản, nó sẽ tổ chức và cung cấp quyền truy cập vào các cơ sở dữ liệu nơi trang web cần lưu giữ thông tin.   
