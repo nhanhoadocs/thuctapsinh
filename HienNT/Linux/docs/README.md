@@ -7,8 +7,5 @@
 [**4.2.Phân quyền với user và group**](25-bai-linux/4.2.permission.md)  
 [**5.1.Quản lý các gói**](25-bai-linux\5.1_package_management.md)  
 [**5.2.Các tùy chọn hay dùng của yum**](25-bai-linux\5.2.25_option_yum_rpm.md)  
- 
-
-
-### [Hướng dẫn cài đặt LAMP trên CentOS 7](lamp.md)
-### [Tạo tên miền](domain.md)
+[**5.3.Hướng dẫn cài đặt LAMP trên CentOS 7**](25-bai-linux/lamp.md)  
+[**5.4.Cài đặt,cấu hình Apache**](25-bai-linux/domain.md)

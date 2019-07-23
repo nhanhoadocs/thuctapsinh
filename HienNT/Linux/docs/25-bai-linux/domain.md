@@ -82,6 +82,21 @@ và
     </Directory>
 </VirtualHost>
   ```  
+  **Trong đó:**  
+  `<VirtualHost></VirtualHost>:` cặp thẻ báo hiệu mở đầu và kết thúc của một khai báo về Vhost.   
+  `ServerName:` tên miền/địa chỉ IP mà bạn muốn đặt.  
+  `ServerAdmin:` mỗi web sẽ có 1 admin quản trị, đây là nơi khai báo địa chỉ email của người quản trị website.  
+  `ServerAlias:` các tên miền khác cũng có thể phù hợp với máy chủ ảo này.  
+  `DocumentRoot:` đường dẫn của thư mục sẽ được gọi khi người dùng truy cập vào domain được cấu hình. Có thể nằm ở bất kỳ phân vùng nào.  
+  `ErrorLog:` chỉ định đường dẫn của file log khi có lỗi(không bắt buộc)  
+  `CustomLog:` lưu lại thông tin mà người dùng truy cập vào tên miền.  
+  `<Directory></Directory>` cặp thẻ dùng để cấp quyền truy cập cho thư mục. Nếu thư mục không được cấp quyền thì sẽ gặp lỗi 403 khi cố gắng truy cập. Thường giống với DocumentRoot
+
+  `Options FollowSymLinks` Option này cho phép bạn truy cập theo symbolic link (giống như shortcut trong windows vậy)  
+  `AllowOverride` chỉ định chỉ thị nào được khai báo trong tệp `.htaccess` có thể ghi đè chỉ thị cấu hình.  
+  `DirectoryIndex index.php` Khi các bạn truy cập vào thư mục ( không chỉ rõ cụ thể là file nào) thì file index.php sẽ được gọi.  
+  `Require all granted` cho phép tất cả các máy khác được truy cập vào thư mục đang được cấu hình.  
+
 > ### 5. Tắt firewalld và selinux
 Vì mặc định `httpd` chạy port 80, firewall trên CentOS 7 mặc định chặn tất cả truy cập đến port đó trên server nên phải tắt firewall để có thể truy cập dịch vụ.  
 Câu lệnh:  
@@ -131,6 +146,23 @@ apachectl start
 Mở trình duyệt web(Google Chorm, Firefox,..) rồi gõ địa chỉ IP(192.168.136.129) hoặc tên miền(thuyhien.com) không báo lỗi và có hiển thị ra nội dung như bạn muốn.  
 
 <p align=center><img src ="../images/25 bai linux/thuyhien.com.png"></p>
+
+## CÂU HỎI
+> ### Nếu ServerName khai báo là tên miền và khai báo `Listenport` khác 80 thì kết quả sẽ như nào?  
+- Cấu hình:  
+
+<p align=center><img src ="../images/25 bai linux/thuyhien5.com.png"></p>
+
+- Kết quả: Khi truy cập sẽ phải dùng địa chỉ IP:port, không  dùng được tên miền  
+
+<p align=center><img src ="../images/25 bai linux/photo_2019-07-23_09-26-45.jpg"></p>   
+
+> ### Nếu DocumentRoot của 2 tên miền khác nhau được trỏ về cùng 1 tên miền thì kết quả sẽ như nào?
+- Cấu hình:  
+
+<p align=center><img src ="../images/25 bai linux/photo_2019-07-23_10-28-36.jpg">  
+
+- Kết quả: Cả 2 domain đều truy cập được bình thường, nội dung của cả 2 domain lúc này sẽ giống nhau và giống với file được DocumentRoot trỏ về.  
 
 ## TÀI LIỆU THAM KHẢO  
 - [https://hocvps.com/](https://hocvps.com/add-website-tren-vps-apache-centos/)  
