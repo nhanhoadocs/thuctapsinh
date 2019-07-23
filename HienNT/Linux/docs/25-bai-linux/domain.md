@@ -1,9 +1,11 @@
 - VirtualHost là một cấu hình trong Apache cho phép nhiều domain cùng chạy trên một máy chủ.  
 ## Tạo tên miền trên Apache CentOS 7  
-> ### 1.Tạo cấu trúc thư mục  
+<a name="1.Tạo cấu trúc thư mục"></a>
+### 1.Tạo cấu trúc thư mục  
 - Thư mục gốc là thư mục lưu trữ các tệp trang web(source code) cho một tên miền. Có thể đặt thư mục gốc ở bất kỳ vị trí nào.  
 
 Ví dụ, đặt thư mục gốc trong thư mục /var, ta có:  
+```sh  
 /var/www/  
 ├── example.com  
 │   └── public_html  
@@ -11,6 +13,7 @@ Ví dụ, đặt thư mục gốc trong thư mục /var, ta có:
 │   └── public_html  
 ├── example-2.com  
 │   └── index.html    
+```  
 
 `public_html` là thư mục lưu trữ các tệp trang web tên miền.  
 `index.html` là tệp chứa soure code.  
@@ -19,8 +22,8 @@ Câu lệnh:
 ```sh
 [root@hiennt ~]# mkdir -p /var/www/thuyhien.com/public_html
 ```  
-
-> ### 2.Tạo và chỉnh sửa một file `index.html`  
+<a name="2.Tạo và chỉnh sửa một file `index.html`"></a>
+### 2.Tạo và chỉnh sửa một file `index.html`  
 - Tạo file `index.html` chứa soure code của thuyhien.com và chỉnh sửa nội dung hiển thị khi truy cập vào thuyhien.com
 ```sh  
 [root@hiennt ~]# vim /var/www/thuyhien.com/public_html/index.html
@@ -35,7 +38,8 @@ Câu lệnh:
   </body>
 </html>
 ```
-> ### 3.Thay đổi quyền sở hữu và truy cập thư mục gốc 
+<a name="3.Thay đổi quyền sở hữu và truy cập thư mục gốc"></a>
+### 3.Thay đổi quyền sở hữu và truy cập thư mục gốc 
 ```sh
 [root@hiennt ~]# chown -R apache:apache /var/www/thuyhien.com/public_html
 ```  
@@ -43,7 +47,8 @@ và
 ```sh
 [root@hiennt ~]# chmod -R 755 /var/www
 ```  
-> ### 4.Tạo và chỉnh sửa tập tin máy chủ ảo 
+<a name="4.Tạo và chỉnh sửa tập tin máy chủ ảo"></a>
+### 4.Tạo và chỉnh sửa tập tin máy chủ ảo 
 - Tạo file `thuyhien.com.conf` chứa tập tin máy chủ ảo: `/etc/httpd/conf.d/thuyhien.com.conf`  
    \- Nếu truy cập bằng domain thì nội dung file sẽ là:
 ```sh
@@ -97,7 +102,8 @@ và
   `DirectoryIndex index.php` Khi các bạn truy cập vào thư mục ( không chỉ rõ cụ thể là file nào) thì file index.php sẽ được gọi.  
   `Require all granted` cho phép tất cả các máy khác được truy cập vào thư mục đang được cấu hình.  
 
-> ### 5. Tắt firewalld và selinux
+<a name="5. Tắt firewalld và selinux"></a>
+### 5. Tắt firewalld và selinux
 Vì mặc định `httpd` chạy port 80, firewall trên CentOS 7 mặc định chặn tất cả truy cập đến port đó trên server nên phải tắt firewall để có thể truy cập dịch vụ.  
 Câu lệnh:  
 - Kiểm tra trạng thái firewalld:  
@@ -117,7 +123,8 @@ sestatus
   ```sh 
     # vi /etc/selinux/config  
   ```  
-> ### 6. Chỉnh sửa file `/etc/hosts`
+<a name="6. Chỉnh sửa file `/etc/hosts`"></a>
+### 6. Chỉnh sửa file `/etc/hosts`
 - Nếu truy cập bằng tên miền phải chỉnh sửa file hosts trong thư mục /etc để có thể phân giải địa chỉ sang tên miền.  
 Ví dụ: phân giải địa chỉ ip 192.168.136.129 sang tên miền thuyhien.com  
 ```sh
@@ -130,37 +137,42 @@ rồi thêm dòng dưới vào nội dung của file
 - Nếu truy cập bằng địa chỉ IP và cổng thì không cần.
 
 
-
-> ### 7. Khởi động lại dịch vụ 
+<a name ="7. Khởi động lại dịch vụ"></a>
+### 7. Khởi động lại dịch vụ 
 - Khởi động lại `httpd`  
 ```sh
 systemctl restart httpd
+```  
+- Khởi động lại `httpd` cùng OS
+```sh
+systemctl enable httpd
 ```
 
 - Khởi động lại `apache`
 ```sh
 apachectl start
 ```  
-
-> ### 8. Kiểm tra truy cập
+<a name ="8. Kiểm tra truy cập"></a>
+### 8. Kiểm tra truy cập
 Mở trình duyệt web(Google Chorm, Firefox,..) rồi gõ địa chỉ IP(192.168.136.129) hoặc tên miền(thuyhien.com) không báo lỗi và có hiển thị ra nội dung như bạn muốn.  
 
-<p align=center><img src ="../images/25 bai linux/thuyhien.com.png"></p>
+<img src ="../../images/25 bai linux/thuyhien.com.png">
+
 
 ## CÂU HỎI
 > ### Nếu ServerName khai báo là tên miền và khai báo `Listenport` khác 80 thì kết quả sẽ như nào?  
 - Cấu hình:  
 
-<p align=center><img src ="../images/25 bai linux/thuyhien5.com.png"></p>
+<img src ="../../images/25 bai linux/thuyhien5.com.png">
 
 - Kết quả: Khi truy cập sẽ phải dùng địa chỉ IP:port, không  dùng được tên miền  
 
-<p align=center><img src ="../images/25 bai linux/photo_2019-07-23_09-26-45.jpg"></p>   
+<img src ="../../images/25 bai linux/photo_2019-07-23_09-26-45.jpg">  
 
 > ### Nếu DocumentRoot của 2 tên miền khác nhau được trỏ về cùng 1 tên miền thì kết quả sẽ như nào?
 - Cấu hình:  
 
-<p align=center><img src ="../images/25 bai linux/photo_2019-07-23_10-28-36.jpg">  
+<img src ="../../images/25 bai linux/photo_2019-07-23_10-28-36.jpg">  
 
 - Kết quả: Cả 2 domain đều truy cập được bình thường, nội dung của cả 2 domain lúc này sẽ giống nhau và giống với file được DocumentRoot trỏ về.  
 
