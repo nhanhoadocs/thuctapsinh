@@ -1,0 +1,1 @@
+# Tìm hiểu về selinux và firewalld trong centos7
