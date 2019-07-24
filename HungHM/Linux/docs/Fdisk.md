@@ -1,9 +1,11 @@
+<a name = Fdisk>
+
 # Fdisk
 - ``fdisk`` là một lệnh được sử dụng để xem và quản lý các phân vùng ổ cứng trên linux. Nó là một trong những công cụ tốt nhất để có thể quản lý phân vùng ổ cứng.
 - Khi gán một thiết bị lưu trữ vào hệ thống linux để có thể sử dụng được nó điều đầu tiên ta phải làm là phân vùng và định dạng cho disk đó. Để làm được điều này thì ta phải dùng đến lệnh `fdisk`.
 ## Xem tất cả các phân vùng của tất cả các đĩa trong linux
 
-Để xem được có bao nhiêu disk trong máy linux và các disk đó chia ra các phân vùng như thế nào ta sử dụng lệnh``fdisk -l``
+Để xem được có bao nhiêu disk trong máy linux và các disk đó chia ra các phân vùng như thế nào ta sử dụng lệnh `fdisk -l`
 
 ![](https://github.com/niemdinhtrong/NIEMDT/raw/master/linux/images/f1.png)
 

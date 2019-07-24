@@ -1,3 +1,5 @@
+<a name= "Quản lý nhật ký" >
+
 # Quản lý nhật ký
 
 - Khái niệm log-nhật ký

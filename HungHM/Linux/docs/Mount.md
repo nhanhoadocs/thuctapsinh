@@ -1,3 +1,5 @@
+<a name ="Mount">
+
 # Mount
 - Trong Linux để sử dụng được một thiết bị lưu trữ ta phải ``mount`` nó vào một thư mục nào đó để có thể sử dụng. Như vậy ``mount`` là gì?
 - Nếu ta không mount thiết bị lưu trữ vào thì ta không thể sử dụng được nó.

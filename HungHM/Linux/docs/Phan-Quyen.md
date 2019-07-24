@@ -1,3 +1,6 @@
+
+
+
 # Phân Quyền
 
 #### Khái niệm.
@@ -109,3 +112,5 @@ Quyền truy cập đối với thư mục cũng tương tự như với file. C
 ## References
 https://thachpham.com/linux-webserver/phan-quyen-tap-tin-thu-muc-linux.html
 # END 
+
+<a name = "Phân Quyền">

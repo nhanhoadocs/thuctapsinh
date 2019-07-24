@@ -1,3 +1,5 @@
+<a name="Tự động hóa các thao tác">
+
 # Tự động hóa các thao tác
 
 - cron

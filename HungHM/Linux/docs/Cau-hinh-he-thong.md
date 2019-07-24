@@ -1,3 +1,6 @@
+
+<a name ="Cấu hình hệ thống">
+
 # Cấu hình hệ thống
 - [1. Các thông tin cần cấu hình](#a)
 - [2. Công cụ để cáu hình tạm thời ](#b)

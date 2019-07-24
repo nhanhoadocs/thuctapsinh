@@ -1,3 +1,6 @@
+<a name="rình Soạn Thảo Vi">
+
+
 # Trình Soạn Thảo Vi
 ## 1. Có rất nhiều cách để chỉnh sửa các file trong Unix và đối với tôi, một trong những cách tốt nhất là sử dụng Bộ (Trình) soạn thảo hướng màn hình vi. Bộ soạn thảo này cho bạn có thể chỉnh sửa các dòng trong nội dung với các dòng khác trong file.
 

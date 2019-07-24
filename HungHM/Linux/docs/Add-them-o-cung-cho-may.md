@@ -1,3 +1,5 @@
+<a name ="Add thêm ổ cúng cho máy">
+
 # Add thêm ổ cứng cho máy
 
 ## B1: vào VMware -> chọn setting
