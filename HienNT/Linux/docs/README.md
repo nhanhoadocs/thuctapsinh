@@ -2,6 +2,7 @@
 
 [**1. Các câu lệnh cơ bản**](25-bai-linux/1_basiccommands.md)  
 
+
 [**2. Các lệnh làm việc với file**](25-bai-linux/2_workingwithfiles.md)  
 
 [**3. Hệ thống tập tin trong Linux**](25-bai-linux/3_filesystem.md)  
@@ -13,4 +14,5 @@
 [**5.1.  Quản lý các gói**](25-bai-linux\5.1_package_management.md)  
 - [5.1. Các tùy chọn hay dùng của yum](25-bai-linux\5.2.25_option_yum_rpm.md)  
 - [5.2. Hướng dẫn cài đặt LAMP trên CentOS 7](25-bai-linux/lamp.md)  
-- [5.3.  Cài đặt,cấu hình Apache](25-bai-linux/domain.md)
+- [5.3.  Cài đặt,cấu hình Apache](25-bai-linux/domain.md)  
+- [5.4. Tìm hiểu về MySQL/MariaDB](25-bai-linux/mysql.md)
