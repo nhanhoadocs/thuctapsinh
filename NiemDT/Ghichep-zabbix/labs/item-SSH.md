@@ -11,7 +11,7 @@ Trong đó:
  * User name: tên user của host cho phép ssh vào để thực hiện câu lệnh.
  * Executed script: câu lệnh để lấy thông tin
 
-Ở ví dụ trên tôi xác thực bằng password. Để an toàn hơn bạn có thể sử dụng key để xác thực. Nếu dùng key bạn cần điền file `public key` và `private key`. Nếu bạn để passphrase cho `private key` thì cần điền pass này vào `key passphrase`
+Ở ví dụ trên tôi xác thực bằng password. 
 
 ![](https://raw.githubusercontent.com/niemdinhtrong/thuctapsinh/master/NiemDT/Ghichep-zabbix/images/item-ssh/3.png)
 
@@ -24,6 +24,59 @@ Vào `Monitoring` -> `Latest data` để thấy các thông tin do item vừa t�
 ![](https://raw.githubusercontent.com/niemdinhtrong/thuctapsinh/master/NiemDT/Ghichep-zabbix/images/item-ssh/5.png)
 
 ![](https://raw.githubusercontent.com/niemdinhtrong/thuctapsinh/master/NiemDT/Ghichep-zabbix/images/item-ssh/6.png)
+
+**Nếu muốn cấu hình sử dụng key**
+
+Thực hiện gen key
+
+```
+cd /var/lib
+mkdir zabbix
+chown zabbix:zabbix /var/lib/zabbix/
+chmod 700 /var/lib/zabbix/
+sudo -u zabbix ssh-keygen
+```
+
+Khi gen key sẽ hỏi ta muốn đặt key ở đâu. Tôi để mặc định là trong thư mục `/var/lib/zabbix/.ssh`.
+
+Thực hiện send key lên máy client
+
+```
+sudo -u zabbix ssh-copy-id root@IP_client
+```
+
+Sửa file `/etc/zabbix/zabbix_server.conf`
+
+Tìm dòng 
+
+```
+# SSHKeyLocation=
+```
+
+Sửa lại thành
+
+```
+SSHKeyLocation=/var/lib/zabbix/.ssh
+```
+
+Sau đó restart lại zabbix server
+
+```
+systemctl restart zabbix-server
+```
+
+Thực hiện add item trên web
+
+![image](/images/item-ssh/7.png)
+
+Ta chọn `Authentication method` là `Public key`
+
+* `User name`: Tên user trên client thực hiện ssh tới
+* `Public key file`: Tên file chứa Public key 
+* `Private key file`: Tên file chứa private key 
+* `Key passphrase`: password của private key
+
+Public key và private key nếu bạn không sửa thì sẽ là `id_rsa.pub` và `id_rsa`.
 
 **Lưu ý**
 
