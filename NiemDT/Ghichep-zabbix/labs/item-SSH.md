@@ -67,7 +67,7 @@ systemctl restart zabbix-server
 
 Thực hiện add item trên web
 
-![image](/images/item-ssh/7.png)
+![image](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/item-ssh/7.png)
 
 Ta chọn `Authentication method` là `Public key`
 
