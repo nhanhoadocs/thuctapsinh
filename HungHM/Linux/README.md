@@ -18,13 +18,13 @@
 
 ## II. 25 bài linux cơ bản
 
-- [Basic commmands](docs/Linux_tutorial/1.basic_commands.md)
-- [Working with file](docs/Linux_tutorial/2.Working_with_file.md)
-- [File system](docs/Linux_tutorial/3.File_system.md)
-- [File permissions](docs/Linux_tutorial/4.file_permissions.md)
-- [Package Management](docs/Linux_tutorial/5.Package_Management.md)
-- [Data Backup](docs/Linux_tutorial/6.Data_Backup.md)
-- [System info](docs/Linux_tutorial/7.system_info.md)
-- [Swap memory">](docs/Linux_tutorial/8.swap_memory.md)
-- [User env](docs/Linux_tutorial/9.user_env.md)
-- [Volume Manager](docs/Linux_tutorial/11.volume_manager.md)
+- [1.Basic commmands](docs/Linux_tutorial/1.basic_commands.md)
+- [2.Working with file](docs/Linux_tutorial/2.Working_with_file.md)
+- [3.File system](docs/Linux_tutorial/3.File_system.md)
+- [4.File permissions](docs/Linux_tutorial/4.file_permissions.md)
+- [5.Package Management](docs/Linux_tutorial/5.Package_Management.md)
+- [6.Data Backup](docs/Linux_tutorial/6.Data_Backup.md)
+- [7.System info](docs/Linux_tutorial/7.system_info.md)
+- [8.Swap memory](docs/Linux_tutorial/8.swap_memory.md)
+- [9.User env](docs/Linux_tutorial/9.user_env.md)
+- [11.Volume Manager](docs/Linux_tutorial/11.volume_manager.md)
