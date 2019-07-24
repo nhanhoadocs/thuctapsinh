@@ -37,4 +37,7 @@
 
 ## TÀI LIỆU THAM KHẢO  
 - [https://cuongquach.com/](https://cuongquach.com/cai-dat-mariadb-10-2-tren-centos-7.html)
-- [https://viblo.asia/](https://viblo.asia/p/su-dung-mariadb-thay-cho-mysql-tai-sao-oOVlYd0nZ8W)
+- [https://viblo.asia/](https://viblo.asia/p/su-dung-mariadb-thay-cho-mysql-tai-sao-oOVlYd0nZ8W)  
+- [https://toidicodedao.com/](https://toidicodedao.com/2015/09/24/nosql-co-gi-hay-ho-tong-quan-ve-nosql-phan-1/)  
+- [https://tech.vccloud.vn/nosql](https://tech.vccloud.vn/nosql-la-gi-20181013113252686.htm)  
+- [https://quantrimang.com/](https://quantrimang.com/co-so-du-lieu-phi-quan-he-nosql-160708)
