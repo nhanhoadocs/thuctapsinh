@@ -297,7 +297,7 @@ Cổng vòng thường được sử dụng cho những kết nối ra ngoài. �
 
 ## Mô hình mạng bảo mật cho doanh nghiệp
 
-`Một mô hình mạng bảo mật là cần thiết cho mỗi tổ chức để phân biệt rõ ràng giữa các vùng mạng theo chức năng và thiết lập các chính sách an toàn thông tin riêng cho từng vùng mạng theo yêu cầu thực tế.`
+***`Một mô hình mạng bảo mật là cần thiết cho mỗi tổ chức để phân biệt rõ ràng giữa các vùng mạng theo chức năng và thiết lập các chính sách an toàn thông tin riêng cho từng vùng mạng theo yêu cầu thực tế.`***
 
 Trước tiên ta cần tìm hiểu về các thành phần trong mô hình mạng bảo mật, các thành phần trong mô hình mạng bao gồm:
 
