@@ -336,8 +336,8 @@ https://www.hostinger.vn/huong-dan/lam-the-nao-de-cai-dat-ssh-keys/
 - máy tính bắt gói tin cần cài tcpdump
 - các máy cài open-ssh
 
-Ở đây tôi dùng máy bắt gói tin : Ubuntu 19.04 cài white-shark và tcpdump
-và 1 máy CentOS 7 đê ssh đến máy Ubuntu
+Ở đây tôi dùng máy bắt gói tin : Ubuntu 19.04 cài wireshark và tcpdump
+và 1 máy CentOS 7 để ssh đến máy Ubuntu
 
 ## Thực hành
 
@@ -527,13 +527,25 @@ Nguồn tham khảo : [link](https://holdmybeersecurity.com/2019/04/17/detecting
 
 ## Kiễm tra port đang mở
 
-- Kiểm tra tập tin /etc/services
+- Kiểm tra tập tin 
+```
+/etc/services
+```
 
-- netstat -nan | grep 22
+Chúng ta có thể dùng các câu lệnh
+```
+netstat -nan | grep 22
+```
+```
+ss -lnt ( kiểm tra port TCP đang sử dụng )
+```
+```
+ss -lnu ( kiểm tra port UDP đang sử dụng)
+```
 
-- ss -lnt ( kiểm tra port TCP đang sử dụng )
-
-- ss -lnu ( kiểm tra port UDP đang sử dụng)
+```
+netstat -plnt | grep 22
+```
 
 Nguồn tham khảo :
 
