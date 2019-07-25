@@ -12,7 +12,7 @@ Firewall  là một thuật ngữ trong chuyên ngành mạng máy tính. Nó l�
 Nếu laptop của bạn không được bảo vệ bởi tường lửa, khi bạn kết nối Internet, tất cả các giao thông ra vào mạng đều được cho phép, vì thế hacker, trojan, virus có thể truy cập và lấy cắp thông tin cá nhân của bạn trên máy tính. Chúng có thể cài đặt các đoạn mã để tấn công file dữ liệu trên máy tính. Chúng có thể sử dụng máy tính cuả bạn để tấn công một máy tính của gia đình hoặc doanh nghiệp khác kết nối Internet. Một firewall có thể giúp bạn thoát khỏi gói tin hiểm độc trước khi nó đến hệ thống của bạn.
 
 
-![](/home/imkifu/Git/thuctapsinh/HungNK/Basic_Linux_Command/Picture/firewall4.png)
+![](..//Basic_Linux_Command/Picture/firewall4.png)
 
 ***`Lý do phải có hệ thống firewall`***
 
