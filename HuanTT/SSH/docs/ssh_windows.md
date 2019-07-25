@@ -1,4 +1,4 @@
-Hướng dẫn kết nối SSH trên Window
+Hướng dẫn kết nối SSH trên Windows
 ===
 ## Mục lục
 1. [Tổng quan](#1-Tổng-quan)
@@ -18,7 +18,7 @@ SSH (hay Secure Shell) là một giao thức mạng được mã hoá để vậ
 
 ![image](../images/ssh3.1.png)
 
-Trong bài này, mình sẽ sử dụng một máy khách dùng Window để kết nối với máy chủ có địa chỉ là 172.16.2.167.
+Trong bài này, mình sẽ sử dụng một máy khách dùng Windows để kết nối với máy chủ có địa chỉ là 172.16.2.167.
 
 Để thực hiện kết nối SSH, ta sử dụng OpenSSH hoặc phần mềm PuTTY. Bạn có thể tải phần mêm PuTTY tại [đây](https://www.putty.org/).
 
@@ -66,7 +66,7 @@ Bước này thực hiện giống như cách bên trên, mình sẽ không nh�
 
 ### Bước 2: Tạo key
 
-Trên cửa sổ cmd của window gõ lệnh:
+Trên cửa sổ cmd của windows gõ lệnh:
 
 ```
 ssh-keygen

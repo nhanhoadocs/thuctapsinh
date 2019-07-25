@@ -1,6 +1,9 @@
 Một số cách để bảo mật SSH trên máy chủ Linux
 ===
 ## Mục lục
+1. [Tổng quan](#1-Tổng-quan)
+2. [Một số cấu hình](#2-Một-số-cấu-hình)
+3. [Tài liệu tham khảo](#3-tài-liệu-tham-khảo)
 ## 1. Tổng quan
 SSH là một trong những giao thức quan trọng trong việc kết nối và điều khiển máy chủ từ xa. Tuy nhiên việc không biết cấu hình kết nối SSH để bảo mật sẽ tiền ẩn nhiều nguy cơ bị tấn công trong đó có tấn công dò tìm mật khẩu. Vì vậy, người sử dụng nắm được ý nghĩa của một số dòng lệnh cấu hình trên file config để bảo mật cho máy chủ của mình.
 
@@ -68,11 +71,19 @@ Trong trường hợp bạn muốn từ chối một số user không cho phép 
 DenyUsers user1 user2
 DenyGroup group1
 ```
-Khi đó user1, user2 và group1 sẽ không thể thực hiện kết nối ssh.
+Khi đó, chỉ user1, user2 và group1 sẽ không thể thực hiện kết nối ssh, các user và group khác có thể ssh đưuọc bình thường.
 
 Tương tự, nếu bạn muốn cho phép một số user được quyền ssh, trong file **sshd_config** thêm dòng như sau:
 ```
 AllowUsers user1 user2
 AllowGroup group1
 ```
-Khi đó user1, user2 và group1 sẽ không thể thực hiện kết nối ssh.
+Khi đó user1, user2 và group1 sẽ được phép kết nối ssh. Các user và group khác sẽ không được phép ssh.
+
+>Lưu ý: Khi bạn set quyền kết nối ssh cho user không phải root, kể cả khi trong file cấu hình có dòng cho phép đăng nhập vào tài khoản root `PermitRootLogin yes`, thì tài khoản root cũng không có quyền ssh.
+
+## 3. Tài liệu tham khảo
+
+1. [10 bước để bảo mật OpenSSH](https://blog.devolutions.net/2017/4/10-steps-to-secure-open-ssh)
+
+2. [Tăng cường bảo mật OpenSSH](https://linux-audit.com/audit-and-harden-your-ssh-configuration/)
