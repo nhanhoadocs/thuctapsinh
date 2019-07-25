@@ -84,7 +84,7 @@ Trong đó, hệ thống Network Firewall được cấu tạo bởi các thành
 
 Các bạn nhìn vào sơ đồ bên dưới là có thể hình dung ra được 2 loại Firewalls trên:
 
-![](/home/imkifu/Git/thuctapsinh/HungNK/Basic_Linux_Command/Picture/firewall1.png)
+![](..//Basic_Linux_Command/Picture/firewall1.png)
 
 #### II) Chia theo `Hardware Firewalls` vs `Software Firewalls`
 
@@ -112,7 +112,7 @@ Một số Firewall cứng như Cisco PIX, WatchGuard Fireboxes, NetScreen firew
 
     - Firewall cứng không thể kiểm tra nội dung của một gói tin.
 
-    ![](/home/imkifu/Git/thuctapsinh/HungNK/Basic_Linux_Command/Picture/firewall3.png)
+    ![](..//Basic_Linux_Command/Picture/firewall3.png)
 
 
     ---------------------
@@ -140,7 +140,7 @@ Một số Firewall mềm thông dụng: Zone Alarm, Microsoft ISA Server 2006, 
     
     - Firewall mềm thường có hiệu suất thấp hơn Firewall cứng.
 
-![](/home/imkifu/Git/thuctapsinh/HungNK/Basic_Linux_Command/Picture/firewall2.png)
+![](..//Basic_Linux_Command/Picture/firewall2.png)
 
 -------------------------
 Ngoài ra còn có `Integrated firewalls`: Hay còn gọi là Firewall tích hợp. Ngoài chức năng cơ bản của Firewall ra thì nó còn đảm nhận các chức năng khác ví dụ như VPN, phát hiện và chống xâm nhập từ bên ngoài, lọc thư rác, chống lại virus…
@@ -222,7 +222,7 @@ Bộ lọc gói tin cho phép hay từ chối packet mà nó nhận được. N�
 
 - Cổng gói tin đi (Outcomming interface of packet
 
-![](/home/imkifu/Git/thuctapsinh/HungNK/Basic_Linux_Command/Picture/firewall5.png)
+![](..//Basic_Linux_Command/Picture/firewall5.png)
 
 Packet filtering router
 
@@ -249,7 +249,7 @@ Nếu rules lọc gói được thỏa mãn thì packet được chuyển qua fi
 
 Đây là một loại firewall được thiết kế dể tăng cường chức năng kiểm soát các loại dịch vụ, giao thức truy cập vào hệ thống mạng. Cơ chế hoạt động của nó dựa trên cách thức gọi là proxy service. Proxy service là các bộ code đặc biệt cài đặt trên cổng ra (gateway) cho từng ứng dụng. Nếu người quản trị mạng không cài đặt proxy service cho một ứng dụng nào đó, dịch vụ tương ứng sẽ không được cung cấp và do đó không thể chuyển thông tin qua firewall. Ngoài ra, proxy code có thể được định cấu hình để hỗ trợ chỉ một số đặc điểm trong ứng dụng mà người quản trị cho là chấp nhận được trong khi từ chối những đặc điểm khác. 
 
-![](/home/imkifu/Git/thuctapsinh/HungNK/Basic_Linux_Command/Picture/firewall6.png)
+![](..//Basic_Linux_Command/Picture/firewall6.png)
 
 Application gateway
 
@@ -287,7 +287,7 @@ Circuit Level Gateway – cổng vòng – là một chức năng đặc biệt 
 
 Hình sau minh họa một hành động sử dụng kết nối telnet qua cổng vòng. Cổng vòng đơn giản chuyển tiếp kết nối telnet qua firewall mà không thực hiện một sự kiểm tra, lọc hay điều khiển các thủ tục telnet nào. Cổng vòng làm việc như một sợi dây, sao chép các byte giữa kết nối bên trong (inside connection) và các kết nối bên ngoài (outside connection). Tuy nhiên vì sự kết nối này xuất hiện từ hệ thống firewall nên nó che dấu thông tin về mạng nội bộ. 
 
-![](/home/imkifu/Git/thuctapsinh/HungNK/Basic_Linux_Command/Picture/firewall7.png)
+![](..//Basic_Linux_Command/Picture/firewall7.png)
 
 Circuit Level Gateway
 
@@ -317,13 +317,13 @@ Việc tổ chức mô hình mạng bảo mật đảm bảo bảo mật có ả
 
 Trong mô hình này, vùng mạng Internet, vùng mạng nội bộ và vùng mạng DMZ được thiết kế tách biệt nhau. Ngoài ra, ta đặt một firewall giữa các vùng mạng nhằm kiểm soát luồng thông tin giữa các vùng mạng với nhau và bảo vệ các vùng mạng khỏi các tấn công trái phép.
 
-![](/home/imkifu/Git/thuctapsinh/HungNK/Basic_Linux_Command/Picture/firewall8.png)
+![](..//Basic_Linux_Command/Picture/firewall8.png)
 
 #### 2. Mô hình 2
 
 Trong mô hình này, ta đặt một firewall giữa vùng mạng Internet và vùng mạng DMZ và một firewall giữa vùng mạng DMZ và vùng mạng nội bộ.
 
-![](/home/imkifu/Git/thuctapsinh/HungNK/Basic_Linux_Command/Picture/firewall9.png)
+![](..//Basic_Linux_Command/Picture/firewall9.png)
 
 Như vậy, vùng mạng nội bộ nằm sâu bên trong và cách vùng mạng Internet bằng 2 lớp firewall như trên hình vẽ.
 
@@ -331,7 +331,7 @@ Như vậy, vùng mạng nội bộ nằm sâu bên trong và cách vùng mạng
 
 Trong mô hình này, ta đặt một firewall giữa vùng mạng Internet và vùng mạng DMZ , một firewall giữa vùng mạng DMZ và vùng mạng nội bộ và một firewall giữa vùng mạng nội bộ và vùng mạng Internet. Như vậy, mỗi sự truy cập giữa các vùng với nhau đều được kiểm soát bởi một firewall như hình vẽ.
 
-![](/home/imkifu/Git/thuctapsinh/HungNK/Basic_Linux_Command/Picture/firewall10.png)
+![](..//Basic_Linux_Command/Picture/firewall10.png)
 
 ### Một số tiêu chí khi thiết kế mô hình mạng bảo mật
 
