@@ -16,6 +16,6 @@
 - 5.2. [Hướng dẫn cài đặt LAMP trên CentOS 7](25-bai-linux/lamp.md)  
 - 5.3. [Cài đặt,cấu hình Apache](25-bai-linux/domain.md)  
 - 5.4. [Tìm hiểu về MySQL/MariaDB](25-bai-linux/mysql.md)  
-- 5.5. [Cài đặt MariaDB](25-bai-linux/install_mariadb.md)  
+- 5.5. [MariaDB](25-bai-linux/install_mariadb.md)  
 
 **6.** [**Sao lưu dữ liệu**](25-bai-linux/6.backup.md)
