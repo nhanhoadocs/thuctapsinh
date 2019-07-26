@@ -5,7 +5,9 @@ Cài đặt Wordpress trên máy CentOS
 
 Wordpress là một hê thống quản lí nội dung miễn phí và mã nguồn mở xây dựng dựa trên PHP và MySQL. Được phát hành vào năm 2003, đến nay Wordpress là một trong những hệ thống quản lí website phổ biến nhất hiện nay.
 
-Trong bài này, mình sẽ hướng dẫn cài đặt Wordpress trên hệ điều hành CentOS 7
+![image](../images/wordpress01.jpg)
+
+Trong bài này, mình sẽ hướng dẫn cài đặt Wordpress trên hệ điều hành CentOS 7.
 
 ## 2. Các bước cài đặt
 ### Bước 1: Chuẩn bị.
@@ -88,11 +90,11 @@ vi wp-config.php
 
 Trong file này, ta sẽ thấy dòng như hình dưới đây.
 
-![image](../images/.png)
+![image](../images/wordpress02.png)
 
 ta tiến hành thay đổi thông tin cơ sở dũ liệu, tài khoản, mật khẩu như đã thiết lập ở bước 2. Ví dụ như sau:
 
-![image](../images/.png)
+![image](../images/wordpress03.png)
 
 Gõ ESC -> :wq để lưu và thoát khỏi chế độ chỉnh sửa.
 
@@ -100,11 +102,9 @@ Gõ ESC -> :wq để lưu và thoát khỏi chế độ chỉnh sửa.
 
 Trên trình duyệt, gõ địa chỉ ip server trên thành url, trình duyệt sẽ xuất hiện như sau:
 
-![image](../images/.png)
+![image](../images/wordpress04.png)
 
 Tiến hành nhập thông một số thông tin cần thiết rồi chọn **`Install Wordpress`**. Như vậy là bạn đã cài đặt thành công. Giờ chỉ cần đăng nhập là bạn đã có thể sử dụng Wordpress.
-
-![image](../images/.png)
 
 ## Tài liệu tham khảo
 1. [Giới thiệu về Wordpress](https://en.wikipedia.org/wiki/WordPress)
