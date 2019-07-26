@@ -1,4 +1,4 @@
-Hướng dẫn cài đặt Lamp stack
+Hướng dẫn cài đặt LAMP
 ===
 ## Mục Lục
 1. [Tổng quan](#1-Tổng-quan)
@@ -10,7 +10,7 @@ LAMP là một hệ thống các phần mềm để tạo dựng môi trường 
 
 ![image](../images/lamp01.png)
 
-LAMP stack bao gồm:
+LAMP bao gồm:
 - Linux: là hệ điều hành, cũng là phần mềm dùng để điều phối và quản lí các tài nguyên của hệ thống.
 - Apache: là phần mềm máy chủ web, có thể thực hiện các request được gọi tới máy chủ thông qua giao thức HTTP 
 - Mysql/Mariadb: là hệ quản trị cơ sở dữ liệu giúp lưu trữ và truy xuất dữ liệu. Cả 2 hệ quản trị cơ sở dữ liệu này đều khá tương đồng với nhau (có thể tìm hiểu thêm tại [đây](https://www.eversql.com/mariadb-vs-mysql/))
@@ -31,7 +31,7 @@ $ sudo yum install httpd
 Cài xong, tiến hành khởi động lại và kích hoạt service:
 
 ```
-$ systemctl restart httpd
+$ systemctl start httpd
 $ systemctl enable htppd
 ```
 
@@ -43,7 +43,10 @@ $ systemctl status httpd
 
 ![image](../images/lamp02.png)
 
-Bạn cũng có thể kiểm tra trạng thái trên trình duyệt:
+Bạn cũng có thể kiểm tra trạng thái trên trình duyệt bằng cách gõ trên thanh url địa chỉ sau:
+```
+<địa chỉ ip server>
+```
 
 ![image](../images/lamp03.png)
 
@@ -57,7 +60,7 @@ Sau đó, gõ địa chỉ ip máy ảo trên thanh url cũng sẽ cho ra kết 
 
 ### 2.3. Cài đặt hệ quản lí cơ sở dữ liệu
 
-Trên thực tế với LAMP stack, bạn có thể sử dụng mysql hoặc mariadb đều được, bài này mình sẽ hướng dẫn với mariadb.
+Trên thực tế với LAMP, bạn có thể sử dụng mysql hoặc mariadb đều được, bài này mình sẽ hướng dẫn với mariadb.
 
 Trên cửa sổ terminal, tiến hành cài đặt mariadb:
 ```
@@ -76,7 +79,7 @@ $ sudo mysql_secure_installation
 
 ![image](../images/lamp04.png)
 
-Ở bước này ta sẽ thiết lập một số vấn đề như sau:
+Ở bước này ta sẽ thiết lập một số cấu hình như sau:
 
 ```
 Enter currret password for root (enter for none):
@@ -94,25 +97,20 @@ Nếu bạn cài lần đầu, hệ thống sẽ hỏi bạn muốn cài passwor
 
 Với những máy mới cài mariadb lần đầu, hệ thống yêu cầu thêm một số thiết lập như sau:
 - Xoá bỏ các user khác.
-- Không cho phép đang nhập từ xa.
+- Không cho phép root đăng nhập từ xa.
 - Xoá bỏ databases test.
 - Khởi chạy lại bảng Privilege (bảng phân quyền).
 
 Bạn chỉ cần gõ **Y** cho những yêu cầu đó.
 
-Sau khi thiết lập xong, kích hoạt mariadb để hoàn tất quá trình cài đặt:
+Sau khi thiết lập xong, kích hoạt mariadb để khởi động cùng hệ thống:
 ```
 $ systemctl enable mariadb
 ```
 
 ### 2.3. Cài đặt php
 
-Để cài đặt, đơn giản là bạn gõ lệnh sau:
-```
-$ sudo yum install php php-mysql
-```
-
-Tuy nhiên, phiên bản có sẵn trong repo đang là 5.4. Phiên bản này khá cũ và sẽ khiến bạn gặp một số vấn đề xảy ra khi tiến hành cài đặt wordpress. Vì vậy bạn cần phải cài đặt phiên bản 7x để khắc phục. Bạn cần tiến hành thêm kho vào Remi CentOS:
+Phiên bản có sẵn trong repo của CentOS đang là 5.4. Phiên bản này khá cũ và sẽ khiến bạn gặp một số vấn đề xảy ra khi tiến hành cài đặt wordpress. Vì vậy bạn cần phải cài đặt phiên bản 7x để khắc phục. Bạn cần tiến hành thêm kho vào Remi CentOS:
 ```
 $ rpm -Uvh http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 ```
@@ -126,24 +124,24 @@ Tiến hành cài đặt php. Ở đây ta cần lưu ý về phiên bản cài 
 - Bản 7.0:
 ```
 $ yum-config-manager --enable remi-php70
-$ yum -y install php php-opcache
+$ yum -y install php php-opcache php-mysql
 ```
 
 - Bản 7.1:
 ```
 $ yum-config-manager --enable remi-php71
-$ yum -y install php php-opcache
+$ yum -y install php php-opcache php-mysql
 ```
 - Bản 7.2:
 ```
 $ yum-config-manager --enable remi-php72
-$ yum -y install php php-opcache
-```
+$ yum -y install php php-opcache php-mysql
+``` 
 
 - Bản 7.3:
 ```
 $ yum-config-manager --enable remi-php73
-$ yum -y install php php-opcache
+$ yum -y install php php-opcache php-mysql
 ```
 
 Trong bài này, mình cài phiên bản 7.2
@@ -177,6 +175,6 @@ Khi màn hình này xuất hiện, bạn đã thực hiện thành công!
 
 ### 3. Tài liệu tham khảo
 
-1. [Tìm hiểu về Lamp](https://en.wikipedia.org/wiki/LAMP_(software_bundle))
+1. [Tìm hiểu về LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle))
 
-2. [Cài đặt LAMP stack](https://www.howtoforge.com/tutorial/centos-lamp-server-apache-mysql-php/)
+2. [Cài đặt LAMP](https://www.howtoforge.com/tutorial/centos-lamp-server-apache-mysql-php/)
