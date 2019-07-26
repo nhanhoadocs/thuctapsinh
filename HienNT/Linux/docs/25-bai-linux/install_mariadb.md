@@ -1,31 +1,31 @@
 # Install MariaDB on CentOS 7  
 ## **Contents** 
-I. [Cài đặt MariaDB](#I)  
+**I.** [Cài đặt MariaDB](#I)  
 
-1. [Cài đặt mặc định](#1)  
+**1.** [Cài đặt mặc định](#1)  
 
-2. [Cài đặt qua Repo](#2)  
+**2.** [Cài đặt qua Repo](#2)  
 
    a. [Thêm Repo vào server](#a)  
    b. [Cài đặt MariaDB 10.0.30](#b) 
 
-3. [Các lệnh quản lý](#3)
+**3.** [Các lệnh quản lý](#3)
 
-4. [File cấu hình](#4)
+**4.** [File cấu hình](#4)
 
-5. [Thiết lập bảo mật cho user database](#5) 
+**5.** [Thiết lập bảo mật cho user database](#5) 
 
-II. [User Database và Database](#II) 
+**II.** [User Database và Database](#II) 
 
-1. [Tạo cấu trúc dữ liệu](#1.1)  
+**1.** [Tạo cấu trúc dữ liệu](#1.1)  
 
     a. [Tạo cơ sở dữ liệu](#1.1.1)  
     b. [Các thao tác với bảng trong database](#1.1.2)  
     c. [Các thao tác với cột trong database](#1.1.3)
 
-2. [Tạo database user](#1.2)  
+**2.** [Tạo database user](#1.2)  
 
-3. [Phân quyền cho user database](#1.3)  
+**3.** [Phân quyền cho user database](#1.3)  
 
 ## Chuẩn bị  
 - 1 máy ảo cài hệ điều hành CentOS 7, có kết nối Internet.
