@@ -27,6 +27,12 @@
 
 3. [Phân quyền cho user database](#1.3)  
 
+
+## Mô hình 
+
+<img src ="../../images/25 bai linux/mariadb.png">  
+
+
 ## Chuẩn bị  
 - 1 máy ảo cài hệ điều hành CentOS 7, có kết nối Internet.
 - Các thông số phần cứng trên máy ảo:  
@@ -34,6 +40,7 @@
    - RAM: 1GB
    - Ổ đĩa: 20GB  
 - Tài khoản có thể đăng nhập vào hệ thống và có quyền sudo. Hướng dẫn dưới đây sử dụng tài khoản root.  
+
 
 <a name ="I"></a>  
 
@@ -55,6 +62,7 @@ yum install mariadb-server
 ```sh
  [root@thuyhien ~]# systemctl enable mariadb
 ```  
+- 
 - `systemctl` không hiển thị kết quả của các lệnh quản lý dịch vụ nên để chắc chắn dịch vụ hoạt kđộng nên liểm tra trạng thái hoạt động của MariaDB trên CentOS 7 bằng lệnh:  
 ```sh
 [root@thuyhien ~]# systemctl status mysql
@@ -81,6 +89,13 @@ yum install mariadb-server
    gpgcheck=0
    enabled=1
     ```  
+    Giải thích: 
+   `name` = tên của kho lưu trữ  
+   `baseurl` = đường dẫn tới kho lưu trữ   
+   `gpg` là viết tắt của GNU Private Guard, là một loại chữ kí số giúp bảo vệ quyền riêng tư. Nếu đặt giá trị gpgcheck =1 thì nó sẽ xác thực gói bằng cách  kiểm tra chữ ký GPG. Đặt gpgcheck=0 để bỏ qua xác thực hoặc trong trường hợp gói không được đăng ký.  
+   `gpgcheck` = cài đặt bato mật(1=có,0=không)    
+   `enable` = trạng thái của kho lưu trữ(1=bật,0=tắt)  
+   `gpgkey` = đường dẫn của file key(nếu có)
     - Lưu lại và kiểm tra phiên bản của MariaDB-Server sau khi thêm repo mới:  
     ```sh
     [root@thuyhien sbin]# yum info mariadb-server
@@ -115,7 +130,13 @@ yum install mariadb-server
     ```sh
     yum remove mysql
     ```
-    <a name ="b"></b>
+    <a name ="b"></b>  
+
+   Và [gỡ các gói liên quan](http://networkstip.blogspot.com/2018/12/completely-remove-mariadb-or-mysql-from.html)  
+   ```sh
+   [root@thuyhien ~]# rm -rf /var/lib/mysql/
+   [root@thuyhien ~]# rm /etc/my.cnf
+   ```  
 
     - Cài đặt **`MariaDB 10.0.30`**    
    ```sh
@@ -137,7 +158,12 @@ yum install mariadb-server
 
 <a name ="3"></a>  
 
-### 3. Các dòng lệnh quản lý
+### 3. Các dòng lệnh quản lý  
+- Kiểm tra user, group  
+```sh
+[root@thuyhien ~]# cat /etc/passwd | grep mysql
+mysql:x:27:27:MariaDB Server:/var/lib/mysql:/sbin/nologin
+```
 - Khởi động dịch vụ
 ```sh
 systemctl start mysql
@@ -167,7 +193,32 @@ Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
 ```sh
 /etc/my.cnf
 ```  
+- Log files  
+```sh
+/var/log/mariadb
+```  
+```sh
+log_error = /var/log/mariadb/mariadb.log
+```
+- Network settings  
+    - Trên máy chủ, MariaDB được mặc định chạy cổng 3306 và có thể thay đổi được.
+    - Cổng trên máy client báo cho máy client cổng kết nối theo mặc định(thường thì cổng trên server và client sẽ giống nhau nhưng cũng có thể thay đổi khác nhau tùy chúng ta cấu hình).  
+    - Thường sẽ không tìm thấy cấu hình cổng trong tệp cấu hình do cổng đang được chạy mặc định là cổng 3306. Để thay đổi cổng, bạn thêm vào file cấu hình các câu lệnh sau:  
+    ```sh
+    [client]
+    port = [cong ban muon sua]
 
+    [mysqld]
+     port = [cong ban muon sua]
+     ```
+   - Bằng cách liên kết với localhost máy chủ đảm bảo không ai có thể kết nối với nó từ bên ngoài máy cục bộ. Nếu muốn truy cập từ xa đến máy chủ MariaDB, bạn có thể đặt địa chỉ IP liên kết(bind-address) là IP Public của bạn(tìm google với từ khóa `what is my ip` để xem [địa chỉ IP Public](https://bkaii.com.vn/tin-nganh-2/132-khai-niem-co-ban-ve-ip-ip-public-va-ip-private)). Nếu không nhìn thấy `bind-address` , bạn nên thêm vào `mysqld` để giúp kiểm soát quyền truy cập vào máy chủ. Ví dụ:  
+   ```sh
+   [mysqld]
+   bind-address = 127.0.0.1
+   ```
+- Thư mục chứa `database` là: `/var/lib/mysql`
+
+[Tham khảo](https://support.rackspace.com/how-to/configure-mariadb-server-on-centos/)
 <a name ="5"></a>
 
 ### 5. Thiết lập cấu hình bảo mật cơ bản cho dịch vụ MariaDB  
@@ -532,4 +583,5 @@ Lệnh trên sẽ xóa tài khoản người dùng và các đặc quyền của
 - [huong-dan-cai-dat-mariadb-tren-centos-7/](https://bigvn.net/huong-dan-cai-dat-mariadb-tren-centos-7/#tao-user-database-va-database)  
 - [quản lý database bằng giao diện web.](https://www.thuysys.com/server-vps/web-server/phpmyadmin-huong-dan-quan-tri-co-du-lieu-co-ban.html)  
 - [https://www.oreilly.com/](https://www.oreilly.com/library/view/learning-mysql-and/9781449362898/ch04.html) 
-- [mysql-insert-query](https://www.tutorialspoint.com/mysql/mysql-insert-query)
+- [mysql-insert-query](https://www.tutorialspoint.com/mysql/mysql-insert-query) 
+- [configure-mariadb-server-on-centos/](https://support.rackspace.com/how-to/configure-mariadb-server-on-centos/)
