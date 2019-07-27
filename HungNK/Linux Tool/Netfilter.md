@@ -218,6 +218,9 @@ Cách chia loại Target theo hành động :
 
 ```
 
+![](..//Basic_Linux_Command/Picture/netfilter2.png)
+
+
 ## Jumping to User-Defined Chains
 
 Chúng ta nên đề cập đến một lớp đặc biệt của mục tiêu không kết thúc: mục tiêu nhảy. Mục tiêu nhảy là các hành động dẫn đến việc đánh giá chuyển sang một chain khác để xử lý bổ sung. Chúng ta đã nói khá nhiều về các chain tích hợp được liên kết chặt chẽ với các `netfilter` hooks gọi chúng. Tuy nhiên, `iptables` cũng cho phép quản trị viên tạo chain riêng cho mục đích tổ chức.
