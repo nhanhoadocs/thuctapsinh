@@ -195,12 +195,12 @@ Cách chia loại Target theo hành động :
                                   |                               |
                                   |                               |
                                   |                               v
-  MANGLE            +-------------+--------+
-  FILTER            |                      |               +----------------------+    RAW
-  SECURITY          |        input         |               |                      |    connection tracking
-  SNAT              |                      |               |     output           |    MANGLE
-                    +------+---------------+               |                      |    DNAT
-                           ^                               +-------+--------------+    routing
+  MANGLE            +-------------+--------+               +----------------------+ 
+  FILTER            |                      |               |                      |    RAW
+  SECURITY          |        input         |               |        output        |    connection tracking
+  SNAT              |                      |               |                      |    MANGLE
+                    +------+---------------+               +-------+--------------+    DNAT
+                           ^                                                           routing
                            |                                       |                   FILTER
                            |                                       |                   SECURITY
      +-----------+         |            +---------------------+    |         +-------------+
