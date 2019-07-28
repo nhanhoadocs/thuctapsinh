@@ -4,7 +4,7 @@
 
 Tường lửa là một công cụ quan trọng có thể được cấu hình để bảo vệ máy chủ và cơ sở hạ tầng của bạn. Trong hệ sinh thái Linux, iptables là một công cụ tường lửa được sử dụng rộng rãi, giao tiếp với `kernel's netfilter packet filtering framework`. Đối với người dùng và quản trị viên không hiểu kiến trúc của các hệ thống này, việc tạo các chính sách tường lửa đáng tin cậy có thể gây khó khăn, không chỉ do cú pháp thách thức mà còn do số lượng các phần có liên quan có trong framework.
 
-Trong hướng dẫn này, chúng tôi sẽ đi sâu vào kiến trúc iptables với mục đích làm cho nó dễ hiểu hơn cho những người dùng cần xây dựng chính sách tường lửa của riêng họ. Chúng tôi sẽ thảo luận về cách iptables tương tác với netfilter và cách các thành phần khác nhau khớp với nhau để cung cấp một hệ thống lọc và xáo trộn toàn diện.
+Trong hướng dẫn này, tôi sẽ đi sâu vào kiến trúc iptables với mục đích làm cho nó dễ hiểu hơn cho những người dùng cần xây dựng chính sách tường lửa của riêng họ. Tôi sẽ thảo luận về cách iptables tương tác với netfilter và cách các thành phần khác nhau khớp với nhau để cung cấp một hệ thống lọc và xáo trộn toàn diện.
 
 ## Stateless and stateful filtering mechanisms
 
