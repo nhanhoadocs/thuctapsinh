@@ -200,7 +200,7 @@ Cách chia loại Target theo hành động :
   SECURITY          |        input         |               |        output        |    connection tracking
   SNAT              |                      |               |                      |    MANGLE
                     +------+---------------+               +-------+--------------+    DNAT
-                           ^                                                           routing
+                           ^                                       |                   routing
                            |                                       |                   FILTER
                            |                                       |                   SECURITY
      +-----------+         |            +---------------------+    |         +-------------+
