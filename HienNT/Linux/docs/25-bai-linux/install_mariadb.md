@@ -526,23 +526,23 @@ Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
    ```sh
    GRANT [type of permission] ON [database name].[table name] TO 'databaseusername'@'localhost';
    ``` 
-***- Ví dụ:***  
+  ***Ví dụ:***  
   - Cấp tất cả đặc quyền cho một user qua một cơ sở dữ liệu cụ thể:  
-   ```sh
-  MariaDB [(none)]> grant all privileges on testdb. * to 'thuyhien'@192.168.136.129;
-  Query OK, 0 rows affected (0.11 sec)
-   ``` 
+     ```sh
+     MariaDB [(none)]> grant all privileges on testdb. * to 'thuyhien'@192.168.136.129;
+     Query OK, 0 rows affected (0.11 sec)
+      ``` 
   - Cấp tất cả đặc quyền cho user qua một bảng cụ thể từ database:  
-   ```sh
-  MariaDB [(none)]> grant all privileges on testdb.sinhvienhust to 'thuyhien'@'192.168.136.129';
+      ```sh
+     MariaDB [(none)]> grant all privileges on testdb.sinhvienhust to 'thuyhien'@'192.168.136.129';
 
-  Query OK, 0 rows affected (0.03 sec)
-   ``` 
+     Query OK, 0 rows affected (0.03 sec)
+     ``` 
   - Cấp nhiều đặc quyền cho user qua một database cụ thể:  
-   ```sh
-  MariaDB [(none)]> grant SELECT, INSERT on testdb.* to 'thuyhien'@'192.168.136.129';
-  Query OK, 0 rows affected (0.01 sec)
-   ``` 
+     ```sh
+     MariaDB [(none)]> grant SELECT, INSERT on testdb.* to 'thuyhien'@'192.168.136.129';
+     Query OK, 0 rows affected (0.01 sec)
+     ``` 
 - Hiển thị các đặc quyền của user:  
    ```sh
    SHOW GRANTS FOR 'database_user'@'localhost';
@@ -550,7 +550,7 @@ Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
 
    ```sh
    +-----------------------------------------------------------------------------------------------------------------------+
-  | Grants for thuyhien@192.168.136.129                                                                                   |
+   | Grants for thuyhien@192.168.136.129                                                                                   |
   +-----------------------------------------------------------------------------------------------------------------------+
   | GRANT USAGE ON *.* TO 'thuyhien'@'192.168.136.129' IDENTIFIED BY PASSWORD '*FE1E37A7390CE06FF73D46CE034FE0C9A59A9681' |
   | GRANT ALL PRIVILEGES ON `testdb`.* TO 'thuyhien'@'192.168.136.129'                                                    |
