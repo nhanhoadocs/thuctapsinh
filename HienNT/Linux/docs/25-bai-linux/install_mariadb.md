@@ -250,7 +250,7 @@ Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
    ```sh
    #mysql -u root -p[password]  
    ``` 
-*Chú ý:* Nếu trong mật khẩu có chứa kí tự đặc biệt thì khi nhập pass cần để 1 dấu cách trước kí tự đấy.
+> *Chú ý:* Nếu trong mật khẩu có chứa kí tự đặc biệt thì khi nhập pass cần để 1 dấu cách trước kí tự đấy.
 
 <a name ="1.1"></a>  
 
@@ -311,7 +311,7 @@ Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
      ```sh  
      >create  table [table name](trường trong bảng)
      ```  
-      *Ví dụ:* tạo bảng có tên là `sinhvien` với các trường mssv,ho,ten,tuoi,diemthi trong database `testdb`: 
+      ***Ví dụ:*** tạo bảng có tên là `sinhvien` với các trường mssv,ho,ten,tuoi,diemthi trong database `testdb`: 
      ```sh
      MariaDB [(none)]> use testdb;
      Database changed
@@ -341,7 +341,7 @@ Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
       >select * from [table_name];
       ``` 
 
-     *Ví dụ:*
+     ***Ví dụ:***
       ```sh
       MariaDB [testdb]> select * from sinhvien;
       Empty set (0.07 sec)
@@ -351,7 +351,7 @@ Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
       ```sh
       >rename table first to second;
       ```
-      *Ví dụ:* đổi tên bảng từ `sinhvien` thành `sinhvienhust`
+      ***Ví dụ:*** đổi tên bảng từ `sinhvien` thành `sinhvienhust`
       ```sh
       MariaDB [testdb]> rename table sinhvien to sinhvienhust;
       Query OK, 0 rows affected, 1 warning (0.11 sec)
@@ -397,7 +397,7 @@ Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
       ```sh
       alter table sinhvien change columnold columnnew (thuộc tính của trường);
       ```
-    *Ví dụ:* 
+    ***Ví dụ:*** 
       ```sh
       MariaDB [testdb]> alter table sinhvienhust change diemthi diem varchar(50);
       Query OK, 0 rows affected, 2 warnings (0.25 sec)
@@ -408,17 +408,17 @@ Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
       ```sh
       alter table tablename add column_name kieu_truong;  
       ```
-    *Ví dụ:*  
+    ***Ví dụ:***  
       ```sh
        MariaDB [testdb]> alter table sinhvienhust add stt int;
        Query OK, 0 rows affected (0.15 sec)
        Records: 0  Duplicates: 0  Warnings: 0
       ``` 
-      - Xóa cột trong bảng:  
-       ```sh
+     - Xóa cột trong bảng:  
+      ```sh
       alter table tablename drop column_name kieu_truong;
-       ``` 
-      - Chèn dữ liệu vào bảng:  
+      ``` 
+      - Chèn dữ liệu vào bảng:     
       Cú pháp:  
       ```sh  
       INSERT INTO TABLE_TEN (cot1, cot2, cot3,...cotN)  
@@ -428,7 +428,7 @@ Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
       ```sh
       INSERT INTO TABLE_TEN VALUES (giatri1,giatri2,giatri3,...giatriN);  
       ```
-      *Ví dụ 1:* 
+      ***Ví dụ 1:*** 
       ```sh
       MariaDB [testdb]> insert into sinhvienhust
       -> (stt,ho,ten,mssv,diem)
@@ -436,7 +436,7 @@ Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
       -> ("1", "Nguyen", "Hien", "12", "8");
       Query OK, 1 row affected, 1 warning (0.06 sec)
       ``` 
-      *Ví dụ 2:*  
+      ***Ví dụ 2:***  
       ```sh
       MariaDB [testdb]> insert into sinhvienhust(`stt`,`ho`,`ten`,`mssv`,`diem`) values('2','Phung','Ngoc','13','9');
       Query OK, 1 row affected, 1 warning (0.10 sec)
@@ -445,7 +445,7 @@ Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
       ```sh
       >delete from ten_bang where ten_cot="du_lieu_muon_xoa";  
       ``` 
-      *Ví dụ:*  
+      ***Ví dụ:***  
       ```sh
       MariaDB [testdb]> delete from sinhvienhust where stt="2";
       Query OK, 1 row affected (0.10 sec)
@@ -469,11 +469,11 @@ Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
    ```sh
    create user 'tên user'@'hostname';
    ```
-Trong đó: `hostname` chính là `localhost` của bạn. Nên để giá trị `**localhost**` ở phần `hostname` và không nên đổi thành cái khác trừ khi hiểu rõ mình đang làm gì.  
+  Trong đó: `hostname` chính là `localhost` của bạn. Nên để giá trị `**localhost**` ở phần `hostname` và không nên đổi thành cái khác trừ khi hiểu rõ mình đang làm gì.  
 
-***Ví dụ:*** tạo user có tên là `havy`   
+  ***Ví dụ:*** tạo user có tên là `havy`   
     ```sh
-MariaDB [(none)]> create user 'havy'@'localhost';
+    MariaDB [(none)]> create user 'havy'@'localhost';
     ``` 
 - Xem danh sách các user hiện có:  
    ```sh
@@ -495,7 +495,7 @@ MariaDB [(none)]> create user 'havy'@'localhost';
    ```sh
    set password for 'tên user'@'hostname'= password("[mật khẩu user]");
    ``` 
-   *Ví dụ:* đặt cho user `havy` password là `abc@123`  
+   ***Ví dụ:*** đặt cho user `havy` password là `abc@123`  
    ```sh
    MariaDB [(none)]> set password for 'havy'@'localhost'= password("abc@123");
    Query OK, 0 rows affected (0.05 sec)
@@ -504,7 +504,7 @@ MariaDB [(none)]> create user 'havy'@'localhost';
    ```sh
    create user 'user'@'hostname' identified by 'password';
    ```
-   *Ví dụ:* tạo user `thuyhien` với password là `abc@123`   
+   ***Ví dụ:*** tạo user `thuyhien` với password là `abc@123`   
    ```sh
    MariaDB [(none)]> create user 'thuyhien'@'192.168.136.129'  identified by 'abc@123';
    Query OK, 0 rows affected (0.11 sec)
@@ -526,7 +526,7 @@ MariaDB [(none)]> create user 'havy'@'localhost';
    ```sh
    GRANT [type of permission] ON [database name].[table name] TO 'databaseusername'@'localhost';
    ``` 
-*- Ví dụ:*  
+***- Ví dụ:***  
   - Cấp tất cả đặc quyền cho một user qua một cơ sở dữ liệu cụ thể:  
    ```sh
   MariaDB [(none)]> grant all privileges on testdb. * to 'thuyhien'@192.168.136.129;
