@@ -88,7 +88,7 @@
        gpgcheck=0
        enabled=1
      ``` 
-    Giải thích:   
+    **Giải thích:**   
    `name` = tên của kho lưu trữ  
    `baseurl` = đường dẫn tới kho lưu trữ   
    `gpg` là viết tắt của GNU Private Guard, là một loại chữ kí số giúp bảo vệ quyền riêng tư. Nếu đặt giá trị gpgcheck =1 thì nó sẽ xác thực gói bằng cách  kiểm tra chữ ký GPG. Đặt gpgcheck=0 để bỏ qua xác thực hoặc trong trường hợp gói không được đăng ký.  
@@ -99,19 +99,19 @@
         ```sh
         [root@thuyhien sbin]# yum info mariadb-server
         ``` 
-    Kết quả cho thấy **MariaDB 10.0.30** đã sẵn sàng:  
-   ```sh
-    Available Packages
-    Name        : MariaDB-server
-    Arch        : x86_64
-    Version     : 10.0.30
-    Release     : 1.el7.centos
-    Size        : 55 M
-    Repo        : mariadb
-    Summary     : MariaDB: a very fast and robust SQL database server
-    URL         : http://mariadb.org
-    License     : GPLv2
-    Description : MariaDB: a very fast and robust SQL database server
+      Kết quả cho thấy **MariaDB 10.0.30** đã sẵn sàng:  
+      ```sh
+      Available Packages
+      Name        : MariaDB-server
+      Arch        : x86_64
+      Version     : 10.0.30
+      Release     : 1.el7.centos
+      Size        : 55 M
+      Repo        : mariadb
+      Summary     : MariaDB: a very fast and robust SQL database server
+      URL         : http://mariadb.org
+      License     : GPLv2
+      Description : MariaDB: a very fast and robust SQL database server
             :
             : It is GPL v2 licensed, which means you can use the it free of
             : charge under the conditions of the GNU General Public License
@@ -120,24 +120,22 @@
             : MariaDB documentation can be found at https://mariadb.com/kb
             : MariaDB bug reports should be submitted through
             : https://jira.mariadb.org
-   ``` 
+      ``` 
     - Gỡ cài đặt phiên bản MariaDB trước, sử dụng lệnh:  
       ```sh
       yum erase mysql
       ```
-    hoặc  
+      hoặc  
       ```sh
       yum remove mysql
       ```
-    <a name ="b"></b>  
+      Và [gỡ các gói liên quan](http://networkstip.blogspot.com/2018/12/completely-remove-mariadb-or-mysql-from.html)  
 
-   Và [gỡ các gói liên quan](http://networkstip.blogspot.com/2018/12/completely-remove-mariadb-or-mysql-from.html)  
-
-     ```sh
+      ```sh
       [root@thuyhien ~]# rm -rf /var/lib/mysql/
       [root@thuyhien ~]# rm /etc/my.cnf
-     ``` 
-
+      ``` 
+  <a name ="b"></b>
     - Cài đặt **`MariaDB 10.0.30`**    
       ```sh
       [root@thuyhien ~]# yum install -y mariadb-server
@@ -248,7 +246,7 @@ Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
    ```sh
    #mysql -u root -p
    ```
-hoặc  
+  hoặc  
    ```sh
    #mysql -u root -p[password]  
    ``` 
@@ -263,12 +261,12 @@ hoặc
    ```sh
    >create database [database user]
    ``` 
-***Ví dụ:*** Tạo 1 database có tên là `testdb`  
-**Câu lệnh:**  
+    ***Ví dụ:*** Tạo 1 database có tên là `testdb`  
+    **Câu lệnh:**  
    ```sh
    MariaDB [(none)]> create database testdb;
    ``` 
-**Kết quả là:**  
+   **Kết quả là:**  
    ```sh
     Query OK, 1 row affected (0.01 sec)
    ```
@@ -278,29 +276,29 @@ hoặc
    MariaDB [(none)]> show databases;
    ```
 
-**Kết quả là:**  
+   **Kết quả là:**  
    ```sh
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| mysql              |
-| performance_schema |
-+--------------------+
-3 rows in set (0.09 sec)
+   +--------------------+
+   | Database           |
+   +--------------------+
+   | information_schema |
+   | mysql              |
+   | performance_schema |
+   +--------------------+
+   3 rows in set (0.09 sec)
    ``` 
 - Xem lại database đã tạo:  
    ```sh
    MariaDB [(none)]> show create database testdb;
    ```
-**Kết quả là:**  
+  **Kết quả là:**  
    ```sh
-+----------+-------------------------------------------------------------------+
-| Database | Create Database                                                   |
-+----------+-------------------------------------------------------------------+
-| testdb   | CREATE DATABASE `testdb` /*!40100 DEFAULT CHARACTER SET latin1 */ |
-+----------+-------------------------------------------------------------------+
-1 row in set (0.01 sec)
+   +----------+-------------------------------------------------------------------+
+   | Database | Create Database                                                   |
+   +----------+-------------------------------------------------------------------+
+   | testdb   | CREATE DATABASE `testdb` /*!40100 DEFAULT CHARACTER SET latin1 */ |
+   +----------+-------------------------------------------------------------------+
+   1 row in set (0.01 sec)
    ``` 
 - Truy cập cơ sở dữ liệu mới được tạo để bắt đầu tạo bảng và các đối tượng cơ sở dữ liệu khác, sử dụng lệnh `use databasename`  
    ```sh
@@ -309,41 +307,41 @@ hoặc
 <a name ="1.1.2"></a>
 
    - Tạo bảng:  
-      ```sh
-      >create  table [table name](trường trong bảng)
-       ```  
-   *Ví dụ:* tạo bảng có tên là `sinhvien` với các trường mssv,ho,ten,tuoi,diemthi trong database `testdb`: 
 
-   ```sh
-   MariaDB [(none)]> use testdb;
-   Database changed
-   MariaDB [testdb]> create table sinhvien(
-    -> mssv int not null auto_increment,
-    -> ho varchar(255) not null,
-    -> ten varchar(255) not null,
-    -> tuoi int not null,
-    -> diemthi float(4,2) not null,
-    -> primary key (mssv)
-    -> );
-   Query OK, 0 rows affected (0.55 sec)
-   ``` 
+     ```sh  
+     >create  table [table name](trường trong bảng)
+     ```  
+      *Ví dụ:* tạo bảng có tên là `sinhvien` với các trường mssv,ho,ten,tuoi,diemthi trong database `testdb`: 
+     ```sh
+     MariaDB [(none)]> use testdb;
+     Database changed
+     MariaDB [testdb]> create table sinhvien(
+     -> mssv int not null auto_increment,
+     -> ho varchar(255) not null,
+     -> ten varchar(255) not null,
+     -> tuoi int not null,
+     -> diemthi float(4,2) not null,
+     -> primary key (mssv)
+     -> );
+     Query OK, 0 rows affected (0.55 sec)
+     ``` 
    - Hiển thị toàn bộ table bằng lệnh `show tables;`:  
-   ```sh
-   MariaDB [testdb]> show tables;
-   +------------------+
-   | Tables_in_testdb |
-   +------------------+
-   | sinhvien         |
-   +------------------+
-   1 row in set (0.00 sec)
-   ``` 
+     ```sh
+     MariaDB [testdb]> show tables;
+     +------------------+
+     | Tables_in_testdb |
+     +------------------+
+     | sinhvien         |
+     +------------------+
+     1 row in set (0.00 sec)
+     ``` 
    - Hiển thị dữ liệu của bảng:  
    Cú pháp:  
       ```sh
       >select * from [table_name];
       ``` 
 
-   *Ví dụ:*
+     *Ví dụ:*
       ```sh
       MariaDB [testdb]> select * from sinhvien;
       Empty set (0.07 sec)
@@ -353,33 +351,33 @@ hoặc
       ```sh
       >rename table first to second;
       ```
-   *Ví dụ:* đổi tên bảng từ `sinhvien` thành `sinhvienhust`
-   ```sh
-   MariaDB [testdb]> rename table sinhvien to sinhvienhust;
-   Query OK, 0 rows affected, 1 warning (0.11 sec)
+      *Ví dụ:* đổi tên bảng từ `sinhvien` thành `sinhvienhust`
+      ```sh
+      MariaDB [testdb]> rename table sinhvien to sinhvienhust;
+      Query OK, 0 rows affected, 1 warning (0.11 sec)
 
-   MariaDB [testdb]> show tables;
-   +------------------+
-   | Tables_in_testdb |
-   +------------------+
-   | sinhvienhust     |
-   +------------------+
-   1 row in set (0.00 sec)
-   ``` 
+      MariaDB [testdb]> show tables;
+      +------------------+
+      | Tables_in_testdb |
+      +------------------+
+      | sinhvienhust     |
+      +------------------+
+      1 row in set (0.00 sec)
+      ``` 
    - Xem thông tin trên bảng vừa tạo:    
    Có thể dùng: `>desc ten_bang` hoặc `>show columns from ten_bang` hoặc 
    ```sh
    MariaDB [testdb]> describe sinhvienhust;
-+---------+--------------+------+-----+---------+----------------+
-| Field   | Type         | Null | Key | Default | Extra          |
-+---------+--------------+------+-----+---------+----------------+
-| mssv    | int(11)      | NO   | PRI | NULL    | auto_increment |
-| ho      | varchar(255) | NO   |     | NULL    |                |
-| ten     | varchar(255) | NO   |     | NULL    |                |
-| tuoi    | int(11)      | NO   |     | NULL    |                |
-| diemthi | float(4,2)   | NO   |     | NULL    |                |
-+---------+--------------+------+-----+---------+----------------+
-5 rows in set (0.05 sec)
+   +---------+--------------+------+-----+---------+----------------+
+   | Field   | Type         | Null | Key | Default | Extra          |
+   +---------+--------------+------+-----+---------+----------------+
+   | mssv    | int(11)      | NO   | PRI | NULL    | auto_increment |
+   | ho      | varchar(255) | NO   |     | NULL    |                |
+   | ten     | varchar(255) | NO   |     | NULL    |                |
+   | tuoi    | int(11)      | NO   |     | NULL    |                |
+   | diemthi | float(4,2)   | NO   |     | NULL    |                |
+   +---------+--------------+------+-----+---------+----------------+
+   5 rows in set (0.05 sec)
    ``` 
    Giải thích:  
       `field:` tên cột  
@@ -399,68 +397,67 @@ hoặc
       ```sh
       alter table sinhvien change columnold columnnew (thuộc tính của trường);
       ```
-*Ví dụ:* 
-   ```sh
-   MariaDB [testdb]> alter table sinhvienhust change diemthi diem varchar(50);
-   Query OK, 0 rows affected, 2 warnings (0.25 sec)
-   Records: 0  Duplicates: 0  Warnings: 2
-   ```
-   - Thêm cột cho bảng: 
+    *Ví dụ:* 
+      ```sh
+      MariaDB [testdb]> alter table sinhvienhust change diemthi diem varchar(50);
+      Query OK, 0 rows affected, 2 warnings (0.25 sec)
+      Records: 0  Duplicates: 0  Warnings: 2
+      ```
+     - Thêm cột cho bảng: 
 
-   ```sh
-    alter table tablename add column_name kieu_truong;  
-   ```
-   Ví dụ:  
+      ```sh
+      alter table tablename add column_name kieu_truong;  
+      ```
+    *Ví dụ:*  
+      ```sh
+       MariaDB [testdb]> alter table sinhvienhust add stt int;
+       Query OK, 0 rows affected (0.15 sec)
+       Records: 0  Duplicates: 0  Warnings: 0
+      ``` 
+      - Xóa cột trong bảng:  
        ```sh
-   MariaDB [testdb]> alter table sinhvienhust add stt int;
-Query OK, 0 rows affected (0.15 sec)
-Records: 0  Duplicates: 0  Warnings: 0
+      alter table tablename drop column_name kieu_truong;
        ``` 
-   - Xóa cột trong bảng:  
-       ```sh
-     alter table tablename drop column_name kieu_truong;
-       ``` 
-   - Chèn dữ liệu vào bảng:  
-   Cú pháp:  
+      - Chèn dữ liệu vào bảng:  
+      Cú pháp:  
       ```sh  
       INSERT INTO TABLE_TEN (cot1, cot2, cot3,...cotN)  
       VALUES (giatri1, giatri2, giatri3,...giatriN);  
-      ```
-
+      ```  
       hoặc  
       ```sh
       INSERT INTO TABLE_TEN VALUES (giatri1,giatri2,giatri3,...giatriN);  
       ```
-   Ví dụ 1: 
-   ```sh
+      *Ví dụ 1:* 
+      ```sh
       MariaDB [testdb]> insert into sinhvienhust
       -> (stt,ho,ten,mssv,diem)
       -> values
       -> ("1", "Nguyen", "Hien", "12", "8");
       Query OK, 1 row affected, 1 warning (0.06 sec)
-   ``` 
-   Ví dụ 2:  
-   ```sh
-   MariaDB [testdb]> insert into sinhvienhust(`stt`,`ho`,`ten`,`mssv`,`diem`) values('2','Phung','Ngoc','13','9');
-   Query OK, 1 row affected, 1 warning (0.10 sec)
-   ``` 
-   - Xóa dữ liệu trong bảng:  
+      ``` 
+      *Ví dụ 2:*  
+      ```sh
+      MariaDB [testdb]> insert into sinhvienhust(`stt`,`ho`,`ten`,`mssv`,`diem`) values('2','Phung','Ngoc','13','9');
+      Query OK, 1 row affected, 1 warning (0.10 sec)
+      ``` 
+      - Xóa dữ liệu trong bảng:  
       ```sh
       >delete from ten_bang where ten_cot="du_lieu_muon_xoa";  
       ``` 
-   Ví dụ:  
-   ```sh
-   MariaDB [testdb]> delete from sinhvienhust where stt="2";
-   Query OK, 1 row affected (0.10 sec)
+      *Ví dụ:*  
+      ```sh
+      MariaDB [testdb]> delete from sinhvienhust where stt="2";
+      Query OK, 1 row affected (0.10 sec)
 
-   MariaDB [testdb]> select * from sinhvienhust;
-   +------+--------+------+------+------+------+
-   | mssv | ho     | ten  | tuoi | diem | stt  |
-   +------+--------+------+------+------+------+
-   |   12 | Nguyen | Hien |    0 | 8    |    1 |
-   +------+--------+------+------+------+------+
-   1 row in set (0.00 sec)
-   ``` 
+      MariaDB [testdb]> select * from sinhvienhust;
+      +------+--------+------+------+------+------+
+      | mssv | ho     | ten  | tuoi | diem | stt  |
+      +------+--------+------+------+------+------+
+      |   12 | Nguyen | Hien |    0 | 8    |    1 |
+      +------+--------+------+------+------+------+
+      1 row in set (0.00 sec)
+      ``` 
 - Thư mục chứa `database` là: `/var/lib/mysql`
 - Thoát khỏi chương trình `MariaDB`, sử dụng `"Ctrl+C"`  
 
@@ -482,35 +479,35 @@ MariaDB [(none)]> create user 'havy'@'localhost';
    ```sh
    MariaDB [(none)]> select user,host from mysql.user;
    ``` 
-**Kết quả là:**  
-```sh
-+----------+-----------------+
-| user     | host            |
-+----------+-----------------+
-| root     | 127.0.0.1       |
-| root     | ::1             |
-| havy     | localhost       |
-| root     | localhost       |
-+----------+-----------------+
-5 rows in set (0.00 sec)
-``` 
-- Đặt mật khẩu cho user vừa tạo:  
-```sh
-set password for 'tên user'@'hostname'= password("[mật khẩu user]");
-``` 
-Ví dụ đặt cho user `havy` password là `abc@123`  
-```sh
-MariaDB [(none)]> set password for 'havy'@'localhost'= password("abc@123");
-Query OK, 0 rows affected (0.05 sec)
-``` 
-- Ngoài ra cũng có thể vừa tạo user vừa đặt password bằng câu lệnh:  
-```sh
-create user 'user'@'hostname' identified by 'password';
-```
-Ví dụ: tạo user `thuyhien` với password là `abc@123`   
+   **Kết quả là:**  
    ```sh
-MariaDB [(none)]> create user 'thuyhien'@'192.168.136.129'  identified by 'abc@123';
-Query OK, 0 rows affected (0.11 sec)
+   +----------+-----------------+
+   | user     | host            |
+   +----------+-----------------+
+   | root     | 127.0.0.1       |
+   | root     | ::1             |
+   | havy     | localhost       |
+   | root     | localhost       |
+   +----------+-----------------+
+   5 rows in set (0.00 sec)
+   ``` 
+- Đặt mật khẩu cho user vừa tạo:  
+   ```sh
+   set password for 'tên user'@'hostname'= password("[mật khẩu user]");
+   ``` 
+   *Ví dụ:* đặt cho user `havy` password là `abc@123`  
+   ```sh
+   MariaDB [(none)]> set password for 'havy'@'localhost'= password("abc@123");
+   Query OK, 0 rows affected (0.05 sec)
+   ``` 
+- Ngoài ra cũng có thể vừa tạo user vừa đặt password bằng câu lệnh:  
+   ```sh
+   create user 'user'@'hostname' identified by 'password';
+   ```
+   *Ví dụ:* tạo user `thuyhien` với password là `abc@123`   
+   ```sh
+   MariaDB [(none)]> create user 'thuyhien'@'192.168.136.129'  identified by 'abc@123';
+   Query OK, 0 rows affected (0.11 sec)
    ```
 
 <a name ="1.3"></a>
@@ -529,7 +526,7 @@ Query OK, 0 rows affected (0.11 sec)
    ```sh
    GRANT [type of permission] ON [database name].[table name] TO 'databaseusername'@'localhost';
    ``` 
-- Ví dụ:  
+*- Ví dụ:*  
   - Cấp tất cả đặc quyền cho một user qua một cơ sở dữ liệu cụ thể:  
    ```sh
   MariaDB [(none)]> grant all privileges on testdb. * to 'thuyhien'@192.168.136.129;
