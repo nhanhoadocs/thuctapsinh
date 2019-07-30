@@ -18,6 +18,7 @@
     - [Tìm hiểu về MySQL/MariaDB](25-bai-linux/mysql.md)  
     - [Cài đặt MariaDB](25-bai-linux/install_mariadb.md)  
     - [Database và user database trong MariaDB](25-bai-linux/db.md)  
-    - [Quản lý database từ xa](25-bai-linux/remote.md)
+    - [Quản lý database từ xa](25-bai-linux/remote.md)  
+    - [Bài toán về bảng trong Database,mối quan hệ giữa 2 bảng](25-bai-linux/baitoandb.md)
 
 **6.** [**Sao lưu dữ liệu**](25-bai-linux/6.backup.md)
