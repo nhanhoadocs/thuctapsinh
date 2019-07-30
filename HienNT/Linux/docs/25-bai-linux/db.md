@@ -200,7 +200,7 @@
       ``` 
      - Xóa cột trong bảng:  
       ```sh
-      alter table tablename drop column_name kieu_truong;
+      alter table tablename drop column column_name;
       ``` 
       - Chèn dữ liệu vào bảng:     
       Cú pháp:  
@@ -225,6 +225,41 @@
       MariaDB [testdb]> insert into sinhvienhust(`stt`,`ho`,`ten`,`mssv`,`diem`) values('2','Phung','Ngoc','13','9');
       Query OK, 1 row affected, 1 warning (0.10 sec)
       ``` 
+      - Cập nhật dữ liệu lên bảng:  
+      Trong trường hợp bạn tạo một cột mới, muốn thêm dữ liệu vào cột để bổ sung với các dữ liệu đã có trước đó nhưng nếu dùng lệnh `insert` thì dữ liệu sẽ ghi tiếp xuống các hàng ở dưới. Khi đó bạn sẽ sử dụng câu lệnh `update`  
+      Câu lệnh:  
+      ```sh
+      update ten_bang set ten_cot="du_lieu_moi" where ten_cot="du_lieu_ban_dau";
+      ```  
+
+      ***Ví dụ:***    
+      ```sh  
+      MariaDB [NhanHoa]> update SVTT
+      -> set Gioitinh="Nam"
+      -> where (Hoten = "DucNA") OR (Hoten="HungNV") OR (Hoten="CuongNQ") OR (Hoten="HuanTT") OR (Hoten="NiemDT") OR (Hoten="ThanhBC") OR (Hoten="ManhVQ") OR (Hoten="HungNT");
+      Query OK, 8 rows affected (0.01 sec)
+      Rows matched: 8  Changed: 8  Warnings: 0
+      ```
+      **Kết quả là:**  
+      ```sh
+      MariaDB [NhanHoa]> select * from SVTT;
+      +---------+------+---------+-----+----------+----------+
+      | Hoten   | MSSV | Mentor  | STT | MentorID | Gioitinh |
+      +---------+------+---------+-----+----------+----------+
+      | DucNA   |    1 | MinhNV  |   0 |        4 | Nam      |
+      | HungNV  |    3 | ManhDV  |   0 |        2 | Nam      |
+      | NgocPT  |    4 | DatPT   |   0 |        5 | NULL     |
+      | OanhDT  |    5 | HuyTM   |   0 |        6 | NULL     |  
+      | CuongNQ |    6 | ThanhNB |   0 |        7 | Nam      |
+      | HuanTT  |    7 | HuyTM   |   0 |        6 | Nam      |
+      | NiemDT  |    8 | MinhNV  |   0 |        4 | Nam      |
+      | ThanhBC |    9 | ManhDV  |   0 |        2 | Nam      |
+      | ManhVQ  |   10 | CongTT  |   0 |     NULL | Nam      |
+      | HungNT  |   11 | DatPT   |   0 |        5 | Nam      |
+      | HienNT  |   12 | CanhDX  |   0 |        1 | NULL     |
+      +---------+------+---------+-----+----------+----------+
+      11 rows in set (0.00 sec)
+      ```
       - Xóa dữ liệu trong bảng:  
       ```sh
       >delete from ten_bang where ten_cot="du_lieu_muon_xoa";  
