@@ -1,9 +1,12 @@
 Cài đặt Wordpress trên máy CentOS
 ===
 ## Mục lục
+1. [Tổng quan](#1-Tổng-quan)
+2. [Các bước cài đặt](#2-Các-bước-cài-đặt)
+3. [Tài liệu tham khảo](#3-Tài-liệu-tham-khảo)
 ## 1. Tổng quan
 
-Wordpress là một hê thống quản lí nội dung miễn phí và mã nguồn mở xây dựng dựa trên PHP và MySQL. Được phát hành vào năm 2003, đến nay Wordpress là một trong những hệ thống quản lí website phổ biến nhất hiện nay.
+Wordpress là một hệ thống quản lí nội dung miễn phí và mã nguồn mở xây dựng dựa trên PHP và MySQL. Được phát hành vào năm 2003, đến nay Wordpress đã trở thành một trong những hệ thống quản lí website phổ biến nhất thế giới với hơn 60 triệu website(số liệu năm 2019).
 
 ![image](../images/wordpress01.jpg)
 
@@ -21,14 +24,14 @@ Trước khi tiến hành cài đặt Wordpress, bạn phải cài đặt bộ L
 $ mysql -u root -p
 ```
 
-Bạn sẽ nhập password mà bạn đã thiết lập lúc cài đặt mariadb. KHi nhập xong, terminal sẽ chuyển sang mariadb.
+Bạn cần nhập password mà bạn đã thiết lập lúc cài đặt mariadb. Khi nhập xong, terminal sẽ chuyển sang mariadb.
 
-Tiếp theo bạn sẽ tạo cơ sở dữ liệu cho wordpress. Bạn có thể sử dụng một cái tên bất kì. Trong bài mình sẽ đặt tên là **wordpress**.
+Tiếp theo bạn sẽ tạo cơ sở dữ liệu cho wordpress. Bạn có thể sử dụng một cái tên bất kì. Trong bài, mình sẽ đặt tên là **wordpress**.
 ```
 CREATE DATABASE wordpress;
 ```
 
-Bạn cần tại một tài khoản riêng để quản lí cơ sở dữ liệu cho Wordpress. Trong bài mình sẽ đặt tên cho tài khoản là **user** và mật khẩu là **pass**
+Bạn cần tạo một tài khoản riêng để quản lí cơ sở dữ liệu cho Wordpress. Trong bài mình sẽ đặt tên cho tài khoản là **user** và mật khẩu là **pass**, như sau:
 
 ```
 CREATE USER user@localhost IDENTIFIED BY 'pass';
@@ -61,24 +64,24 @@ Tiến hành tải xuống Wordpress với phiên bản mới nhất.
 ```
 $ wget http://wordpress.org/latest.tar.gz
 ```
-> Lưu ý: Bạn cần để ý tới thư mục đang lưu trữ file wordpress đang được tải xuống. Ở đây mình lưu tại thư mục /root.
+> Lưu ý: Bạn cần để ý tới thư mục đang lưu trữ file wordpress đang được tải xuống. Ở đây mình lưu tại thư mục `/root`.
 
-Tiến hành giải nén file `lastest.tar.gz`:
+Tiến hành giải nén file `latest.tar.gz`:
 ```
-$ tar xvfz lastest.tar.gz
+$ tar xvfz latest.tar.gz
 ```
 > Lưu ý: giải nén sẽ ra thư mục wordpress có đường dẫn `/root/wordpress`.
 
-Copy các file trong thư mục wordpress tới đường dẫn /var/www/html như sau:
+Copy các file trong thư mục Wordpress tới đường dẫn `/var/www/html` như sau:
 ```
 cp -Rvf /root/wordpress/* /var/www/html
 ```
 ### Bước 4: Cấu hình Wordpress
-Ta cần đổi đưuòng dẫn tới thư mục chứa các file cài đặt Wordpress như sau:
+Ta cần đổi đường dẫn tới thư mục chứa các file cài đặt Wordpress như sau:
 ```
 cd /var/www/html
 ```
-File cấu hình wordpress là `wp-config.php`. Tuy nhiên tại đây chỉ có file `wp-config-sample.php`. Tiến hành copy tại file cấu hình như sau:
+File cấu hình wordpress là `wp-config.php`. Tuy nhiên tại đây chỉ có file `wp-config-sample.php`. Tiến hành copy lại file cấu hình như sau:
 ```
 cp wp-config-sample.php wp-config.php
 ```
@@ -88,11 +91,11 @@ Mở file config với vi để sửa:
 vi wp-config.php
 ```
 
-Trong file này, ta sẽ thấy dòng như hình dưới đây.
+Trong file này, ta tìm tới dòng như hình dưới đây.
 
 ![image](../images/wordpress02.png)
 
-ta tiến hành thay đổi thông tin cơ sở dũ liệu, tài khoản, mật khẩu như đã thiết lập ở bước 2. Ví dụ như sau:
+Tiến hành thay đổi thông tin cơ sở dũ liệu, tài khoản, mật khẩu như đã thiết lập ở bước 2. Ví dụ như sau:
 
 ![image](../images/wordpress03.png)
 
@@ -102,11 +105,21 @@ Gõ ESC -> :wq để lưu và thoát khỏi chế độ chỉnh sửa.
 
 Trên trình duyệt, gõ địa chỉ ip server trên thành url, trình duyệt sẽ xuất hiện như sau:
 
-![image](../images/wordpress04.png)
+![image](../images/wordpress05.png)
 
-Tiến hành nhập thông một số thông tin cần thiết rồi chọn **`Install Wordpress`**. Như vậy là bạn đã cài đặt thành công. Giờ chỉ cần đăng nhập là bạn đã có thể sử dụng Wordpress.
+Tiến hành nhập thông một số thông tin cần thiết rồi chọn **`Install Wordpress`**.
 
-## Tài liệu tham khảo
+![image](../images/wordpress06.png)
+
+Như vậy là bạn đã thiết lập thành công. Tiến hành đăng nhập vào Wordpress:
+
+![image](../images/wordpress07.png)
+
+Như vây là bạn đã có thể sử dụng Wordpress rồi.
+
+![image](../images/wordpress08.png)
+
+## 3. Tài liệu tham khảo
 1. [Giới thiệu về Wordpress](https://en.wikipedia.org/wiki/WordPress)
 2. [Trang chủ Wordpress](https://wordpress.com/)
-3. [Hướng dẫn cài đặt CentOS](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-centos-7)
+3. [Hướng dẫn cài đặt Wordpress trên CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-centos-7)
