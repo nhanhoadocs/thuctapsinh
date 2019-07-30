@@ -12,10 +12,12 @@
 - 4.2. [Phân quyền với user và group](25-bai-linux/4.2.permission.md) 
 
 **5.** [**Quản lý các gói**](25-bai-linux\5.1_package_management.md)  
-- 5.1. [Các tùy chọn hay dùng của yum](25-bai-linux\5.2.25_option_yum_rpm.md)  
-- 5.2. [Hướng dẫn cài đặt LAMP trên CentOS 7](25-bai-linux/lamp.md)  
-- 5.3. [Cài đặt,cấu hình Apache](25-bai-linux/domain.md)  
-- 5.4. [Tìm hiểu về MySQL/MariaDB](25-bai-linux/mysql.md)  
-- 5.5. [MariaDB](25-bai-linux/install_mariadb.md)  
+- 5.1. [Các tùy chọn hay dùng của yum](25-bai-linux\5.1_package_management.md)  
+- 5.2. [Cài đặt LAMP trên CentOS 7](25-bai-linux/lamp.md)  
+    - [Cài đặt,cấu hình Apache](25-bai-linux/domain.md)  
+    - [Tìm hiểu về MySQL/MariaDB](25-bai-linux/mysql.md)  
+    - [Cài đặt MariaDB](25-bai-linux/install_mariadb.md)  
+    - [Database và user database trong MariaDB](25-bai-linux/db.md)  
+    - [Quản lý database từ xa](25-bai-linux/remote.md)
 
 **6.** [**Sao lưu dữ liệu**](25-bai-linux/6.backup.md)
