@@ -12,7 +12,7 @@
 - 4.2. [Phân quyền với user và group](25-bai-linux/4.2.permission.md) 
 
 **5.** [**Quản lý các gói**](25-bai-linux\5.1_package_management.md)  
-- 5.1. [Các tùy chọn hay dùng của yum](25-bai-linux\5.1_package_management.md)  
+- 5.1. [Các tùy chọn hay dùng của yum](25-bai-linux/5.1_package_management.md)  
 - 5.2. [Cài đặt LAMP trên CentOS 7](25-bai-linux/lamp.md)  
     - [Cài đặt,cấu hình Apache](25-bai-linux/domain.md)  
     - [Tìm hiểu về MySQL/MariaDB](25-bai-linux/mysql.md)  
