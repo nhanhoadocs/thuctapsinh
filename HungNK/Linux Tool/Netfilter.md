@@ -241,19 +241,19 @@ Hệ thống kiểm tra từng gói dựa trên một tập hợp các kết n�
  
 Connection tracking cho phép iptables đưa ra quyết định cho mỗi gói tin mà nó nhìn thấy dựa vào ngữ cảnh(context) của kết nối đang diễn ra. Quá trình Connection tracking diễn ra khá sớm trong vòng đời(lifecycle) của một gói tin. Hệ thống sẽ kiểm tra gói tin với tập hợp các kết nối đang có trên hệ thống, cập nhật trạng thái(state) nếu cần hoặc thêm kết nối mới. Các gói tin được đánh dấu bằng target `NOTRACK` từ table `raw` sẽ được bypass quá trình tracking này.
 
-## Available States
+## Available States - Các trạng thái của kết nối
 
-Các kết nối được theo dõi bởi hệ thống theo dõi kết nối sẽ ở một trong các trạng thái sau:
+Đây là những trạng thái mà hệ thống connection tracking (module conntrack của IPtables) theo dõi trạng thái của các kết nối:
 
-- NEW: Kết nói chỉ có 1 gói tin đầu tiên của một kết nối được đánh trạng thái này, áp dụng cho cả TCP lẫn UDP.
+- NEW: Khi có một gói tin mới được gởi tới và không nằm trong bất kỳ connection nào hiện có, hệ thống sẽ khởi tạo một kết nối mới và gắn nhãn NEW cho kết nối này. Nhãn này dùng cho cả TCP và UDP.
 
 - ESTABLISHED: Trạng thái chuyển NEW to ESTABLISHED khi nhận được phản hồi hợp lệ từ phía đối diện của kết nối. Với kết nối TCP, nó chính là SYN/ACK và với UDP/ICMP, là phản hồi mà ở đó địa chỉ nguồn và địa chỉ đích được hoán đổi.
 
-- RELATED: Các gói tin không phải là một phần của kết nối hiện có, nhưng được liên kết với một kết nối đã có trong hệ thống được gắn nhãn RELATED.
+- RELATED: Gói tin được gởi tới không thuộc về một kết nối hiện có nhưng có liên quan đến một kết nối đang có trên hệ thống. Đây có thể là một kết nối phụ hỗ trợ cho kết nối chính, ví dụ như giao thức FTP có kết nối chính dùng để chuyển lệnh và kết nối phụ dùng để truyền dữ liệu.
 
-- INVALID: Các gói có thể được đánh dấu là INVALID nếu chúng không được liên kết với một kết nối hiện có và không phù hợp để mở một kết nối mới.
+- INVALID: Gói tin được đánh dấu INVALID khi gói tin này không có bất cứ quan hệ gì với các kết nối đang có sẵn, không thích hợp để khởi tạo một kết nối mới hoặc đơn giản là không thể xác định được gói tin này, không tìm được kết quả trong bảng định tuyến.
 
-- UNTRACKED: Gói tin được đánh dấu UNTRACKED nếu nó được gắn cờ để bypass quá trình tracking từ table raw.
+- UNTRACKED: Gói tin có thể được gắn hãn UNTRACKED nếu gói tin này đi qua bảng raw và được xác định ( gắn cờ ) là không cần theo dõi gói này trong bảng connection tracking.
 
 - SNAT: Đó là trạng thái sẽ được đánh dấu khi gói tin được chỉnh sửa phần source address bởi quá trình NAT. Nó được dùng bởi hệ thống Connection tracking để thay đổi lại source address ở gói tin phản hồi lại.
 
