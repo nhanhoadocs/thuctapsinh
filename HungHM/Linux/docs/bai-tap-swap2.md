@@ -44,3 +44,15 @@ sau đó reboot lại hệ thống
 <img src="https://imgur.com/LQPOAez.jpg">
 
 
+```
+dd if=/dev/zero of=/swapfile bs=1M count=4048
+ls -lah
+chmod 600 /swapfile
+mkswap /swapfile
+free -m 
+swapon /swapfile
+swapon --show
+cp /etc/{fstab,fstab.bk}
+echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab
+
+```
