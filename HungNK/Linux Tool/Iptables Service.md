@@ -418,3 +418,9 @@ https://viblo.asia/p/network-tim-hieu-ve-iptables-n7prv348RKod
 https://www.hostinger.vn/huong-dan/huong-dan-iptables-bao-mat-ubuntu-vps-voi-linux-firewall/
 
 https://hocvps.com/iptables/
+
+
+
+Bài viết hay mà chưa kịp dịch :
+
+https://www.booleanworld.com/depth-guide-iptables-linux-firewall/
