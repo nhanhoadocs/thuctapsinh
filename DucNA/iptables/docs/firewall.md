@@ -16,7 +16,7 @@ Chức năng của firewall
 - Bảo vệ tài nguyên 
 - Xác thực quyền truy cập 
 - Quản lý và kiểm soát lưu lượng mạng
- - Ghi lại và báo cáo về các sự kiện
+- Ghi lại và báo cáo về các sự kiện
 - Hoạt động như một trung gian
 ### 1.2) Cấu trúc của firewall
 Firewall bao gồm:
