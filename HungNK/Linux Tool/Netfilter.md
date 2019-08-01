@@ -302,7 +302,11 @@ https://gist.github.com/egernst/2c39c6125d916f8caa0a9d3bf421767a
 
 
 
+Tài liệu lưu iptables command:
 
+https://www.thomas-krenn.com/en/wiki/Saving_Iptables_Firewall_Rules_Permanently
+
+https://www.cyberciti.biz/faq/how-do-i-save-iptables-rules-or-settings/
 
 
 

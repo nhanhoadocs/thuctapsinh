@@ -367,4 +367,54 @@ iptables -A INPUT -j LOG --log-prefix='iptables'
 
 ping và kiểm tra file `iptables.log`
 
+-----------
 
+Tài liệu về lưu log ra file khác: 
+
+https://blog.shadypixel.com/log-iptables-messages-to-a-separate-file-with-rsyslog/
+
+
+https://tecadmin.net/enable-logging-in-iptables-on-linux/
+
+https://unix.stackexchange.com/questions/423778/log-iptables-events-on-centos-7
+
+https://www.centos.org/forums/viewtopic.php?t=44666
+
+https://cuongquach.com/huong-dan-chan-ping-tren-linux.html
+
+https://www.cyberciti.biz/tips/force-iptables-to-log-messages-to-a-different-log-file.html
+
+https://blog.shadypixel.com/log-iptables-messages-to-a-separate-file-with-rsyslog/
+
+https://serverfault.com/questions/752711/iptables-how-to-log-and-set-a-specific-log-file
+
+
+
+
+Tài liệu các câu lệnh hay dùng :
+
+https://www.cyberciti.biz/tips/linux-iptables-examples.html
+
+
+https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands
+
+
+Nguồn tài liệu tham khảo để viêt bài :
+
+https://support.rackspace.com/how-to/use-iptables-with-centos-7/
+
+https://hocvps.com/iptables/
+
+https://github.com/hocchudong/thuctap012017/blob/master/TVBO/docs/Firewalls/iptables/docs/iptables-about.md 
+
+https://www.gocit.vn/bai-viet/iptables-vs-firewalld/
+
+https://adminvietnam.org/tong-quan-iptables/1841/
+
+https://thachpham.com/linux-webserver/iptables-linux-toan-tap.html
+
+https://viblo.asia/p/network-tim-hieu-ve-iptables-n7prv348RKod
+
+https://www.hostinger.vn/huong-dan/huong-dan-iptables-bao-mat-ubuntu-vps-voi-linux-firewall/
+
+https://hocvps.com/iptables/
