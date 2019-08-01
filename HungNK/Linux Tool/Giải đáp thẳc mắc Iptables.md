@@ -77,7 +77,7 @@ Mỗi `TABLE` có các `Chain`, trong các `Chain` có cảc `Rule`, sau khi đ�
 - MANGLE
 - SNAT
 
-Như vậy, mặc dù cùng đi qua bảng NAT, nhưng thực chất nó đi qua 2 hook riêng biệt, và do đó nó cũng có hành động riêng biệc. Cụ thể ở d dây, khi đi qua hook `OUTPUT`, gói tin trải qua quá trình DNAT còn khi đi qua hook `POSTROUTING`. gói tin trải qua quá trình `SNAT`
+Như vậy, mặc dù cùng đi qua bảng NAT, nhưng thực chất nó đi qua 2 hook riêng biệt, và do đó nó cũng có hành động riêng biệc. Cụ thể ở d dây, khi đi qua hook `OUTPUT`, gói tin trải qua quá trình `DNAT` còn khi đi qua hook `POSTROUTING`. gói tin trải qua quá trình `SNAT`
 
 
 # Câu hỏi 2:
@@ -179,8 +179,6 @@ Lý do:
 thêm 1 chain, tức là anh phải thêm rule, thêm policy mặc định, điều này dễ gây xung đột vói các Table khác, Chain khác.
 
 Nếu anh thêm thành công, cũng ko loại trừ trường hợp hiệu suất bị giảm xuống. Vì càng nhiều Chains, rules , gói tin phải `matching` nhiều hơn, làm độ trễ tăng lên. Mà firewawll như một gateway sử lý biết bao nhiêu gói tin.
-
-để thêm chain, 
 
 
 Nguôn tham khảo :
