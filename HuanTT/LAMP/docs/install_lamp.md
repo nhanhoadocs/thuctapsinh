@@ -6,7 +6,7 @@ Hướng dẫn cài đặt LAMP
 3. [Tài liệu tham khảo](#3-tài-liệu-tham-khảo)
 ## 1. Tổng quan
 
-LAMP là một hệ thống các phần mềm để tạo dựng môi trường máy chủ web có khả năng chứa và phân phối các trang web động.
+LAMP là một hệ thống các phần mềm để tạo dựng môi trường máy chủ web có khả năng chứa và phân phối các trang web động được viết bằng PHP.
 
 ![image](../images/lamp01.png)
 
@@ -14,7 +14,7 @@ LAMP bao gồm:
 - Linux: là hệ điều hành, cũng là phần mềm dùng để điều phối và quản lí các tài nguyên của hệ thống.
 - Apache: là phần mềm máy chủ web, có thể thực hiện các request được gọi tới máy chủ thông qua giao thức HTTP 
 - Mysql/Mariadb: là hệ quản trị cơ sở dữ liệu giúp lưu trữ và truy xuất dữ liệu. Cả 2 hệ quản trị cơ sở dữ liệu này đều khá tương đồng với nhau (có thể tìm hiểu thêm tại [đây](https://www.eversql.com/mariadb-vs-mysql/))
-- PHP: Là ngôn ngữ lập trình cho kịch bản hoạt động của máy chủ. Ngoài ra, người ta có thể thay thế bằng các ngon ngữ khác như python,...
+- PHP: Là ngôn ngữ lập trình cho kịch bản hoạt động của máy chủ.
 ## 2. Tiến hành cài đặt
 
 ### 2.1. Cài đặt linux
@@ -28,7 +28,7 @@ LAMP bao gồm:
 $ sudo yum install httpd
 ```
 
-Cài xong, tiến hành khởi động lại và kích hoạt service:
+Cài xong, tiến hành khởi động lại service:
 
 ```
 $ systemctl start httpd
