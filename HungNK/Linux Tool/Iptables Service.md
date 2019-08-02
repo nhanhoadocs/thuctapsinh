@@ -419,7 +419,7 @@ https://www.hostinger.vn/huong-dan/huong-dan-iptables-bao-mat-ubuntu-vps-voi-lin
 
 https://hocvps.com/iptables/
 
-
+https://www.cyberciti.biz/tips/linux-iptables-examples.html
 
 Bài viết hay mà chưa kịp dịch :
 
