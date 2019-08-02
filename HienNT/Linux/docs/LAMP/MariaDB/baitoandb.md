@@ -300,10 +300,10 @@
 ### Giả sử ta có 2 bảng: 
 - Bảng `SVTT` có `MSSV` là khóa chính
 
-<img src ="../../images/25 bai linux/SVTT.png">  
+<img src ="../../../images/25 bai linux/SVTT.png">  
 
 - Bảng `Mentor` có khóa chính là `MentorID`
 
-<img src ="../../images/25 bai linux/mentor.png">  
+<img src ="../../../images/25 bai linux/mentor.png">  
 
 Trong cơ sở dữ liệu `NhanHoa`, bảng `Mentor` lưu trữ dữ liệu của các Mentor với cột khóa chính là `MentorID`; nó cũng lưu trữ dữ liệu các bạn thực tập trong bảng `SVTT`. Để liên kết 2 bảng này và xác định thông tin mentor với các bạn thực tập, một cột `MentorID` tương ứng phải được chèn vào bảng `SVTT` để tham chiếu ID của các mentor. Cột `MentorID` trong bảng `Mentor` lúc này sẽ đóng vai trò là khóa ngoại dùng để tham chiếu đến một cột cùng tên trong bảng `SVTT`.

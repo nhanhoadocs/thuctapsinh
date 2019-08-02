@@ -14,7 +14,7 @@
 
 ## Mô hình 
 
-<img src ="../../images/25 bai linux/mariadb.png">  
+<img src ="../../../images/25 bai linux/mariadb.png">  
 
 
 ## Chuẩn bị  
@@ -273,15 +273,15 @@
          ```  
         Các tùy chọn:  
 
-        <img src ="../../images/25 bai linux\filter.png">
+        <img src ="../../../images/25 bai linux\filter.png">
 
         ***Ví dụ 1:*** Lọc các bạn có giới tính nữ:  
 
-         <img src ="../../images\25 bai linux\photo_2019-07-30_19-21-11.jpg">
+         <img src ="../../../images\25 bai linux\photo_2019-07-30_19-21-11.jpg">
 
          ***Ví dụ 2:*** Lọc các bạn giới tính không phải nữ  
 
-         <img src ="../../images\25 bai linux\photo_2019-07-30_19-23-07.jpg">
+         <img src ="../../../images\25 bai linux\photo_2019-07-30_19-23-07.jpg">
 
       - Xóa dữ liệu trong bảng:  
          ```sh
