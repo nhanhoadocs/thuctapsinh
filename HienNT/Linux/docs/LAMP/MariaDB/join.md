@@ -9,13 +9,13 @@
 ## Mô hình  
 Ta có 2 bảng:  
 
-<img src ="..\..\..\images\25 bai Linux\baitoan.png">  
+<img src ="../../../images/25 bai Linux/baitoan.png">  
 
 <a name ="2"></a>
 
 ## INNER JOIN  
 
-<img src ="..\..\..\images\25 bai Linux\innerjoin.png">  
+<img src ="../../../images/25 bai Linux/innerjoin.png">  
 
 - `INNER JOIN:` trả về kết quả là các bản ghi mà trường được join ở hai bảng khớp nhau, các bản ghi chỉ xuất hiện ở một trong hai bảng sẽ bị loại. [Tham khảo](https://freetuts.net/inner-join-trong-sql-1533.html)        
   
