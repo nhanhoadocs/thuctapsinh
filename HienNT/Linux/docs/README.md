@@ -19,6 +19,8 @@
     - [Cài đặt MariaDB](25-bai-linux/install_mariadb.md)  
     - [Database và user database trong MariaDB](25-bai-linux/db.md)  
     - [Quản lý database từ xa](25-bai-linux/remote.md)  
-    - [Bài toán về bảng trong Database,mối quan hệ giữa 2 bảng](25-bai-linux/baitoandb.md)
+    - [Bài toán về bảng trong Database,mối quan hệ giữa 2 bảng](25-bai-linux/baitoandb.md)  
+    - [Sao lưu dữ liệu và phục hồi dữ liệu sao lưu](LAMP/MariaDB/backup_restore.md)  
+    - [Sử dụng SCP để truyền dữ liệu](LAMP\MariaDB\scp.md)
 
 **6.** [**Sao lưu dữ liệu**](25-bai-linux/6.backup.md)
