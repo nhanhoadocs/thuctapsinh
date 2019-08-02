@@ -2,7 +2,7 @@
 
 1. Khái niệm 
 - Iptable là một loại firewall software hay còn là một loại firewall mềm được sử dụng nhiều trong các phiên bản linux.
-- Lịch sử : 
+- Lịch sử : Từ sau phiên bản 2.4 thì các filter packet framework được gọi là netfilter trước đó thì ở các phiên bản 2.0 và 2.2 nó còn được gọi là ipchains và ipfwadm.
 - Được sử dụng để tạo ra một firewall để có thể bảo mật thông tin cá nhân giúp phòng tránh việc mất mát thông tin. Nó có thể lọc các gói tin đi ra và đi vào theo cách mà người sử dụng cài đặt. 
 
 2. so sánh giữa iptable và firewalld 
@@ -51,6 +51,19 @@ e) Chains
 f) Netfilter 
 - Iptables hoạt động bằng cách tương tác với các hook trong kernel để lọc các gói tin. Thì các hook này được gọi là  khung Netfilter 
 - Có 5 hook mà người dùng có thể thêm các quy tắc vào. 
+
+| HOOK | DESCRIPTION|
+|---|---|
+| NF_IP_FORWARD| Hoạt động khi không có gói tin chứa địa chỉ đích nào trong local|
+| NF_LOCAL_INPUT| Hoạt động khi có gói tin chứa địa chỉ đích trong local |
+| NF_LOCAL_OUTPUT |Hoạt động khi có gói tin có địa chỉ nguồn |
+| NF_IP_PRE_ROUTING |Hoạt động khi gói tin vừa mới đến network stack, thường dùng cho quá trình  DNAT|
+| NF_IP_POST_ROUTING | Hoạt động khi vừa hoàn thành quá trình routing và chuẩn bị đi vào network stack,  thường dùng cho quá trình  SNAT|
+
+g) Stateful và state less  
+- Stateless Packet Filtering: Dạng bộ lọc không biết được quan hệ của những packet vào với packet đi trước nó hoặc đi sau nó, gọi là cơ chế lọc không phân biệt được trạng thái của các packet hoặc nôm na là lọc thụ động (stateless packet filtering), trong kernel 2.0 hoặc 2.2 thì Ipfwadm hoặc Ipchains chỉ thực hiện được đến mức độ này. 
+
+- Stateful Packet Filtering: Với mọi packet đi vào mà bộ lọc có thể biết được quan hệ của chúng như thế nào đối với packet đi trước hoặc đi sau nó, ví dụ như các trạng thái bắt tay ba lần trước khi thực hiện một kết nối trong giao thức TCP/IP (SYN, SYN/ACK, ACK), gọi là firewall có thể phân biệt được trạng thái của các packet 
 
 4. Cấu trúc của iptables 
 
