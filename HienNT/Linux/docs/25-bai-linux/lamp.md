@@ -1,5 +1,5 @@
 
-<p align=center><img src = "../images/25 bai linux/FMGHI1TJTCRJJZE.LARGE.jpg" width=140% ></p>
+<p align=center><img src = "../../images/25 bai linux/FMGHI1TJTCRJJZE.LARGE.jpg" width=140% ></p>
 
 # Hướng dẫn cài đặt LAMP(Linux,Apache,MySQL,PHP) trên CentOS 7  
 ## Giới thiệu  
@@ -75,7 +75,7 @@ Firewalld là một phần của hệ thống máy tính hoặc mạng được 
     ```
     Kết quả:  
 
-    <p align=center><img src ="../images/25 bai linux/test apache.png"></p>  
+    <p align=center><img src ="../../images/25 bai linux/test apache.png"></p>  
 
     \- Nếu trong mạng có Firewall hoặc Router, mở port cho Apache Server trong trường hợp muốn truy cập thông qua remote.  
     Câu lệnh: 

@@ -2,7 +2,7 @@
 ### **Bài toán:**
 1. Tạo 2 user để quản lý 1 database(1 user có thể truy cập từ xa vào database, 1 user dùng để đăng nhập trực tiếp trên server). Trong database vừa tạo, tạo 2 bảng: 1 bảng có tên là `mentor` gồm các trường: STT, Hoten, Namsinh; 1 bảng có tên `SVTT` gồm các trường: STT, Hoten, MSSV, Mentor.  
 
-    <img src ="../../images/25 bai linux/baitoan.png">  
+    <img src ="../../../images/25 bai linux/baitoan.png">  
 
 2. Với bảng SVTT vừa tạo thực hiện các thao tác: chèn dữ liệu vào bảng, xóa dữ liệu, thêm cột, thêm hàng, xóa cột và hàng, xóa dữ liệu theo điều kiện, truy vấn dữ liệu từ nhiều bảng. Xem dữ liệu của bảng trước và sau khi thực hiện các thao tác trên.  
 ### **Bài làm:**  
@@ -300,10 +300,10 @@
 ### Giả sử ta có 2 bảng: 
 - Bảng `SVTT` có `MSSV` là khóa chính
 
-<img src ="../../images/25 bai linux/SVTT.png">  
+<img src ="../../../images/25 bai linux/SVTT.png">  
 
 - Bảng `Mentor` có khóa chính là `MentorID`
 
-<img src ="../../images/25 bai linux/mentor.png">  
+<img src ="../../../images/25 bai linux/mentor.png">  
 
 Trong cơ sở dữ liệu `NhanHoa`, bảng `Mentor` lưu trữ dữ liệu của các Mentor với cột khóa chính là `MentorID`; nó cũng lưu trữ dữ liệu các bạn thực tập trong bảng `SVTT`. Để liên kết 2 bảng này và xác định thông tin mentor với các bạn thực tập, một cột `MentorID` tương ứng phải được chèn vào bảng `SVTT` để tham chiếu ID của các mentor. Cột `MentorID` trong bảng `Mentor` lúc này sẽ đóng vai trò là khóa ngoại dùng để tham chiếu đến một cột cùng tên trong bảng `SVTT`.
