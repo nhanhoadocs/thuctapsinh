@@ -1,6 +1,6 @@
 # Sử dụng SCP để chuyển file/folder giữa các hệ thống   
 
-<img src ="../../../images/25 bai linux/How-to-Use-SCP-Command-to-Transfer-Files-Folders-in-linux.jpg">
+<img src ="../../../images\25 bai linux\How-to-Use-SCP-Command-to-Transfer-Files-Folders-in-Linux.jpg">
 
 ## Contents  
 
