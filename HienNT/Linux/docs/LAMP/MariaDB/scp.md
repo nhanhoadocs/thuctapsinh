@@ -1,6 +1,6 @@
 # Sử dụng SCP để chuyển file/folder giữa các hệ thống   
 
-<img src ="../../../images/25 bai Linux/How-to-Use-SCP-Command-to-Transfer-Files-Folders-in-Linux.jpg">
+<img src ="../../../images/25 bai linux/How-to-Use-SCP-Command-to-Transfer-Files-Folders-in-linux.jpg">
 
 ## Contents  
 
@@ -9,19 +9,19 @@
 - Tài khoản root hoặc tài khoản có quyền sudo để thực hiện việc chuyển file/folder.  
 - Các thông số liên quan:  
 
-<img src ="../../../images/25 bai Linux/chuanbi2.png">  
+<img src ="../../../images/25 bai linux/chuanbi2.png">  
 
 ## Mô hình  
 
-<img src ="../../../images/25 bai Linux/scp.png">  
+<img src ="../../../images/25 bai linux/scp.png">  
 
 
 ## Nội dung  
 ### SCP là gì?  
-SCP là viết tắt của `Secure Copy` là một ứng dụng sử dụng giao thức SSH thường dùng để sao chép dữ liệu từ máy Linux này sang máy Linux khác.  
+SCP là viết tắt của `Secure Copy` là một ứng dụng sử dụng giao thức SSH thường dùng để sao chép dữ liệu từ máy linux này sang máy linux khác.  
 
 ### Cài đặt SCP trên Centos 7  
-Thường thì SCP được cài đặt sẵn trên Linux, nếu chưa có sử dụng lệnh dưới để cài:  
+Thường thì SCP được cài đặt sẵn trên linux, nếu chưa có sử dụng lệnh dưới để cài:  
 ```sh
 yum install scp
 ```  
@@ -60,7 +60,7 @@ yum install scp
 
 - Tăng tốc độ truyền file bằng cách nén file lại  
   ```sh
-  
+
 
 
 

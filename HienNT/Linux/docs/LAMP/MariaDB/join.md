@@ -9,13 +9,13 @@
 ## Mô hình  
 Ta có 2 bảng:  
 
-<img src ="../../../images/25 bai Linux/baitoan.png">  
+<img src ="../../../images/25 bai linux/baitoan.png">  
 
 <a name ="2"></a>
 
 ## INNER JOIN  
 
-<img src ="../../../images/25 bai Linux/innerjoin.png">  
+<img src ="../../../images/25 bai linux/innerjoin.png">  
 
 - `INNER JOIN:` trả về kết quả là các bản ghi mà trường được join ở hai bảng khớp nhau, các bản ghi chỉ xuất hiện ở một trong hai bảng sẽ bị loại. [Tham khảo](https://freetuts.net/inner-join-trong-sql-1533.html)        
   
@@ -47,7 +47,7 @@ Ta có 2 bảng:
   ```  
   OUTPUT  
 
-   <img src ="../../../images/25 bai Linux/innerjoin2.png">  
+   <img src ="../../../images/25 bai linux/innerjoin2.png">  
   
 - Nếu muốn bổ sung thêm điều kiện để lấy dữ liệu, sử dụng `Where`. Ví dụ:  
 
@@ -79,12 +79,12 @@ Ta có 2 bảng:
   ```  
   OUTPUT  
 
-  <img src ="../../../images/25 bai Linux/leftjoin.png">  
+  <img src ="../../../images/25 bai linux/leftjoin.png">  
 <a name ="4"></a>  
 
 ## RIGHT JOIN  
 
-  <img src ="../../../images/25 bai Linux/right-join.png">    
+  <img src ="../../../images/25 bai linux/right-join.png">    
 
 - `right join` Lấy tất cả dữ liệu trong bảng nằm phía bên phải, bảng bên trái sẽ lấy những dữ liệu thỏa mãn `ON`  
 
@@ -106,6 +106,6 @@ Ta có 2 bảng:
   ```  
   OUTPUT  
 
-  <img src ="../../../images/25 bai Linux/rightjoin.png">  
+  <img src ="../../../images/25 bai linux/rightjoin.png">  
 
 

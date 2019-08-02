@@ -6,12 +6,12 @@
   - [Kiểm tra user database trên máy ảo](\a4)  
   - [Kết nối từ MySQL Workbench](\a5)
 
-<a name = "a1"><\a>
+<a name = "a1"></a>
 ## Mô hình  
 
 <img src ="..\..\..\images\25 bai linux\mysql workbench.png">  
 
-<a name = "a2"><\a>
+<a name = "a2"></a>
 
 ## Chuẩn bị  
 - 1 máy thật có cài MySQL Workbench  
@@ -25,11 +25,11 @@
   - RAM: 1GB  
   - Ổ đĩa: 20GB     
 
-<a name ="a3"><\a> 
+<a name ="a3"></a> 
 
 ## Nội dung  
 
-<a name ="a4"><\a>
+<a name ="a4"></a>
 
 ### 1. Kiểm tra user database trên máy ảo  
 - Kiểm tra kết nối bằng lệnh ping và telnet: 
@@ -87,7 +87,7 @@
   ```  
   Kết quả như trên là user đã có database.  
 
-<a name ="a5"><\a>
+<a name ="a5"></a>
 
 ### 2. Kết nối vào database trên máy ảo bằng MySQL Workbench  
 Truy cập vào phần mềm `MySQL Workbench` trên máy thật của bạn. Ở mục hiển thị `MySQL Connection` chọn dấu **"+"** để thêm user kết nối. 
