@@ -3,7 +3,7 @@
 ## Chuẩn bị  
 - 1 máy ảo CentOS 7 có cài MySQL Server hoặc MariaDB Server với các thông số: 
 
-<img src ="../../../images/25 bai Linux/chuanbi1.png">  
+<img src ="..\..\..\images/25 bai Linux/chuanbi1.png">  
 
 - Trên máy ảo có 1 database user dùng để thực hiện sao lưu dữ liệu. Ngoài ra tài khoản bạn dùng phải là tài khoản root hoặc tài khoản được cấp quyền `sudo`  
 
