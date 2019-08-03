@@ -77,7 +77,7 @@ Mỗi `TABLE` có các `Chain`, trong các `Chain` có cảc `Rule`, sau khi đ�
 - MANGLE
 - SNAT
 
-Như vậy, mặc dù cùng đi qua bảng NAT, nhưng thực chất nó đi qua 2 hook riêng biệt, và do đó nó cũng có hành động riêng biệc. Cụ thể ở d dây, khi đi qua hook `OUTPUT`, gói tin trải qua quá trình `DNAT` còn khi đi qua hook `POSTROUTING`. gói tin trải qua quá trình `SNAT`
+Như vậy, mặc dù cùng đi qua bảng NAT, nhưng thực chất nó đi qua 2 hook riêng biệt, và do đó nó cũng có hành động riêng biệt. Cụ thể ở d dây, khi đi qua hook `OUTPUT`, gói tin trải qua quá trình `DNAT` còn khi đi qua hook `POSTROUTING`. gói tin trải qua quá trình `SNAT`
 
 
 # Câu hỏi 2:
