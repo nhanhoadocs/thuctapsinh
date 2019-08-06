@@ -5,6 +5,7 @@
 - Chia ra làm 6 phòng ban mỗi phòng ban 20 máy
 
 B1: Ta xác định số subnet và host của mỗi subnet để chia cho tối ưu nhất.
+
 B2: Tiến hành mượn bit: ta mượn 11 bit của phần subnet mask.
 - Do đây là địa chỉ thuộc lớp B và mặc định có 16 bit là NetID
   - Quy ra nhị phân ta có: 11111111.11111111.**11111111.111**00000 ( Phần đậm là số bit mượn )
