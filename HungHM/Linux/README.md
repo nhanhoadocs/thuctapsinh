@@ -27,4 +27,6 @@
 - [7.System info](docs/Linux_tutorial/7.system_info.md)
 - [8.Swap memory](docs/Linux_tutorial/8.swap_memory.md)
 - [9.User env](docs/Linux_tutorial/9.user_env.md)
-- [11.Volume Manager](docs/Linux_tutorial/11.volume_manager.md)
+- [11+12.Volume Manager](docs/Linux_tutorial/11+12.volume_manager.md)
+- [13.Network Interface ](docs/Linux_tutorial/13.Network_interfaces.md)
+- [14.Network File System ](docs/Linux_tutorial/14.Network_File_System(NFS).md)
