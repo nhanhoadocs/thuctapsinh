@@ -1,4 +1,6 @@
 # Thuc_tap_NH
 Tài liệu + Note thực tập tại Nhân Hòa 
 
-[Abc](docs/Tim_hieu_markdown.md)
+[Tài liệu tìm hiểu Networking]()
+
+[Tài liệu tìm hiểu Linux]()
