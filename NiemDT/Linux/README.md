@@ -29,4 +29,4 @@
 28. [Tiến trình boot](docs/Linux-Boot-Process.md)
 29. [Đặt IP](docs/config-network.md)
 30. [Firewalld](docs/firewalld.md)
-31. [Selinux](selinux.md)
+31. [Selinux](docs/selinux.md)
