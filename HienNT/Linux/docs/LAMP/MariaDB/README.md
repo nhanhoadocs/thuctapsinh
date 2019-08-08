@@ -1,15 +1,17 @@
-- [Tìm hiểu về MySQL/MariaDB](mysql.md)  
+## Danh sách bài viết
 
-- [Cài đặt MariaDB](install_mariadb.md)  
+1.  [Tìm hiểu về MySQL/MariaDB](mysql.md)  
 
-- [Database và user database trong MariaDB](db.md) 
+2.  [Cài đặt MariaDB](install_mariadb.md)  
 
-- [Quản lý database từ xa](remote.md)  
+3. [Database và user database trong MariaDB](db.md) 
 
- - [Bài toán về bảng trong Database,mối quan hệ giữa 2 bảng](baitoandb.md)
+4. [Quản lý database từ xa](remote.md)  
 
- - [Tìm hiểu về các loại Join trong SQL Server](join.md)
+5. [Bài toán về bảng trong Database,mối quan hệ giữa 2 bảng](baitoandb.md)
 
- - [Sao lưu dữ liệu và phục hồi dữ liệu sao lưu](backup_restore.md)  
+6. [Tìm hiểu về các loại Join trong SQL Server](join.md)
+
+7. [Sao lưu dữ liệu và phục hồi dữ liệu sao lưu](backup_restore.md)  
  
- - [Sử dụng SCP để truyền dữ liệu](scp.md)
+8. [Sử dụng SCP để truyền dữ liệu](scp.md)
