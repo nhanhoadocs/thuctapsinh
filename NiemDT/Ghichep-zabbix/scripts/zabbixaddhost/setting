@@ -1,0 +1,6 @@
+[zabbix]
+zabbix_addr = zabbix_server_address
+zabbix_username = username_login_web
+zabbix_password = passwd_login_web
+group_name = group_name_add_host
+template_name = Template_add_host
