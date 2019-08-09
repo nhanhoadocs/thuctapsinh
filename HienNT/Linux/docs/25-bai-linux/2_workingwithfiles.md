@@ -122,7 +122,12 @@ hoặc
 \- Chỉ in ra dòng đầu tiên: `#sed '1p' [file]`  
 \- In các dòng từ x tới y: `#sed 'x,yp' [file]`  
 \- In ra các dòng với số thứ tự lẻ: `#sed '1,2p' [file]`  
-\- In ra các dòng với số thứ tự chẵn: `#sed '2,2p' [file]`   
+\- In ra các dòng với số thứ tự chẵn: `#sed '2,2p' [file]`  
+- Đối với các chuỗi trong văn bản có chứa các kí tự đặc biệt(/,:,@,=,[]) khi dùng câu lệnh thay thế cần thêm kí tự `\` trước những kí tự đặc biệt để tránh bị nhầm lẫn với các kí tự phân cách.  
+Ví dụ:   
+   ```sh
+   [root@thuyhien ~]# sed 's/# urls = ["udp://127.0.0.1:8089"]/urls = ["udp://192.168.69.69:8086"]/g' filethuchanh.conf
+   ```
 
 ## Xem dung lượng file  
 |Cấu trúc lệnh

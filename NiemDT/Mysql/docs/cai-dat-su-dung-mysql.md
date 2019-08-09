@@ -8,17 +8,13 @@ Mô hình như sau:
 
 **Cài MySQL server**
 
-Download file từ trên mạng về:
+Download repo và cài đặt
 
-`wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm`
+```
+rpm -ivh  http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
 
-![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Mysql/images/mysql/1.png)
-
-`rpm -ivh mysql-community-release-el7-5.noarch.rpm`
-
-![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Mysql/images/mysql/2.png)
-
-`yum install mysql-server`
+yum install mysql-server
+```
 
 ![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Mysql/images/mysql/3.png)
 

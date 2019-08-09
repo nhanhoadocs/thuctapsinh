@@ -22,9 +22,9 @@
 
 [2.Các lệnh thao tác với file](docs/25-bai-linux/2_workingwithfiles.md)  
 
-[3.Quyền truy cập, các câu lệnh về user và group](docs/25-bai-linux/4_file_permission.md)  
+[3.Quyền truy cập, các câu lệnh về user và group](docs\25-bai-linux\4.1.user_group.md)  
 
-[4.Các câu lệnh cấu hình mạng](docs/Co-ban/3.Cac-lenh-ve-IP.md)   
+[4.Các câu lệnh cấu hình mạng](docs\Co-ban\7.Cac-lenh-ve-mang.md)   
 
 [5.Lệnh làm việc với ổ đĩa](docs/Co-ban/4.Lenh-lam-viec-voi-o-dia.md)  
 
@@ -50,9 +50,9 @@
 
 <a name="V-Các dịch vụ cơ bản"></a>  
 ## **V-Các dịch vụ cơ bản**   
-[WEB](docs/Cac-dich-vu-co-ban/WEB.md)  
+[WEB](docs\25-bai-linux\domain.md)  
 
-[DATABASE](docs/Cac-dich-vu-co-ban/DATABASE.md)  
+[DATABASE](docs\25-bai-linux\install_mariadb.md)  
 
 [DNS](docs/Cac-dich-vu-co-ban/DNS.md)  
 

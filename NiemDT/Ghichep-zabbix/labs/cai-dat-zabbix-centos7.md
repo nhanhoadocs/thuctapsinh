@@ -105,7 +105,7 @@ php_value upload_max_filesize 2M
 php_value max_input_time 300
 php_value max_input_vars 10000
 php_value always_populate_raw_post_data -1
-php_value date.timezone Asia/Ho_Chi_minh
+php_value date.timezone Asia/Ho_Chi_Minh
 ```
 
 **Cầu hình selinux**
@@ -197,7 +197,7 @@ SELINUX=disabled
 Mở port
 
 ```
-iptables -I INPUT -p tcp --dport 10050 -j ACCEPT
+firewall-cmd --zone=public --add-port=10050/tcp
 
-iptables -I OUTPUT -p tcp --sport 10050 -j ACCEPT
+firewall-cmd --zone=public --permanent --add-port=10050/tcp
 ```
