@@ -1,0 +1,48 @@
+- Tìm hiểu kiến trúc CPU x86, user space và kernel space. Khi tìm hiểu về user space và kernel space sẽ có khái niệm ring tìm hiểu khái niệm ring.
+    - Virtualization là gì, các loại virtualization?
+    - Hypervisor là gì, các loại hypervisor?
+    - Phân biêt Virtualization và Hypervisor?
+- Tìm hiểu KVM.
+    - KVM thuộc loại virtualization nào và loại hypervisor nào?
+- Cài đặt KVM
+    - Cài đặt KVM trên ubuntu 
+    - Cài đặt KVM trên centos7
+    - Sử dụng công cụ virt-manager để tạo VM hiểu từng bước khi tạo.
+    - Sử dụng công cụ virsh ( Thực hành trên centos7)
+        - Tạo VM bằng cách sử dụng lệnh (virt-install)
+        - Các lệnh quản lý VM: hiển thị danh sách VM, bật, tắt, reboot, xóa VM, tạo snapshot...
+    - Tìm hiểu mô hình mạng trong KVM
+        - Trong KVM có các mô hình mạng nào
+        - Cấu trúc của mô hình đó
+        - So sánh sự khác nhau giữa các mô hình đó?
+    - Công nghệ Linux-bridge
+        - Cách tạo linux-bridge
+        - Đường đi của gói tin trong mô hình này
+        - Sử dụng tcpdump để chứng minh đường đi chỉ ra ở bên trên
+        - Dùng tcpdump để chứng minh xem sự khác nhau của cấp DHCP giữa 2 kiểu NAT và bridge 
+    - File xml
+        - Khi một VM được tạo ra sẽ có một file xml và một file image chính được tạo ra.
+        - File xml này chứa các thông tin gì?
+        - Nếu có 1 file xml có thể tạo ra được Vm không?
+        - File này có thể sửa được hay không? 
+        - lab: Thêm card mạng, sửa CPU, Thêm disk 
+    - Tìm hiểu cơ chế lưu trữ của thin và thick
+    - File imgae
+        - Image dùng để làm gì 
+        - Tìm hiểu định dạng raw và qcow2 khi tạo file img của VM.
+        - Ưu nhược điểm của 2 định dạng này
+        - Có thể chuyển đổi giữa 2 định dạng này không?
+        - Hai định dạng này thì cách nào có hiệu năng tốt hơn?
+        - Dùng lệnh để test lại hiệu năng xem lý thuyết là đúng hay sai?
+- Tìm hiểu cơ chế tạo, xóa và revert snapshot. So sánh 2 loại snapshot internal và external
+- Cài webvirtmgr
+    - Để sử dụng được webvirt thì trước tiên cần phải kết nối được với libvirt của các KVM host.
+    - Sau đó cài đặt webvirtmgr
+    - Tìm hiểu cách sử dụng
+- Cài đặt và sử dụng Kimchi
+- Live migrate VM giữa các KVM host
+- Tìm hiểu Iptables: Tìm hiểu các bảng, các chain, và các rule. Cách gói tin đi vào và đi ra.
+- Mô hình mạng NAT trong KVM:
+    - Chỉ ra cách nó NAT
+    - Chỉ ra đường đi của gói tin trong mô hình này
+    - Sử dụng iptables và tcpdump chứng minh lại lý thuyết đường đi của gói tin.
