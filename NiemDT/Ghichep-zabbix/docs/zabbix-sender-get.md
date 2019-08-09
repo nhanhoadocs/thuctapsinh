@@ -36,7 +36,7 @@ Ví dụ
 
 Tôi tạo một item
 
-![](/images/sender-get/1.png)
+![](../images/sender-get/1.png)
 
 ```
 [root@niemdt1 ~]# zabbix_sender -z 10.10.10.160 -p 10051 -s "10.161" -k sender -o 10 
@@ -46,7 +46,7 @@ sent: 1; skipped: 0; total: 1
 
 Tôi thấy kết quả trên web
 
-![](/images/sender-get/2.png)
+![](../images/sender-get/2.png)
 
 ## Zabbix get
 

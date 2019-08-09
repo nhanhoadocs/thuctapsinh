@@ -572,9 +572,13 @@ https://www.gocit.vn/bai-viet/iptables-vs-firewalld/
 
 
 
+# Rich rule
+https://www.youtube.com/watch?v=tt2-M8CVgx4onky
 
 
+# Tài liệu về Zone
 
+https://www.linuxjournal.com/content/understanding-firewalld-multi-zone-configurations
 
 
 
