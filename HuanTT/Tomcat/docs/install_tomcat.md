@@ -1,12 +1,15 @@
 Hướng dẫn cài đặt Tomcat trên CentOS 7
 ===
 ## Mục lục
+1. [Tổng quan](#1-Tổng-quan)
+2. [Hướng dẫn cài đặt](#2-Hướng-dẫn-cài-đặt)
+3. [Tài liệu tham khảo](#3-Tài-liệu-tham-khảo)
 ## 1. Tổng quan
 Tomcat là một phần mềm máy chủ mã nguồn mở được phát triển bởi **Apache Software Foundation (ASF)**. Tomcat được sử dụng để deploy các ứng dụng Java Web. 
 
 ![image](../images/tomcat00.png)
 
-Tomcat cung cấp các công cụ cho việc cấu hình quản lý nhưng cũng có thể được cấu hình bởi việc soạn thảo các file cấu hình bằng file xml. Trong bài này, mình sẽ hướng dẫn cài đặt bản Tomcat 9 trên máy ảo CentOS 7.
+Trong bài này, mình sẽ hướng dẫn cài đặt bản Tomcat 9 trên máy ảo CentOS 7.
 ## 2. Hướng dẫn cài đặt
 ### Bước 1: Cài đặt Java
 
@@ -41,7 +44,7 @@ $ wget http://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.22/bin/apache-tomcat-9
 ```
 Tiến hành giải nén:
 ```
-$ sudo tar -zxvf apache-tomcat-9.0.22.tar.gz -C /opt/tomcat --strip-components=1
+$ sudo tar -zxvf apache-tomcat-9.0.22.tar.gz -C /opt/tomcat
 ```
 > Lưu ý: thư mục chứa dữ liệu đã giải nén nằm tại `/opt/tomcat`.
 
@@ -61,9 +64,9 @@ $ sudo chmod g+rwx bin
 $ sudo chmod g+r bin/*
 ```
 
-### Bước 5: Thiết lập tomcat thành đơn vị systemd
+### Bước 5: Thiết lập dịch vụ tomcat trong systemd
 
-Để thuận tiện cho việc quản lí và kiểm tra, bạn cần thiết lập đơn vị systemd cho tomcat.service.
+Để thuận tiện cho việc quản lí và kiểm tra, bạn cần thiết lập dịch vụ cho tomcat tại systemd.
 ```
 $ sudo vi /etc/systemd/system/tomcat.service
 ```
@@ -92,17 +95,9 @@ Group=tomcat
 [Install]
 WantedBy=multi-user.target
 ```
-Sau đó lưu và thoát khỏi chế độ edit: `!wq`.
+Sau đó lưu và thoát khỏi chế độ edit **`:wq`**.
 
-### Bước 6: Cài đặt Haveged - chương trình bảo mật
-
-Bạn có thể cài đặt haveged như sau:
-```
-$ sudo yum install haveged
-$ sudo systemctl start haveged.service
-$ sudo systemctl enable haveged.service
-```
-### Bước 7: Khởi chạy và test Tomcat
+### Bước 6: Khởi chạy và test Tomcat
 Đầu tiên, ta cần khởi chạy và thiết lập nó chạy cùng với hệ thống:
 ```
 $ systemctl start tomcat
