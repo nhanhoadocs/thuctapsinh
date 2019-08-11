@@ -93,7 +93,7 @@ Ngoài ra, bạn có thể sử dụng phần mềm PuTTYgen để tạo key nh�
 
 ![image](../images/ssh3.7.png)
 
-Ở đây, bạn có chọn một số tùy chọn như tiêu chuẩn mã hóa: rsa, dsa, ecdsa, ed25519, ssh1-1. Hoặc chọn số lượng bit mã hóa khác thay vì 2048. Khi lựa chọn xong, chon Generate để tạo key.
+Ở đây, bạn có chọn một số tùy chọn cho thuật toán mã hoá như tiêu chuẩn mã hóa: rsa, dsa, ecdsa, ed25519, ssh1-1. Hoặc chọn số lượng bit mã hóa khác thay vì 2048. Khi lựa chọn xong, chon Generate để tạo key.
 
 >Lưu ý: Trong quá trình tạo key, bạn phải di chuyển chuột quanh màn hình đến khi nó tạo xong.
 
