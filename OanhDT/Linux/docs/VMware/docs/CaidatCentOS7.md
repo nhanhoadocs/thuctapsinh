@@ -1,6 +1,4 @@
 
-<a name ="Cài đặt CentOS7"></a>
-
 # Cài đặt CentOS7
 
 - Trước tiên chúng ta download file centOS7 về máy 
