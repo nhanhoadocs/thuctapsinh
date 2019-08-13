@@ -1,0 +1,31 @@
+# Làm việc với tệp smb.conf
+- File smb.conf được chia làm 2 phần chính là:
+    - Cấu hình toàn cục: Global settings
+    - Cấu hình cho chia sẻ tài nguyên: Share
+## Cấu hình toàn cục : Global settings
+- workgroup : tên group mà samba gia nhập
+- server string: mô tả về server
+- encrypt passwords: có mã hóa mật khẩu hay không
+- log : tệp log lưu lại tất cả thông tin truy cập tài nguyên
+- securyti: phương thức xác thực người dùng. Có các kiể sau đây
+    - share : truy xuất tài nguyên không phân biệt người dùng, chỉ cần password
+    - user : phải cung cấp username và password và các thông số này được lưu tại phần cục bộ (global) của file smb.conf
+    - server : xác thực thông qua hệ thông của samba nó sẽ yêu cầu password server
+    - password server : là tên NetBIOS của máy hoặc địa chỉ IP củ máy để xác thực người dùng.
+- interface: samba phục vụ nhiều địa chỉ IP 
+- username map : ánh xác tên truy cập samba với tên account hệ thống
+- guest account: yes or no: có hộ trợ hay không
+- win support: có hỗ trợ wins hay không
+- win server: địa chỉ IP của máy chủ wins nếu có hỗ trợ
+- host allow: kiểm tra các máy tính có được kết nối đến samba hay không thông qua địa chỉ IP
+## Cấu hình khai báo chia sẻ file
+- browseable: nếu là "NO" thì thư mục chỉ suất hiện với người quản lý thư mục.
+- wriable: người truy cập có quyền ghi hay không.
+- path: đường dẫn thư mục cần chia sẻ
+- read only: chỉ được đọc.
+- valid user: chỉ cho danh sách user truy cập, nếu có @group là cho cả nhóm truy cập.
+- force user: Tham số trỏ tới một tên user này dùng để buộc các thay đổi cập nhật lên tệp, thư mục phải thông qua tên user đã khai báo.
+- force group: Các thay đổi cập nhật lên dữ liệu sẽ thông qua group được chỉ ra bởi tham số này.
+- available: Nếu tham số có giá trị “no” thì chia sẻ tạm thời bị vô hiệu lực.
+- create mode: Quyền truy cập  cho các tệp mới tạo.
+- directory mode: Quyền truy cập cho các thư mục mới tạo
