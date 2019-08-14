@@ -16,5 +16,6 @@
 - 5.2. [Cài đặt LAMP trên CentOS 7](LAMP/lamp.md)  
     - [Apache](LAMP/Apache)
     - [MariaDB](LAMP/MariaDB)
+    - [phpMyAdmin](LAMP/phpMyAdmin)
 
 **6.** [**Sao lưu dữ liệu**](25-bai-linux/6.backup.md)
