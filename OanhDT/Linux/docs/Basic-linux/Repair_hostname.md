@@ -1,8 +1,8 @@
 # Thiết lập hostname cho CentOS7
 
-- Hostname là tên được dùng để xác định ra địa chỉ của host trong mạng máy tính.
-- Hiểu đơn giản, Hostname là một cụm ký tự chỉ tên của máy chủ.
-- Để kiểm tra hostname của máy ta dùng lệnh 
+* Hostname là tên được dùng để xác định ra địa chỉ của host trong mạng máy tính.
+* Hiểu đơn giản, Hostname là một cụm ký tự chỉ tên của máy chủ.
+* Để kiểm tra hostname của máy ta dùng lệnh sau :
 
 ```
 [root@oanhdt  ~]# hostname
@@ -12,14 +12,16 @@ oanhdt
 ```
 
 
-- file chứa hostname của máy 
+* File chứa hostname của máy 
 ``` 
 /etc/hostname
 ```
 
  ## Các cách sửa hostname của máy 
+
  ### Cách 1
- - Dùng câu lệnh 
+
+ Dùng câu lệnh 
  ```
  hostnamectl set-hostname new_name
  ```
@@ -30,12 +32,12 @@ oanhdt
 - Sau đó bạn có thể gõ lệnh `bash` để máy nhận tên mới.
 - Hoặc bạn đăng nhập vào phiên mới thì máy sẽ nhận tên mới như hình dưới.
 
-![](../images/disk/bash.png)
+![](../../images/disk/bash.png)
 
 
 ## Cách 2 
 
-- Chúng ta chỉnh sửa file chứa hostname của máy.Ở đây mình sử dụng trình soạn thảo văn bản `vi` để chính sửa . 
+- Chúng ta chỉnh sửa file chứa hostname của máy.Ở đây mình sử dụng trình soạn thảo văn bản `vi` để chỉnh sửa . 
 
 ```
 vi /etc/hostname 
