@@ -164,7 +164,7 @@ Firewalld là một phần của hệ thống máy tính hoặc mạng được 
     ```  
   - Dùng trình duyệt web của bạn truy cập theo mẫu  
     ```sh
-    http: //YOUR_SERVER_IP/info.php
+    http: //YOUR_SERVER_IP/test.php
     ```
     Kết quả:  
 
