@@ -4,7 +4,7 @@
 
 Một mô hình giám sát zabbix sẽ bao gồm đầy đủ các thành phần như sau:
 
-![](/images/cai-dat/1.jpg)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/cai-dat/1.jpg)
 
 Nhưng ở đây tôi giám sát với hệ thống nhỏ nên tôi sẽ không cài đặt zabbix proxy. Tôi và tôi cài đặt web server, Zabbix server và Database server trên cùng một máy.
 
@@ -21,7 +21,7 @@ Một máy làm zabbix agent nên ko yêu cầu phần cứng. Nhưng trong bài
 
 Mô hình đơn giản của tôi như sau
 
-![](/images/cai-dat/2.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/cai-dat/2.png)
 
 ## Cài đặt
 
@@ -105,7 +105,7 @@ php_value upload_max_filesize 2M
 php_value max_input_time 300
 php_value max_input_vars 10000
 php_value always_populate_raw_post_data -1
-php_value date.timezone Asia/Ho_Chi_minh
+php_value date.timezone Asia/Ho_Chi_Minh
 ```
 
 **Cầu hình selinux**
@@ -126,7 +126,7 @@ service httpd restart
 
 Bạn mở trình duyệt web và truy cập `http://IP-server/zabbix` bạn sẽ thấy như sau
 
-![](/images/cai-dat/3.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/cai-dat/3.png)
 
 ## Cài đặt zabbix agent
 
@@ -197,7 +197,7 @@ SELINUX=disabled
 Mở port
 
 ```
-iptables -I INPUT -p tcp --dport 10050 -j ACCEPT
+firewall-cmd --zone=public --add-port=10050/tcp
 
-iptables -I OUTPUT -p tcp --sport 10050 -j ACCEPT
+firewall-cmd --zone=public --permanent --add-port=10050/tcp
 ```

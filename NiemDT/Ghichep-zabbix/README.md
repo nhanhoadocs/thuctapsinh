@@ -15,3 +15,4 @@
 11. [Cấu hình backup và restore](labs/Backup-restore.md)
 12. [Plugin](labs/plugin.md)
 13. [Grafana](labs/grafana.md)
+14. [Dashboard grafana](labs/Dashboard-su-dung-variables.md)

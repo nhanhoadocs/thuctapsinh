@@ -6,11 +6,11 @@ Trước tiên bạn có thể có thể gửi cảnh báo được qua telegram
 
 Để tạo bot bạn click [vào đây]( https://telegram.me/BotFather). Tiếp theo click vào `SEND MESSAGE`. Lưu ý rằng trên máy bạn đã cài đặt telegram desktop
 
-![](/images/telegram/1.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/telegram/1.png)
 
 Click vào `start`
 
-![](/images/telegram/2.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/telegram/2.png)
 
 Sau đó tiến hành chat với bot telegram này
 
@@ -76,7 +76,7 @@ Truy cập vào zabbix server trên trình duyệt web
 
 Vào `Administration` -> `Media types` -> `Create media type`
 
-![](/images/telegram/3.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/telegram/3.png)
 
 Trong đó: 
  * Name: bạn đặt tên tùy ý
@@ -99,11 +99,11 @@ Thiết lập usẻ nhận cảnh báo
 
 Click `Administration` -> `User` sau đó click vào user nhận cảnh báo
 
-![](/images/telegram/4.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/telegram/4.png)
 
 ở đây tôi sẽ nhận cảnh báo ở user Admin. Tôi click vào user `Admin` -> `Media` -> `Add`
 
-![](/images/telegram/5.1.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/telegram/5.1.png)
 
 Trong đó
 
@@ -116,40 +116,40 @@ Tích vào `Enabled` và sau đó click `Add`
 
 Click `Update`
 
-![](/images/telegram/6.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/telegram/6.png)
 
 Vào `Configuration`-> `Action` -> `Create action`
 
 Điền tên của action
 
-![](/images/telegram/7.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/telegram/7.png)
 
 Chọn `Operations` để cấu hình gửi cảnh báo khi có vấn đề
 
-![](/images/telegram/8.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/telegram/8.png)
 
 Thêm user bạn muốn gửi cảnh báo (user đã thiết lập lúc trước). Sau đó click `add`. Bạn có thể thay đổi nội dung, và tiêu đề gửi cảnh báo ở mục `Default subject` và `Default message` ở đây tôi đển mặc định.
 
 Sau đó click vào `Recovery operations` để cấu hình gửi thông báo khi vấn đề được giải quyết. Bên đây ta cũng cấu hình tương tự như ơt `Operations`
 
-![](/images/telegram/9.1.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/telegram/9.1.png)
 
 Sau đó click `Add` ở dưới để hoàn thành
 
 Bạn sẽ thấy action vừa tạo
 
-![](/images/telegram/10.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/telegram/10.png)
 
 **Kiểm tra gửi cảnh báo**
 
 Tôi tạo 1 trigger để test việc gửi cảnh báo
 
-![](/images/telegram/11.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/telegram/11.png)
 
 Tôi dùng lệnh `zabbix_sender` để gửi giá trị vượt quá ngưỡng để zabbix server gửi cảnh báo tôi sẽ thấy trong telegram của tôi
 
-![](/images/telegram/12.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/telegram/12.png)
 
 Khi tôi gửi giá trị xuống dưới mức cảnh báo
 
-![](/images/telegram/13.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Ghichep-zabbix/images/telegram/13.png)

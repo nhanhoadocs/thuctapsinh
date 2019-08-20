@@ -4,23 +4,19 @@ Chuẩn bị mô hình gồm 2 máy trong đó 1 máy để cài MySQL server v�
 
 Mô hình như sau:
 
-![](/CSDL/images/mysql/8.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Mysql/images/mysql/8.png)
 
 **Cài MySQL server**
 
-Download file từ trên mạng về:
+Download repo và cài đặt
 
-`wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm`
+```
+rpm -ivh  http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
 
-![](/CSDL/images/mysql/1.png)
+yum install mysql-server
+```
 
-`rpm -ivh mysql-community-release-el7-5.noarch.rpm`
-
-![](/CSDL/images/mysql/2.png)
-
-`yum install mysql-server`
-
-![](/CSDL/images/mysql/3.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Mysql/images/mysql/3.png)
 
 `systemctl start mysqld`
 
@@ -28,7 +24,7 @@ Download file từ trên mạng về:
 
 `mysql_secure_installation`
 
-![](/CSDL/images/mysql/4.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Mysql/images/mysql/4.png)
 
 Ở đây ta có thể đặt mật khẩu cho tài khoản `root` và một số các thông số khác
 
@@ -40,7 +36,7 @@ Cho phép truy cập vào MySQL từ máy ở xa.
 
 Ta có thể login vào với user root
 
-![](/CSDL/images/mysql/5.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Mysql/images/mysql/5.png)
 
 #### Tạo user và phân quyền cho user
 
@@ -52,7 +48,7 @@ Trong đó:
 
  * `IP` có thể là địa chỉ máy IP ở xa cho phép login vào hoặc là `localhost` nếu chỉ cho login vào tại chính máy local. Để `%` nếu cho phép tất cả các máy login vào.
 
-![](/CSDL/images/mysql/6.1.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Mysql/images/mysql/6.1.png)
 
 Như ví dụ trên user `niemdt` chỉ có thể login và từ máy ở xa có địa chỉ `192.168.122.56`
 
@@ -73,13 +69,13 @@ Trong đó các quyền có thể gán cho user:
 
 Data và table nếu muốn áp dụng cho tất cả thì dùng dấu `*` để thay thế.
 
-![](/CSDL/images/mysql/6.2.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Mysql/images/mysql/6.2.png)
 
 Như ví dụ trên tôi để cho user `niemdt` có tất cả các quyền với đất cả các CSDL trên MySQL server.
 
 Chạy lệnh `FLUSH PRIVILEGES` để áp dụng những gì vừa thiết lập.
 
-![](/CSDL/images/mysql/6.3.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Mysql/images/mysql/6.3.png)
 
 Một số lệnh với user:
 
@@ -105,7 +101,7 @@ login remote ta sử dụng cú pháp `mysql -u user-name -p -h IP`
 
 `IP` ở đây là IP của máy server.
 
-![](/CSDL/images/mysql/7.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Mysql/images/mysql/7.png)
 
 ## Sử dụng MySQL
 
