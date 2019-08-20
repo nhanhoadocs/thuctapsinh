@@ -69,7 +69,7 @@ Ví dụ, một spyware đang chạy với tư cách là ứng dụng cho ngư�
 
 Hầu hết các hệ điều hành chỉ sử dụng 2 Ring ngay cả khi phần cứng mà hệ điều hành chạy trên đó hỗ trợ nhiều hơn 2 Ring. Ví dụ, Windows chỉ sử dụng 2 mức là Ring 0 (tương ứng với Kernel Mode) và Ring 3 (tương ứng với User Mode).
 
-***--> Tóm lại, `ring` cách ly người dùng với hệ đ iều hành bằng các cấp đặc quyền.***
+***--> Tóm lại, `ring` cách ly người dùng với hệ điều hành bằng các cấp đặc quyền.***
 
 ## Phân loại Virtualization
 
@@ -85,7 +85,7 @@ Trong ảo hóa, người ta có thể ảo hóa:
 
 Trong khuôn khổ bài viết, tôi sẽ chỉ tập trung đến `CPU virtualization`.
 
-## CPU virtualization
+# CPU virtualization
 
 Có 4 loại CPU virtualization :
 
@@ -103,7 +103,7 @@ Có 4 loại CPU virtualization :
 
 Trong khuôn khổ bài viết, tôi sẽ tập trung vào `Full Virtualization` và `Paravirtualization`
 
-### Full Virtualization
+## Full Virtualization
 
 ![](..//Basic_Linux_Command/Picture/aohoa1.png)
 
@@ -121,7 +121,7 @@ Nhìn vào `ring` = 1 của nó, thì thằng Guest OS này chỉ chạy trên q
 
 ![](..//Basic_Linux_Command/Picture/aohoa3.png)
 
-### Paravirtualization
+## Paravirtualization
 
 ![](..//Basic_Linux_Command/Picture/aohoa4.png)
 
@@ -140,7 +140,7 @@ Nhưng đối với các App, nó vẫn thấy thằng Guest OS này không có 
 ![](..//Basic_Linux_Command/Picture/aohoa6.png)
 
 
-### Hardware Assisted Virtualization - thêm
+## Hardware Assisted Virtualization - thêm
 
 
 ![](..//Basic_Linux_Command/Picture/aohoa7.png)
