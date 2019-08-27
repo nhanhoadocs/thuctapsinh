@@ -1,6 +1,6 @@
 [zabbix]
-zabbix_addr = zabbix_server_address
-zabbix_username = username_login_web
-zabbix_password = passwd_login_web
-group_name = group_name_add_host
-template_name = Template_add_host
+zabbix_addr = 10.10.10.167
+zabbix_username = admin
+zabbix_password = zabbix
+group_name = Linux servers
+template_name = Template OS Linux

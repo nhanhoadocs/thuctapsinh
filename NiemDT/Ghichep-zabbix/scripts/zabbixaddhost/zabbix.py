@@ -38,7 +38,6 @@ class Zabbix(object):
         else:
             print(r)
             result=r.json()
-            print(result)
             auth_key=result['result']
             return auth_key
 
@@ -62,8 +61,6 @@ class Zabbix(object):
                       auth=HTTPBasicAuth(self.username,self.passwd))
         a = r.json()['result'][0]
         return(a['templateid'])
-        #print("Template name: ", a['host'])
-        #print("Templateid: ", a['templateid'])
 
     def get_group_id(self, auth_key):
         payload={
@@ -85,7 +82,6 @@ class Zabbix(object):
                       auth=HTTPBasicAuth(self.username,self.passwd))
         a = r.json()['result'][0]
         groupid = a['groupid']
-        print(a['groupid'])
         return groupid
     
     def add_host(self, auth_key, list_host, groupid, templateid):
@@ -127,16 +123,4 @@ class Zabbix(object):
             r = requests.post(self.url, data=json.dumps(payload),
                           headers=self.headers, verify=True,
                           auth=HTTPBasicAuth(self.username,self.passwd))
-            #if  r.status_code != 200:
-            #    print('problem -request')
-            #    continue
-            #else:
-            #    try:
-            #        result=r.json()['result']
-            #        host_id=result['hostids'][0]
-            #        return host_id
-            #    except:
-            #        result=r.json()['error']
-            #        print ('error - creating host')
-            #        print(result)
-            #        continue
+            

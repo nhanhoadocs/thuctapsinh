@@ -23,8 +23,6 @@ group = config['zabbix']['group_name']
 template = config['zabbix']['template_name']
 list_host = get_host('hosts')
 
-print(list_host)
-
 zabi = Zabbix(username, passwd, group, template)
 auth_key = zabi.get_aut_key()
 templateid = zabi.get_tem_id(auth_key)
