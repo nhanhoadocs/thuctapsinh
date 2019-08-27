@@ -2,7 +2,7 @@
  
 ## 1. Cách hoạt động của web server
 
-![](/images/web_server_1.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Security/images/web_server_1.png)
 
 Web server là gì? Đây là một máy chủ (server) nhận yêu cầu từ các máy tính của người dùng (client) sau đó xử lý và trả lại thông tin cho các máy client để hiển thị duới dạng các file .htm hoặc .html.
 
@@ -70,7 +70,7 @@ So sánh một chút về `GET` và `POST`. Thông thường thì `GET` được
 
 Ta có thể thấy định dạng của URL
 
-![](/images/web_server_2.png)
+![](https://github.com/niemdinhtrong/thuctapsinh/blob/master/NiemDT/Security/images/web_server_2.png)
 
 Request header
 
