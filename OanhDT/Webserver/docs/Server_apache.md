@@ -20,7 +20,7 @@ Các bạn có thể tìm hiểu thông tin của mô hình client server [tại
 
 ### 2. Nguyên tắc hoạt động 
 
-Công việc của nó là thiết lập kết nối giữa server và trình duyệt người dùng (Firefox, Google Chrome, Safari, vâng vâng.) rồi chuyển file tới và lui giữa chúng (cấu trúc 2 chiều dạng client-server)
+Công việc của nó là thiết lập kết nối giữa server và trình duyệt người dùng (Firefox, Google Chrome, Safari, .....) rồi chuyển file tới và lui giữa chúng (cấu trúc 2 chiều dạng client-server)
 
 Ví dụ khi bạn muốn tải một trang web trên website  `news.cloud365` chẳng hạn.Trình duyệt người dùng sẽ gửi yêu cầu tải trang web đó lên server và Apache sẽ trả kết quả với tất cả đầy đủ các file cấu thành nên trang News.cloud365 (hình ảnh, chữ, vâng vâng). Server và client giao tiếp với nhau qua giao thức HTTP và Apache chịu trách nhiệm cho việc đảm bảo tiến trình này diễn ra mượt mà và bảo mật giữa 2 máy.
 
