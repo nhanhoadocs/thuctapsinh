@@ -49,7 +49,7 @@ Trình duyệt sẽ liên hệ với web server để chuyển đổi tên miề
 
 Sau đó trình duyệt sẽ gửi tiếp một kết nối tới máy chủ có địa chỉ IP tương ứng qua port 80.
 
-Dựa trên giao thức HTTP trình duyệt gửi yêu cầu GET đến máy chủ và yêu cầu tệp HTML . Sau đó máy chủ sẽ gửi một file văn bản cso thẻ html đến trình duyệt web.
+Dựa trên giao thức HTTP trình duyệt gửi yêu cầu GET đến máy chủ và yêu cầu tệp HTML . Sau đó máy chủ sẽ gửi một file văn bản có thẻ html đến trình duyệt web.
 
 Sau đó trình duyệt web đọc các thẻ html để xác lập định dạng trang web và xuất ra màn hình.
 
