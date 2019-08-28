@@ -7,4 +7,4 @@ Tài liệu + Note thực tập tại Nhân Hòa
 
 [Tài liệu tìm hiểu web server](Webserver/README.md)
 
-[Other](Other/REAME.md)
+[Other](Other/README.md)
