@@ -29,12 +29,15 @@ Lợi ích của web: Thông tin dễ dàng cập nhật, thay đổi, cập nh�
 **Web page** 
 - Là một cách để hiển thị dữ liệu của trên www và nó sẽ được hiển thị trên các thiết bị truy cập internet
 - Trên network trình duyệt có thể truy xuất trang web từ web server. Web server có thể hạn chế quyền truy cập. Web browes sử dụng HTTP để thực hiện các yêu cầu đến web server 
+- Web page cũng có thể là các văn bản được viết bằng HTML. Các web có thể liên kết với các web page khác bằng các liên kết. 
 
 **Web server**
-- Là một phần mêm server haowjc phần cứng dành để chạy gói phần mềm nói trên. Nó có thể đáp ứng được yêu cầu của người dùng internet. 
+- Là một phần mêm server hoặc phần cứng dành để chạy gói phần mềm nói trên. Nó có thể đáp ứng được yêu cầu của người dùng internet. 
 - Một web server có thể chứa nhiều website và xử lý các yêu cầu qua HTTP và một số giao thức khác 
-- Có hai loại web page được sử dụng là tĩnh và động 
-    - Tĩnh: 
+
+**website**
+- Website là nơi có chứa các nội dung đa phương tiện thường được xác định bằng một tên miền và được published trên một webserver 
+- Web page là một khối được dùng để tạo ra website
 
 ## Link tham khảo 
 https://en.wikipedia.org/wiki/World_Wide_Web
