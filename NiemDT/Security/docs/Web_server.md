@@ -101,3 +101,15 @@ cache-control: private, max-age=0
 content-encoding: gzip
 X-Firefox-Spdy: h2
 ```
+
+## Cookie và session
+
+**Cookie**
+
+Cookie là một file có chứa thông tin được lưu trữ trên trình duyệt của client. Cookie thường được tạo ra khi người dùng truy cập một website, cookie sẽ ghi nhớ các thông tin như tên đăng nhập, mật khẩu và các thông tin khác do người dùng quy định. Thông tin này được lưu trên máy tính phía client để nhận biết người dùng khi truy câp vào một website. Nó cũng lưu thông tin của các trang web mà bạn truy cập, thời gian truy cập và có thể là các thao tác trên đó. Cookie sẽ tự động xóa sau một khoảng thời gian xác định do người dùng đặt.
+
+Việc lưu cookie này cũng liên quan đến vấn đề bảo mật. Kẻ tấn công có thể lợi dụng điều này để đánh cắp các tài khoản của bạn.
+
+**Session**
+
+Khác với cookie thì session được lưu trên máy server. Nó chứa dữ liệu người dùng sử dụng web. Ví dụ khi bạn đăng nhập vào một website với tài khoản đăng ký trước đó. Nếu bạn login thành công server sẽ tih ra một file (hay chính là sesion của trình duyệt của bạn) chứa dữ liệu cần lưu trữ của người dùng. 
