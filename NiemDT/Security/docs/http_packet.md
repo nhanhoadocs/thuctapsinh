@@ -59,7 +59,6 @@ Ta có thể thấy phần header của 2 method này có chút khác biệt. Đ
 
 MỘt số khác biệt khác
 
-|---------------|-------------------|
 |   GET     |   POST    |
 |--------------|--------------------|
 |không có vấn đề khi load lại | Dữ liệu sẽ được gửi lại lần nữa |
