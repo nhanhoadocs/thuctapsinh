@@ -37,7 +37,7 @@ Contents
 2. Client sẽ gửi yêu cầu SQL bằng một lệnh đặc biệt trên MySQL.
 3. Ứng dụng trên server sẽ phản hồi thông tin và trả về kết quả trên máy client.
 
-<a name="c"><a>
+<a name="c"></a>
 
 ## 3. Cách cài đặt MySQL trên CentOS7
 

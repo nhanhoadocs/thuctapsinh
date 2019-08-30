@@ -124,7 +124,7 @@ Trong đó:
 
 - database_name_here : tên của database  
 - username_here : tên user login vào mysql   
-- username_here : password của user login vào mysql  
+- password_here : password của user login vào mysql  
 - localhost : địa chỉ cuả máy MySQL Sever  
 
 Ví dụ:

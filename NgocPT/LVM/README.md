@@ -8,3 +8,5 @@
 [6.Cấu hình LVM dạng thin](./docs/6_thin_provisioning.md)  
 [7.Các kiểu Backup](./docs/7_Cac_loai_backup.md)  
 [8.TÌm hiểu về LVM Backup và LVM Snapshot](./docs/8_Tim_hieu_LVM_backup_va_snapshot.md)  
+[9.Dùng Crontab chạy vgcfgbackup](./docs/9_crontab_lvm.md)  
+[10.LVM linux và khả năng phục hồi dữ liệu](./docs/10_lvm_linux_phuc_hoi_du_lieu.md)  
