@@ -1,6 +1,20 @@
 [Cài đặt Ubuntu Server 18.04](../../images/Ubuntu184)
 
+## Su và Sudo trong Linux  
 
+Trong Linux, bạn có thể sử dụng các lệnh su hoặc sudo để tạm thời cấp quyền truy cập root cho người dùng bình thường.Những phương pháp này thực sự khá khác nhau.
+
+- Khi sử dụng lệnh su
+
+  - Để nâng cao đặc quyền, bạn cần nhập mật khẩu gốc.
+  - Việc cung cấp mật khẩu gốc cho người dùng bình thường sẽ không bao giờ được thực hiện một khi người dùng nâng lên tài khoản root, người dùng bình thường có thể làm bất cứ điều gì mà người dùng root có thể làm miễn là người dùng muốn, mà không cần hỏi lại mật khẩu
+  - Có tính năng đăng nhập hạn chế.  
+
+- Khi sử dụng lệnh sudo
+
+  - Bạn cần nhập mật khẩu người dùng mà không phải mật khẩu gốc.  
+  - Những thao tác người dùng thao tác với máy đều sẽ được cấu hình giới hạn.  
+  - Chức năng đăng nhập chi tiết có sẵn.
 
 ## Các cấu hình quản lý user với sudo  
 - Cú pháp cấu hình quyền của người dùng   
