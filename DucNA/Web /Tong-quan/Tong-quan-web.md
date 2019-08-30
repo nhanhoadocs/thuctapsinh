@@ -11,7 +11,7 @@ Lợi ích của web: Thông tin dễ dàng cập nhật, thay đổi, cập nh�
 
 2. Cách thức hoạt động của web
 
-![](../image/screen.png)
+![](https://github.com/duckmak14/thuctapsinh/blob/master/DucNA/Web%20/Tong-quan/image/screen.png)
 
 - Thông qua trình duyệt, người dùng cuối sẽ kết nối đến máy Webserver bằng địa chỉ URL. Tại đây, máy Webserver sẽ xử lý kết nối và gửi yêu cầu đến ứng dụng web.
 - Tùy theo yêu cầu, ứng dụng web sẽ truy vấn đến cơ sở dữ liệu và nhận kết quả trả về, sau đó sẽ gửi phản hồi về máy Webserver.
