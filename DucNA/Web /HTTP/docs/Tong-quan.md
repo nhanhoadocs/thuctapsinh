@@ -56,3 +56,6 @@ HTTP/3  Là sự kế thừa từ sản phẩm HTTP/2 và thay đổi bằng cá
     - Start line : Yêu cầu HTTP được gửi đi để bắt đầu thì nó bao gồm 3 nội dung là phiên bản HTTP; method và target request 
     - Header : Không phân biệt chữ hoa chữ thường; Theo sau là dấu `:` 
     - Body : Phân nội dung dữ liệu nếu được gửi từ client thì nó sẽ có yêu cầu cập nhật nội dung bảng mẫu 
+6. encode và decode 
+- encode (mã hóa) : Thường được sử dụng để mã hóa dữ liêu thành ngôn ngữ máy. Mục đích là để giảm dung lượng của dữ liệu(văn bản, hình ảnh, âm thanh) để có thể truyền dữ liệu đi dễ dàng hơn 
+- decode được dùng để giải mã những dữ liệu đã được encode thành những dữ liệu mà chúng ta có thể hiểu được 

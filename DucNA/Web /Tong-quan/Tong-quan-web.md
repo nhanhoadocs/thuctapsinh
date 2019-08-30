@@ -23,7 +23,7 @@ Lợi ích của web: Thông tin dễ dàng cập nhật, thay đổi, cập nh�
 - web browser là một ứng dụng cho phép người dùng xem và tương tác với các văn bản, hình ảnh, dữ liệu của một trang web trên internet.
 - Web browser cho phép sử dụng truy cập các thông tin một cách nhanh chóng và dễ dàng, nó đọc định dạng của ngôn ngữ HTML, CSS, XML.... để hiển thị dữ liệu theo cách riêng 
 
-Địa chỉ URL 
+**Địa chỉ URL** 
 - URL (Uniform Resource Locator) được dùng để tham chiếu tới các dữ liệu trên Internet. URL mang lại khả năng liêu kết cho các trang web, các tài nguyên khác nhau trên internet 
 
 **Web page** 
