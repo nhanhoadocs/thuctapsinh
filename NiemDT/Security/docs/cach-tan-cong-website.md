@@ -1,4 +1,4 @@
-# Top 10 kiểu tấn công mạng phổ biến hiện nay
+# Top các kiểu tấn công mạng phổ biến hiện nay
 
 ## 1. DoS và DDoS
 
