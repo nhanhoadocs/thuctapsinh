@@ -8,6 +8,7 @@
 6.[Tìm hiểu về trình soạn thảo vim](./docs/vim.md)  
 7.[Tìm hiểu về bashrc](./docs/bashrc.md)  
 8.[Lệnh runlevel linux](./docs/init.md)  
-9.[Các hệ thống file nhật ký](./docs/file_system_linux.md)
+9.[Các hệ thống file nhật ký](./docs/file_system_linux.md)  
+10.[Mẹo bảo mật cứng cho máy chủ linux](./docs/12_Meo_bao_mat_cung_linux.md) 
 
  

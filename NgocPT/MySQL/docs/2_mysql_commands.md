@@ -24,6 +24,17 @@ Trên CentOS, toàn bộ file raw database được lưu trong thư mục `/var/
 <a name="b"></a>
 
 ## 2. Quản lý tài khoản và phân quyền
+### Tạo user mới
+
+```
+create user 'user-name'@'IP' identified by 'password';
+```
+
+Trong đó ta có:
+
+- username : tên của user
+- IP : máy có thể truy cập user này muốn tất cả các user đều đăng nhập được ta để %
+- password : là pass để ta đăng nhập 
 
 ### Liệt kê các user đang có trong dịch vụ MySQL
  Ta dùng lệnh:
@@ -49,6 +60,10 @@ Dấu * trong trường hợp này được chỉ đến database và bảng mà
 Khi bạn đã hoàn tất các quyền mà bạn thiết lập cho người dùng mới của mình, hãy chắc chắn rằng bạn đã reload lại các quyền của các user trong mysql.
 ```
 FLUSH PRIVILEGES;
+```
+Sau đó ta đăng nhập với server bằng client
+```
+mysql -u user -p -h IPserver
 ```
 
 ### Phân quyền chi tiết cho một user mới:
