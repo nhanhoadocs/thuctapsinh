@@ -28,11 +28,6 @@
   ```sh
     # yum install -y tcpdump
   ```
-  Check  
-  ```sh
-    # which tcpdump
-  /usr/sbin/tcpdump
-  ```
 ## <a name="2"></a>2. Một số câu lệnh hay dùng với tcpdump
 ### 2.1. Hiển thị các giao diện mạng có sẵn  
 - Sử dụng option `-D` với câu lệnh  
