@@ -138,11 +138,68 @@
   - Câu lệnh xóa port
 
     ```sh
-      # semanage port -d -t ssh_port_t -p tcp 
+      # semanage port -d -t ssh_port_t -p tcp [port_xóa]
     ```  
 
   - Thêm port mới
 
+     ```sh
+       #semanage port -a -t ssh_port_t -p tcp [port_thêm]
+     ```
+
+- Mặc định root user không được login nên để cho phép root user login thì bạn phải chỉnh sửa config file:    
+
+  ```sh
+  vi /etc/ssh/sshd_config  
+  ```
+
+  Chuyển `no` thành `yes` để cho phép root user login  
+
+  ```sh
+  PermitRootLogin yes
+  ```
+
+  Sau đó 
+
+  ```sh
+  systemctl restart sshd.service
+  systemctl enable sshd.service
+  ```
+
+<a name ="4"></a>
+
+## 4. User, group quản lý dịch vụ SSH  
+
+Đọc file `etc/passwd` để xem thông tin về user, group của dịch vụ SSH  
+
+```sh
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+```  
+
+- User: sshd
+- Group: Privilege-separated
+
+<a name="5"></a>
+
+## 5. Cho phép hoặc từ chối đăng nhập SSH ở một số user hoặc group  
+
+- Trong trường hợp bạn muốn từ chối một số user không cho phép được ssh, trong file sshd_config thêm dòng như sau:
+
+  ```sh
+  DenyUsers user1 user2
+  DenyGroup group1
+  ```
+  Khi đó, chỉ `user1`, `user2` và `group1` sẽ không thể thực hiện kết nối ssh, các user và group khác có thể ssh đưuọc bình thường.
+
+- Tương tự, nếu bạn muốn cho phép một số user được quyền ssh, trong file sshd_config thêm dòng như sau:
+
+  ```sh
+  AllowUsers user1 user2
+  AllowGroup group1
+  ```
+  Khi đó `user1`, `user2` và `group1` sẽ được phép kết nối ssh. Các user và group khác sẽ không được phép ssh.
+
+> Lưu ý: Khi bạn set quyền kết nối ssh cho user không phải root, kể cả khi trong file cấu hình có dòng cho phép đăng nhập vào tài khoản root PermitRootLogin yes, thì tài khoản root cũng không có quyền ssh.
 
 
 
