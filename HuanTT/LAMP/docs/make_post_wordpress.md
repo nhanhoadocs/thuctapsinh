@@ -1,4 +1,4 @@
-Hướng dẫn tạo bài viết trên Wordpress
+Phân quyền cho thư mục wordpress
 ===
 ## Mục lục
 1. [Mục đích](#1-Mục-đích)
