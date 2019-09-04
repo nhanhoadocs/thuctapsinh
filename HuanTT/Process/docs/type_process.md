@@ -5,7 +5,7 @@ Tiến trình và phân loại tiến trình
 2. [Phân loại tiến trình](#2.-phân-loại-tiến-trình)
 3. [Tài liệu tham khảo](#3.-Tài-liệu-tham-khảo)
 ## 1. Tiến trình
-Tiến trình (processes) trong linux là một chương trình đang chạy trong linux. Môt tiến trình có thể phân thành 1 hay nhiều tiến trình con khác.
+Tiến trình (processes) được hiểu đơn giản là một chương trình đang chạy trong trong hệ điều hành. Môt tiến trình có thể phân thành một hay nhiều tiến trình con khác.
 ## 2 Phân loại tiến trình
 
 ### 2.1. Init process
@@ -16,6 +16,8 @@ Init process là tiến trình đầu tiên được khỏi động sau khi bạ
 
 ### 2.2. Parents process - Child process
 Trong hệ điều hành linux các tiến trình được phân thành parents process và child process. Một tiến trình khi thực hiện lệnh fork() để tạo ra một tiến trình mới thì đưọc gọi là parents process. Tiến trình mới tạo được gọi là child process.
+
+![image](../images/process01.png)
 
 Một parents process có thể có nhiều child process nhưng một child process chỉ có một parents process. Khi quan sát thông tin của một tiến trình, ngoài PID (Processes ID) ta cần để ý tới PPID (Parent Processes ID). Nó sẽ cho ta thông tin về parents process của tiến trình đó:
 ```
@@ -31,10 +33,15 @@ Khi một child process được kết thúc, mọi trạng thái của child pr
 
 Tuy giải phóng bộ nhớ hoàn toàn nhưng các zombie process không bị kết thúc. Vì vậy nếu lượng zombie process lớn sẽ nắm giữ lượng lớn các PID. Nếu lượng PID đầy, sẽ không có tiến trình mới được tạo thêm. Các zombie process sẽ chỉ bị kết thúc nếu như parents process của chúng bị kill.
 
+Để tìm các zombie process ta gõ kiểm tra trạng thái của tiến trình theo lệnh sau:
+```
+ps -lA | grep '^. Z'
+```
+
 ### 2.4 Daemon Process
 
-Một Daemon Process là một tiến trình chạy nền. Nó sẽ luôn trong trạng thái hoạt động trong nền.
-Daemon Process có thể bị kill.
+Một Daemon Process là một tiến trình chạy nền. Nó sẽ luôn trong trạng thái hoạt động và sẽ được kích hoạt bởi một điều kiện hoặc câu lệnh nào đó. Trong Unix, các daemon thường được kết thúc bằng "d" ví dụ như httpd, sshd, crond, mysqld,...
+
 
 ## 3. Tài liệu tham khảo
 

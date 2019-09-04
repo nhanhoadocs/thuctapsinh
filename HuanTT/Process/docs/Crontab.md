@@ -6,9 +6,9 @@ Tìm hiểu về Cron
 3. [Cấu trúc file crontab](#3.Cấu-trúc-file-crontab)
 4. [Tài liệu tham khảo](#4.-tài-liệu-tham-khảo)
 ## 1. Tổng quan
-Cron là một tiện ích cho phép chạy các dòng lệnh theo một chu kì thời gian nào đó.
+Cron là một tiện ích cho phép chạy các dòng lệnh theo một chu kì thời gian nào đó. Cron là một daemon process, điều này cho phép nó chạy ngầm mãi mãi trong hệ thống linux 
 
-Crontab (hay Crontable) là file chứa các câu lệnh cài đặt của cron.
+Crontab (hay Crontable) là file chứa các câu lệnh cài đặt của cron. Nhờ có crontab, ta có thể sử dụng để có thể chạy những công việc tự động theo một lịch cụ thể đã cài đặt từ trước.
 
 ## 2. Cách thức hoạt động
 Một số câu lệnh thường dùng:
@@ -52,6 +52,26 @@ Ví dụ:
 ```
 30 4 * * 4 command
 ```
-### 4. Tài liệu tham khảo
+
+### 4. Ví dụ cụ thể
+
+Trong quá trình thực tập, tôi luôn phải gửi mail báo cáo cho người phụ trách để thông báo về tiến độ làm việc của mình vào tối mỗi tuần từ thứ 2 đến thứ 6 hàng tuần. Tuy nhiên, vào những lúc đó tôi hay đi chơi. Vì vậy, tôi đã sử dụng tiện ích cron để hỗ trợ gửi mail tự động vào đúng thời gian đó với một nội dung tôi đã soạn từ trước.
+
+Đầu tiên, tôi viết sẵn một đoạn bash shell gửi email tự động có tên là `gui-baocao.sh`. Shell này sẽ có chức năng lấy văn bản từ một file txt có trước, thêm thông tin tiêu đề cho email rồi gửi email tới danh sách đối tượng đã cho trước.
+
+Tiếp đến, tôi tiến hành soạn trước một báo cáo trên máy có tên là `baocao.txt`. 
+
+Sau đó tiến hành thêm vào crontab và cài đặt chu kì thời gian cho nó như sau:
+```
+0 19 * * 1-5 sh /home/huan/gui-baocao.sh
+```
+Như vậy, mỗi tối tôi có thể đi chơi thoả mái mà báo cáo vẫn sẽ được gửi đúng giờ.
+
+Sau này, tôi chỉ cần phải gửi báo cáo vào mỗi tối thứ 3 và thứ 6. Vì vậy, tôi thay đổi file cron của mình như sau:
+```
+0 19 * * 2,5 sh /home/huan/gui-baocao.sh
+```
+
+### 5. Tài liệu tham khảo
 1. [Tìm hiểu về Cron](https://kb.iu.edu/d/afiz)
 2. [Cài đặt Cron](https://www.tutorialspoint.com/unix_commands/crontab.htm)
