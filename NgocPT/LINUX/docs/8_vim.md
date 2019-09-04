@@ -40,6 +40,15 @@ Các lệnh lưu và thoát Vim:
 :w  -- Lưu file  
 :w! -- Ghi file  
 :wq -- Lưu file rồi thoát  
+:set nu hiện thị số dòng  
+:set nonu bỏ hiện thị số dòng  
+Sử dụng phím mũi tên hoặc các phím h,l,j,k để dịch trái, phải. lên, xuống  
+:1 để nhảy đến dòng đầu tiên của file  
+:n nhảy đến dòng n  
+$ nhảy xuống cuối dòng  
+:$ nhảy đến dòng cuối của file.  
+0 nhảy về đầu dòng  
+:0 nhảy về dòng đầu tiên của file.   
 
 ## Các lệnh chỉnh sửa
 dd  -- Xóa dòng (được lưu trong bộ đệm cục bộ)  
