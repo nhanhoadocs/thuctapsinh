@@ -38,7 +38,7 @@
     - Tiềm tàng nguy cơ có lỗi do thiếu     
 
 4. Ngôn ngữ biên dịch 
-- Cách hoạt động của trình biên dịch khác so với thông dịch. Thay vì chạy trực tiếp thành mã máy, trình biên dịch sẽ phải chuyển đổi ngôn ngữ lập trình thành mã máy rồi chứa kết quả vào ổ đĩa cứng để có thể thực thi ở lần chạy sau.
+- Cách hoạt động của trình biên dịch khác so với thông dịch. Thay vì chạy trực tiếp thành mã máy, trình biên dịch sẽ phải chuyển đổi tất cả ngôn ngữ lập trình thành mã máy rồi chứa kết quả vào ổ đĩa cứng để có thể thực thi ở lần chạy sau.
 - Bộ biên dịch thực hiện quá trình biên dịch được gọi là compiler.
 - Các ngôn ngữ thuộc loại biên dịch như là: C, pascal, C++... 
 - Ưu điểm 
@@ -49,4 +49,6 @@
     - Mã máy của mỗi nền tảng là khác nhau, khó thực hiện đa nền tảng.
     - Khó xây dựng một compiler có tính chính xác cao để chuyển toàn bộ chương trình thành mã máy.
 
-Có những ngôn ngữ vừa là biên dịch và vừa là thông dịch 
+Có những ngôn ngữ vừa là biên dịch và vừa là thông dịch. Ví dụ như PHP là loại ngôn ngữ vừa thuộc biên dịch và vừa thuộc thông dịch 
+- Trong PHP thì nhiệm vụ của quá trình biên dịch là phân tích code PHP thành một loại ngôn ngữ trung gian 
+- Sau đó nó sẽ được thông dịch bở runtime engine 
