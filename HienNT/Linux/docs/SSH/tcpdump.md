@@ -7,22 +7,31 @@
 
 ## <a name ="1"></a> 1. Giới thiệu về tcpdump  
 - `tcpdump` là phần mềm bắt gói tin trong mạng làm việc trên hầu hết các phiên bản hệ điều hành Linux/Unix. `tcpdump` cho phép chúng ta bắt, lưu lại các gói tin bắt được và phân tích các gói tin.  
-- Các tùy chọn thường sử dụng trong `tcpdump`:  
-  `X` - Hiển thị nội dung của gói theo định dạng ASCII và HEX  
-  `XX` - Tương tự -X, hiển thị giao diện ethernet  
-  `D` - Liệt kê các giao diện mạng có sẵn  
-  `l` - Đầu ra có thể đọc được dòng (để xem khi bạn lưu hoặc gửi đến các lệnh khác)  
-  `t` - Cung cấp đầu ra dấu thời gian có thể đọc được của con người  
-  `q` - Ít dài dòng hơn với đầu ra  
-  `tttt` - Cung cấp đầu ra dấu thời gian tối đa có thể đọc được của con người  
-  `i` - Bắt lưu lượng của một giao diện cụ thể  
-  `vv` - Đầu ra cụ thể và chi tiết hơn (nhiều v hơn cho đầu ra nhiều hơn)  
-  `s` - Xác định snaplength(kích thước) của gói tin theo byte. Sử dụng -s0 để có được mọi thứ. Nếu không set size packet dump thành unlimit, thì khi tcpdump ra nó bị phân mảnh  
-  `c` - Chỉ nhận được x số gói và sau đó dừng lại  
-  `S` - In số thứ tự tuyệt đối  
-  `e` - Nhận tiêu đề ethernet  
-  `q` - Hiển thị ít thông tin giao thức  
-  `E` - Giải mã lưu lượng IPSEC bằng cách cung cấp khóa mã hóa  
+- Sau khi kết thúc việc bắt các gói tin, tcpdump sẽ báo cáo các cột sau:
+  - `Packet capture` - số lượng gói tin bắt được và xử lý.
+  - `Packet received by filter` - số lượng gói tin được nhận bởi bộ lọc.
+  - `Packet dropped by kernel` - số lượng packet đã bị dropped bởi cơ chế bắt gói tin của hệ điều hành. 
+
+- Định dạng chung của một gói tin mà `tcpdump` bắt được là:  
+
+  ```sh
+  time-stamp src > dst: flags data-seqno ack window urgent options
+  ```
+  Trong đó:  
+  - `Time-stamp` - hiển thị thời gian gói tin được capture.  
+  - `Src và dst` - hiển thị địa IP của người gửi và người nhận.  
+  - `Cờ Flag` bao gồm các giá trị sau:  
+    - `S(SYN)` - Được sử dụng trong quá trình bắt tay của giao thức TCP.  
+    - `.(ACK)` - Được sử dụng để thông báo cho bên gửi biết là gói tin đã nhận được dữ liệu thành công.  
+    - `F(FIN)` - Được sử dụng để đóng kết nối TCP.  
+    - `P(PUSH)` - Thường được đặt ở cuối để đánh dấu việc truyền dữ liệu.  
+    - `R(RST)` - Được sử dụng khi muốn thiết lập lại đường truyền.  
+  - `Data-sqeno` - Số `sequence number` của gói dữ liệu hiện tại.  
+  - `ACK` - Mô tả số sequence number tiếp theo của gói tin do bên gởi truyền (số sequence number mong muốn nhận được).  
+  - `Window` - Vùng nhớ đệm có sẵn theo hướng khác trên kết nối này.  
+  - `Urgent` - Cho biết có dữ liệu khẩn cấp trong gói tin.  
+
+  <img src ="../../images/25 bai linux/tcp-dia.gif">  
   
 - Cài đặt `tcpdump`  
   ```sh
@@ -217,32 +226,14 @@ OUTPUT
 
 <img src ="../../images/25 bai linux/ig9.png">  
 
-### 2.16. Remote Monitoring
-Cho phép chuyển các gói tin bắt được thành đầu vào của Wireshark ngay lập tức mà không cần chờ lưu file `.pcap`  
-Cú pháp:  
-```sh
-  ssh user@HOST tcpdump -U -s0 -n -w - -i INTERFACE "FILTER" | wireshark -k -i -
-```
-- Trong đó các tùy chọn của tcpdump có ý nghĩa:
 
-  `-U`: Hướng dẫn tcpdump ghi ngay từng gói, thay vì lưu chúng vào bộ đệm  
-  `-s0`: Hướng dẫn tcpdump thu thập càng nhiều dữ liệu của gói càng tốt  
-  `-n` : Vô hiệu hóa địa chỉ để giải quyết tên  
-  `-w` - : Hướng dẫn tcpdump ghi dữ liệu gói vào thiết bị và xuất ở định dạng PCAP, thay vì ở một số định dạng có thể đọc được của con người  
-  `-i` INTERFACE: Giao diện mạng chúng ta có thể bỏ qua điều này  
-  `"FILTER"`: Một biểu thức lọc PCAP. Có thể là not port 22  
 
-- Tùy chọn Wireshark:
 
-  `-k`: Ngay lập tức bắt đầu bắt gói tin  
-  `-i` - : Bắt gói tin từ stdin  
 
-Ví dụ: Bắt gói tin và chuyển vào máy tính của chúng ta để theo dõi trực tiếp trên Wireshark thực hiện như sau:
-```sh
-  ssh root@192.168.136.132 tcpdump -U -s0 -n -w - -i tun0 not port 22 -n | wireshark -k -i -
-```
 ## TÀI LIỆU THAM KHẢO  
 - [tcpdump.org/manpages/tcpdump](https://www.tcpdump.org/manpages/tcpdump.1.html)
 - https://opensource.com/article/18/10/introduction-tcpdump
 - https://jvns.ca/tcpdump-zine.pdf
 - https://blogd.net/linux/vi-du-ve-su-dung-lenh-tcpdump/
+- http://vinahost.info/TCPDUMP-va-cac-thu-thuat-su-dung
+- [capture-analyze-packets-tcpdump](https://www.linuxtechi.com/capture-analyze-packets-tcpdump-command-linux/)

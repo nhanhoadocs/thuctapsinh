@@ -186,6 +186,53 @@ Khi một trang web hoặc dịch vụ yêu cầu khóa SSH của bạn, họ đ
   `file_private_key` là file chứa `private key` mà ta muốn tạo một public key từ key đó.  
   `file_public_key_new` là file mà ta sẽ lưu `public key` mới tạo ra.
 
+## Một số file cấu hình khác  
+### 1. File `~/.ssh/know_hosts`  
+- Khi bạn ssh vào 1 server, file `know_hosts` mặc định sẽ được tạo ra trong thư mục `.ssh` chứa thông tin về các host đã đăng nhập, thuật toán mã hóa, host key trên máy client.   
+VD: Nội dung trong file `~/.ssh/known_hosts` 
+  ```sh
+    # cat ~/.ssh/known_hosts
+  192.168.136.132 ecdsa-sha2-nistp256 AAAAE2VjZHNhMHusHmLUGcryzen27N9eyTCQZiyBYCQwMeYAAABBBO2vRfBsv2IJOemfciffv/hXHAg48+XlBi9UDCHXAxFJJJ4OSBofzOg/mDq/Pam+q3gzv+Z5D4BFNJX1Tc5zK+k=
+  ```  
+
+### 2. File `~/.ssh/config`  
+- Đây là file cấu hình dành cho máy SSH Client chứa thông tin cấu hình trước khi kết nối với remote host.  
+- File `config` không được tự động tạo ra như những file khác (như `id_rsa` và `id_rsa.pub` khi thực hiện câu lệnh `ssh-keygen` hay `know_hosts` khi thực hiện SSH vào server) mà phải tạo thủ công trên máy client bằng các câu lệnh.  
+
+  ```sh
+    # touch ~/.ssh/config
+  ```
+  Cấp quyền 600 cho file `~/.ssh/config`  
+  ```sh
+    # chmod 600 ~/.ssh/config
+  ```  
+- Một số option hay dùng để cấu hình `ssh config` như sau:
+
+  - `Host` - Tên viết tắt của máy chủ, bạn sẽ sử dụng để thay thế `[user]@[IP_Server]`. Một số lưu ý khi đặt tên host:  
+    - `*` - khớp 0 hoặc nhiều ký tự. Ví dụ: `Host *` sẽ khớp với tất cả máy chủ, trong khi `Host 192.168.0.*` sẽ khớp với tất cả máy chủ trong mạng `192.168.0.0/24`.
+    - `?` - khớp chính xác một ký tự. Ví dụ: `Host 10.10.0.?` sẽ phù hợp với tất cả các máy chủ trong phạm vi `10.10.0.[0-9]`.  
+    - `!` - phù hợp với các host, ngoại trừ. Ví dụ, `Host 10.10.0.* !10.10.0.5` sẽ khớp với bất kỳ máy chủ nào trong mạng con `10.10.0.0/24` ngoại trừ `10.10.0.5`  
+  - `HostName` - Địa chỉ ip của máy chủ  
+  - `User` - User để ssh vào server.  
+  - `IdentityFile` - Chính là public key của ssh, mặc định nó sẽ tìm trong `~/.ssh/id_rsa` nếu bạn không config.  
+  - `ProxyCommand` - Command đặc biệt khi connect vào server  
+  - `Port` - Port khi connect vào server, mặc định sẽ là 22  
+  - `ServerAliveInterval` - Time out khi connect vào server.
+
+Ví dụ: Cấu hình thay thế `root@192.168.136.132` thành `example` và đổi cổng mặc định `22` thành `4444`. File `~/.ssh/config` khi đó sẽ là    
+  ```sh
+  Host example
+    Hostname 192.168.136.132
+    User root
+    port 4444
+  ```
+  Trên server, sửa port trong file `/etc/ssh/sshd_config` giống với port trong file `~/.ssh/config`. Cấu hình firewalld cho phép lắng nghe port mới(hoặc tắt hoàn toàn firewalld)
+  Bây giờ thay vì phải gõ `ssh root@192.168.136.132` trên Client để SSH đến Server thì bạn chỉ cần gõ `ssh example` 
+  ```sh
+    # ssh example
+  ```
+
+
 ## TÀI LIỆU THAM KHẢO 
 - https://man.openbsd.org/sshd_config  
 - [lam-viec-voi-nhieu-github-account-tren-mot-may-voi-ssh-key/](https://viziondary.com/git/lam-viec-voi-nhieu-github-account-tren-mot-may-voi-ssh-key/)
