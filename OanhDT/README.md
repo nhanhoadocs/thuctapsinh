@@ -7,4 +7,12 @@ Tài liệu + Note thực tập tại Nhân Hòa
 
 [Tài liệu tìm hiểu web server](Webserver/README.md)
 
+[MySQL](MySQL/README.md)
+
+[Wordpress](WordPress/README.md)
+
 [Other](Other/README.md)
+
+
+
+

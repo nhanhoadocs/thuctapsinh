@@ -87,6 +87,13 @@ Tiếp theo bạn truy cập địa chỉ ip local cùng lớp mạng để ki�
 
 ![index.html](../images/apache/iplocal.png)
 
+File cấu hình Apache : 
+
+- File cấu hình Apache: /etc/httpd/conf/httpd.conf
+- Thư mục chứa cấu hình phụ Apache: /etc/httpd/conf.d/
+- Thư mục log Apache: /var/log/httpd/
+- Thư mục web mặc định: /var/www/html/
+
 
 Tài liệu tham khảo :
 - https://www.hostinger.vn/huong-dan/apache-la-gi-giai-thich-cho-nguoi-moi-bat-dau-hieu-ve-apache-web-server/#Apache-Web-Server-hoat-dong-nhu-the-nao
