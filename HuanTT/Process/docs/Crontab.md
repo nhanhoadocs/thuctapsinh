@@ -4,7 +4,8 @@ Tìm hiểu về Cron
 1. [Tổng quan](#1.-tổng-quan)
 2. [Cách thức hoạt động](#2.-Cách-thức-hoạt-động)
 3. [Cấu trúc file crontab](#3.Cấu-trúc-file-crontab)
-4. [Tài liệu tham khảo](#4.-tài-liệu-tham-khảo)
+4. [Ví dụ cụ thể](#4.-ví-dụ-cụ-thể)
+5. [Tài liệu tham khảo](#4.-tài-liệu-tham-khảo)
 ## 1. Tổng quan
 Cron là một tiện ích cho phép chạy các dòng lệnh theo một chu kì thời gian nào đó. Crond là một daemon process, điều này cho phép nó chạy ngầm mãi mãi trong hệ thống linux 
 
