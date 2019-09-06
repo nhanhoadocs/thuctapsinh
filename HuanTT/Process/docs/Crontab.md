@@ -6,9 +6,9 @@ Tìm hiểu về Cron
 3. [Cấu trúc file crontab](#3.Cấu-trúc-file-crontab)
 4. [Tài liệu tham khảo](#4.-tài-liệu-tham-khảo)
 ## 1. Tổng quan
-Cron là một tiện ích cho phép chạy các dòng lệnh theo một chu kì thời gian nào đó. Cron là một daemon process, điều này cho phép nó chạy ngầm mãi mãi trong hệ thống linux 
+Cron là một tiện ích cho phép chạy các dòng lệnh theo một chu kì thời gian nào đó. Crond là một daemon process, điều này cho phép nó chạy ngầm mãi mãi trong hệ thống linux 
 
-Crontab (hay Crontable) là file chứa các câu lệnh cài đặt của cron. Nhờ có crontab, ta có thể sử dụng để có thể chạy những công việc tự động theo một lịch cụ thể đã cài đặt từ trước.
+Crontab (hay Crontable) là bảng chứa các câu lệnh cài đặt của cron. Nhờ có crontab, ta có thể sử dụng để có thể chạy những công việc tự động theo một lịch trình cụ thể đã cài đặt từ trước.
 
 ## 2. Cách thức hoạt động
 Một số câu lệnh thường dùng:
@@ -17,7 +17,9 @@ crontab -e  #tạo hoặc sửa file crontab
 crontab -l  #hiển thị file crontab 
 crontab -r  #xóa file crontab
 ```
-Cài đặt:
+Thông thường, trên một số máy vps đã được cài sẵn tiện ích cron. Ta có thể kiểm tra bằng cách gõ `crontab -l`. Nếu máy thông báo lỗi cú pháp của crontab thì máy của bạn chưa được cài đặt tiện ích này.
+
+Để cài đặt, bạn gõ lệnh như sau:
 ```
 sudo yum -y install cronie
 ```
@@ -45,13 +47,14 @@ Một crontab file thường có 5 trường thiết lập thời gian như sau:
 Ví dụ:
 - Chạy script 5 phút 1 lần:
 ```
-*/5 * * * * command
+*/5 * * * * sh simplescript.sh
 ```
 
-- Chạy script vào 4h30 sáng thứ 5 hàng tuần:
+- Chạy một script python vào 4h30 sáng thứ 5 hàng tuần:
 ```
-30 4 * * 4 command
+30 4 * * 4 python3 pythonscript.py
 ```
+> Lưu ý: để chạy các script, bạn phải thông báo môi trường chạy cho script đó.
 
 ### 4. Ví dụ cụ thể
 
@@ -67,7 +70,7 @@ Sau đó tiến hành thêm vào crontab và cài đặt chu kì thời gian cho
 ```
 Như vậy, mỗi tối tôi có thể đi chơi thoả mái mà báo cáo vẫn sẽ được gửi đúng giờ.
 
-Sau này, tôi chỉ cần phải gửi báo cáo vào mỗi tối thứ 3 và thứ 6. Vì vậy, tôi thay đổi file cron của mình như sau:
+Sau này, khung giờ báo cáo của tôi thay đổi, tôi chỉ cần gửi báo cáo vào tối thứ 3 và thứ 6 hàng tuần. Vì vậy, tôi thay đổi file crontab của mình như sau:
 ```
 0 19 * * 2,5 sh /home/huan/gui-baocao.sh
 ```

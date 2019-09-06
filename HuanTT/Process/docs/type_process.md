@@ -23,6 +23,8 @@ Một parents process có thể có nhiều child process nhưng một child pro
 ```
 ps -ef
 ```
+![image](../images/process02.png)
+
 ### 2.3. Orphan process - Zombie Process
 
 Khi parents process - child process hoạt động sẽ xảy ra một số trường hợp đặc biệt. Lúc đó Orphan process - Zombie Process sẽ được hình thành.
