@@ -36,4 +36,3 @@ Như trên hình tra thấy dịch vụ MariaDB đang chạy ở cổng `3306`.
 
 
 
-
