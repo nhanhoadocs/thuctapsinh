@@ -42,6 +42,14 @@ ps -lA | grep '^. Z'
 
 Một Daemon Process là một tiến trình chạy nền. Nó sẽ luôn trong trạng thái hoạt động và sẽ được kích hoạt bởi một điều kiện hoặc câu lệnh nào đó. Trong Unix, các daemon thường được kết thúc bằng "d" ví dụ như httpd, sshd, crond, mysqld,...
 
+Chúng ta có thể chạy một đoạn script bash shell, python, java,... dưới dạng một daemon process bằng cách sử dụng dấu `&` ví dụ
+```
+./simpleshell.sh &
+```
+Tuy nhiên, vấn đề ở đây là tiến trình đó sẽ không có tiến trình cha và sẽ trở thành một orphan process. Để giải quyết vấn đề này, ta sẽ cho shell chạy với tư cách là tiến trình con của init process bằng cách dùng `nohup` như sau:
+```
+nohup ./simpleshell.sh &
+```
 
 ## 3. Tài liệu tham khảo
 
