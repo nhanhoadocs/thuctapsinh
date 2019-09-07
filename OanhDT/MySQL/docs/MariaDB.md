@@ -1,6 +1,7 @@
 # Cài đặt MariaDB trên CentOS7 
 
 - [Cài đặt](#caidat)
+- [File cấu hình](#cauhinh)
 - [Thiết lập mật khẩu cho user root](#pass)
 - [Đăng nhập vào mariadb ](#login)
 - [Tạo user mới ](#taouser)
@@ -43,6 +44,23 @@ netstat -plnt | grep mysql
 ![](../images/port-mariadb.png)
 
 Như trên hình tra thấy dịch vụ MariaDB đang chạy ở cổng `3306`.
+
+<a name="cauhinh"></a>
+
+## File cấu hình 
+
+Tập tin cấu hình gốc 
+
+```
+/etc/my.cnf
+```
+
+File log 
+
+```
+/var/log/mariadb
+```
+
 
 <a name="pass"></a>
 
