@@ -9,9 +9,7 @@
 [Thao tác sao lưu và phục hồi dữ liệu trong mysql](#backup)
 
 
-
 <a name="basic"></a>
-
 
 ## Thao tác với Database và table 
 
@@ -126,9 +124,20 @@ alter table ten-bang drop column ten-cot;
 
 <a name="backup"></a>
 
+**RENAME TABLE**
+Thay đổi tên một table trong database 
+
+Cú pháp : 
+
+```
+RENAME TABLE old_table_name TO new_table_name;
+```
+![](../images/rename.png)
+
+
 ## Sao lưu và phục hồi 
 
-Sao lưu toàn bộ database bằng lệnh: 
+- Sao lưu toàn bộ database bằng lệnh: 
 
 ```
 mysqldump -u root -p --all-databases > alldatabases.sql
@@ -143,4 +152,18 @@ total 8
 -rw-r--r--  1 root root 3464 Sep  6 22:05 file.sql
 [root@client ~]#
 ```
+- Khôi phục database 
+
+```
+mysql -u username -p database-name < alldatabases.sql
+```
+
+- Sao lưu một số table trong database 
+
+```
+mysqldump --add-drop-table -u username -pmypass databasename table_1 table_2 > databasebackup.sql
+```
+
+
+
 

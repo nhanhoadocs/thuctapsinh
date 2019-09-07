@@ -188,4 +188,8 @@ DROP USER 'user'@'localhost';
 ```
 
 
+Tài liệu tham khảo : 
+
+https://hocvps.com/cac-cau-lenh-mysql-can-phai-biet/
+
 
