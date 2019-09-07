@@ -1,11 +1,3 @@
-# Sử dụng Samba, Wireshark và tcpdump để bắt và phân tích các gói tin  
-
-## Sử dụng `tcpdump` để bắt gói tin SSH  
-- Câu lệnh dưới sẽ bắt 100 gói tin SSH và lưu các gói tin bắt được vào file `/root/ssh.pcap`  
-  ```sh
-    # tcpdump -i ens33 -c 100 -n -w ssh.pcap
-  ```  
-
 ## Cài đặt Samba  
 - Sử dụng câu lệnh sau để cài đặt Samba 
   ```sh
@@ -63,7 +55,7 @@
     # systemctl restart smb
   ```  
 
-## Sử dụng Wireshark để đọc file `ssh.pcap`  
+  
 - Trên máy Client, sử dụng `Window+R`, nhập vào địa chỉ IP của Server sau đó chọn `OK`  
   
   <img src ="../../images/Samba/img6.png">  
@@ -76,7 +68,3 @@
 
   <img src ="../../images/Samba/img3.png">  
 
-- Vào folder `Share` copy file `ssh.pcap` vào máy Window.  
-- Sử dụng Wireshark mở file `ssh.pcap`, bạn sẽ nhận được thông tin các gói tin đã bắt được   
-
-  <img src ="../../images/Samba/img5.png">  
