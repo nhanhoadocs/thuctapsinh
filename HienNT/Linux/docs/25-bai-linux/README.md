@@ -18,3 +18,7 @@
     - [MariaDB](../LAMP/MariaDB)
 
 **6.** [**Sao lưu dữ liệu**](6.backup.md)
+
+**7.** [**Swap**](7.swap.md)
+
+**8.** [**Tìm hiểu về process trong Linux**](8.systemd_process.md)  

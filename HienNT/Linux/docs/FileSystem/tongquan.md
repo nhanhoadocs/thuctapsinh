@@ -98,7 +98,7 @@
 ## 5. Filesystem Hierarchy Standard (FHS)
 - Filesystem của hệ điều hành Linux được tổ chức theo tiêu chuẩn cấp bậc của hệ thống tập tin Filesystem Hierarchy Standard (FHS). Tiêu chuẩn này định nghĩa mục đích của mỗi thư mục.
 
-  Hình bên dưới là cấu trúc cây thư mục trong Linux:  
+  Hình bên dưới là cấu trúc thư mục trong Linux:  
 
   <img src ="../../images/filesystem/img3.png">  
 
