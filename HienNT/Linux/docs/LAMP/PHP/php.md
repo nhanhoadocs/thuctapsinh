@@ -88,9 +88,7 @@
 
 - `PHP` chạy port mặc định là 9000 với tên dịch vụ là `php-fpm`
 
-## Sử dụng nhiều phiên bản PHP trên cùng một host - Thiết lập PHP riêng cho từng tên miền  
 
-**Cài đặt gói vkho lưu trữ cần thiết**  
   
 
 

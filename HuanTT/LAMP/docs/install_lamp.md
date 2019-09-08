@@ -1,4 +1,4 @@
-Hướng dẫn cài đặt LAMP
+Hướng dẫn cài đặt LAMP trên CentOS
 ===
 ## Mục Lục
 1. [Tổng quan](#1-Tổng-quan)
