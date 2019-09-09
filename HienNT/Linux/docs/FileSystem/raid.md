@@ -3,20 +3,20 @@
 
 # RAID  
 ## Content  
-1. [Giới thiệu chung](/1)
-2. [Phân loại RAID](/2)  
-&emsp;2.1 [Software RAID](/2.1)  
-&emsp;2.2 [Hardware RAID](/2.2)
+1. [Giới thiệu chung](#1)
+2. [Phân loại RAID](#2)  
+&emsp;2.1 [Software RAID](#2.1)  
+&emsp;2.2 [Hardware RAID](#2.2)
 3. [Các cấp độ RAID](/3)  
-&emsp;3.1 [RAID 0](/3.1)  
-&emsp;3.2 [RAID 1](/3.2)  
-&emsp;3.3 [RAID 10](/3.3)  
-&emsp;3.4 [RAID 2](/3.4)  
-&emsp;3.5 [RAID 3](/3.5)    
-&emsp;3.6 [RAID 4](/3.6)  
-&emsp;3.7 [RAID 5](/3.7)  
-&emsp;3.8 [RAID 6](/3.8)   
-&emsp;[Một số loại RAID khác](/3.9)   
+&emsp;3.1 [RAID 0](#3.1)  
+&emsp;3.2 [RAID 1](#3.2)  
+&emsp;3.3 [RAID 10](#3.3)  
+&emsp;3.4 [RAID 2](#3.4)  
+&emsp;3.5 [RAID 3](#3.5)    
+&emsp;3.6 [RAID 4](#3.6)  
+&emsp;3.7 [RAID 5](#3.7)  
+&emsp;3.8 [RAID 6](#3.8)   
+&emsp;[Một số loại RAID khác](#3.9)   
 
 ---  
 
