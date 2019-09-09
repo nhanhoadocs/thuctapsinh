@@ -3,13 +3,13 @@
 - [Phân biệt Unix/Linux](3.Phan-biet-unix-linux.md)
 - [Tổ chức thư mục trong Linux](4.To-chuc-thu-muc-trong-Linux.md)
 ## CentOS 7
-### &emsp;1. [Cài đặt CentOS 7](install.md)
-### &emsp;2. [Các câu lệnh cơ bản](Co-ban/README.md)
-### &emsp;3. [25 bài Linux](25-bai-linux/README.md)
-### &emsp;4. [File system](FileSystem/README.md)
-### &emsp;5. [SSH](SSH/README.md)  
-### &emsp;6. [LAMP](LAMP/README.md)
-### &emsp;7. [Wordpress](Wordpress/README.md)
+&emsp;1. [Cài đặt CentOS 7](install.md)  
+&emsp;2. [Các câu lệnh cơ bản](Co-ban/README.md)  
+&emsp;3. [25 bài Linux](25-bai-linux/README.md)  
+&emsp;4. [File system](FileSystem/README.md)  
+&emsp;5. [SSH](SSH/README.md)    
+&emsp;6. [LAMP](LAMP/README.md)  
+&emsp;7. [Wordpress](Wordpress/README.md)  
 
 
 ## Ubuntu
