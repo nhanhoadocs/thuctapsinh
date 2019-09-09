@@ -105,7 +105,7 @@ Trong ví dụ này server của tôi có địa chỉ IP: 192.168.169.129
 
 Đăng nhập vào target được tìm thấy. Ta có 2 cách để đăng nhập vào 
 `iscsiadm -m node -l` cho phép ta đăng nhập vào tất cả target tìm thấy ở trên.
-hoặc `iscsisdm -m node -T tên_target -p IP` để đăng nhập vào target của IP ta chỉ định.
+hoặc `iscsiadm -m node -T tên_target -p IP -l` để đăng nhập vào target của IP ta chỉ định.
 
 ![](https://github.com/niemdinhtrong/NIEMDT/blob/master/linux/images/scsi16.png)
 
