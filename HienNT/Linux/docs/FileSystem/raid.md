@@ -23,7 +23,7 @@
 <a name="1"></a>  
 
 ## 1. Giới thiệu chung  
-- `RAID` là viết tắt của **R**edundant **A**rrays of **I**nexpensive **D**isks. Ban đầu `RAID` được sử dụng như một giải pháp phòng hộ vì nó cho phép ghi dữ liệu lên nhiều đĩa cứng cùng lúc. Về sau, RAID đã có nhiều biến thể cho phép không chỉ đảm bảo an toàn dữ liệu mà còn giúp gia tăng đáng kể tốc độ truy xuất dữ liệu từ đĩa cứng. 
+- `RAID` là viết tắt của **R**edundant **A**rrays of **I**ndependent **D**isks(ngày trước là Redundant Arrays of Inexpensive Disks). Ban đầu `RAID` được sử dụng như một giải pháp phòng hộ vì nó cho phép ghi dữ liệu lên nhiều đĩa cứng cùng lúc. Về sau, RAID đã có nhiều biến thể cho phép không chỉ đảm bảo an toàn dữ liệu mà còn giúp gia tăng đáng kể tốc độ truy xuất dữ liệu từ đĩa cứng. 
 
 <a name="2"></a>  
 
