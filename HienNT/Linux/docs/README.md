@@ -5,11 +5,12 @@
 ## CentOS 7
 &emsp;1. [Cài đặt CentOS 7](install.md)  
 &emsp;2. [Các câu lệnh cơ bản](Co-ban/README.md)  
-&emsp;3. [25 bài Linux](25-bai-linux/README.md)  
-&emsp;4. [File system](FileSystem/README.md)  
-&emsp;5. [SSH](SSH/README.md)    
-&emsp;6. [LAMP](LAMP/README.md)  
-&emsp;7. [Wordpress](Wordpress/README.md)  
+&emsp;3. [25 bài Linux](25-bai-linux/README.md)   
+&emsp;4. [SSH](SSH/README.md)    
+&emsp;5. [LAMP](LAMP/README.md)  
+&emsp;6. [Wordpress](Wordpress/README.md)  
+&emsp;7. [File system](FileSystem/README.md)   
+&emsp;8. [Storage](Storage/README.md)
 
 
 ## Ubuntu
