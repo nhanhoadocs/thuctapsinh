@@ -105,7 +105,7 @@
 
 - Đây là loại Raid khá phổ biến và được nhiều người sử dụng hiện nay do có khả năng nâng cao hiệu suất tốc độc đọc ghi trao đổi dữ liệu của ổ cứng.  
 - Khi sử dụng Raid 0, dữ liệu sẽ được phân chia đều vào các ổ đĩa. Giả sử bạn có 100MB dữ liệu và 2 ổ cứng sử dụng raid 0. Khi đó thay vì dồn 100MB vào một đĩa cứng duy nhất, RAID 0 sẽ giúp dồn 50MB vào mỗi đĩa cứng riêng giúp giảm một nửa thời gian làm việc theo lý thuyết. Có càng nhiều đĩa cứng thì tốc độc đọc ghi sẽ càng cao.  
-- Để sử dụng Raid 0 cần ít nhất 2 ổ cứng.
+- Có thể sử dụng 1 ổ cứng với RAID 0.
 - Ưu điểm: tốc độ đọc ghi nhanh  
 - Nhược điểm: Tiềm ẩn nhiều nguy cơ về việc mất dữ liệu do dữ liệu được chia đều về các ổ cứng. Nếu 1 ổ cứng bị hỏng thì dữ liệu không thể sử dụng nữa.  
 - Đối tượng sử dụng: thích hợp cho những người dùng cần truy cập nhanh khối lượng dữ liệu lớn, ví dụ các game thủ hoặc những người chuyên làm đồ hoạ, video số.
@@ -159,7 +159,7 @@
 <a name ="3.6"></a>   
 
 ### &ensp;3.6. RAID 4
-- RAID 4 tương tự như RAID 3 nhưng ở một mức độ các khối dữ liệu lớn hơn chứ không phải đến từng byte. Chúng cũng yêu cầu tối thiểu 3 đĩa cứng (ít nhất hai đĩa dành cho chứa dữ liệu và ít nhất 1 đĩa dùng cho lưu trữ dữ liệu tổng thể)  
+- RAID 4 tương tự như RAID 3 nhưng ở một mức độ các khối dữ liệu lớn hơn(block). Chúng cũng yêu cầu tối thiểu 3 đĩa cứng (ít nhất hai đĩa dành cho chứa dữ liệu và ít nhất 1 đĩa dùng cho lưu trữ dữ liệu tổng thể)  
 
 <a name ="3.7"></a>
 
@@ -194,13 +194,32 @@
 
   <img src ="../../images/raid/1e8d46_ed2256d11635407ab13155be5415f5f9_mv2.png">
 
+- RAID 5EE
+
+  <img src="../../images/raid/raid5ee.png">
+
+- RAID5 + Hot spare  
+
+  <img src="../../images/raid/220px-RAID_5HS.png">
+
+  - `Hot spare` được xem như một ổ cứng dự phòng sử dụng trong các hệ thống tự động. Khi hệ thống sử dụng RAID5 có 1 ổ cứng bị lỗi thì nó sẽ tự động chuyển sang sử dụng `Hot spare` để thay thế cho ổ cứng lỗi đó. Cơ chế này thường được dùng trong các hệ thống mà quản trị viên hệ thống không thường xuyên kiểm tra trạng thái các ổ cứng.
+  - Quá trình thêm `Hot spare` vào ổ đĩa RAID hiện có có thể mất từ 20 phút tới vài giờ tùy thuộc vào lượng dữ liệu được lưu trong ổ bị mất và trạng thái ổ cứng trong mảng.  
+
 - RAID01(Raid0 + raid1)
 
   <img src ="../../images/raid/1e8d46_70fbd04d60434beca7c5cf5afbe49c45_mv2.png">
 
+- RAID1E  
+
+  <img src ="../../images/raid/raid1e.png">  
+
+
 ### Bảng so sánh một vài loại RAID  
 
-  <img src="../../images/raid/1e8d46_67bffe4892034370b55288f92b26230a_mv2.webp"> 
+
+  <img src="../../images/raid/img1.png">
+
+[Tham khảo](../../images/raid/1e8d46_67bffe4892034370b55288f92b26230a_mv2.webp)
 
 
 ## TÀI LIỆU THAM KHẢO  
