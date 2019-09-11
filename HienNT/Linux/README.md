@@ -4,12 +4,13 @@
 - [Tổ chức thư mục trong Linux](docs/4.To-chuc-thu-muc-trong-Linux.md)
 ## CentOS 7
 &emsp;1. [Cài đặt CentOS 7](docs/install.md)  
-&emsp;2. [Các câu lệnh cơ bản](docs/Co-ban/)  
-&emsp;3. [25 bài Linux](docs/25-bai-linux/)  
-&emsp;4. [File system](docs/FileSystem/)  
-&emsp;5. [SSH](docs/SSH/)    
-&emsp;6. [LAMP](docs/LAMP/)  
-&emsp;7. [Wordpress](docs/Wordpress/)  
+&emsp;2. [Các câu lệnh cơ bản](docs/Co-ban/)    
+&emsp;3. [25 bài Linux](docs/25-bai-linux/)   
+&emsp;4. [SSH](docs/SSH/)    
+&emsp;5. [LAMP](docs/LAMP/)  
+&emsp;6. [Wordpress](docs/Wordpress/)  
+&emsp;7. [File system](docs/FileSystem/)   
+&emsp;8. [Storage](docs/Storage/) 
 
 
 ## Ubuntu
