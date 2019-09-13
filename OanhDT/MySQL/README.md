@@ -4,3 +4,5 @@
 
 - [Những câu lệnh thao tác với MySQL](docs/MySQL_command.md)
 
+- [Bài tập MySQL](docs/Bai_tap.md)
+
