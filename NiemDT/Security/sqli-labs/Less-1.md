@@ -47,4 +47,8 @@ select name, password from table where id = '1'
 
 ![](../images/sqli-labs/Less-1-5/l17.png)
 
-Nhận định cấu truy vấn có thể đúng
+Dựa vào đây ta có thể show toàn bộ user và password trong table đó bằng cách tăng dần số giá trị ở trong `limit`
+
+![](../images/sqli-labs/Less-1-5/l18.png)
+
+![](../images/sqli-labs/Less-1-5/l19.png)
