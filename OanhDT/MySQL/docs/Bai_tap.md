@@ -45,5 +45,15 @@ phòng ban.
 
 ![](../images/cau-c.png)
 
+- In ra thông tin nhân viên có lương tăng dần.
+
+![](../images/sap.png)
+
+- In ra thông tin nhân viên có lương giảm dần.
+
+![](../images/giam.png)
+
+
+
 
 
