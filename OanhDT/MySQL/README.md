@@ -6,3 +6,4 @@
 
 - [Bài tập MySQL](docs/Bai_tap.md)
 
+- [Tìm hiểu về cluster trong mysql ](docs/Cluster_in_mysql.md)
