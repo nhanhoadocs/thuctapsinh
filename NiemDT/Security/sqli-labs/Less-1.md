@@ -93,6 +93,6 @@ Ta có thể up một đoạn code PHP lên server
 
 Bây giờ ta có thể thao tác trên chính server đó
 
-![](../images/sqli-labs/Less-1/l123.png)
-
 ![](../images/sqli-labs/Less-1/l124.png)
+
+![](../images/sqli-labs/Less-1/l125.png)
