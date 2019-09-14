@@ -52,3 +52,47 @@ Dựa vào đây ta có thể show toàn bộ user và password trong table đó
 ![](../images/sqli-labs/Less-1-5/l18.png)
 
 ![](../images/sqli-labs/Less-1-5/l19.png)
+
+Tận dụng việc này ta có thể show tìm kiếm một số thông tin
+
+Đọc file /etc/passwd
+
+![](../images/sqli-labs/Less-1-5/l114.png)
+
+Show database hiện tại
+
+![](../images/sqli-labs/Less-1-5/l112.png)
+
+Show user đang thao tác với database
+
+![](../images/sqli-labs/Less-1-5/l113.png)
+
+Show table trong DB 
+
+![](../images/sqli-labs/Less-1-5/l116.png)
+
+![](../images/sqli-labs/Less-1-5/l117.png)
+
+Ta cũng có thể show các cột trong các bảng
+
+![](../images/sqli-labs/Less-1-5/l118.png)
+
+![](../images/sqli-labs/Less-1-5/l119.png)
+
+![](../images/sqli-labs/Less-1-5/l120.png)
+
+Show thông tin ở các bảng khác
+
+![](../images/sqli-labs/Less-1-5/l121.png)
+
+![](../images/sqli-labs/Less-1-5/l122.png)
+
+Ta có thể up một đoạn code PHP lên server
+
+![](../images/sqli-labs/Less-1-5/l123.png)
+
+Bây giờ ta có thể thao tác trên chính server đó
+
+![](../images/sqli-labs/Less-1-5/l123.png)
+
+![](../images/sqli-labs/Less-1-5/l124.png)
