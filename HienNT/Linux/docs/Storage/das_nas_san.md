@@ -58,6 +58,11 @@ Do các thiết bị lưu trữ được kết nối trực tiếp vào server v
 
   <img src="../../images/raid/san1.jpg">  
 
+- Các loại giao thức của SAN
+  - FC – Fibre Channel
+  - iSCSI – Internet Small Computer System Interface
+  - FCoE – Fibre Channel over Ethernet
+
 ### 2. Ưu điểm  
 - Có khả năng sao lưu dữ liệu với dung lượng lớn và thường xuyên mà không làm ảnh hưởng đến lưu lượng thông tin trên mạng.
 - Đặc biệt thích hợp với các ứng dụng cần tốc độ và độ trễ nhỏ ví dụ như các ứng dụng xử lý giao dịch trong ngành ngân hàng, tài chính…
@@ -75,3 +80,8 @@ Do các thiết bị lưu trữ được kết nối trực tiếp vào server v
 Do việc cấu hình khá phức tạp nên khi triển khai SAN, ta cần có các công cụ quản lý cũng như nhân sự có kỹ năng chuyên môn cao.
 
 Ngoài ra, chi phí để triển khai SAN cũng cao hơn DAS và NAS.
+
+
+## TÀI LIỆU THAM KHẢO
+- https://taknet.com.vn/thiet-bi-luu-tru-nas-la-gi/
+- http://planet.com.vn/sanpham/NetPeripheral/NASRS/NAS-7410/view

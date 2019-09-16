@@ -4,15 +4,16 @@
 
 ## I - Các chuẩn giao tiếp trên ổ cứng 
 ### 1. Giao tiếp IDE
-– Chuẩn IDE sử dụng phương thức truyền tải dữ liệu song song.
 
-Ưu điểm: của truyền tải song song là tốc độ cao. Trong cùng một thời điểm có thể truyền tải nhiều bit dữ liệu hơn so với truyền tải nối tiếp.
-Nhược điểm: Sử dụng nhiều dây dẫn để truyền các bit dữ liệu đi nên gây ra hiện tượng tạp âm nhiễu. Đó là lý do vì sao ATA-66 sử dụng lên đến 80 dây dẫn. Bởi vì giữa các dây truyền tín hiệu là các dây đất nằm xen kẽ dây tín hiệu để chống nhiễu
-– Chuẩn EIDE: Do chuẩn IDE bị giới hạn dụng lượng đĩa cứng tối đa, Nên người ta sử dụng chuẩn EIDE để thay thế
+- Chuẩn IDE sử dụng phương thức truyền tải dữ liệu song song.
 
-Chia làm 2 kênh (primary và secondary) và 2 kênh này sử dụng 2 đường BUS riêng.
-Trên mỗi kênh lại chia làm 2 cấp (master và slaver) trên cùng 1 kênh. Vì cả 2 thiết chỉ được phép sử dụng 1 đường BUS trong cùng 1 thời điểm.
-EIDE không có khả năng cho phép nhiều thiết bị sử dụng nhiều thiết bị trên cùng 1 BUS trong cùng 1 thời điểm. Nên các thiết bị sẽ được cấp phép để sử dụng tuần tự đường BUS.
+- Ưu điểm: của truyền tải song song là tốc độ cao. Trong cùng một thời điểm có thể truyền tải nhiều bit dữ liệu hơn so với truyền tải nối tiếp.
+- Nhược điểm: Sử dụng nhiều dây dẫn để truyền các bit dữ liệu đi nên gây ra hiện tượng tạp âm nhiễu. Đó là lý do vì sao ATA-66 sử dụng lên đến 80 dây dẫn. Bởi vì giữa các dây truyền tín hiệu là các dây đất nằm xen kẽ dây tín hiệu để chống nhiễu  
+
+- Chuẩn EIDE: Do chuẩn IDE bị giới hạn dụng lượng đĩa cứng tối đa nên người ta sử dụng chuẩn EIDE để thay thế.
+  - Chia làm 2 kênh (primary và secondary) và 2 kênh này sử dụng 2 đường BUS riêng.
+  - Trên mỗi kênh lại chia làm 2 cấp (master và slaver) trên cùng 1 kênh. Vì cả 2 thiết chỉ được phép sử dụng 1 đường BUS trong cùng 1 thời điểm.
+  - EIDE không có khả năng cho phép nhiều thiết bị sử dụng nhiều thiết bị trên cùng 1 BUS trong cùng 1 thời điểm. Nên các thiết bị sẽ được cấp phép để sử dụng tuần tự đường BUS.
 ### 1. Chuẩn giao tiếp SCSI  
 - `SCSI` - viết tắt của Small Computer System Interface. 
 - SCSI còn được gọi là parallel SCSI. Là chuẩn sử dụng phương thức truyền tải dữ liệu song song.
