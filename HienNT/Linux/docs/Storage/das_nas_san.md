@@ -36,6 +36,7 @@ Do các thiết bị lưu trữ được kết nối trực tiếp vào server v
     <img src="../../images/raid/Network-Attached-Storage-1.png">  
   </p>
 
+- Hệ thống NAS chứa 1 hoặc nhiều hard disk drives, thường được sắp xếp hợp lý thành các kho lưu trữ dự phòng hoặc RAID.
 ### 2. Ưu điểm
 - `NAS` là lựa chọn lý tưởng đối với các doanh nghiệp đang tìm kiếm một giải pháp đơn giản và chi phí hợp lý, đáp ứng việc truy cập dữ liệu nhanh trên nhiều client.
 
@@ -54,7 +55,7 @@ Do các thiết bị lưu trữ được kết nối trực tiếp vào server v
 ### 1. Định nghĩa
 - `SAN` là một mạng riêng tốc độ cao dùng cho việc truyền dữ liệu giữa các server tham gia vào hệ thống lưu trữ cũng như giữa các thiết bị lưu trữ với nhau. SAN cho phép thực hiện quản lý tập trung và cung cấp khả năng chia sẻ dữ liệu và tài nguyên lưu trữ. Hầu hết mạng SAN hiện nay dựa trên công nghệ kênh cáp quang, cung cấp cho người sử dụng khả năng mở rộng, hiệu năng và tính sẵn sàng cao.
 
-- `SAN` cung cấp khả năng truy cập ở mức block. Điều này có nghĩa là thay vì truy cập nội dung trên các ổ đĩa dưới dạng các file thông qua các giao thức truy cập file, SAN viết các block dữ liệu trực tiếp vào các ổ đĩa bằng việc sử dụng các giao thức như Fibre Channel over Ethernet hay Internet Small Computer System Interface (iSCSI).  
+- `SAN` cung cấp khả năng truy cập và sử dụng dữ liệu ở mức block. 
 
   <img src="../../images/raid/san1.jpg">  
 
@@ -62,6 +63,8 @@ Do các thiết bị lưu trữ được kết nối trực tiếp vào server v
   - FC – Fibre Channel
   - iSCSI – Internet Small Computer System Interface
   - FCoE – Fibre Channel over Ethernet
+  - ATA over Ethernet (AoE) 
+  - HyperSCSI
 
 ### 2. Ưu điểm  
 - Có khả năng sao lưu dữ liệu với dung lượng lớn và thường xuyên mà không làm ảnh hưởng đến lưu lượng thông tin trên mạng.

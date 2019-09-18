@@ -124,3 +124,4 @@
 - https://www.lifewire.com/what-is-file-allocation-table-fat-2625877
 - http://www.data-recovery-app.com/datarecovery/fat16.html
 - https://support.microsoft.com/vi-vn/help/100108/overview-of-fat-hpfs-and-ntfs-file-systems
+- http://thuthuat.taimienphi.vn/cach-mount-gan-thiet-bi-luu-tru-tren-linux-terminal-47720n.aspx
