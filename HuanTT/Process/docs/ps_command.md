@@ -1,6 +1,12 @@
 PS Command: Tìm hiểu và hướng dẫn sử dụng
 ===
 ## Mục lục
+1. [Tổng quan](#1.-Tổng-quan)
+2. [Cách sử dụng](#2.-Cách-sử-dụng)
+3. [Ý nghĩa một số trường thông tin](#3.-Ý-nghĩa-một-số-trường-thông-tin)
+4. [Lệnh pstree](#4.-Lệnh-pstree)
+5. [Trạng thái của một tiến trình](#5.-Trạng-thái-của-một-tiến-trình)
+6. [Tài liệu tham khảo](#6.-Tài-liệu-tham-khảo)
 ## 1. Tổng quan
 `ps` (hay Process Status) là một tiện ích của Unix/Linux dùng để xem thông tin của các tiến trình đang chạy trong hệ thống. Đây có thể nói là một tiện ích quan trọng các tiến trình, giúp bạn hiểu chuyện gì đang diễn ra trên hệ thống của bạn.
 
@@ -103,20 +109,22 @@ ps -eo pid,ppid,cmd,%mem,%cpu
 
 ![image](../images/ps09.png)
 
-### 3. Giải thích ý nghĩa một số trường thông tin
-|Tên trường|giải thích|Ý nghĩa|
-|---|---|---------|
-|cmd|command|Câu lệnh thực thi tiến trình|
-|%cpu|%CPU|Lượng cpu sử dụng|
-|PID|process id|Mã tiến trình|
-|PPID|parent process id|Mã của tiến trình cha|
-|UID|user id|mã người dùng|
-|user|username|Tên người dùng|
-|%mem|%memory|Lượng Ram tiêu thụ|
-|rss|Resident set size|Dung lượng cài đặt, tính phần bộ nhớ không phải Swap|
-|VSZ|VSize|Lượng bộ nhớ ảo mà tiến trình đó chiếm|
-|Stat|Stat|Chứa đoạn mã code mô tả trạng thái của tiến trình|
-|Start|Started|Thời gian mà câu lệnh đó khởi động. Nhỏ hơn 24h là "HH:MM:SS", lớn hơn là "Mmm dd"|
+## 3. Ý nghĩa một số trường thông tin
+|Tên trường|Ý nghĩa|
+|---|---------|
+|CMD|Câu lệnh thực thi tiến trình|
+|%CPU|Lượng cpu sử dụng|
+|%MEM|Lượng Ram tiêu thụ|
+|PID|Mã tiến trình|
+|PPID|Mã của tiến trình cha|
+|UID|mã người dùng|
+|USER|Tên người dùng|
+|PRI|độ ưu tiên của tiến trình|
+|RSS|Lượng bộ nhớ sử dụng thực|
+|VSZ or SZ|Lượng bộ nhớ ảo sử dụng|
+|S or STAT|Chứa đoạn mã code mô tả trạng thái của tiến trình|
+|Start or STIME|Thời gian mà câu lệnh đó khởi động. Nhỏ hơn 24h là "HH:MM:SS", lớn hơn là "Mmm dd"|
+|TTY|Terminal liên quan tới tiến trình|
 
 ## 4. Lệnh pstree
 
@@ -129,10 +137,10 @@ pstree [option]
 >Lưu ý: Ở một số hệ điều hành, tiện ích này không có sẵn. Tiến hành cài đặt nó:
 ```
 # Trên Fedora/Red Hat/CentOS
-yum install psmisc
+sudo yum -y install psmisc
 
 #Trên Ubuntu/Debian APT
-apt-get install psmisc
+sudo apt-get -y install psmisc
 ```
 
 ### Ví dụ 1: Xem thông tin tiến trình hiện tại
@@ -148,4 +156,68 @@ Lệnh:
 pstree -p
 ```
 
+![image](../images/ps12.png)
+
+### Ví dụ 3: Xem tiến trình cùng với câu lệnh của nó
+Lệnh:
+```
+pstree -a
+```
+
+![image](../images/ps13.png)
+
+### Ví dụ 4: Xem tiến trình cụ thể với highlight
+Lệnh:
+```
+pstree -H [PID]]
+```
+
+![image](../images/ps14.png)
+
+### Ví dụ 5: Xem cây tiến trình theo thứ tự PID
+Kết hợp với tuỳ chọn -p để xem PID của tiến trình:
+```
+pstree -np
+```
+![image](../images/ps15.png)
+
+### Ví dụ 6: Xem các tiến trình theo cây thuộc người dùng nào đó
+Lệnh:
+```
+pstree [Tên người dùng]
+```
+![image](../images/ps16.png)
+
+## 5. Trạng thái của một tiến trình
+Khi sử dụng lệnh `ps`, ta có thể xem được trạng thái của tiến trình đó là gì, thông qua trường STAT theo kí hiệu như sau:
+|Kí hiệu|Giải thích|
+|---|---|
+|D|Tiến trình ngủ liên tục (Uninterruptible)|
+|R|Tiến trình đang sẵn sàng hoặc đang chạy|
+|S|Tiến trình ngủ ngắt quãng (Interruptible)|
+|T|Đã bị dừng bởi tín hiệu kiểm soát hoặc bị theo dõi|
+|W|Phân trang (không có sẵn sau bản kernel 2.6.xx))|
+|X|Dead (ít gặp)|
+|Z|Zombie process|
+
+Một số kí tự đi kèm
+
+|Kí hiệu|Giải thích|
+|---|---|
+|<|Ưu tiên cao|
+|N|Ưu tiên thấp|
+|L|có trang bị khoá trong bộ nhớ (do thời gian thực hoặc IO)|
+|s|Session leader|
+|\||Tiến trình đa luồng (CLONE_THREAD)|
+|+|Tiến trình thuộc nhóm Foreground|
+
+Mô hình hoạt động:
 ![image](../images/ps11.png)
+
+Một tiến trình sẽ bắt đầu chu trình bằng trạng thái 'R' và sẽ bị kết thúc khi tiến trình cha đưa nó về trang thái 'Z'
+
+## 6. Tài liệu tham khảo
+1. [Câu lệnh ps](https://www.geeksforgeeks.org/ps-command-in-linux-with-examples/)
+2. [Câu lệnh pstree](https://www.howtoforge.com/linux-pstree-command/)
+3. [Tài liệu tiếng việt về ps command](https://blogd.net/linux/cac-vi-du-ve-lenh-ps-theo-doi-tien-trinh-tren-linux/)
+4. [Process status code](https://idea.popcount.org/2012-12-11-linux-process-states/)
