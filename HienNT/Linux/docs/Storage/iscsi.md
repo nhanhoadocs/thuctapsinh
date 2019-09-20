@@ -58,7 +58,7 @@ iSCSI hoạt động thông qua việc truyền và nhận dữ liệu cấp kh�
 ### &emsp;3.1. Một số khái niệm sử dụng trong bài lab  
 - `IQN` - iSCSI qualified name - Tên đủ điều kiện iSCSI được dùng để xác định target và initiator.  
   - IQN có các thuộc tính sau:
-    - Nó là duy nhất. Không có hai người khởi xướng hoặc mục tiêu có thể có cùng tên.
+    - Nó là duy nhất. Không có hai initiator hoặc target có thể có cùng tên.
     - Nó có thể dài tới 255 ký tự.
     - Nó chỉ có thể chứa các số (0-9), chữ cái (AZ và az), dấu hai chấm (:), dấu gạch nối (-) và dấu chấm (.).
 
