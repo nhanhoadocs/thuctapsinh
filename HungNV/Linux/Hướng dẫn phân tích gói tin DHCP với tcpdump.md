@@ -47,8 +47,16 @@ Nếu IP mà Client yêu cầu không còn sử dụng được, DHCP server s�
 
 - DHCP Decline Packet: Nếu DHCP Client nhận được bản tin trả về không đủ thông tin hoặc hết hạn. Nó sẽ gửi gói DHCP Decline đến các Server để yêu cầu thiết lập lại tiến trình thuê địa chỉ IP.  
 
-- Các gói tin DHCP Release: Client gửi bản tin này đến Server để ngừng thuê IP. Khi nhận được bản tin này, server sẽ thu hồi lại IP đã cấp cho Client.  
-  
+- Các gói tin DHCP Release: Client gửi bản tin này đến Server để ngừng thuê IP. Khi nhận được bản tin này, server sẽ thu hồi lại IP đã cấp cho Client. 
+
+###### Quá trình xin cấp phát lại địa chỉ IP
+
+Khi máy Client khởi động lại và nó đã có sẵn 1 hợp đồng cho thuê, nó không cần phải thực hiện lại quá trình xin thuê địa chỉ ip tray vào đó nó sử dụng quá trình ngắn hơn là tái phân bổ Reallocation.
+
+- Client Gửi brodcast 1 request để tìm server hiện tại đang quản lý thông tin về hợp đồng mà nó đang thuê.
+
+- Server sẽ gửi lại DHCP ACK để xác nhận hợp đồng của client còn hiệu lực.
+
 ###### Ưu và nhược điểm của DHCP
 
 **1. Ưu điểm**
@@ -89,7 +97,7 @@ sau đó tiến hành restart network để máy nhận cập nhật cấu hình
 
 ![Imgur](https://i.imgur.com/8ae2jgH.png)
 
-ta thấy ở đây, sau khi restart, ta bắt đưuọc 4 gói tin chính là 4 bản tin DHCP DISCOVER, DHCP OFFER, DHCP REQUEST, DHCP ACK. 
+ta thấy ở đây, sau khi restart, ta bắt được 4 gói tin chính là 4 bản tin DHCP DISCOVER, DHCP OFFER, DHCP REQUEST, DHCP ACK. 
 
 ![Imgur](https://i.imgur.com/6eDWlaw.png)
 
