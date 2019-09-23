@@ -4,15 +4,16 @@
 
 ## I - Các chuẩn giao tiếp trên ổ cứng 
 ### 1. Giao tiếp IDE
-– Chuẩn IDE sử dụng phương thức truyền tải dữ liệu song song.
 
-Ưu điểm: của truyền tải song song là tốc độ cao. Trong cùng một thời điểm có thể truyền tải nhiều bit dữ liệu hơn so với truyền tải nối tiếp.
-Nhược điểm: Sử dụng nhiều dây dẫn để truyền các bit dữ liệu đi nên gây ra hiện tượng tạp âm nhiễu. Đó là lý do vì sao ATA-66 sử dụng lên đến 80 dây dẫn. Bởi vì giữa các dây truyền tín hiệu là các dây đất nằm xen kẽ dây tín hiệu để chống nhiễu
-– Chuẩn EIDE: Do chuẩn IDE bị giới hạn dụng lượng đĩa cứng tối đa, Nên người ta sử dụng chuẩn EIDE để thay thế
+- Chuẩn IDE sử dụng phương thức truyền tải dữ liệu song song.
 
-Chia làm 2 kênh (primary và secondary) và 2 kênh này sử dụng 2 đường BUS riêng.
-Trên mỗi kênh lại chia làm 2 cấp (master và slaver) trên cùng 1 kênh. Vì cả 2 thiết chỉ được phép sử dụng 1 đường BUS trong cùng 1 thời điểm.
-EIDE không có khả năng cho phép nhiều thiết bị sử dụng nhiều thiết bị trên cùng 1 BUS trong cùng 1 thời điểm. Nên các thiết bị sẽ được cấp phép để sử dụng tuần tự đường BUS.
+- Ưu điểm: của truyền tải song song là tốc độ cao. Trong cùng một thời điểm có thể truyền tải nhiều bit dữ liệu hơn so với truyền tải nối tiếp.
+- Nhược điểm: Sử dụng nhiều dây dẫn để truyền các bit dữ liệu đi nên gây ra hiện tượng tạp âm nhiễu. Đó là lý do vì sao ATA-66 sử dụng lên đến 80 dây dẫn. Bởi vì giữa các dây truyền tín hiệu là các dây đất nằm xen kẽ dây tín hiệu để chống nhiễu  
+
+- Chuẩn EIDE: Do chuẩn IDE bị giới hạn dụng lượng đĩa cứng tối đa nên người ta sử dụng chuẩn EIDE để thay thế.
+  - Chia làm 2 kênh (primary và secondary) và 2 kênh này sử dụng 2 đường BUS riêng.
+  - Trên mỗi kênh lại chia làm 2 cấp (master và slaver) trên cùng 1 kênh. Vì cả 2 thiết chỉ được phép sử dụng 1 đường BUS trong cùng 1 thời điểm.
+  - EIDE không có khả năng cho phép nhiều thiết bị sử dụng nhiều thiết bị trên cùng 1 BUS trong cùng 1 thời điểm. Nên các thiết bị sẽ được cấp phép để sử dụng tuần tự đường BUS.
 ### 1. Chuẩn giao tiếp SCSI  
 - `SCSI` - viết tắt của Small Computer System Interface. 
 - SCSI còn được gọi là parallel SCSI. Là chuẩn sử dụng phương thức truyền tải dữ liệu song song.
@@ -87,7 +88,9 @@ EIDE không có khả năng cho phép nhiều thiết bị sử dụng nhiều t
 - SAS cho phép cắm “nóng” rồi sử dụng ngay không cần phải khởi động lại hệ thống.
 
 ### Chuẩn giao tiếp NVMe  
-- Non-Volatile Memory Express (NVMe) là một chuẩn giao tiếp ổ cứng được giới thiệu vào năm 2013. "Non-Volatile" có nghĩa là ổ cứng sẽ không bị xóa dữ liệu khi máy tính khởi động lại, trong khi "Express" lại đề cập đến quá trình truyền dữ liệu thông qua giao tiếp PCI Express (PCIe) có trên bo mạch chủ của máy tính. Điều này đảm bảo sự kết nối liền mạch giữa ổ cứng và bo mạch chủ bởi dữ liệu sẽ không cần phải thông qua một bộ điều khiền (controller) Serial Advance Technology Attachment (SATA).
+- Non-Volatile Memory Express (NVMe) là một chuẩn giao tiếp hiệu năng cao dành cho các ổ cứng SSD có giao tiếp PCIe, cho phép cắm-và-chạy các SSD PCIe trên tất cả các nền tảng, được giới thiệu vào năm 2013. "Non-Volatile" có nghĩa là ổ cứng sẽ không bị xóa dữ liệu khi máy tính khởi động lại, trong khi "Express" lại đề cập đến quá trình truyền dữ liệu thông qua giao tiếp PCI Express (PCIe) có trên bo mạch chủ của máy tính. Điều này đảm bảo sự kết nối liền mạch giữa ổ cứng và bo mạch chủ bởi dữ liệu sẽ không cần phải thông qua một bộ điều khiền (controller) Serial Advance Technology Attachment (SATA).
+
+  <img src="../../images/raid/o-cung-ssd-nao-tot-6-768x768.jpg">  
 
 
 
@@ -101,3 +104,5 @@ EIDE không có khả năng cho phép nhiều thiết bị sử dụng nhiều t
 - https://key.com.vn/chia-se/kien-thuc-14/nhung-dieu-nen-biet-ve-serial-ata-sata-1809/
 - http://www.bradgoodman.com/sasprimer/
 - https://taknet.com.vn/cong-nghe-giao-tiep-tren-o-cung-sata-va-sas/
+- https://vietgame.asia/nvme-ky-nguyen-moi-cua-toc-do-truyen-du-lieu-nhanh-nhu-anh-sang-pr/
+- https://topthuthuat.com/tim-hieu-nvme-la-gi/
