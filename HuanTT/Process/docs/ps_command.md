@@ -27,8 +27,8 @@ ps
 ```
 ![image](../images/ps01.png)
 
-
 Trong bảng này, ta sẽ thấy các thông tin sau:
+
 |Mục|Ý nghĩa|
 |---|---|
 |PID|Id của tiến trình|
