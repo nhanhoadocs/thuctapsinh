@@ -41,19 +41,19 @@
  
 - Sử dụng `yum install` để cài đặt gói MariaDB - `mariadb-server`, nhập y khi được nhắc để xác nhận cài đặt:  
    ```sh
-   yum install mariadb-server
+     # yum install mariadb-server
    ``` 
 - Sau khi hoàn tất cài đặt, sử dụng lệnh `systemctl start` để khởi động dịch vụ MariaDB:
    ```sh
-   [root@thuyhien ~]# systemctl start mariadb
+     # systemctl start mariadb
    ``` 
 - Nếu muốn để MariaDB khởi động cùng hệ điều hành, sử dụng lệnh:  
    ```sh
-   [root@thuyhien ~]# systemctl enable mariadb
+     # systemctl enable mariadb
    ``` 
 - `systemctl` không hiển thị kết quả của các lệnh quản lý dịch vụ nên để chắc chắn dịch vụ hoạt động nên kiểm tra trạng thái hoạt động của MariaDB trên CentOS 7 bằng lệnh:  
    ```sh
-   [root@thuyhien ~]# systemctl status mysql
+     # systemctl status mysql
    ``` 
 
 <a name ="2"></a>
@@ -66,7 +66,7 @@
    - Tìm kiếm các phiên bản khác của MariaDB tại [***đây***](https://downloads.mariadb.org/mariadb/+releases/). Ở đây mình dùng MariaDB phiên bản 10.0.30  
    - Thêm repo bằng câu lệnh:  
       ```sh
-      [root@thuyhien ~]# vi /etc/yum.repos.d/mariadb.repo
+        # vi /etc/yum.repos.d/mariadb.repo
       ``` 
    Sau đó thêm đoạn code bên dưới vào:  
      ```sh
@@ -85,9 +85,9 @@
    `enable` = trạng thái của kho lưu trữ(1=bật,0=tắt)  
    `gpgkey` = đường dẫn của file key(nếu có)
     - Lưu lại và kiểm tra phiên bản của MariaDB-Server sau khi thêm repo mới:  
-        ```sh
-        [root@thuyhien sbin]# yum info mariadb-server
-        ``` 
+      ```sh
+        # yum info mariadb-server
+      ``` 
       Kết quả cho thấy **MariaDB 10.0.30** đã sẵn sàng:  
       ```sh
       Available Packages
@@ -121,21 +121,21 @@
       Và [gỡ các gói liên quan](http://networkstip.blogspot.com/2018/12/completely-remove-mariadb-or-mysql-from.html)  
 
       ```sh
-      [root@thuyhien ~]# rm -rf /var/lib/mysql/
-      [root@thuyhien ~]# rm /etc/my.cnf
+        # rm -rf /var/lib/mysql/
+        # rm /etc/my.cnf
       ``` 
   <a name ="b"></b>
     - Cài đặt **`MariaDB 10.0.30`**    
       ```sh
-      [root@thuyhien ~]# yum install -y mariadb-server
+        # yum install -y mariadb-server
       ``` 
    - Khởi động dịch vụ MariaDB  
       ```sh
-      [root@thuyhien ~]# systemctl start mariadb
+        # systemctl start mariadb
       ```
    - Kiểm tra lại version  
       ```sh
-      [root@thuyhien ~]# yum list installed | grep mariadb
+        # yum list installed | grep mariadb
       ```
    - Kiểm tra trạng thái dịch vụ
 
@@ -148,7 +148,7 @@
 ### 3. Các dòng lệnh quản lý  
 - Kiểm tra user, group  
    ```sh
-   [root@thuyhien ~]# cat /etc/passwd | grep mysql
+     # cat /etc/passwd | grep mysql
    mysql:x:27:27:MariaDB Server:/var/lib/mysql:/sbin/nologin
    ```
 - Khởi động dịch vụ
@@ -169,7 +169,7 @@
    ``` 
 - Kiểm tra cổng mà Mariadb đang sử dụng  
    ```sh
-   [root@thuyhien ~]# netstat -plnt | grep mysql
+     # netstat -plnt | grep mysql
   tcp6       0      0 :::3306                 :::*                    LISTEN      3679/mysqld
    ``` 
 Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
@@ -240,3 +240,4 @@ Theo mặc định, `MariaDB` sử dụng cổng mặc định là cổng 3306.
 - [https://www.oreilly.com/](https://www.oreilly.com/library/view/learning-mysql-and/9781449362898/ch04.html) 
 - [mysql-insert-query](https://www.tutorialspoint.com/mysql/mysql-insert-query) 
 - [configure-mariadb-server-on-centos/](https://support.rackspace.com/how-to/configure-mariadb-server-on-centos/)
+- https://www.codehub.vn/Cac-khai-niem-duoc-chuyen-gia-su-dung-trong-Network
