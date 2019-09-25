@@ -1,4 +1,4 @@
-﻿#Git và Github
+﻿**Git và Github**
 
 ## I. Git và Github là gì?
 
@@ -33,5 +33,4 @@
 - `Issue`: có thể coi đó là một lỗi hay một lỗ hổng của một nội dung nào đó.
                                
  
-===================================Kết thúc ===============================================
 
