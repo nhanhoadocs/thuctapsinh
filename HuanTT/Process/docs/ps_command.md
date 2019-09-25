@@ -190,6 +190,7 @@ pstree [Tên người dùng]
 
 ## 5. Trạng thái của một tiến trình
 Khi sử dụng lệnh `ps`, ta có thể xem được trạng thái của tiến trình đó là gì, thông qua trường STAT theo kí hiệu như sau:
+
 |Kí hiệu|Giải thích|
 |---|---|
 |D|Tiến trình ngủ liên tục (Uninterruptible)|
