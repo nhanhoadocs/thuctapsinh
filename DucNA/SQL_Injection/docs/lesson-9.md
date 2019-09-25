@@ -34,4 +34,4 @@ cứ như vậy với các ký tự đặc biệt ta sẽ có cấu trúc
 
 ![](../images/lesson9/screen_5.png)
 
-Sau khi biết được cấu trúc của nó ta có thể làm tương tự được các bài 7 và 8 như trước của ta đã làm. Để có thể show được giá trị của nó ra 
+Sau khi biết được cấu trúc của nó ta có thể làm tương tự được các bài 7 và 8 như trước của ta đã làm. Để có thể show được giá trị của nó ra     
