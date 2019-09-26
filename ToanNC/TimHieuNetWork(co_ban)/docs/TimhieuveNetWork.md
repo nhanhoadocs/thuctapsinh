@@ -67,6 +67,30 @@
 - IP: là một địa chỉ đơn nhất mà những thiết bị điện tử hiện nay đang sử dụng để nhận diện và liên lạc với nhau trên mạng máy tính bằng cách sử dụng giao thức Internet.Đến thời điểm hiện tại có loại địa chỉ IP là IPV4(32bit) và IPV6(128bit)
 - ![ảnh minh hoạ](https://imgur.com/V3PdczO.png)
 - [link tham khảo về ip](https://vi.wikipedia.org/wiki/%C4%90%E1%BB%8Ba_ch%E1%BB%89_IP)
+- IPv4(Internet Protocol version 4) :là phiên bản thứ tư trong quá trình phát triển của các giao thức Internet (IP). Đây là phiên bản đầu tiên của IP được sử dụng rộng rãi.IPv4 sử dụng 32 bits để đánh địa chỉ, theo đó, số địa chỉ tối đa có thể sử dụng là 4.294.967.296 (232). Tuy nhiên, do một số được sử dụng cho các mục đích khác như: cấp cho mạng cá nhân (xấp xỉ 18 triệu địa chỉ), hoặc sử dụng làm địa chỉ quảng bá (xấp xỉ 16 triệu), nên số lượng địa chỉ thực tế có thể sử dụng cho mạng Internet công cộng bị giảm xuống
+  - 32 bits địa chỉ của IP được chia thành 4 nhóm (dạng phân nhóm - dotted format), mỗi nhóm gồm 8 bits (gọi là một octet), các nhóm này phân cách nhau bởi dấu chấm. Tuy nhiên, để thuận tiện cho người sử dụng, các octet này được chuyển đổi sang giá trị thập phân
+![ảnh minh hoạ](https://imgur.com/iwtgtHw.png)
+  - Một địa chỉ IPv4 gồm có hai phần :
+    - Network ID: xác định bởi các octet đầu
+    - Host ID: xác định bởi các octet còn lại trừ các octet dành cho Network ID
+    - Từ đó ta có thể chia địa chỉ IPv4 thành các lớp như sau:
+       - Lớp A : 8 bit đầu dành cho NetID(1 octet), 24 bit sau dành cho HostID(3 octet )
+       - Lớp B : 16 bit đầu dành cho NetID(2 octet), 16 bit sau dành cho HostID(2 octet )
+       - Lớp C : 24 bit đầu dành cho NetID(3 octet), 8 bit sau dành cho HostID(1 octet )
+       - Lớp D và Lớp E là dùng cho dự phòng và nghiên cứu 
+![ảnh minh hoạ](https://imgur.com/m52EiS4.png)
+  - Trong IPv4 có một sô cách truyền sau : **Unicast**,**Broadcast**,**Multicast**
+     - **Unicast**: là 1 thuật ngữ được sử dụng trong mạng máy tính để mô tả cách thức truyền tin được gửi từ 1 điểm đến 1 điểm khác. Trong trường hợp này chỉ có 1 nguồn gửi (sender) và 1 nguồn nhận (receiver), mỗi nguồn được xác định bởi một địa chỉ mạng. Địa chỉ này ở tầng mạng của mô hình OSI được sử dụng để xác định một mục tiêu duy nhất được gọi là một địa chỉ unicast.
+![ảnh minh hoạ](https://imgur.com/t5aab37.png)
+     - **Multicast**: là thuật ngữ trong ngành viễn thông được sử dụng để mô tả cách thức truyền tin được gửi từ 1 điểm đến 1 tập hợp các điểm khác, và do đó là một hình thức kết nối đa điểm. Kỹ thuật này được sử dụng theo mô hình OSI trong tầng mạng.
+![ảnh minh hoạ](https://imgur.com/sEPMJwj.png)
+     - **Broadcast**: là thuật ngữ được sử dụng trong mạng máy tính để mô tả cách thức truyền tin được gửi từ 1 điểm đến tất cả các điểm khác trong cùng một mạng. Trong trường hợp này, Một gói broadcast chuyển đến tất cả những thiết bị tham gia trong một mạng cục bộ, mà không cần phải được quy định rõ ràng như một máy nhận. Do đó broadcast nên được giới hạn trong những phần riêng của mạng, và không được router chuyển tiếp. Nếu một thông tin chỉ được gửi đi cho một nhóm người dùng được chọn, thì nên sử dụng thay vào đó phương pháp Multicast.
+![ảnh minh hoạ](https://imgur.com/J1ucqqy.png)
+![ảnh minh hoạ](https://imgur.com/rz6ZZjw.png)
+- IPv6:Internet Protocol version 6", là "Giao thức liên mạng thế hệ 6", một phiên bản của giao thức liên mạng (IP) nhằm mục đích nâng cấp giao thức liên mạng phiên bản 4 (IPv4) hiện đang truyền dẫn cho hầu hết lưu lượng truy cập Internet nhưng đã hết địa chỉ. IPv6 cho phép tăng lên đến 2128 địa chỉ, một sự gia tăng khổng lồ so với 232 (khoảng 4.3 tỷ) địa chỉ của IPv4.
+   - Các loại địa chỉ IPv6 : **Unicast**,**Multicast**,**Anycast**( thay thế cho broadcats trong địa chỉ IPv4)
+   - Một vài ưu điểm của IPv6 so vs IPv4:
+![ảnh minh hoạ](https://imgur.com/c8FNpqw.png)
 ### **4.Kiến trúc mạng ,mô hình *Peer to Peer* và *Client-server***
 - **Kiến Trúc Mạng**:Cách nối các máy tính với nhau ra sao và tập hợp các qui tắc, qui ước mà tất cả các thực thể tham gia truyền thông trên mạng phải tuân theo. 
   - Gồm 2 thành phần:
