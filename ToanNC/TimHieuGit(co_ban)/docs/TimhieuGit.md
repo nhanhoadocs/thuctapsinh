@@ -57,6 +57,7 @@
   - 3. Để viết được Link chúng ta dùng `[mô tả link](link dẫn)`
   - 4. Để chèn được ảnh chúng ta dung`![mô tả ảnh](link ảnh)
   - 5. Một vài hình ảnh minh hoạ về các các viết trên **Markdown**
-  - ![ảnh minh hoạ](https://imgur.com/undefined.png)
+  - ![ảnh minh hoạ](https://imgur.com/mZP1T5V.png)
+  - ![ảnh minh hoạ](https://imgur.com/bUQm3a5.png)
   - 6. Các bạn cũng có thể tập viết **Markdown** trên link sau
     - [Link viết Markdown](https://markdownlivepreview.com/)
