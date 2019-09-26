@@ -39,7 +39,7 @@
 
 - Điền username, mail, password 
 
-![](/images/dki.png)
+![](/images/dki.png) 
 
 - Chọn verify 
 
@@ -72,6 +72,7 @@ Chọn Fork để lấy dữ liệu về
 
 ![](/images/fork.png)
 
+
 **Bước 3: Clone repo**
 
 - Chọn clone or download
@@ -87,8 +88,8 @@ Chọn Fork để lấy dữ liệu về
 
 Chọn commit để thay đổi
 
-
 ![](/images/commit.png)
+
 
 **Bước 5: Push repo**
 
@@ -110,9 +111,7 @@ Gửi xác nhận để đồng bộ dữ liệu
 
 ![](/images/pull2.png)
 
-
 Điền title và comment 
-
 
 ![](/images/pull3.png)
 
@@ -128,7 +127,6 @@ Phản hồi chấp nhận hay không
 
 ![](/images/end.png)
 
-### Cám ơn bạn đã đọc!!!!!!
 
 
 
