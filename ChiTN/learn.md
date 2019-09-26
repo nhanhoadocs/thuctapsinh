@@ -18,7 +18,7 @@
 - `Git` là một mô hình hệ thống quản lí phiên bản phân tán
 - `Github` là một dịch vụ máy chủ mã nguồn công cộng
 
-![](https://imgur.com/nOT098O.png)
+![](https://imgur.com/ukTKYGf.png)
  
 ## II.Các khái niệm và thuật ngữ cơ bản trong Git
 - **Repository (repo)**: Nghĩa gốc là kho lưu trữ. Hiểu đơn giản, repo là các dự án bạn tạo ra, chứa mã nguồn phần mềm của bạn. Có 2 dạng: **Remote repo** (là repo chung được lưu trên server), và **Local repo** (là repo lưu trên máy của người dùng). Ta có thể làm việc và commit trên local reposity ngay cả trong điều kiện offline, khi có mạng chỉ việc đồng bộ lên remote repo để chia sẻ cho người dùng khác.
@@ -39,56 +39,56 @@
 
 - Điền username, mail, password 
 
-![](/images/dki.png) 
+![](https://imgur.com/KXq3zzg.png) 
 
 - Chọn verify 
 
-![](/images/dki2.png)
+![](https://imgur.com/Oh9go3U.png)
 
 - Xếp cho con vật đứng thẳng 
 
-![](/images/dki3.png)
+![](https://imgur.com/ZhJhO8D.png)
 
 - Chọn create để đăng kí tài khoản
 
-![](/images/dki4.png)
+![](https://imgur.com/t2RTfJv.png)
 
 - Chọn continue để tiếp tục sử dụng Github miễn phí
 
-![](/images/dki5.png)
+![](https://imgur.com/8adtw8U.png)
 
 - Điền vào ô trống rồi submit
 
-![](/images/dk6.png)
+![](https://imgur.com/hjSC7Xi.png)
 
 - Tài khoản đã được tạo 
 
-![](/images/kq.png)
+![](https://imgur.com/51BV796.png)
 
 
 **Bước 2: Fork repo**
 
 Chọn Fork để lấy dữ liệu về
 
-![](/images/fork.png)
+![](https://imgur.com/Nuz4N7I.png)
 
 
 **Bước 3: Clone repo**
 
 - Chọn clone or download
 
-![](/images/clone.png)
+![](https://imgur.com/jDtSwWp.png)
 
 - Chọn open in destop 
 
-![](/images/open.png)
+![](https://imgur.com/XrEDSkf.png)
 
 
 **Bước 4: Commit repo**
 
 Chọn commit để thay đổi
 
-![](/images/commit.png)
+![](https://imgur.com/QNU49CU.png)
 
 
 **Bước 5: Push repo**
@@ -96,7 +96,7 @@ Chọn commit để thay đổi
 Chọn push để cập nhật dữ liệu trên mã nguồn
 
 
-![](/images/push.png)
+![](https://imgur.com/LiQT4bS.png)
 
 
 **Bước 6: Pull repo** 
@@ -105,19 +105,19 @@ Gửi xác nhận để đồng bộ dữ liệu
  
 - Chọn new pull request
 
-![](/images/pull1.png)
+![](https://imgur.com/iFfO6H4.png)
 
 - Chọn create pull request
 
-![](/images/pull2.png)
+![](https://imgur.com/u4hpELI.png)
 
 Điền title và comment 
 
-![](/images/pull3.png)
+![](https://imgur.com/Uy6IJWR.png)
 
 - Chọn create pull request để hoàn thành
 
-![](/images/pull4.png)
+![](https://imgur.com/gll3gjg.png)
 
 
 **Bước 7: Merge repo**
@@ -125,8 +125,10 @@ Gửi xác nhận để đồng bộ dữ liệu
 Phản hồi chấp nhận hay không 
 
 
-![](/images/end.png)
+![](https://imgur.com/RWNQrcN.png)
 
+
+###Cám ơn các bạn đã đọc!!!!!!
 
 
 
