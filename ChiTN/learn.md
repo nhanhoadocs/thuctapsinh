@@ -18,7 +18,7 @@
 - `Git` là một mô hình hệ thống quản lí phiên bản phân tán
 - `Github` là một dịch vụ máy chủ mã nguồn công cộng
 
-![](/images/github.png)
+![](https://imgur.com/nOT098O.png)
  
 ## II.Các khái niệm và thuật ngữ cơ bản trong Git
 - **Repository (repo)**: Nghĩa gốc là kho lưu trữ. Hiểu đơn giản, repo là các dự án bạn tạo ra, chứa mã nguồn phần mềm của bạn. Có 2 dạng: **Remote repo** (là repo chung được lưu trên server), và **Local repo** (là repo lưu trên máy của người dùng). Ta có thể làm việc và commit trên local reposity ngay cả trong điều kiện offline, khi có mạng chỉ việc đồng bộ lên remote repo để chia sẻ cho người dùng khác.
