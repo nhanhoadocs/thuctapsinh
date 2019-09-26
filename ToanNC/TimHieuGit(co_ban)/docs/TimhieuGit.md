@@ -23,10 +23,13 @@
 - *[tài liệu tham khảo GitHub](https://www.hostinger.vn/huong-dan/github-la-gi/)*
 
 ### 3.So sánh giữa Git và GitHub
--  **ví dụ**: bạn có một đoạn script dài 20 dòng, hôm sau bạn tối ưu nó đi, chỉ còn 15 dòng, một ngày khác bạn sửa ở script đó một vài chỗ. *Git* ghi lại những thời điểm thay đổi đó của bạn và source code của bạn tại thời điểm đó.
-- *Github* là một trang web, cho phép bạn lưu source code của mình lên đó
+- **Git** là một mô hình về hệ thống lưu trữ và quản lý mã nguồn phân tán, phân tán ở đây tức là mã nguồn được lưu trữ trên nhiều máy khác nhau, có thể là client, cũng có thể là server với nhiều phiên bản,nó được sinh ra để giải quyết bài toán về quản lí mã nguồn của các developer
+  - *Ví Dụ*:mọi người hình dung là 1 ứng dụng nếu code 1 mình thì ko sao, mình có thể dễ dàng control các phiên bản có thể bằng cách là mỗi phiên bản mình sao lưu ra 1 folder và đặt tên khác nhau,nhưng đối với những ứng dụng lớn, đòi hỏi nhiều người cùng code thì sao nếu họ ko có 1 quy chuẩn chung thì sẽ dễ dẫn tới việc dẫm chân lên nhau 
+- ![ảnh minh hoạ](/images/4.png)
+- *Github* là một trang web, cho phép bạn lưu source code của mình lên đó,như vậy thì *Github* có thể coi là nơi để ta tạo remote repository và nó cung cấp miễn phí cho người dùng
+- ![ảnh minh hoạ](/images/5.png)
 - Git và GitHub sẽ giúp cho các lập trình viên có thể thuận tiện trong việc chỉnh sửa code tại mọi nơi mọi lúc mà ko sợ bị ghi đè code hay là mât dữ liệu do hỏng hóc do dữ liệu đều đc ghi ở trên wed và máy tính cá nhân , đồng thời bạn cũng có thể khôi phục lại code tại một thời điểm nào đó
-- ![ảnh quá mô tả quá trình](/ảnh/1.png)
+- ![ảnh quá mô tả quá trình](/images/1.png)
 - mọi người cũng có thể vào link dưới đây để tìm hiểu thêm về sự khác nhau giữa Git và Github
   - [Link tham khảo 1](https://thachpham.com/tools/git-git-va-github-la-gi-tai-sao-nen-dung.html)
 ### 4.Một vài thuật ngữ của Git và GitHub
@@ -54,7 +57,7 @@
   - 3. Để viết được Link chúng ta dùng `[mô tả link](link dẫn)`
   - 4. Để chèn được ảnh chúng ta dung`![mô tả ảnh](link ảnh)
   - 5. Một vài hình ảnh minh hoạ về các các viết trên **Markdown**
-  - ![ảnh minh hoạ](/ảnh/3.png)
-  - ![ảnh minh hoạ](/ảnh/4.png)
+  - ![ảnh minh hoạ](/images/2.png)
+  - ![ảnh minh hoạ](/images/3.png)
   - 6. Các bạn cũng có thể tập viết **Markdown** trên link sau
     - [Link viết Markdown](https://markdownlivepreview.com/)
