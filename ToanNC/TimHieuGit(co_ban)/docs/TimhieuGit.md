@@ -58,6 +58,5 @@
   - 4. Để chèn được ảnh chúng ta dung`![mô tả ảnh](link ảnh)
   - 5. Một vài hình ảnh minh hoạ về các các viết trên **Markdown**
   - ![ảnh minh hoạ](https://imgur.com/undefined.png)
-  - ![ảnh minh hoạ](https://imgur.com/undefined.png)
   - 6. Các bạn cũng có thể tập viết **Markdown** trên link sau
     - [Link viết Markdown](https://markdownlivepreview.com/)
