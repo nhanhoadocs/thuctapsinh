@@ -24,3 +24,4 @@
 22. [Less-22](Less-22.md)
 23. [Less-23](Less-23.md)
 24. [Less-24](Less-24.md)
+25. [Less-25](Less-25.md)
