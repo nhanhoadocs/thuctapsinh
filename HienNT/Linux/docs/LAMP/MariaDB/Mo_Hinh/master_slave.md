@@ -68,6 +68,273 @@
 - Đảm bảo cả 2 server đã cài đặt MariaDB 10.3.11   
 
 ### 3.3. Các bước thực hiện
+- Bước 1: Cài đặt MariaDB trên Master Server và Slave Server  
+
+  ```sh
+    # yum install -y mariadb-server
+    # systemtl enable mariadb
+    # systemctl start mariadb
+  ```
+
+- Bước 2: Thiết lập mật khẩu cho Master và Slave  
+
+  ```sh
+    # mysql_secure_installation
+  ```  
+
+  <p align="center"><img src="../../../../images/sql/pass.png"></p>
+
+- Bước 3: Cấu hình Master Node  
+
+  - Cấu hình firewall, cho phép lắng nghe port 3306  
+
+    ```sh
+      # firewall-cmd --add-port=3306/tcp --zone=public --permanent
+    success
+    ```
+
+  - Reload xác nhận cấu hình  
+
+    ```sh
+      # firewall-cmd --reload
+    success
+    ```
+
+  - Chỉnh sửa file `/etc/my.cnf`  
+
+    ```sh
+      # vi /etc/my.cnf
+    ```
+
+    Trong phần `[mysqld]` thêm các dòng sau:
+
+    ```sh
+      server_id=1
+      log-basename=master
+      log-bin
+      binlog-format=row
+      binlog-do-db=replica_db
+    ```
+
+  - Restart lại dịch vụ mariadb để nhận cấu hình mới
+
+    ```sh
+      # systemctl restart mariadb
+    ```
+
+  - Sử dụng root user đăng nhập vào MariaDB  
+
+    ```sh
+      # mysql -u root -p
+    ```
+
+    - Tạo CSDL có tên là `replica_db`  
+
+      ```sh
+        > create database replica_db;
+      Query OK, 1 row affected (0.002 sec)
+      ```  
+
+    - Tạo Slave user, password và gán quyền cho user đó. Ví dụ sử dụng username là `slave_user` và password là `abc@123`  
+
+      ```sh
+        > create user 'slave_user'@'%' identified by 'abc@123';
+        > stop slave;
+      Query OK, 0 rows affected, 1 warning (0.062 sec)
+        > GRANT REPLICATION SLAVE ON *.* TO 'slave_user'@'%' IDENTIFIED BY 'abc@123';
+      Query OK, 0 rows affected (0.061 sec)
+      ```
+
+    - Xác nhận lại các thay đổi với câu lệnh:  
+      
+      ```sh
+        > FLUSH PRIVILEGES;
+      Query OK, 0 rows affected (0.012 sec)
+      ```  
+    - Sử dụng câu lệnh dưới đây để chắc chắn rằng không có bất cứ điều gì được ghi vào master database trong quá trình replication dữ liệu. Ghi nhớ `filename` and `position` của `binary log` để có thể thực hiện cấu hình trên slave.  
+
+      ```sh
+        FLUSH TABLES WITH READ LOCK;
+      ```  
+    - Sử dụng câu lệnh dưới để kiểm tra trạng thái của slave  
+
+      ```sh
+        > show master status;
+      +--------------------+----------+--------------+------------------+
+      | File               | Position | Binlog_Do_DB | Binlog_Ignore_DB |
+      +--------------------+----------+--------------+------------------+
+      | mariadb-bin.000001 |     2088 | replica_db   |                  |
+      +--------------------+----------+--------------+------------------+
+      1 row in set (0.058 sec)
+      ```  
+- Bước 4: Tiến hành `backup` CSDL trên master server và chuyển nó đến slave server  
+
+  ```sh
+    # mysqldump --all-databases --user=root --password --master-data > masterdatabase.sql
+    Enter password:
+    # ls
+    anaconda-ks.cfg  masterdatabase.sql  
+  ```  
+
+  - Đăng nhập vào MariaDB với root user và thực hiện unlock table bằng lệnh  
+
+    ```sh
+      > UNLOCK TABLES;
+    ```  
+
+  - Copy `masterdatabase.sql` file tới Slave server 
+
+    ```sh
+      # scp masterdatabase.sql root@192.168.136.132:/root/replica
+    ```
+    OUTPUT
+    ```SH
+    The authenticity of host '192.168.136.132 (192.168.136.132)' can't be established.
+    ECDSA key fingerprint is SHA256:BkAckAHiVmMAiIWYmSiD9bYpFfDducZTUqutqZ3GaJM.
+    Are you sure you want to continue connecting (yes/no)? yes
+    Warning: Permanently added '192.168.136.132' (ECDSA) to the list of known hosts.
+    root@192.168.136.132's password:
+    masterdatabase.sql                                                                                                                 100%  469KB   8.8MB/s   00:00
+    ```  
+
+- Bước 5: Cấu hình Slave Server  
+
+  - Chỉnh sửa `/etc/my.cnf` file
+
+    ```sh
+      # vi /etc/my.cnf
+    ```
+
+    Sau đó thêm vào các dòng sau
+
+    ```sh
+    [mysqld]
+    server-id = 2
+    replicate-do-db=replica_db
+    ```    
+
+    Trong đó:  
+      `replica_db` là CSDL được tạo trên Master Server  
+      `server-id` với mỗi server là khác nhau  
+
+  - Import CSDL master  
+
+    ```sh
+      # mysql -u root -p < /root/replica
+    Enter password:
+    ```  
+
+  - Restart MariaDB service để tiếp nhận thay đổi  
+
+    ```sh
+      # systemctl restart mariadb
+    ```  
+
+  - Sử dụng root user đăng nhập vào MariaDB Server  
+
+    ```sh
+      # mysql -u root -p
+    ```  
+
+  - Stop Slave. Sau đó hướng dẫn Slave tìm file `Master Log file` và bắt đầu Slave.  
+
+    ```sh
+      > STOP SLAVE;
+    Query OK, 0 rows affected (0.012 sec)
+      > CHANGE MASTER TO MASTER_HOST='192.168.136.130', MASTER_USER='slave_user', MASTER_PASSWORD='abc@123', MASTER_LOG_FILE='mariadb-bin.000001', MASTER_LOG_POS=2088;
+    Query OK, 0 rows affected (0.051 sec)
+      > START SLAVE;
+    Query OK, 0 rows affected (0.044 sec)
+    ```  
+
+  - Kiểm tra trạng thái của Slave, sử dụng lệnh:  
+
+    ```sh
+      > show slave status\G;
+    ```
+
+    OUTPUT
+
+    <p align="center"><img src="../../../../images/sql/slave.png"></p>  
+
+
+## IV-Kiểm tra MariaDB Replication  
+### Master side:  
+- Đăng nhập vào Master server sử dụng root user 
+
+  ```sh
+    # mysql -u root -p
+  ```  
+
+  - Tạo CSDL `replica_db`  
+
+    <img src="../../../../images/sql/master1.png">  
+
+  - Tạo bảng `Persons`  
+
+    ```sh
+      > CREATE TABLE Persons ( PersonID int, LastName varchar(255), FirstName varchar(255), City varchar(255) );
+    ```
+
+    <img src="../../../../images/sql/ms.png">  
+
+  - Insert giá trị vào bảng  
+
+    ```sh
+      > INSERT INTO Persons (PersonID, LastName, FirstName, City) Values (1, 'Hien', 'Nguyen', 'HaNoi');
+    ```  
+
+    <img src="../../../../images/sql/ms1.png">  
+
+  - Hiển thị thông tin trên bảng  
+
+    ```sh
+      > Select * from Persons;
+    ```
+
+    <img src="../../../../images/sql/ms2.png">  
+
+### Slave side:  
+- Sử dụng root user đăng nhập vào MariaDB trên Slave Server  
+
+  ```sh
+    # mysql -u root -p
+  ```  
+
+  <img src="../../../../images/sql/slave1.png">  
+
+- Hiển thị CSDL  
+
+  ```sh
+    > SHOW DATABASES;
+  ```  
+
+  <img src="../../../../images/sql/slave2.png">  
+
+  Như bạn thấy, CSDL `replica_db` đã tồn tại tức là nó đã được replication thành công.  
+
+- Truy cập vào CSDL, kiểm tra xem có tồn tại bảng trong đó không
+
+  ```sh
+    > use replica_db;
+  ```
+
+  <img src="../../../../images/sql/slave3.png">  
+
+  ```sh
+    > SHOW TABLES;
+  ```
+
+  <img src="../../../../images/sql/slave4.png">  
+
+- Kiểm tra dữ liệu trong bảng có được replication đầy đủ 
+
+  ```sh
+    > select * from Persons;
+  ```
+
+  <img src="../../../../images/sql/slave5.png">  
+  
 
 
 
@@ -81,3 +348,4 @@
 - https://techblog.vn/gioi-thieu-ve-mysql-replication-master-slave
 - https://mariadb.com/kb/en/library/replication-overview/
 - https://mariadb.com/kb/en/library/relay-log/
+- https://www.journaldev.com/29314/set-up-mariadb-master-slave-replication-centos
