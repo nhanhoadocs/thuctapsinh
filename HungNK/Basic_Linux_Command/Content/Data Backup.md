@@ -200,3 +200,5 @@ Trong đó:
 
 Để hiễu hơn về các ví dụ, các thực hành với câu lệnh `dd`, các bạn có thể xem [bài viết này](https://github.com/hocchudong/command-linux/blob/master/command-dd.md#user-content-2-kh%C3%A1i-ni%E1%BB%87m-v%C3%A0-%E1%BB%A9ng-d%E1%BB%A5ng-c%E1%BB%A7a-c%C3%A2u-l%E1%BB%87nh).
 
+
+addmore

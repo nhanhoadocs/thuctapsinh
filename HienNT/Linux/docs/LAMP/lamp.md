@@ -115,11 +115,62 @@ Firewalld là một phần của hệ thống máy tính hoặc mạng được 
    ```  
 
 **<h3>3.Cài đặt PHP</h3>**  
-`PHP` là viết tắt của Hypertext Pre-processor là ngôn ngữ mã nguồn mở, dùng để phát triển Web, có thể được nhúng vào HTML; trước đó là Personal Home Pages - Trang chủ cá nhân.  
-   \- Cài đặt PHP với dòng lệnh:  
-   ```sh  
-   [root@hiennt ~]# yum install php php-mysql php-gd php-pear -y
-   ```     
+- `PHP` là viết tắt của Hypertext Pre-processor là ngôn ngữ mã nguồn mở, dùng để phát triển Web, có thể được nhúng vào HTML; trước đó là Personal Home Pages - Trang chủ cá nhân.  
+- Phiên bản PHP đi kèm với CentOS là mặc định khá cũ (PHP 5.4). Trong bài viết này sẽ là hướng dẫn cài đặt các phiên bản PHP mới hơn PHP 7.3 từ kho Remi.   
+  - Cài đặt kho lưu trữ EPEL  
+    ```sh
+    yum install epel-release yum-utils  
+    ```  
+  - Cài đặt REMI Repo
+    ```sh
+    rpm -Uvh https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+    ```
+  - Kiểm tra các Repo nào đang được bật
+    ```sh
+    yum repolist
+    ```  
+  - Cài đặt `yum-utils` - tập hợp các chương trình hữu ích để quản lý các gói và gói yum. Nó có các công cụ cải thiện các tính năng mặc định của yum. 
+    ```sh
+    yum install yum-utils
+    ```  
+  - Sử dụng `yum-config-manager` kích hoạt kho lưu trữ Remi làm kho lưu trữ mặc định để cài đặt các phiên bản PHP khác nhau và cài đặt PHP như sau:
+    ```sh
+    yum-config-manager --enable remi-php73 
+    ```  
+  - Cài đặt PHP 7 với các mô-đun cần thiết bổ sung có thể mở rộng chức năng cốt lõi:
+    ```sh  
+    yum install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
+    ```
+  - Kiểm tra version PHP
+    ```sh
+    php -v
+    ```  
+
+    INPUT
+    ```sh
+    PHP 7.3.8 (cli) (built: Jul 30 2019 09:26:16) ( NTS )
+    Copyright (c) 1997-2018 The PHP Group
+    Zend Engine v3.3.8, Copyright (c) 1998-2018 Zend Technologies
+    ```
+
+- Để kiểm tra xác minh rằng hệ thống của bạn được cấu hình đúng cho PHP:
+  - Tạo một tập lệnh PHP cơ bản có tên là `test.php`  
+    ```sh
+    touch /var/www/html/test.php
+    ```  
+  - Thêm mã PHP sau vào tệp:  
+    ```sh
+    <?php echo 'Test PHP';?>
+    ```  
+  - Dùng trình duyệt web của bạn truy cập theo mẫu  
+    ```sh
+    http: //YOUR_SERVER_IP/test.php
+    ```
+    Kết quả:  
+
+    <img src ="../../images/25 bai linux/testphp.png">  
+    
+
 
 
 
