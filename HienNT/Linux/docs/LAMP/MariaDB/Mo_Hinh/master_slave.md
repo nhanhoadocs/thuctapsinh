@@ -13,7 +13,7 @@
 - Replication là một tính năng cho phép nội dung của một hoặc nhiều server(được gọi là master) được nhân đôi trên một hoặc nhiều máy chủ(được gọi là slave)
   
   Bạn có thể kiểm soát dữ liệu nào cần sao chép. Tất cả các cơ sở dữ liệu, một hoặc nhiều cơ sở dữ liệu hoặc các bảng trong cơ sở dữ liệu đều có thể được sao chép có chọn lọc.
-  
+
 - `Master-slave replication` là một kiểu nhân bản(replication) trong đó dữ liệu chỉ được replicated 1 chiều. 
 
   - Các thay đổi xảy ra với dữ liệu gốc trên Master cũng sẽ xảy ra với dữ liệu trên Slave. Slave sẽ tự động sao chép các thay đổi đó.  
@@ -91,16 +91,17 @@
     success
     ```
 
-  - Chỉnh sửa file `/etc/my.cnf`  
+  - Chỉnh sửa file ` /etc/my.cnf.d/mariadb-server.cnf.d/mariadb-server.cnf`  
 
     ```sh
-      # vi /etc/my.cnf
+      # vi  /etc/my.cnf.d/mariadb-server.cnf.d/mariadb-server.cnf
     ```
 
-    Trong phần `[mysqld]` thêm các dòng sau:
+    Trong phần `[mariadb]` thêm các dòng sau:
 
     ```sh
-      server_id=1
+      [mariadb]
+      server-id=1
       log-bin=master
       binlog-format=row
       binlog-do-db=replica_db
@@ -159,7 +160,7 @@
       +--------------------+----------+--------------+------------------+
       | File               | Position | Binlog_Do_DB | Binlog_Ignore_DB |
       +--------------------+----------+--------------+------------------+
-      | mariadb-bin.000001 |     2088 | replica_db   |                  |
+      | master.000001  |     939  | replica_db   |                  |
       +--------------------+----------+--------------+------------------+
       1 row in set (0.058 sec)
       ```  
@@ -195,16 +196,16 @@
 
 - Bước 5: Cấu hình Slave Server  
 
-  - Chỉnh sửa `/etc/my.cnf` file
+  - Chỉnh sửa ` /etc/my.cnf.d/mariadb-server.cnf` file
 
     ```sh
-      # vi /etc/my.cnf
+      # vi /etc/my.cnf.d/mariadb-server.cnf
     ```
 
     Sau đó thêm vào các dòng sau
 
     ```sh
-    [mysqld]
+    [mariadb]
     server-id = 2
     replicate-do-db=replica_db
     ```    
