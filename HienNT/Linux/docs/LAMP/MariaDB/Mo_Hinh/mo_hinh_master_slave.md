@@ -233,7 +233,7 @@
       > UNLOCK TABLES;
     ```  
 
-  - Copy `masterdatabase.sql` file tới Slave server 
+  - Copy `masterdatabase.sql` file tới Slave server 2
 
     ```sh
       # scp masterdatabase.sql root@10.10.22.105:/root/masterdatabase.sql
