@@ -2,10 +2,18 @@
 
 <img src="../../../../images/sql/cover-Refresh-MasterSlave-Luke_Newsletter-434ccd17a7bdea386c0f0b775f6323f9.png">
 
+## Mục lục
+### 1. [Giới thiệu](#1)
+### 2. [Hoạt động của MariaDB Master Slave](#2)
+### 3. [Thiết lập MariaDB Master-Slave Replication](#3)  
+
+<a name="1"></a>
+
 ## I - Giới thiệu  
 - Replication là một tính năng cho phép nội dung của một hoặc nhiều server(được gọi là master) được nhân đôi trên một hoặc nhiều máy chủ(được gọi là slave)
   
   Bạn có thể kiểm soát dữ liệu nào cần sao chép. Tất cả các cơ sở dữ liệu, một hoặc nhiều cơ sở dữ liệu hoặc các bảng trong cơ sở dữ liệu đều có thể được sao chép có chọn lọc.
+
 - `Master-slave replication` là một kiểu nhân bản(replication) trong đó dữ liệu chỉ được replicated 1 chiều. 
 
   - Các thay đổi xảy ra với dữ liệu gốc trên Master cũng sẽ xảy ra với dữ liệu trên Slave. Slave sẽ tự động sao chép các thay đổi đó.  
@@ -18,7 +26,9 @@
   - Hỗ trợ sao lưu - Backup assistance: 
   - Phân phối dữ liệu - Distribution of data: Thay vì được kết nối với một master server từ xa, ta ó thể sao chép dữ liệu cục bộ và làm việc từ dữ liệu này.
 
-<p align="center"><img src="../../../../images/sql/toptal-blog-image-1543512385306-1f627e3afafe9665f763469ba0a283d3.png"></p>  
+    <p align="center"><img src="../../../../images/sql/toptal-blog-image-1543512385306-1f627e3afafe9665f763469ba0a283d3.png"></p>  
+
+<a name="2"></a>
 
 ## II - Master-Slave Replication trong MariaDB hoạt động như thế nào?  
 
@@ -28,32 +38,13 @@
 
 - Một slave server sẽ theo dõi vị trí của sự kiện binlog cuối được ghi trong file nhật ký nhị phân của master. Điều này cho phép slave server kết nối lại và tiếp tục lại từ nơi nó dừng lại sau khi quá trình sao chép tạm thời bị dừng lại. Nó cũng cho phép một slave ngắt kết nối, tạo nhân bản và sau đó slave mới tiếp tục replication từ cùng một master.
 
-- Master và slave không cần kết nối liên tục với nhau. Bạn có thể để server offline hoặc ngắt kết nối khỏi mạng và khi chúng quay lại hoạt động thì quá trình replication sẽ bắt đầu từ nơi nó dừng lại.   
-- Thiết lập master-slave replication có thể được thực hiện trên 5 bước:  
-  - Enable binary log and replication on the master
-  - Enable relay log and replication on the slave
-  - Dump databases on the master and import them into the slave
-  - (optional) Enable TLS encryption
-  - Connect the slave to the master
+- Master và slave không cần kết nối liên tục với nhau. Bạn có thể để server offline hoặc ngắt kết nối khỏi mạng và khi chúng quay lại hoạt động thì quá trình replication sẽ bắt đầu từ nơi nó dừng lại.  
 
 - Hoạt động
 
-<p align="center"><img src="../../../../images/sql/toptal-blog-image-1543512398486-eaab4770b9aac7e8b7d360ec04489385.png"></p>  
+  <p align="center"><img src="../../../../images/sql/toptal-blog-image-1543512398486-eaab4770b9aac7e8b7d360ec04489385.png"></p>  
 
-  - Trên Master:
-
-    - Các kết nối từ web app tới Master DB sẽ mở một `Session_Thread` khi có nhu cầu ghi dữ liệu. `Session_Thread` sẽ ghi các statement SQL vào một file `binlog` (ví dụ với format của binlog là statement-based hoặc mix). Binlog được lưu trữ trong `data_dir` (cấu hình my.cnf) và có thể được cấu hình các thông số như kích thước tối đa bao nhiêu, lưu lại trên server bao nhiêu ngày.
-
-    - Master DB sẽ mở một `Dump_Thread` và gửi binlog tới cho `I/O_Thread` mỗi khi `I/O_Thread` từ Slave DB yêu cầu dữ liệu
-  
-  - Trên Slave:
-
-    - Trên mỗi Slave DB sẽ mở một `I/O_Thread` kết nối tới Master DB thông qua network, giao thức TCP (với MySQL 5.5 replication chỉ hỗ trợ `Single_Thread` nên mỗi Slave DB sẽ chỉ mở duy nhất một kết nối tới Master DB, các phiên bản sau 5.6, 5.7 hỗ trợ mở đồng thời nhiều kết nối hơn) để yêu cầu binlog.
-
-    - Sau khi `Dump_Thread` gửi binlog tới `I/O_Thead`, `I/O_Thread` sẽ có nhiệm vụ đọc binlog này và ghi vào `relaylog`.
-
-    - Đồng thời trên Slave sẽ mở một `SQL_Thread`, `SQL_Thread` có nhiệm vụ đọc các event từ `relaylog` và apply các event đó vào Slave => quá trình replication hoàn thành.
-
+<a name="3"></a>  
 
 ## III - Thiết lập MariaDB Master-Slave Replication trên CentOS 7  
 ### 3.1. Mô hình  
@@ -100,21 +91,27 @@
     success
     ```
 
-  - Chỉnh sửa file `/etc/my.cnf`  
+  - Chỉnh sửa file ` /etc/my.cnf.d/mariadb-server.cnf.d/mariadb-server.cnf`  
 
     ```sh
-      # vi /etc/my.cnf
+      # vi  /etc/my.cnf.d/mariadb-server.cnf.d/mariadb-server.cnf
     ```
 
-    Trong phần `[mysqld]` thêm các dòng sau:
+    Trong phần `[mariadb]` thêm các dòng sau:
 
     ```sh
-      server_id=1
-      log-basename=master
-      log-bin
+      [mariadb]
+      server-id=1
+      log-bin=master
       binlog-format=row
       binlog-do-db=replica_db
     ```
+
+    Trong đó:  
+    `server_id` là tùy chọn được sử dụng trong replication cho phép master server và slave server có thể nhận dạng lẫn nhau. Server_id Với mỗi server là khác nhau, nhận giá trị từ 1 đến 4294967295(mariadb >=10.2.2) và 0 đến 4294967295(mariadb =<10.2.1)  
+    `log-bin` hay `log-basename` là tên cơ sở nhật ký nhị phân để tạo tên tệp nhật ký nhị phân. 
+    `binlog-format` là định dạng dữ liệu được lưu trong file bin log.  
+    `binlog-do-db` là tùy chọn để nhận biết cơ sở dữ liệu nào sẽ được replication. Nếu muốn replication nhiều CSDL, bạn phải viết lại tùy chọn binlog-do-db nhiều lần. Hiện tại không có option cho phép chọn toàn bộ CSDL để replica mà bạn phải ghi tất cả CSDL muốn replica ra theo option này.  
 
   - Restart lại dịch vụ mariadb để nhận cấu hình mới
 
@@ -154,7 +151,7 @@
     - Sử dụng câu lệnh dưới đây để chắc chắn rằng không có bất cứ điều gì được ghi vào master database trong quá trình replication dữ liệu. Ghi nhớ `filename` and `position` của `binary log` để có thể thực hiện cấu hình trên slave.  
 
       ```sh
-        FLUSH TABLES WITH READ LOCK;
+        > FLUSH TABLES WITH READ LOCK;
       ```  
     - Sử dụng câu lệnh dưới để kiểm tra trạng thái của slave  
 
@@ -163,7 +160,7 @@
       +--------------------+----------+--------------+------------------+
       | File               | Position | Binlog_Do_DB | Binlog_Ignore_DB |
       +--------------------+----------+--------------+------------------+
-      | mariadb-bin.000001 |     2088 | replica_db   |                  |
+      | master.000001  |     939  | replica_db   |                  |
       +--------------------+----------+--------------+------------------+
       1 row in set (0.058 sec)
       ```  
@@ -199,23 +196,23 @@
 
 - Bước 5: Cấu hình Slave Server  
 
-  - Chỉnh sửa `/etc/my.cnf` file
+  - Chỉnh sửa ` /etc/my.cnf.d/mariadb-server.cnf` file
 
     ```sh
-      # vi /etc/my.cnf
+      # vi /etc/my.cnf.d/mariadb-server.cnf
     ```
 
     Sau đó thêm vào các dòng sau
 
     ```sh
-    [mysqld]
+    [mariadb]
     server-id = 2
     replicate-do-db=replica_db
     ```    
 
     Trong đó:  
-      `replica_db` là CSDL được tạo trên Master Server  
-      `server-id` với mỗi server là khác nhau  
+      `replicate-do-db` là CSDL được tạo trên Master Server.   
+      `server-id` là tùy chọn được sử dụng trong replication cho phép master server và slave server có thể nhận dạng lẫn nhau. Server_id Với mỗi server là khác nhau, nhận giá trị từ 1 đến 4294967295(mariadb >=10.2.2) và 0 đến 4294967295(mariadb =<10.2.1). 
 
   - Import CSDL master  
 
@@ -349,3 +346,5 @@
 - https://mariadb.com/kb/en/library/replication-overview/
 - https://mariadb.com/kb/en/library/relay-log/
 - https://www.journaldev.com/29314/set-up-mariadb-master-slave-replication-centos
+- https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html
+- https://mariadb.com/kb/en/library/replication-filters/
