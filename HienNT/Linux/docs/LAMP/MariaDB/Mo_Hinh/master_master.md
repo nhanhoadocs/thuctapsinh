@@ -66,7 +66,7 @@ MariaDB Master Master Replication hay còn được gọi là “mariadb chained
       # mysql -u root -p
     ```  
 
-    - Tạo user `replicator@10.10.22.104` sử dụng để nhân bản dữ liệu trên Master 2  
+    - Tạo user `replicator@10.10.22.103` sử dụng để nhân bản dữ liệu trên Master 2  
 
       ```sh
         > create user 'replicator'@'10.10.22.104' identified by 'abc@123';
@@ -75,7 +75,7 @@ MariaDB Master Master Replication hay còn được gọi là “mariadb chained
     - Cấp quyền nhân bản cho user mới tạo
 
       ```sh
-        > grant replication slave on *.* to 'replicator'@'10.10.22.104' identified by 'abc@123';
+        > grant replication slave on *.* to 'replicator'@'10.10.22.103' identified by 'abc@123';
       ```
     
     - Block tất cả các câu lệnh trên các bảng để đảm bảo trong quá trình backup dữ liệu được toàn vẹn:
@@ -138,16 +138,16 @@ MariaDB Master Master Replication hay còn được gọi là “mariadb chained
       # mysql -u root -p
     ```  
 
-    - Tạo user `replicator@10.10.22.103` sử dụng để nhân bản dữ liệu trên Master 1  
+    - Tạo user `replicator@10.10.22.104` sử dụng để nhân bản dữ liệu trên Master 1  
 
       ```sh
-        > create user 'replicator'@'10.10.22.103' identified by 'abc@123';
+        > create user 'replicator'@'10.10.22.104' identified by 'abc@123';
       ```
 
     - Cấp quyền nhân bản cho user mới tạo
 
       ```sh
-        > grant replication slave on *.* to 'replicator'@'10.10.22.103' identified by 'abc@123';
+        > grant replication slave on *.* to 'replicator'@'10.10.22.104' identified by 'abc@123';
       ```
 
     - Tạo CSDL `replica_db` để nhân bản  
@@ -160,7 +160,7 @@ MariaDB Master Master Replication hay còn được gọi là “mariadb chained
 
       ```sh
         > stop slave;
-        > change master to master_host='10.10.22.103', master_user='replicator@10.10.22.103', master_password='abc@123', master_log_file='master.000002', master_log_pos=941;
+        > change master to master_host='10.10.22.103', master_user='replicator', master_password='abc@123', master_log_file='master.000002', master_log_pos=941;
         > start slave;
       ```
 
@@ -205,7 +205,7 @@ MariaDB Master Master Replication hay còn được gọi là “mariadb chained
 
     ```sh
       > stop slave;
-      > change master to master_host='10.10.22.104', master_user='replicator@10.10.10.104', master_password='abc@123', master_log_file='master.000001', master_log_pos=325;
+      > change master to master_host='10.10.22.104', master_user='replicator', master_password='abc@123', master_log_file='master.000001', master_log_pos=325;
       > start slave;
     ```
 
@@ -247,6 +247,14 @@ MariaDB Master Master Replication hay còn được gọi là “mariadb chained
   - Kiểm tra trên Master 1
 
     ```sh
+      > show tables;
+    ```
+
+    OUTPUT
+
+    <img src="../../../../images/sql/output2.png">  
+
+    
 
 
  
