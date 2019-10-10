@@ -10,11 +10,19 @@
 &emsp;5. [LAMP](docs/LAMP/)  
 &emsp;6. [Wordpress](docs/Wordpress/)  
 &emsp;7. [File system](docs/FileSystem/)   
-&emsp;8. [Storage](docs/Storage/) 
+&emsp;8. [Storage](docs/Storage/)   
 
 
 ## Ubuntu
 - [Cài đặt Ubuntu Server 18.04](docs/Ubuntu/install_ubuntu.md)  
 - [Cài đặt LAMP trên Ubuntu](docs/Ubuntu/install_lamp.md)
   - [Tìm hiểu và cài đặt Apache trên Ubuntu](docs/Ubuntu/apache.md)
-- [Cài đặt Wordpress trên Ubuntu](docs/Ubuntu/install_wordpress.md)  
+- [Cài đặt Wordpress trên Ubuntu](docs/Ubuntu/install_wordpress.md) 
+
+## CentOS 8
+&emsp;1. [Cài đặt hệ điều hành CentOS 8](images/Centos8)  
+&emsp;2. [Cấu hình static IP trên CentOS 8](docs/CentOS_8/network.md)  
+&emsp;3. [Cài đặt MariaDB 10.4.8](docs/CentOS_8/install_mariadb.md)  
+&emsp;4. [Cập nhật hệ thống](docs/CentOS_8/update_system.md)   
+&emsp;5. [Replication](docs/Replication) 
+

@@ -1,6 +1,6 @@
 # Tìm hiểu về MariaDB Master-Slave Replication  
 
-<img src="../../../../images/sql/cover-Refresh-MasterSlave-Luke_Newsletter-434ccd17a7bdea386c0f0b775f6323f9.png">
+<img src="../../images/sql/cover-Refresh-MasterSlave-Luke_Newsletter-434ccd17a7bdea386c0f0b775f6323f9.png">
 
 ## Mục lục
 ### 1. [Giới thiệu](#1)
@@ -26,13 +26,13 @@
   - Hỗ trợ sao lưu - Backup assistance: 
   - Phân phối dữ liệu - Distribution of data: Thay vì được kết nối với một master server từ xa, ta ó thể sao chép dữ liệu cục bộ và làm việc từ dữ liệu này.
 
-    <p align="center"><img src="../../../../images/sql/toptal-blog-image-1543512385306-1f627e3afafe9665f763469ba0a283d3.png"></p>  
+    <p align="center"><img src="../../images/sql/toptal-blog-image-1543512385306-1f627e3afafe9665f763469ba0a283d3.png"></p>  
 
 <a name="2"></a>
 
 ## II - Master-Slave Replication trong MariaDB hoạt động như thế nào?  
 
-<p align="center"><img src="../../../../images/sql/slave_filter.jpg"></p>  
+<p align="center"><img src="../../images/sql/slave_filter.jpg"></p>  
 
 - Cơ chế chính của replication là **binary log** - nhật ký nhị phân. Nếu ghi nhật ký nhị phân được bật, tất cả các cập nhật cho cơ sở dữ liệu (CREATE, ALTER, INSERT, UPDATE và DELETE) sẽ được ghi vào `binary log` dưới dạng các sự kiện `binlog`. Các slave đọc binary log từ mỗi master để truy cập dữ liệu để sao chép. Một `relay log` - nhật ký chuyển tiếp được tạo trên slave server, sử dụng cùng định dạng với binary log được sử dụng để thực hiện sao chép. Các tệp nhật ký chuyển tiếp cũ được gỡ bỏ khi không còn cần thiết.  
 
@@ -42,18 +42,18 @@
 
 - Hoạt động
 
-  <p align="center"><img src="../../../../images/sql/toptal-blog-image-1543512398486-eaab4770b9aac7e8b7d360ec04489385.png"></p>  
+  <p align="center"><img src="../../images/sql/toptal-blog-image-1543512398486-eaab4770b9aac7e8b7d360ec04489385.png"></p>  
 
 <a name="3"></a>  
 
 ## III - Thiết lập MariaDB Master-Slave Replication trên CentOS 7  
 ### 3.1. Mô hình  
 
-<img src="../../../../images/sql/master_slave.png" width="100%">
+<img src="../../images/sql/master_slave.png" width="100%">
 
 ### 3.2. Quy hoạch IP và cấu hình tối thiểu
 
-<p align="center"><img src="../../../../images/sql/ip.png"></p> 
+<p align="center"><img src="../../images/sql/ip.png"></p> 
 
 - 2 server sử dụng CentOS Linux release 8.0.1905 (Core)
 - Đảm bảo cả 2 server đã cài đặt MariaDB 10.3.11   
@@ -73,7 +73,7 @@
     # mysql_secure_installation
   ```  
 
-  <p align="center"><img src="../../../../images/sql/pass.png"></p>
+  <p align="center"><img src="../../images/sql/pass.png"></p>
 
 - Bước 3: Cấu hình Master Node  
 
@@ -252,7 +252,7 @@
 
     OUTPUT
 
-    <p align="center"><img src="../../../../images/sql/slave.png"></p>  
+    <p align="center"><img src="../../images/sql/slave.png"></p>  
 
 
 ## IV-Kiểm tra MariaDB Replication  
@@ -265,7 +265,7 @@
 
   - Tạo CSDL `replica_db`  
 
-    <img src="../../../../images/sql/master1.png">  
+    <img src="../../images/sql/master1.png">  
 
   - Tạo bảng `Persons`  
 
@@ -273,7 +273,7 @@
       > CREATE TABLE Persons ( PersonID int, LastName varchar(255), FirstName varchar(255), City varchar(255) );
     ```
 
-    <img src="../../../../images/sql/ms.png">  
+    <img src="../../images/sql/ms.png">  
 
   - Insert giá trị vào bảng  
 
@@ -281,7 +281,7 @@
       > INSERT INTO Persons (PersonID, LastName, FirstName, City) Values (1, 'Hien', 'Nguyen', 'HaNoi');
     ```  
 
-    <img src="../../../../images/sql/ms1.png">  
+    <img src="../../images/sql/ms1.png">  
 
   - Hiển thị thông tin trên bảng  
 
@@ -289,7 +289,7 @@
       > Select * from Persons;
     ```
 
-    <img src="../../../../images/sql/ms2.png">  
+    <img src="../../images/sql/ms2.png">  
 
 ### Slave side:  
 - Sử dụng root user đăng nhập vào MariaDB trên Slave Server  
@@ -298,7 +298,7 @@
     # mysql -u root -p
   ```  
 
-  <img src="../../../../images/sql/slave1.png">  
+  <img src="../../images/sql/slave1.png">  
 
 - Hiển thị CSDL  
 
@@ -306,7 +306,7 @@
     > SHOW DATABASES;
   ```  
 
-  <img src="../../../../images/sql/slave2.png">  
+  <img src="../../images/sql/slave2.png">  
 
   Như bạn thấy, CSDL `replica_db` đã tồn tại tức là nó đã được replication thành công.  
 
@@ -316,13 +316,13 @@
     > use replica_db;
   ```
 
-  <img src="../../../../images/sql/slave3.png">  
+  <img src="../../images/sql/slave3.png">  
 
   ```sh
     > SHOW TABLES;
   ```
 
-  <img src="../../../../images/sql/slave4.png">  
+  <img src="../../images/sql/slave4.png">  
 
 - Kiểm tra dữ liệu trong bảng có được replication đầy đủ 
 
@@ -330,7 +330,7 @@
     > select * from Persons;
   ```
 
-  <img src="../../../../images/sql/slave5.png">  
+  <img src="../../images/sql/slave5.png">  
   
 
 

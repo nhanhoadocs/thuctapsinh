@@ -1,6 +1,6 @@
 # MariaDB Master Master Replication  
 
-<p align="center"><img src="../../../../images/sql/mysql-active-active.jpg">  
+<p align="center"><img src="../../images/sql/mysql-active-active.jpg">  
 
 ## Mục lục
 
@@ -19,21 +19,21 @@ MariaDB Master Master Replication hay còn được gọi là “mariadb chained
 
   Bằng cách sử dụng replication, cơ sở dữ liệu của bạn có thể được mở rộng theo chiều ngang. Tuy nhiên trong trường hợp có nhiều slave cùng kết nối đến master, mỗi slave tạo ra 1 tải bổ sung trên master, việc này nó có thể làm tăng tải mạng trên master làm giảm hiệu suất. Việc bổ sung thêm một master sẽ giúp làm giảm tải mạng cho hệ thống.  
 
-  <img src="../../../../images/sql/RH2sgKp.png">  
+  <img src="../../images/sql/RH2sgKp.png">  
 
 ## Hoạt động  
 
-  <img src="../../../../images/sql/MM replication.png">  
+  <img src="../../images/sql/MM replication.png">  
 
 ## Cấu hình  
 
 ### Mô hình
 
-  <img src="../../../../images/sql/mysql_multi_source_rep-2.png">
+  <img src="../../images/sql/mysql_multi_source_rep-2.png">
 
 ### Chi tiết thiết lập 
 
-  <p align="center"><img src="../../../../images/sql/ipmm.png"></p>   
+  <p align="center"><img src="../../images/sql/ipmm.png"></p>   
 - Cơ sở dữ liệu: `replica_db`
 
 ***Thiết lập server***  
@@ -92,7 +92,7 @@ MariaDB Master Master Replication hay còn được gọi là “mariadb chained
 
       OUTPUT
 
-      <img src="../../../../images/sql/ouput1.png">  
+      <img src="../../images/sql/ouput1.png">  
 
     - Backup CSDL và sao chép nó sang Master Server 2
 
@@ -178,7 +178,7 @@ MariaDB Master Master Replication hay còn được gọi là “mariadb chained
 
       OUTPUT
 
-      <img src="../../../../images/sql/output.png">  
+      <img src="../../images/sql/output.png">  
 
     - Backup CSDL và sao chép nó sang Master Server 2
 
@@ -236,7 +236,7 @@ MariaDB Master Master Replication hay còn được gọi là “mariadb chained
 
     OUTPUT
 
-    <img src="../../../../images/sql/output1.png">  
+    <img src="../../images/sql/output1.png">  
 
   - Trên Master 2, xóa bảng `example`
     
@@ -252,7 +252,7 @@ MariaDB Master Master Replication hay còn được gọi là “mariadb chained
 
     OUTPUT
 
-    <img src="../../../../images/sql/output2.png">  
+    <img src="../../images/sql/output2.png">  
 
     
 

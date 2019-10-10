@@ -2,11 +2,11 @@
 
 - Mô hình:  
 
-  <p  align="center" width="100%"><img src="../../../../images/sql/retc_db1.png"></p>
+  <p  align="center" width="100%"><img src="../../images/sql/retc_db1.png"></p>
 
 - Kế hoạch IP:  
 
-  <img src="../../../../images/sql/ip_masla.png">  
+  <img src="../../images/sql/ip_masla.png">  
 
 - Cấu hình trên Master:  
 
@@ -205,7 +205,7 @@
 
     OUTPUT
 
-    <p align="center"><img src="../../../../images/sql/add_slave.png"></p>  
+    <p align="center"><img src="../../images/sql/add_slave.png"></p>  
 
 - Thêm Slave vào hệ thống
 
@@ -291,7 +291,7 @@
 
       OUTPUT
 
-      <p align="center"><img src="../../../../images/sql/add_slave.png"></p>
+      <p align="center"><img src="../../images/sql/add_slave.png"></p>
 
 ## Kiểm tra
   Tạo CSDL, tạo bảng trong CSDL rồi chèn dữ liệu vào bảng để kiểm tra quá trình nhân bản.
