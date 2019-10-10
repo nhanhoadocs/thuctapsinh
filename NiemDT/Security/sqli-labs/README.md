@@ -39,3 +39,5 @@
 37. [Less-33](Less-33.md)
 38. [Less-34](Less-34.md)
 39. [Less-35](Less-35.md)
+40. [Less-36](Less-36.md)
+41. [Less-37](Less-37.md)
