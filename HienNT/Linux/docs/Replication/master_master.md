@@ -33,7 +33,8 @@ MariaDB Master Master Replication hay còn được gọi là “mariadb chained
 
 ### Chi tiết thiết lập 
 
-  <p align="center"><img src="../../images/sql/ipmm.png"></p>   
+  <p align="center"><img src="../../images/sql/ipmm.png"></p>
+     
 - Cơ sở dữ liệu: `replica_db`
 
 ***Thiết lập server***  
