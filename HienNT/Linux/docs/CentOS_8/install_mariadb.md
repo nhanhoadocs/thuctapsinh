@@ -29,7 +29,7 @@
   - Cài đặt gói `boost-program-options`
 
     ```sh
-      # c
+      # yum install -y boost-program-options
     ```
 
   - Vào chỉn sửa file `/etc/yum.repos.d/Centos-AppStream.repo`  
