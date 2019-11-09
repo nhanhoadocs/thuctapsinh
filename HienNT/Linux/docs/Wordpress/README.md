@@ -1,0 +1,1 @@
+### [Tìm hiểu và cài đặt Wordpress](install.md)

@@ -510,11 +510,11 @@ Kiểm tra thực tế và ví dụ :
 ### 11. Không cho history lưu lại 1 lệnh cụ thể bằng HISTCONTROL
 
 - Khi thực thi một lệnh, bạn có thể cho history bỏ qua lệnh đó bằng cách thiết lập HISTCONTROL ở chế độ ignorespace VÀ gõ một khoảng trắng phía trước lệnh đó
-
+```
     #export HISTCONTROL=ignorespace
     #  ls -alh
     #history 5
-
+```
 khi in ra lịch sử, lệnh ls -alh sẽ không được in ra ( vì nó không được lưu do mình đã đặt dấu cách ở trước )
 
 - Ngoài ra còn có thể không lưu một số câu lệnh mình muốn

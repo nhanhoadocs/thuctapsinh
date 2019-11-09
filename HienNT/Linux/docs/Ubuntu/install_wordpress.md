@@ -98,7 +98,7 @@ Trên Server có cài sẵn LAMP Stack
 
   Sửa những nội dung được gạch chân theo thông tin bạn đặt ở bước 2  
 
-    <img src ="../../images/Ubuntu184/wordpress/image1.png">
+  <img src ="../../images/Ubuntu184/wordpress/image1.png">
       
   - Lưu file cấu hình và thoát.
   
