@@ -16,3 +16,4 @@
 12. [Plugin](labs/plugin.md)
 13. [Grafana](labs/grafana.md)
 14. [Dashboard grafana](labs/Dashboard-su-dung-variables.md)
+15. [Giám sát service](labs/monitor-service.md)

@@ -44,9 +44,11 @@ Khi tạo xong thì kiểu của phân vùng sẽ mặc định là kiểu `linu
 ![](https://github.com/niemdinhtrong/NIEMDT/blob/master/linux/images/f9.png)
 
 Khi đã thực hiện xong thì nhấn `w` để lưu lại những thay đổi và sẽ thoát ra. 
-Sau khi tạo phân vùng xong để muốn sử dụng ta cần format và mount nó vào một thư mục để sử dụng. Để format ta sử dụng lệnh `mkfs .tên_định_dạng tên_phân_vùng`. Tôi muốn định dang `ext4` cho phân vùng vủa tạo là `/dev/sdb1` ta dùng lệnh `mkfs .ext4 /dev/sdb1`
+Sau khi tạo phân vùng xong để muốn sử dụng ta cần format và mount nó vào một thư mục để sử dụng. Để format ta sử dụng lệnh `mkfs -t tên_định_dạng tên_phân_vùng`. Tôi muốn định dang `ext4` cho phân vùng vủa tạo là `/dev/sdb1` ta dùng lệnh 
 
-![](https://github.com/niemdinhtrong/NIEMDT/blob/master/linux/images/f10.png)
+```
+mkfs -t ext4 /dev/sdb1
+```
 
 Ta có thể thấy được phân vùng vừa tạo.
 

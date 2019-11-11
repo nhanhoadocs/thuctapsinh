@@ -1,0 +1,6 @@
+[zabbix]
+zabbix_addr = 10.10.10.167
+zabbix_username = admin
+zabbix_password = zabbix
+group_name = Linux servers
+template_name = Template OS Linux
