@@ -1,12 +1,29 @@
 # Tìm hiểu linux bridge trong kvm.
+Mục Lục.
 
+[1. Linux bridge là gì ?](#1)
+
+[2. Cấu trúc của Linux bridge.](#2)
+
+[3. Cách hoạt động.](#3)
+
+[4. Các tính năng.](#4)
+
+[5. Mô hình lab.](#5)
+
+[6. Host only](#6)
+
+---
+
+<a name="1"></a>
 ## 1. Linux bridge là gì ?
 
 Linux bridge cung cấp môi trường ảo hóa phần network trong kvm. Sử dụng để kết nối máy ảo và máy tính thật ra ngoài internet thông qua switch ảo này. Linux bridge thường sử dụng kết hợp với hệ thống ảo hóa KVM-QEMU.
 
 
-Linux Bridge thật ra chính là một switch ảo và được sử dụng với ảo hóa KVM/QEMU. Nó là 1 module trong nhân kernel. Sử dụng câu lệnh brctl để quản lý
+Linux Bridge thật ra chính là một switch ảo và được sử dụng với ảo hóa KVM/QEMU. Nó là 1 module trong nhân kernel. Sử dụng câu lệnh brctl để quản lý.
 
+<a name="2"></a>
 ## 2. Cấu trúc của Linux bridge.
 
 ![](anhkvm/anh4.png)
@@ -22,6 +39,7 @@ Bridge: có chức năng giống với swtich layer 2.
 
 Port: có chức năng tương đương với port của switch thật.
 
+<a name="3"></a>
 ## 3. Cách hoạt động.
 
 
@@ -37,6 +55,7 @@ Bước 4: Kernel lấy gói tin từ vùng vfs chuyển đến bridge qua các 
 
 Bước 5: Từ Bridge gửi gói tin qua eth0 của máy thật và đi ra ngoài internet.
 
+<a name="4"></a>
 ## 4. Các tính năng.
 STP: Spanning tree protocol: giao thức chống vòng lặp gói tin trong mạng.
 
@@ -44,11 +63,12 @@ VLAN: Virtual LAN: các mạng LAN ảo, có thể cô lập các vùng trong LA
 
 FDB: forward database: chuyển tiếp gói tin theo database nâng cao hiệu suật sử dụng của switch.
 
+<a name="5"></a>
 ## 5. Mô hình lab.
 
 Mô hình.
 
-![](anhkvm/anh12.png).png)
+![](anhkvm/anh12.png)
 
 Kiểm tra bridge 
 ```
@@ -115,3 +135,14 @@ Bắt gói tin trên điểm eno1.
 Ta bắt được 2 gói tin request và reply từ địa chỉ máy ảo 192.168.1.111 đến địa chỉ 8.8.8.8. Vậy máy ảo KVM1 có đi qua interface eno1 để ra ngoài internet.
 
 Vậy kết luân lại gói tin sẽ đi từ máy ảo KVM1 qua interface vnet1 đến bridge thanhbc  rồi đi tiếp qua đường uplink đên interface eno1 của máy vật lý rôif đi đến internet.
+
+
+<a name="6"></a>
+## 6. Host-only trong KVM
+Cấu trúc và cách hoat động tương tự như Linux bridge nhưng không có đường uplink kết nối ra interface của máy vật lý. Mô hình này tạo thành một mạng LAN.
+
+Việc cấu hình và tạo mạng isolate sẽ tự tạo thêm bridge ảo mới cho mạng. không cần tạo trước như mạng bridge network.
+
+Các máy ảo kết nối tới switch ảo có thể liên lạc với nhau và với host, nhưng lưu lượng của chúng sẽ không được đi ra ngoài host – cũng như không thể nhận các kết nối từ bên ngoài vào.
+
+![](anhkvm/anh13.png)

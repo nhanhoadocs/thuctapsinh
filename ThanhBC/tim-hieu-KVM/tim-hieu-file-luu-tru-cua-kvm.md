@@ -7,30 +7,33 @@ Mục lục.
 
 [2. Tìm hiểu 2 định dạng file images là raw và Qcow2.](#2)
 
-[2.1. File định dạng raw.](#2.1)
+- [2.1. File định dạng raw.](#2.1)
 
-[2.2 File định dang Qcow2.](#2.2)
+- [2.2 File định dang Qcow2.](#2.2)
 
-[2.3  So sánh Qcow2 và Raw.](#2.3)
+- [2.3  So sánh Qcow2 và Raw.](#2.3)
+
+- [2.4 Chuyển đổi định dạng Qcow2 và raw](#2.4)
 
 [3. Tìm hiểu file XML trong KVM.](#3)
 
-[3.1 File XML là file gì ?](#3.1)
+- [3.1 File XML là file gì ?](#3.1)
 
-[3.2 Các thành phần củ file XML.](#3.2)
+- [3.2 Các thành phần củ file XML.](#3.2)
 
-[3.3. Phân tích tác dụng của các thẻ.](#3.3)
+- [3.3. Phân tích tác dụng của các thẻ.](#3.3)
 
-[3.3.1. Khối domain.](#3.3.1)
+  - [3.3.1. Khối domain.](#3.3.1)
 
-[3.3.2 Khối OS.](#3.3.2)
+  - [3.3.2 Khối OS.](#3.3.2)
 
-[3.3.3 Khối device.](#3.3.3)
+  - [3.3.3 Khối device.](#3.3.3)
 
-===========
+---
+
 
 <a name="1"></a>
-## 1. Tổng quan về lưu trữ trong KVM
+## 1. Tổng quan về lưu trữ trong KVM.
 Máy ảo trong KVM có 2 thành phần là VM definition được lưu dưới dạng file XML mặc định lưu trong thư mục **/etc/libvirt/qemu** và VM storage lưu dưới dạng file image mặc định được lưu trong **/var/lib/libvirt/images/**
 
 <a name="2"></a>
@@ -64,17 +67,43 @@ Qcow2 hỗ trợ việc tăng bộ nhớ bằng cơ chế Thin Provisioning (Má
 ### 2.3. So sánh Qcow2 và Raw.
 |   |  Raw  | Qcow2|
 |------|-------|------|
-|Cách ghi dữ liệu| Raw ghi trực tiếp vào bộ nhớ|Ghi vào bộ nhớ thông qua các lệnh tham chiếu|
+|Cách ghi dữ liệu| Ghi trực tiếp vào bộ nhớ|Ghi vào bộ nhớ thông qua các lệnh tham chiếu|
 | Tốc độ| Nhanh hơn| Chậm hơn|
-| Hiệu năng| Nhanh hơn| Chậm hơn|
-| Hiệu suất| Thấp hơn| Cao hơn|
-| Ưu điểm| Nhanh, dễ cài đặt, sử dụng, chia sẻ| Hỗ trợ nén, mã hóa, snapshot, có cơ chế thin, hỗ trợ cow|
-| Nhược điểm|   |  |
+|Không gian lưu trữ | Nhiều hơn| Ít hơn|
+| Ưu điểm| Nhanh, dễ cài đặt, sử dụng, migration| Hỗ trợ nén, mã hóa, snapshot, có cơ chế thin, hỗ trợ cow, migration . . . . |
+
+
 
 Hiệu năng là khả năng hoạt động của 2 định dạng trên các môi trường khác nhau như ssh hay hdd. (chưa kiểm chứng trên thực tế.)
+
 HIệu suất là khả năng tránh lãng phí tài nguyên phần cứng, thời gian sử lý. Ở đây Raw chiếm nhiều không gian phần cứng hơn nên có hiệu suất thấp hơn sơ vơi qcow2 thì sử dụng dữ liệu đến đâu thì sẽ ghi đến đó tiết kiệm không gian hơn nên hiệu suất thấp hơn.
 
-Tốc độ ở  đây được hiềủ là tốc độ đọc ghi dữ liệu của 2 định dạng raw và qcow2 trên cùng 1 phần cứng.
+Tốc độ ở  đây được hiềủ là tốc độ đọc ghi dữ liệu của 2 định dạng raw và qcow2 trên cùng 1 phần cứng. Trên lý thuyết thí đing dang Raw sẽ nhanh hơn qcow2 nhưng trong thực tế thì chưa chắc raw dã nhanh hơn qcow2.
+Sử dụng lệnh ```dd if=/dev/zero of=root/test.txt bs=512 count=1000```
+ta thù được kết quả trên máy có định dạng Raw.
+
+![](anhkvm/speed2.png)
+
+Trên máy VM được lưu định dạng Qcow2.
+
+![](anhkvm/speed3.png)
+
+### 2.4. Chuyển đổi định dạng qcow2 và raw
+
+Chuyển đổi giữa qcow2 thành raw. Ta sử dụng lệnh.
+```
+qemu-img convert -f qcow2 -O raw <file qcow2> <tên file mới raw>
+```
+Ở vs này là chuyển đổi file qcow2.qcow2 thành qcow2.raw.
+![](anhkvm/anh60.png)
+
+
+Chuyển đổi giữa raw thành qcow2. Ta sử dụng lệnh.
+```
+qemu-img  convert -f raw -O qcow2 <file raw> <tên file mơi qcow2>
+```
+Sau khi chuyển đổi ta cần phải chỉnh sửa thông số trong file XML tương ứng.
+Sau đó define lại VM rồi mới bật VM lên sử dụng.
 <a name="3"></a>
 ## 3. Tìm hiểu file XML trong KVM.
 <a name="3.1"></a>
@@ -270,3 +299,10 @@ Khối device nằm trong khối domain. Nó hai bao thông tin vè thành phàn
 ![](anhkvm/anh53.png)
 
   - Thuộc tính bắc buộc là type, các giá trị có thể chọn : “sdl”, “vnc”, “spice”, “rdp” và “desktop”. Đối với mỗi loại sẽ có thêm những tham số được thêm vào.
+
+## 4. Tài liệu tham khảo.
+
+1. https://github.com/domanhduy/ghichep/blob/master/DuyDM/KVM/docs/Phan-biet-raw-qcow-iso-cua-image.md
+2. https://github.com/domanhduy/ghichep/blob/master/DuyDM/KVM/docs/T%C3%ACm%20hi%E1%BB%83u%20v%E1%BB%81%20file%20XML.md
+3. https://github.com/nhanhoadocs/thuctapsinh/blob/master/NiemDT/KVM/docs/File-xml.md
+

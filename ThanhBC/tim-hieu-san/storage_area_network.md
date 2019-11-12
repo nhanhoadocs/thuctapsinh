@@ -77,3 +77,13 @@ Công nghệ mạng máy tính cho phép Fiber channel được sử dụng trê
 Với một đường truyền Ethernet ta có thể truyền cả traffic fiber channel và cả ethernet
 
 Hợp nhất kết nối LAN và SAN làm giảm bớt chi phí
+
+
+
+Tài liệu tham khảo.
+
+https://developer.ibm.com/tutorials/l-network-filesystems/
+
+http://www.linux-tutorial.info/modules.php?name=MContent&pageid=150
+
+http://tuhocmang.com/chuyen-de-tu-hoc/tu-hoc-lpi-1-2-bai-12-network-file-system-nfs.html
