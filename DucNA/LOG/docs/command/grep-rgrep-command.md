@@ -81,3 +81,20 @@ IPADDR="192.168.80.225"
 ```
 ## II. EGREP 
 Nó có cách sử dụng như với `grep` nhưng `egrep` sẽ có với tốc độ sử lý nhanh hơn so với `grep` và `fgrep` 
+
+## III.ACK command 
+- Là một câu lệnh dùng để bổ sung thêm cho `grep`.  lệnh `ack` sẽ tìm kiếm dòng khớp với chuỗi đã cho trước trong một file hoặc một thư mục. Nếu như không có file và thư mục nào được chỉ ra thì nó sẽ thực hiện trên thư mục hiện tại.
+- `ACK` command có cách dùng và gần như tất cả các option của grep 
+- `ACK` nhanh hơn `GREP`
+-  Màu hiển thị đẹp hơn so với GREP và có thể chọn được 
+- Không cần option thì `ACK` vẫn biết đó là thư mục. Còn grep thì không.
+
+Ví dụ:
+
+1. Option `-i` không phân biệt chữ hoa và thường 
+```
+[root@client ~]# ack -i 'a' test 
+2a 3 3
+5a 2 1
+6A
+```
