@@ -29,9 +29,18 @@ file cấu hình trong `ryslog`
 4. Các loại câu lệnh 
 
 Có 3 loại câu lệnh được chấp nhận trong `rsyslog` :
-- sysklogd
-- legacy rsyslog
-- RainerScript
+- sysklogd: Đây là loại định dạng cơ bản cũ. Lưu ý một số cấu trúc không còn được hỗ trỡ nữa 
+- legacy rsyslog : Đây là những statement được bắt đầu bằng dấu `$` được hỗ trợ đầy đủ từ phiên bản `pre-v6` trở lên
+- RainerScript : Đây là định dạng kiểu mới và sử dụng tốt nhất.
+- Dấu `#` ở đầu là ký hiệu cho đoạn comment trong dòng đó 
+- Cú pháp xác nhận `server-log`
+```
+#*.* @@remote-host:514
+```
+trong đó 
+- `*.*` : Đẩy tất cả các loại log và các cấp độ cảnh báo
+- `@@` : Là xác định xem loại giao thức dùng là `TCP` hay `UDP`
+- `remote-host:514` : là cú pháp xác định `server-log` nhận log 
 
 # Link tham khảo 
 https://www.rsyslog.com/doc/v8-stable/configuration/basic_structure.html#configuration-file
