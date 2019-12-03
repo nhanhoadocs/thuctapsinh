@@ -23,7 +23,7 @@ Chỉ ra nguồn tạo log và mức ảnh báo của log đó.
 **Các nguồn tạo log (Facility level)**
 
 |Nguồn tạo log| Ý nghĩa|  
-|----
+|-------------|--------|
 | kernel | Những log mà do kernel sinh ra | 
 |user|Log ghi lại cấp độ người dùng  |  
 |mail|Log của hệ thống mail |  
@@ -44,7 +44,7 @@ Chỉ ra nguồn tạo log và mức ảnh báo của log đó.
 **Mức cảnh báo của log (Severity Level)**
 
 |Code|	Mức cảnh báo|	Ý nghĩa|
-|-----
+|----|--------------|----------|
 |0|	emerg|	Thông báo tình trạng khẩn cấp|
 |1|	alert|	Hệ thống cần can thiệp ngay|
 |2|	crit|	Tình trạng nguy kịch|
@@ -62,7 +62,7 @@ VD: Muốn lưu log với tất cả mức cảnh báo như sau: mail.*
 **Ip planning**
 
 | Tên máy  | hệ điều hành | địa chỉ ip | 
-|-------
+|----------|--------------|------------|
 |  Syslog server | CentOs 7  |192.168.161.207| 
 |  Syslog client |  CentOs 7 |192.168.161.208|
 
