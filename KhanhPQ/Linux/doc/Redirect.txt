@@ -1,0 +1,22 @@
+>	:điều hướng output nếu file đã tồn tại/có dữ liệu -> ghi đè.Nếu không -> tạo file
+<	: điều hướng stdin
+>>	: điều hướng output nếu file đã tồn tại --> thêm dữ liệu vào cuối.Nếu không -> tạo file
+<<
+0	:stdin
+1	:stdout
+2	:sterr
+2>&1	tương đương &>
+
+
+cat < file.txt
+ps | grep <userid>
+
+ls . > output.txt	tương đương ls . 1> output.txt
+ls . >> output.txt
+
+ls . 2> err.txt
+
+program 2>&1 outputAndErr.txt		: merge cả err và stdout ra file
+
+program &> /dev/null		: merge cả err và stdout đến /dev/null( file đặc biệt --> khiễn mọi thứ biến mất) --> không bắn log ra file/màn hình
+

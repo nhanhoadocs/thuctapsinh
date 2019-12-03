@@ -1,0 +1,168 @@
+Filesystem tùy thuôc hệ điệu hành
+--> Với linux là dạng tree , với thư mục bắt đầu là root /
+
+Các loại filesystem mà Linux hỗ trợ:
+1.ext3, ext4, btrfs, xfs (Các filesystem của Linux)
+2.vfat, ntfs, hfs (Các filesystem từ các OS khác)
+
+
+mỗi filesystem nằm trên 1 phân vùng (partition) đĩa cứng.
+Các phân vùng giúp sắp xếp nội dung của các đĩa theo loại dữ liệu chứa bên trong và cách sử dụng của chúng.
+
+Ví dụ : những chương trình quan trọng cần cho việc chạy hệ thống -> lưu trong partition riêng
+các file thường,được sở hữu bởi ng dùng thường --> 1 partition riêng
+các file tạm thời được tạo/xóa trong trong quá trình hoạt động bình thường của Linux thường nằm trên một phân vùng riêng; 
+Bằng cách này,việc sử dụng không gian có sẵn trên một phân vùng cụ thể có thể không ảnh hưởng nghiêm trọng đến hoạt động bình thường của hệ thống.
+
+
+Trước khi sử dụng 1 filesystem --> cần mount đến 1 mountpoint
+	Thường mountpoint sẽ là 1 dir ( có thể trống hoặc không)
+	Nếu trống --> bình thường
+	Nếu không trống --> Khi mount --> Dữ liệu cũ sẽ bị ẩn đi,không thể truy xuất cho đến khi unmount
+
+---> Nên mount vào 1 folder trống
+
+
+
+
+
+
+
+Lệnh mount --> attach 1 filesystem ở đâu đó trong cây hệ thống tập tin. Đối số bao gồm device node và mountpoint
+
+$ mount /dev/sda5 /mnt
+
+--> Chạy với quyền root . Nếu muốn thay đổi --> cấu hình /etc/fstab 	(FILE SYSTEM TABLE)
+
+Lệnh unmount --> detach filesystem khỏi mountpoint
+$ umount /mnt
+
+
+
+
+Lệnh df -Th (viết tắt Disk FREE) sẽ hiển thị thông tin về các filesystem được mounted bao gồm thống kê loại và không gian hiện đang sử dụng và có sẵn.
+
+# df -Th
+Filesystem                 Type      Size  Used Avail Use% Mounted on
+/dev/mapper/os-root        xfs        50G  2.0G   48G   4% /
+devtmpfs                   devtmpfs  1.8G     0  1.8G   0% /dev
+tmpfs                      tmpfs     1.9G  4.0K  1.9G   1% /dev/shm
+tmpfs                      tmpfs     1.9G  8.6M  1.8G   1% /run
+tmpfs                      tmpfs     1.9G     0  1.9G   0% /sys/fs/cgroup
+/dev/mapper/swift01-zone01 xfs        49G   33M   49G   1% /srv/node/z1d1
+/dev/mapper/swift02-zone02 xfs        49G   33M   49G   1% /srv/node/z2d1
+/dev/sda1                  xfs       497M  167M  331M  34% /boot
+/dev/mapper/os-data        xfs        20G  261M   20G   2% /data
+
+
+
+
+1) home directories
+
+mỗi user có home dir riêng của mình --> đặt chung ở /home
+/root --> home dir của người dùng root
+
+/home thường được mount dưới dạng 1 filesystem đặt trên 1 phân vùng riêng, có thể remote thông qua NFS (Network File System)
+
+
+2) binary directories
+/bin --> chứa các file nhị phân có thể thực thi(execute),các lệnh thiết yếu cho single-user/system users ( Ex: ps,ls,cp)
+
+/usr/bin	-> chứa các lệnh không cần thiết cho hệ thống, dành cho single-user mode ( tác động mức người dùng đơn)
+
+/sbin		-> chứa các file nhị phân thiết yếu liên quan đến quản trị hệ thống (Ex: ifconfig,shutdown) ( tác động toàn hệ thống)
+
+/usr/sbin	-> chứa các các chương trình quản trị hệ thống ít quan trọng hơn	(ex: nginx,apache..)
+
+
+--> Tất cả binary dir đều nằm dưới phân vùng root
+
+
+
+???Đôi khi /usr là một hệ thống tệp riêng biệt có thể không khả dụng trong single-user mode. Đây là lý do tại sao các lệnh thiết yếu được tách ra khỏi các lệnh không thiết yếu. Tuy nhiên, trong một số hệ thống Linux hiện đại nhất, sự khác biệt này được coi là lỗi thời và /usr/bin và /bin thực sự chỉ được linked với nhau hay /usr/sbin và /sbin cũng vậy
+
+
+3) device directories
+
+/dev chứa các device node - loại tệp giả được sử dụng bởi hầu hết hard và software (trừ network devices)
+
+--> thư mục này trống trên disk partition khi nó không được mount nhưng no chứa các entries cái được tạo bởi hệ thống udev ,giúp tạo và quản lý các device node trên Linux --> được tạo tự động khi phát hiện thiết bị
+
+
+The /dev directory contains items such as:
+/dev/sda1
+/dev/lp1
+/dev/dvd1
+
+
+4) variable directories
+
+/var	-> chứa các file có thể thay đổi kích thước và nội dung khi hệ thống đang chạy.Ví dụ các entries trong các dir sau:
+
+System log files: /var/log
+Packages files: /var/lib
+Print queues: /var/spool
+Temp files: /var/tmp
+FTP home directory: /var/ftp
+Web Server directory: /var/www
+
+
+Thư mục / var có thể được đặt trong phân vùng riêng để việc tăng trưởng các file có thể được cung cấp và kích thước các file không ảnh hưởng nghiêm trọng đến hệ thống.
+
+
+5) system configuration directories
+
+/etc	-> chứa các file config hệ thống, không chứa binary program mặc dù có vài executalbe scripts.
+
+Ex: resolv.conf -> báo cho hệ thống nơi cần đến trên mạng để lấy được tên máy chủ cho việc mapping IP address(DNS) 
+
+các file như passwd, shadow, group để quản lý tài khoản người 
+các file scripts chạy ở mức hệ thống được tìm thấy ở các subdir của /etc
+	ex: /etc/rc2.d chứa các links đến scripts để entering and leaving run level 2-----???
+
+
+6) boot directory
+
+/boot	-> chứa 1 vài file quan trọng cho việc khởi động hệ thống
+
+Thường có 4 file: 
+vmlinuz là hạt nhân Linux được nén, cần thiết để khởi động
+initramfs là hệ thống tập tin ram ban đầu, cần thiết để khởi động
+config là tập tin cấu hình kernel, chỉ được sử dụng để gỡ lỗi
+System.map chứa bảng ký hiệu kernel, chỉ được sử dụng để gỡ lỗi
+
+
+7) libraries directory
+
+/lib	-> chứa các libraries(các code chung được share bởi các ứng dụng và cần thiết để chúng có thể chạy) cho các chương trình quan trọng trong /bin và /sb
+
+
+/lib 	-> chứa các 32 bit libraries
+/lib64	-> chứa các 64 bit libraries
+
+
+8) Các thư mục bổ sung
+
+/opt	-> các package tùy chọn
+
+/sys	-> Hệ thống tập tin giả ảo cung cấp thông tin về hệ thống và phần cứng. Có thể được sử dụng để thay đổi các tham số hệ thống và cho debugging
+
+/srv	-> Site dữ liệu cụ thể được phục vụ bởi hệ thống. ít khi sử dụng
+
+/tmp	-> các file tạm, bị xóa trong quá trình khởi động lại
+
+/media 	-> được đặt ở nơi phương tiện lưu trữ động như USB,DVD được mount.Trừ phi ta cấu hình ngăn nó,nếu không Linux sẽ tự động mount khi các thiết bị kia được phát hiện
+
+/usr	-> chứa ứng dụng,tiện ích, dữ liệu đa người dùng
+
+/usr/include	-> Chứa các tiêu đề files ,sử dụng trong quá trình compile ứng dụng
+
+/usr/lib	-> Thư viện cho các bin programs
+
+/usr/lib64	-> Thư viện 64 bit cho các bin programs
+
+/usr/share	-> Dữ liệu được chia sẻ được sử dụng bởi các ứng dung(thường không phụ thuộc và kiến trúc)
+
+/usr/src	-> Chứa source code thường là cho Linux kernel
+
+/usr/local	-> Dữ liệu và Chương trình dành riêng cho local machine
