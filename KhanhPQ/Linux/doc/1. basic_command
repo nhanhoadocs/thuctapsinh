@@ -1,0 +1,25 @@
+Các excute program phải nằm trong
+/bin
+/usr/bin
+/sbin
+/usr/sbin
+/opt.
+
+
+which diff
+whereis diff
+
+cd -		:Quay lại folder ngay trước
+
+tree 		: list sơ đồ cây (cả file,folder)
+tree -d		: list sơ đồ cây ( chỉ folder)	
+
+
+# ln file1.txt file3.txt		: hardlink (cùng inode -> 1 tệp nhưng nhiều hơn 1 tên)
+# ln -s file1.txt file4.txt		: softlink ( 2 i-node khác nhau)
+
+#ls -l
+The -i option prints out in the first column the i-node number, which is a unique quantity for each file object
+
+
+Chú ý khi sử dụng hardlink : khi xóa đi inode vẫn được giữ lại , khi tạo lại file vs cùng tên --> có thể lỗi

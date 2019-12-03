@@ -1,0 +1,78 @@
+1)
+Lệnh rsync 	-> đồng bộ toàn bộ dir tree
+		-> tương tự cp nhưng có check xem file đã tồn tại chưa
+		-> nếu tồn tại rồi và không có gì thay đổi về kích thước hay thời gian sửa đổi --> không sửa/thay mới --> tiết kiệm thời gian
+		-> Nếu update thì chỉ update những phần bị thay đổi
+
+		
+		-> Hiểu quả khi sao chép đệ quy 1 dir tree qua mạng vì nó chỉ truyền những gì thay đổi 
+
+
+-v : verbose
+
+-r : sao chép dữ liệu theo cách đệ quy ( không bảo tồn mốc thời gian và permission trong quá trình truyền dữ liệu)
+
+-a :chế độ lưu trữ (archive mode) cho phép sao chép các tệp đệ quy và giữ các liên kết, quyền sở hữu, nhóm và mốc thời gian
+
+-z : nén dữ liệu
+
+-h : định dạng số
+
+#rsync -ravzh project_ABC /data/backups
+sending incremental file list
+project_ABC/
+project_ABC/file1.txt
+project_ABC/file2.txt
+project_ABC/file3.txt
+project_ABC/file4.txt
+
+sent 636 bytes  received 92 bytes  1.46K bytes/sec
+total size is 452  speedup is 0.62
+
+2) Nén
+
+-> tiết kiệm dung lượng đĩa, giảm thời gian truyền tải
+
+Command		Usage
+gzip		Được sử dụng nhiều nhất
+bzip2		Tạo các file nhỏ hơn gzip
+xz		Tiện ích nén tốt về việc giảm thiểu không gian
+zip		Tiện ích nén-> mở được trên cả các OS khác
+
+
+3) Archiving data
+Lệnh tar	-> Tạo hoặc extract file từ 1 archive file- thường gọi là tarball
+		-> có thể tùy chọn nén trong khi tạo archive và giải nén khi extract
+
+
+Command				Usage
+tar xvf mydir.tar		Extract tất cả file trong mydir.tar thành mydir dir
+tar zcvf mydir.tar.gz mydir	Tạo 1 archive của file/folder mydir và nén dưới định dạng gzip
+tar jcvf mydir.tar.bz2 mydir	Tạo 1 archive và nén dưới định dạng bz2
+tar xvf mydir.tar.gz		Extract tất cả file trong mydir.tar.gz thành mydir directory.
+tar cvf mydir.tar		Hiển thị nội dung vào thư mục mydir
+
+c:create archive from ?
+x:extract
+v:verbose
+f:file archive
+z: định dạng nén(gzip,gunzip,ungzip)
+j: định dạng nén(bzip2)
+4) Copy disk
+dd	-> hữu ích trong việc tạo bản sao raw disk space
+
+
+Back up the Master Boot Record (MBR) (the first 512 byte sector on the disk that contains a table describing the partitions on that disk
+# dd if=/dev/sda of=sda.mbr bs=512 count=1
+bs (Tốc độ Bytes đọc/ghi tại 1 thời điểm)
+count (số block input copy)
+
+Tạo một bản sao của một đĩa này sang một đĩa khác, hãy xóa mọi thứ đã tồn tại trước đó trên đĩa thứ hai:
+# dd if=/dev/sda of=/dev/sdb
+
+Tạo bản sao của CF card, MicroSD hay USB --> Kết nối thiết bị với hệ thống
+#dd if=/dev/sdb of=./backip.img
+Tháo Thẻ CF, chèn thẻ mới và tạo một bản sao mới
+# dd if=./backup.img of=/dev/sdc
+
+

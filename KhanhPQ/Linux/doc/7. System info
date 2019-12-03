@@ -1,0 +1,53 @@
+Đôi khi ta cần xem thông tin về hệ thống
+
+1)Xem bản Phát hành và phân phối Linux
+	#cat /etc/*release
+
+
+2)
+Kernel version
+#uname -r
+
+Memory info
+#head /proc/meminfo
+
+File system
+#df -h
+
+
+Đếm số lượng CPU
+# cat /proc/cpuinfo | grep model | uniq -c
+
+
+3) Hệ thống file proc
+
+/proc 	-> chứa các file ảo tồn tại trên memory ,các file/thư mục trong này chước cấu trúc kernel và thông tin cấu hình. --> không chứa file thực
+1 số file quan trọng:
+
+/proc/cpuinfo
+/proc/interrupts
+/proc/meminfo
+/proc/mounts
+/proc/partitions
+/proc/version
+/proc/<process-id-#>
+/proc/sys
+
+
+--> hưu dụng vì chứa 1 số thông tin quan trọng khi cần và không lưu trữ trên disk
+
+4) Hostname
+The hostname identifies the machine within the domain.
+
+# cat /etc/hostname
+
+Set a new host name
+#hostname NEW_NAME
+
+
+--> reboot thì mới thay đổi
+
+
+
+
+

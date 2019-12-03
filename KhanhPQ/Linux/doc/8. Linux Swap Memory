@@ -1,0 +1,46 @@
+Linux chia RAM thành các page
+SWAPPING --> sao chép 1 page bộ nhớ qua 1 không gian được cấu hình trên disk --> giải phóng bộ nhớ
+
+1) Lý do cần swap
+
+ -> khi bộ nhớ vật lý full -> di chuyển các page ít sử dụng qua phân vùng swap -> dành chỗ cho các ứng dụng cần thiết.
+ -> 1 số page sử dụng cho việc khởi động ( hệ thống/ứng dụng) -> sau đó không được sử dụng nữa -> chuyển qua phân vùng swap để lấy chỗ cho các ứng dụng khác
+
+
+Nhược điểm , tốc độ đĩa chậm hơn tốc độ bộ nhớ hàng nghìn,chục nghìn lần(mili giây vs nano giây) --> việc truy nhập vào đĩa chậm
+
+--> Nếu hiện tượng swap diễn ra dồn dập ,liên tục --> có thể dẫn đến hiện tượng nút cổ chai (Khi mà cứ swap thì 1 ứng dụng mới được đưa vào bộ nhớ luôn)
+
+Nếu những trường hợp này xảy ra nhiều ,liên tục --> bổ sung RAM là cách tốt nhất
+
+
+
+2)
+2 dạng swap : phân vùng swap và tệp swap
+
+phân vùng swap : 1 phân vùng riêng chỉ dành để swapping ,không có tệp nào trong này
+
+tệp swap	: tác dụng tương tự phân vùng --> nằm trong hệ thống
+
+Dùng lệnh swapon để xem các thông tin
+#swapon -s
+
+Filename                                Type            Size    Used    Priority
+/dev/dm-0                               partition       4079612 0       -1
+
+
+3) Thêm 1 vùng swap như 1 file
+mkswap 	:Set up a Linux swap area.
+
+Add a swap area as a file
+
+dd if=/dev/zero of=/var/swapfile bs=1M count=2048
+chmod 600 /var/swapfile
+mkswap /var/swapfile
+echo /var/swapfile none swap defaults 0 0 | sudo tee -a /etc/fstab
+swapon -a
+
+
+
+
+

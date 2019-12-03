@@ -1,0 +1,120 @@
+1)stdin ,stdout,stderr  --> có thể điều hướng
+
+A program called do_something that reads from stdin and writes to stdout and stderr, we can change its input source:
+
+$ do_something < input-file
+$ do_something > output-file
+
+output of one command or program into another as its input:
+$ command1 | command2 | command3
+
+2)
+Tìm kiếm+list tất cả đường dẫn (miễn là khớp chuỗi)
+$ locate zip | grep bin
+/usr/bin/gpg-zip
+/usr/bin/gunzip
+/usr/bin/gzip
+/usr/bin/zipdetails
+
+3) Syntax đặc biệt 
+Wildcards	Result
+?	Matches any single character
+*	Matches any string of characters
+[set]	Matches any character in the set of characters
+[!set]	Matches any character not in the set of characters
+
+4)
+LỆNH FIND
+
+Find khá hữu ích --> tìm kiếm ,liệt kê các kết quả khớp với tham số
+
+$ find /var -name *.log
+/var/log/audit/audit.log
+/var/log/tuned/tuned.log
+/var/log/anaconda/anaconda.log
+/var/log/anaconda/anaconda.program.log
+/var/log/anaconda/anaconda.packaging.log
+/var/log/anaconda/anaconda.storage.log
+
+Khi không có đối số nào được đưa ra, find liệt kê các tệp trong thư mục hiện tại và tất cả các thư mục con của nó
+
+Searching for files and directories named "gcc":
+
+$ find /usr -name gcc
+Searching only for directories named "gcc":
+
+$ find /usr -type d -name gcc
+Searching only for regular files named "test1":
+
+$ find /usr -type f -name test1
+
+Another good use of find is being able to run commands on the files that match your search criteria. To find and remove all files that end with .swp:
+
+$ find -name "*.swp" -exec rm {} ’;’
+$ find -name "*.swp" -ok rm {} \;
+
+{} Là một trình giữ chỗ sẽ được điền với tất cả các tên tệp được find tìm ra và lệnh trước sẽ được chạy trên từng file riêng lẻ.
+Phải kết thúc bằng ‘;’ hoặc \;
+2 bt tác dụng như nhau.
+Biểu thức 2 --> có tác dụng như bt1 nhưng sẽ "xin" phép trước khi thực hiện lệnh
+
+Finding based on time:
+
+$ find / -ctime 3
+
+-ctime	when the inode meta-data (i.e., file ownership, permissions, etc) last changed
+-atime 	accessed/last read
+-mtime	modified/last written
+
+Số là số ngày và có thể được biểu thị bằng một số (n) có nghĩa là chính xác giá trị đó, 
++ n có nghĩa là lớn hơn số đó hoặc 
+-n có nghĩa nhỏ hơn số đó.
+
+Finding based on sizes:
+
+$ find / -size +10M
+	Tìm kiếm file với size lớn hơn 10MB
+
+5) 
+Use the following utilities to view files:
+
+Command	Usage
+cat	Xem các file không quá dài
+tac	Đọc file ngược từ dòng c
+less	Đọc các file lớn, có phân / cuộn trang
+tail	in 10 dòng cuối ( mặc định) thêm -n để chọn số dòng in (-n 15 để in 15 dòng)
+head	in 10 dòng 
+
+6)
+Lệnh touch được s/dụng để set hoặc update quyền truy cập, thay đổi và sửa đổi thời gian của tệp.--> sửa timestamp của tệp trùng với thời điểm hiện tại
+
+touch <file name> 	:tạo file mới 
+$ touch -t 03201600 <filename>		: tạo file mới và thêm timestamp cho file 	(tháng 03 ngày 20 Giờ 16 phút 00)
+
+7)
+# mkdir ./test
+# rmdir ./test
+#
+# mkdir ./test
+# mkdir ./test/inside
+# rmdir ./test
+rmdir: failed to remove ‘test’: Directory not empty
+# rm -rf ./test
+# ls ./test
+ls: cannot access ./test: No such file or directory
+
+8)So sánh nội dung file
+diff  file1.txt file2.txt		:so sánh có phân biệt hoa , thường
+diff -c file1.txt file2.txt		:so sánh +output thêm thông tin về file
+diff -i file1.txt file2.txt		:so sánh không phân biệt hoa, thường
+
+
+9)Xem loại file --> Không xem qua phần mở rộng --> xem bằng tiện ích "file"
+
+$ file /etc/resolv.conf
+/etc/resolv.conf: ASCII text
+
+
+
+
+
