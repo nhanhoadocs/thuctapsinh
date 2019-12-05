@@ -1,0 +1,34 @@
+Mỗi file được liên kết với 1 người dùng - chủ sở hữu
+	cũng được liên kết với nhóm có liên quan 
+
+--> cần phải xem xét cần thiết thì điều chỉnh quyền ( read, write,execute)
+
+với các đồi tượng liên quan : chủ sở hữu, nhóm, người dùng khác
+--> Thực hiện với quyền r
+
+chown	: Thay đổi chủ sở hữu
+chgrp	: Thay đổi nhóm sở hữu
+chmod	: Thây đổi quyền của file
+
+7	7	7
+rwx:	rwx:	rwx
+u:	g:	o
+
+
+u	: user (sở hữu)
+g	: group
+o	: other
+
+
+r(4)	:quyền read
+w(2)	:quyền write
+x(1)	:quyền execute
+
+
+chmod u+x test1		----> Thêm quyền thực thi file test1 cho user
+chmod u-r test1		----> Thu hồi quyền đọc file test1 của user
+chmod 755 test1		----> Sửa quyền của test1 thành rwx|r-x|r-x
+chgrp root test1	----> Đổi nhóm sở hữu của test1 thành group root
+chown khanh test1	----> Đổi chủ sở hữu test1 thành khanh
+
+

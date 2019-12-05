@@ -1,0 +1,22 @@
+# SQL (STRUCTURED QUERY LANGUAGE)
+
+## Tài liệu về SQL, được ghi chép lại dựa trên trang [mysqltutorial.org](http://www.mysqltutorial.org/)
+
+
+00. [Getting Started With MySQL](../../SQL/docs/Contents/00_Getting_Started_With_MySQL.md)
+01. [Querying Data](../../SQL/docs/Contents/01_Querying_Data.md)
+02. [Sorting Data](../../SQL/docs/Contents/02_Sorting_Data.md)
+03. [Filtering Data](../../SQL/docs/Contents/03_Filtering_Data.md)
+04. [Joining Tables](../../SQL/docs/Contents/04_Joining_Tables.md)
+05. [Grouping Data](../../SQL/docs/Contents/05_Grouping_Data.md)
+06. [Subqueries](../../SQL/docs/Contents/06_Subqueries.md)
+07. [Common Table Expressions](../../SQL/docs/Contents/07_Common_Table_Expressions.md)
+08. [Set Operators](../../SQL/docs/Contents/08_Set_Operators.md)
+09. [Modifying Data](../../SQL/docs/Contents/09_Modifying_Data.md)
+10. [MySQL Transaction](../../SQL/docs/Contents/10_MySQL_Transaction.md)
+11. [Managing MySQL databases and tables](../../SQL/docs/Contents/Managing_MySQL_Databases_And_Tables.md)
+12. [MySQL data types](../../SQL/docs/Contents/MySQL_Data_Types.md)
+13. [MySQL constraints](../../SQL/docs/Contents/MySQL_Constraints.md)
+14. [MySQL Globalization](../../SQL/docs/Contents/14_MySQL_Globalization.md)
+15. [MySQL Import And_Export](../../SQL/docs/Contents/15_MySQL_Import_And_Export.md)
+16. [Advanced Techniques](../../SQL/docs/Contents/16_Advanced_Techniques.md)

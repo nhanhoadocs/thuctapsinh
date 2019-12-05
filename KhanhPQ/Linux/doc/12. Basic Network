@@ -1,0 +1,36 @@
+I)	Network interfaces
+Network interface là 1 kênh kết nối giữa thiết bị và mạng.
+
+Network interface có thể tiến hành thông qua thẻ network interface (NIC) hoặc có thể được triển khai trừu tượng hơn dưới dạng phần mềm. 
+
+Bạn có thể có nhiều network interface hoạt động cùng một lúc.
+
+Lệnh ifconfig 	->  show Danh sách các network interface hiện đang hoạt động
+
++)Với họ Debian	/etc/network/interfaces.
+
++)Với họ Redhat 	thông tin routing và host: 	/etc/sysconfig/network
+network interface configuration script cho eth0 interface lưu ở/etc/sysconfig/network-scripts/ifcfg-eth0
+1 tool hữu ích	ip
+# ip addr show			
+
+# ip route show
+
+hoặc
+
+#ip a
+
+#ip r
+
+ II)	Routing table
+Lệnh route 		
+
+-> Xem thông tin IP routing table
+
+-> thêm, xóa hoặc sửa đổi các tuyến tĩnh thành các máy chủ hoặc mạng cụ thể.
+
+#route -n.
+
+#route add -net IP netmask NetMask gw GatewayAddress.
+
+#route delete -net IP netmask NetMask gw GatewayAddress.
