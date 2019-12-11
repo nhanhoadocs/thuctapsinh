@@ -3,7 +3,7 @@
 # Tìm hiểu về NGINX  
 
 ## NGINX là gì?  
-- NGINX là một phần mềm mã nguồn mở cho web serving, reverse proxying, caching, load balancing, media streaming,...Ban đầu nó giống như một web server được thiết kế để cho hiệu suất(performance) và tính ổn định(stability) cao nhất. Ngoài khả năng là 1 HTTP server, NGINX cũng có thể hoạt động như một proxy server cho email(IMAP, POP3 và SMTP) và reverse proxy và load balancer cho HTTP, TCP, và UDP server.
+- NGINX(đọc là "engine x") là một phần mềm mã nguồn mở cho web serving, reverse proxying, caching, load balancing, media streaming,...Ban đầu nó giống như một web server được thiết kế để cho hiệu suất(performance) và tính ổn định(stability) cao nhất. Ngoài khả năng là 1 HTTP server, NGINX cũng có thể hoạt động như một proxy server cho email(IMAP, POP3 và SMTP) và reverse proxy và load balancer cho HTTP, TCP, và UDP server.
 
 - NGINX xuất bản chính thức vào tháng 10 năm 2004. Nhà sáng lập của phần mềm này là Igor Sysoev, triển khai dự án từ năm 2002 để giải quyết vấn đề [C10k](https://en.wikipedia.org/wiki/C10k_problem). C10k là giới hạn của việc xử lý 10 ngàn kết nối cùng lúc. Ngày nay, có nhiều web server còn phải chịu nhiều kết nối hơn vậy để xử lý. NGINX sử dụng kiến trúc hướng sự kiện (event-driven) không đồng bộ (asynchronous). Tính năng này khiến NGINX server trở nên đáng tin cậy, tốc độ và khả năng mở rộng lớn nhất.
 
@@ -27,6 +27,50 @@
 - Load balancer: là một phương pháp để tối ưu khả năng sử dụng tài nguyên. Tài nguyên ở đây có thể là network, disk, web server,...  
   Load balancer có thể là thiết bị vật lý hoặc application.  
   Mục đích của load balancer là tối ưu tài nguyên sử dụng, tối đa hóa thông lượng, tối thiểu thời gian phản hồi, tránh quá tải ở một đơn vị tài nguyên từ đó đảm bảm hệ thống ổn định và luôn sẵn có (available).
+
+## Tính năng chính của NGINX
+
+### Những tính năng của máy chủ HTTP Nginx
+- Có khả năng xử lý hơn 10.000 kết nối cùng lúc với bộ nhớ thấp.
+- Phục vụ tập tin tĩnh (static files), index file và auto indexing.
+- Tăng tốc reverse proxy bằng bộ nhớ đệm (cache), cân bằng tải đơn giản và khả năng chịu lỗi.
+- Hỗ trợ tăng tốc với bộ nhớ đệm của FastCGI, uwsgi, SCGI, và các máy chủ memcached.
+- Kiến trúc modular, tăng tốc độ nạp trang bằng nén gzip tự động.
+- Hỗ trợ mã hoá SSL và TLS.
+- Cấu hình linh hoạt; lưu lại nhật ký truy vấn
+- Chuyển hướng lỗi 3XX-5XX
+- Rewrite URL (URL rewriting) dùng regular expressions
+- Hạn chế tỷ lệ đáp ứng truy vấn
+- Giới hạn số kết nối đồng thời hoặc truy vấn từ 1 địa chỉ
+- Khả năng nhúng mã PERL
+- Hỗ trợ và tương thích với IPv6
+- Hỗ trợ WebSockets
+- Hỗ trợ truyền tải file FLV và MP4
+
+### Những tính năng máy chủ mail proxy của Nginx
+- Các phương pháp xác thực :
+
+    - POP3: USER/PASS, APOP, AUTH LOGIN/PLAIN/CRAM-MD5;
+
+    - IMAP: LOGIN, AUTH LOGIN/PLAIN/CRAM-MD5;
+
+    - SMTP: AUTH LOGIN/PLAIN/CRAM-MD5;
+
+- Hỗ trợ SSL, STARTTLS và STLS
+
+## Hạn chế của Nginx
+Không support [.htaccess](https://blog.tinohost.com/file-htaccess-la-gi-tac-dung-cua-file-htaccess/)
+
+## Hoạt động của Nginx server  
+- Cách web server hoạt động: khi bạn gửi một yêu cầu để mở một trang web. Trình duyệt sẽ liên lạc với server chứa website đó. Sau đó, server sẽ tìm kiếm đúng file yêu cầu của trang đó và gửi ngược về cho server. Đây là một loại truy vấn đơn giản nhất.
+
+  Ví dụ trên được xem như là một single thread – một bộ các bước xử lý dữ liệu được thực thi theo 1 trình tự duy nhất. Web server truyền thống tạo một thread cho mỗi yêu cầu (request). 
+  
+- Hoạt động của Nginx server: NGINX hoạt động theo một cách khác. Nó hoạt động theo kiến trúc bất đồng bộ (asynchronous), hướng sự kiện (event driven). Kiến trúc này có thể hiểu là những threads tương đồng nhau sẽ được quản lý trong một tiến trình (process), và mỗi tiến trình hoạt động chứa các thực thể nhỏ hơn gọi là worker connections. Cả bộ đơn vị này chịu trách nhiệm xử lý các threads.
+
+  Worker connections sẽ gửi các truy vấn cho một worker process, worker process sẽ gửi nó tới process cha (master process). Cuối cùng, master process sẽ trả kết quả cho những yêu cầu đó.
+
+
 
 
 ## TÀI LIỆU THAM KHẢO
