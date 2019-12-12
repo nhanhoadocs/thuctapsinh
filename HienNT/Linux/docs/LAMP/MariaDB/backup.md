@@ -56,6 +56,13 @@ MariaDB Enterprise Backup hỗ trợ một số tính năng bổ sung, như:
     mariabackup based on MariaDB server 10.2.15-MariaDB Linux (x86_64)
   ```  
 
+### Ưu điểm  
+
+Ưu điểm: Tốc độ backup/restore nhanh
+
+### Nhược điểm
+
+
 ## Cài đặt Mariabackup  
 
 - Cài đặt trên Linux:  
@@ -63,13 +70,13 @@ MariaDB Enterprise Backup hỗ trợ một số tính năng bổ sung, như:
   - Cài đặt cùng `yum/dnf`
 
     ```sh
-      sudo yum install MariaDB-backup
+      sudo yum install MariaDB-backup -y
     ```
 
   - Cài đặt cùng `apt-get`
 
     ```sh
-      sudo apt-get install mariadb-backup
+      sudo apt-get install mariadb-backup -y
     ```  
 
   - Cài đặt cùng `zypper`
