@@ -11,7 +11,8 @@
 
 - Tiếp theo chọn `Add` để thêm một tài khoản user mới  
 
-<img src="https://i.imgur.com/4I41aSM.png">  
+<img src="https://i.imgur.com/6pgLu2E.png">  
+
 
 - Điền các thông tin cần thiết trong mục `Username`, `Password`, `Fullname`.  
 **Lưu ý cách đặt tên user**: Thống nhất theo quy tắc: tên_họ_đệm ( ví dụ hiennt)  
@@ -80,10 +81,10 @@
 
 - Vào mục `Show status` để xem địa chỉ IP   
 
-<img src="https://i.imgur.com/CcbyWxj.png">
+<img src="https://i.imgur.com/B49gJTL.png">
 
 - Để kiểm tra máy tính đã thực sự được kết nối chưa thì vào cửa sổ `Run` (Windows+R) và chạy lệnh ping IP
 
-<img src="https://i.imgur.com/WTCuRPF.png">  
+<img src="https://i.imgur.com/wM5gmiZ.png">  
 
 Như vậy ta đã thành công trong việc tạo tk và kết nối pfsense qua VPN
