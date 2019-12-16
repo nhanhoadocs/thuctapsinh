@@ -1,0 +1,204 @@
+I)Users và Groups
+ 
+Xem các user đang đăng nhập vào hệ thống
+#who
+
+# who -a
+           system boot  2015-02-17 13:28
+LOGIN      tty1         2015-02-17 13:28               761 id=tty1
+root     + pts/0        2015-02-17 13:29   .         12379 (10.10.10.246)
+           run-level 3  2015-02-17 13:29
+root     + pts/1        2015-02-17 17:37   .         18762 (10.10.10.246)
+
+
+Xem user bản thân đang đăng nhập
+#whoami
+
+
+Groups là tập hợp các tài khoản có mục đích giống nhau với các quyền được chia sẻ nhất định
+/etc/group 	-> hiển thị danh sách nhóm và thành viên
+
+1 user auto thuộc 1 nhóm ; các thành viên 1 nhóm có cùng mức truy cập và đặc quyền với các file mà nhóm có quyền
+
+tất cả user được gán 1 ID riêng duy nhất (uid) và 1 hay nhiều group ID (gid)
+
+Với RedHat thì bắt đầu từ 500; với các bản khác từ 1000
+Các số này liên kết với tên qua /etc/passwd and /etc/group
+
+
+1) Chỉ người dùng root mới có thể add/remove users và groups
+useradd	-m	-> thêm người dùng và tạo /home/ng dùng mới
+userdel	-r	-> xóa người dùng và /home/ng dùng bị xóa
+
+2)Thao tác với group
+
+# groupadd newgroup
+# groupdel newgroup	
+
+3) usermod 	->  Thêm user vào 1 nhóm đã tồn tại( Có nhiều tác dụng khác phụ thuộc options ta chọn)
+-g	: buộc nhóm mới thành Primary group
+-G	: thêm nhóm
+
+# groupadd newgroup
+# usermod -G newgroup adriano
+# groups adriano
+adriano : adriano newgroup
+# usermod -g newgroup adriano
+# groups adriano
+adriano : newgroup
+
+Note: Lưu ý khi chạy với -g  --> cần cẩn thận với quyền,group -->có thể dẫn đến việc bị mất quyền,group root 
+
+4)groupmod	-> Thay đổi 1 số thuộc tính group ( như gid, name)
+
+# groupmod newgroup -n newgroupname
+# groups adriano
+adriano : newgoupname
+
+
+5) Root user
+Là superuser- có quyền toàn quyền quản trị hệ thống
+Kẻ tấn công thường muốn nâng quyền lên root để có toàn quyền với hệ thống
+
+#su <tên người dùng>	-> chuyển đổi người dùng (với root thì sudo -i)
+
+
+--> Thường những người dùng cố dùng su để lên quyền root --> là người xấu,sẽ có các hành động không tốt đối với hệ thống
+
+
+--> Các kết quả lỗi có thể dẫn đến việc 1 số file quan trọng trong hệ thống
+
+
+
+
+II) Startup Files
+-các command shell program gọi chung là bash -> sử dụng 1/nhiều startup file để config môi trường .
+-> các file trong /etc sẽ define global settings -> còn trong home dir riêng của user, user có thể config các initialization files để ghi đè những global settings đó
+
+Startup files --> có thể giúp user làm mọi thứ user muốn lên các command shell như là :
+-Tùy chỉnh lời nhắc của người dùng
+-Tạo các commmand-line shortcut và aliases
+-Đặt trình soạn thảo văn bản mặc định
+-Đặt đường dẫn cho nơi tìm executable programs
+
+
+Khi login vào Linux, /etc/profile sẽ được đọc và chỉ định ,sau đó các file sẽ được tìm kiếm theo thứ tự :
+
+1 ~/.bash_profile
+2 ~/.bash_login
+3 ~/.profile
+
+Linux login shell sẽ chỉ định startup file đầu tiên nó tìm thấy vào bỏ qua những file còn lại .Nghĩa là nếu tìm thấy ~/.bash_profile , nó sẽ bỏ qua những file còn lại
+
+Khi khởi tạo 1 shell --> nghĩa là không phải login lại hệ thống--> file ~/.bashrc sẽ được đọc và chỉ định
+Mặc dù tệp này không được đọc và chỉ định cùng với login shell, hầu hết các bản phân phối và / hoặc người dùng bao gồm tệp ~ / .bashrc trong  ba tệp khởi động do người dùng sở hữu.
+
+Trong các bản phân phối Ubuntu, openSuse và CentOS, người dùng phải thực hiện các thay đổi phù hợp trong tệp ~ / .bash_profile để bao gồm tệp ~ / .bashrc. ~ / .Bash_profile sẽ có một số dòng bổ sung nhất định, lần lượt sẽ thu thập các tham số tùy chỉnh cần thiết từ ~ / .bashrc
+
+
+
+
+
+
+
+III) Environment variables
+
+Biến môi trường là các biến được định giá trị cụ thể -> shell có thể hiểu
+
+1 số được hệ thống cài đặt sẵn; 1 số do người dùng set qua command,file startup, script
+
+
+#set
+#env
+#export
+
+--> Đều hiển thị các biến môi trường
+
+Theo mặc định,các biến được tạo trong 1 shell không sẵn có với các shell con -> Để cho phép các shell con xem các giá trị --> sử dụng export
+
+Task				Command
+Hiển thị giá trị 1 biến		echo $SHELL
+Export 1 biến mới		export VAR=value
+Thêm 1 biến mới vĩnh viễn	Add the line export VAR=value to ~/.bashrc
+
+
+*)biến HOME đại diện cho home hoặc login dir của người dùng.
+Lệnh cd không có đối số sẽ thay đổi thư mục làm việc hiện tại với giá trị của HOME. 
+Lưu ý ký tự dấu ngã (~) thường được sử dụng làm chữ viết tắt cho $ HOME.
+
+
+*)biến PATH là một danh sách có thứ tự các thư mục sẽ được quét khi một lệnh được đưa ra để tìm các chương trình hay script thích hợp để chạy. Mỗi thư mục trong đường dẫn được phân tách bằng dấu hai chấm. Tên thư mục trống cho biết thư mục hiện tại tại bất kỳ thời điểm nào.
+
+
+*) biến SHELL chứa đường dẫn đến chương trình shell mặc định
+$ echo $SHELL
+/bin/bash
+
+*)biến PS tùy chỉnh prompt string trong terminal
+
+Character	Usage
+\u	User name
+\h	Host name
+\w	Current working directory
+!	History number of this command
+\d	Date
+cần ngoặc đơn khi sử dụng
+
+# export PS1='\u@\h:\w$'
+root@caldera01:~$
+root@caldera01:~$ export PS1='\d-\u@\h:\w$ '
+Wed Feb 18-root@caldera01:~$
+
+
+IV) Command history
+
+lệnh history 	-> Xem lại lịch sử các lệnh đã gõ
+
+File ~/.bash_history	->lưu các lệnh đã gõ
+
+Variable	Usage
+HISTFILE	lưu địa chỉ file lưu lịch sử gõ lệnh
+HISTFILESIZE	số lượng lịch sử dòng lệnh tối đa mà file lưu trữ
+HISTSIZE	số lượng lịch sử dòng lệnh tối đa mà file lưu trữ trong 1 session
+
+
+1 số Syntax sử dụng để thực thi các lệnh đã thực thi lưu trong history
+
+Syntax		Usage
+!!		Thực thi lại command vừa xong
+!		(Giống vs kiểu đánh dấu bắt đầu cho history 1 session mới)
+!n		thực thi lệnh thứ n trong history
+!string		thực thi lệnh có string khớp
+
+
+
+
+V) Tạo Aliases
+Tạo command theo ý mình --> chỉ dùng trong session đó
+Muốn dùng được trên tất cả shell session--> sửa trong file ~/.bashrc 
+
+alias -> hiển thị hoặc define 1 lệnh mới
+
+$ alias
+alias cp='cp -i'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias l.='ls -d .* --color=auto'
+alias ll='ls -l --color=auto'
+alias ls='ls --color=auto'
+alias mv='mv -i'
+alias rm='rm -i'
+
+
+$alias HI="echo TTS"
+
+
+
+
+
+
+
+
+
+

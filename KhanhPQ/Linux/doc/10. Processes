@@ -1,0 +1,219 @@
+I) Linux Processes
+
+1 process --> thể hiện của 1/nhiều tasks(threads) trên 1 máy
+1 process != 1 program
+1 program chạy 1 số process đồng thời
+các process có thể độc lập hoặc liên quan tới nhau -> lỗi của 1 process có thể/không gây ảnh hưởng đến các process khác.
+
+OS (đặc biệt là kennel) chịu trách nhiệm phân bổ tài nguyên cho các process sao cho hợp lý 
+
+Có thể chạy các program --> Trên Terminal
+			--> Chạy ở background 
+
+
+Tùy theo nhiệm vụ --> phân ra các loại process khác nhau
+Type		Description
+Interactive	start bởi user thông qua dòng lệnh hoặc giao diện đồ họa như biểu tượng hoặc lựa chọn menu.
+Batch		Các process tự động - được lên lịch sau đó ngắt (thông qua terminal). Các task này được đưa vào hàng đợi FIFO (First In First Out)
+Daemons		Các server process được chạy liên tục. Nhiều daemon được chạy từ khi hệ thống khởi động và sau đó chờ user/system yêu cầu
+Threads		Các process nhẹ. Là các task chạy bên dưới main process, chia sẻ memory và resources, được lên lịch và chạy bởi hệ thống (trên cơ sở 			cá nhân)
+Kernel Threads	Các Kernel task mà user không start hay kết thúc chúng ,user cũng có ít quyền quản lí.Chúng có thể thực hiện các hành động như di 			chuyển một luồng từ CPU này sang CPU khác hoặc đảm bảo các hoạt động input/output vào disk được hoàn thành.
+
+
+Bộ lập lịch -->liên tục chuyển các process vào và ra khỏi CPU, chia sẻ thời gian theo mức độ ưu tiên(cần bao nhiêu thời gian và bao nhiêu đã được 			cấp cho một tác vụ)
+
+Các process được đưa vào hàng đợi --> Trên máy tính nhiều CPU --> Mỗi CPU có 1 hàng
+
+- Các process có thể đi vào trạng thái sleep khi chúng đang chờ 1 điều gì đó xảy ra (ví dụ:user nhập input..) -> nó sẽ đi vào hàng đợi
+- 1 số trạng thái ít gặp khác -> 1 process con hoàn thành nhưng process cha không quan tâm đến trạng thái của nó --> trạng thái zombie ( không hoạt động nữa nhưng vẫn trong hàng đợi)
+
+
+
+
+Để theo dõi các process (trạng thái, sử dụng cpu,memory sử dụng, nơi resources được đặt trong memory và các đặc điểm khác)-> OS gán PID (process ID)
+PID đánh số tăng dần --> PID =1 --> quá trình khởi tạo
+
+
+Tại mỗi thời điểm 1 CPU chỉ xử lý 1 task -> các process quan trọng hơn cần được đánh mức ưu tiên cao hơn để được xử lí trước,cấc process kém quan trọng hơn thì ngược lại.
+--> nice value/ niceness sẽ được đánh cho process
+--> value càng lớn thì mức ưu tiên càng thấp (value nhỏ --> phụ vụ trước)
+--> Trong linux, -20	: mức ưu tiên cao nhất;	19	: mức ƯT thấp nhất
+
+--> hoặc đối với 1 process nhạy cảm với thời gian --> có thể gán mức ưu tiên theo thời gian
+a real-time priority != a hard real time.
+
+
+
+II) Running processes
+
+Lệnh ps	-> cung cấp thông tin về các process đang chạy (gồm cả PID)
+
+Các lệnh top,htop,atop	-> giúp theo dõi các thông tin về process 1 cách liên tục
+
+Không kết hợp ps với tham số 	-> đưa ra thông tin các process đang chạy trên shell hiện tại 
+Kết hợp ps với các tham sô -> đưa ra thông tin muốn có về 1 process cụ thể
+ 	ps -u 	->hiển thị thông tin của các process cho user được chỉ định.
+	ps -ef	->hiển thị thông tin toàn bộ process trên hệ thống
+	ps -eLf	->tương tự ef nhưng hiển thị thêm thông tin về threads
+
+Lệnh pstree	->Hiển thị thông tin và mối tương quan (cha/con) về tất cả các process đang chạy trên hệ thống dưới dạng sơ đồ cây
+	Với Centos
+	# yum install -y psmisc
+	# pstree
+
+Lệnh kill -SIGKILL <pid> hoặc kill -9 <pid>	-> tắt 1 tiền trình (thuộc về user đó) nếu muốn vượt quyền (cần sử dụng root)
+
+Note : việc sử dụng ps khá có ích, tuy nhiên đôi khi ta cần theo dõi hệ thống 1 cách liên tục-> việc sử dụng ps liên tục không hợp lí
+--> sử dụng top/htop/atop (2s cập nhật trạng thái 1 lần)
+--> cho ta thấy rõ các tiến trình nào đang tiêu tốn nhiều chu kỳ và bộ nhớ CPU nhất.
+1) TOP
+
+top - 15:40:31 up 4 days,  2:13,  1 user,  load average: 0.77, 0.66, 0.45
+Tasks: 244 total,   2 running, 241 sleeping,   0 stopped,   1 zombie
+%Cpu(s):  6.5 us,  1.3 sy,  0.0 ni, 88.3 id,  3.7 wa,  0.0 hi,  0.2 si,  0.0 st
+KiB Mem:   3801380 total,  3642652 used,   158728 free,       24 buffers
+KiB Swap:  4079612 total,     3072 used,  4076540 free.   326620 cached Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+ 1367 glance    20   0  351800  54996   5928 S   1.3  1.4  64:32.28 glance-api
+ 1373 nova      20   0  383444  73304   6768 S   1.3  1.9  68:25.51 nova-api
+ 1365 keystone  20   0  353108  58340   6192 S   1.0  1.5  67:16.01 keystone-all
+ 1369 cinder    20   0  365404  60120   6632 S   1.0  1.6  68:38.74 cinder-api
+ 1371 cinder    20   0  287924  30584   4924 S   1.0  0.8  68:08.01 cinder-volume
+ 1380 nova      20   0  348120  46568   6580 S   1.0  1.2  68:19.02 nova-conductor
+ 1408 ceilome+  20   0  254312  20560   4260 R   1.0  0.5  64:28.69 ceilometer-agen
+
+*)
+Dòng đầu tiên của top	-> hệ thống đã up được bao lâu,bao nhiêu user đăng nhập,trung bình tải
+	load average (trung bình tải):mô tả mức độ bận của hệ thống
+		-> = 1,00 trên từng CPU	: hệ thống full subcribed nhưng không quá tải
+		-> > 1,00		: hệ thống quá tải,các process đang cạnh tranh CPU time, có thể đang xuất hiện 1 số runaway process
+
+*)
+Dòng thứ hai	-> hiển thị số lượng task(process),số process đang chạy,ngủ,bị dừng,là zombie
+	-so sánh só lượng running process với load average giúp xác định xem hệ thống đạt đến công suất chưa / tìm ra ng dùng nào đó đang chạy quá 			nhiều process
+	-Kiểm tra các stopped process để xem liệu mọi thứ có chạy đúng không.
+*)
+Dòng thứ 3 	-> hiển thị ->% thời gian CPU dành cho user(us),hệ thống (sy)
+			    -> Tỷ lệ phần trăm công việc user đang chạy ở mức ưu tiên thấp hơn (ni)
+			    -> Chế độ không tải (id) phải ở mức thấp nếu trung bình tải cao và ngược lại.
+			    -> Tỷ lệ phần trăm công việc đang chờ (wa) cho I/O
+			    -> Tỷ lệ phần cứng (hi) so với ngắt phần mềm (si)	(hardware interrupt vs software interrupt)
+			    -> Steal time(st) thường được sử dụng với các máy ảo, khi CPU nhàn rỗi -> dành cho các mục đích sử dụng khác.
+
+
+*)
+Dòng 4 và 5	-> Hiển thị mức sử dụng ( có,còn free,đã dùng) của Memory và Swap Space
+
+--> Cần theo dõi việc sử dụng memory cẩn thận để đảm bảo hiệu năng hệ thống ở mức tốt. Khi memory cạn -> sử dụng swap space -> Chậm do chênh lệch tốc độ truy xuất -> Nếu swap diễn ra thường xuyên --> có thể thêm dung lượng cho swap space hoặc thêm memory
+
+*)
+Các dòng bên dưới,mỗi dòng -> hiển thị thông tin về 1 process
+các dòng sắp xếp theo mức % sử dụng CPU cao nhất
+
+Các thông tin bao gồm	-> PID
+			-> USER ( chủ sở hữu process)
+			-> PR 	(priority-mức ưu tiên)
+			-> NI	(nice value)
+			-> VIRT	(Virtual-Ảo)
+			-> RES	(Physic - Vật lý)
+			-> SHR 	(share memory)
+			-> S	(Status)
+			-> %CPU	(% sử dụng CPU)
+			-> %MEM	(% Memory sử dụng)
+			-> TIME+ (Thời gian Execute)
+			-> CMD	(Lệnh)
+
+
+*) NOTE: 
+Để kiểm soát sự lành mạnh của 1 hệ thống
+--> Kiểm tra load average đầu tiên ( 3 thông số)	-> số đầu tiền : %CPU trung bình được dùng trong 1 phút (0.25 -> 25%)
+							-> số t2 : %CPU trung bình được dùng trong 5 phút
+							-> số t3 : %CPU trung bình được dùng trong 15 phút
+	(Nếu có nhiều CPU -> lấy trung bình tải chia cho số CPU)
+	(Việc tăng ngắn hạn > 100%CPU khoảng 1 phút không phải là vấn đề . Nếu kéo dài 5 ,15 phút-> là vấn đề đáng lo ngại)
+
+
+III) Background and foreground processes
+
+Linux hỗ trợ chạy jobs ở background và foreground
+
+	foreground	-> chạy job trực tiếp trên shell , các job khác muốn chạy cần chờ job cũ chạy xong
+	background	-> chạy job ẩn với mức ưu tiên thấp hơn và giải phóng shell cho các job khác	
+Theo mặc định các job đều chạy trên foreground trước rồi tùy theo user mà đẩy qua background hay không (Thêm & sau command)
+	# updatedb &
+	[1] 7437
+	# jobs
+	[1]+  Done                    updatedb
+	#
+
+IV) Scheduling processes (Lập lịch tiến trình)
+
+*) Trên Centos
+
+# yum install -y at
+# systemctl start atd
+# systemctl enable atd
+# at now + 5 minutes
+at> pstree
+at> <EOT>
+job 9 at Sat Feb 21 16:28:00 2015
+# atq
+9       Sat Feb 21 16:28:00 2015 a root
+
+
+Tiện ích at 	-> giúp lập lịch để execute các lệnh không tương tác
+service : atd
+
+at	-> Lập lịch cho các job.
+atd	-> list ra lịch của các job được lập bởi at
+
+*) Ngoài ra có thêm tiện ích cron	-> giúp lập lịch dựa trên thời gian,khởi chạy các công việc background  
+					-> được điều khiển bởi tệp cấu hình /etc/crontab	-> chứa các lệnh shell khác nhau cần được chạy vào các khoảng thời gian chính xác
+					-> Ngoài ra còn có tệp crontab trên toàn hệ thống cà trệp dựa trên người dùng cá nhân
+					-> Mỗi dòng đại diện cho 1 công việc gồm 1 mô tả t/gian , theo sau là lệnh shell thực thi
+	crontab -e	-> Mở trình soạn thảo để sửa crontab
+	crontab -r	-> Xóa toàn bộ công việc trong crontab
+	crontab -l	-> Hiển thị toàn bộ công việc trong crontab
+
+Mỗi dòng gồm 6 trường:
+
+1. MIN Minutes 0 to 59
+2. HOUR Hour field 0 to 23
+3. DOM Day of Month 1-31
+4. MON Month field 1-12
+5. DOW Day Of Week 0-6 (0 = Sunday)
+6. CMD Command Any command to be executed
+
+Ví dụ :
+* * * * * /usr/local/bin/execute/this/script.sh
+--> sẽ chạy script này mỗi phút, mỗi giờ, mỗi ngày trong mọi tháng ,mỗi ngày trong tuần
+
+30 08 10 06 * /home/sysadmin/full-backup
+--> lúc 8h30 ngày 10  tháng 6 ,không phân biệt ngày trong tuần ->chạy full-backup
+
+V) Delaying processes
+Đôi khi process/job bị dừng tạm thời --> bị sleep trong 1 khoảng thời gian
+
+Lệnh sleep	-> Tạm thời dừng,sleep process trong khoảng ? giây ( mặc định) , phút, giờ --> sau đó thực thi 
+
+Chú ý viết xong script --> để ý quyền thực thi đã được gán chưa
+
+# vi script.sh
+#!/bin/bash
+echo "The system will go to sleep fo 30 seconds ..."
+sleep 15
+echo "The system is awaked"
+# chmod u+x script.sh
+# ./script.sh
+The system will go to sleep fo 30 seconds ...
+The system is awaked
+#
+
+
+
+
+
+
+
+

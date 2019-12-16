@@ -1,0 +1,36 @@
+Hầu hết các phần mềm được cài đặt thông qua Package Management System
+
+Các package có thể phụ thuộc lẫn nhau
+
+Package Management Systems
+
+HighLevelTool	LowLevelTool	Family
+apt-get		dpkg		Debian
+zypper		rpm		SUSE
+yum		rpm		Red Hat
+
+
+
+LowLevelTool -> chạy,cài đặt,giải nén các package đã download về local
+
+HighLevelTool	-> tải package từ nhà cungcaaps và tìm các phụ thuộc( dependencies) liên quan --> Đảm nhiệm luôn việc gọi LowLevelTool khi cần. Có cả Dependency tracking	--> Sử dụng nhiều hơn LLT
+
+
+--> Tuy nhiên cần cận thận vì sử dụng HLT có thể dẫn đến việc cài đặt quá nhiều dependencies không cần thiết
+
+Operation												RPM				Debian
+Install a package										rpm –i foo.rpm		dpkg --install foo.deb
+Install a package with dependencies from repository						yum install foo		apt-get install foo
+Remove a package										rpm –e foo.rpm		dpkg --remove foo.deb
+Remove a package and dependencies using repository						yum remove foo		apt-get remove foo
+Update package to a newer version								rpm –U foo.rpm		dpkg --install foo.deb
+Update package using repository and resolving dependencies					yum update foo		apt-get upgrade foo
+Update entire system (Cập nhật toàn bộ hệ thống)						yum update		apt-get dist-upgrade
+Show all installed packages									yum list installed	dpkg --list
+Get information about an installed package including files					rpm –qil foo		dpkg --listfiles foo
+Show available package with "foo" in name							yum list foo		apt-cache search foo
+Show all available packages									yum list		apt-cache dumpavail
+Show packages a file belong to									rpm –qf file		dpkg --search file
+
+
+

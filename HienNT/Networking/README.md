@@ -21,7 +21,7 @@
 
 [- Các giao thức được sử dụng trong mô hình TCP/IP](docs/10-Cac-giao-thuc-duoc-su-dung-trong-mo-hinh-TCPIP.md)  
 
-[- Địa chỉ IP](docs/11-Dia-chi-IP.md) 
+[- Địa chỉ IP và Subnetmask](docs/11-Dia-chi-IP.md) 
 
 [- Định tuyến](docs/12-Dinh-tuyen.md) 
 
@@ -54,25 +54,8 @@
 [- Inter Vlan Routing](docs/27-Inter-VlanRouting.md) 
 
 [- SNMP](docs/SNMP.md)
-
-
-
-
-
-
-
  
 [Giải thuật Djikstra](docs/Giai-thuat-Djikstra.md)
-
-
-
- 
-
- 
-  
-
-
-
 
 [Một số port thông dụng](docs/10-Mot-so-port-thong-dung.md)
 
