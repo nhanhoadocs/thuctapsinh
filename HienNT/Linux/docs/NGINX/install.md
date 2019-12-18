@@ -264,3 +264,4 @@ Nginx Open Source có sẵn trong hai phiên bản:
 - https://linuxize.com/post/how-to-install-nginx-on-centos-8/#nginx-configuration-files-structure-and-best-practices
 - https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/
 - https://nginx.org/en/
+- https://www.linuxhelp.com/how-to-install-nginx-from-source-code-on-centos-7
