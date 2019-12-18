@@ -390,4 +390,5 @@ location @fallback {
 
 - https://viblo.asia/p/nginx-server-va-location-block-cach-lam-viec-va-phuong-thuc-dieu-huong-request-3Q75wy3DZWb
 
+- https://pdfs.semanticscholar.org/7241/af41c2fb9de5f2ee53b66d061043b219ed81.pdf
   
