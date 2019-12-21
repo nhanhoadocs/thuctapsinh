@@ -1,10 +1,11 @@
-# Tìm hiểu về file cấu hình của Nginx
+# Tìm hiểu về file cấu hình của Nginx trên CentOS 8
 
 ## I - Cấu trúc và cách sử dụng tập tin cấu hình 
 
 ### 1.1. Cấu trúc
-- Tất cả file cấu hình của nginx nằm trong thư mục `/etc/nginx`  
-- File cấu hình chính của nginx là `/etc/nginx/conf/nginx.conf`  
+- Tất cả file cấu hình của nginx nằm trong thư mục - `/etc/nginx`  
+- File cấu hình chính của nginx là - `/etc/nginx/nginx.conf`  
+- Document root directory – `/usr/share/nginx/html`
 - Nginx bao gồm các module được điều khiển bởi các directive trong file cấu hình. “Directive” được định nghĩa như 1 `instruction` hay `direct`. Directives được chia thành các directive đơn giản và các block directive. 
   
   - Cấu trúc của 1 directive đơn giản gồm tên và tham số được phân tách bởi dấu cách và kết thúc bằng dấu chấm phẩy(;). Ví dụ về 1 directive đơn giản:
