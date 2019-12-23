@@ -89,7 +89,7 @@ tc-route (8)         - route traffic control filter
 ```
 
 ## 1.6 whereis  
-Vị trí của một `manpage` (ài liệu hướng dẫn sử dụng của program) có thể được hiển thị thông qua lệnh `whereis`  
+Vị trí của một `manpage` (tài liệu hướng dẫn sử dụng của program) có thể được hiển thị thông qua lệnh `whereis`  
 Ngoài ra Lệnh `whereis` được sử dụng để xác định vị trí lưu trữ các binary file, source code, manual page của 1 chương trình (program) trên máy tính.
 
 **Cú pháp cơ bản**  
