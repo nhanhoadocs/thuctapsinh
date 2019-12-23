@@ -40,10 +40,10 @@ Với giá trị `$PATH` Là đường dẫn lưu user password của bạn đã
 
 6. Khởi động dịch vụ
 ```
-systemclt start openvpn@file.conf
+systemclt start openvpn@file
 systemctl enable openvpn
 ```
-
+- Khi khởi động dịch vụ thì trong đó `openvpn@file` thì file là tên file `.conf` 
 7. Kiểm tra IP để xem đã được cấp chưa
 ```
 ip a
