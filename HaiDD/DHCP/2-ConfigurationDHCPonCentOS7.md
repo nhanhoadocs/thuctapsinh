@@ -184,9 +184,84 @@ Ta được kết quả IP của Client Window 10 :
 ```
 <img src = "https://i.imgur.com/gp7aFFN.png">
 
+## IV. Cấp IP theo địa chỉ MAC (Bind IP to MAC)
+### Để xác định địa chỉ MAC của Client. Ta làm như sau:
+- **Trên Client CentOS-7:**
+    - Ta sẽ đọc file cấu hình interface của card mạng đó, ở đây là `ens37`. Địa chỉ MAC là mục `HWADDR`:
+    ```
+    [root@localhost ~]# cat /etc/sysconfig/network-scripts/ifcfg-ens37
+    ```
+    <img src = "https://i.imgur.com/hMgaBIG.png">
+    - Hoặc có thể đọc file address của interface ens37:
+    ```
+    [root@localhost ~]# cat /sys/class/net/ens37/address
+    ```
+    <img src = "https://i.imgur.com/49LXgCd.png">
+Ta được địa chỉ MAC của interface `ens37` là:
+```
+00:0c:29:a2:90:c8
+```
+
+- **Trên Window:**
+    - Mở cmd gõ lệnh: ipconfig /all
+    <img src = "https://i.imgur.com/VGpFluX.png">
+    - Hoặc có thể xem tại đây:
+    <img src = "https://i.imgur.com/IcmYpFs.png">
+Ta được địa chỉ MAC của interface Ethernet1:
+
+**Lưu ý:** Đổi các dấu `-` thành dấu `:` để tránh lỗi DHCP Server
+```
+00:0C:29:25:F6:E0
+```
+
+### Cấp IP theo MAC address
+- **Trên DHCP Server**: ta chỉnh sửa file cấu hình DHCP trên DHCP Server:
+```
+[root@localhost ~]# vi /etc/dhcp/dhcpd.conf
+```
+
+Sau đó. Ta thêm funtion có dạng như sau
+```
+host CenOS7 {
+  hardware ethernet 00:0c:29:a2:90:c8;
+  fixed-address 192.168.24.249;
+}
+
+host Win10 {
+  hardware ethernet 00:0C:29:25:F6:E0;
+  fixed-address 192.168.24.247;
+}
+```
+Trong đó:
+- hardware ethernet: địa chỉ MAC của Client
+- fixed-address: địa chỉ cấp phát cho Client đó.
+
+Sau đó ta reset lại dịch vụ `dhcp`:
+```
+[root@localhost ~]# systemctl restart dhcpd
+```
+
+- **Trên DHCP Client CentOS-7**: Ta xin cấp lại IP từ DHCP server:
+```
+[root@localhost ~]# dhclient -r
+[root@localhost ~]# dhclient -v
+```
+Sau đó kiểm tra lại địa chỉ IP:
+
+<img src = "https://i.imgur.com/zd6HT2V.png">
+Ta thấy địa chỉ interface `ens37` là: `192.168.24.249` là địa chỉ ta đã đặt ở trên DHCP Server cho địa chỉ MAC của card `ens37`.
+
+- **Trên DHCP Client Win10**: Ta xin cấp lại IP từ DHCP Server. 
+Mở cửa sổ `cmd` dùng các lệnh:
+```
+> ipconfig /release
+> ipconfig /renew
+> ipconfig
+```
+<img src = "https://i.imgur.com/xN03Ojr.png">
 
 
-## IV. Phân tích gói tin khi Client nhận IP từ DHCP Server
+## V. Phân tích gói tin khi Client nhận IP từ DHCP Server
 
 ### Sử dụng lệnh `tcpdump`
 Các option lệnh `tcpdump`
@@ -223,21 +298,65 @@ Sau đó reboot lại. Kiểm tra lại interface `ens37`:
 
 Bây giờ, interface `ens37` chưa được set địa chỉ IP.
 Ta sẽ mở 2 terminal. 1 bên chỉnh sửa file cấu hình interface `ens37`- ta đặt `BOOTPROTO = "dhcp"`, 1 bên sử dụng `tcpdump` để bắt gói tin khi DHCP cung cấp IP
-
+```
+[root@localhost ~]# tcpdump -nni ens37 -n port 67 and port 68 -w dhcp.pcap
+```
 <img src = "https://i.imgur.com/lzBYlSs.png">
 
-`tcpdump -nni ens37 -n port 67 and port 68`
+Ta sẽ giải phóng IP đã gán cho card `ens37` khi khởi động:
+```
+[root@localhost ~]# dhclient -r
+```
+Sau đó Yêu cầu cấp lại địa chỉ IP:
+```
+[root@localhost ~]# dhclient -v
+```
 
-Sau đó tiến hành restart network, ta được các gói tin:
-
-<img src = "https://i.imgur.com/GmBtzcR.png">
-
+Khi xong ta có thể thấy 4 gói tin ta đã bắt được:
+```
+[root@localhost ~]# tcpdump -nni ens37 -n port 67 and port 68 -w dhcp.pcap
+tcpdump: listening on ens37, link-type EN10MB (Ethernet), capture size 262144 bytes
+^C4 packets captured
+4 packets received by filter
+0 packets dropped by kernel
+```
 
 ### Có thể sử dụng WireShark (sử dụng trên Window) để đọc file `.pcap`
 Ta có giao diện như sau:
 
-<img src = "https://i.imgur.com/c2xEfwW.png">
+<img src = "https://i.imgur.com/HlMj80m.png">
 
 Ta có thể xem từng thông tin từng gói tin.
 
-<img src = "https://i.imgur.com/qpfNvb5.png">
+<img src = "https://i.imgur.com/6TrrZ35.png">
+
+### Phân tích 4 gói tin
+1. Client gửi bản tin DHCP Discover:
+<img src = "https://i.imgur.com/HjZkap4.png"> 
+- Client gửi thông điệp theo hình thức Broadcast.
+- Nguồn gửi `Vmware_a2:90:c8` có địa chỉ MAC `00:0c:29:a2:90:c8` gửi tới Đích `Broadcast` có địa chỉ MAC `ff:ff:ff:ff:ff:ff`
+- IP nguồn: `0.0.0.0` (Do lúc này Client chưa có địa chỉ IP) - port 68
+- IP đích: `255.255.255.255` - port 67
+
+2. DHCP Server cung cấp bản tin DHCP Offer:
+<img src = "https://i.imgur.com/1PX2yWV.png">
+- Server nhận được bản tin Discover sẽ gửi lại bản tin DHCP Offer theo hình thức Unicast có chứa IP `192.168.24.211` cho Client.
+- Ethernet II, Src: Vmware_0a:de:99 (00:0c:29:0a:de:99), Dst: Vmware_a2:90:c8 (00:0c:29:a2:90:c8)
+- Nguồn gửi `Vmware_0a:de:99` có địa chỉ MAC `(00:0c:29:0a:de:99)` gửi lại Client `Vmware_a2:90:c8 (00:0c:29:a2:90:c8)`
+- IP nguồn của Server: `192.168.24.5` - port 67
+- IP đích - Unicast: địa chỉ IP Server sẽ cấp cho Client: `192.168.24.211` - port 68
+
+3. Client gửi lại bản tin DHCP Request để chấp nhận IP được Server cấp cho.
+<img src = "https://i.imgur.com/SQ7EIHF.png">
+- Client gửi bản tin theo dạng Broadcast.
+- Tuy nhiên, bản tin đến Server sẽ chứa Request chấp nhận IP được cấp
+- Port nguồn: 68. Port đích: 67
+
+<img src = "https://i.imgur.com/jPqbJUF.png">
+
+4. Server gửi bản tin DHCP ACK để xác nhận Client sử dụng địa chỉ IP cũng như thông tin cấu hình khác.
+<img src ="https://i.imgur.com/OHLR0X0.png">
+- Gói tin DHCP ACK gửi dưới dạng Unicast chứa các thông tin cần thiết để cấu hình Client
+<img src = "https://i.imgur.com/q0PwLCV.png">
+- Nguồn: Server có địa chỉ MAC : `00:0c:29:0a:de:99`. Địa chỉ IP: `192.168.24.5`(port 67)
+- Đích: Client có địa chỉ MAC : `00:0c:29:a2:90:c8`. Địa chỉ IP: `192.168.24.211`(port 68)
