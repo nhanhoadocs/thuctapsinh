@@ -1,4 +1,17 @@
 # Linux command
+Muc Lục
+[1 .man command](#1)
+[2. pwd command ](#2)
+[3. cd command ](#3)
+[4. ls command ](#4)
+[5. mkdir command ](#5)
+[6. rmdir command ](#6)
+[7. cat command ](#7)
+[8. file command ](#8)
+[9. touch command ](#9)
+
+
+<a name="1"></a>
 ## 1. man command
 
 man - manual pages. 
@@ -68,7 +81,8 @@ man -w git
 ```
 ![](com/man-w.png)
 
-## 2. Lệnh Pwd
+<a name="2"></a>
+## 2. pwd command
 
 Pwd được viết tắt bởi từ Print Working Directory. Nó hiển thị đường đẫn đến thư mục hiện tại 
 
@@ -76,8 +90,8 @@ Pwd được viết tắt bởi từ Print Working Directory. Nó hiển thị �
 buithanh@iou:~$ pwd
 /home/buithanh
 ```
-
-## 3. Lệnh cd
+<a name="3"></a>
+## 3. cd command
 
 cd là viết tắt của từ Change directory
 Lệnh này sử dụng để chuyển qua lại giữa các thưc mục.
@@ -112,7 +126,8 @@ cd .. : Sử dụng Để trở về thư mục cha của thư mục hiện tạ
 
 ![](com/cd-back.png)
 
-## 4. lệnh ls
+<a name="4"></a>
+## 4. ls command
 ls là viết tắt của list.
 
 ls sử dụng để liệt kê thông của tệp và thư mục như: tên, kích thước, quyền, use, group,...
@@ -217,8 +232,8 @@ ls -R
 ```
 ![](com/ls-R.png)
 
-
-## 5 lệnh mkdir
+<a name="5"></a>
+## 5 Mkdir command
 
 **mkdir** : sử dung để tạo một thư mục.
 
@@ -264,8 +279,8 @@ mkdir -m a=rwx quyen
 ```
 ![](com/mkdir-m.png)
 
-
-## 6 Lệnh rmdir
+<a name="6"></a>
+## 6. rmdir command
 
 rmdir viết tắt remove directory. sử dụng để xóa  thư mục.
 
@@ -303,8 +318,8 @@ rmdir thanhbc1 thanhbc2 bui_thanh
 
 ![](com/mkd.png)
 
-
-## 7 lệnh cat
+<a name="7"></a>
+## 7. cat command
 **Cat** là viết ngắn gọn của từ "concatenate" nó là một lệnh được sử dụng nhiều trong  linux.
 
 Nó đươc sử dụng cho:
@@ -381,7 +396,8 @@ cat -n file2.txt
 
 ![](com/cat6.png)
 
-## 8 lệnh file
+<a name="8"></a>
+## 8. file command
 
 **file** : sử dụng để xác định loại tệp
 
@@ -398,5 +414,5 @@ file /var/log
 ```
 ![](com/file2.png)
 
-
+<a name="9"></a>
 ## 9 Lệnh touch
