@@ -7,8 +7,8 @@
        [2.3 ls](#4)  
        [2.4 mkdir](#5)  
        [2.5 rmdir](#6)  
-[3. Các lệnh làm việc với tệp](#7)
-       [3.1 touch](#7)
+[3. Các lệnh làm việc với tệp](#7)  
+       [3.1 touch](#7)  
        [3.2 rm](#8)
 
 
