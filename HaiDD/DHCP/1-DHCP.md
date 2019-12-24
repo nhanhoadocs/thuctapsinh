@@ -64,5 +64,3 @@ Kịch bản quá trình cấp phát IP trong giao thức DHCP:
 Để phân tích được gói tin của giao thức DHCP thì ta phải sử dụng một lệnh được gọi là tcpdump
 
 
-## [5. Cách triển khai](./2-ConfigurationDHCPonCentOS7.md)
-
