@@ -385,3 +385,37 @@ mkdir: created directory ‘folder/folder1/folder2’
 ```
 Ở đây thư mục folder1 chưa được tạo nên nó tạo luôn thư mục có tên là folder1. 
 
+### 6. rmdir command ( remove directory)
+
+rmdir dùng để xóa 1 thư mục , nếu thư mục đó chứa các thư mục con hoặc chứa các file sẽ không xóa được.
+
+Để xem phiên bản của lệnh ta sử dụng : 
+```
+[root@Sidecar ~]# rmdir --version
+rmdir (GNU coreutils) 8.22
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by David MacKenzie.
+```
+
+
+- xóa đồng thời 2 thư mục không chứa thư mục con hoặc file 
+
+```
+[root@Sidecar ~]# rmdir -v viethung/viethung1/viethung2/ hung
+rmdir: removing directory, ‘viethung/viethung1/viethung2/’
+rmdir: removing directory, ‘hung’
+```
+
+nếu thư mục đầu tiên muốn xóa chứa thư mục con, nó sẽ bỏ qua và chuyển sang xóa thư mục thứ 2 
+
+```
+[root@Sidecar ~]# rmdir -v viethung/ hung
+rmdir: removing directory, ‘viethung/’
+rmdir: failed to remove ‘viethung/’: Directory not empty
+rmdir: removing directory, ‘hung’
+```
+
