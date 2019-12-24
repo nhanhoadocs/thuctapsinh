@@ -36,7 +36,7 @@ Cấu hình `domain name` và `domain name-server`:
 
 <img src = "https://i.imgur.com/uCbCv0f.png">
 
-Thời gian mặc định cấp IP cho 1 Client và Thời gian tối đa cấp IP cho 1 Client.
+Thời gian mặc định cấp IP cho 1 Client và Thời gian tối đa cấp IP cho 1 Client. (đơn vị: giây)
 
 <img src = "https://i.imgur.com/xoiBF0Q.png">
 
@@ -57,8 +57,8 @@ Trong đó:
 - `option domain-name` : Tên Domain
 - `option routers` : Default gateway
 - `option broadcast-address` : Địa chỉ broadcast của dải mạng
-- `default-lease-time` : Thời gian mặc định cấp IP cho một Client (ưu tiên hơn global)                   
-- `max-lease-time` : Thời gian tối đa cấp IP cho một Client (ưu tiên hơn global)
+- `default-lease-time` : Thời gian mặc định cấp IP cho một Client (ưu tiên hơn global) (đơn vị: giây)                  
+- `max-lease-time` : Thời gian tối đa cấp IP cho một Client (ưu tiên hơn global) (đơn vị: giây)
 
 #### Các file cần lưu ý
 - Để xem những địa chỉ IP đã được cấp phát bởi DHCP Server trên CentOS ta có thể xem ở file: `/var/lib/dhcpd/dhcpd.leases`
@@ -79,7 +79,6 @@ Dec 24 09:37:09 localhost dhcpd: DHCPREQUEST for 192.168.24.135 from 00:0c:29:a2
 Dec 24 09:37:09 localhost dhcpd: DHCPACK on 192.168.24.135 to 00:0c:29:a2:90:c8 via ens37
 Dec 24 09:37:15 localhost dhcpd: DHCPREQUEST for 192.168.24.136 from 00:0c:29:a2:90:c8 via ens37
 Dec 24 09:37:15 localhost dhcpd: DHCPACK on 192.168.24.136 to 00:0c:29:a2:90:c8 via ens37
-
 ```
 
 - Có thể xem Log của DHCP tại `/var/log/boot.log`
@@ -87,6 +86,7 @@ Dec 24 09:37:15 localhost dhcpd: DHCPACK on 192.168.24.136 to 00:0c:29:a2:90:c8 
 Sử dụng lệnh `tailf` để theo dõi sự thay đổi của file log
 ```
 [root@localhost log]# tailf /var/log/boot.log | grep -i "dhcp"
+
 Dec 24 09:43:44 localhost dhcpd: server.danghai.dhcp: host unknown.
 Dec 24 09:43:44 localhost dhcpd: DHCPACK on 192.168.24.136 to 00:0c:29:a2:90:c8 via ens37
 Dec 24 09:43:52 localhost dhcpd: DHCPREQUEST for 192.168.24.136 from 00:0c:29:a2:90:c8 via ens37
