@@ -1,16 +1,25 @@
 # Linux command
-Muc Lục
+## Mục Lục
+
 [1 .man command](#1)
+
 [2. pwd command ](#2)
+
 [3. cd command ](#3)
+
 [4. ls command ](#4)
+
 [5. mkdir command ](#5)
+
 [6. rmdir command ](#6)
+
 [7. cat command ](#7)
+
 [8. file command ](#8)
+
 [9. touch command ](#9)
 
-
+---
 <a name="1"></a>
 ## 1. man command
 
