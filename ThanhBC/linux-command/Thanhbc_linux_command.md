@@ -1,22 +1,11 @@
+# Linux command
+## 1. man command
 
-/** MySQL database username */
-define( 'DB_USER', 'thanhbc' );
+Lệnh man trong Linux được sử dụng để hiển thị hướng dẫn sử dụng các lệnh chúng ta có thể chạy trên thiết bị.
 
-/** MySQL database password */
-define( 'DB_PASSWORD', 'i3u' );
+### 1.1 Cú pháp lệnh.
+```
+man [option]...[tên lệnh]
+```
 
-/** MySQL hostname */
-define( 'DB_HOST','192.168.122.40' );
-
-/** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8' );
-
-/** The Database Collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '' );
-
-/**#@+
- * Authentication Unique Keys and Salts.
- *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
-                                                                                               44,1          33%
+### 1.2 
