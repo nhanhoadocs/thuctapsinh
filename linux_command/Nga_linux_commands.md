@@ -160,3 +160,129 @@ cd --
 ```
 cd
 ```
+## 2.3 ls
+Lệnh `ls` dùng để hiển thị danh sách nội dung của thư mục  
+```
+[root@graylogsrv var]# ls
+adm  cache  crash  db  empty  games  gopher  kerberos  lib  local  lock  log  mail  nis  opt  preserve  run  spool  tmp  yp
+```
+- Để hiển thị các thư mục và file ẩn
+```
+ls -a
+.                        depmod.d                 hosts                     maven              .pwd.lock       statetab
+..                       dhcp                     hosts.allow               mke2fs.conf        python          statetab.d
+adjtime                  DIR_COLORS               hosts.deny                modprobe.d         rc0.d           subgid
+aliases                  DIR_COLORS.256color      init.d                    modules-load.d     rc1.d           subuid
+aliases.db               DIR_COLORS.lightbgcolor  inittab                   mongod.conf        rc2.d           sudo.conf
+
+```
+- Hiển thị thông tin đầy đủ như file hoặc thư mục con, size, modified date and time, file hoặc folder name và permission của nó.
+```
+ls -l
+total 1068
+-rw-r--r--.  1 root root              16 Dec 17 11:03 adjtime
+-rw-r--r--.  1 root root            1518 Jun  7  2013 aliases
+-rw-r--r--.  1 root root           12288 Dec 17 11:05 aliases.db
+drwxr-xr-x.  2 root root            4096 Dec 21 09:42 alternatives
+-rw-------.  1 root root             541 Apr 11  2018 anacrontab
+-rw-r--r--.  1 root root              55 Oct 30  2018 asound.conf
+drwxr-x---.  3 root root              43 Dec 17 10:59 audisp
+drwxr-x---.  3 root root              83 Dec 17 11:05 audit
+drwxr-xr-x.  2 root root              22 Dec 17 10:59 bash_completion.d
+-rw-r--r--.  1 root root            2853 Oct 31  2018 bashrc
+```
+- Hiển thị size trong định dạng có thể đọc được.
+```
+ls -lh
+total 1.1M
+-rw-r--r--.  1 root root            16 Dec 17 11:03 adjtime
+-rw-r--r--.  1 root root          1.5K Jun  7  2013 aliases
+-rw-r--r--.  1 root root           12K Dec 17 11:05 aliases.db
+drwxr-xr-x.  2 root root          4.0K Dec 21 09:42 alternatives
+-rw-------.  1 root root           541 Apr 11  2018 anacrontab
+-rw-r--r--.  1 root root            55 Oct 30  2018 asound.conf
+drwxr-x---.  3 root root            43 Dec 17 10:59 audisp
+drwxr-x---.  3 root root            83 Dec 17 11:05 audit
+drwxr-xr-x.  2 root root            22 Dec 17 10:59 bash_completion.d
+-rw-r--r--.  1 root root          2.8K Oct 31  2018 bashrc
+```
+- Sắp xếp File theo size
+```
+ls -lS
+total 1068
+-rw-r--r--.  1 root root          670293 Jun  7  2013 services
+-rw-r--r--.  1 root root           20133 Dec 21 09:42 ld.so.cache
+-rw-r--r--.  1 root root           12288 Dec 17 11:05 aliases.db
+-rw-r--r--.  1 root root            7265 Dec 17 10:59 kdump.conf
+-rw-r--r--.  1 root root            6722 Apr 11  2018 screenrc
+-rw-r--r--.  1 root root            6545 Oct 31  2018 protocols
+```
+- Hiển thị danh sách thư mục dưới dạng tree
+```
+ls -R
+```  
+## 2.4 mkdir
+- Lệnh `mkdir` (Make directory) được dùng để tạo thư mục  
+```
+mkdir folder1
+```
+- Tạo thư mục có chứa các thư mục con
+```
+mkdir -p /folder1/nga/nga1
+```
+## 2.4 rmdir
+- Lệnh `rmdir` dùng để xóa thư mục trống (Remove Directory) 
+```
+rmdir nga1
+```
+- Để xóa các thư mục đệ quy sử dụng tùy chọn `-p`
+```
+rmdir -p /folder1/nga/nga1
+```
+# 3. Các lệnh làm việc với tệp
+
+## 3.1 touch
+Lệnh `touch` dùng để tạo một file trống
+```
+touch file1
+```
+- Tạo nhiều file
+```
+touch file1 file2 file3
+```
+- Tạo file chỉ định thời gian cụ thể
+```
+touch -t YYMMDDHHMM.SS file1
+touch -t 1912242200.00 file1
+```
+- Tránh việc tạo file mới khi file không tồn tại
+```
+touch -c file1.txt
+```
+## 3.2 rm
+Lệnh `rm` (remove) được dùng để xóa file  
+```
+rm file1
+```
+- Xóa nhiều file 
+```
+rm file1 file2 file3
+```
+- Nhắc trước khi xóa file
+```
+rm -i file1
+```
+Y: chấp nhận xóa
+N: từ chối xóa
+- Xóa thư mục đệ quy
+```
+rm -r 
+```
+- Xóa tập tin bất kể quyền hạn
+```
+rm -f
+```
+- Xóa bất kì thư mục nào (r - recursive: đệ quy, f - force) -> Bắt buộc xóa dù có các thư mục con và file bên trong.
+```
+rm -rf
+```
