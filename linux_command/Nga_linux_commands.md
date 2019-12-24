@@ -1,5 +1,20 @@
 # Các lệnh cơ bản trong Linux  
+## Mục lục  
+[1. man page](#1)  
+[2. Các lệnh làm việc với thư mục](#2)  
+       [2.1 pwd](#2)  
+       [2.2 cd](#3)  
+       [2.3 ls](#4)  
+       [2.4 mkdir](#5)  
+       [2.5 rmdir](#6)  
+[3. Các lệnh làm việc với tệp](#7)
+       [3.1 touch](#7)
+       [3.2 rm](#8)
 
+
+
+
+<a name="1"></a>
 # Phần 1. man pages 
 
 ## 1.1 man $command  
@@ -133,6 +148,8 @@ Hoặc trên CentOS ta chạy lệnh
 ```
 makewhatis
 ```
+<a name ="2"></a>
+
 # Phần 2. Các lệnh làm việc với thư mục  
 
 ## 2.1 pwd
@@ -141,6 +158,8 @@ Lệnh `pwd` dùng để hiển thị đường dẫn đến thư mục đang l�
 [root@centos7srv network-scripts]# pwd
 /etc/sysconfig/network-scripts
 ```
+<a name= "3"></a>
+
 ## 2.2 cd
 Bạn có thể thay đổi thư mục hiện tại đang làm việc bằng cách di chuyển tới thư mục khác qua lệnh `cd`.  
 Các option đi kèm:  
@@ -160,6 +179,8 @@ cd --
 ```
 cd
 ```
+<a name="4"></a>
+
 ## 2.3 ls
 Lệnh `ls` dùng để hiển thị danh sách nội dung của thư mục  
 ```
@@ -221,6 +242,8 @@ total 1068
 ```
 ls -R
 ```  
+<a name="5"></a>
+
 ## 2.4 mkdir
 - Lệnh `mkdir` (Make directory) được dùng để tạo thư mục  
 ```
@@ -230,6 +253,8 @@ mkdir folder1
 ```
 mkdir -p /folder1/nga/nga1
 ```
+<a name="6"></a>
+
 ## 2.4 rmdir
 - Lệnh `rmdir` dùng để xóa thư mục trống (Remove Directory) 
 ```
@@ -239,6 +264,8 @@ rmdir nga1
 ```
 rmdir -p /folder1/nga/nga1
 ```
+<a name="7"></a>
+
 # 3. Các lệnh làm việc với tệp
 
 ## 3.1 touch
@@ -259,6 +286,9 @@ touch -t 1912242200.00 file1
 ```
 touch -c file1.txt
 ```
+
+<a name="8"></a>
+
 ## 3.2 rm
 Lệnh `rm` (remove) được dùng để xóa file  
 ```
