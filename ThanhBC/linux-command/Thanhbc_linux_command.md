@@ -19,6 +19,12 @@
 
 [9. touch command ](#9)
 
+[10. rm command](#10)
+
+[11. cp command](#11)
+
+[12. mv command](#12)
+
 ---
 <a name="1"></a>
 ## 1. man command
@@ -424,4 +430,163 @@ file /var/log
 ![](com/file2.png)
 
 <a name="9"></a>
-## 9 Lệnh touch
+## 9 Touch command
+
+**Touch**: là lệnh để tạo ra file mới và trống.
+
+Cú pháp: **touch [option] [file_name]**
+
+Nếu sử dụng touch mà không có option gì thì nó sẽ tạo ta 1 file mới tại thời điểm nó dc tạo.
+
+```
+touch file1.txt
+```
+![](com/touch2.png)
+
+### 9.1 touch file file file
+
+**touch file file file** : có thể tạo nhiều file cùng 1 lúc.
+
+```
+touch file1.txt file2.txt file3.txt
+```
+![](com/touch1.png)
+
+### 9.2 touch -c -d
+
+**touch -c -d [file_name]**: đặt thời gian tạo file và  truy cập.
+
+![](com/touch-c-d.png)
+
+Như ta thấy đầu tiên file **saitime.txt** là có thời gian là 25 tháng 12. Sau khi sửa dụng lệnh thì ta thấy thời gian thay đổi  thành 16 tháng 9.
+
+### 9.3 touch -m 
+
+**touch -m [file]** : cập nhật thời gian của file  về thời gian thực.
+
+```
+touch -m saitime.txt
+```
+![](com/touch-m.png)
+
+Như ta thấy đầu tiên file **saitime.txt** là có thời gian là 16 tháng 9. Sau khi sửa dụng lệnh thì ta thấy thời gian thay đổi  thành 25 tháng 12.
+
+## 9.4 touch -t 
+**touch -t [YYMMDDHHMM] [file_name]** : tạo file kèm thòi gian.
+
+```
+touch -t 200112140005 dattime.txt
+```
+![](com/touch-t.png)
+
+
+<a name="10"></a>
+## 10. rm command
+
+**rm** là viêt tắt từ remove : sử dụng để xóa file lệnh xóa này không thể khôi phục.
+Cú pháp: **rm [option] [file_name]**
+
+## 10.1 rm
+**rm** không đi kèm với option thì nó sẽ xóa file đó đi và có hỏi có muốn xóa không.
+
+**y** là có và **n** là không muốn xóa.
+
+![](com/rm.png)
+
+### 10.2 rm file file
+**rm file file** : xóa nhiều file cùng lúc. mỗi file có 1 lần hỏi xác nhận xóa.
+```
+rm dattime.txt saitime.txt
+```
+
+![](com/rmf.png)
+
+### 10.3 rm *
+
+**rm \***: xóa toàn bộ file trong thư mục đó và có hỏi xác nhận có muốn xóa không.
+
+```
+rm *
+```
+![](com/rm-s.png)
+
+### 10.4 rm -rf
+
+**rm -rf [dir]** là xóa thư mục và toàn bộ file có trong thư mục đó và không cần hỏi xác nhận xóa.
+```
+rm -rf allfile
+```
+![](com/rm-rf.png)
+
+### 10.5 rm -rf string*
+
+**rm -rf string\*** : xóa toàn bộ file bắt đầu bằng string đó.
+
+![](com/rm-rfss.png)
+
+Như ta thấy ở đáy t xóa toàn bộ file bắt đầu bằng *fil*.
+
+<a name="11"></a>
+## 11. cp command
+**cp** viết tắt Copy: sử dụng để copy nội dung file này sang file khác.
+
+cú pháp: **cp [option][source_file][dest_file]**
+
+### 11.1 cp src_file des_file
+
+**cp src_file des_file** : Nếu không có opion gì thì lệnh trên thực hiện ghi đè lên des_file với có xác nhận cho phép hay không.
+```
+cp file1.txt file3.txt
+```
+![](com/cp.png)
+
+### 11.2 cp -b src_file des_file
+
+**cp -b src_file des_file**: copy file từ src_file sang des_file  và ghi đè lên file đó đồng thời tạo ra des_file~ có chứa dữ liệu file des_file cũ trước đó.
+
+```
+cp -b src_file des_file
+```
+![](com/cp-b.png)
+
+### 11.3 cp -r 
+
+**cp -r**: copy thư mực sang 1 thư mục mới và giữ nguyên các file có trong thu mục đó.
+
+```
+cp -r muc1/ muc2
+```
+![](com/cp-r.png)
+
+### 11.4 cp file file dir/
+**cp file file dir/** : copy nhiều file vào 1 thư mục.
+Ta có thể dùng
+
+```
+cp file1.txt file2.txt file3.txt file3.txt~ muc3/
+```
+hoặc có thể sử dụng
+```
+cp fil* muc3/
+```
+![](com/cp-m.png)
+
+
+<a name="12"></a>
+## 12. mv command
+
+**mv** là viết tắt từ move:sử dung để  đổi tên file hoặc thư mục
+
+cú pháp:**mv old_name new_name**
+
+**mv old_name new_name**: đổi tên file hay thư muc đều được..
+
+```
+mv file1.txt doiten.txt
+mv muc3/  thumuc3/
+```
+![](com/mv.png)
+
+
+
+
