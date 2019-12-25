@@ -61,6 +61,8 @@ Trong giao thức HTTP, mỗi session bao gồm 3 giai đoạn(bắt tay 3 bư�
 Session được lưu trên máy Server. Nó chứa dữ liệu người sử dụng web vào 1 file trên server.
 
 ## 6. Proxy
+<img src ="..\images\Screenshot_11.png">
+
 Giữa client và server có rất nhiều các thực thể, nó gọi là các Proxy. Nó thực hiện các hoạt động khác nhau như:
 - `caching`(lưu trữ) : cache có thể là công khai hoặc riêng tư, giống bộ đệm trình duyệt
 - `filtering`(lọc) : như quét virus hoặc kiểm soát
@@ -109,11 +111,11 @@ Ví dụ về HTTP Response:
 #### - Version of the protocol: Phiên bản giao thức HTTP mà nó tuân theo.
 #### - Status code: Mô tả trạng thái của Request
 
-- `1XX`(100-101): (Informatinal-Thông tin) Yêu cầu được chấp nhận hoặc quá trình đang tiếp tục
-- `2XX`(200-206): (Success-Thành công) Requests đã được phía server tiếp nhận, hiểu và xử lý thành công
-- `3XX`(300-307): (Redirection-Chuyển hướng) Mã này cho biết client cần có thêm action để hoàn thành requests
-- `4XX`(400-417): (Client Error-Lỗi trên Client) Requests chứa cú pháp không chính xác hoặc không thể thực hiện
-- `5XX`(500-505): (Server Error-Lỗi trên Server) Server thất bại với việc thực hiện một requests
+- `1XX` (100-101): (Informatinal-Thông tin) Yêu cầu được chấp nhận hoặc quá trình đang tiếp tục
+- `2XX` (200-206): (Success-Thành công) Requests đã được phía server tiếp nhận, hiểu và xử lý thành công
+- `3XX` (300-307): (Redirection-Chuyển hướng) Mã này cho biết client cần có thêm action để hoàn thành requests
+- `4XX` (400-417): (Client Error-Lỗi trên Client) Requests chứa cú pháp không chính xác hoặc không thể thực hiện
+- `5XX` (500-505): (Server Error-Lỗi trên Server) Server thất bại với việc thực hiện một requests
 #### - Status message: Mô tả của Status Code
 #### - Header: Tiêu đề của Response
 #### - Body : Chứa tài nguyên
