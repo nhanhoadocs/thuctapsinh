@@ -109,11 +109,11 @@ Ví dụ về HTTP Response:
 #### - Version of the protocol: Phiên bản giao thức HTTP mà nó tuân theo.
 #### - Status code: Mô tả trạng thái của Request
 
-- `1XX`: (Informatinal-Thông tin) Yêu cầu được chấp nhận hoặc quá trình đang tiếp tục
-- `2XX`: (Success-Thành công) Requests đã được phía server tiếp nhận, hiểu và xử lý thành công
-- `3XX`: (Redirection-Chuyển hướng) Mã này cho biết client cần có thêm action để hoàn thành requests
-- `4XX`: (Client Error-Lỗi trên Client) Requests chứa cú pháp không chính xác hoặc không thể thực hiện
-- `5XX`: (Server Error-Lỗi trên Server) Server thất bại với việc thực hiện một requests
+- `1XX`(100-101): (Informatinal-Thông tin) Yêu cầu được chấp nhận hoặc quá trình đang tiếp tục
+- `2XX`(200-206): (Success-Thành công) Requests đã được phía server tiếp nhận, hiểu và xử lý thành công
+- `3XX`(300-307): (Redirection-Chuyển hướng) Mã này cho biết client cần có thêm action để hoàn thành requests
+- `4XX`(400-417): (Client Error-Lỗi trên Client) Requests chứa cú pháp không chính xác hoặc không thể thực hiện
+- `5XX`(500-505): (Server Error-Lỗi trên Server) Server thất bại với việc thực hiện một requests
 #### - Status message: Mô tả của Status Code
 #### - Header: Tiêu đề của Response
 #### - Body : Chứa tài nguyên
