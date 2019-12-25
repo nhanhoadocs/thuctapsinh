@@ -65,47 +65,29 @@
 
   ```nginx
   server {
-        listen 80;
-        server_name www.thuyhiend.net;
+   listen 80;
+   server_name thuyhiend.net www.thuyhiend.net;
 
-        root /usr/share/nginx/html/wordpress/;
+   # note that these lines are originally from the "location /" block
+   root /usr/share/nginx/html/wordpress;
+   index index.php index.html index.htm;
 
-        index index.html index.php;
+   location / {
+      try_files $uri $uri/ =404;
+   }
+   error_page 404 /404.html;
+   error_page 500 502 503 504 /50x.html;
+   location = /50x.html {
+      root /usr/share/nginx/html;
+   }
 
-        access_log /var/log/nginx/www.thuyhiend.net_access.log;
-        error_log /var/log/nginx/www.thuyhiend.net_error.log;
-
-        # Don't allow pages to be rendered in an iframe on external domains.
-        add_header X-Frame-Options "SAMEORIGIN";
-
-        # MIME sniffing prevention
-        add_header X-Content-Type-Options "nosniff";
-
-        # Enable cross-site scripting filter in supported browsers.
-        add_header X-Xss-Protection "1; mode=block";
-
-        # Prevent access to hidden files
-        location ~* /\.(?!well-known\/) {
-                deny all;
-        }
-
-        # Prevent access to certain file extensions
-        location ~\.(ini|log|conf)$ {
-                deny all;
-        }
-
-        # Enable WordPress Permananent Links
-        location / {
-                try_files $uri $uri/ /index.php?$args;
-        }
-
-        location ~ \.php$ {
-        include /etc/nginx/fastcgi_params;
-        fastcgi_pass 127.0.0.1:9000;
-        fastcgi_index index.php;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        }
-
+   location ~ \.php$ {
+      try_files $uri =404;
+      fastcgi_pass unix:/var/run/php-fpm/www.sock;
+      fastcgi_index index.php;
+      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+      include fastcgi_params;
+   }
   }
   ```
 
@@ -162,11 +144,6 @@
     ```sh
       GRANT ALL ON *.* TO 'wordpress'@'localhost' IDENTIFIED BY 'Thuctap@2019';
     ```
-- Di chuyển tất cả các file về Wordpress vào thư mục `public_html`
-
-  ```sh
-    mv wordpress/* /sites/www.thuyhiend.net/public_html/
-  ```
 
 - Copy file `wp-config-sample.php` thành file `wp-config.php` và thêm mô tả DB  
 
