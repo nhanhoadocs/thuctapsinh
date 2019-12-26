@@ -256,6 +256,11 @@ Trong đó:
 - `*` : Tập tin thực thi
 - `@` : link file
 
+### 4.11. `ls -S`
+Hiển thị danh sách nội dung theo kích thước giảm dần.
+
+<img src = "https://i.imgur.com/5Kg5Ptl.png">
+
 ## 5. Lệnh `mkdir` (make directory - tạo thư mục)
 ### 5.1. Một số thông tin
 - `mkdir --version`: Hiển thị thông tin phiên bản, giấy phép, tác giả.
@@ -334,3 +339,143 @@ Xem ví dụ sau:
 Tùy chọn này hiển thị thông tin xóa thư mục.
 
 <img src = "https://i.imgur.com/XaSW5LC.png">
+
+
+## 7. Lệnh `file`
+```
+file [option] [file_name]
+```
+
+Lệnh `file` được sử dụng để xác định loại tệp. 
+
+<img src = "https://i.imgur.com/RFnCMHs.png">
+
+Lệnh `file` sử dụng tệp `magic` chứa các mẫu để nhận dạng các loại tệp. Tệp `magic` nằm ở  `/usr/share/file/magic`.
+
+Để thêm thông tin chi tiết : `# man 5 magic`
+
+Các Option:
+### 7.1. `file -b` (-b = -brrief) - tóm tắt
+Hiển thị kiểu file 1 cách đơn giản, ngắn gọn.
+
+<img src = "https://i.imgur.com/2Ef60o2.png">
+
+### 7.2. `file *`
+Hiển thị tất cả các loại file trong thư mục đang đứng:
+```
+# file *
+```
+<img src = "https://i.imgur.com/un7JtfR.png">
+
+Hiển thị tất cả cái loại file trong thư mục nào đó
+```
+file <đường_dẫn_thư_mục>/*
+```
+<img src = "https://i.imgur.com/lTP6jhv.png">
+
+### 7.3. `file [range]*`
+Hiển thị kiểu file của các file trong khoảng nào đó.
+
+<img src = "https://i.imgur.com/9CE0ms9.png">
+
+### 7.4. `file -s`
+Hiển thị các loại tệp của tệp đặc biệt như các tệp trong `/dev/` và `/proc/`
+
+<img src = "https://i.imgur.com/MbxqBFP.png">
+
+### 7.5. `file -f -`
+Kiểm tra kiểu file của nhiều file. Mỗi file gõ trên 1 dòng.
+
+<img src = "https://i.imgur.com/hFNDKMS.png">
+
+### 7.6. `file <filename1> <filename2> ...`
+Hiển thị loại tệp của nhiều tệp.
+
+<img src =  "https://i.imgur.com/65tWIfj.png">
+
+### 7.7. `file -z <file_nén>`
+Lệnh này sẽ cố gắng nhìn vào bên trong file nén.
+
+## 8. Lệnh `touch`
+Là 1 cách đơn giản để tạo 1 file trống hoặc thay đổi dấu thời gian (timestamps) của file.
+
+Dấu thời gian của file có loại:
+- accesstime
+- modifytime
+- changetime
+
+### 8.1. Tạo file trống
+Tạo 1 file:
+```
+# touch <filename>
+```
+<img src = "https://i.imgur.com/gooJVLY.png">
+
+Tạo nhiều file:
+```
+# touch <filename1> <filename2> ...
+```
+
+### 8.2. Thay đổi dấu thời gian
+`touch -a <filename>` :Thay đổi thời gian truy cập (acesstime) của file.
+
+Xem ví dụ sau để hiểu thêm
+
+<img src = "https://i.imgur.com/vmYI2oY.png">
+
+`touch -m <filename>`: Thay đổi thời gian sửa đổi (modifytime)
+
+
+### 8.3. `touch -c <filename>`
+Option này dùng để tránh tạo tệp khi gõ nhầm. Tức là ta chỉ muốn thay đổi dấu thời gian của tệp mà không muốn tạo ra 1 tệp.
+
+<img src = "https://i.imgur.com/0Ef4IGt.png">
+
+### 8.4. `touch -t YYYYMMDDHHMM <filename>`
+Tạo 1 tệp tin với dấu thời gian nhất định hoặc thay đổi dấu thời gian của 1 tệp đã có.
+
+<img src = "https://i.imgur.com/VTSjfJL.png">
+
+
+## 9. Lệnh `rm` (remove)
+Dùng để xóa file hoặc thư mục.
+### 9.1. `rm <tên_file>`
+<img src ="https://i.imgur.com/HZ5AVBm.png">
+
+Xóa nhiều file: `# rm fielname1 filename2`
+
+<img src = "https://i.imgur.com/uRpJcyB.png">
+
+### 9.2. `rm -i`
+Xóa file có xác nhận trước khi xóa.
+
+<img src = "https://i.imgur.com/xGhleyg.png">
+
+### 9.3. `rm -f`
+Xóa file không có xác nhận.
+
+<img src = "https://i.imgur.com/zlFm0JF.png">
+
+### 9.4. `rm -I file*`
+Xóa hàng loạt file có tên gần giống nhau.
+
+<img src = "https://i.imgur.com/SWQcO9a.png">
+
+### 9.5. `rm -d <ten_thumuc>`
+Xóa thư mục rỗng
+
+<img src = "https://i.imgur.com/fVnLiLs.png">
+
+Không xóa được thư mục không rỗng
+
+<img src = "https://i.imgur.com/Z01JwVQ.png">
+
+### 9.6. `rm -r <ten_thumuc>`
+Xóa thư mục không rỗng và xác nhận từng nội dung trước khi xóa.
+
+<img src = "https://i.imgur.com/8JMV8q4.png">
+
+### 9.7. `rm -v`
+Hiển thị kết quả xóa.
+
+<img src = "https://i.imgur.com/OINtPFG.png">
