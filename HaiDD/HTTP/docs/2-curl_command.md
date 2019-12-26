@@ -180,14 +180,7 @@ param1=value1&param2=value2
 File `data.json`
 ```json
 {
-  "name": "postdemo",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "body-parser": "^1.15.0",
-    "express": "^4.13.4"
-  }
+  "key1":"value1",
+  "key2":"value2"
 }
 ```
