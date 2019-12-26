@@ -172,17 +172,12 @@ Với file:
 # curl -X POST http://localhost:3000/data -d "@data.json" 
 ```
 
+File `data.txt`
+```
+param1=value1&param2=value2
+```
 
-<div class="panel panel-gitlab-orange">
-**Heading**
-{: .panel-heading}
-<div class="panel-body">
-
-Text in markdown.
-
-</div>
-</div>
-
+File `data.json`
 ```json
 {
   "name": "postdemo",
