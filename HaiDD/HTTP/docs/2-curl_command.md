@@ -135,7 +135,7 @@ curl --limit-rate 1000K -O ftp://speedtest.tele2.net/1MB.zip
 ### 11. Mô phỏng các Method HTTP
 Cú pháp:
 ```
-# curl -X [Method] -H "<Content_Type_Header>" [URL] -d "<data>"
+# curl -X [Method] [URL] -H "<Content_Type_Header>" -d "<data>"
 ```
 
 **Trong đó**: 
@@ -149,9 +149,39 @@ Cú pháp:
     - Dạng Json: `-d '{"key1":"value1", "key2":"value2"}`' hoặc `-d @data.json`
 
 **Ví dụ**: POST với data là username và password lên 1 trang đăng nhập của 1 web:
+
+- POST dạng không mã hóa:
 ```
-curl -X POST http://www.yourwebsite.com/login/ -d 'username=yourusername&password=yourpassword'
+# curl -X POST http://localhost:3000/data -d "param1=value1&param2=value2" 
 ```
+hoặc có Header:
+```
+# curl -X POST http://localhost:3000/data -H "Content-Type: application/x-www-form-urlencoded" -d "param1=value1&param2=value2"  
+```
+Với file:
+```
+# curl -X POST http://localhost:3000/data -d "@data.txt" 
+```
+
+- POST dạng Json
+```
+# curl -X POST http://localhost:3000/data -H "Content-Type: application/json" -d '{"key1":"value1", "key2":"value2"}' 
+```
+Với file:
+```
+# curl -X POST http://localhost:3000/data -d "@data.json" 
+```
+
+
+<div class="panel panel-gitlab-orange">
+**Heading**
+{: .panel-heading}
+<div class="panel-body">
+
+Text in markdown.
+
+</div>
+</div>
 
 ```json
 {
