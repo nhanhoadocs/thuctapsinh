@@ -605,3 +605,102 @@ anaconda-ks.cfg  ca.pem
 ```
 Lưu ý: tùy chọn này có thể xóa bất cứ file hoặc thư mục nào. Nên cân nhắc khi sử dụng. 
 
+### 10. cp command 
+
+Cp command dùng để sao chép tệp tin và thư mục, Khi sao chép cp đồng thời cũng có thể tạo tệp mới. 
+
+- Để sao chép 1 thư mục đồng thời tạo thư mục cần sao chép : 
+```
+[root@server ~]# cat hung1
+Nguyen Viet Hung
+NS : 29/06/1999
+Noi Sinh : Thai Binh
+[root@server ~]# cp hung1 hung2
+[root@server ~]# ls
+anaconda-ks.cfg  hung1  hung2
+[root@server ~]# cat hung2
+Nguyen Viet Hung
+NS : 29/06/1999
+Noi Sinh : Thai Binh
+```
+- Nếu copy vào 1 file đã có dữ liệu, hệ thống sẽ đưa ra câu hỏi có muốn ghi đè dữ liệu hay không. 
+```
+[root@server ~]# cp hung1 hung2
+cp: overwrite ‘hung2’? n
+```
+
+- Để sao chép 1 thư mục, ta sử dụng tùy chọn -R. 
+```
+[root@server viethung]# cp /root/viethung /root/viethung01
+cp: omitting directory ‘/root/viethung’
+[root@server viethung]# cp -R /root/viethung /root/viethung01
+```
+```
+[root@server ~]# pwd
+/root
+[root@server ~]# ls
+anaconda-ks.cfg  hung1  hung2  viethung  viethung01
+```
+
+### 11. mv command
+
+Sử dụng để di chuyển tập tin hoặc thư mục từ nơi này sang nơi khác. 
+
+- Để di chuyển thư mục đến 1 thư mục không tồn tại, thư mục sẽ tự động đổi thành tên thư mục đó.  
+```
+[root@server ~]# mv viethung /root/viethung01/nguyenviethung
+[root@server ~]# cd /root/viethung01/
+[root@server viethung01]# ls
+nguyenviethung
+```
+
+- Nếu di chuyển thư mục đến 1 thư mục đã tồn tại, thư mục sẽ di chuyển đến và giữ nguyên tên. 
+```
+[root@server ~]# mv hung11 /root/viethung01
+[root@server ~]# cd viethung01/
+[root@server viethung01]# ls
+hung11  nguyenviethung
+```
+
+- Để di chuyển 1 file đến 1 thư mục khác : 
+```
+[root@server ~]# mv hung1 viethung01/
+[root@server ~]# cd viethung01/
+[root@server viethung01]# ls
+hung1  hung11  nguyenviethung
+```
+
+- Để di chuyển nhiều file. ví dụ các file có phần mở rộng là txt. Thay vì di chuyển từng file hoặc nhập tên từng file để di chuyển, ta sử dụng * 
+
+```
+[root@server ~]# ls
+anaconda-ks.cfg  hung1.txt  hung2  hung.txt  viethung01  viethung.txt
+[root@server ~]# mv *.txt /root/viethung01
+[root@server ~]# cd viethung01/
+[root@server viethung01]# ls
+hung1  hung11  hung1.txt  hung.txt  nguyenviethung  viethung.txt
+```
+
+- Nếu di chuyển 1 file hoặc thư mục đến 1 file hoặc thư mục đã tồn tại, ta sẽ được nhắc có ghi đè hay không ? 
+
+```
+[root@server viethung01]# mv hung.txt /root/viethung01/hung1
+mv: overwrite ‘/root/viethung01/hung1’? y
+```
+
+# 12. rename command 
+
+Sử dụng để thay đổi tên các file.
+
+vd : 
+
+- Để đổi tên 1 file hoặc nhiều file.( Đổi tất cả các file có đổi txt thahf đôi pdf) 
+```
+[root@server viethung01]# ls
+hung1  hung11  hung1.txt  nguyenviethung  viethung.txt
+[root@server viethung01]# rename .txt .pdf *.txt
+[root@server viethung01]# ls
+hung1  hung11  hung1.pdf  nguyenviethung  viethung.pdf
+```
+
+
