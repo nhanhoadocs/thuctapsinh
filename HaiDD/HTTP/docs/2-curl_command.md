@@ -155,7 +155,6 @@ curl -X POST http://www.yourwebsite.com/login/ -d 'username=yourusername&passwor
 
 ```json
 {
-    {
   "name": "postdemo",
   "version": "1.0.0",
   "scripts": {
@@ -165,6 +164,5 @@ curl -X POST http://www.yourwebsite.com/login/ -d 'username=yourusername&passwor
     "body-parser": "^1.15.0",
     "express": "^4.13.4"
   }
-}
 }
 ```
