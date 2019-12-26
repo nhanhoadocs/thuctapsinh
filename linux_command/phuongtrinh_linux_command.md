@@ -117,7 +117,130 @@ khi không đi kèm tùy chọn thì sẽ trả về đường dẫn tuyệt đ�
 ```
 nano: /bin/nano /usr/share/nano /usr/share/man/man1/nano.1.gz /usr/share/info/nano.info.gz
 ```
-# 1.7 man sections
+## Phần 2: Working with dỉectories
+
+## 2.1 pwd (Print Working Directory)
+
+Dùng để in ra đường dẫn của thư mục đang làm việc hiện tại.
+```
+[nptr@localhost ~]$ pwd 
+/home/nptr
+```
+## 2.2 cd  (Change Directory)
+Dùng để thay đổi thư mục hiện thời của bạn.
+
+```
+[nptr@localhost ~]$ cd Desktop/
+[nptr@localhost Desktop]$ 
+```
+## 2.3 cd ~ 
+Dùng để quay về thư mục gốc của người dùng hiện tại.
+```
+[nptr@localhost ~]$ cd Desktop/
+[nptr@localhost Desktop]$ cd ~
+[nptr@localhost ~]$ 
+```
+## 2.4 cd ..
+Dùng để truy cập vào thư mục cha của thư mục hiện tại.
+```
+[nptr@localhost ~]$ cd Desktop/
+[nptr@localhost Desktop]$ cd ..
+[nptr@localhost ~]$ 
+```
+## 2.5 cd -
+Dùng để quay trở lại thư mục trước đó.
+```
+[nptr@localhost ~]$ cd -
+/home/nptr/Desktop
+[nptr@localhost Desktop]$
+```
+## Phần 3: Đường dẫn tương đối và tuyệt đối
+
+## 3.1 ls 
+Dùng để xem nội dung của một thư mục.
+```
+[nptr@localhost ~]$ ls
+centos7            Desktop    Downloads    Music     Public    Templates
+clamav.local.conf  Documents  ibus-bamboo  Pictures  Telegram  Videos
+```
+
+## 3.2 ls -a 
+Ta có thể dùng `ls` kèm option `-a` để hiện thị tất cả các files (kể cả các file ẩn).
+
+```
+[nptr@localhost ~]$ ls -a
+.              .bashrc            Desktop    ibus-bamboo  Pictures  Templates
+..             .cache             Documents  .local       .pki      Videos
+.bash_history  centos7            Downloads  .m17n.d      Public    .vmware
+.bash_logout   clamav.local.conf  .esd_auth  .mozilla     .ssh      .vscode
+.bash_profile  .config            .gnome     Music        Telegram
+```
+## 3.3 ls -l 
+Dùng để hiển thị đầy đủ và rõ ràng thông tin của các file trong thư mục.
+```
+[nptr@localhost ~]$ ls -l 
+total 48
+drwxrwxr-x. 2 nptr nptr 4096 Dec 25 23:57 centos7
+-rw-r--r--. 1 nptr nptr 1955 Dec 26 00:24 clamav.local.conf
+drwxr-xr-x. 2 nptr nptr 4096 Dec 25 16:20 Desktop
+drwxr-xr-x. 2 nptr nptr 4096 Dec 26 14:05 Documents
+drwxr-xr-x. 6 nptr nptr 4096 Dec 26 13:59 Downloads
+drwxrwxr-x. 9 nptr nptr 4096 Dec 25 23:20 ibus-bamboo
+```
+## 3.4 ls -lh
+
+Dùng để hiển thị ra chi tiết hơn những gì mà bình thường ta sử dụng.
+Ta có thể dùng để bổ sung thêm cho ls -l: 
+```
+[nptr@localhost ~]$ ls -lh 
+total 48K
+drwxrwxr-x. 2 nptr nptr 4.0K Dec 25 23:57 centos7
+-rw-r--r--. 1 nptr nptr 2.0K Dec 26 00:24 clamav.local.conf
+drwxr-xr-x. 2 nptr nptr 4.0K Dec 25 16:20 Desktop
+drwxr-xr-x. 2 nptr nptr 4.0K Dec 26 14:05 Documents
+drwxr-xr-x. 6 nptr nptr 4.0K Dec 26 13:59 Downloads
+drwxrwxr-x. 9 nptr nptr 4.0K Dec 25 23:20 ibus-bamboo
+drwxr-xr-x. 2 nptr nptr 4.0K Dec 25 16:20 Music
+```
+## 3.5 mkdir
+Dùng để tạo mới một thư mục. 
+```
+[nptr@localhost ~]$ mkdir nptr 
+[nptr@localhost ~]$ cd nptr 
+[nptr@localhost nptr]$
+```
+
+## 3.6 mkdir -p 
+```
+[nptr@localhost nptr]$ mkdir a/b/c
+mkdir: cannot create directory ‘a/b/c’: No such file or directory
+```
+Như trên, ta không thể tạo thư mục c khi sử dụng `mkdir`
+Khi thêm option `-p` , `mkdir` sẽ tạo thêm thư mục cha nếu cần.
+```
+[nptr@localhost nptr]$ mkdir -p a/b/c 
+[nptr@localhost nptr]$ cd a/b/c 
+[nptr@localhost c]$ 
+```
+## 3.7 rmdir (remove directory)
+
+Khi thư mục rỗng, ta dùng `rmdir` để xóa thư mục đó
+```
+[nptr@localhost b]$ ls
+c
+[nptr@localhost b]$ rmdir c
+[nptr@localhost b]$ ls
+[nptr@localhost b]$ 
+```
+## 3.8 rmdir -p 
+Sử dụng option `-p` để `rmdir` có thể xóa hoàn toàn thư mục và bên trong thư mục đó 
+```
+[nptr@localhost a]$ ls 
+b
+[nptr@localhost nptr]$ rmdir -p a/b 
+```
+
+
 
 
 
