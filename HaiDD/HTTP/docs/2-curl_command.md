@@ -100,17 +100,7 @@ Ví dụ:
 
 <img src="..\images\Screenshot_9.png">
 
-### 8. Thực hiện 1 yêu cầu POST
-`# curl -d {data} [url]`
-
-`-d` = `--data`
-
-Ví dụ:
-```
-# curl --data "firstName=Hai&lastName=Dang" https://yourdomain.com/info.php
-```
-
-### 9. Lưu trữ 1 cookie
+### 8. Lưu trữ 1 cookie
 `# curl -c [tên_file_cookie] [url] -O`
 
 `-c` = `--cookie`
@@ -120,7 +110,7 @@ Ví dụ
 # curl --cookie-jar cnncookies.txt https://www.cnn.com/index.html -O
 ```
 
-### 10. Gửi cookies
+### 9. Gửi cookies
 `# curl -c [tên_file_cookie] [url]`
 
 Ví dụ:
@@ -128,7 +118,7 @@ Ví dụ:
 # curl --cookie cnncookies.txt https://www.cnn.com
 ```
 
-### 11. Giới hạn download
+### 10. Giới hạn download
 `curl --limit-rate [value] [URL]`
 
 Tốc độ download sẽ được giữ xung quanh giới hạn ta đặt.
@@ -141,3 +131,40 @@ curl --limit-rate 1000K -O ftp://speedtest.tele2.net/1MB.zip
 ```
 
 <img src = "..\images\Screenshot_10.png">
+
+### 11. Mô phỏng các Method HTTP
+Cú pháp:
+```
+# curl -X [Method] -H "<Content_Type_Header>" [URL] -d "<data>"
+```
+
+**Trong đó**: 
+- -X [Method]: Khai báo method sử dụng `GET`, `POST`, `DELETE`, `PUT`
+- -H "<Content_Type_Header>": Header với kiểu nội dung của nó
+    - -H "Content-Type: application/x-www-form-urlencoded" : Data dạng không mã hóa
+    - -H "Content-Type: application/json": Data dạng Json
+- [URL] : url trang web
+- -d "<data>" : dữ liệu kèm Method. Có thể dùng string hoặc file.
+    - Dạng không mã hóa: `-d "param1=value1&param2=value2"` hoặc `-d @data.txt`
+    - Dạng Json: `-d '{"key1":"value1", "key2":"value2"}`' hoặc `-d @data.json`
+
+**Ví dụ**: POST với data là username và password lên 1 trang đăng nhập của 1 web:
+```
+curl -X POST http://www.yourwebsite.com/login/ -d 'username=yourusername&password=yourpassword'
+```
+
+```json
+{
+    {
+  "name": "postdemo",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4"
+  }
+}
+}
+```
