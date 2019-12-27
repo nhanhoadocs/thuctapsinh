@@ -169,3 +169,17 @@ Phần đầu tiên của thông tin có thể được đưa ra về tập tin 
 Trong thực tế, hai loại kiểu dữ liệu thường xuyên nhất được sử dụng là ASCII và Image. Kiểu ASCII được sử dụng cho các tập tin văn bản, và cho phép chúng được di chuyển giữa các hệ thống với dòng kết thúc mã chuyển đổi tự động. Loại hình ảnh được sử dụng cho các tập tin nhị phân chung, chẳng hạn như đồ họa hình ảnh, tập tin ZIP và các dữ liệu khác được thể hiện một cách phổ quát. Nó cũng thường được gọi là nhị phân loại vì lý do đó.
 
 ### 2. FTP Format Control
+Đối với các loại ASCII và EBCDIC, FTP xác định 1 tham số tùy chọn được gọi là "format control" (điều khiển định dạng), nó cho phép người dùng chỉ định một đại diện cụ thể cho cách sử dụng định dạng dọc để mô tả tệp. 
+
+Các tùy chọn kiểm soát định dạng được tạo ra cho mục đích cụ thể đúng cách xử lý các tập tin chuyển giao từ các thiết bị máy chủ đến máy in. Nó không được sử dụng ngày nay, hoặc nếu nó được sử dụng, nó chỉ là trong ứng dụng đặc biệt.
+
+3 tùy chọn trong FTP Format Control
+- `Non Print` : Đây là mặc định, cho biết không có định dạng dọc
+- `Telnet Format` : Tệp sử dụng các kí tự điều khiển định dạng dọc, như được chỉ định trong giao thức Telnet
+- `Carriage Control/FORTRAN` : Tệp sử dụng kí tự điều khiển được định dạng đưa ra làm kí tự đầu tiên của mỗi dòng, như được xác định cho ngôn ngữ lập trình FORTRAN.
+
+### 3. FTP Data Structures
+Ngoài việc xác định một loại dữ liệu tệp tin, ta cũng có thể xác định cấu trúc tệp tin theo 3 cách:
+- File Structure : Tệp là 1 luồng byte liền kề không có cấu trúc bên trong. Đây là cách mặc định và được sử dụng cho hầu hết các loại tệp.
+- Record Structure : Tệp bao gồm một tập hợp các bản ghi, mỗi bản ghi được phân định bằng đánh dấu `end-of-record`. Cấu trúc bản ghi có thể sử dụng cho các tệp văn bản ASCII, nhưng chúng thường được gửi với cấu trúc tệp thông thường sử dụng kiểu dữ liệu ASCII.
+- Page Structure : Tệp chứa 1 trang dữ liệu được lập chỉ mục đặc biệt. Cấu trúc này không được sử dụng phổ biến. Nó được tạo ra cho 1 máy tính cổ xưa được sử dụng trong ARPAnet đời đầu.
