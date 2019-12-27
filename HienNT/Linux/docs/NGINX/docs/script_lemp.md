@@ -9,7 +9,7 @@
 ***Chú ý:*** Sửa lại địa chỉ IP trong file `lemp_wordpress.sh` thành địa chỉ IP của máy bạn để có thể truy cập qua domain.
 
     
-<img src="images/ip.png">
+<img src="../images/ip.png">
 
 - Bước 2: Chạy script bằng cách sử dụng câu lệnh `bash`
 
@@ -19,20 +19,20 @@
 
   Trong quá trình chạy script sẽ yêu cầu nhập vào password, database name, databasse user và password của database user. Nhập vào thông tin như hình, phần Enter password bỏ trắng.
 
-  <img src="images/install2.png">
+  <img src="../images/install2.png">
 
 
-  <img src="images/script.png">
+  <img src="../images/script.png">
 
 - Bước 3: Kiểm tra
 Trên thanh tìm kiếm của trình duyệt, nhập vào lần lượt:
 
   - http://IP - kiểm tra hoạt động của 
   
-    <img src="images/check_nginx.png">
+    <img src="../images/check_nginx.png">
 
   - http://IP/info.php - xem thông tin của PHP
 
-    <img src="images/php_check.png">
+    <img src="../images/php_check.png">
 
   - http://IP/wordpress hoặc http://thuyhiend.net - truy cập vào trang sử dụng Wordpress
