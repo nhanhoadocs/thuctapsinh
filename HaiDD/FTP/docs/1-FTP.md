@@ -105,3 +105,67 @@ Trong đó, `y` cung cấp thêm thông tin về câu trả lời (reply). `z` c
 
 ### Chú ý:
 Điều quan trọng cần lưu ý trong FTP, các Request không nhất thiết phải được thực hiện theo cùng 1 trình tự khi đã gửi, các giao dịch (transactions) và trả lời (reply) có thể được xen kẽ.
+
+### 5. Bảo mật
+Giống như phần lớn các giao thức cũ, phương pháp đăng nhập đơn giản của FTP là một sự kế thừa từ những giao thức ở thời kì đầu của Internet. Ngày nay, nó không còn đảm bảo tính an toàn cần thiết trên môi trường Internet toàn cầu vì `username` và `password` được gửi qua kênh kết nối điều khiển dưới dạng *clear text*(không mã hóa).
+
+Điều này làm cho bảo mật FTP đã định ra thêm nhiều tùy chọn chứng thực và mã hóa phức tạp cho những ai muốn tăng thêm mức độ an toàn vào trong phần mềm FTP của họ.
+
+## III. Quản lí kênh dữ liệu FTP
+Kênh điều khiển được tạo ra giữa Server-PI và User-PI, sử dụng quá trình thiết lập kết nối và chứng thực được duy trì trong suốt phiên kết nối FTP. Các lệnh và các hồi đáp được trao đổi giữa bộ phận PI (Protocol Interpreter) qua kênh điều khiển, những dữ liệu thì không.
+
+Mỗi khi cần phải truyền dữ liệu giữa các server và client, một kênh dữ liệu cần phải được tạo ra. Kênh dữ liệu kết nối bộ phận User-DTP và Server-DTP. Kết nối này cần thiết cho cả hoạt động truyền file trực tiếp (gửi hoặc nhận một file) cũng như đối với việc truyền dữ liệu ngầm, như là yêu cầu một danh sách file trong thư mục nào đó trên server.
+
+Để tạo ra kênh dữ liệu, FTP sử dụng 2 phương thức khác nhau: **Normal (Active) Data Connections (mặc định)** và **Passive Data Connections**.
+
+Khác biệt giữa 2 phương thức này là phía Client hay bên Server đưa ra yêu cầu khởi tạo kết nối.
+
+### 1. Normal (Active) Data Connections
+Phương thức tạo kết nối dữ liệu bình thường hay còn gọi là *Kết nối kênh dữ liệu ở dạng chủ động*.
+
+Phía Server-DTP tạo kênh dữ liệu bằng cách mở một cổng kết nối tới User-DTP. Server sử dụng cổng đặc biệt được dành riêng cho kết nối dữ liệu là cổng số 20. Trên máy Client, cổng mặc định được sử dụng chính là cổng được sử dụng để kết nối điều khiển, nhưng Server sẽ thường chọn mỗi cổng khác nhau cho mỗi chuyển giao.
+
+### 2. Passive Data Connections
+Phương thức tạo kết nối bị động. 
+- Server sẽ chấp nhận 1 yêu cầu kết nối dữ liệu được khởi tạo từ Client. 
+- Server sẽ trả lời lại phía Client với địa chỉ IP cũng như địa chỉ cổng mà Server sẽ sử dụng. 
+- Sau đó phía Server-DTP lắng nghe trên cổng này một kết nối TCP đến từ User-DTP. 
+- Theo mặc định, phía Client sẽ sử dụng cùng cổng mà nó sử dụng cho Control Connection như trong trường hợp chủ động. Tuy nhiên, trong phương pháp này, Client cũng có thể chọn sử dụng một cổng khác cho Data Connection nếu cần thiết.
+
+## IV. Các phương thức truyền dữ liệu trong FTP
+Khi Client-DTP và Server-DTP thiết lập xong kênh dữ liệu, dữ liệu sẽ được truyền trực tiếp từ phía Client tới phía Server, hoặc ngược lại, tùy theo các lệnh được sử dụng. Do thông tin điều khiển được gửi đi trên kênh điều khiển, nên toàn bộ kênh dữ liệu có thể được sử dụng để truyền dữ liệu. FTP có ba phương thức truyền dữ liệu, đó là: **stream mode**, **block mode**, và **compressed mode**
+
+### 1. Stream mode
+- Dữ liệu truyền đi liên tiếp dưới dạng các byte không cấu trúc.
+- Thiết bị gửi chỉ đơn thuần đẩy luồng dữ liệu qua kết nối TCP tới phía nhận.
+- Không có trường tiêu đề nhất định
+- Không có cấu trúc dạng Header, nên việc báo hiệu kết thúc file sẽ đơn giản được thực hiện khi thiết bị gửi ngắt kênh kết nối dữ liệu khi đã truyền dữ liệu xong.
+- Được sử dụng nhiều nhất trong 3 phương thức trong triển khai FTP thực tế. Do:
+    - Là phương thức mặc định và đơn giản nhất.
+    - Là phương thức phổ biến nhất, vì nó xử lí các file chỉ đơn thuần là xử lí dòng byte, mà không cần để ý tới nội dung.
+    - Không tốn 1 lượng byte "overload" nào để thông báo Header.
+
+### 2. Block mode
+- Phương thức truyền dữ liệu mang tính quy chuẩn hơn.
+- Dữ liệu được chia thành nhiều khối nhỏ và đóng gói thành các FTP block.
+- Mỗi block có 1 trường Header 3 byte: báo hiệu độ dài, và chứa thông tin về các khối dữ liệu đang được gửi.
+- Một thuật toán đặc biệt được sử dụng để kiểm tra các dữ liệu đã truyền đi. Và để phát hiện, khởi tạo lại đối với 1 phiên truyền dữ liệu đã bị ngắt kết nối.
+
+### 3. Compressed mode (Chế độ nén)
+- Phương thức truyền dữ liệu sử dụng 1 kỹ thuật nén đơn giản, là "run-lenght encoding (mã hóa chiều dài)" - có tác dụng phát hiện và xử lí các đoạn lặp trong dữ liệu được truyền đi để giảm chiều dài của toàn bộ thông điệp.
+- Thông tin sau khi được nén, sẽ được xử lí như Block mode, với trường Header.
+- Trong thực tế, việc nén dữ liệu thường được thực hiện ở chỗ khác, làm cho phương thức Compressed mode trở nên không cần thiết.
+
+## V. Dữ liệu trong FTP
+Các tập tin được coi như một tập hợp các byte. FTP không quan tâm nội dung tập tin, sẽ chỉ đơn giản là di chuyển các tệp tin, các byte cùng 1 thời điểm, từ nơi này sang nơi khác.  
+
+### 1. FTP Data Types:
+Phần đầu tiên của thông tin có thể được đưa ra về tập tin là kiểu dữ liệu của nó. Có 4 kiểu dữ liệu khác nhau được quy định trong chuẩn của FTP.
+- **ASCII**: file văn bản ASCII
+- **EBCDIC**: tương tự ASCII, nhưng sử dụng kí tự EBCDIC do IBM đặt.
+- **Image**: Các tập tin không có cấu trúc nội bộ chính thức.
+- **Local**: Kiểu dữ liệu này được sử dụng để xử lí các tập tin có thể lưu trữ dữ liệu trong byte logic. Cách xác định loại này cùng với cách dữ liệu có cấu trúc cho phép dữ liệu được lưu trữ trên hệ thống đích một cách phù hợp với đại diện local của nó.
+
+Trong thực tế, hai loại kiểu dữ liệu thường xuyên nhất được sử dụng là ASCII và Image. Kiểu ASCII được sử dụng cho các tập tin văn bản, và cho phép chúng được di chuyển giữa các hệ thống với dòng kết thúc mã chuyển đổi tự động. Loại hình ảnh được sử dụng cho các tập tin nhị phân chung, chẳng hạn như đồ họa hình ảnh, tập tin ZIP và các dữ liệu khác được thể hiện một cách phổ quát. Nó cũng thường được gọi là nhị phân loại vì lý do đó.
+
+### 2. FTP Format Control
