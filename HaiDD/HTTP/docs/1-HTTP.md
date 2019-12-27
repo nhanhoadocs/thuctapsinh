@@ -6,7 +6,7 @@ HTTP (Hypertext Transfer Protocol) là giao thức truyền tải siêu văn b�
 
 HTTP truyền tải thông tin cho dữ liệu giữa Web Server và Web Client trong mô hình Client/Server dùng cho World Wide Web(WWW). Nơi các tài liệu siêu văn bản(hypertext) bao gồm các siêu liên kết (hyperlinks) đến tài nguyên mà người dùng có thể dễ dàng truy cập.
 
-HTTP là giao thức thuộc tầng ứng dụng, trên cơ sở TCP/IP. Cổng mặc định mà HTTP sử sụng là 80.
+HTTP là giao thức thuộc tầng ứng dụng, trên cơ sở TCP/IP. Cổng mặc định mà HTTP sử dụng là 80.
 
 ### Lịch sử và phiên bản
 Phát triển HTTP được Tim Berners-lee bắt đầu tại CERN năm 1989. Từ sự phối hợp của Internet Engineering Task Force (IETF) và World Wide Web Consortium(WWWC) và sau đó là IETF
