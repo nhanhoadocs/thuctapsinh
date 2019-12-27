@@ -1,7 +1,7 @@
 # Hướng dẫn cài đặt LEMP + Wordpress trên CentOS 7 bằng Script  
 
 - Tải script về máy
-Vào [link](../tools) để tải script về máy
+Vào [link](../tools/CentOS-7) để tải script về máy
 
 - Trong file `lemp.sh` tìm đến phần `server_name` sửa lại địa chỉ IP thành địa chỉ IP máy của bạn. Lưu và thoát file.
 
