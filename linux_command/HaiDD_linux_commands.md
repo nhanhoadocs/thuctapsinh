@@ -479,3 +479,145 @@ Xóa thư mục không rỗng và xác nhận từng nội dung trước khi xó
 Hiển thị kết quả xóa.
 
 <img src = "https://i.imgur.com/OINtPFG.png">
+
+## 10. Lệnh `cp`
+Dùng để sao chép file hoặc thư mục.
+
+### 10.1. Copy nội dung 1 file vào 1 file khác
+Sao chép nội dung 1 file vào 1 file khác. Nếu file đích đó chưa tồn tại thì sẽ tạo ra file đó với nội dung giống hệt file nguồn.
+```
+# cp <file_nguồn> <file_đích>
+```
+
+<img src = "https://i.imgur.com/EMOSz62.png">
+
+### 10.2. Copy file vào thư mục khác
+```
+# cp <filename_1> <filename_2> ... <filename_n> <thư_mục_đích>
+```
+
+<img src = "https://i.imgur.com/Ump4y8p.png">
+
+### 10.3. `cp -r/-R <thư_mục_nguồn> <thư_mục_đích>`
+`r - recursive` : đệ quy
+
+Copy 1 thư mục vào 1 thư mục khác. 
+
+<img src = "https://i.imgur.com/jG0FhFX.png">
+
+
+### 10.4. `cp -i`
+`i - interactive` : tương tác
+
+Hỏi lại người dùng có muốn ghi đè không khi có tệp trùng tên. Hoặc ghi đè nội dung của file đích.
+
+<img src = "https://i.imgur.com/w3WJiAH.png">
+
+
+### 10.5. `cp -b`
+`b - backup` : sao lưu
+
+Tạo bản sao lưu của tệp đích trong cùng thư mục với tệp khác và ở 1 định dạng khác.
+
+<img src = "https://i.imgur.com/Z540T2x.png">
+
+### 10.6. `cp -f`
+`f - force : ép buộc`
+
+Khi hệ thống không thể mở tệp đích để thực hiện thao tác ghi vì người dùng không có quyền ghi cho tệp này thì ta sử dụng tùy chọn `-f`. Khi này, tệp đích sẽ bị xóa trước rồi sau đó copy nội dung từ tệp nguồn tới tệp đích. Nó thay đổi luôn cả quyền của tệp đích.
+
+<img src = "https://i.imgur.com/W2mEBfw.png">
+
+### 10.7. `cp -p`
+`p - preserve` : bảo quản
+
+Khi sử dụng `-p`, lệnh `cp` sẽ bảo toàn các đặc điểm sau của tệp nguồn: timestamp, quyền sở hữu (owner, chỉ khi nó có quyền) và permission.
+
+<img src = "https://i.imgur.com/D1024Qb.png">
+
+### 10.8. `cp -n`
+`n - no clobber`
+
+Không ghi đè lên tệp hiện có.
+
+<img src = "https://i.imgur.com/4veS7Lf.png">
+
+### 10.9. `cp -u`
+`u - update` : Chỉ sao chép tệp nguồn nếu nó mới hơn tệp đích hoặc tệp đích chưa tồn tại.
+
+<img src ="https://i.imgur.com/9NAG6K2.png">
+
+### 10.10. `cp -v`
+
+`-v - verbose` : Xem quá trình
+
+<img src = "https://i.imgur.com/QpoOIXM.png">
+
+
+## 11. Lệnh `mv`
+`mv - move(rename) file` : được sử dụng để di chuyển một hoặc nhiều tệp hoặc thư mục từ nơi này sang nơi khác trong hệ thống tệp như UNIX. Nó có hai chức năng riêng biệt:
+- Đổi tên 1 file hoặc thư mục
+- Di chuyển 1 nhóm các tệp tin vào thư mục khác.
+
+### 11.1. Đổi tên file, thư mục
+```
+# mv <ten_hien_tai> <ten_moi>
+```
+
+<img src = "https://i.imgur.com/E6Rc2hs.png">
+
+<img src = "https://i.imgur.com/IBHv4Ys.png">
+
+### 11.2. `mv -i`
+`i - Interactive` : Tương tác
+
+Xác nhận di chuyển và ghi đè lên 1 tệp tin hiện có.
+
+<img src = "https://i.imgur.com/drViolk.png">
+
+### 11.3. `mv -f`
+`f - Force` : ép buộc
+
+`mv` sẽ nhắc xác nhận ghi đè tệp đích nếu tệp đích được bảo vệ ghi, tức là ta không có quyền ghi lên tập đích. `-f` sẽ cho bạn ghi đè tệp đích và xóa tệp nguồn.
+
+<img src = "https://i.imgur.com/XhuHEyy.png">
+
+### 11.4. `mv -n`
+`n - no clobber` : với option này sẽ ngăn không cho ghi đè 1 tệp hiện có.
+
+<img src = "https://i.imgur.com/wNqu2oZ.png">
+
+### 11.5. `mv -b`
+`b -backup` : tạo 1 bản lưu trữ tệp tin sẽ bị ghi đè
+
+<img src = "https://i.imgur.com/r2HlK30.png">
+
+### 11.6. Di chuyển tệp tin, thư mục
+Chuyển tệp tin tới 1 thư mục khác
+
+<img src = "https://i.imgur.com/Ox1TcL8.png">
+
+Chuyển 1 thư mục tới 1 thư mục khác
+
+<img src = "https://i.imgur.com/EkKzIF5.png">
+
+## 12. Lệnh `rename`
+Thường được dùng để đổi tên file được đặt tên theo biếu thức. Thường dùng để đổi tên hàng loạt các file có tên cấu trúc gần giống nhau.
+```
+# rename [options] expression replacement file...
+```
+
+### 12.1. Đổi tên nhiều file
+Đổi đuôi tệp:
+
+<img src ="https://i.imgur.com/FKYM2WJ.png">
+
+Đổi chữ HOA/thường:
+
+<img src ="https://i.imgur.com/gXQKAtA.png">
+
+### 12.2. `rename -v`
+`v- verbose`: hiển thị quá trình
+
+<img src  = "https://i.imgur.com/BRBhA8h.png">
+
