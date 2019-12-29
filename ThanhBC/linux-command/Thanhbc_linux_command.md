@@ -411,7 +411,11 @@ cat -n file2.txt
 
 ![](com/cat6.png)
 
+
+
 <a name="8"></a>
+
+# List command working with files
 ## 8. file command
 
 **file** : sử dụng để xác định loại tệp
