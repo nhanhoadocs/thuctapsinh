@@ -5,4 +5,4 @@ Ghi chép về log
 [4. Thực hành cấu hình log tập trung](https://github.com/ngahong/Thuc-tap-Nhan-Hoa/blob/master/Linux/Log/Thuc-hanh-log-tap-trung/README.md)  
 [5. Tìm hiểu về graylog](https://github.com/ngahong/Thuc-tap-Nhan-Hoa/tree/master/Linux/Log/Graylog)  
 [6. Tìm hiểu về Graylog Sidecar](https://github.com/ngahong/Thuc-tap-Nhan-Hoa/tree/master/Linux/Log/Sidecar)  
-[7. Thao tác với log](https://github.com/ngahong/Thuc-tap-Nhan-Hoa/tree/master/Linux/Log/Thao%20tac%20voi%20log)
+[7. Sidecar](https://github.com/ngahong/thuctapsinh/tree/master/NgaNTH/Log/Sidecar)
