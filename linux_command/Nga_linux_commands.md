@@ -316,3 +316,32 @@ rm -f
 ```
 rm -rf
 ```
+### 3.3 file  
+Lệnh `file` được dùng để xác định loại tệp  
+Ví dụ  
+```
+[root@centos7srv ~]# file /etc/passwd
+/etc/passwd: ASCII text
+
+[root@centos7srv ~]# file /dev/sda
+/dev/sda: block special
+
+[root@centos7srv ~]# file -s /dev/sda
+/dev/sda: x86 boot sector; partition 1: ID=0x83, active, starthead 32, startsector 2048, 2097152 sectors; partition 2: ID=0x8e, starthead 170, startsector 2099200, 39843840 sectors, code offset 0x63
+```
+### 3.4 cp  
+Lệnh `cp` dùng để sao chép thư mục hoặc tệp tin  
+- Sao chép đệ quy các thư mục  
+```
+cp -r
+```
+- Sao chép một file và đổi tên file
+```
+cp file1 file1.copy
+```
+- Sao chép 1 tệp vào 1 thư mục  
+```
+cp file1 dir1
+```
+- Sao chép nhiều tệp vào 1 thư mục  
+
