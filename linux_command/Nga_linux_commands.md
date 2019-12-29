@@ -9,9 +9,10 @@
        [2.5 rmdir](#6)  
 [3. Các lệnh làm việc với tệp](#7)  
        [3.1 touch](#7)  
-       [3.2 rm](#8)
-
-
+       [3.2 rm](#8)  
+       [3.3 cp](#9)  
+       [3.4 mv](#10)   
+       [3.5 rename](#11) 
 
 
 <a name="1"></a>
@@ -329,6 +330,9 @@ Ví dụ
 [root@centos7srv ~]# file -s /dev/sda
 /dev/sda: x86 boot sector; partition 1: ID=0x83, active, starthead 32, startsector 2048, 2097152 sectors; partition 2: ID=0x8e, starthead 170, startsector 2099200, 39843840 sectors, code offset 0x63
 ```
+
+<a name="9"></a>
+
 ### 3.4 cp  
 Lệnh `cp` dùng để sao chép thư mục hoặc tệp tin  
 - Sao chép đệ quy các thư mục  
@@ -344,4 +348,103 @@ cp file1 file1.copy
 cp file1 dir1
 ```
 - Sao chép nhiều tệp vào 1 thư mục  
+```
+cp file1 file2 file3 dir1/
+```
+- Xác nhận trước khi copy
+```
+cp -i file file1
+```
+- Copy file nhưng giữ lại toàn bộ thuộc tính của **file**
 
+```
+cp -p ./*.txt ./lab/
+```
+Lưu ý: Các thuộc tính được giữ lại là: access time, user ID, group ID, modification date
+
+- Copy thư mục: sử dụng tùy chọn `-r` hoặc `-a`  
+       - `-r`: copy toàn bộ file và các thư mục con của thư mục copy
+       - `-a`: copy toàn bộ **thư mục** và duy trì các thuộc tính như timestamp, ownership
+
+- Copy mà không ghi đè lên file đang có (file cùng tên) (n --no-clobber)
+```
+cp -n file1 folder1/
+```
+- Bắt buộc ghi đè
+```
+cp -f file1 folder1/
+```
+- Chỉ copy những phần chưa có trong file (u -update)
+```
+cp -u home/file1 /etc/file1
+```
+- Ghi đè file đang có ở thư mục đích
+```
+cp -i /etc/passwd /mnt/backup/
+cp: overwrite '/mnt/backup/passwd'? y
+```
+- Tạo symbolic link  
+```
+root@mtd:~# cp -s /home/mtd/file_1.txt /mnt/backup/
+root@mtd:~# cd /mnt/backup/
+root@mtd:/mnt/backup# ls -l file_1.txt
+lrwxrwxrwx 1 root root 27 Feb  5 18:37 file_1.txt -> /home/mtd/file_1.txt
+root@mtd:/mnt/backup#
+```
+- Tạo hard link  
+```
+root@mtd:~# cp -l /home/mtd/devops.txt /mnt/backup/
+root@mtd:~#
+```
+<a name="10"></a>
+
+### 3.5 mv
+Lệnh `mv` dùng để đổi tên file hoặc di chuyển file
+- Tạo bản sao lưu (backup) với tệp đích hiện có
+```
+mv --backup[=CONTROL]
+```
+- Cũng tạo bản sao lưu nhưng không chấp nhận đối số truyền vào
+```
+mv -b
+```
+- Nhắc trước khi đổi tên
+```
+mv -i
+```
+- Không nhắc 
+```
+mv -f
+```
+- Không ghi đè lên 1 tập tin hiện có
+```
+mv -n
+```
+- Di chuyển tệp tin/thư mục
+```
+mv home/ngahong/file1 /home/ngakma
+```
+<a name="11"></a>
+
+### 3.6 rename
+Lệnh `rename` dùng để đổi tên file
+- Diễn giải
+```
+rename -v
+```
+- Hiển thị phiên bản và thoát
+```
+rename -V
+```
+- Đổi tên peform trên taget liên kết mềm (symlink)
+```
+rename -s
+```
+Ví dụ
+```
+[root@centos7 ~]$ touch one.conf two.conf three.conf
+[root@centos7 ~]$ rename .conf .backup *.conf
+[root@centos7 ~]$ ls
+one.backup three.backup two.backup
+[root@centos7 ~]$
+```
