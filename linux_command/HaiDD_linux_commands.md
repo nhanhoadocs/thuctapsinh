@@ -621,3 +621,183 @@ Thường được dùng để đổi tên file được đặt tên theo biếu
 
 <img src  = "https://i.imgur.com/BRBhA8h.png">
 
+
+## 13. Lệnh `head`
+Dùng để in phần đầu của tệp tin.
+
+Ta sẽ sử dụng file `list.txt` chứa 30 dòng số từ 1 đến 30 để ví dụ lệnh `head`.
+
+<img src = "https://i.imgur.com/p1VHnxF.png">
+
+### 13.1. `head <filename>`
+Mặc định in ra 10 dòng đầu tiên của tệp đó.
+
+<img src = "https://i.imgur.com/vFrelCr.png">
+
+Có thể dùng 1 lúc cho nhiều file.
+
+<img src = "https://i.imgur.com/CYgeDP4.png">
+
+### 13.2. `head -n (number)`
+`n - number` : In ra số dòng đầu tiên xác định. Nếu không có giá trị xác định sẽ xảy ra lỗi.
+
+<img src = "https://i.imgur.com/aQ5gZBD.png">
+
+### 13.3. `head -c (number)`
+In ra `number` byte đầu tiên của tệp tin.
+
+Mỗi kí tự = 1 byte, dòng mới = 1 byte.
+
+<img src = "https://i.imgur.com/o5ueISj.png">
+
+### 13.4. `head -q`
+`q - quiet --silent` : yên tĩnh
+Nó sẽ in ra các dòng đầu tiên của tệp nhưng không có tên tệp khi có nhiều file.
+
+<img src = "https://i.imgur.com/YgNZkTb.png">
+
+### 13.5. `head -v`
+`v - verbose` : luôn in ra kèm tên của file
+
+<img src = "https://i.imgur.com/ukZW1uU.png">
+
+### 13.6. Ứng dụng của `head`
+- Khi ta muốn in ra những dòng giữa của file. Ví dụ từ dòng 11 - 15, ta kết hợp với lệnh `tail` (Trình bày tại mục 14) như sau:
+
+`# head -n 15 list.txt | tail -5`
+
+<img src = "https://i.imgur.com/4ZwiOci.png">
+
+- Dùng kèm các lệnh khác bằng cách sử dụng `|`. Xem các ví dụ sau: 
+
+Kèm lệnh `ls -lt`:
+
+<img src = "https://i.imgur.com/FfBZizh.png">
+
+Ghép 3 lệnh:
+
+<img src = "https://i.imgur.com/GPOczB0.png">
+
+## 14. Lệnh `tail`
+In những dòng cuối cùng của file.
+
+Ta sử dụng file `list.txt` như mục 13 ở trên.
+
+### 14.1. `tail <filename>`
+Mặc định in 10 dòng cuối cùng của file
+
+<img src = "https://i.imgur.com/vUVjQQx.png">
+
+Áp dụng với nhiều file:
+
+<img src =  "https://i.imgur.com/keBhWK3.png">
+
+### 14.2. `tail -n (number)`
+In ra số dòng xác định cuối cùng của file.
+
+<img src = "https://i.imgur.com/q9xjWnY.png">
+
+Có thể không cần kí tự `n`:
+
+<img src = "https://i.imgur.com/YYKxSdR.png">
+
+Hoặc sử dụng `+` để in từ dòng xác định đến hết file. `tail -n +(number) <filename>`
+
+<img src = "https://i.imgur.com/5EbjkiV.png">
+
+### 14.3. `tail -c (number)`
+In ra số byte cuối cùng của tệp.
+
+<img src = "https://i.imgur.com/aXiImPn.png">
+
+Sử dụng `+` để bỏ qua `number` byte đầu tiên. `tail -n +(number) <filename>`
+
+<img src = "https://i.imgur.com/NDWhE1W.png">
+
+### 14.4. `tail -q`
+Không in kèm tên file. Sử dụng khi áp dụng với nhiều file
+
+<img src = "https://i.imgur.com/5c17a2K.png">
+
+### 14.5. `tail -f`
+`f - follow` : dùng để theo dõi sự thay đổi của file (thường là file log)
+
+Tùy chọn này sẽ in ra 10 dòng cuối cùng của tệp và sẽ cập nhật liên tục.
+
+```
+tail -f logfile
+```
+
+Ví dụ: file `date.log` ghi lại thời gian hệ thống 5 phút 1 lần. Ta có thể thấy 11 dòng dưới hình, do vừa qua 21h40.
+
+<img src = "https://i.imgur.com/ooa2YTg.png">
+
+### 14.6. `tail -v`
+Các dòng in ra luôn đi kèm tên file
+
+<img src = "https://i.imgur.com/UCy4cdd.png">
+
+### 14.7. Ứng dụng của `tail`
+- Sử dụng kèm với `|` :
+
+In ra 7 dòng cuối của tệp và sắp xếp ngược lại
+
+<img src = "https://i.imgur.com/EleLQjS.png">
+
+Sử dụng 3 lệnh cat, head, tail rồi đầu ra ghi vào 1 file:
+
+<img src = "https://i.imgur.com/A6kJkLn.png">
+
+## 15. Lệnh `cat`
+`cat` : concatenate (tiếp nhau)
+
+Lệnh này được sử dụng để tạo, xem nội dung, nối nội dung các file với nhau.
+
+Ví dụ với 2 file `list.txt` - Số từ 1 đến 10, file `abc.txt` - chữ cái a, b, c
+
+<img src = "https://i.imgur.com/sF2dmGm.png">
+
+### 15.1. `cat filename1 filename 2`
+Xem nội dung của 1 tệp:
+
+<img src = "https://i.imgur.com/3XI7XZy.png">
+
+Nối nội dung của nhiều tệp và in ra:
+
+<img src = "https://i.imgur.com/pWlUYpX.png">
+
+### 15.2. `cat -n filename`
+`n - number`
+
+Xem nội dung của file với đánh số dòng:
+
+<img src = "https://i.imgur.com/Oqnv5we.png">
+
+Nhiều file:
+
+<img src ="https://i.imgur.com/MjrfKLW.png">
+
+### 15.3. `cat >newfile`
+Tạo file.
+
+<img src = "https://i.imgur.com/9ZBFDel.png">
+
+### 15.4. `cat s_filename >d_filename`
+Sao chép file.
+
+<img src = "https://i.imgur.com/EiJG1Or.png">
+
+### 15.5. `cat -s`
+`s - squeeze-blank` : Bỏ những dòng trống ở đầu file.
+
+<img src = "https://i.imgur.com/mgdYX7x.png">
+
+### 15.6. `cat file1 >> file2`
+Nối nội dung `file1` vào cuối `file2`
+
+<img src ="https://i.imgur.com/NKdzWSb.png">
+
+### 15.6. `cat -E file`
+`E - show ends` : Thêm kí tự `$` vào cuối mỗi dòng
+
+<img src = "https://i.imgur.com/vc71oeb.png">
