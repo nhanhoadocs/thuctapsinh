@@ -1,6 +1,20 @@
 # Linux command
 
-## 1. Lệnh `man` (manual - hướng dẫn sử dụng)
+|1-10|11-20|
+|-|-|
+|[1. man](#man)|[11. mv](#mv)|
+|[2. pwd](#pwd)|[12. rename](#rename)|
+|[3. cd](#cd)|[13. head](#head)|
+|[4. ls](#ls)|[14. tail](#tail)|
+|[5. mkdir](#mkdir)|[15. cat](#cat)|
+|[6. rmdir](#rmdir)|[](#)|
+|[7. file](#file)|[](#)|
+|[8. touch](#touch)|[](#)|
+|[9. rm](#rm)|[](#)|
+|[10. cp](#cp)|[](#)|
+
+
+## 1. Lệnh `man` (manual - hướng dẫn sử dụng) <a name="man"></a>
 Hầu hết các file và lệnh Unix đều có trang `man` khá tốt để giải thích việc sử dụng chúng. Nó cung cấp thông tin và chi tiết về tên, tóm tắt, mô tả, các option, trạng thái đầu ra, giá trị trả về, lỗi, file, thông tin phiên bản, ví dụ, tác giả,...
 
 ### 1.1. man $command
@@ -147,7 +161,7 @@ Processing manual pages under /root/A...
 0 old database entries were purged.
 ```
 
-## 2. Lệnh `pwd` (Print Working Directory)
+## 2. Lệnh `pwd` (Print Working Directory) <a name="pwd"></a>
 Lệnh `pwd` dùng để hiển thị đường dẫn đến thư mục đang làm việc hiện tại:
 ```
 [root@localhost wp-admin]# pwd
@@ -158,7 +172,7 @@ Option:
 - `-L`: In đường dẫn tượng trưng
 - `-P`: In đường dẫn thực tế
 
-## 3. Lệnh `cd` (change directory)
+## 3. Lệnh `cd` (change directory) <a name="cd"></a>
 Chuyển đổi thư mục làm việc.
 - `cd /duong/dan/tuyet/doi` : chuyển tới thư mục /doi/
 - `cd` : chuyển về thư mục chính của người dùng
@@ -167,7 +181,7 @@ Chuyển đổi thư mục làm việc.
 - `cd ..` : chuyển về thư mục cha.
 - `cd~` : Thay đổi thư mục hiện tại về thư mục chính
 
-## 4. Lệnh `ls` (list)
+## 4. Lệnh `ls` (list) <a name="ls"></a>
 ### 4.1. `ls`
 Hiển thị các tệp tin và thư mục trong thư mục.
 ```
@@ -261,7 +275,7 @@ Hiển thị danh sách nội dung theo kích thước giảm dần.
 
 <img src = "https://i.imgur.com/5Kg5Ptl.png">
 
-## 5. Lệnh `mkdir` (make directory - tạo thư mục)
+## 5. Lệnh `mkdir` (make directory - tạo thư mục) <a name="mkdir"></a>
 ### 5.1. Một số thông tin
 - `mkdir --version`: Hiển thị thông tin phiên bản, giấy phép, tác giả.
 
@@ -301,7 +315,7 @@ Tạo thư mục kèm thư mục cha khi cần thiết.
 drwxrwxrwx. 2 root   root      4096 Dec 24 22:45 S5
 ```
 
-## 6. Lệnh `rmdir` (remove directory - Xóa thư mục)
+## 6. Lệnh `rmdir` (remove directory - Xóa thư mục) <a name="rmdir"></a>
 ### 6.1. `rmdir`
 Xóa thư mục rỗng.
 ```
@@ -341,7 +355,7 @@ Tùy chọn này hiển thị thông tin xóa thư mục.
 <img src = "https://i.imgur.com/XaSW5LC.png">
 
 
-## 7. Lệnh `file`
+## 7. Lệnh `file` <a name="file"></a>
 ```
 file [option] [file_name]
 ```
@@ -396,7 +410,7 @@ Hiển thị loại tệp của nhiều tệp.
 ### 7.7. `file -z <file_nén>`
 Lệnh này sẽ cố gắng nhìn vào bên trong file nén.
 
-## 8. Lệnh `touch`
+## 8. Lệnh `touch` <a name="touch"></a>
 Là 1 cách đơn giản để tạo 1 file trống hoặc thay đổi dấu thời gian (timestamps) của file.
 
 Dấu thời gian của file có loại:
@@ -437,7 +451,7 @@ Tạo 1 tệp tin với dấu thời gian nhất định hoặc thay đổi dấ
 <img src = "https://i.imgur.com/VTSjfJL.png">
 
 
-## 9. Lệnh `rm` (remove)
+## 9. Lệnh `rm` (remove) <a name="rm"></a>
 Dùng để xóa file hoặc thư mục.
 ### 9.1. `rm <tên_file>`
 <img src ="https://i.imgur.com/HZ5AVBm.png">
@@ -480,7 +494,7 @@ Hiển thị kết quả xóa.
 
 <img src = "https://i.imgur.com/OINtPFG.png">
 
-## 10. Lệnh `cp`
+## 10. Lệnh `cp` <a name="cp"></a>
 Dùng để sao chép file hoặc thư mục.
 
 ### 10.1. Copy nội dung 1 file vào 1 file khác
@@ -554,7 +568,7 @@ Không ghi đè lên tệp hiện có.
 <img src = "https://i.imgur.com/QpoOIXM.png">
 
 
-## 11. Lệnh `mv`
+## 11. Lệnh `mv` <a name="mv"></a>
 `mv - move(rename) file` : được sử dụng để di chuyển một hoặc nhiều tệp hoặc thư mục từ nơi này sang nơi khác trong hệ thống tệp như UNIX. Nó có hai chức năng riêng biệt:
 - Đổi tên 1 file hoặc thư mục
 - Di chuyển 1 nhóm các tệp tin vào thư mục khác.
@@ -601,7 +615,7 @@ Chuyển 1 thư mục tới 1 thư mục khác
 
 <img src = "https://i.imgur.com/EkKzIF5.png">
 
-## 12. Lệnh `rename`
+## 12. Lệnh `rename` <a name="rename"></a>
 Thường được dùng để đổi tên file được đặt tên theo biếu thức. Thường dùng để đổi tên hàng loạt các file có tên cấu trúc gần giống nhau.
 ```
 # rename [options] expression replacement file...
@@ -622,7 +636,7 @@ Thường được dùng để đổi tên file được đặt tên theo biếu
 <img src  = "https://i.imgur.com/BRBhA8h.png">
 
 
-## 13. Lệnh `head`
+## 13. Lệnh `head` <a name="head"></a>
 Dùng để in phần đầu của tệp tin.
 
 Ta sẽ sử dụng file `list.txt` chứa 30 dòng số từ 1 đến 30 để ví dụ lệnh `head`.
@@ -678,7 +692,7 @@ Ghép 3 lệnh:
 
 <img src = "https://i.imgur.com/GPOczB0.png">
 
-## 14. Lệnh `tail`
+## 14. Lệnh `tail` <a name="tail"></a>
 In những dòng cuối cùng của file.
 
 Ta sử dụng file `list.txt` như mục 13 ở trên.
@@ -748,7 +762,7 @@ Sử dụng 3 lệnh cat, head, tail rồi đầu ra ghi vào 1 file:
 
 <img src = "https://i.imgur.com/A6kJkLn.png">
 
-## 15. Lệnh `cat`
+## 15. Lệnh `cat` <a name="cat"></a>
 `cat` : concatenate (tiếp nhau)
 
 Lệnh này được sử dụng để tạo, xem nội dung, nối nội dung các file với nhau.
