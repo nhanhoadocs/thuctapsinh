@@ -448,3 +448,152 @@ Ví dụ
 one.backup three.backup two.backup
 [root@centos7 ~]$
 ```
+<a name="12"></a>
+
+## 4. Các lệnh làm việc với nội dung file  
+
+### 4.1 head  
+Lệnh `head` dùng trong trường hợp ta muốn hiển thị phần đầu nội dung của file.  Mặc định lệnh `head` sẽ hiển thị 10 dòng đầu tiên của file  
+
+```
+[root@centos7srv ~]# head /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+```
+- Ta cũng có thể hiển thị `n` dòng theo ý muốn 
+```
+[root@centos7srv ~]# head -4 /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+```
+- In ra 200 bytes đầu tiên của tệp
+```
+[root@centos7srv ~]# head -c 200 /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/[root@centos7srv ~]#
+```
+- Không in ra tiêu đề xác định tên tệp (q- quiet)
+
+```
+head -q
+```
+-Luôn in tiêu đề xác định tên tệp ( v- verbose)
+```
+head -v
+```
+
+<a name="13"></a>
+
+### 4.2 tail  
+
+Lệnh `tail` dùng để hiển thị các dòng cuối của tệp. Mặc định nó sẽ hiển thị 10 dòng cuối cùng của file  
+
+```
+[root@centos7srv ~]# man head
+[root@centos7srv ~]# tail /etc/passwd
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:996::/var/lib/chrony:/sbin/nologin
+nginx:x:997:995:Nginx web server:/var/lib/nginx:/sbin/nologin
+mysql:x:27:27:MariaDB Server:/var/lib/mysql:/sbin/nologin
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+```
+- In ra `n` dòng cuối của file  
+```
+[root@centos7srv ~]# tail -n 3 /etc/passwd
+nginx:x:997:995:Nginx web server:/var/lib/nginx:/sbin/nologin
+mysql:x:27:27:MariaDB Server:/var/lib/mysql:/sbin/nologin
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+```
+- Tiếp tục đọc file cho đến khi có lệnh dừng (Ctrl+C) (f -follow)
+```
+tail -f
+```
+- In ra `n` bytes cuối của file  
+```
+tail -c 
+```
+- Không in ra tiêu đề của file
+```
+tail -q
+```
+
+<a name="14"></a>
+
+### 4.3 Lệnh cat  
+
+Lệnh `cat` dùng để hiển thị nội dung của tệp.  
+```
+[root@centos7srv ~]# cat song.txt
+Song bat dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+
+- `cat` là viết tắt của `concatenate`. Một trong những cách sử dụng cơ bản của `cat` là ghép các tệp thành một tệp lớn hơn (hoặc hoàn chỉnh).
+```
+[root@centos7srv ~]# echo line1 > f1
+[root@centos7srv ~]# echo line2 > f2
+[root@centos7srv ~]# echo line3 > f3
+[root@centos7srv ~]# cat f1
+line1
+[root@centos7srv ~]# cat f2
+line2
+[root@centos7srv ~]# cat f3
+line3
+[root@centos7srv ~]# cat f1 f2 f3
+line1
+line2
+line3
+[root@centos7srv ~]# cat f1 f2 f3 > all
+[root@centos7srv ~]# cat all
+line1
+line2
+line3
+```
+- Có thể dùng cat để tạo các tập tin văn bản phẳng  
+```
+[root@centos7srv ~]# cat > muadong.txt
+Mua dong lanh gia
+Gio ret tung con
+[root@centos7srv ~]# cat muadong.txt
+Mua dong lanh gia
+Gio ret tung con
+```
+Sau khi nhập dòng cuối thì ấn Ctrl+d để thoát.  
+
+- Đánh dấu kết thúc tùy chỉnh  
+- Copy tệp tin
+```
+[root@centos7srv ~]# cat song.txt
+Song bat dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+[root@centos7srv ~]# cat song.txt >> song2.txt
+[root@centos7srv ~]# cat song2.txt
+Song bat dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+
