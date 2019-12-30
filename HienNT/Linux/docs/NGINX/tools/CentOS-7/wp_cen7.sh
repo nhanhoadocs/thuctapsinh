@@ -1,4 +1,11 @@
 #!/bin/bash
+if(( $EUID -ne 0)); then
+		#if user not root, print message and exit script
+		echo "Please run this script by user root!"
+		exit
+		stall
+else
+		#if user is root, continue to function f_sub_main
 
 ##### Script Install Wordpress
 
@@ -57,4 +64,5 @@ else
 	systemctl restart mariadb
 	systemctl restart nginx
 	systemctl restart php-fpm
+fi
 fi
