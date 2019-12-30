@@ -1,4 +1,4 @@
-#!/bin/
+#!/bin/bash
 
 ##### Script run lemp.sh && wp_cen7.sh
 
