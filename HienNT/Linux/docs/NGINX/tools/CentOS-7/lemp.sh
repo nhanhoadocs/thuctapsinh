@@ -156,7 +156,7 @@ f_config () {
 	cat > /etc/nginx/conf.d/default.conf <<"EOF"
 server {
     listen       80;
-    server_name  10.10.34.132;
+    server_name  your-server-ip;
 
     # note that these lines are originally from the "location /" block
     root   /usr/share/nginx/html;

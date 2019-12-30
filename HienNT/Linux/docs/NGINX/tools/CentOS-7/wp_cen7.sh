@@ -83,8 +83,6 @@ f_config_wp () {
 	echo "listen = /var/run/php-fpm/php-fpm.sock" >> /etc/php-fpm.d/www.conf
 }
 
-
-
 # Function restart service
 f_restart_service () {
 	### Restart service
