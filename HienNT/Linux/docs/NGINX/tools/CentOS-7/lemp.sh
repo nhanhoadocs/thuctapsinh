@@ -89,7 +89,7 @@ f_update_os () {
 	
 	yum install epel-release -y
 	yum update -y
-	yum upgrade -y
+	#yum upgrade -y
 	
 	echo ""
 	sleep 1
