@@ -7,7 +7,8 @@
 	dbname=wordpress
 	dbuser=wordpress
 	dbpass=wordpress
-	path=/usr/share/nginx/html
+	path
+	=/usr/share/nginx/html
 
 # Function check user root
 f_check_root () {
@@ -60,7 +61,6 @@ f_config_wp () {
 	sed -i "s/database_name_here/$dbname/g" $path/wordpress/wp-config.php
 	sed -i "s/username_here/$dbuser/g" $path/wordpress/wp-config.php
 	sed -i "s/password_here/$dbpass/g" $path/wordpress/wp-config.php
-	echo "listen = /var/run/php-fpm/php-fpm.sock" >> /etc/php-fpm.d/www.conf
 }
 
 

@@ -179,6 +179,8 @@ EOF
 	sed -i "s/;listen.group = nobody/listen.group = nginx/g" /etc/php-fpm.d/www.conf
 	sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=1/g" /etc/php.ini
 	chown -R root:nginx /var/lib/php
+	echo "listen = /var/run/php-fpm/php-fpm.sock" >> /etc/php-fpm.d/www.conf
+
 }
 
 # Enable port 80,433
