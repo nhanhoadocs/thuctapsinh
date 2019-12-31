@@ -4,49 +4,28 @@
 
 	### Variable default
 
-	dbname = wordpress
-	dbuser = wordpress
-	dbpass = wordpress
-	path = $path
+	dbname=wordpress
+	dbuser=wordpress
+	dbpass=wordpress
+	path=/usr/share/nginx/html
 
 # Function check user root
 f_check_root () {
 	if(( $EUID == 0)); then
-		#if user is root, continue to function f_sub_main
-		f_sub_main
+		return 0
 	else
-		#if user not root, print message and exit script
-		echo "Please run this script by user root!"
-		exit
+		return 1
 	fi
 }
 
 # Function download Wordpress
 f_download_wordpress () {
 	yum install -y tar
-	echo "Enter Wordpress version you want to install(3/4/5): "
+	echo "Enter Wordpress version you want to install: "
 	read version
-	if [[ "$version" == '3' ]]; then
-
-	wget -P $path/ https://wordpress.org/wordpress-3.9.30.tar.gz
-	tar -zxvf $path/wordpress-3.9.30.tar.gz -C $path/
-	rm -rf $path/wordpress-3.9.30.tar.gz
-
-	elif [[ "$version" == '4' ]]; then
-
-	wget -P $path/ https://wordpress.org/wordpress-4.9.13.tar.gz
-	tar -zxvf $path/wordpress-4.9.13.tar.gz -C $path/
-	rm -rf $path/wordpress-4.9.13.tar.gz
-	elif [[ "$version"  == '5' ]]; then
-	
-	wget -P $path/ https://wordpress.org/wordpress-5.3.2.tar.gz
-	tar -zxvf $path/wordpress-5.3.2.tar.gz -C $path/
-	rm -rf $path/wordpress-5.3.2.tar.gz
-
-	else
-
-	echo "Script don't support this version!"
-	fi
+	wget -P $path/ https://wordpress.org/wordpress-$version.tar.gz
+	tar -zxvf $path/wordpress-$version.tar.gz -C $path/
+	rm -rf $path/wordpress-$version.tar.gz
 }
 
 # Function create database
@@ -61,7 +40,7 @@ MYSQL_SCRIPT
 
 	echo "Installing Wordpress..."
 }
-	
+
 # Function config Wordpress
 f_config_wp () {
 
@@ -97,6 +76,7 @@ f_restart_service () {
 
 # The sub main function, use to call neccessary functions of installation
 f_sub_main () {
+	if f_check_root; then
 	f_download_wordpress
 	f_create_database
 	f_config_wp
@@ -104,11 +84,9 @@ f_sub_main () {
 
 	echo "You can access http://YOUR-SERVER-IP/wordpress to see your site Wordpress"
     sleep 1
+	else
+	echo "Please run this script as root premission"
+	fi
 }
-
-# The main dunction
-f_main () {
-	f_check_root
-}
-f_main
+f_sub_main
 exit
