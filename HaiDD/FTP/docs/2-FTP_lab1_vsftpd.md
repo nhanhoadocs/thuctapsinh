@@ -149,3 +149,46 @@ Tạo cây thư mục FTP và đặt chính xác các permission:
 # chown -R danghai: /home/danghai/ftp
 ```
 
+## III. Truy cập FTP Server
+### 1. CentOS 7
+Cài đặt gói `lftp`:
+
+>`# yum install lftp`
+
+Truy cập vào FTP Server:
+>`lftp ftp://danghai@192.168.37.25`
+
+hoặc
+
+>`lftp -u danghai 192.168.37.25`
+
+Sau đó nhập password của User.
+
+Tại đây ta có giao diện như sau :
+
+<img src = "..\images\Screenshot_1.png">
+
+Ta có thể gõ `?` để xem danh sách các lệnh có thể sử dụng:
+
+<img src = "..\images\Screenshot_3.png">
+
+Xem các mục và truy cập thư mục của Ftp Server: sử dụng `ls` và `cd`:
+>`ls -l`
+
+>`cd`
+
+<img src = "..\images\Screenshot_4.png">
+
+Up load files lên server:
+>`put <filenames>`
+
+<img src = "..\images\Screenshot_5.png">
+
+Thay đổi thư mục Local của Client :
+>`lcd <đường_dẫn_thư_mục>`
+
+Xem thư mục Local hiện tại của Client:
+>`lpwd`
+
+Tải lên toàn bộ thư mục Local hiện tại của Client:
+>
