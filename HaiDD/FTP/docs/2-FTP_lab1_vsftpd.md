@@ -191,4 +191,14 @@ Xem thư mục Local hiện tại của Client:
 >`lpwd`
 
 Tải lên toàn bộ thư mục Local hiện tại của Client:
->
+>mirror -R
+
+Tải toàn bộ thư mục đang đứng của Server về thư mục hiện tại của Client
+>mirror
+
+Tiếp tục quá trình tải(nếu bị gián đoạn):
+>mirror -R -c
+
+Tải file từ Server về thư mục Local:
+>pget <filename>
+
