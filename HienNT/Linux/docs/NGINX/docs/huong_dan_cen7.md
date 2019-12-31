@@ -37,7 +37,9 @@ Vào [link](../tools/CentOS-7) để tải script về máy
          ./script_file_name
        ```
 
-***Chú ý:*** Không nhập password cho phần `Enter password`
+***Chú ý:*** 
+- Xem các version của Wordpress [tại đây](https://wordpress.org/download/releases/) để chọn version bạn muốn cài đặt
+- Không nhập password cho phần `Enter password`
 
 - Bước 4: Kiểm tra: Trên thanh tìm kiếm của trình duyệt của bạn nhập vào địa chỉ `http://your-server-ip/wordpress`. Bây giờ bạn có thể set up trang Wordpress của bạn.
 

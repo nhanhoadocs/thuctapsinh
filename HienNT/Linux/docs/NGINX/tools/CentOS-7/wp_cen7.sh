@@ -7,8 +7,7 @@
 	dbname=wordpress
 	dbuser=wordpress
 	dbpass=wordpress
-	path
-	=/usr/share/nginx/html
+	path=/usr/share/nginx/html
 
 # Function check user root
 f_check_root () {
