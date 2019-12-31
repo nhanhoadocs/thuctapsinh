@@ -152,15 +152,19 @@ Tạo cây thư mục FTP và đặt chính xác các permission:
 ## III. Truy cập FTP Server
 ### 1. CentOS 7
 Cài đặt gói `lftp`:
-
->`# yum install lftp`
+```
+# yum install lftp
+```
 
 Truy cập vào FTP Server:
->`lftp ftp://danghai@192.168.37.25`
+```
+lftp ftp://danghai@192.168.37.25`
+```
 
 hoặc
-
->`lftp -u danghai 192.168.37.25`
+```
+lftp -u danghai 192.168.37.25
+```
 
 Sau đó nhập password của User.
 
@@ -173,32 +177,48 @@ Ta có thể gõ `?` để xem danh sách các lệnh có thể sử dụng:
 <img src = "..\images\Screenshot_3.png">
 
 Xem các mục và truy cập thư mục của Ftp Server: sử dụng `ls` và `cd`:
->`ls -l`
+```
+`ls -l`
 
->`cd`
+`cd`
+```
 
 <img src = "..\images\Screenshot_4.png">
 
-Up load files lên server:
->`put <filenames>`
+Up load files lên server: `put <filenames>`
 
 <img src = "..\images\Screenshot_5.png">
 
 Thay đổi thư mục Local của Client :
+```
 >`lcd <đường_dẫn_thư_mục>`
+```
 
 Xem thư mục Local hiện tại của Client:
+```
 >`lpwd`
+```
 
-Tải lên toàn bộ thư mục Local hiện tại của Client:
->mirror -R
+Tải lên toàn bộ thư mục Local hiện tại của Client: `mirror -R`
 
-Tải toàn bộ thư mục đang đứng của Server về thư mục hiện tại của Client
->mirror
+Tải toàn bộ thư mục đang đứng của Server về thư mục hiện tại của Client: `mirror`
 
-Tiếp tục quá trình tải(nếu bị gián đoạn):
->mirror -R -c
+Tải về thư mục tùy ý:
+```
+mirror . <đường_dẫn>
+```
 
-Tải file từ Server về thư mục Local:
->pget <filename>
+Tiếp tục quá trình tải(nếu bị gián đoạn): `mirror -R -c`
 
+Tải file từ Server về thư mục Local: `pget <filename>`
+
+<img src = "..\images\Screenshot_6.png">
+
+### 2. Trên Window
+Sử dụng FileZilla
+
+<img src ="..\images\Screenshot_7.png">
+
+Hoặc trên `cmd` :
+
+<img src = "..\images\Screenshot_8.png">
