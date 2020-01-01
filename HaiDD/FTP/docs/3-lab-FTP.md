@@ -10,9 +10,9 @@
 
 ### Bài toán:
 FTP Server tạo ra 3 user cho Client truy cập:
-1. *user1* - /home/
-2. *user2*
-3. *user3*
+1. *user1* - /var/ftp/user1
+2. *user2* - /var/ftp/user2
+3. *user3* - /var/ftp/user3
 
 ### Điều kiện
 - *user1* và *user2* chỉ sử dụng được trên thư mục riêng của chúng. Và có 1 thư mục dùng chung.
