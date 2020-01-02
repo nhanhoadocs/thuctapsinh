@@ -597,3 +597,80 @@ Em cung khong biet nua
 Khi nao ta yeu nhau
 ```
 
+## 4.4 tac
+Lệnh `tac` dùng để hiển thị ngược nội dung của file  
+```
+[root@centos7srv ~]# tac song.txt
+Khi nao ta yeu nhau
+Em cung khong biet nua
+Gio bat dau tu dau
+Song bat dau tu gio
+```
+## 4.5 less & more  
+Trong trường hợp cần phải đọc toàn bộ dữ liệu từ một file nhưng lại không muốn mở file đó lên bằng một trình soạn thảo, chúng ta có thể sử dụng lệnh less hoặc lệnh more để phân trang file cần đọc.
+
+### 4.5.1 less  
+Lệnh `less` dùng mở một tệp để đọc tương tác, cho phép di chuyển lên xuống và tìm kiếm. Để mở tệp tin ta gõ:  
+```
+less song.txt
+Song bat dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+song.txt (END)
+```
+- **Các phím di chuyển**:  
+       - Xuống trang mới: Phím **Space**  
+       - Lên trang phía trên: **Phím b**  
+       - Xuống cuối file: phím **G**    
+       - Lên đầu file: phím **g**  
+
+- **Theo dõi đầu ra của tệp hiện đang mở** : phím F  
+- **Mở tệp hiện tại trong trình chỉnh sửa**: phím v  
+- **Thoát khỏi tệp**: phím q  
+
+### 4.5.2 more  
+
+Lệnh `more` dùng mở một tệp để đọc tương tác, cho phép di chuyển lên xuống và tìm kiếm. Để mở tệp tin ta gõ lệnh  
+```
+[root@centos7srv ~]# more song.txt
+Song bat dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+> Điểm khác biệt giữa `less` và `more` là `less` cho phép cuộn ngược lên các trang dữ liệu đã đọc, còn more thì chỉ có thể đọc từ đầu tới cuối. Lệnh `less` có thể dùng phím mũi tên trên bàn phím để scroll lên xuống, lệnh more không có chức năng này.  
+
+## 4.6 strings  
+Lệnh `strings` dùng để in chuỗi ký tự có thể in trong tệp.  
+```
+[root@centos7srv ~]# strings song.txt
+Song bat dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+- Mặc định `strings` sẽ tìm chuỗi có 4 ký tự hoặc dài hơn. Ta có thể set chiều dài của chuỗi bằng cách sử dụng tùy chọn `-n`  
+```
+strings -n file_name
+```
+VD:  
+```
+[root@centos7srv ~]# strings -n 6 f1
+```
+- Chỉ in chuỗi từ các phần dữ liệu được tải, khởi tạo trong tệp. (d -data)
+```
+strings -d
+```
+- In tên của file trước mỗi chuỗi
+```
+[root@centos7srv ~]# strings -f song.txt
+song.txt: Song bat dau tu gio
+song.txt: Gio bat dau tu dau
+song.txt: Em cung khong biet nua
+song.txt: Khi nao ta yeu nhau
+```
+- Tính cả khoảng trắng của chuỗi. Theo mặc định, tab và ký tự khoảng trắng được bao gồm trong các chuỗi được hiển thị, nhưng các ký tự khoảng trắng khác, chẳng hạn như dấu cách và xuống dòng mới. Tùy chọn `-w` thay đổi điều này để tất cả các ký tự khoảng trắng được coi là một phần của chuỗi.  
+```
+string -w
+```
