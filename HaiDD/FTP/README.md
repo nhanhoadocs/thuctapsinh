@@ -1,15 +1,15 @@
 # FTP Server
 
 ## FTP server
-[1. Tìm hiểu về FTP](..\docs\1-FTP.md)
+[1. Tìm hiểu về FTP](.\docs\1-FTP.md)
 
-[2. Cài đặt FTP Server cơ bản](..\docs\2-FTP_setup_vsftpd.md)
+[2. Cài đặt FTP Server cơ bản](.\docs\2-FTP_setup_vsftpd.md)
 
-[3. Bắt gói tin FTP](..\docs\3-tcpdump_ftp.md)
+[3. Bắt gói tin FTP](.\docs\3-tcpdump_ftp.md)
 
 ## Danh mục lab
 
-[4. FTP Server use Vsftp](..\docs\4-lab1-FTP_vsftpd.md)
+[4. FTP Server use Vsftp](.\docs\4-lab1-FTP_vsftpd.md)
 
 [5. FTP Server use ProFTPD]()
 
