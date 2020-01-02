@@ -191,4 +191,4 @@ Ta sử dụng FileZilla để truy cập FTP Server. Ta điền IP của Server
 
 <img src = "..\images\Screenshot_17.png">
 
-Ta sẽ được kết quả tương tự như đã phân quyền.
+Ta sẽ được kết quả tương tự như trên CentOS-7

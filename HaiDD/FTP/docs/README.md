@@ -1,6 +1,24 @@
-# Lab FTP Server
+# FTP Server
 
-## Mô hình lab
+## FTP server
+[1. Tìm hiểu về FTP](..\docs\1-FTP.md)
+
+[2. Cài đặt FTP Server cơ bản](..\docs\2-FTP_setup_vsftpd.md)
+
+[3. Bắt gói tin FTP](..\docs\3-tcpdump_ftp.md)
+
+## Danh mục lab
+
+[4. FTP Server use Vsftp](..\docs\4-lab1-FTP_vsftpd.md)
+
+[5. FTP Server use ProFTPD]()
+
+[6. FTP Server use Pure-FTPD]()
+
+
+-----
+## LAB - Phân quyền User
+### Mô hình lab
 
 ||OS|IP Address|Use|
 |-|-|-|-|
@@ -8,13 +26,13 @@
 |Client 1|CentOS 7||lftp|
 |Client 2|Window 10||FileZilla|
 
-### Bài toán:
+#### Bài toán:
 FTP Server tạo ra 3 user cho Client truy cập:
 1. *user1* - /var/ftp/user1
 2. *user2* - /var/ftp/user2
 3. *user3* - /var/ftp/user3
 
-### Điều kiện
+#### Điều kiện
 - *user1* và *user2* chỉ sử dụng được trên thư mục riêng của chúng. Và có 1 thư mục dùng chung.
 
 - *user3* có thể truy cập tất cả các thư mục nhưng chỉ có quyền đọc.
@@ -23,10 +41,3 @@ FTP Server tạo ra 3 user cho Client truy cập:
 
 
 
-### Danh mục lab
-
-[1. FTP Server use Vsftp](..\docs\4-lab1-FTP_vsftpd.md)
-
-[2. FTP Server use ProFTPD]()
-
-[3. FTP Server use FileZilla]()
