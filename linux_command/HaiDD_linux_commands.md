@@ -1,5 +1,6 @@
 # Linux command
 
+## Mục lục
 |1-10|11-20|
 |-|-|
 |[1. man](#man)|[11. mv](#mv)|
@@ -7,7 +8,7 @@
 |[3. cd](#cd)|[13. head](#head)|
 |[4. ls](#ls)|[14. tail](#tail)|
 |[5. mkdir](#mkdir)|[15. cat](#cat)|
-|[6. rmdir](#rmdir)|[](#)|
+|[6. rmdir](#rmdir)|[16. tac](#tac)|
 |[7. file](#file)|[](#)|
 |[8. touch](#touch)|[](#)|
 |[9. rm](#rm)|[](#)|
@@ -815,3 +816,6 @@ Nối nội dung `file1` vào cuối `file2`
 `E - show ends` : Thêm kí tự `$` vào cuối mỗi dòng
 
 <img src = "https://i.imgur.com/vc71oeb.png">
+
+
+## 16. Lệnh `tac` <a name="tac"></a>
