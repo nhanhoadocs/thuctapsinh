@@ -37,7 +37,6 @@ FTP Server tạo ra 3 user cho Client truy cập:
 
 - *user3* có thể truy cập tất cả các thư mục nhưng chỉ có quyền đọc.
 
-<img src = "..\images\Screenshot_9.png">
-
+<img src = "..\FTP\images\Screenshot_9.png">
 
 
