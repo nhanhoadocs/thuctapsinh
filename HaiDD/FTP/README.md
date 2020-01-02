@@ -11,9 +11,9 @@
 
 [4. FTP Server use Vsftp](./docs/4-lab1-FTP_vsftpd.md)
 
-[5. FTP Server use ProFTPD]()
+[5. FTP Server use ProFTPD](./docs/5-lab2-FTP_proftpd.md)
 
-[6. FTP Server use Pure-FTPD]()
+[6. FTP Server use Pure-FTPD](./docs/6-lab3-FTP_pureftpd.md)
 
 
 -----
