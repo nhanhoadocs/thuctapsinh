@@ -57,11 +57,16 @@ Tạo 3 user như đã nói ở trên, đồng thời thay đổi Home directory
 # useradd -d /var/ftp/user3 user3
 ```
 
+Tạo mật khẩu cho user: Tại đây, mình đặt pass là `23091996`:
+```
+# passwd user1
+# passwd user2
+# passwd user3
+```
+
 Thêm các tài khoản vào file `/etc/vsftpd/user_list`, mỗi user trên 1 dòng
 ```
-# echo “user1” | sudo tee –a /etc/vsftpd/user_list
-# echo “user2” | sudo tee –a /etc/vsftpd/user_list
-# echo “user3” | sudo tee –a /etc/vsftpd/user_list
+# vi /etc/vsftpd/user_list
 ```
 
 Nếu tài khoản đã tạo trước đó, ta có thể thay đổi Home directory của nó như sau:
