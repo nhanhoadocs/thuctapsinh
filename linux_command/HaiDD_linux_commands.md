@@ -9,7 +9,7 @@
 |[4. ls](#ls)|[14. tail](#tail)|
 |[5. mkdir](#mkdir)|[15. cat](#cat)|
 |[6. rmdir](#rmdir)|[16. tac](#tac)|
-|[7. file](#file)|[](#)|
+|[7. file](#file)|[17. more và less](#moreless)|
 |[8. touch](#touch)|[](#)|
 |[9. rm](#rm)|[](#)|
 |[10. cp](#cp)|[](#)|
@@ -819,3 +819,87 @@ Nối nội dung `file1` vào cuối `file2`
 
 
 ## 16. Lệnh `tac` <a name="tac"></a>
+Dùng để nối và in nội dung file ngược lại. Ngược với lệnh `cat`
+
+Ta có 2 file sau để thực hành lệnh `tac` : `list` và `abc`
+
+<img src = "https://i.imgur.com/cBkbvma.png">
+
+### 16.1. `tac file1 file2`:
+In ngược các dòng từ dưới lên trên của 1 file
+
+<img src = "https://i.imgur.com/At5azVH.png">
+
+Nối ngược nhiều tệp tin và in ra:
+
+<img src = "https://i.imgur.com/HoIA0ri.png">
+
+### 16.2. `tac -b filename`
+`b - before`: Tạo dòng trắng để ngăn cách trước mỗi file.
+
+<img src = "https://i.imgur.com/qOCD7qx.png">
+
+### 16.3. `tac -r`
+`r - regex` : Lệnh này sẽ diễn giải dấu phân cách như một biểu thức chính quy.
+
+<img src ="https://i.imgur.com/aL18o1t.png">
+
+### 16.4. `tac -s string`
+`s - separator` : Dừng tại chuỗi `String` chỉ định, rồi in ra
+
+<img src = "https://i.imgur.com/DsxzrJK.png">
+
+## 17. Lệnh `more` và `less` <a name =""moreless></a>
+### 17.1. Lệnh `more`
+Dùng để xem các tệp lớn trong 1 màn hình, có thể cuộn chuột để xem. 
+
+Dùng phím Enter để xem tiếp các dòng.
+
+Ở đây ta xem file `date.log`
+```
+# more date.log
+```
+
+<img src = "https://i.imgur.com/UuEpO5g.png">
+
+- `-p` : Xóa màn hình rồi hiển thị nội dung của file.
+- `+/<string>`: tìm kiếm trong file và hiển thị ra
+
+<img src = "https://i.imgur.com/hd9r5tV.png">
+
+- `+number` : hiển thị từ dòng `number` của file
+
+<img src = "https://i.imgur.com/5tkq9Sq.png">
+
+- Dùng để đọc đầu ra với nội dung dài:
+```
+# cat filename | more
+```
+
+### 17.2. Lệnh `less`
+Truy cập từng trang của file tài liệu dài.
+
+- `less -N` : đánh số dòng
+
+<img src= "https://i.imgur.com/dpFC9XB.png">
+
+- `less -p "string"` : tìm vị trí có `string`
+> dmesg | less -p "disable"
+
+<img src = "https://i.imgur.com/zi8Gjmw.png">
+
+## 18. Lệnh `strings`
+In ra các chuỗi kí tự có thể in trong tệp. Hiển thị các chuỗi ASCII có thể đọc được trong file nhị phân.
+
+Ví dụ xem file nhị phân của lệnh `ls`:
+```
+strings /bin/ls
+```
+Đây là phần đầu, phần dưới đã được cắt bớt do quá dài
+<img src=  "https://i.imgur.com/HlU6v4W.png">
+
+### 18.1. `strings -f`
+Hiển thị tên file trước mỗi dòng.
+
+<img src= "https://i.imgur.com/nDX6Gsu.png">
+
