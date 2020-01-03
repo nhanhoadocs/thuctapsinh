@@ -1,4 +1,4 @@
-<img src="images/wordpress.jpg">  
+<img src="../images/wordpress.jpg">  
 
 # Cài đặt Wordpress trên CentOS 8 cùng LEMP Stack  
 
