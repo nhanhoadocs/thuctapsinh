@@ -176,7 +176,7 @@ Trong thực tế, hai loại kiểu dữ liệu thường xuyên nhất đượ
 Các tùy chọn kiểm soát định dạng được tạo ra cho mục đích cụ thể đúng cách xử lý các tập tin chuyển giao từ các thiết bị máy chủ đến máy in. Nó không được sử dụng ngày nay, hoặc nếu nó được sử dụng, nó chỉ là trong ứng dụng đặc biệt.
 
 3 tùy chọn trong FTP Format Control
-- `Non Print` : Đây là mặc định, cho biết không có định dạng dọc
+- `Non Print` : Đây là tùy chọn mặc định, cho biết không có định dạng dọc
 - `Telnet Format` : Tệp sử dụng các kí tự điều khiển định dạng dọc, như được chỉ định trong giao thức Telnet
 - `Carriage Control/FORTRAN` : Tệp sử dụng kí tự điều khiển được định dạng đưa ra làm kí tự đầu tiên của mỗi dòng, như được xác định cho ngôn ngữ lập trình FORTRAN.
 
