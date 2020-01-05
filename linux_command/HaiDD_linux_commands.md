@@ -12,7 +12,7 @@
 |[7. file](#file)|[17. more và less](#moreless)|[27.]()|
 |[8. touch](#touch)|[18. strings](#strings)|[28.]()|
 |[9. rm](#rm)|[19. echo](#echo)|[29.]()|
-|[10. cp](#cp)|[20. type](#typewhich)|[30.]()|
+|[10. cp](#cp)|[20. type & which](#typewhich)|[30.]()|
 
 
 ## 1. Lệnh `man` (manual - hướng dẫn sử dụng) <a name="man"></a>
