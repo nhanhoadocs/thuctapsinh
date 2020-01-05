@@ -1,18 +1,18 @@
 # Linux command
 
 ## Mục lục
-|1-10|11-20|
-|-|-|
-|[1. man](#man)|[11. mv](#mv)|
-|[2. pwd](#pwd)|[12. rename](#rename)|
-|[3. cd](#cd)|[13. head](#head)|
-|[4. ls](#ls)|[14. tail](#tail)|
-|[5. mkdir](#mkdir)|[15. cat](#cat)|
-|[6. rmdir](#rmdir)|[16. tac](#tac)|
-|[7. file](#file)|[17. more và less](#moreless)|
-|[8. touch](#touch)|[](#)|
-|[9. rm](#rm)|[](#)|
-|[10. cp](#cp)|[](#)|
+|1-10|11-20|21-30|
+|-|-|-|
+|[1. man](#man)|[11. mv](#mv)|[21. alias](#alias)|
+|[2. pwd](#pwd)|[12. rename](#rename)|[22.]()|
+|[3. cd](#cd)|[13. head](#head)|[23.]()|
+|[4. ls](#ls)|[14. tail](#tail)|[24.]()|
+|[5. mkdir](#mkdir)|[15. cat](#cat)|[25.]()|
+|[6. rmdir](#rmdir)|[16. tac](#tac)|[26.]()|
+|[7. file](#file)|[17. more và less](#moreless)|[27.]()|
+|[8. touch](#touch)|[18. strings](#strings)|[28.]()|
+|[9. rm](#rm)|[19. echo](#echo)|[29.]()|
+|[10. cp](#cp)|[20. type](#typewhich)|[30.]()|
 
 
 ## 1. Lệnh `man` (manual - hướng dẫn sử dụng) <a name="man"></a>
@@ -849,7 +849,7 @@ Nối ngược nhiều tệp tin và in ra:
 
 <img src = "https://i.imgur.com/DsxzrJK.png">
 
-## 17. Lệnh `more` và `less` <a name =""moreless></a>
+## 17. Lệnh `more` và `less` <a name ="moreless"></a>
 ### 17.1. Lệnh `more`
 Dùng để xem các tệp lớn trong 1 màn hình, có thể cuộn chuột để xem. 
 
@@ -888,7 +888,7 @@ Truy cập từng trang của file tài liệu dài.
 
 <img src = "https://i.imgur.com/zi8Gjmw.png">
 
-## 18. Lệnh `strings`
+## 18. Lệnh `strings` <a name ="strings"></a>
 In ra các chuỗi kí tự có thể in trong tệp. Hiển thị các chuỗi ASCII có thể đọc được trong file nhị phân.
 
 Ví dụ xem file nhị phân của lệnh `ls`:
@@ -903,3 +903,113 @@ Hiển thị tên file trước mỗi dòng.
 
 <img src= "https://i.imgur.com/nDX6Gsu.png">
 
+## 19. Lệnh `echo` <a name ="echo"></a>
+Dùng để hiện thị dòng văn bản được truyền vào. Nó được sử dụng chủ yếu trong các tập lệnh shell hay xuất văn bản ra màn hình hoặc tạo file.
+
+### 19.1. `echo <string>`
+In ra màn hình chuỗi `string`
+
+<img src = "https://i.imgur.com/iNlrA2S.png">
+
+### 19.2. `echo -e \(mini_option)`
+Với option `-e`, nó cho phép ta xác định sự liên tục của văn bản đầu vào. 
+
+`e - escape`
+
+#### 19.2.1. `\b`
+`b - backspace` : Xóa 1 kí tự trước nó
+
+<img src=  "https://i.imgur.com/VZYXLfm.png">
+
+#### 19.2.2. `\c`
+Ngắt văn bản và không xuống dòng
+
+<img src = "https://i.imgur.com/gBMzlXR.png">
+
+#### 19.2.3. `\n`
+`n - new line` : Xuống dòng
+
+<img src = "https://i.imgur.com/WmscuVI.png">
+
+#### 19.2.4. `\t`
+`t - tab` : Tạo khoảng dấu tab.
+
+<img src=  "https://i.imgur.com/5TCEeKR.png">
+
+#### 19.2.5. `\r`
+Trả về văn bản sau nó.
+
+<img src ="https://i.imgur.com/Rq0AyAb.png">
+
+#### 19.2.6. `\v`
+`v - vertical tab` : tab đầu dòng
+
+<img src = "https://i.imgur.com/nLRReXV.png">
+
+### 19.3. `echo *`
+Giống như lệnh `ls`
+
+<img src=  "https://i.imgur.com/jYDtqwY.png">
+
+### 19.4. `echo -n`
+Ngăn không xuống dòng. Con trỏ sẽ ở vị trí cuối của văn bản.
+
+<img src= "https://i.imgur.com/nqPQ05z.png">
+
+## 20. Lệnh `type` và `which` <a name ="typewhich"></a>
+Để tìm hiểu xem 1 lệnh cung cấp cho shell sẽ được thực thi như 1 lệnh bên ngoài shell hay 1 lệnh dựng sẵn.
+
+- `alias` : nếu lệnh là bí danh trong shell
+- `keyword` : nếu lệnh là 1 từ dành riêng shell
+- `builtin` : nếu lệnh là 1 shell dựng sẵn
+- `function` : nếu lệnh là 1 hàm shell
+- `file` : nếu lệnh là 1 tệp disk.
+
+<img src = "https://i.imgur.com/xmh8ELy.png">
+
+### 20.1. `type -a`
+Được sử dụng để tìm hiểu xem đó là bí danh, từ khóa hay hàm và nó cũng hiển thị đường dẫn của một tệp thực thi, nếu có.
+
+<img src = "https://i.imgur.com/bJSMsdV.png">
+
+### 20.2. `type -t`
+Hiển thị 1 từ duy nhất ở đầu ra
+
+<img src = "https://i.imgur.com/zG4bAuX.png">
+
+### 20.3. `which`
+Dùng để định vị tệp thực thi được liên kết với lệnh đã cho.
+Nó có 3 trạng thái trả về như sau:
+- `0` : Nếu tất cả các lệnh được tìm thấy và thực thi
+- `1` : Nếu một hoặc nhiều lệnh được chỉ định không tồn tại hoặc không thể thực thi
+- `2` : Nếu một tùy chọn không hợp lệ được chỉ định.
+
+<img src = "https://i.imgur.com/tigx6LW.png">
+
+## 21. Lệnh `alias` <a name ="alias"></a>
+Cho phép shell thay thế 1 chuỗi string bằng 1 chuỗi string khác khi thực hiện các lệnh.
+
+Nó giống như ta đặt bí danh cho 1 lệnh lớn để có thể dễ dàng sử dụng nó nhiều lần. Nó giống như lệnh tắt sẽ có chức năng tương tự như khi ta viết toàn bộ lệnh.
+
+### 21.1. Tạo 1 alias
+```
+alias name="value"
+```
+
+<img src = "https://i.imgur.com/6G88y43.png">
+
+### 21.2. Xem các alias hiện có
+Tất cả alias: `alias`
+
+<img src = "https://i.imgur.com/x8ezerq.png">
+
+Xem alias chỉ định: `alias name1 name2 ....`
+
+<img src = "https://i.imgur.com/yeBmKRf.png">
+
+### 21.3. Xóa alias
+```
+unalias name
+```
+
+<img src = "https://i.imgur.com/GupiMTH.png">
