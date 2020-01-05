@@ -46,7 +46,7 @@ Một hệ thống IPS có tính năng tương tự như IDS nhưng nó có thê
 
 Cũng có 2 kiểu là Host based IPS và Network based IPS.
 
-Với Host based IDS nó tương tự như phần mềm untivirus
+Với Host based IDS nó tương tự như phần mềm antivirus
 
 Với hệ thống IDS nó chỉ phân copy dữ liệu đi qua mạng ra để phân tích và cảnh báo nên không ảnh hưởng đến tốc độ còn với hệ thống IPS dữ liệu phải đi qua hệ thống này để thực hiện phân tích nên nếu phát hiện tấn công sẽ ngăn chặn nên tốc độ có thể có đôi chút ảnh hưởng.
 
