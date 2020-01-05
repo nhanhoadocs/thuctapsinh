@@ -596,6 +596,7 @@ Gio bat dau tu dau
 Em cung khong biet nua
 Khi nao ta yeu nhau
 ```
+<a name="15"></a>
 
 ## 4.4 tac
 Lệnh `tac` dùng để hiển thị ngược nội dung của file  
@@ -606,6 +607,8 @@ Em cung khong biet nua
 Gio bat dau tu dau
 Song bat dau tu gio
 ```
+<a name="16"></a>
+
 ## 4.5 less & more  
 Trong trường hợp cần phải đọc toàn bộ dữ liệu từ một file nhưng lại không muốn mở file đó lên bằng một trình soạn thảo, chúng ta có thể sử dụng lệnh less hoặc lệnh more để phân trang file cần đọc.
 
@@ -641,6 +644,8 @@ Khi nao ta yeu nhau
 ```
 > Điểm khác biệt giữa `less` và `more` là `less` cho phép cuộn ngược lên các trang dữ liệu đã đọc, còn more thì chỉ có thể đọc từ đầu tới cuối. Lệnh `less` có thể dùng phím mũi tên trên bàn phím để scroll lên xuống, lệnh more không có chức năng này.  
 
+<a name="17"></a>
+
 ## 4.6 strings  
 Lệnh `strings` dùng để in chuỗi ký tự có thể in trong tệp.  
 ```
@@ -673,4 +678,165 @@ song.txt: Khi nao ta yeu nhau
 - Tính cả khoảng trắng của chuỗi. Theo mặc định, tab và ký tự khoảng trắng được bao gồm trong các chuỗi được hiển thị, nhưng các ký tự khoảng trắng khác, chẳng hạn như dấu cách và xuống dòng mới. Tùy chọn `-w` thay đổi điều này để tất cả các ký tự khoảng trắng được coi là một phần của chuỗi.  
 ```
 string -w
+```
+
+<a name="18"></a>  
+
+## 5. Commands and arguments (Các lệnh và đối số)
+  
+### 5.1 echo  
+Lệnh `echo` dùng để hiển thị một dòng văn bản. 
+- Hiển thị chuỗi nhập vào  
+```
+[root@centos7srv ~]# echo Xin chao
+Xin chao
+```
+- Cho phép giải thích các dấu gạch chéo ngược/ Chèn các kí tự 
+```
+echo -e  
+```
+- Xuống dòng (`-n`)
+```
+[root@centos7srv ~]# echo -e "Xin chao \n --Nga"
+Xin chao
+ --Nga
+```
+- Tab (`\t`) 
+```
+[root@centos7srv ~]# echo -e "Xin chao \n\t --Nga"
+Xin chao
+         --Nga
+```
+- Không xuất ra dòng mới  (`-n`)
+```
+[root@centos7srv ~]# echo -n "Xin chao"
+Xin chao[root@centos7srv ~]#
+```
+
+**Trường hợp sử dụng**  
+- Nhập 1 chuỗi vào tệp và xóa dòng cũ  
+```
+[root@centos7srv ~]# echo Xin chao > t1
+[root@centos7srv ~]# cat t1
+Xin chao
+[root@centos7srv ~]# echo  Xin chao 2 > t1
+[root@centos7srv ~]# cat t1
+Xin chao 2
+```
+- Nối dòng tiếp theo vào tệp  
+```
+[root@centos7srv ~]# echo Xin chao 3 >> t1
+[root@centos7srv ~]# cat t1
+Xin chao 2
+Xin chao 3
+```
+
+### 5.2 type and which  
+
+**5.2.1**
+Trong hệ thống Linux, lệnh `type` được sử dụng để hiển thị thông tin về loại lệnh. Nó hiển thị nếu lệnh là alias, shell funtion, shell builtin, tệp đĩa hoặc từ dành riêng cho shell.  
+
+Các tùy chọn đi kèm:  
+- **-a** : Hiển thị xem nó là một alias, từ khóa hoặc hàm, nó cũng có thể hiển thị đường dẫn của 1 file thực thi nếu có  
+```
+[root@centos7srv ~]# type -a ls
+ls is aliased to `ls --color=auto'
+ls is /usr/bin/ls
+[root@centos7srv ~]# type -a pwd
+pwd is a shell builtin
+pwd is /usr/bin/pwd
+```
+- **-t** : Tùy chọn -t cho biết loại để in một từ duy nhất mô tả loại lệnh có thể là một trong những điều sau đây:  
+       - alias (alias vỏ)  
+       - funtion (funtion shell)  
+       - builtin (shell builtin)  
+       - file (disk file)  
+       - keyword (shell reserved word)  
+
+```
+[root@centos7srv ~]# type -t cat
+file
+[root@centos7srv ~]# type -t ls
+alias
+```
+- **-p** : hiển thị đường dẫn (path)  
+```
+[root@centos7srv ~]# type -p date
+/usr/bin/date
+```
+
+**5.2.2 which**  
+Lệnh `which` dùng để hiển thị đầy đủ đường dẫn của lệnh (shell)  
+```
+[root@centos7srv ~]# which cp ls cd mkdir pwd
+alias cp='cp -i'
+        /usr/bin/cp
+alias ls='ls --color=auto'
+        /usr/bin/ls
+/usr/bin/cd
+/usr/bin/mkdir
+/usr/bin/pwd
+```
+
+### 5.3 alias  
+Trong Linux có một công cụ thu gọn lệnh rất tiên lợi và ta gọi là `Alias`, vậy `Alias` là một cách khai báo các lệnh viết tắt nhằm tiết kiệm thời gian gõ phím và dễ nhớ hơn. Thay vì bạn gõ một dòng lệnh dài hàng trăm chử thì bạn chỉ việc gõ đôi ba chữ là có thể thay thế lệnh đó được. Theo mặc định các lệnh viết tắt được lưu trữ trong file `~/.bashrc` hoặc `~/.bash_profile`, trong đó dấu `~` là viết tắt cho thư mục `home` của bạn. Ví dụ thư mục `home` của bạn là `/home/ngahong/ thì file đó sẽ là /home/ngahong/.base_profile.
+
+**5.3.1 Tạo một alias**  
+Ví dụ  
+```
+[root@centos7srv ~]# cat count.txt
+one
+two
+three
+[root@centos7srv ~]# alias dog=tac
+[root@centos7srv ~]# dog count.txt
+three
+two
+one
+```  
+**5.3.2 Viết tắt lệnh**  
+```
+alias ll='ls -lh --color=auto'
+alias c='clear'
+```  
+`alias` có thể được sử dụng để cung cấp các lệnh với các tùy chọn mặc định. Ví dụ dưới đây cho thấy cách đặt tùy chọn `-i` mặc định khi nhập `rm`.  
+```
+[root@centos7srv ~]# touch muadong.txt
+[root@centos7srv ~]# alias rm='rm -i'
+[root@centos7srv ~]# rm muadong.txt
+rm: remove regular empty file ‘muadong.txt’?
+```
+Ví dụ alias cho SSH  
+```
+alias sshnga='ssh ngakma@192.168.152.100'  
+```
+
+- Liệt kê danh sách lệnh alias  
+```
+[root@centos7srv ~]# alias
+alias cp='cp -i'
+alias dog='tac'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias l.='ls -d .* --color=auto'
+alias ll='ls -l --color=auto'
+alias ls='ls --color=auto'
+alias mv='mv -i'
+alias rm='rm -i'
+alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+```
+
+**5.3.3 Xóa một alias** 
+```
+unalias alias_name
+```
+Ví dụ  
+```
+[root@centos7srv ~]# which dog
+alias dog='tac'
+        /usr/bin/tac
+[root@centos7srv ~]# unalias dog
+[root@centos7srv ~]# which dog
+/usr/bin/which: no dog in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin)
 ```
