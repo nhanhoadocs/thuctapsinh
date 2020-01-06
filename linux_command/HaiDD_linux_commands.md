@@ -4,9 +4,9 @@
 |1-10|11-20|21-30|
 |-|-|-|
 |[1. man](#man)|[11. mv](#mv)|[21. alias](#alias)|
-|[2. pwd](#pwd)|[12. rename](#rename)|[22.]()|
-|[3. cd](#cd)|[13. head](#head)|[23.]()|
-|[4. ls](#ls)|[14. tail](#tail)|[24.]()|
+|[2. pwd](#pwd)|[12. rename](#rename)|[22. tee](#tee)|
+|[3. cd](#cd)|[13. head](#head)|[23. grep](#grep)|
+|[4. ls](#ls)|[14. tail](#tail)|[24. cut](#cut)|
 |[5. mkdir](#mkdir)|[15. cat](#cat)|[25.]()|
 |[6. rmdir](#rmdir)|[16. tac](#tac)|[26.]()|
 |[7. file](#file)|[17. more và less](#moreless)|[27.]()|
@@ -1013,3 +1013,103 @@ unalias name
 ```
 
 <img src = "https://i.imgur.com/GupiMTH.png">
+
+## 22. Lệnh `tee` <a name="tee"></a>
+Lệnh `tee` đọc đầu vào tiêu chuẩn và ghi nó vào cả đầu ra tiêu chuẩn và một hoặc nhiều tệp
+
+### 22.1. `tee`
+Ghi đè lên tệp
+
+### 22.2. `tee -a`
+`a - append` : không ghi đè tệp mà viết thêm vào tệp
+
+<img src = "https://i.imgur.com/tOWeHU1.png">
+
+## 23. Lệnh `grep` <a name ="grep"></a>
+Là 1 bộ lọc để tìm kiếm trong tệp theo từ khóa và in các dòng chưa từ khóa đó ra.
+
+Cú pháp:
+```
+grep [options] pattern [files]
+```
+
+### 23.1. `grep`
+In ra dòng chứa từ khóa, tính cả dạng chuỗi con. Có phân biệt hoa thường
+
+<img src=  "https://i.imgur.com/2MkJ1UA.png">
+
+### 23.2. `grep -i`
+`i - ignore case` : bỏ qua trường hợp hoa thường
+
+Không phân biệt hoa thường.
+
+<img src = "https://i.imgur.com/h8G2kkZ.png">
+
+### 23.3. `grep -c`
+`c -count` : đếm số dòng có kết quả tìm kiếm
+
+<img src = "https://i.imgur.com/Ynmx3Vf.png">
+
+### 23.4. `grep -l`
+Tìm kiếm và in ra tên file có từ khóa
+
+<img src= "https://i.imgur.com/NzimVhX.png">
+
+### 23.5. `grep -w`
+`w - word regexp`: Chỉ hiển thị khi nó là từ đó, bỏ qua chuỗi con
+
+<img src = "https://i.imgur.com/Tv7n8Oa.png">
+
+### 23.6. `grep -o`
+`o - only matching`: chỉ hiển thị từ khóa cần tìm
+
+<img src = "https://i.imgur.com/tn1oZGA.png">
+
+### 23.7. `grep -n`
+`n - line number`: in kết quả kèm số dòng của nó
+
+<img src = "https://i.imgur.com/Bm2kIHc.png">
+
+### 23.8. `grep -v`
+In các dòng không chứa từ khóa.
+
+<img src = "https://i.imgur.com/6Rs1JE4.png">
+
+### 23.9. `grep ^string`
+Tìm các dòng bắt đầu bằng từ khóa.
+
+<img src = "https://i.imgur.com/SFYEudJ.png">
+
+### 23.10. `grep string$`
+Tìm các dòng kết thúc bằng từ khóa
+
+<img src= "https://i.imgur.com/Nfq7MET.png">
+
+## 24. Lệnh `cut` <a name ="cut"></a>
+Dùng để cắt các phần tử mỗi dòng của tệp và ghi kết quả ra đầu ra tiêu chuẩn.
+
+Lệnh `cut` bắt buộc phải đi cùng option. Nếu không sẽ gây ra lỗi.
+
+<img src = "https://i.imgur.com/chYGXhX.png">
+
+### 24.1. `cut -b`
+`b - byte` : dùng để chọn các vị trí byte cần in ra. Dùng dấu phẩy (`,`) để phân tách các vị trí byte. Có thể dùng dấu gạch ngang (`-`) để biểu thị liên tục các chuỗi.
+
+<img src  = "https://i.imgur.com/eY3MCwR.png">
+
+### 24.2. `cut -c`
+`c - character` : Lấy ra các kí tự theo vị trí
+
+<img src = "https://i.imgur.com/ysJ9pPN.png">
+
+### 24.3. `cut -f`
+Cắt nội dung theo trường, xác định theo dấu phân cách.
+#### 24.3.1. `cut -f`
+Khi không sử dụng `-d` thì mặc định dấu phân cách được định là dấu `tab`. Như ví dụ dưới đây, không sử dụng dấu `tab`, nó sẽ in ra cả dòng
+
+<img src = "https://i.imgur.com/MknTNgH.png">
+
+#### 24.3.2. `cut -d "delimiter" -f (field number)`
+Xác định dấu phân cách bằng `-d`
+
+<img src ="https://i.imgur.com/IMGbKmQ.png">
