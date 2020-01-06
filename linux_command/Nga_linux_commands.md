@@ -840,3 +840,82 @@ alias dog='tac'
 [root@centos7srv ~]# which dog
 /usr/bin/which: no dog in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin)
 ```
+
+## 6. tee  
+Lệnh `tee` dùng để đọc từ đầu vào tiêu chuẩn và ghi vào đầu ra và tập tin tiêu chuẩn.  
+```
+tee [tùy chọn] file
+```
+Ví dụ  
+- Sao chép đầu vào từng file và cả đầu ra
+```
+[root@test1 ~]# cat file.txt
+[root@test1 ~]# echo "example" | tee file.txt
+example
+[root@test1 ~]# cat file.txt
+example
+```
+- Nối vào các file đã cho, không ghi đè
+```
+[root@test1 ~]# cat file.txt
+example
+[root@test1 ~]# echo "example-1" | tee -a file.txt
+example-1
+[root@test1 ~]# cat file.txt
+example
+example-1
+```
+
+## 7. grep  
+Lệnh `grep` dùng để in ra chuỗi cần tìm kiếm.  
+Các tùy chọn đi kèm lệnh `grep`  
+
+`-i` : không phân biệt hoa thường
+
+<img src="https://i.imgur.com/Pjvwxnw.png">
+
+`-v` : Tìm những dòng không chứa chuỗi (tìm kiếm ngược)
+
+<img src="https://i.imgur.com/etaD5tl.png">
+
+`-n` : Hiển thị số dòng
+
+<img src="https://i.imgur.com/tRtnCi7.png">
+
+`-c` : Đếm số dòng khớp
+
+<img src="https://i.imgur.com/unWSDsk.png">  
+
+- Tìm kiếm chuỗi  
+```
+https://i.imgur.com/KSF4hWr.png
+```
+- Loại bỏ dấu # và khoảng trắng  
+
+<img src="https://i.imgur.com/hNq6kfp.png">  
+
+## 8. cut  
+Lệnh `cut` dùng để loại bỏ các phần từ mỗi dòng của tập tin.  
+
+Ví dụ  
+- Cắt mười sáu ký tự đầu tiên của mỗi dòng STDIN:  
+```
+[root@centos7srv ~]# echo "This is a filetest" | cut -c 1-16
+This is a filete
+```
+- Cắt 15 ký tự đầu tiên của mỗi dòng của các tệp đã cho
+```
+[root@centos7srv ~]# cut -c 1-15 song.txt
+Song bat dau tu
+Gio bat dau tu
+Em cung khong b
+Khi nao ta yeu
+```
+- Cắt bỏ từ ký tự thứ 3 đến cuối mỗi dòng
+```
+[root@centos7srv ~]# cut -c 3- song.txt
+ng bat dau tu gio
+o bat dau tu dau
+ cung khong biet nua
+i nao ta yeu nhau
+```
