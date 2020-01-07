@@ -919,3 +919,126 @@ o bat dau tu dau
  cung khong biet nua
 i nao ta yeu nhau
 ```
+
+## 9. tr  
+Lệnh `tr` dùng để dịch hoặc xóa kí tự trong tệp tin. 
+Cú pháp chung  
+```
+tr [tuỳ chọn] [set1] [set2]
+``` 
+Ví dụ  
+- Chuyển tất cả các kí tự thành chữ hoa
+```
+[root@centos7srv ~]# cat song.txt
+Song bat dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+[root@centos7srv ~]# tr "a-z" "A-Z" < song.txt
+SONG BAT DAU TU GIO
+GIO BAT DAU TU DAU
+EM CUNG KHONG BIET NUA
+KHI NAO TA YEU NHAU
+```
+- Chuyển khoảng trắng(space) thành tab.
+```
+[root@centos7srv ~]# echo "This is for test " | tr [:space:] '\t'
+This    is      for     test 
+```
+- Xóa kí tự 
+```
+[root@centos7srv ~]# tr -d "d" < song.txt
+Song bat au tu gio
+Gio bat au tu au
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+## 10. wc  
+Lệnh `wc` dùng để in dòng mới, từ và số byte cho mỗi tệp.  
+Cú pháp  
+```
+wc [tùy chọn] file
+```
+- Đếm các dòng trong tệp
+```
+[root@centos7srv ~]# wc -l song.txt
+5 song.txt
+```
+- Đếm kí tự (byte) trong tệp 
+```
+[root@centos7srv ~]# wc -c song.txt
+83 song.txt
+```
+- Đếm số từ trong tệp
+```
+[root@centos7srv ~]# wc -w song.txt
+20 song.txt
+```
+- Đếm số kí tự trong tệp
+```
+[root@centos7srv ~]# wc -m song.txt
+83 song.txt
+```
+- In ra độ dài của dòng dài nhất
+```
+[root@centos7srv ~]# wc -L song.txt
+22 song.txt
+```
+
+## 11. sort
+Lệnh `sort` được sử dụng để sắp xếp các dòng của tệp văn bản theo thứ tự tăng dần hoặc giảm dần, theo một khoá sắp xếp. Khóa sắp xếp mặc định là thứ tự của các ký tự ASCII (theo thứ tự bảng chữ cái). Cú pháp của lệnh sort:  
+```
+sort <tuỳ chọn> <file>
+```
+- Sắp xếp mặc định
+```
+[root@centos7srv ~]# sort song.txt
+Em cung khong biet nua
+Gio bat dau tu dau
+Khi nao ta yeu nhau
+Song bat dau tu gio
+```
+- Sắp xếp ngược lại
+```
+[root@centos7srv ~]# sort -r song.txt
+Song bat dau tu gio
+Khi nao ta yeu nhau
+Gio bat dau tu dau
+Em cung khong biet nua
+```
+- Sắp xếp các số theo thứ tự tăng dần
+```
+[root@centos7srv ~]# cat number.txt
+10
+8
+50
+100
+98
+[root@centos7srv ~]# sort -n number.txt
+8
+10
+50
+98
+100
+```
+- Sắp xếp rồi chỉ định tệp đầu ra bằng tùy chọn -o:
+```
+[root@centos7srv ~]# sort -n number.txt -o file1.txt
+[root@centos7srv ~]# cat file1.txt
+8
+10
+50
+98
+100
+```
+- Sắp xếp theo cột bằng cách sử dụng tùy chọn -k. Theo mặc định dấu space, dấu tab, dấu 2 chấm dùng để phân tách các cột:
+```
+[root@centos7srv ~]# cat file2.txt
+nga 20
+ha 18
+nam 27
+[root@centos7srv ~]# sort -k2,2n file2.txt
+ha 18
+nga 20
+nam 27
+```
