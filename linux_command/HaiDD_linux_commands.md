@@ -7,12 +7,12 @@
 |[2. pwd](#pwd)|[12. rename](#rename)|[22. tee](#tee)|
 |[3. cd](#cd)|[13. head](#head)|[23. grep](#grep)|
 |[4. ls](#ls)|[14. tail](#tail)|[24. cut](#cut)|
-|[5. mkdir](#mkdir)|[15. cat](#cat)|[25.]()|
-|[6. rmdir](#rmdir)|[16. tac](#tac)|[26.]()|
-|[7. file](#file)|[17. more và less](#moreless)|[27.]()|
-|[8. touch](#touch)|[18. strings](#strings)|[28.]()|
-|[9. rm](#rm)|[19. echo](#echo)|[29.]()|
-|[10. cp](#cp)|[20. type & which](#typewhich)|[30.]()|
+|[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|
+|[6. rmdir](#rmdir)|[16. tac](#tac)|[26. wc](#26)|
+|[7. file](#file)|[17. more và less](#moreless)|[27. sort](#27)|
+|[8. touch](#touch)|[18. strings](#strings)|[28.](#28)|
+|[9. rm](#rm)|[19. echo](#echo)|[29.](#29)|
+|[10. cp](#cp)|[20. type & which](#typewhich)|[30.](#30)|
 
 
 ## 1. Lệnh `man` (manual - hướng dẫn sử dụng) <a name="man"></a>
@@ -1113,3 +1113,101 @@ Khi không sử dụng `-d` thì mặc định dấu phân cách được địn
 Xác định dấu phân cách bằng `-d`
 
 <img src ="https://i.imgur.com/IMGbKmQ.png">
+
+## 25. Lệnh `tr` <a name="25"></a>
+`tr - translate` : dùng để dịch hoặc xóa các kí tự.
+```
+tr [OPTION] SET1 [SET2]
+```
+
+### 25.1. `tr`
+Đổi chữ hoa - thường:
+
+<img src = "https://i.imgur.com/c32Xw1o.png">
+
+Đổi khoảng trắng thành tab:
+
+<img src = "https://i.imgur.com/yYfj79G.png">
+
+Đổi kiểu ngoặc :
+
+<img src ="https://i.imgur.com/IbV8tx6.png">
+
+### 25.2. `tr -s`
+`s - squeeze repeat` : loại bỏ sự lặp lại
+
+<img src = "https://i.imgur.com/AFk0job.png">
+
+### 25.3. `tr -d`
+`d - delete` : xóa bỏ kí tự được chỉ định
+
+<img src= "https://i.imgur.com/mNNfNSs.png">
+
+Xóa bỏ chữ số khỏi văn bản:
+
+<img src = "https://i.imgur.com/kmlWWqp.png">
+
+## 26. Lệnh `wc` <a name="26"></a>
+Đếm số dòng, số từ, số ký tự có trong tệp. 3 giá trị được hiển thị lần lượt trên 3 cột
+
+```
+wc [option] [filename1] [filename2] ...
+```
+
+<img src = "https://i.imgur.com/Q4C1MYe.png">
+
+### 26.1. `wc -l`
+chỉ đếm số dòng
+
+### 26.2. `wc -w`
+chỉ đếm số từ
+
+### 26.3. `wc -c`
+chỉ đếm số byte
+
+### 26.4. `wc -m`
+chỉ đếm số kí tự
+
+### 26.1. `wc -L`
+in ra chiều dài kí tự của dòng dài nhất trong file
+
+## 27. Lệnh `sort` <a name="27"></a>
+Dùng để sắp xếp các dòng từ tất cả các file đầu vào rồi cho xuất ra đầu ra tiêu chuẩn.
+
+```
+sort [option] [file1] [file2] ...
+```
+
+**Ưu tiên sắp xếp các dòng:**
+1. Bắt đầu bằng `space`
+2. Bắt đầu bằng số **(0-9)**
+3. Bắt đầu bằng chữ **(a-A-b-B-...-z-Z)**
+
+### 27.1. `sort filename`
+
+<img src = "https://i.imgur.com/nlsvIWN.png">
+
+### 27.2. `sort -r`
+`r - reverse ` : đảo ngược thứ tự sắp xếp
+
+<img src = "https://i.imgur.com/rKVjQsj.png">
+
+### 27.3. `sort -k`
+`k - key` : sắp xếp theo 1 cột chỉ định
+
+<img src = "https://i.imgur.com/ya0vjPH.png">
+
+### 27.4. `sort -c`
+`c - check`: kiểm tra file. in ra dòng đầu tiên sai vị trí sắp xếp
+
+<img src = "https://i.imgur.com/JjEEUr5.png">
+
+### 27.5. `sort -u`
+`u - unique` : loại bỏ các dòng trùng lặp
+
+<img src = "https://i.imgur.com/7qKG33f.png">
+
+### 27.6. `sort -M`
+`M - month` : sắp xếp theo tháng
+
+<img src = "https://i.imgur.com/Y4COuNp.png">
