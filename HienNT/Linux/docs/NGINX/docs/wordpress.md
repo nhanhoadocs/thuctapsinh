@@ -177,7 +177,7 @@
 
 - Chỉnh sửa file `/etc/php-fpm.d/www.conf` sửa user và group từ **apache** thành **nginx**  
 
-  <img src="images/php_config.png">  
+  <img src="../images/php_config.png">  
 
 
 
@@ -211,15 +211,15 @@
 
 - Trên trình duyệt của bạn, nhập vào thanh tìm kiếm địa chỉ `IP_Server/wordpress`. Kết quả
 
-  <img src="images/wordpress_test.png">  
+  <img src="../images/wordpress_test.png">  
 
 - Thiết lập một số cài đặt cơ bản:
 
-  <img src="images/setup.png">  
+  <img src="../images/setup.png">  
 
 - Sau khi log in thành công, màn hình sẽ hiển thị như hình dưới  
 
-  <img src="images/login.png">  
+  <img src="../images/login.png">  
 
 - Nhập vào thanh tìm kiếm `thuyhiend.net`, kết quả trả về sẽ là `www.thuyhiend.net`  
 
