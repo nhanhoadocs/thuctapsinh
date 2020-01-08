@@ -1042,3 +1042,126 @@ ha 18
 nga 20
 nam 27
 ```
+
+## 12. uniq
+Lệnh `uniq` được dùng để báo cáo hoặc bỏ qua những dòng lặp lại
+Lệnh `uniq` thường đi kèm với lệnh `sort`.  
+- Xóa các bản sao từ danh sách đã sắp xếp
+```
+[root@centos7srv ~]# cat file1.txt
+8
+10
+50
+98
+100
+50
+8
+[root@centos7srv ~]# sort -n file1.txt | uniq
+8
+10
+50
+98
+100
+```
+- Đếm số lần xuất hiện  
+```
+[root@centos7srv ~]# sort -n file1.txt | uniq -c
+      2 8
+      1 10
+      2 50
+      1 98
+      1 100
+```
+
+## 13. comm
+Lệnh `comm` được dùng để so sánh hai tệp được sắp xếp theo từng dòng  
+- Ví dụ
+```
+[root@centos7srv ~]# cat group1
+Anh
+Binh
+Hong
+Ngoc
+Phong
+Trung
+[root@centos7srv ~]# cat group2
+Anh
+Chau
+Hoa
+Ngoc
+[root@centos7srv ~]# comm group1 group2
+                Anh
+Binh
+        Chau
+        Hoa
+Hong
+                Ngoc
+Phong
+Trung
+```
+- Đầu ra của `comm` có thể dễ đọc hơn khi chỉ xuất ra một cột duy nhất. Các chữ số chỉ ra những cột đầu ra không nên được hiển thị.
+```
+[root@centos7srv ~]# comm group1 group2
+                Anh
+Binh
+        Chau
+        Hoa
+Hong
+                Ngoc
+Phong
+Trung
+[root@centos7srv ~]# comm -12 group1 group2
+Anh
+Ngoc
+[root@centos7srv ~]# comm -13 group1 group2
+Chau
+Hoa
+[root@centos7srv ~]# comm -23 group1 group2
+Binh
+Hong
+Phong
+Trung
+```
+
+## 15. od  
+Lệnh `od` trong Linux được sử dụng để chuyển đổi nội dung đầu vào ở các định dạng khác nhau với định dạng bát phân làm định dạng mặc định.   
+Lệnh này đặc biệt hữu ích khi gỡ lỗi các tập lệnh Linux cho các thay đổi hoặc ký tự không mong muốn. Nếu có nhiều hơn một tệp được chỉ định, lệnh od sẽ ghép chúng theo thứ tự được liệt kê để tạo thành đầu vào.   
+Nó có thể hiển thị đầu ra ở nhiều định dạng khác nhau, bao gồm thập lục phân, thập phân và ASCII. Nó rất hữu ích để trực quan hóa dữ liệu không ở định dạng có thể đọc được, giống như mã thực thi của chương trình.   
+
+**Cú pháp** 
+```
+od [OPTION]... [FILE]...
+```  
+- `-b`: Hiển thị nội dung của đầu vào ở định dạng bát phân.
+```
+[root@centos7srv ~]# cat input.txt
+100
+101
+102
+103
+104
+105
+[root@centos7srv ~]# od -b input.txt
+0000000 061 060 060 012 061 060 061 012 061 060 062 012 061 060 063 012
+0000020 061 060 064 012 061 060 065 012
+0000030
+```
+Cột đầu tiên trong đầu ra của `od` biểu thị phần bù byte trong tệp.  
+- `-c`: Hiển thị nội dung của đầu vào ở định dạng ký tự.
+```
+[root@centos7srv ~]# od -c input.txt
+0000000   1   0   0  \n   1   0   1  \n   1   0   2  \n   1   0   3  \n
+0000020   1   0   4  \n   1   0   5  \n
+0000030
+```
+- `-`: Chấp nhận đầu vào từ dòng lệnh.
+```
+
+```
+Ở đây, chúng ta thấy rằng đầu tiên input đã được đưa ra và sau đó sau khi nhấn ctrl + d, output lệnh od được hiển thị.
+```
+[root@centos7srv ~]# od -c -
+test lenh
+0000000   t   e   s   t       l   e   n   h  \n
+0000012
+```
