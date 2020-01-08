@@ -53,3 +53,10 @@ action mirred egress mirror dev vnetn
 ```
 
 Nếu muốn mirror nhiều source đến 1 destination ta thực hiện 2 bước đầu như trên với các interface khác
+
+Để xóa mirror trên 1 interface
+
+```
+tc qdisc del dev vnet0 ingress
+tc qdisc del dev vnet0 root
+```
