@@ -10,9 +10,9 @@
 |[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|
 |[6. rmdir](#rmdir)|[16. tac](#tac)|[26. wc](#26)|
 |[7. file](#file)|[17. more và less](#moreless)|[27. sort](#27)|
-|[8. touch](#touch)|[18. strings](#strings)|[28.](#28)|
-|[9. rm](#rm)|[19. echo](#echo)|[29.](#29)|
-|[10. cp](#cp)|[20. type & which](#typewhich)|[30.](#30)|
+|[8. touch](#touch)|[18. strings](#strings)|[28. uniq](#28)|
+|[9. rm](#rm)|[19. echo](#echo)|[29. comm](#29)|
+|[10. cp](#cp)|[20. type & which](#typewhich)|[30. od](#30)|
 
 
 ## 1. Lệnh `man` (manual - hướng dẫn sử dụng) <a name="man"></a>
@@ -1211,3 +1211,80 @@ sort [option] [file1] [file2] ...
 `M - month` : sắp xếp theo tháng
 
 <img src = "https://i.imgur.com/Y4COuNp.png">
+
+## 28. Lệnh `uniq` <a name ="28"></a>
+Dùng để report hoặc bỏ qua những dòng lặp lại liền kề nhau
+
+### 28.1. `uniq <filename>`
+<img src = "https://i.imgur.com/xrhHLiN.png">
+
+### 28.2. `uniq -c`
+Đếm số lần 1 dòng được lặp lại.
+
+<img src = "https://i.imgur.com/y7Kt0dO.png">
+
+### 28.3. `uniq -d`
+Chỉ in ra các dòng bị lặp lại
+
+<img src = "https://i.imgur.com/fqnwNG4.png">
+
+### 28.4. `uniq -u`
+`u - unique` : chỉ in ra những dòng duy nhất
+
+<img src = "https://i.imgur.com/l1Lupj1.png">
+
+### 28.5. `uniq -f N`
+`f - field` : chọn cột để thực hiện uniq
+
+<img src = "https://i.imgur.com/nXJyKpR.png">
+
+### 28.6. `uniq -s N`
+Bỏ quả N kí tự đầu tiên để thực hiện uniq
+
+<img src ="https://i.imgur.com/NaN8fuJ.png">
+
+### 28.7. `uniq -w N`
+Giới hạn số kí tự so sánh.
+
+<img src = "https://i.imgur.com/OK1tn8y.png">
+
+## 29. Lệnh `comm` <a name ="29"></a>
+`comm` - compare : So sánh 2 tệp đã được sắp xếp theo từng dòng
+
+<img src= "https://i.imgur.com/qnM1hsk.png">
+
+
+- Cột 1: chứa các từ chỉ có trong file u1
+- Cột 2: chứa các từ chỉ có trong file u2
+- Cột 3: Chứa tên chung cho cả 2 tệp
+
+### 29.1. `comm -1/2/3`
+Bỏ qua cột 1, 2 hoặc 3.
+
+### 29.2. `comm --check-order`
+Kiểm tra xem các tệp đầu vào có được sắp xếp hay không. Nếu có file không được sắp xếp thì sẽ thông báo lỗi
+
+### 29.3. `comm --nocheck-order`
+Không check sắp xếp các file
+
+<img src = "https://i.imgur.com/9x0e7Bs.png">
+
+### 29.4. `comm --output-delimiter`
+Thay đổi dấu phân cách
+
+<img src= "https://i.imgur.com/WVWJCDH.png">
+
+## 30. Lệnh `od` <a name ="30"></a>
+Đổi định dạng từ đầu vào thành dạng bát phân(mặc định)
+
+<img src = "https://i.imgur.com/2w0e6Wi.png">
+
+### 30.1. `od -c`
+Hiển thị nội dung đầu vào dưới dạng kí tự. Ngoài ra, còn bỏ qua các kí tự đặc biệt.
+
+<img src = "https://i.imgur.com/ThAkp0B.png">
+
+### 30.2. `od -`
+Nhập đầu vào bằng dòng lệnh
+
+<img src = "https://i.imgur.com/6YyPpJk.png">
