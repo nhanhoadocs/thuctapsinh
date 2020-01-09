@@ -137,7 +137,7 @@ sed -i -e 's|password_secret =|password_secret = '$pass_secret'|' /etc/graylog/s
 echo -n "Enter Password: "
 read pass
 pass_admin=`echo $pass | sha256sum | cut -d" " -f1`
-sed -i 's|root_password_sha2=|root_password_sha2= $pass_admin|' /etc/graylog/server/server.conf
+sed -i 's|root_password_sha2 =|root_password_sha2 = $pass_admin|' /etc/graylog/server/server.conf
 
 #set timezone
 sed -i 's|#root_timezone = UTC|root_timezone = Asia/Ho_Chi_Minh|' /etc/graylog/server/server.conf
