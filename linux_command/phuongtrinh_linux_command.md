@@ -239,6 +239,133 @@ Sử dụng option `-p` để `rmdir` có thể xóa hoàn toàn thư mục và 
 b
 [nptr@localhost nptr]$ rmdir -p a/b 
 ```
+## Phần 4: Working with files
+
+## 4.1 file
+
+Dùng để xác định kiểu của file
+
+```
+nptr@thinkpad:~$ file aa.txt 
+aa.txt: UTF-8 Unicode text
+```
+## 4.2 file -b [filename]
+
+Dùng để hiện thị thông tin file một cách đơn giản
+```
+nptr@thinkpad:~$ file -b aa.txt 
+UTF-8 Unicode text
+```
+
+## 4.3 file -s filename
+
+DÙng hiển thị thông tin cho những file đặc biệt
+```
+nptr@thinkpad:~$ sudo file -s /dev/sda
+[sudo] password for nptr: 
+/dev/sda: DOS/MBR boot sector
+```
+## 4.4 touch
+Dùng để tạo mới một file bất kỳ
+```
+nptr@thinkpad:~$ touch file1
+nptr@thinkpad:~$ touch file2
+nptr@thinkpad:~$ ls
+aa.txt   Documents  file1  go     Pictures  Templates
+Desktop  Downloads  file2  Music  Public    Videos
+```
+
+## 4.5 touch -t
+Dùng để tạo mới một file nhưng có thêm một vài thuộc tính bất kỳ 
+
+## 4.5 rm 
+Remove forerver
+```
+nptr@thinkpad:~/test$ touch aaa.txt 
+nptr@thinkpad:~/test$ ls
+aaa.txt
+nptr@thinkpad:~/test$ rm aaa.txt 
+nptr@thinkpad:~/test$ ls
+nptr@thinkpad:~/test$ 
+```
+
+## 4.6 rm -i
+cũng dùng để xóa file nhưng có hiển thị thêm cảnh báo
+```
+nptr@thinkpad:~/test$ rm -i aaa.txt 
+rm: remove regular empty file 'aaa.txt'? yes 
+```
+
+## 4.7 rm -rf 
+Xóa bỏ bất kỹ file hoặc thư mục (`-rf : recursive and force)
+```
+nptr@thinkpad:~/test$ ls
+aaa
+nptr@thinkpad:~/test$ rm -rf aaa 
+nptr@thinkpad:~/test$ ls
+nptr@thinkpad:~/test$ 
+```
+## 4.8 cp 
+Dùng để copy một file 
+```
+nptr@thinkpad:~/test$ cp aaa.txt aaa1.txt 
+nptr@thinkpad:~/test$ ls
+aaa1.txt  aaa.txt
+nptr@thinkpad:~/test$
+```
+
+## 4.9 cp -r (-r : recursive)
+Dùng để copy tất cả các file ở tất cả các thư mục con. 
+
+```
+nptr@thinkpad:~/test$ cp -r aaaa bbbb 
+nptr@thinkpad:~/test$ ls bbbb/
+aa
+nptr@thinkpad:~/test$ 
+```
+
+## 4.10 cp -i
+Dùng để  copy file nhưng ghi đè nếu file được copy đã tồn tại
+
+```
+nptr@thinkpad:~/test$ cp -i aaa.txt aaa1.txt 
+cp: overwrite 'aaa1.txt'? yes
+nptr@thinkpad:~/test$ 
+```
+
+## 4.11 mv (move)
+Ta có thể đổi tên file hoặc thư mục với `mv`
+```
+nptr@thinkpad:~/test$ ls
+aaa1.txt  aaaa  aaa.txt  bbbb
+nptr@thinkpad:~/test$ mv aaa.txt bbb.txt
+nptr@thinkpad:~/test$ ls
+aaa1.txt  aaaa  bbbb  bbb.txt
+nptr@thinkpad:~/test$ 
+```
+## 4.12 mv -i 
+optione -i giống với `cp` và `rm`
+sẽ có thông báo hỏi để ghi đè file đã tồn tại hay không
+
+## 4.13 rename
+Trong Debian/Ubuntu
+`rename` sử dụng `regular expressions`  để đổi tên nhiêu file một lúc
+```
+nptr@thinkpad:~/test$ rename 's/\.txt/\.png/' *.txt
+nptr@thinkpad:~/test$ ls
+aaa1.png  aaaa  bbbb  bbb.png
+nptr@thinkpad:~/test$ 
+```
+
+Trong CentOS/RHEL/Fedora thì có khác một chút.
+```
+[paul@centos7 ~]$ touch one.conf two.conf three.conf
+[paul@centos7 ~]$ rename .conf .backup *.conf
+[paul@centos7 ~]$ ls
+one.backup three.backup two.backup
+[paul@centos7 ~]$
+```
+
 
 
 
