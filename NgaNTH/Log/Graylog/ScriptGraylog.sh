@@ -75,7 +75,7 @@ f_update_os () {
 #Install java
 f_install_java () {
 echo "Install java"
-yum install java-1.8.0-openjdk-headless.x86_64
+yum install -y java-1.8.0-openjdk-headless.x86_64
 }
 
 #Install Mongodb
@@ -90,7 +90,7 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-4.0.asc
 EOF
 
-	yum install mongodb-org
+	yum install -y mongodb-org
 	systemctl daemon-reload
 	systemctl enable mongod.service
 	systemctl start mongod.service
@@ -112,7 +112,7 @@ autorefresh=1
 type=rpm-md
 EOF
 
-yum install elasticsearch-oss
+yum install -y elasticsearch-oss
 
 sed -i 's/#cluster.name: my-application/cluster.name: graylog/g' /etc/elasticsearch/elasticsearch.yml
 echo "action.auto_create_index: false" >> /etc/elasticsearch/elasticsearch.yml
@@ -127,7 +127,7 @@ f_install_graylog () {
 echo "Install graylog server"
 
 rpm -Uvh https://packages.graylog2.org/repo/packages/graylog-3.1-repository_latest.rpm
-yum install graylog-server 
+yum install -y graylog-server 
 
 #create pass_secret
 pass_secret=$(pwgen -N 1 -s 96)
@@ -137,7 +137,7 @@ sed -i -e 's|password_secret =|password_secret = '$pass_secret'|' /etc/graylog/s
 echo -n "Enter Password: "
 read pass
 pass_admin=`echo $pass | sha256sum | cut -d" " -f1`
-sed -i 's|root_password_sha2 =|root_password_sha2 = $pass_admin|' /etc/graylog/server/server.conf
+sed -i 's|root_password_sha2 =|root_password_sha2 = '$pass_admin'|' /etc/graylog/server/server.conf
 
 #set timezone
 sed -i 's|#root_timezone = UTC|root_timezone = Asia/Ho_Chi_Minh|' /etc/graylog/server/server.conf
