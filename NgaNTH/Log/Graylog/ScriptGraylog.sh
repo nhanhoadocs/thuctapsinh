@@ -44,6 +44,8 @@ f_check_root () {
 
 #Function to disable SElinux
 f_disable_selinux () {
+	systemctl stop firewalld
+	systemctl disable firewalld
 	SE=`cat /etc/selinux/config | grep ^SELINUX= | awk -F'=' '{print$2}'`
 	echo "Checking SElinux status..."
 	echo ""
