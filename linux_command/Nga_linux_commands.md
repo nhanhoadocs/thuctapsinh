@@ -1165,3 +1165,134 @@ test lenh
 0000000   t   e   s   t       l   e   n   h  \n
 0000012
 ```
+
+## 6. sed
+Lệnh `sed` được sử dụng để chỉnh sửa luồng và lọc văn bản. sed là viết tắt của từ `stream editor`  
+Ví dụ thay thế một chuỗi trong file:  
+- Thay thế những xuất hiện của một chuỗi với một chuỗi khác trong file  
+```
+[root@localhost ~]# cat song.txt
+Song bat dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+[root@localhost ~]# sed 's/Song bat/SONG BAT/' song.txt
+SONG BAT dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+- Lưu thay đổi file 
+```
+[root@localhost ~]# sed -i 's/Song bat/SONG BAT/' song.txt
+[root@localhost ~]# cat song.txt
+SONG BAT dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+- Thay thế tất cả sự xuất hiện của mẫu trong file ( `g` option)  
+```
+[root@localhost ~]# sed -i 's/dau/DAU/g' song.txt
+[root@localhost ~]# cat song.txt
+SONG BAT DAU tu gio
+Gio bat DAU tu DAU
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+- Đọc/nối dòng tiếp theo của input vào không gian mẫu
+```
+[root@localhost ~]# cat song.txt
+SONG BAT DAU tu gio
+
+Gio bat DAU tu DAU
+Em cung khong biet nua
+Khi nao ta yeu nhau
+[root@localhost ~]# sed '/^$/d' song.txt
+SONG BAT DAU tu gio
+Gio bat DAU tu DAU
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+
+- Xóa dòng chứa chuỗi chỉ định 
+```
+[root@localhost ~]# sed '/khong/d' song.txt
+SONG BAT DAU tu gio
+Gio bat DAU tu DAU
+Khi nao ta yeu nhau
+```
+## 7. find  
+Lệnh `find` được dùng để tìm kiếm file và thư mục
+- Tìm kiếm theo tên file cụ thể
+```
+[root@localhost ~]# find song.txt
+song.txt
+```
+- Tìm kiếm theo tên file không đầy đủ
+```
+[root@localhost ~]# find / -name son*
+/root/song.txt
+```
+- Tìm kiếm file với phần mở rộng
+```
+[root@localhost ~]# find -name *.txt
+./song.txt
+```
+- Tìm kiếm file ẩn
+```
+find / -type f -name ".*"
+```
+- Tìm kiếm theo owner
+```
+[root@localhost ngahong]# find /home -user ngahong
+/home/ngahong
+/home/ngahong/.bash_logout
+/home/ngahong/.bash_profile
+/home/ngahong/.bashrc
+/home/ngahong/filenga.txt
+```
+- Tìm kiếm theo group
+```
+ find /home -group ten_group
+```
+- Tìm kiếm theo permision
+```
+find / -perm 644
+/home/ngahong/.bash_logout
+/home/ngahong/.bash_profile
+/home/ngahong/.bashrc
+```
+- Tìm các file/ thư mục rỗng
+```
+[root@localhost ngahong]# touch filerong.txt
+[root@localhost ngahong]# cat filerong.txt
+[root@localhost ngahong]# find -empty
+./filerong.txt
+./folderrong
+```
+
+## locate
+Tùy thuộc vào bản phân phối và cách hệ thống được cung cấp, gói locate có thể được cài đặt sẵn trên hệ thống Linux.
+Trên CentOS không hỗ trợ gói `locate`. Muốn sử dụng lệnh locate ta cần cài đặt
+```
+yum install mlocate
+updatedb
+```
+- Tìm kiếm vị trí file  
+```
+locate ten_file
+```
+- Không phân biệt chữ hoa thường
+```
+locate -i readme.md
+```
+- Giới hạn kết quả tìm kiếm
+```
+locate -n 10 *.py
+```
+- Hiển thị số lượng tìm kiếm phù hợp
+```
+locate -c *.json
+```
+
