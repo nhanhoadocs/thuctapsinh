@@ -1,18 +1,18 @@
 # Linux command
 
 ## Mục lục
-|1-10|11-20|21-30|
-|-|-|-|
-|[1. man](#man)|[11. mv](#mv)|[21. alias](#alias)|
-|[2. pwd](#pwd)|[12. rename](#rename)|[22. tee](#tee)|
-|[3. cd](#cd)|[13. head](#head)|[23. grep](#grep)|
-|[4. ls](#ls)|[14. tail](#tail)|[24. cut](#cut)|
-|[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|
-|[6. rmdir](#rmdir)|[16. tac](#tac)|[26. wc](#26)|
-|[7. file](#file)|[17. more và less](#moreless)|[27. sort](#27)|
-|[8. touch](#touch)|[18. strings](#strings)|[28. uniq](#28)|
-|[9. rm](#rm)|[19. echo](#echo)|[29. comm](#29)|
-|[10. cp](#cp)|[20. type & which](#typewhich)|[30. od](#30)|
+|1-10|11-20|21-30||
+|-|-|-|-|
+|[1. man](#man)|[11. mv](#mv)|[21. alias](#alias)|[31. sed](#31)|
+|[2. pwd](#pwd)|[12. rename](#rename)|[22. tee](#tee)|[32](#32)|
+|[3. cd](#cd)|[13. head](#head)|[23. grep](#grep)|[33](#33)|
+|[4. ls](#ls)|[14. tail](#tail)|[24. cut](#cut)|[34](#34)|
+|[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|[35](#35)|
+|[6. rmdir](#rmdir)|[16. tac](#tac)|[26. wc](#26)|[36](#36)|
+|[7. file](#file)|[17. more và less](#moreless)|[27. sort](#27)|[37](#37)|
+|[8. touch](#touch)|[18. strings](#strings)|[28. uniq](#28)|[38](#38)|
+|[9. rm](#rm)|[19. echo](#echo)|[29. comm](#29)|[39](#39)|
+|[10. cp](#cp)|[20. type & which](#typewhich)|[30. od](#30)|[40. ](#40)|
 
 
 ## 1. Lệnh `man` (manual - hướng dẫn sử dụng) <a name="man"></a>
@@ -1288,3 +1288,101 @@ Hiển thị nội dung đầu vào dưới dạng kí tự. Ngoài ra, còn b�
 Nhập đầu vào bằng dòng lệnh
 
 <img src = "https://i.imgur.com/6YyPpJk.png">
+
+## 31. Lệnh `sed` <a name ="31"></a>
+Là 1 trình chỉnh sửa văn bản mạnh mẽ, cho phép tìm kiếm, thay thế, chèn và xóa văn bản.
+```
+sed OPTIONS... [SCRIPT] [INPUTFILE...] 
+```
+
+### 31.1. `sed s/<từ_cần_thay>/<từ_thay_thế> file`
+Lệnh `sed` thường được dùng để thay thế văn bản trong file.
+
+Ví dụ dưới đây là thay thế từ `unix` thành `linux` ở từ đầu tiên mỗi dòng
+<img src= "https://i.imgur.com/az38VwU.png">
+
+Để thay thế từ thứ n của 1 dòng, ta thêm `/n`
+
+<img src = "https://i.imgur.com/1msF4Oa.png">
+
+Thay tất cả các từ trên dòng: `/g`
+
+<img src ="https://i.imgur.com/HXHpd56.png">
+
+### 31.2. `sed -n s/<từ_cần_thay>/<từ_thay_thế>/p`
+Chỉ in ra các dòng được thay thế
+
+<img src ="https://i.imgur.com/MVkltof.png">
+
+### 31.3. Xóa dòng từ 1 file cụ thể
+1. Xóa 1 dòng thứ n cụ thể: `sed 'nd' file`
+
+<img src = "https://i.imgur.com/eZstxzu.png">
+
+2. Xóa dòng cuối: `$d`
+
+3. Xóa theo range: `x,yd` (từ x -> y)
+
+4. Xóa dòng có chứa mẫu cho trước: `sed '/pattern/d' filename.txt`
+
+<img src = "https://i.imgur.com/6SeDXtR.png">
+
+## 32. Lệnh `find` <a name="32"></a>
+Dùng để tìm kiếm đường dẫn tập tin trong 1 phân cấp thư mục
+
+Nó hỗ trợ tìm kiếm theo tệp, thư mục, tên, ngày tạo, ngày sửa đổi, chủ sở hữu và quyền
+```
+find [nơi để bắt đầu tìm kiếm] [biểu thức xác định những gì cần tìm] [-options] [những gì cần tìm]
+```
+
+### 32.1. Tìm file với tên cụ thể
+```
+find /root -name text1.txt
+```
+
+<img src = "https://i.imgur.com/GQarCCK.png">
+
+### 32.2. Tìm các tập tin và thư mục rỗng
+```
+find /root -empty
+```
+
+<img src  = "https://i.imgur.com/hXR4nYx.png">
+
+### 32.3. Tìm theo permission
+```
+find /root/A -perm 644
+```
+
+<img src = "https://i.imgur.com/7ZGc3yr.png">
+
+### 32.4. Tìm văn bản trong nhiều file
+```
+find ./ -type f -name "*" -exec grep 'dangdohai'  {} \;
+```
+
+<img src= "https://i.imgur.com/gCUlpUU.png">
+
+## 33. Lệnh `locate` <a name ="33"></a>
+Dùng để tìm kiếm tệp theo tên
+```
+locate [OPTION]... PATTERN...
+```
+
+### 33.1. `locate filename`
+<img src = "https://i.imgur.com/koQyZad.png">
+
+### 33.2. `locate -n (number) filename`
+Giới hạn số kết quả
+
+<img src= "https://i.imgur.com/4R9lvVK.png">
+
+### 33.3. `locate -c file`
+Đếm số lượng kết quả
+
+<img src ="https://i.imgur.com/9tOFNNs.png">
+
+### 33.4. `locate -i file`
+Không phân biệt hoa, thường
+
+<img src = "https://i.imgur.com/WMWYfUj.png">
