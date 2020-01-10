@@ -141,10 +141,9 @@ read ip
 sed -i 's|#http_bind_address = 127.0.0.1:9000|http_bind_address = '$ip'|' /etc/graylog/server/server.conf
 
 #create pass_admin
-echo -n "Enter Password: "
-read pass
-pass_admin=`echo $pass | sha256sum | cut -d" " -f1`
-sed -i 's|root_password_sha2 =|root_password_sha2 = '$pass_admin'|' /etc/graylog/server/server.conf
+read -p "What will be the user admin password? : " password
+password=$(echo -n ${password} | sha256sum | awk -F' ' '{print $1}')
+sed -i "/^root_password_sha2/c\root_password_sha2 = ${password}" /etc/graylog/server/server.conf
 
 #set timezone
 sed -i 's|#root_timezone = UTC|root_timezone = Asia/Ho_Chi_Minh|' /etc/graylog/server/server.conf
