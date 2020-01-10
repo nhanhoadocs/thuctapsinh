@@ -31,7 +31,7 @@
   - Nhờ một tổ chức CA(Certification Authority) cấp, là tổ chức có độ tin cậy cao, được quyền cấp và chứng nhận SSL. Sẽ mất phí.
   - Self-signed SSL: là tự server cấp, tự kí, tự xác thực (ko an toàn và tin tưởng bằng nhờ bên thứ 3). Cách này sẽ free do người dùng sẽ tự cấu hình.  
   
-Bài viết này sẽ hướng dẫn bạn nhận chứng chỉ SSL miễn phí từ Let's Encrypt và cài đặt SSL trên môi trường Apache và CentOS 8.
+Bài viết này sẽ hướng dẫn bạn nhận chứng chỉ SSL miễn phí từ Let's Encrypt và cài đặt SSL trên môi trường NginX và CentOS 8.
 
 Xem thêm thông tin tại website chính thức của Let's Encrypt: *https://letsencrypt.org/*
 
@@ -42,51 +42,8 @@ Xem thêm thông tin tại website chính thức của Let's Encrypt: *https://l
 
 ## Các bước thực hiện
 
-### [1] Tạo một chứng chỉ SSL
 
-- TLS/SSL hoạt động dựa vào sự kết hợp giữa một `public certificate` và một `private key`. `SSL key` được giữ bí mật ở trên server. Nó được sử dụng để mã hóa nội dung gửi tới clients.
-Còn `SSL certificate` được chia sẻ rộng rãi với bất cứ ai yêu cầu nội dung. Nó được sử dụng để giải mã nội dung được ký bởi SSL key.
-
-- Tạo một self-signed key và một cặp chứng chỉ với câu lệnh OpenSSL bằng cách thực hiện các bước:
-
-  - Cài đặt gói `mod_ssl`
-
-    ```sh
-      dnf install -y mod_ssl
-    ```
-
-    Khi gói `mod_ssl` được cài đặt, nó sẽ tạo 1 [self-signed](https://linuxize.com/post/creating-a-self-signed-ssl-certificate/) và các certificate file cho localhost. Nếu các file không tự động được tạo, bạn có thể tạo lại bằng cách sử dụng câu lệnh `openssl`  
-
-    ```sh
-      openssl req -newkey rsa:4096 -x509 -sha256 -days 3650 -nodes \
-        -out /etc/pki/tls/certs/localhost.crt \
-        -keyout /etc/pki/tls/private/localhost.key
-    ```
-
-    Trong đó:
-  
-    `openssl` là một command để tạo vào quản lý chứng chỉ OpenSSL , keys và các file khác.  
-    `req` là một subcommand chỉ định rõ chúng ta mún sử dụng X.509 CSR (certificate signing request) : chứng chỉ yêu cầu ký.   
-     `X.509` là một chuẩn public key của SSL và TLS.    
-    `nodes` chỉ rõ OpenSSL bỏ qua việc bảo mặt chứng chỉ của chúng ta bằng một chuỗi mật khẩu (passphrase). Nếu để mật khẩu này thì nginx của chúng ta luôn phải nhập mật khẩu này mỗi khi khởi động nên rất là bất tiện.  
-    `days 365` là tham số xác định thời hạn sử dụng chứng chỉ là 365 ngày (1 năm).  
-    `newkey rsa:4096` là tham số chỉ định chúng ta muốn sinh ra một chứng chỉ mới và một key mới tại cùng câu lệnh với key RSA có độ dài 2048 bít.  
-    `keyout` chỉ định nơi chứng ta lưu trữ private key được sinh ra lúc tạo  
-    `out` chỉ định nơi chứng chỉ được lưu trữ sau khi tạo
-
-  OUTPUT
-
-  ```nginx
-    Country Name (2 letter code) [XX]:VN
-    State or Province Name (full name) []:Ha Noi
-    Locality Name (eg, city) [Default City]:Ha Noi
-    Organization Name (eg, company) [Default Company Ltd]:Test company
-    Organizational Unit Name (eg, section) []:Test company
-    Common Name (eg, your name or your server's hostname) []:server_IP_address
-    Email Address []:havy.nt12@gmail.com
-  ```
-
-### [2] Cài đặt Certbot 
+### [1] Cài đặt Certbot 
 
 Certbot là một công cụ dòng lệnh miễn phí giúp đơn giản hóa quy trình lấy và gia hạn chứng chỉ SSL từ Let's Encrypt và tự động kích hoạt HTTPS trên máy chủ của bạn.
 
@@ -99,52 +56,235 @@ Certbot là một công cụ dòng lệnh miễn phí giúp đơn giản hóa qu
 
 - Tải về certbot script
   ```sh
-    wget -P /usr/local/bin https://dl.eff.org/certbot-auto
+    curl -O https://dl.eff.org/certbot-auto
   ```
 
-- Sau khi tải xuống hoàn tất, cấp quyền cho file `certbot-auto`
+- Sau khi tải xuống hoàn tất, di chuyển file `certbot-auto` tới thư mục `/usr/local/bin` và cấp quyền cho file `certbot-auto`
 
   ```sh
-    chmod 700 /usr/local/bin/certbot-auto
+    mv certbot-auto /usr/local/bin/certbot-auto
+    chmod 0755 /usr/local/bin/certbot-auto
   ```
 
-### [2] Cấu hình cách Certbot nhận và cài đặt chứng chỉ của bạn  
+### [2] Tạo Virtualhost
+- Tạo 1 file cấu hình virtual host(server block) cho tên miền `www.thuyhiend.space`  
 
-***Yêu cầu:*** Trên máy có sẵn 1 Web Server đang hoạt động như là Apache hoặc Nginx, trong bài lab này sử dụng Nginx.  
+  ```sh
+    vim /etc/nginx/conf.d/www.thuyhiend.space.conf
+  ```
 
-- Thêm đoạn cấu hình sau vào block server của file cấu hình cho website(ở đây là /etc/nginx/conf.d/www.thuyhiend.net) để cho phép truy cập vào thư mục ẩn (.well-known) phục vụ cho việc xác thực:
+  Thêm vào nội dung bên dưới:
+
   ```nginx
-  ...
-    location ~ /.well-known {
-        allow all;
-   }
-  ...
+    server {
+      server_name thuyhiend.space;
+      root /opt/nginx/www.thuyhiend.space;
+
+      location / {
+         index index.html index.htm index.php;
+      }
+
+      access_log /var/log/nginx/www.thuyhiend.space.access.log;
+      error_log /var/log/nginx/www.thuyhiend.space.error.log;
+
+      location ~ \.php$ {
+        include /etc/nginx/fastcgi_params;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+      }
+    }
   ```
 
-- Khởi động lại Nginx và kiểm tra lại hoạt động của website
+- Tạo 1 document root để đặt các tệp HTML của bạn  
+
+  ```sh
+    mkdir -p /opt/nginx/www.thuyhiend.space
+  ```
+
+- Thay đổi quyền với thư mục:
+
+  ```sh
+    chown -R nginx:nginx /opt/nginx/www.thuyhiend.space
+  ```
+
+- Đặt file HTML thử nghiệm vào thư mục gốc của tên miền web của bạn.
+
+  ```sh
+    echo "This is a test site @ www.thuyhiend.space" > /opt/nginx/www.thuyhiend.space/index.html
+  ```
+
+- Restart Nginx service
+
   ```sh
     systemctl restart nginx
   ```
 
-- Tạo SSL certificate (thay thuyhiend.net bằng tên miền của bạn và /usr/share/nginx/html/wordpress là đường dẫn đến thư mục gốc của website):
+### [3] Tạo/Cập nhật bản ghi DNS  
+- Truy cập vào công cụ quản lý DNS hoặc trang quản lý tên miền của bạn để tạo bản ghi A tới tên miền
+
+  <img src="../images/record.png">  
+
+- Kiểm tra việc truyền DNS với câu lệnh nslookup: `yum install -y bind-utils`.
+
+  <img src="../images/test_8.png">  
+
+### [4] Thiết lập nhận chứng chỉ miễn phí từ Let’s Encrypt  
+- Sử dụng câu lệnh `certbot` để tạo và cài đặt chứng chỉ Let’s Encrypt
 
   ```sh
-    certbot-auto certonly --webroot -w /usr/share/nginx/html/wordpress -d www.thuyhiend.net
+    /usr/local/bin/certbot-auto --nginx
   ```
 
+```nginx
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Plugins selected: Authenticator nginx, Installer nginx
+Enter email address (used for urgent renewal and security notices) (Enter 'c' to cancel): havy.nt12@gmail.com  << Email Address to receive renewal/security notification
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Please read the Terms of Service at
+https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf. You must
+agree in order to register with the ACME server at
+https://acme-v02.api.letsencrypt.org/directory
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(A)gree/(C)ancel: A  << Access Terms and Conditions
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Would you be willing to share your email address with the Electronic Frontier
+Foundation, a founding partner of the Let's Encrypt project and the non-profit organization that develops Certbot? We'd like to send you email about our work encrypting the web, EFF news campaigns, and ways to support digital freedom.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(Y)es/(N)o: Y  << Subscribe to Newsletter
+Which names would you like to activate HTTPS for?
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+1: thuyhiend.space
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Select the appropriate numbers separated by commas and/or spaces, or leave input blank to select all options shown (Enter 'c' to cancel): 1
+Obtaining a new certificate
+Performing the following challenges:
+http-01 challenge for thuyhiend.space
+Waiting for verification...
+Cleaning up challenges
+Deploying Certificate to VirtualHost /etc/nginx/conf.d/www.thuyhiend.space.conf
+
+Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+1: No redirect - Make no further changes to the webserver configuration.
+2: Redirect - Make all requests redirect to secure HTTPS access. Choose this for new sites, or if you're confident your site works on HTTPS. You can undo this change by editing your web server's configuration.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 2
+Redirecting all traffic on port 80 to ssl in /etc/nginx/conf.d/www.thuyhiend.space.conf
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Congratulations! You have successfully enabled https://thuyhiend.space
+
+You should test your configuration at:
+https://www.ssllabs.com/ssltest/analyze.html?d=thuyhiend.space
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/thuyhiend.space/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/thuyhiend.space/privkey.pem
+   Your cert will expire on 2020-04-07. To obtain a new or tweaked version of this certificate in the future, simply run certbot-auto again with the "certonly" option. To non-interactively renew *all*
+   of your certificates, run "certbot-auto renew"
+ - If you like Certbot, please consider supporting our work by:
+
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
+```
 
 
+### [5] Redirect tất cả các truy vấn tới HTTPS 
+- Thêm vào file `www.thuyhiend.space.conf` một config server có nội dung như sau:
 
+  ```nginx
+  server {
+    listen 80;
+    server_name thuyhiend.space;
+    return 301 https://thuyhiend.space$request_uri;
+  }
+  ```
 
-### [3] Thiết lập gia hạn tự động  
+- Restart service Nginx
+
+  ```sh
+    systemctl restart nginx
+  ```
+
+### [6] Cấu hình Firewall
+- Cấu hình firewall cho phép các yêu cầu HTTPS
+  
+  ```sh
+  firewall-cmd --permanent --add-port=443/tcp
+
+  firewall-cmd --reload
+  ```
+### [7] Xác nhận chứng nhận Let’s Encrypt  
+
+Từ trình duyệt của bạn nhập vào địa chỉ: `http://your_domain` để kiểm tra. Trình duyệt sẽ tự động redirect yêu cầu từ HTTP sang HTTPS
+
+<img src="../images/test_7.png">  
+
+### [8] Kiểm tra chứng nhận SSL
+Kiểm tra chứng chỉ SSL của bạn để biết bất kỳ vấn đề nào và xếp hạng bảo mật của nó bằng cách truy cập URL bên dưới.
+
+`https://www.ssllabs.com/ssltest/analyze.html?d=thuyhiend.space`
+
+<img src="../images/test_ssl.png">  
+
+### [9] Thiết lập gia hạn tự động  
 - Sử dụng lệnh:
   ```sh
     echo "0 0,12 * * * root python -c 'import random; import time; time.sleep(random.random() * 3600)' && /usr/local/bin/certbot-auto renew" | sudo tee -a /etc/crontab > /dev/null
   ```
 
+- Bạn cũng có thể mô phỏng quá trình gia hạn chứng chỉ bằng lệnh bên dưới để đảm bảo quá trình gia hạn diễn ra suôn sẻ.
 
+  ```sh
+    /usr/local/bin/certbot-auto renew --dry-run
+  ```
 
+  **OUTPUT**
 
+```nginx
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Processing /etc/letsencrypt/renewal/thuyhiend.space.conf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Cert not due for renewal, but simulating renewal for dry run
+Plugins selected: Authenticator nginx, Installer nginx
+Renewing an existing certificate
+Performing the following challenges:
+http-01 challenge for thuyhiend.space
+Waiting for verification...
+Cleaning up challenges
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+new certificate deployed with reload of nginx server; fullchain is
+/etc/letsencrypt/live/thuyhiend.space/fullchain.pem
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+** DRY RUN: simulating 'certbot renew' close to cert expiry
+**          (The test certificates below have not been saved.)
+
+Congratulations, all renewals succeeded. The following certs have been renewed:
+  /etc/letsencrypt/live/thuyhiend.space/fullchain.pem (success)
+** DRY RUN: simulating 'certbot renew' close to cert expiry
+**          (The test certificates above have not been saved.)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+IMPORTANT NOTES:
+ - Your account credentials have been saved in your Certbot
+   configuration directory at /etc/letsencrypt. You should make a
+   secure backup of this folder now. This configuration directory will
+   also contain certificates and private keys obtained by Certbot so
+   making regular backups of this folder is ideal.
+```
+
+Nếu đầu ra không báo cáo bất kỳ vấn đề nào, việc gia hạn chứng chỉ sẽ hoạt động như mong đợi.
 
 
 
@@ -163,6 +303,5 @@ Certbot là một công cụ dòng lệnh miễn phí giúp đơn giản hóa qu
 
 ## TÀI LIỆU THAM KHẢO
 - https://viblo.asia/p/https-va-ssl-OeVKBg4AZkW
-- https://www.itzgeek.com/how-tos/linux/centos-how-tos/how-to-setup-lets-encrypt-ssl-certificate-with-apache-on-rhel-8-centos-7-rhel-7.html
 - https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-debian-10#step-1-%E2%80%94-creating-the-ssl-certificate
-- https://viblo.asia/p/https-va-ssl-OeVKBg4AZkW
+- https://www.itzgeek.com/how-tos/linux/centos-how-tos/how-to-setup-lets-encrypt-ssl-certificate-with-nginx-on-rhel-8-centos-7-rhel-7.html

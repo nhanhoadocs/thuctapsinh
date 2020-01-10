@@ -40,7 +40,7 @@
 - Thay đổi quyền sở hữu của thư mục Wordpress
 
   ```sh
-    chown -R apache:apache /usr/share/nginx/html/wordpress
+    chown -R nginx:nginx /usr/share/nginx/html/wordpress
   ```
 
 - Sử dụng câu lệnh dưới đây để tìm thư mục theo đường dẫn được xác định và cập nhật quyền cho các thư mục trong đường dẫn:
@@ -59,14 +59,14 @@
 ## Bước 4: Cấu hình 
 - Tạo 1 virtual host file
   ```sh
-    vi /etc/nginx/conf.d/www.thuyhiend.net.conf
+    vi /etc/nginx/conf.d/www.thuyhiend.space.conf
   ```
   Thêm vào file nội dung sau
 
   ```nginx
   server {
    listen 80;
-   server_name thuyhiend.net www.thuyhiend.net;
+   server_name thuyhiend.space www.thuyhiend.space;
 
    # note that these lines are originally from the "location /" block
    root /usr/share/nginx/html/wordpress;
@@ -103,10 +103,10 @@
   ```
 
 - Cấu hình chuyển hướng các yêu cầu HTTP không có www sang www HTTPS
-  Ví dụ trong bài này: http://thuyhiend.net >> https://www.thuyhiend.net
+  Ví dụ trong bài này: http://thuyhiend.space >> https://www.thuyhiend.space
 
   ```sh
-    vi /etc/nginx/conf.d/www.thuyhiend.net.conf
+    vi /etc/nginx/conf.d/thuyhiend.space.conf
   ```
 
   Thêm vào cuối file nội dung sau:
@@ -115,12 +115,12 @@
   
     # Redirect NON-WWW HTTP to WWW HTTP
     server {
-        if ($host = thuyhiend.net) {
-            return 301 http://www.thuyhiend.net$request_uri;
+        if ($host = thuyhiend.space) {
+            return 301 http://www.thuyhiend.space$request_uri;
         }
 
 
-        server_name thuyhiend.net;
+        server_name thuyhiend.space;
         listen 80;
         return 404;
 
@@ -203,7 +203,7 @@
 - Chỉnh sửa file `/etc/host` và thêm vào dòng
 
   ```sh
-    [Server-IP] thuyhiend.net
+    [Server-IP] thuyhiend.space
   ```
     *//Thay Server-IP thành địa chỉ IP của bạn*
 
@@ -221,7 +221,7 @@
 
   <img src="../images/login.png">  
 
-- Nhập vào thanh tìm kiếm `thuyhiend.net`, kết quả trả về sẽ là `www.thuyhiend.net`  
+- Nhập vào thanh tìm kiếm `thuyhiend.space`, kết quả trả về sẽ là `www.thuyhiend.space`  
 
 
 
