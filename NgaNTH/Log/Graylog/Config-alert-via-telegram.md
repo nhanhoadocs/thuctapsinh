@@ -66,4 +66,3 @@ https://api.telegram.org/bot<BOT_TOKEN>/getUpdates
 
 <img src="https://i.imgur.com/NfEXZnE.png">  
 
-- 
