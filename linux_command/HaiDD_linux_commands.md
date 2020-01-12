@@ -1327,6 +1327,17 @@ Chỉ in ra các dòng được thay thế
 
 <img src = "https://i.imgur.com/6SeDXtR.png">
 
+### 31.4. `sed` với kí tự đặc biệt
+Xét ví dụ: Ta thay thế địa chỉ IP : `https://192.168.1.1` thành `ipaddress`:
+
+Ta sử dụng `\` trước mỗi kí tự đặc biệt.
+
+```
+echo https://192.168.1.1 | sed 's/https\:\/\/192\.168\.1\.1/ipaddress/'
+```
+
+<img src = "https://i.imgur.com/2RIRln0.png">
+
 ## 32. Lệnh `find` <a name="32"></a>
 Dùng để tìm kiếm đường dẫn tập tin trong 1 phân cấp thư mục
 
@@ -1362,6 +1373,11 @@ find ./ -type f -name "*" -exec grep 'dangdohai'  {} \;
 ```
 
 <img src= "https://i.imgur.com/gCUlpUU.png">
+
+### 32.5. Tìm theo kích thước file
+`-size +1M` để tìm lớn hơn 1MB
+
+`-size -1M` để tìm nhỏ hơn 1MB
 
 ## 33. Lệnh `locate` <a name ="33"></a>
 Dùng để tìm kiếm tệp theo tên
