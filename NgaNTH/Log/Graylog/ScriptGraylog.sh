@@ -4,10 +4,11 @@
 #
 # Variable
 set -e; OS=""
+gr='\033[1;032m'
 #
 # Check OS
 f_check_os () {
-    echo "Checking Your OS ..."
+    echo -e "${gr}Checking Your OS ...\033[0m"
     if cat /etc/*release | grep CentOS > /dev/null 2>&1; then
         OS="CentOS_"
 
@@ -35,6 +36,7 @@ f_check_os () {
 
 #Function check user root
 f_check_root () {
+	echo -e "${gr}Checking root...\033[0m"
 	if(( $EUID == 0)); then
 		return 0
 	else
@@ -47,9 +49,9 @@ f_disable_selinux () {
 	systemctl stop firewalld
 	systemctl disable firewalld
 	SE=`cat /etc/selinux/config | grep ^SELINUX= | awk -F'=' '{print$2}'`
-	echo "Checking SElinux status..."
+	echo -e "${gr}Checking SElinux status...\033[0m"
 	echo ""
-	sleep 1
+	sleep 2
 	
 	if [[ "$SE" == "enforcing" ]]; then
 		sed -i 's|SELINUX=enforcing|SELINUX=disabled|g' /etc/selinux/config
@@ -62,8 +64,8 @@ f_disable_selinux () {
 
 #Update OS
 f_update_os () {
-	echo "Starting update OS..."
-	sleep 1
+	echo -e "${gr}Starting update OS...\033[0m"
+	sleep 2
 	
 	yum install epel-release -y
 	yum update -y
@@ -71,18 +73,20 @@ f_update_os () {
 	yum install -y pwgen
 	
 	echo ""
-	sleep 1
+	sleep 2
 }
 
 #Install java
 f_install_java () {
-echo "Install java"
+echo -e "${gr}Install java...\033[0m"
+sleep 2
 yum install -y java-1.8.0-openjdk-headless.x86_64
 }
 
 #Install Mongodb
 f_install_mongodb () {
-echo "Install mongodb"
+echo -e "${gr}Install mongodb...\033[0m"
+sleep 2
 cat << EOF > /etc/yum.repos.d/mongodb-org-4.0.repo
 [mongodb-org-4.0]
 name=MongoDB Repository
@@ -101,7 +105,9 @@ EOF
 # Install Elastichsearch
 
 f_install_elasticsearch () {
-echo "Install Elastichsearch"
+echo -e "${gr}Install Elastichsearch...\033[0m"
+echo ""
+sleep 2
 rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 cat << EOF > /etc/yum.repos.d/elasticsearch.repo
 [elasticsearch-6.x]
@@ -126,17 +132,19 @@ systemctl restart elasticsearch.service
 # Install_graylog_server
 f_install_graylog () {
 
-echo "Install graylog server"
-
+echo -e "${gr}Install graylog server...\033[0m"
+echo ""
+sleep 2
 rpm -Uvh https://packages.graylog2.org/repo/packages/graylog-3.1-repository_latest.rpm
 yum install -y graylog-server 
+cp /etc/graylog/server/server.conf /etc/graylog/server/server.conf.bak
 
 #create pass_secret
 pass_secret=$(pwgen -N 1 -s 96)
 sed -i -e 's|password_secret =|password_secret = '$pass_secret'|' /etc/graylog/server/server.conf
 
 #set http_bind_address
-echo -n "Enter your IP_adress with port 9000 (Example: 192.168.10.100:9000): "
+echo -n -e "Enter your IP_adress with port 9000 (Example: 192.168.10.100:9000): "
 read ip
 sed -i 's|#http_bind_address = 127.0.0.1:9000|http_bind_address = '$ip'|' /etc/graylog/server/server.conf
 
