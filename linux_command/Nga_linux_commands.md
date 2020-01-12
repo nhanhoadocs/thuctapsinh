@@ -1200,7 +1200,7 @@ Gio bat DAU tu DAU
 Em cung khong biet nua
 Khi nao ta yeu nhau
 ```
-- Đọc/nối dòng tiếp theo của input vào không gian mẫu
+- Xóa dòng trống
 ```
 [root@localhost ~]# cat song.txt
 SONG BAT DAU tu gio
@@ -1222,6 +1222,17 @@ SONG BAT DAU tu gio
 Gio bat DAU tu DAU
 Khi nao ta yeu nhau
 ```
+
+- Thay thế mẫu có kí tự đặc biệt  
+Ví dụ ta sẽ thay thế string chuỗi http://192.168.152.100 thành ipaddress thì ta sẽ đặt dấu \ trước mỗi kí tự đặc biệt
+```
+echo https://192.168.152.100 | sed 's/https\:\/\/192\.168\.152\.100/ipaddress/'
+```
+hoặc:  
+```
+sed 's|http://192.168.152.100|ipaddress|'
+```
+
 ## 7. find  
 Lệnh `find` được dùng để tìm kiếm file và thư mục
 - Tìm kiếm theo tên file cụ thể
@@ -1271,7 +1282,32 @@ find / -perm 644
 ./filerong.txt
 ./folderrong
 ```
-
+ 
+- Tìm kiếm file có dung lượng dưới 50M  
+```
+[root@localhost ~]# find /root/ -size -50M
+/root/
+/root/.bash_logout
+/root/.bash_profile
+/root/.bashrc
+/root/.cshrc
+/root/.tcshrc
+/root/anaconda-ks.cfg
+/root/.bash_history
+/root/.song.txt.swp
+/root/song.txt
+/root/graylog.sh
+/root/.pki
+/root/.pki/nssdb
+```
+- Tìm kiếm file có dung lượng lớn hơn 50M nhỏ hơn 100M
+```
+find / -size +50M -size -100M
+```
+- Tìm và xóa file có kích thước lớn hơn 100M
+```
+find /home/ngahong -size +100M -exec rm -rf {} \
+```
 ## locate
 Tùy thuộc vào bản phân phối và cách hệ thống được cung cấp, gói locate có thể được cài đặt sẵn trên hệ thống Linux.
 Trên CentOS không hỗ trợ gói `locate`. Muốn sử dụng lệnh locate ta cần cài đặt
