@@ -109,15 +109,12 @@ f_conf_network() {
     read dns
 
     # Configure Bridge
-    nmcli connection add type bridge autoconnect yes con-name $con_name ifname $if_name
-    nmcli connection modify $con_name ipv4.addresses $ipadd/$prefix ipv4.method manual
-    nmcli connection modify $con_name ipv4.gateway $gateway
-    nmcli connection modify $con_name ipv4.dns $dns
+    echo -e "DEVICE="$con_name"\nSTP=no\nTYPE=Bridge\nBOOTPROTO=none\nDEFROUTE=yes\nNAME="$if_name"\nONBOOT=yes\nDNS1="$dns"\nIPADDR="$ipadd"\nPREFIX="$prefix"\nGATEWAY="$gateway > "/etc/sysconfig/network-scripts/ifcfg-${if_name}"
 
     # Configure Interface Network
     uuid=$(uuidgen $if_net)
     echo -e "TYPE=Ethernet""\nNAME="$if_net"\nUUID="$uuid"\nDEVICE="$if_net"\nONBOOT=yes\nBRIDGE="$con_name > "/etc/sysconfig/network-scripts/ifcfg-${if_net}"
-    nmcli connection add type bridge-slave autoconnect yes con-name $if_net ifname $if_net master $if_name
+    #nmcli connection add type bridge-slave autoconnect yes con-name $if_net ifname $if_net master $if_name
 
     reboot
 }
@@ -133,8 +130,8 @@ f_main() {
             if f_check_root; then {
                 f_install_kvm;
                 f_install_xwindow;
-                f_check_exist_name
-                f_conf_network
+                f_check_exist_name;
+                f_conf_network;
                 echo "__________INSTALL KVM SUCCESS__________"
             } else {
                 echo "--->>PLEASE RUN THIS SCRIPT AS ROOT PREMISSION<<---"
