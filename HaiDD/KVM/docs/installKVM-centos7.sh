@@ -57,7 +57,7 @@ f_install_xwindow() {
 }
 
 # Check exist_name for card bridge
-check_exist_name () {
+f_check_exist_name () {
     check=1
     while [ $check -eq 1 ]
     do 
@@ -69,11 +69,11 @@ check_exist_name () {
         # Check name
         if [ $(nmcli device | grep -wc "^$if_name") == 0 ] > /dev/null 2>&1; then {
             # Enter and Standardized con-name for card bridge
-            echo -n "ENTER Connection_name (For example: br0, br1, ...):"
+            echo -n "ENTER Connection_name (You should set the same Interface_name: br0, br1, ...):"
             read con_name
             con_name=$(echo $con_name | tr -d ' ')
             if [ $(nmcli con show | grep -wc "^$con_name") == 0 ] > /dev/null 2>&1; then {
-                echo "OK"
+                echo "This name can be used..."
                 check=0
                 break
             } else {
@@ -90,9 +90,37 @@ check_exist_name () {
 }
 
 # Add and configure card bridge
-#f_conf_network() {
-#
-#}
+f_conf_network() {
+    echo "CONFIGURE NETWORK CARD FOR $if_name"
+
+    # Chose interface
+    nmcli device
+    echo -n "Select interface assign to $if_name:"
+    read if_net
+
+    # Parameter for Bridge
+    echo -n "Enter IP Address (Ex: 192.168.10.12, ...): "
+    read ipadd
+    echo -n "Enter Prefix (Ex: 16, 24, ...): "
+    read prefix
+    echo -n "Enter Gateway (Ex: 192.168.10.1, ...): "
+    read gateway
+    echo -n "Enter DNS (Ex: 8.8.8.8, ...): "
+    read dns
+
+    # Configure Bridge
+    nmcli connection add type bridge autoconnect yes con-name $con_name ifname $if_name
+    nmcli connection modify $con_name ipv4.addresses $ipadd/$prefix ipv4.method manual
+    nmcli connection modify $con_name ipv4.gateway $gateway
+    nmcli connection modify $con_name ipv4.dns $dns
+
+    # Configure Interface Network
+    uuid=$(uuidgen $if_net)
+    echo -e "TYPE=Ethernet""\nNAME="$if_net"\nUUID="$uuid"\nDEVICE="$if_net"\nONBOOT=yes\nBRIDGE="$con_name > "/etc/sysconfig/network-scripts/ifcfg-${if_net}"
+    nmcli connection add type bridge-slave autoconnect yes con-name $if_net ifname $if_net master $if_name
+
+    reboot
+}
 
 
 #--------------------------------------------------------------#
@@ -105,6 +133,8 @@ f_main() {
             if f_check_root; then {
                 f_install_kvm;
                 f_install_xwindow;
+                f_check_exist_name
+                f_conf_network
                 echo "__________INSTALL KVM SUCCESS__________"
             } else {
                 echo "--->>PLEASE RUN THIS SCRIPT AS ROOT PREMISSION<<---"
