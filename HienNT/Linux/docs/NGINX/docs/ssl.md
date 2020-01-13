@@ -70,7 +70,7 @@ Certbot là một công cụ dòng lệnh miễn phí giúp đơn giản hóa qu
 - Tạo 1 file cấu hình virtual host(server block) cho tên miền `www.thuyhiend.space`  
 
   ```sh
-    vim /etc/nginx/conf.d/www.thuyhiend.space.conf
+    vim /etc/nginx/conf.d/thuyhiend.space.conf
   ```
 
   Thêm vào nội dung bên dưới:
@@ -232,6 +232,8 @@ Kiểm tra chứng chỉ SSL của bạn để biết bất kỳ vấn đề nà
 `https://www.ssllabs.com/ssltest/analyze.html?d=thuyhiend.space`
 
 <img src="../images/test_ssl.png">  
+
+hoặc sử dụng trang `https://www.sslshopper.com/`.
 
 ### [9] Thiết lập gia hạn tự động  
 - Sử dụng lệnh:

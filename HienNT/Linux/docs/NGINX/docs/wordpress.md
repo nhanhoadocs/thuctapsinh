@@ -59,7 +59,7 @@
 ## Bước 4: Cấu hình 
 - Tạo 1 virtual host file
   ```sh
-    vi /etc/nginx/conf.d/www.thuyhiend.space.conf
+    vi /etc/nginx/conf.d/thuyhiend.space.conf
   ```
   Thêm vào file nội dung sau
 
@@ -200,7 +200,7 @@
     systemctl restart nginx  
   ```  
 
-- Chỉnh sửa file `/etc/host` và thêm vào dòng
+- Nếu truy cập WP trên localhost, chỉnh sửa file `/etc/host` và thêm vào dòng
 
   ```sh
     [Server-IP] thuyhiend.space

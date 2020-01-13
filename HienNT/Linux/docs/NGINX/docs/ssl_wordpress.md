@@ -146,6 +146,12 @@ Trong trường hợp flexible CloudFlare SSL, chúng ta cần Site address tr�
 <img src="../images/kq.png">  
 
 
+## 3. Cài đặt chứng chỉ SSL miễn phí từ Let's Encrypt cho Wordpress Website
+
+### [3.1] Sử dụng SSH  
+
+
+
 
 ## TÀI LIỆU THAM KHẢO
 - https://blog.templatetoaster.com/install-ssl-certificate-wordpress-website/
@@ -154,4 +160,5 @@ Trong trường hợp flexible CloudFlare SSL, chúng ta cần Site address tr�
 - https://techxanh.com/lam-web/bao-mat-web/tao-ssl-free-cho-wordpress-voi-lets-encrypt/
 - https://www.fixrunner.com/how-to-setup-cloudflare-ssl-on-wordpress/
 - https://thachpham.com/thu-thuat/su-dung-ssl-mien-phi-tu-cloudflare.html
-- 
+- https://thachpham.com/thu-thuat/su-dung-ssl-mien-phi-tu-cloudflare.html#ftoc-heading-8
+- https://nzwebtech.com/how-to-set-up-cloudflare-ssl-in-whm/
