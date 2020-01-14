@@ -1332,3 +1332,170 @@ locate -n 10 *.py
 locate -c *.json
 ```
 
+## date
+Lệnh `date` dùng để hiển thị hoặc thiết lập thời gian (ngày, giờ) của hệ thống.  
+- In ra ngày tháng hiện tại
+```
+[root@localhost ~]# date
+Tue Jan 14 20:36:01 +07 2020
+```
+- In ra tên ngắn gọn và tên đầy của của ngày trong tuần
+```
+[root@localhost ~]# date +%a
+Tue
+[root@localhost ~]# date +%A
+Tuesday
+```
+- In ra tên ngắn gọn và tên đầy đủ của tháng
+```
+[root@localhost ~]# date +%b
+Jan
+[root@localhost ~]# date +%B
+January
+```
+- In ra ngày tháng và thời gian
+```
+[root@localhost ~]# date +%c
+Tue 14 Jan 2020 08:40:31 PM +07
+```
+- In ra ngày trong tháng
+```
+[root@localhost ~]# date +%d
+14
+```
+- In ra thời gian ở dạng 12h
+```
+[root@localhost ~]# date +%r
+08:43:34 PM
+```
+- In ra thời gian ở dạng 24h
+```
+[root@localhost ~]# date +%R
+20:43
+```
+- Chúng ta có thể sử dụng kết hợp nhiều tùy chọn trên với nhau để in ra chuỗi ngày tháng mong muốn.
+```
+[root@localhost ~]# date "+%d %B %Y"
+14 January 2020
+```
+- Thiết lập ngày tháng và thời gian
+```
+[root@localhost ~]# date -s "14 Jan 2020 20:49:00"
+Tue Jan 14 20:49:00 +07 2020
+```
+
+
+## cal
+Lệnh `cal` dùng để hiển thị tháng hiện tại, với ngày hiện tại được tô sáng.
+
+<img src="https://i.imgur.com/k3Zg30G.png">  
+
+- Bạn có thể hiển thị bất kì tháng nào của năm nào.
+
+<img src="https://i.imgur.com/xVgrffI.png">  
+
+- Hiển thị 3 tháng gần nhất (tháng trước, tháng hiện tại và tháng tiếp theo)
+
+<img src="https://i.imgur.com/XCnMEh7.png">  
+
+- Hiển thị thứ hai như ngày đầu tiên của tuần
+```
+[root@localhost ~]# cal --monday
+    January 2020
+Mo Tu We Th Fr Sa Su
+       1  2  3  4  5
+ 6  7  8  9 10 11 12
+13 14 15 16 17 18 19
+20 21 22 23 24 25 26
+27 28 29 30 31
+```
+- Hiển thị chủ nhật là ngày đầu tiên của tuần
+```
+[root@localhost ~]# cal --sunday
+    January 2020
+Su Mo Tu We Th Fr Sa
+          1  2  3  4
+ 5  6  7  8  9 10 11
+12 13 14 15 16 17 18
+19 20 21 22 23 24 25
+26 27 28 29 30 31
+```
+- Hiển thị lịch của năm hiện tại
+```
+[root@localhost ~]# cal -y
+                               2020
+
+       January               February                 March
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+          1  2  3  4                      1    1  2  3  4  5  6  7
+ 5  6  7  8  9 10 11    2  3  4  5  6  7  8    8  9 10 11 12 13 14
+12 13 14 15 16 17 18    9 10 11 12 13 14 15   15 16 17 18 19 20 21
+19 20 21 22 23 24 25   16 17 18 19 20 21 22   22 23 24 25 26 27 28
+26 27 28 29 30 31      23 24 25 26 27 28 29   29 30 31
+
+        April                   May                   June
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+          1  2  3  4                   1  2       1  2  3  4  5  6
+ 5  6  7  8  9 10 11    3  4  5  6  7  8  9    7  8  9 10 11 12 13
+12 13 14 15 16 17 18   10 11 12 13 14 15 16   14 15 16 17 18 19 20
+19 20 21 22 23 24 25   17 18 19 20 21 22 23   21 22 23 24 25 26 27
+26 27 28 29 30         24 25 26 27 28 29 30   28 29 30
+                       31
+        July                  August                September
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+          1  2  3  4                      1          1  2  3  4  5
+ 5  6  7  8  9 10 11    2  3  4  5  6  7  8    6  7  8  9 10 11 12
+12 13 14 15 16 17 18    9 10 11 12 13 14 15   13 14 15 16 17 18 19
+19 20 21 22 23 24 25   16 17 18 19 20 21 22   20 21 22 23 24 25 26
+26 27 28 29 30 31      23 24 25 26 27 28 29   27 28 29 30
+                       30 31
+       October               November               December
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+             1  2  3    1  2  3  4  5  6  7          1  2  3  4  5
+ 4  5  6  7  8  9 10    8  9 10 11 12 13 14    6  7  8  9 10 11 12
+11 12 13 14 15 16 17   15 16 17 18 19 20 21   13 14 15 16 17 18 19
+18 19 20 21 22 23 24   22 23 24 25 26 27 28   20 21 22 23 24 25 26
+25 26 27 28 29 30 31   29 30                  27 28 29 30 31
+```
+
+
+## sleep
+Lệnh `sleep` dùng để trì hoãn trong một khoảng thời gian xác định
+```
+sleep 5
+```
+
+## time
+Lệnh `time` có thể hiển thị thời gian cần thiết để thực hiện một lệnh. Lệnh `date` chỉ mất một ít thời gian.
+Để chạy lệnh `time` ta cần phải cài đặt
+```
+yum install -y time
+```
+Sau khi cài đặt, ứng dụng time của chúng ta sẽ nằm trong đường dẫn `/usr/bin/time`.  
+
+- Xem thời gian của lệnh 
+```
+[root@localhost ~]# time ls
+anaconda-ks.cfg  f1.sh  graylog-sidecar-1.0.2-1.x86_64.rpm  t1.txt  test.sh
+
+real    0m0.002s
+user    0m0.000s
+sys     0m0.002s
+```
+Trong đó:
+
+- `real` (thời gian thực thi thật) => thời gian từ khi bắt đầu đến khi kết thúc tiến trình. Đây là toàn bộ thời gian được dùng, bao gồm thời gian được dùng bởi các tiến trình khác và thời gian mà tiến trình dùng khi bị chặn ( ví dụ, nếu nó đang đợi các tác vụ I/O  để hoàn thành).
+- `user` (thời gian người dùng) => là lượng thời gian của CPU dùng trong các mã ở chế độ người dùng (các mã nằm bên ngoài nhân của hệ điều hành) bên trong tiến trình. Đây chỉ là thời gian thực tế của CPU được dùng trong việc thực thi tiến trình. Các tiến trình khác, và thời gian mà các tiến trình này dành khi bị chặn không tính vào con số này.
+- `sys` => là lượng thời gian của CPU dùng trong nhân hệ điều hành bên trong quá trình này, tức là thời gian CPU dùng cho các lời gọi hệ thống bên trong nhân hệ điều hành. Giống với thời gian người dùng, giá trị này chỉ là thời gian mà CPU được dùng bởi tiến trình này.
+
+Ví dụ
+```
+[root@localhost ~]# time sleep 5
+
+real    0m5.004s
+user    0m0.002s
+sys     0m0.000s
+```
+
+
+
