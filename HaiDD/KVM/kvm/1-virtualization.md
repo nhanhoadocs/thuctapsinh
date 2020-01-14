@@ -5,11 +5,13 @@
 
 - Đối với các ứng dụng chạy trên máy ảo, nó có thể xuất hiện như thể trên một máy chuyên dụng, nơi hệ điều hành, thư viện, và các chương trình khác là duy nhất cho máy ảo và không kết nối với hệ thống máy chủ dưới nó.
 
-- Mục đích sử dụng ảo hóa: 
-    - Để có thể chạy 1 hệ điều hành khác ngay trên hệ thống hiện tại mà không cần phải đổi máy hay đổi hệ thống.
-    - Cung cấp một cách để phân đoạn một hệ thống lớn thành các phần nhỏ hơn.
-    - Nó cho phép sự cách ly, giữ cho các chương trình bên trong máy ảo được an toàn đối với các chương trình trên các máy ảo khác.
-    - Kiểm soát và bảo mật dữ liệu
+- Hệ thống vật lý chạy phần mềm ảo hóa (**Hypervisor hoặc Virtual Machine Monitor**) được gọi là máy chủ lưu trữ và các máy ảo được cài đặt trên của trình ảo hóa được gọi là khách
+
+### **Mục đích sử dụng ảo hóa**: 
+- Để có thể chạy 1 hệ điều hành khác ngay trên hệ thống hiện tại mà không cần phải đổi máy hay đổi hệ thống.
+- Cung cấp một cách để phân đoạn một hệ thống lớn thành các phần nhỏ hơn.
+- Nó cho phép sự cách ly, giữ cho các chương trình bên trong máy ảo được an toàn đối với các chương trình trên các máy ảo khác.
+- Kiểm soát và bảo mật dữ liệu
 
 ## 2. Các loại ảo hóa
 Ảo hóa là quá trình ảo hóa 1 cái gì đó như là: phần cứng, mạng, ổ lưu trữ, ứng dụng, ...
