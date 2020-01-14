@@ -62,25 +62,23 @@ f_check_exist_name () {
     while [ $check -eq 1 ]
     do 
         # Enter and Standardized ifname for card bridge.
-        echo -n "ENTER Interface_name (For example: br0, br1, ...):"
-        read if_name
-        if_name=$(echo $if_name | tr -d ' ')
+        nmcli con show
+        echo -n "ENTER Interface_name for Bridge card (For example: br0, br1, ...):"
+        read br_name
+        br_name=$(echo $br_name | tr -d ' ')
         
         # Check name
-        if [ $(nmcli device | grep -wc "^$if_name") == 0 ] > /dev/null 2>&1; then {
-            # Enter and Standardized con-name for card bridge
-            echo -n "ENTER Connection_name (You should set the same Interface_name: br0, br1, ...):"
-            read con_name
-            con_name=$(echo $con_name | tr -d ' ')
-            if [ $(nmcli con show | grep -wc "^$con_name") == 0 ] > /dev/null 2>&1; then {
+        if [ $(nmcli device | grep -wc "^$br_name") == 0 ] > /dev/null 2>&1; then {
+            if [ $(nmcli con show | grep -wc "^$br_name") == 0 ] > /dev/null 2>&1; then {
                 echo "This name can be used..."
                 check=0
                 break
             } else {
-                echo "PLEASE ENTER INTERFACE NAME AND CONNECTION NAME AGAIN...."
+                echo "This name can's be used. Please enter again !!!"
                 check=1
             } fi
         } else {
+            echo "This name can's be used. Please enter again !!!"
             check=1
         } fi
     done
@@ -91,11 +89,11 @@ f_check_exist_name () {
 
 # Add and configure card bridge
 f_conf_network() {
-    echo "CONFIGURE NETWORK CARD FOR $if_name"
+    echo "CONFIGURE NETWORK CARD FOR $br_name"
 
     # Chose interface
     nmcli device
-    echo -n "Select interface assign to $if_name:"
+    echo -n "Select interface assign to $br_name:"
     read if_net
 
     # Parameter for Bridge
@@ -109,12 +107,12 @@ f_conf_network() {
     read dns
 
     # Configure Bridge
-    echo -e "DEVICE="$con_name"\nSTP=no\nTYPE=Bridge\nBOOTPROTO=none\nDEFROUTE=yes\nNAME="$if_name"\nONBOOT=yes\nDNS1="$dns"\nIPADDR="$ipadd"\nPREFIX="$prefix"\nGATEWAY="$gateway > "/etc/sysconfig/network-scripts/ifcfg-${if_name}"
+    echo -e "DEVICE="$br_name"\nSTP=no\nTYPE=Bridge\nBOOTPROTO=none\nDEFROUTE=yes\nNAME="$br_name"\nONBOOT=yes\nDNS1="$dns"\nIPADDR="$ipadd"\nPREFIX="$prefix"\nGATEWAY="$gateway > "/etc/sysconfig/network-scripts/ifcfg-${br_name}"
 
     # Configure Interface Network
     uuid=$(uuidgen $if_net)
-    echo -e "TYPE=Ethernet""\nNAME="$if_net"\nUUID="$uuid"\nDEVICE="$if_net"\nONBOOT=yes\nBRIDGE="$con_name > "/etc/sysconfig/network-scripts/ifcfg-${if_net}"
-    #nmcli connection add type bridge-slave autoconnect yes con-name $if_net ifname $if_net master $if_name
+    echo -e "TYPE=Ethernet""\nNAME="$if_net"\nUUID="$uuid"\nDEVICE="$if_net"\nONBOOT=yes\nBRIDGE="$br_name > "/etc/sysconfig/network-scripts/ifcfg-${if_net}"
+    #nmcli connection add type bridge-slave autoconnect yes con-name $if_net ifname $if_net master $br_name
 
     reboot
 }
