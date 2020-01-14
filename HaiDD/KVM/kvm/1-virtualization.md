@@ -5,7 +5,7 @@
 
 - Đối với các ứng dụng chạy trên máy ảo, nó có thể xuất hiện như thể trên một máy chuyên dụng, nơi hệ điều hành, thư viện, và các chương trình khác là duy nhất cho máy ảo và không kết nối với hệ thống máy chủ dưới nó.
 
-- Hệ thống vật lý chạy phần mềm ảo hóa (**Hypervisor hoặc Virtual Machine Monitor**) được gọi là máy chủ lưu trữ và các máy ảo được cài đặt trên của trình ảo hóa được gọi là khách
+- Hệ thống vật lý chạy phần mềm ảo hóa (**Hypervisor hay Virtual Machine Monitor**) được gọi là máy chủ lưu trữ và các máy ảo được cài đặt trên của trình ảo hóa được gọi là khách
 
 ### **Mục đích sử dụng ảo hóa**: 
 - Để có thể chạy 1 hệ điều hành khác ngay trên hệ thống hiện tại mà không cần phải đổi máy hay đổi hệ thống.
@@ -38,3 +38,16 @@ Desktop ảo thường được sử dụng trong hệ thống máy chủ của 
 Máy chủ ảo là loại ảo hóa hay gặp nhất của công nghệ ảo hóa. Máy chủ ảo được tạo ra bằng phương pháp phân chia tài nguyên trên máy chủ vật lý thông thường. Một máy chủ vật lý có thể tạo ra nhiều máy chủ ảo
 
 Máy chủ ảo hoạt động như một máy chủ vật lý thông thường với đầy đủ các chức năng: tạo môi trường lưu trữ, kết nối và chia sẻ.
+
+## 3. Hypervisor
+### 3.1. Hypervisor là gì?
+- Hypervisor hay có tên khác là Virtual machine moniter (VMM) dùng để chỉ các phần mềm cho phép tạo và quản lý các máy ảo. Quản lý và cho phép máy ảo truy cập vào tài nguyên phần cứng.
+
+- Hypervisor là một công nghệ để tạo máy ảo và giám sát, điều khiển nó.
+
+### 3.2. Phân loại
+Có 2 loại Hypervisor là **Native** (hay còn gọi là Bare metal) và **Host Based**
+
+#### **1. Native**
+
+<img src = "..\images\native.png">
