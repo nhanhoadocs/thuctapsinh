@@ -4,12 +4,12 @@
 |1-10|11-20|21-30||
 |-|-|-|-|
 |[1. man](#man)|[11. mv](#mv)|[21. alias](#alias)|[31. sed](#31)|
-|[2. pwd](#pwd)|[12. rename](#rename)|[22. tee](#tee)|[32](#32)|
-|[3. cd](#cd)|[13. head](#head)|[23. grep](#grep)|[33](#33)|
-|[4. ls](#ls)|[14. tail](#tail)|[24. cut](#cut)|[34](#34)|
-|[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|[35](#35)|
-|[6. rmdir](#rmdir)|[16. tac](#tac)|[26. wc](#26)|[36](#36)|
-|[7. file](#file)|[17. more và less](#moreless)|[27. sort](#27)|[37](#37)|
+|[2. pwd](#pwd)|[12. rename](#rename)|[22. tee](#tee)|[32. find](#32)|
+|[3. cd](#cd)|[13. head](#head)|[23. grep](#grep)|[33. locate](#33)|
+|[4. ls](#ls)|[14. tail](#tail)|[24. cut](#cut)|[34. date](#34)|
+|[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|[35. cal](#35)|
+|[6. rmdir](#rmdir)|[16. tac](#tac)|[26. wc](#26)|[36. sleep](#36)|
+|[7. file](#file)|[17. more và less](#moreless)|[27. sort](#27)|[37. time](#37)|
 |[8. touch](#touch)|[18. strings](#strings)|[28. uniq](#28)|[38](#38)|
 |[9. rm](#rm)|[19. echo](#echo)|[29. comm](#29)|[39](#39)|
 |[10. cp](#cp)|[20. type & which](#typewhich)|[30. od](#30)|[40. ](#40)|
@@ -1402,3 +1402,94 @@ Giới hạn số kết quả
 Không phân biệt hoa, thường
 
 <img src = "https://i.imgur.com/WMWYfUj.png">
+
+## 34. Lệnh `date` <a name="34"></a>
+In ra hoặc set kiểu ngày tháng và thời gian của hệ thống.
+
+### 34.1. `date`
+In ra ngày tháng và thời gian của hệ thống
+
+<img src = "https://i.imgur.com/myr9lBP.png">
+
+### 34.2. `date -u`
+`u - UTC (Coordinated Universal Time )` - Hiển thị thời gian tại múi giờ GMT.
+
+<img src ="https://i.imgur.com/9UugXXu.png">
+
+### 34.3. `date --date=""`
+- Ngày giờ 2 năm trước
+
+<img src ="https://i.imgur.com/Gzr6dAj.png">
+
+- Ngày giờ 5 giây trước
+
+<img src ="https://i.imgur.com/JrpiAVC.png">
+
+- Ngày giờ ngày hôm trước
+
+<img src ="https://i.imgur.com/RfEPulo.png">
+
+- Ngày giờ 2 tháng trước
+
+<img src ="https://i.imgur.com/qDeaJV0.png">
+
+- Ngày giờ 10 ngày trước
+
+<img src ="https://i.imgur.com/KjEeCq3.png">
+
+### 34.4. `date -s`
+Đặt thời gian hệ thống
+```
+date --set="Tue Nov 13 15:23:34 +08 2020"
+```
+
+### 34.5. `date -r`
+Sử dụng để hiển thị dấu thời gian được sửa đổi lần cuối của tệp dữ liệu.
+
+<img src = "https://i.imgur.com/ONClv8n.png">
+
+### 34.6. `date "+%<format_option>"
+Dùng để định dạng hiển thị đầu ra của thời gian hệ thống.
+Tham khảo tại man page lệnh date.
+
+Một số ví dụ:
+
+<img src = "https://i.imgur.com/wiUv7qL.png">
+
+
+## 35. Lệnh `cal` <a name="35"></a>
+Hiển thị lịch hệ thống
+
+### 35.1. `cal`
+Hiển thị lịch của tháng hiện tại
+
+<img src = "https://i.imgur.com/U43UAjU.png">
+
+### 35.2. `cal [month] [year]`
+Hiển thị lịch của 1 tháng chỉ định
+
+<img src= "https://i.imgur.com/vSmt8pH.png">
+
+### 35.2. `cal [year]`
+Hiển thị lịch 12 tháng của 1 năm chỉ định
+
+<img src ="https://i.imgur.com/ajn7ekB.png">
+
+## 36. Lệnh `sleep` <a name="36"></a>
+Trì hoãn 1 thời gian xác định. (s, m, h, d)
+
+Mặc định tính theo giây
+```
+sleep 10
+sleep 10s
+```
+
+Theo phút:
+```
+sleep 1m
+```
+
+## 37. Lệnh `time` <a name="37"></a>
+Dùng để thực thi 1 lệnh và hiển thị thời gian thực, thời gian CPU của hệ thống và user để thực thi lệnh đó.
+
+<img src= "https://i.imgur.com/eM60P3s.png">
