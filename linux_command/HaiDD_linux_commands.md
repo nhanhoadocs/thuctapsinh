@@ -1,7 +1,7 @@
 # Linux command
 
 ## Mục lục
-|1-10|11-20|21-30||
+|1-10|11-20|21-30|31-40|
 |-|-|-|-|
 |[1. man](#man)|[11. mv](#mv)|[21. alias](#alias)|[31. sed](#31)|
 |[2. pwd](#pwd)|[12. rename](#rename)|[22. tee](#tee)|[32. find](#32)|
