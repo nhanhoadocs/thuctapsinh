@@ -60,6 +60,7 @@ bash /root/sidecarsyslog.sh
 **Trường hợp 1: Đẩy log thông qua syslog**  
 - Tiếp theo bạn cần nhập địa chỉ IP của máy graylog server kèm port để đẩy log. Thông thường tôi sẽ đặt port `1514`. Lưu ý khi bạn cấu hình Input trên Web interface của graylog server, bạn cần điền đúng port đã khai báo ở máy client  
 - Quá trình cài đặt kết thúc khi có thông báo `Install success`.  
+> Tham khảo cách khai báo Input cho syslog tại mục 2.4 trong bài viết [Thu thập log của linux thông qua syslog](https://news.cloud365.vn/graylog-lab-phan-3-thu-thap-log-cua-linux-thong-qua-syslog/)
 
 **Trường hợp 2: Đẩy log thông qua sidecar**  
 - Hệ thống sẽ yêu cầu bạn nhập địa chỉ IP của graylog server và `server API token`. Giá trị của server API token bạn sẽ lấy theo cách sau:  
