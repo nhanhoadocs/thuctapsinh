@@ -80,14 +80,14 @@ f_update_os () {
 	sleep 2
 }
 
-#Install chrony
+#Funtion Install chrony
 f_chrony(){
 	yum install -y chrony
 	systemctl start chronyd
 	systemctl enable chronyd
 }
 
-#Install sidecar
+#Function Install sidecar
 f_install_sidecar(){
 	echo -e "${gr}Installing sidecar...\033[0m"
 	echo ""
@@ -118,6 +118,7 @@ EOF
 	systemctl enable graylog-sidecar.service	
 }
 
+#Function config syslog
 f_config_syslog(){
     echo -e "${gr}Configuring sidecar...\033[0m"
     echo ""
@@ -134,7 +135,7 @@ f_main(){
             {
                 f_disable_selinux
                 f_update_os
-				f_chrony
+                f_chrony
                 echo "Choose input to graylog: "
                 echo "1: syslog "
                 echo "2: sidecar"
