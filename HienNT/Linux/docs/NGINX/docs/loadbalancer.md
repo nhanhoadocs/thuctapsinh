@@ -45,7 +45,7 @@
   <img src="../images/mohinh.png">  
 
 ### Thiết lập ban đầu
-### [Tại node Load Balancer]
+#### [Tại node Load Balancer]
 - Thiết lập hostname, cập nhật hệ thống
   ```sh
     hostnamectl set-hostname load-balancer
@@ -243,9 +243,61 @@
 
     <img src="../images/lan3.png">
 
+### Cấu hình với các thuật toán
+#### Round Robin
+- Round Robin là thuật toán mặc định của nginx khi chúng ta không có cấu hình gì thêm trong block http
+- Đặc điểm của thuật toán này là các request sẽ được luân chuyển liên tục 1:1 giữa các server, điều này sẽ làm giải tải cho các hệ thống có lượng request lớn.
+- Cấu hình chi tiết trong file config
+  ```
+  nginx
+    http {
 
+    upstream backends {
+        server 10.10.34.113:80;
+        server 10.10.34.114:80;
+    }
+  ```
 
+#### Least connection
+- Đây là thuật toán nâng cấp của round robin và weighted load balancing, thuật toán này sẽ giúp tối ưu hóa cân bằng tải cho hệ thống.
 
+- Đặc điểm của thuật toán này là sẽ chuyển request đến cho server đang xử lý request hơn, thích hợp đối với các hệ thống mà có các session duy trì trong thời gian dài, tránh được trường hợp các session duy trì quá lâu mà các request được chuyển luân phiên theo quy tắc định sẵn, dễ bị down 1 server nào đó do xử lý quá khả năng của nó.
+
+- Cấu hình chi tiết
+  ```nginx
+    http {
+
+    upstream backends {
+        least_conn;
+        server 10.10.34.113:80;
+        server 10.10.34.114:80;
+    }
+  ```
+
+#### Health check
+
+- Thuật toán này xác định máy chủ sẵn sàng xử lý request để gửi request đến server , điều này tránh được việc phải loại bỏ thủ công một máy chủ không sẵn sàng xử lý.
+- Các hoạt động của thuật toán này là nó sẽ gửi một kết nối TCP đến máy chủ , nếu như máy chủ đó lắng nghe trên địa chỉ và port đã cấu hình thì nó mới gửi request đến cho server xử lý.
+- Tuy nhiên health check vẫn có lúc kiểm tra xem máy chủ có sẵn sàng hay không, đối với các máy chủ cơ sở dữ liệu thì health check không thể làm điều này.
+
+- Cấu hình chi tiết
+  ```sh
+    http {
+
+    upstream backends {
+        server 10.10.34.113:80;
+        server 10.10.34.114:80 max_fails=3 fail_timeout=5s;
+        server 10.10.34.112:80;
+    }
+  ```
+
+**Chú ý:**
+
+  - `weight:` trọng số ưu tiên của server này.
+  - `max_fails:` Số lần tối đa mà load balancer không liên lạc được với server này (trong khoảng fail_timeout) trước khi server này bị coi là down.
+  - `fail_timeout:` khoảng thời gian mà một server phải trả lời load balancer, nếu không trả lời thì server này sẽ bị coi là down. Đây cũng là thời gian downtime của server này.
+  - `backup:` những server nào có thông số này sẽ chỉ nhận request từ load balancer một khi tất cả các server khác đều bị down.
+  - `down:` chỉ thị này cho biết server này hiện không thể xử lý các request được gởi tới. Load balancer vẫn lưu server này trong danh sách nhưng sẽ không phân tải cho server này cho đến khi chỉ thị này được gỡ bỏ.
 
 
 
@@ -253,4 +305,4 @@
 
 ## TÀI LIỆU THAM KHẢO
 - https://www.journaldev.com/29943/haproxy-load-balancer-nginx-centos
-- 
+- https://github.com/hocchudong/ghichep-nginx/blob/master/docs/nginx-loadbalncing.md
