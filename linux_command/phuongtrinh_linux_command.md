@@ -365,12 +365,122 @@ Trong CentOS/RHEL/Fedora thì có khác một chút.
 one.backup three.backup two.backup
 [paul@centos7 ~]$
 ```
+## Phần 5: Working with file content
+
+## 5.1 head
+Sử dụng `head` để hiển thị 10 dòng đầu tiền của một file
+```
+nptr@thinkpad:~$ head /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+nptr@thinkpad:~$ 
+```
+## 5.2 head -number 
+Ví dụ `head -4 /etc/password` để hiển thị 4 dòng đầu tiên của file
+```
+nptr@thinkpad:~$ head -4 /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+```
+## 5.3 tail 
+Giống như `head`, `tail` dùng để hiển thị 10 dòng cuối cùng của một file
+```
+nptr@thinkpad:~$ tail /etc/passwd
+dnsmasq:x:114:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+saned:x:115:122::/var/lib/saned:/usr/sbin/nologin
+nm-openvpn:x:116:123:NetworkManager OpenVPN,,,:/var/lib/openvpn/chroot:/usr/sbin/nologin
+avahi:x:117:124:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/usr/sbin/nologin
+colord:x:118:125:colord colour management daemon,,,:/var/lib/colord:/usr/sbin/nologin
+speech-dispatcher:x:119:29:Speech Dispatcher,,,:/var/run/speech-dispatcher:/bin/false
+pulse:x:120:126:PulseAudio daemon,,,:/var/run/pulse:/usr/sbin/nologin
+hplip:x:121:7:HPLIP system user,,,:/var/run/hplip:/bin/false
+geoclue:x:122:128::/var/lib/geoclue:/usr/sbin/nologin
+nptr:x:1000:1000:i am nptr,,,:/home/nptr:/bin/bash
+```
+## 5.4 tail -number
+`tail -3 /etc/services`
+```
+nptr@thinkpad:~$ tail -3 /etc/services 
+fido		60179/tcp			# fidonet EMSI over TCP
+
+# Local services
+```
+## 5.5 cat
+là một công cụ rất phổ biến trong linux.
+
+- Dùng để đọc nội dung của một tập tin: 
+  cat file1 file2 file3 ...
+```
+nptr@thinkpad:~$ cat text.txt 
+đây là nội dung của file text 
+```
+## 5.6 cat -s file 
+Dùng để loại bỏ khoảng trống trong file
+```
+cat multi_blanks.txt
+line 1
+
+line 2
 
 
+line 3
 
+line 4
+```
+```
+cat -s multi_blanks.txt
+line 1
+line 2
+line 3
+line 4
+```
+## 5.7 cat -n file
+hiển thị theo dòng trong file
+```
+nptr@thinkpad:~$ cat -n text.txt 
+     1	đây là nội dungđây là nội dung của file text 
+     2	
+     3	đây là nội dung của file text 
+     4	
+     5	đây là nội dung của file text 
+     6	
+     7	đây là nội dung của file text 
+     8	
+```
+## 5.8 cat > file 
+Tạo file: 
+```
+nptr@thinkpad:~$ cat > winner.txt
+abc abc abc 
+nptr@thinkpad:~$ ls
+Desktop    Downloads  part1     Public     text.txt  winner.txt
+Documents  Music      Pictures  Templates  Videos
+nptr@thinkpad:~$ cat winner.txt 
+abc abc abc 
+```
+## 5.9 strings 
+Dùng để hiển thị dạng đọc của một cuối ASCII tìm được trong files.
+```
+nptr@thinkpad:~$ strings /bin/ls
+/lib64/ld-linux-x86-64.so.2
+libselinux.so.1
+_ITM_deregisterTMCloneTable
+__gmon_start__
+_ITM_registerTMCloneTable
 
+...
 
-
+```
 
 
 
