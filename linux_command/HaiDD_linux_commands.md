@@ -1,18 +1,18 @@
 # Linux command
 
 ## Mục lục
-|1-10|11-20|21-30|31-40|
-|-|-|-|-|
-|[1. man](#man)|[11. mv](#mv)|[21. alias](#alias)|[31. sed](#31)|
-|[2. pwd](#pwd)|[12. rename](#rename)|[22. tee](#tee)|[32. find](#32)|
-|[3. cd](#cd)|[13. head](#head)|[23. grep](#grep)|[33. locate](#33)|
-|[4. ls](#ls)|[14. tail](#tail)|[24. cut](#cut)|[34. date](#34)|
-|[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|[35. cal](#35)|
-|[6. rmdir](#rmdir)|[16. tac](#tac)|[26. wc](#26)|[36. sleep](#36)|
-|[7. file](#file)|[17. more và less](#moreless)|[27. sort](#27)|[37. time](#37)|
-|[8. touch](#touch)|[18. strings](#strings)|[28. uniq](#28)|[38](#38)|
-|[9. rm](#rm)|[19. echo](#echo)|[29. comm](#29)|[39](#39)|
-|[10. cp](#cp)|[20. type & which](#typewhich)|[30. od](#30)|[40. ](#40)|
+|1-10|11-20|21-30|31-40|41-50|
+|-|-|-|-|-|
+|[1. man](#man)|[11. mv](#mv)|[21. alias](#alias)|[31. sed](#31)|[41. bzcat - bzmore](#41)|
+|[2. pwd](#pwd)|[12. rename](#rename)|[22. tee](#tee)|[32. find](#32)|[42. ](#42)|
+|[3. cd](#cd)|[13. head](#head)|[23. grep](#grep)|[33. locate](#33)|[43. ](#43)|
+|[4. ls](#ls)|[14. tail](#tail)|[24. cut](#cut)|[34. date](#34)|[44. ](#44)|
+|[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|[35. cal](#35)|[45. ](#45)|
+|[6. rmdir](#rmdir)|[16. tac](#tac)|[26. wc](#26)|[36. sleep](#36)|[46. ](#46)|
+|[7. file](#file)|[17. more và less](#moreless)|[27. sort](#27)|[37. time](#37)|[47. ](#47)|
+|[8. touch](#touch)|[18. strings](#strings)|[28. uniq](#28)|[38. gzip & gunzip](#38)|[48. ](#48)|
+|[9. rm](#rm)|[19. echo](#echo)|[29. comm](#29)|[39. zcat & zmore](#39)|[49. ](#49)|
+|[10. cp](#cp)|[20. type & which](#typewhich)|[30. od](#30)|[40. bzip2 - bunzip2](#40)|[50. ](#50)|
 
 
 ## 1. Lệnh `man` (manual - hướng dẫn sử dụng) <a name="man"></a>
@@ -1493,3 +1493,88 @@ sleep 1m
 Dùng để thực thi 1 lệnh và hiển thị thời gian thực, thời gian CPU của hệ thống và user để thực thi lệnh đó.
 
 <img src= "https://i.imgur.com/eM60P3s.png">
+
+## 38. Lệnh `gzip - gunzip` <a name ="38"></a>
+Nén và giải nén file. Mỗi file được nén thành 1 file duy nhất
+
+### 38.1. `gzip`
+Nén file thành file có tên `.gz` và xóa file ban đầu.
+
+<img src = "https://i.imgur.com/9uQEOzs.png">
+
+#### 38.1.1. `gzip -f`
+`f - force` : ép buộc nénn 1 tệp dù đã có 1 tệp trùng tên với tệp sau khi nén
+
+<img src= "https://i.imgur.com/78wuYen.png">
+
+#### 38.1.2. `gzip -r folder_name`
+Nén từng file trong thư mục.
+
+#### 38.1.3. `gzip -[1-9]`
+Chọn mức độ nén file.
+
+1 : Nén tối đa ở tốc độ chậm nhất
+
+...
+
+9 : Nén tối thiểu ở tốc độ nhanh nhất
+
+#### 38.1.4. `gzip -v`
+Hiển thị quá trình nén
+
+<img src = "https://i.imgur.com/y5qLFxF.png">
+
+#### 38.1.5. `gzip -d`
+Giải nén file
+
+<img src = "https://i.imgur.com/SMesIEc.png">
+
+### 38.2. `gunzip`
+Dùng để giải nén file. sau khi giải nén xong sẽ xóa file nén
+
+<img src = "https://i.imgur.com/7ro0rNr.png">
+
+#### 38.2.1. `gunzip -c`
+Xem nội dung file nén mà không cần giải nén file đó
+
+<img src= "https://i.imgur.com/c5Xcs32.png">
+
+#### 38.2.2. `gunzip -f`
+Giải nén bất chấp
+
+#### 38.2.3. `gunzip -r`
+Giải nén tất cả các file trong 1 thư mục
+
+<img src= "https://i.imgur.com/9TEmG58.png">
+
+#### 38.2.4. `gunzip -v`
+Xem qúa trình
+
+## 39. Lệnh `zcat - zmore` <a name ="39"></a>
+Dùng để đọc những file nén bằng gzip
+
+- `zcat`
+
+<img src= "https://i.imgur.com/As8jQDl.png">
+
+- `zmore`
+
+<img src ="https://i.imgur.com/Iw5Skqo.png">
+
+
+## 40. Lệnh `bzip2 - bunzip2` <a name="40"></a>
+Nén file nhưng tốt hơn gzip. Muốn sử dụng bzip2 thì phải cài đặt gói hỗ trợ bzip2
+```
+yum -y install bzip2
+```
+
+<img src= "https://i.imgur.com/7tktDwg.png">
+
+### 40.1. `-v`
+Hiển thị quá trình
+
+## 41. Lệnh `bzcat - bzmore` <a name="41"></a>
+Đọc file nén bằng bzip2
+
+<img src = "https://i.imgur.com/dXR69C8.png">
+
