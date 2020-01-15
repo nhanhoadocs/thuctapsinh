@@ -46,6 +46,8 @@ f_check_root () {
 
 #Function to disable SElinux
 f_disable_selinux () {
+	echo -e "${gr}Disable firewall...\033[0m"
+	echo ""
 	systemctl stop firewalld
 	systemctl disable firewalld
 	SE=`cat /etc/selinux/config | grep ^SELINUX= | awk -F'=' '{print$2}'`
@@ -74,6 +76,13 @@ f_update_os () {
 	
 	echo ""
 	sleep 2
+}
+
+#Install chrony
+f_chrony(){
+	yum install -y chrony
+	systemctl start chronyd
+	systemctl enable chronyd
 }
 
 #Install java
@@ -168,6 +177,7 @@ f_main(){
 		if f_check_root; then
 			f_update_os
 			f_disable_selinux
+			f_chrony
 			f_install_java
 			f_install_mongodb
 			f_install_elasticsearch
