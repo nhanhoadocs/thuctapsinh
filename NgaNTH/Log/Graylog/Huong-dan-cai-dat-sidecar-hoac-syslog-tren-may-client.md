@@ -27,7 +27,7 @@ bash /root/graylogsrv.sh
 ```
 - Trong quá trình cài đặt, hệ thống sẽ yêu cầu bạn nhập địa chỉ IP của host cài graylog kèm port 9000. Bạn nhập như theo mẫu.
 ```
-10.10.34.100:9000
+IP_address:9000
 ``` 
 - Tiếp theo nhập mật khẩu để đăng nhập graylog server trên Web interface.  
 
