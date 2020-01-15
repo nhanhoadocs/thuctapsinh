@@ -23,7 +23,7 @@
 Có 2 loại Hypervisor là **Native hypervisor** (hay còn gọi là Bare metal, Embedded) và **Host Based**
 
 #### **1. Native hypervisor**
-Đây là loại hypervisor chạy trực tiếp trên nền phần cứng (chạy như một hệ điều hành).
+Đây là loại hypervisor chạy trực tiếp trên nền phần cứng (chạy như một hệ điều hành). Ví dụ : VMware ESXi, Microsoft Hyper-V và Apple Boot Camp.
 
 <img src = "..\images\native.png">
 
@@ -41,6 +41,7 @@ Có 2 loại Hypervisor là **Native hypervisor** (hay còn gọi là Bare metal
 
 Các hypervisor này phụ thuộc vào hệ điều hành máy chủ mà nó hoạt động.
 
+**Ví dụ** : VMware Workstation, Oracle VirtualBox, Parallels Desktop for Mac, **Linux's Kernel-based Virtual Machine (KVM)**
 <img src = "..\images\hostbase.png">
 
 **Ưu điểm**:
