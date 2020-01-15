@@ -76,7 +76,6 @@ Sau khi tạo thành công, ta sẽ thấy mạng vừa tạo :
 <img src = "..\images\Screenshot_28.png">
 
 
-
 ## 3. Bridge
 - Linux bridge là một phần mềm được tích hợp trong nhân linux để giải quyết vấn đề ảo hóa phần Network trong trong các máy vật lý. 
 
