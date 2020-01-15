@@ -110,7 +110,6 @@ send_status: true
 list_log_files:
   - "/var/log/"
 server_api_token: $graylog_token
-update_interval: 10
 cache_path: "/var/cache/graylog-sidecar"
 log_path: "/var/log/graylog-sidecar"
 EOF
