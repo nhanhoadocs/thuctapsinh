@@ -6,4 +6,4 @@
 
 3. [Các bản ghi trên DNS](docs/record.md)  
 
-4. 
+4. [Tìm hiểu về lệnh `dig`](docs/dig_command.md)
