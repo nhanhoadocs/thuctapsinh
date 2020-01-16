@@ -90,3 +90,5 @@ Với mô hình mạng này ta có thể dùng dải mạng tương ứng với 
 - Gán port cho bridge: `brctl addif tên_bridge tên_card`
 - Kiểm tra lại hoạt động của bridge: `brctl show`
 - Ngắt card khỏi bridge: `brctl delif tên_bridge tên_card`
+
+**Lưu ý:** Với các card mạng có sẵn trên máy hoặc các card được sinh ra trong quá trình cài các phần mềm ảo hóa thì mặc định nó đã được gắn với một switch ảo có cùng tên nên vì vậy muốn kết nối bridge đến các switch đó ta chỉ cần kết nối các máy VM đến nó là được. Thực hiện trên VM ta thực hiện giống với các mô hình trên
