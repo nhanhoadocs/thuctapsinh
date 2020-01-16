@@ -14,6 +14,7 @@
 - Kiểm soát và bảo mật dữ liệu
 
 ## II. Hypervisor
+**Linux's Kernel-based Virtual Machine (KVM)** nó được coi là cả Native hypervisor và Host base
 ### 1. Hypervisor là gì?
 - Hypervisor hay có tên khác là Virtual machine moniter (VMM) dùng để chỉ các phần mềm cho phép tạo và quản lý các máy ảo. Quản lý và cho phép máy ảo truy cập vào tài nguyên phần cứng.
 
@@ -41,7 +42,7 @@ Có 2 loại Hypervisor là **Native hypervisor** (hay còn gọi là Bare metal
 
 Các hypervisor này phụ thuộc vào hệ điều hành máy chủ mà nó hoạt động.
 
-**Ví dụ** : VMware Workstation, Oracle VirtualBox, Parallels Desktop for Mac, **Linux's Kernel-based Virtual Machine (KVM)**
+**Ví dụ** : VMware Workstation, Oracle VirtualBox, Parallels Desktop for Mac, 
 <img src = "..\images\hostbase.png">
 
 **Ưu điểm**:
