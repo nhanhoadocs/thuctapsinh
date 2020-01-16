@@ -19,7 +19,7 @@ Trong kiến trúc của KVM, Virtual machine được thực hiện tương t�
 Trên thực tế, mỗi CPU ảo hoạt động như một tiến trình xử lý của Linux. Do đó, KVM được quyền thừa hưởng những ưu điểm từ các tính năng của nhân Linux.
 
 ## III. Loại ảo hóa của KVM
-KVM thuộc loại ảo hóa toàn phần (Full virtualization). 
+KVM thuộc loại ảo hóa phần cứng Hardware assisted virtualization
 
 Và thuộc loại Hypervisor type 2: Host Based. KVM có thể cài đặt trên tất cả các Distro khác nhau của Linux.
 
