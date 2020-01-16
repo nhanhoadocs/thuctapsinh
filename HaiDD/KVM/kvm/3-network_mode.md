@@ -84,3 +84,9 @@ Sau khi tạo thành công, ta sẽ thấy mạng vừa tạo :
 <img src = "..\images\networkbridge.png">
 
 Với mô hình mạng này ta có thể dùng dải mạng tương ứng với mỗi card mạng của ta. Ta cũng có thể add thêm 1 còn switch ảo và gán cho nó các card mạng tương ứng. Lúc này khi các VM kết nối vào switch đó nó sẽ nhận địa chỉ của card đã kết nối với switch
+
+### Lệnh tạo 1 bridge
+- Tạo bridge: `brctl addbr tên_bridge`
+- Gán port cho bridge: `brctl addif tên_bridge tên_card`
+- Kiểm tra lại hoạt động của bridge: `brctl show`
+- Ngắt card khỏi bridge: `brctl delif tên_bridge tên_card`
