@@ -6,3 +6,8 @@
 - [Cài đặt Wordpress](docs/wordpress.md)
 - [Script cài đặt LEMP + Wordpress](docs/huong_dan_cen7.md)
 - [Cấu hình Nginx Reverse Proxy và Cache cho Apache WebServer](docs/nginx_reverse_proxy.md)
+- [Cấu hình NginX làm Load Balancer](docs/loadbalancer.md)
+- [Cài đặt SSL trên localhost](docs/ssl_localhost.md)
+- [Cài đặt SSL cho website](docs/ssl.md)
+- [Cài đặt SSL cho Wordpress](ssl_wordpress.md)  
+- [Cấu hình xác thực truy cập](docs/basic_auth.md)
