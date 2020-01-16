@@ -175,3 +175,4 @@ Khi email được gửi đi máy chủ mail sẽ kiểm so sánh với thông t
 - https://blog.cloud365.vn/linux/dns-record/#5-record-ptr
 - https://likegeeks.com/linux-dns-server/#Setting-up-Linux-DNS-Server
 - https://www.mystown.com/2016/08/dns-la-gi-tim-hieu-he-thong-ten-mien.html?m=1
+- https://wiki.matbao.net/kb/mot-so-dinh-nghia-ve-cac-dns-record/
