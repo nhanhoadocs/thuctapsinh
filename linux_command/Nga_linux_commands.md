@@ -596,4 +596,906 @@ Gio bat dau tu dau
 Em cung khong biet nua
 Khi nao ta yeu nhau
 ```
+<a name="15"></a>
+
+## 4.4 tac
+Lệnh `tac` dùng để hiển thị ngược nội dung của file  
+```
+[root@centos7srv ~]# tac song.txt
+Khi nao ta yeu nhau
+Em cung khong biet nua
+Gio bat dau tu dau
+Song bat dau tu gio
+```
+<a name="16"></a>
+
+## 4.5 less & more  
+Trong trường hợp cần phải đọc toàn bộ dữ liệu từ một file nhưng lại không muốn mở file đó lên bằng một trình soạn thảo, chúng ta có thể sử dụng lệnh less hoặc lệnh more để phân trang file cần đọc.
+
+### 4.5.1 less  
+Lệnh `less` dùng mở một tệp để đọc tương tác, cho phép di chuyển lên xuống và tìm kiếm. Để mở tệp tin ta gõ:  
+```
+less song.txt
+Song bat dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+song.txt (END)
+```
+- **Các phím di chuyển**:  
+       - Xuống trang mới: Phím **Space**  
+       - Lên trang phía trên: **Phím b**  
+       - Xuống cuối file: phím **G**    
+       - Lên đầu file: phím **g**  
+
+- **Theo dõi đầu ra của tệp hiện đang mở** : phím F  
+- **Mở tệp hiện tại trong trình chỉnh sửa**: phím v  
+- **Thoát khỏi tệp**: phím q  
+
+### 4.5.2 more  
+
+Lệnh `more` dùng mở một tệp để đọc tương tác, cho phép di chuyển lên xuống và tìm kiếm. Để mở tệp tin ta gõ lệnh  
+```
+[root@centos7srv ~]# more song.txt
+Song bat dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+> Điểm khác biệt giữa `less` và `more` là `less` cho phép cuộn ngược lên các trang dữ liệu đã đọc, còn more thì chỉ có thể đọc từ đầu tới cuối. Lệnh `less` có thể dùng phím mũi tên trên bàn phím để scroll lên xuống, lệnh more không có chức năng này.  
+
+<a name="17"></a>
+
+## 4.6 strings  
+Lệnh `strings` dùng để in chuỗi ký tự có thể in trong tệp.  
+```
+[root@centos7srv ~]# strings song.txt
+Song bat dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+- Mặc định `strings` sẽ tìm chuỗi có 4 ký tự hoặc dài hơn. Ta có thể set chiều dài của chuỗi bằng cách sử dụng tùy chọn `-n`  
+```
+strings -n file_name
+```
+VD:  
+```
+[root@centos7srv ~]# strings -n 6 f1
+```
+- Chỉ in chuỗi từ các phần dữ liệu được tải, khởi tạo trong tệp. (d -data)
+```
+strings -d
+```
+- In tên của file trước mỗi chuỗi
+```
+[root@centos7srv ~]# strings -f song.txt
+song.txt: Song bat dau tu gio
+song.txt: Gio bat dau tu dau
+song.txt: Em cung khong biet nua
+song.txt: Khi nao ta yeu nhau
+```
+- Tính cả khoảng trắng của chuỗi. Theo mặc định, tab và ký tự khoảng trắng được bao gồm trong các chuỗi được hiển thị, nhưng các ký tự khoảng trắng khác, chẳng hạn như dấu cách và xuống dòng mới. Tùy chọn `-w` thay đổi điều này để tất cả các ký tự khoảng trắng được coi là một phần của chuỗi.  
+```
+string -w
+```
+
+<a name="18"></a>  
+
+## 5. Commands and arguments (Các lệnh và đối số)
+  
+### 5.1 echo  
+Lệnh `echo` dùng để hiển thị một dòng văn bản. 
+- Hiển thị chuỗi nhập vào  
+```
+[root@centos7srv ~]# echo Xin chao
+Xin chao
+```
+- Cho phép giải thích các dấu gạch chéo ngược/ Chèn các kí tự 
+```
+echo -e  
+```
+- Xuống dòng (`-n`)
+```
+[root@centos7srv ~]# echo -e "Xin chao \n --Nga"
+Xin chao
+ --Nga
+```
+- Tab (`\t`) 
+```
+[root@centos7srv ~]# echo -e "Xin chao \n\t --Nga"
+Xin chao
+         --Nga
+```
+- Không xuất ra dòng mới  (`-n`)
+```
+[root@centos7srv ~]# echo -n "Xin chao"
+Xin chao[root@centos7srv ~]#
+```
+
+**Trường hợp sử dụng**  
+- Nhập 1 chuỗi vào tệp và xóa dòng cũ  
+```
+[root@centos7srv ~]# echo Xin chao > t1
+[root@centos7srv ~]# cat t1
+Xin chao
+[root@centos7srv ~]# echo  Xin chao 2 > t1
+[root@centos7srv ~]# cat t1
+Xin chao 2
+```
+- Nối dòng tiếp theo vào tệp  
+```
+[root@centos7srv ~]# echo Xin chao 3 >> t1
+[root@centos7srv ~]# cat t1
+Xin chao 2
+Xin chao 3
+```
+
+### 5.2 type and which  
+
+**5.2.1**
+Trong hệ thống Linux, lệnh `type` được sử dụng để hiển thị thông tin về loại lệnh. Nó hiển thị nếu lệnh là alias, shell funtion, shell builtin, tệp đĩa hoặc từ dành riêng cho shell.  
+
+Các tùy chọn đi kèm:  
+- **-a** : Hiển thị xem nó là một alias, từ khóa hoặc hàm, nó cũng có thể hiển thị đường dẫn của 1 file thực thi nếu có  
+```
+[root@centos7srv ~]# type -a ls
+ls is aliased to `ls --color=auto'
+ls is /usr/bin/ls
+[root@centos7srv ~]# type -a pwd
+pwd is a shell builtin
+pwd is /usr/bin/pwd
+```
+- **-t** : Tùy chọn -t cho biết loại để in một từ duy nhất mô tả loại lệnh có thể là một trong những điều sau đây:  
+       - alias (alias vỏ)  
+       - funtion (funtion shell)  
+       - builtin (shell builtin)  
+       - file (disk file)  
+       - keyword (shell reserved word)  
+
+```
+[root@centos7srv ~]# type -t cat
+file
+[root@centos7srv ~]# type -t ls
+alias
+```
+- **-p** : hiển thị đường dẫn (path)  
+```
+[root@centos7srv ~]# type -p date
+/usr/bin/date
+```
+
+**5.2.2 which**  
+Lệnh `which` dùng để hiển thị đầy đủ đường dẫn của lệnh (shell)  
+```
+[root@centos7srv ~]# which cp ls cd mkdir pwd
+alias cp='cp -i'
+        /usr/bin/cp
+alias ls='ls --color=auto'
+        /usr/bin/ls
+/usr/bin/cd
+/usr/bin/mkdir
+/usr/bin/pwd
+```
+
+### 5.3 alias  
+Trong Linux có một công cụ thu gọn lệnh rất tiên lợi và ta gọi là `Alias`, vậy `Alias` là một cách khai báo các lệnh viết tắt nhằm tiết kiệm thời gian gõ phím và dễ nhớ hơn. Thay vì bạn gõ một dòng lệnh dài hàng trăm chử thì bạn chỉ việc gõ đôi ba chữ là có thể thay thế lệnh đó được. Theo mặc định các lệnh viết tắt được lưu trữ trong file `~/.bashrc` hoặc `~/.bash_profile`, trong đó dấu `~` là viết tắt cho thư mục `home` của bạn. Ví dụ thư mục `home` của bạn là `/home/ngahong/ thì file đó sẽ là /home/ngahong/.base_profile.
+
+**5.3.1 Tạo một alias**  
+Ví dụ  
+```
+[root@centos7srv ~]# cat count.txt
+one
+two
+three
+[root@centos7srv ~]# alias dog=tac
+[root@centos7srv ~]# dog count.txt
+three
+two
+one
+```  
+**5.3.2 Viết tắt lệnh**  
+```
+alias ll='ls -lh --color=auto'
+alias c='clear'
+```  
+`alias` có thể được sử dụng để cung cấp các lệnh với các tùy chọn mặc định. Ví dụ dưới đây cho thấy cách đặt tùy chọn `-i` mặc định khi nhập `rm`.  
+```
+[root@centos7srv ~]# touch muadong.txt
+[root@centos7srv ~]# alias rm='rm -i'
+[root@centos7srv ~]# rm muadong.txt
+rm: remove regular empty file ‘muadong.txt’?
+```
+Ví dụ alias cho SSH  
+```
+alias sshnga='ssh ngakma@192.168.152.100'  
+```
+
+- Liệt kê danh sách lệnh alias  
+```
+[root@centos7srv ~]# alias
+alias cp='cp -i'
+alias dog='tac'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias l.='ls -d .* --color=auto'
+alias ll='ls -l --color=auto'
+alias ls='ls --color=auto'
+alias mv='mv -i'
+alias rm='rm -i'
+alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+```
+
+**5.3.3 Xóa một alias** 
+```
+unalias alias_name
+```
+Ví dụ  
+```
+[root@centos7srv ~]# which dog
+alias dog='tac'
+        /usr/bin/tac
+[root@centos7srv ~]# unalias dog
+[root@centos7srv ~]# which dog
+/usr/bin/which: no dog in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin)
+```
+
+## 6. tee  
+Lệnh `tee` dùng để đọc từ đầu vào tiêu chuẩn và ghi vào đầu ra và tập tin tiêu chuẩn.  
+```
+tee [tùy chọn] file
+```
+Ví dụ  
+- Sao chép đầu vào từng file và cả đầu ra
+```
+[root@test1 ~]# cat file.txt
+[root@test1 ~]# echo "example" | tee file.txt
+example
+[root@test1 ~]# cat file.txt
+example
+```
+- Nối vào các file đã cho, không ghi đè
+```
+[root@test1 ~]# cat file.txt
+example
+[root@test1 ~]# echo "example-1" | tee -a file.txt
+example-1
+[root@test1 ~]# cat file.txt
+example
+example-1
+```
+
+## 7. grep  
+Lệnh `grep` dùng để in ra chuỗi cần tìm kiếm.  
+Các tùy chọn đi kèm lệnh `grep`  
+
+`-i` : không phân biệt hoa thường
+
+<img src="https://i.imgur.com/Pjvwxnw.png">
+
+`-v` : Tìm những dòng không chứa chuỗi (tìm kiếm ngược)
+
+<img src="https://i.imgur.com/etaD5tl.png">
+
+`-n` : Hiển thị số dòng
+
+<img src="https://i.imgur.com/tRtnCi7.png">
+
+`-c` : Đếm số dòng khớp
+
+<img src="https://i.imgur.com/unWSDsk.png">  
+
+- Tìm kiếm chuỗi  
+```
+https://i.imgur.com/KSF4hWr.png
+```
+- Loại bỏ dấu # và khoảng trắng  
+
+<img src="https://i.imgur.com/hNq6kfp.png">  
+
+## 8. cut  
+Lệnh `cut` dùng để loại bỏ các phần từ mỗi dòng của tập tin.  
+
+Ví dụ  
+- Cắt mười sáu ký tự đầu tiên của mỗi dòng STDIN:  
+```
+[root@centos7srv ~]# echo "This is a filetest" | cut -c 1-16
+This is a filete
+```
+- Cắt 15 ký tự đầu tiên của mỗi dòng của các tệp đã cho
+```
+[root@centos7srv ~]# cut -c 1-15 song.txt
+Song bat dau tu
+Gio bat dau tu
+Em cung khong b
+Khi nao ta yeu
+```
+- Cắt bỏ từ ký tự thứ 3 đến cuối mỗi dòng
+```
+[root@centos7srv ~]# cut -c 3- song.txt
+ng bat dau tu gio
+o bat dau tu dau
+ cung khong biet nua
+i nao ta yeu nhau
+```
+
+## 9. tr  
+Lệnh `tr` dùng để dịch hoặc xóa kí tự trong tệp tin. 
+Cú pháp chung  
+```
+tr [tuỳ chọn] [set1] [set2]
+``` 
+Ví dụ  
+- Chuyển tất cả các kí tự thành chữ hoa
+```
+[root@centos7srv ~]# cat song.txt
+Song bat dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+[root@centos7srv ~]# tr "a-z" "A-Z" < song.txt
+SONG BAT DAU TU GIO
+GIO BAT DAU TU DAU
+EM CUNG KHONG BIET NUA
+KHI NAO TA YEU NHAU
+```
+- Chuyển khoảng trắng(space) thành tab.
+```
+[root@centos7srv ~]# echo "This is for test " | tr [:space:] '\t'
+This    is      for     test 
+```
+- Xóa kí tự 
+```
+[root@centos7srv ~]# tr -d "d" < song.txt
+Song bat au tu gio
+Gio bat au tu au
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+## 10. wc  
+Lệnh `wc` dùng để in dòng mới, từ và số byte cho mỗi tệp.  
+Cú pháp  
+```
+wc [tùy chọn] file
+```
+- Đếm các dòng trong tệp
+```
+[root@centos7srv ~]# wc -l song.txt
+5 song.txt
+```
+- Đếm kí tự (byte) trong tệp 
+```
+[root@centos7srv ~]# wc -c song.txt
+83 song.txt
+```
+- Đếm số từ trong tệp
+```
+[root@centos7srv ~]# wc -w song.txt
+20 song.txt
+```
+- Đếm số kí tự trong tệp
+```
+[root@centos7srv ~]# wc -m song.txt
+83 song.txt
+```
+- In ra độ dài của dòng dài nhất
+```
+[root@centos7srv ~]# wc -L song.txt
+22 song.txt
+```
+
+## 11. sort
+Lệnh `sort` được sử dụng để sắp xếp các dòng của tệp văn bản theo thứ tự tăng dần hoặc giảm dần, theo một khoá sắp xếp. Khóa sắp xếp mặc định là thứ tự của các ký tự ASCII (theo thứ tự bảng chữ cái). Cú pháp của lệnh sort:  
+```
+sort <tuỳ chọn> <file>
+```
+- Sắp xếp mặc định
+```
+[root@centos7srv ~]# sort song.txt
+Em cung khong biet nua
+Gio bat dau tu dau
+Khi nao ta yeu nhau
+Song bat dau tu gio
+```
+- Sắp xếp ngược lại
+```
+[root@centos7srv ~]# sort -r song.txt
+Song bat dau tu gio
+Khi nao ta yeu nhau
+Gio bat dau tu dau
+Em cung khong biet nua
+```
+- Sắp xếp các số theo thứ tự tăng dần
+```
+[root@centos7srv ~]# cat number.txt
+10
+8
+50
+100
+98
+[root@centos7srv ~]# sort -n number.txt
+8
+10
+50
+98
+100
+```
+- Sắp xếp rồi chỉ định tệp đầu ra bằng tùy chọn -o:
+```
+[root@centos7srv ~]# sort -n number.txt -o file1.txt
+[root@centos7srv ~]# cat file1.txt
+8
+10
+50
+98
+100
+```
+- Sắp xếp theo cột bằng cách sử dụng tùy chọn -k. Theo mặc định dấu space, dấu tab, dấu 2 chấm dùng để phân tách các cột:
+```
+[root@centos7srv ~]# cat file2.txt
+nga 20
+ha 18
+nam 27
+[root@centos7srv ~]# sort -k2,2n file2.txt
+ha 18
+nga 20
+nam 27
+```
+
+## 12. uniq
+Lệnh `uniq` được dùng để báo cáo hoặc bỏ qua những dòng lặp lại
+Lệnh `uniq` thường đi kèm với lệnh `sort`.  
+- Xóa các bản sao từ danh sách đã sắp xếp
+```
+[root@centos7srv ~]# cat file1.txt
+8
+10
+50
+98
+100
+50
+8
+[root@centos7srv ~]# sort -n file1.txt | uniq
+8
+10
+50
+98
+100
+```
+- Đếm số lần xuất hiện  
+```
+[root@centos7srv ~]# sort -n file1.txt | uniq -c
+      2 8
+      1 10
+      2 50
+      1 98
+      1 100
+```
+
+## 13. comm
+Lệnh `comm` được dùng để so sánh hai tệp được sắp xếp theo từng dòng  
+- Ví dụ
+```
+[root@centos7srv ~]# cat group1
+Anh
+Binh
+Hong
+Ngoc
+Phong
+Trung
+[root@centos7srv ~]# cat group2
+Anh
+Chau
+Hoa
+Ngoc
+[root@centos7srv ~]# comm group1 group2
+                Anh
+Binh
+        Chau
+        Hoa
+Hong
+                Ngoc
+Phong
+Trung
+```
+- Đầu ra của `comm` có thể dễ đọc hơn khi chỉ xuất ra một cột duy nhất. Các chữ số chỉ ra những cột đầu ra không nên được hiển thị.
+```
+[root@centos7srv ~]# comm group1 group2
+                Anh
+Binh
+        Chau
+        Hoa
+Hong
+                Ngoc
+Phong
+Trung
+[root@centos7srv ~]# comm -12 group1 group2
+Anh
+Ngoc
+[root@centos7srv ~]# comm -13 group1 group2
+Chau
+Hoa
+[root@centos7srv ~]# comm -23 group1 group2
+Binh
+Hong
+Phong
+Trung
+```
+
+## 15. od  
+Lệnh `od` trong Linux được sử dụng để chuyển đổi nội dung đầu vào ở các định dạng khác nhau với định dạng bát phân làm định dạng mặc định.   
+Lệnh này đặc biệt hữu ích khi gỡ lỗi các tập lệnh Linux cho các thay đổi hoặc ký tự không mong muốn. Nếu có nhiều hơn một tệp được chỉ định, lệnh od sẽ ghép chúng theo thứ tự được liệt kê để tạo thành đầu vào.   
+Nó có thể hiển thị đầu ra ở nhiều định dạng khác nhau, bao gồm thập lục phân, thập phân và ASCII. Nó rất hữu ích để trực quan hóa dữ liệu không ở định dạng có thể đọc được, giống như mã thực thi của chương trình.   
+
+**Cú pháp** 
+```
+od [OPTION]... [FILE]...
+```  
+- `-b`: Hiển thị nội dung của đầu vào ở định dạng bát phân.
+```
+[root@centos7srv ~]# cat input.txt
+100
+101
+102
+103
+104
+105
+[root@centos7srv ~]# od -b input.txt
+0000000 061 060 060 012 061 060 061 012 061 060 062 012 061 060 063 012
+0000020 061 060 064 012 061 060 065 012
+0000030
+```
+Cột đầu tiên trong đầu ra của `od` biểu thị phần bù byte trong tệp.  
+- `-c`: Hiển thị nội dung của đầu vào ở định dạng ký tự.
+```
+[root@centos7srv ~]# od -c input.txt
+0000000   1   0   0  \n   1   0   1  \n   1   0   2  \n   1   0   3  \n
+0000020   1   0   4  \n   1   0   5  \n
+0000030
+```
+- `-`: Chấp nhận đầu vào từ dòng lệnh.
+```
+
+```
+Ở đây, chúng ta thấy rằng đầu tiên input đã được đưa ra và sau đó sau khi nhấn ctrl + d, output lệnh od được hiển thị.
+```
+[root@centos7srv ~]# od -c -
+test lenh
+0000000   t   e   s   t       l   e   n   h  \n
+0000012
+```
+
+## 6. sed
+Lệnh `sed` được sử dụng để chỉnh sửa luồng và lọc văn bản. sed là viết tắt của từ `stream editor`  
+Ví dụ thay thế một chuỗi trong file:  
+- Thay thế những xuất hiện của một chuỗi với một chuỗi khác trong file  
+```
+[root@localhost ~]# cat song.txt
+Song bat dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+[root@localhost ~]# sed 's/Song bat/SONG BAT/' song.txt
+SONG BAT dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+- Lưu thay đổi file 
+```
+[root@localhost ~]# sed -i 's/Song bat/SONG BAT/' song.txt
+[root@localhost ~]# cat song.txt
+SONG BAT dau tu gio
+Gio bat dau tu dau
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+- Thay thế tất cả sự xuất hiện của mẫu trong file ( `g` option)  
+```
+[root@localhost ~]# sed -i 's/dau/DAU/g' song.txt
+[root@localhost ~]# cat song.txt
+SONG BAT DAU tu gio
+Gio bat DAU tu DAU
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+- Xóa dòng trống
+```
+[root@localhost ~]# cat song.txt
+SONG BAT DAU tu gio
+
+Gio bat DAU tu DAU
+Em cung khong biet nua
+Khi nao ta yeu nhau
+[root@localhost ~]# sed '/^$/d' song.txt
+SONG BAT DAU tu gio
+Gio bat DAU tu DAU
+Em cung khong biet nua
+Khi nao ta yeu nhau
+```
+
+- Xóa dòng chứa chuỗi chỉ định 
+```
+[root@localhost ~]# sed '/khong/d' song.txt
+SONG BAT DAU tu gio
+Gio bat DAU tu DAU
+Khi nao ta yeu nhau
+```
+
+- Thay thế mẫu có kí tự đặc biệt  
+Ví dụ ta sẽ thay thế string chuỗi http://192.168.152.100 thành ipaddress thì ta sẽ đặt dấu \ trước mỗi kí tự đặc biệt
+```
+echo https://192.168.152.100 | sed 's/https\:\/\/192\.168\.152\.100/ipaddress/'
+```
+hoặc:  
+```
+sed 's|http://192.168.152.100|ipaddress|'
+```
+
+## 7. find  
+Lệnh `find` được dùng để tìm kiếm file và thư mục
+- Tìm kiếm theo tên file cụ thể
+```
+[root@localhost ~]# find song.txt
+song.txt
+```
+- Tìm kiếm theo tên file không đầy đủ
+```
+[root@localhost ~]# find / -name son*
+/root/song.txt
+```
+- Tìm kiếm file với phần mở rộng
+```
+[root@localhost ~]# find -name *.txt
+./song.txt
+```
+- Tìm kiếm file ẩn
+```
+find / -type f -name ".*"
+```
+- Tìm kiếm theo owner
+```
+[root@localhost ngahong]# find /home -user ngahong
+/home/ngahong
+/home/ngahong/.bash_logout
+/home/ngahong/.bash_profile
+/home/ngahong/.bashrc
+/home/ngahong/filenga.txt
+```
+- Tìm kiếm theo group
+```
+ find /home -group ten_group
+```
+- Tìm kiếm theo permision
+```
+find / -perm 644
+/home/ngahong/.bash_logout
+/home/ngahong/.bash_profile
+/home/ngahong/.bashrc
+```
+- Tìm các file/ thư mục rỗng
+```
+[root@localhost ngahong]# touch filerong.txt
+[root@localhost ngahong]# cat filerong.txt
+[root@localhost ngahong]# find -empty
+./filerong.txt
+./folderrong
+```
+ 
+- Tìm kiếm file có dung lượng dưới 50M  
+```
+[root@localhost ~]# find /root/ -size -50M
+/root/
+/root/.bash_logout
+/root/.bash_profile
+/root/.bashrc
+/root/.cshrc
+/root/.tcshrc
+/root/anaconda-ks.cfg
+/root/.bash_history
+/root/.song.txt.swp
+/root/song.txt
+/root/graylog.sh
+/root/.pki
+/root/.pki/nssdb
+```
+- Tìm kiếm file có dung lượng lớn hơn 50M nhỏ hơn 100M
+```
+find / -size +50M -size -100M
+```
+- Tìm và xóa file có kích thước lớn hơn 100M
+```
+find /home/ngahong -size +100M -exec rm -rf {} \
+```
+## locate
+Tùy thuộc vào bản phân phối và cách hệ thống được cung cấp, gói locate có thể được cài đặt sẵn trên hệ thống Linux.
+Trên CentOS không hỗ trợ gói `locate`. Muốn sử dụng lệnh locate ta cần cài đặt
+```
+yum install mlocate
+updatedb
+```
+- Tìm kiếm vị trí file  
+```
+locate ten_file
+```
+- Không phân biệt chữ hoa thường
+```
+locate -i readme.md
+```
+- Giới hạn kết quả tìm kiếm
+```
+locate -n 10 *.py
+```
+- Hiển thị số lượng tìm kiếm phù hợp
+```
+locate -c *.json
+```
+
+## date
+Lệnh `date` dùng để hiển thị hoặc thiết lập thời gian (ngày, giờ) của hệ thống.  
+- In ra ngày tháng hiện tại
+```
+[root@localhost ~]# date
+Tue Jan 14 20:36:01 +07 2020
+```
+- In ra tên ngắn gọn và tên đầy của của ngày trong tuần
+```
+[root@localhost ~]# date +%a
+Tue
+[root@localhost ~]# date +%A
+Tuesday
+```
+- In ra tên ngắn gọn và tên đầy đủ của tháng
+```
+[root@localhost ~]# date +%b
+Jan
+[root@localhost ~]# date +%B
+January
+```
+- In ra ngày tháng và thời gian
+```
+[root@localhost ~]# date +%c
+Tue 14 Jan 2020 08:40:31 PM +07
+```
+- In ra ngày trong tháng
+```
+[root@localhost ~]# date +%d
+14
+```
+- In ra thời gian ở dạng 12h
+```
+[root@localhost ~]# date +%r
+08:43:34 PM
+```
+- In ra thời gian ở dạng 24h
+```
+[root@localhost ~]# date +%R
+20:43
+```
+- Chúng ta có thể sử dụng kết hợp nhiều tùy chọn trên với nhau để in ra chuỗi ngày tháng mong muốn.
+```
+[root@localhost ~]# date "+%d %B %Y"
+14 January 2020
+```
+- Thiết lập ngày tháng và thời gian
+```
+[root@localhost ~]# date -s "14 Jan 2020 20:49:00"
+Tue Jan 14 20:49:00 +07 2020
+```
+
+
+## cal
+Lệnh `cal` dùng để hiển thị tháng hiện tại, với ngày hiện tại được tô sáng.
+
+<img src="https://i.imgur.com/k3Zg30G.png">  
+
+- Bạn có thể hiển thị bất kì tháng nào của năm nào.
+
+<img src="https://i.imgur.com/xVgrffI.png">  
+
+- Hiển thị 3 tháng gần nhất (tháng trước, tháng hiện tại và tháng tiếp theo)
+
+<img src="https://i.imgur.com/XCnMEh7.png">  
+
+- Hiển thị thứ hai như ngày đầu tiên của tuần
+```
+[root@localhost ~]# cal --monday
+    January 2020
+Mo Tu We Th Fr Sa Su
+       1  2  3  4  5
+ 6  7  8  9 10 11 12
+13 14 15 16 17 18 19
+20 21 22 23 24 25 26
+27 28 29 30 31
+```
+- Hiển thị chủ nhật là ngày đầu tiên của tuần
+```
+[root@localhost ~]# cal --sunday
+    January 2020
+Su Mo Tu We Th Fr Sa
+          1  2  3  4
+ 5  6  7  8  9 10 11
+12 13 14 15 16 17 18
+19 20 21 22 23 24 25
+26 27 28 29 30 31
+```
+- Hiển thị lịch của năm hiện tại
+```
+[root@localhost ~]# cal -y
+                               2020
+
+       January               February                 March
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+          1  2  3  4                      1    1  2  3  4  5  6  7
+ 5  6  7  8  9 10 11    2  3  4  5  6  7  8    8  9 10 11 12 13 14
+12 13 14 15 16 17 18    9 10 11 12 13 14 15   15 16 17 18 19 20 21
+19 20 21 22 23 24 25   16 17 18 19 20 21 22   22 23 24 25 26 27 28
+26 27 28 29 30 31      23 24 25 26 27 28 29   29 30 31
+
+        April                   May                   June
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+          1  2  3  4                   1  2       1  2  3  4  5  6
+ 5  6  7  8  9 10 11    3  4  5  6  7  8  9    7  8  9 10 11 12 13
+12 13 14 15 16 17 18   10 11 12 13 14 15 16   14 15 16 17 18 19 20
+19 20 21 22 23 24 25   17 18 19 20 21 22 23   21 22 23 24 25 26 27
+26 27 28 29 30         24 25 26 27 28 29 30   28 29 30
+                       31
+        July                  August                September
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+          1  2  3  4                      1          1  2  3  4  5
+ 5  6  7  8  9 10 11    2  3  4  5  6  7  8    6  7  8  9 10 11 12
+12 13 14 15 16 17 18    9 10 11 12 13 14 15   13 14 15 16 17 18 19
+19 20 21 22 23 24 25   16 17 18 19 20 21 22   20 21 22 23 24 25 26
+26 27 28 29 30 31      23 24 25 26 27 28 29   27 28 29 30
+                       30 31
+       October               November               December
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+             1  2  3    1  2  3  4  5  6  7          1  2  3  4  5
+ 4  5  6  7  8  9 10    8  9 10 11 12 13 14    6  7  8  9 10 11 12
+11 12 13 14 15 16 17   15 16 17 18 19 20 21   13 14 15 16 17 18 19
+18 19 20 21 22 23 24   22 23 24 25 26 27 28   20 21 22 23 24 25 26
+25 26 27 28 29 30 31   29 30                  27 28 29 30 31
+```
+
+
+## sleep
+Lệnh `sleep` dùng để trì hoãn trong một khoảng thời gian xác định
+```
+sleep 5
+```
+
+## time
+Lệnh `time` có thể hiển thị thời gian cần thiết để thực hiện một lệnh. Lệnh `date` chỉ mất một ít thời gian.
+Để chạy lệnh `time` ta cần phải cài đặt
+```
+yum install -y time
+```
+Sau khi cài đặt, ứng dụng time của chúng ta sẽ nằm trong đường dẫn `/usr/bin/time`.  
+
+- Xem thời gian của lệnh 
+```
+[root@localhost ~]# time ls
+anaconda-ks.cfg  f1.sh  graylog-sidecar-1.0.2-1.x86_64.rpm  t1.txt  test.sh
+
+real    0m0.002s
+user    0m0.000s
+sys     0m0.002s
+```
+Trong đó:
+
+- `real` (thời gian thực thi thật) => thời gian từ khi bắt đầu đến khi kết thúc tiến trình. Đây là toàn bộ thời gian được dùng, bao gồm thời gian được dùng bởi các tiến trình khác và thời gian mà tiến trình dùng khi bị chặn ( ví dụ, nếu nó đang đợi các tác vụ I/O  để hoàn thành).
+- `user` (thời gian người dùng) => là lượng thời gian của CPU dùng trong các mã ở chế độ người dùng (các mã nằm bên ngoài nhân của hệ điều hành) bên trong tiến trình. Đây chỉ là thời gian thực tế của CPU được dùng trong việc thực thi tiến trình. Các tiến trình khác, và thời gian mà các tiến trình này dành khi bị chặn không tính vào con số này.
+- `sys` => là lượng thời gian của CPU dùng trong nhân hệ điều hành bên trong quá trình này, tức là thời gian CPU dùng cho các lời gọi hệ thống bên trong nhân hệ điều hành. Giống với thời gian người dùng, giá trị này chỉ là thời gian mà CPU được dùng bởi tiến trình này.
+
+Ví dụ
+```
+[root@localhost ~]# time sleep 5
+
+real    0m5.004s
+user    0m0.002s
+sys     0m0.000s
+```
+
+
 
