@@ -15,57 +15,47 @@ if cat /etc/*release | grep CentOS > /dev/null 2>&1; then
     OS="CentOS"
 
     if [ $(rpm --eval '%{centos_ver}') == '6' ] ;then 
-        OS_VER="CentOS6"
-		echo "Script doesn't support or verify this OS type/version"
+        OS_VER="CentOS6"; return 1
     elif [ $(rpm --eval '%{centos_ver}') == '7' ] ;then 
-        OS_VER="CentOS7"
-		f_check_root
+        OS_VER="CentOS7"; return 0
     elif [ $(rpm --eval '%{centos_ver}') == '8' ] ;then 
-        OS_VER="CentOS8"
-		echo "Script doesn't support or verify this OS type/version"
+        OS_VER="CentOS8"; return 1
     fi 
 elif cat /etc/*release | grep ^NAME | grep Ubuntu > /dev/null 2>&1; then
 
     OS="Ubuntu"
 
     if [ $(lsb_release -c | grep Codename | awk '{print $2}') == 'trusty' ] ;then 
-        OS_VER="Ubuntu14"
-		echo "Script doesn't support or verify this OS type/version"
+        OS_VER="Ubuntu14"; return 1
     elif [ $(lsb_release -c | grep Codename | awk '{print $2}') == 'xenial' ] ;then 
-        OS_VER="Ubuntu16"
-		echo "Script doesn't support or verify this OS type/version"
+        OS_VER="Ubuntu16"; return 1
     elif [ $(lsb_release -c | grep Codename | awk '{print $2}') == 'bionic' ] ;then 
-        OS_VER="Ubuntu18"
-		echo "Script doesn't support or verify this OS type/version"
+        OS_VER="Ubuntu18"; return 1
     fi 
 else
-    echo "Script doesn't support or verify this OS type/version"
-    exit 1;
+	return 1
 fi 
 }
 
 #Function check user root
 f_check_root () {
 	if(( $EUID == 0)); then
-		#if user is root, continue to function f_sub_main
-		f_check_install
+		return 0
 	else
-		#if user not root, print message and exit script
-		echo "Please run this script by user root!"
-		exit
+		return 1
 	fi
 }
 
 # Check install nginx, mariadb, php
-f_check_install () {
+f_check_installed () {
 echo "Check package installed"
 if [[ $OS == "CentOS" && $OS_VER == "CentOS7" ]]; then 
-    if ! rpm -qa | egrep "nginx|mariadb|php" > /dev/null 2>&1; then
-       echo "NGINX, MariaDB, PHP is installed!"
+    if rpm -qa | egrep "nginx|mariadb|php" > /dev/null 2>&1; then
+       return 0
 	else
-		f_sub_main
+		return 1
 	fi
-else echo ".../"
+else echo "Coming soon..."; return 2
 fi
 }
 
@@ -79,6 +69,9 @@ f_disable_selinux () {
 	if [[ "$SE" == "enforcing" ]]; then
 		sed -i 's|SELINUX=enforcing|SELINUX=disabled|g' /etc/selinux/config
 		echo "SElinux is disabled"
+	elif [[ "$SE" == "enable"  ]]; then
+		sed -i 's|SELINUX=enable|SELINUX=disabled|g' /etc/selinux/config
+		echo "SElinux is disabled"
 	fi
 }
 	
@@ -89,7 +82,7 @@ f_update_os () {
 	
 	yum install epel-release -y
 	yum update -y
-	yum upgrade -y
+	#yum upgrade -y
 	
 	echo ""
 	sleep 1
@@ -156,7 +149,7 @@ f_config () {
 	cat > /etc/nginx/conf.d/default.conf <<"EOF"
 server {
     listen       80;
-    server_name  10.10.34.132;
+    server_name  your-server-ip;
 
     # note that these lines are originally from the "location /" block
     root   /usr/share/nginx/html;
@@ -186,6 +179,8 @@ EOF
 	sed -i "s/;listen.group = nobody/listen.group = nginx/g" /etc/php-fpm.d/www.conf
 	sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=1/g" /etc/php.ini
 	chown -R root:nginx /var/lib/php
+	echo "listen = /var/run/php-fpm/php-fpm.sock" >> /etc/php-fpm.d/www.conf
+
 }
 
 # Enable port 80,433
@@ -197,22 +192,28 @@ f_enable_port () {
 
 # The sub main function, use to call neccessary functions of installation
 f_sub_main () {
-    f_disable_selinux
-    f_update_os
-    f_install_lemp
-	f_config
-    f_enable_port
-
-    echo "<?php phpinfo(); ?>" > /usr/share/nginx/html/info.php
-    echo ""
-    echo ""
-    echo "Please run command to secure MariaDB: mysql_secure_installation"
-    echo "You can access http://YOUR-SERVER-IP/info.php to see more informations about PHP"
-    sleep 1
+	if f_check_os; then
+		if f_check_root; then
+			if f_check_installed; then
+				f_update_os
+				f_disable_selinux
+				f_install_lemp
+				f_config
+				f_enable_port
+				echo "<?php phpinfo(); ?>" > /usr/share/nginx/html/info.php
+				echo "Install success"
+				echo "Please run command to secure MariaDB: mysql_secure_installation"
+				echo "You can access http://YOUR-SERVER-IP/info.php to see more informations about PHP"
+			else
+				echo "The LEMP is installed in the system. No thing to do."
+			fi
+		else
+		echo "Please run this script as root premission"
+		fi
+	else
+	echo "Sorry. This script does not support your operating system :("
+	fi
 }
-
-f_check_os
-
-
+f_sub_main
 exit	
 

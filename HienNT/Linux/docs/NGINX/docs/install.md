@@ -1,6 +1,6 @@
 # Cài đặt Nginx Server trên Centos 8  
 
-<img src ="images/nginx_install.png"> 
+<img src ="../images/nginx_install.png"> 
 
 ## I - Stable vs. mainline version
 Nginx Open Source có sẵn trong hai phiên bản:
@@ -91,7 +91,7 @@ Nginx Open Source có sẵn trong hai phiên bản:
 - Kiểm tra hoạt động của Nginx server bằng cách truy cập trên trình duyệt bằng địa chỉ IP của server: ***http://IP***  
   Nếu thành công, màn hình sẽ hiển thị như hình:  
 
-  <img src="images/test.png">
+  <img src="../images/test.png">
 
 ### 2.2. Cài từ source code
 - Chỉnh sử file `/etc/yum.repos.d/CentOS-AppStream.repo` để tắt việc sử dụng repo mặc định của Centos 8 như sau:
@@ -248,7 +248,7 @@ Nginx Open Source có sẵn trong hai phiên bản:
 
 - Kiểm tra bằng cách nhập địa chỉ IP của server cài Nginx lên trình duyệt. Kết quả sẽ như trong hình dưới
 
-  <img src="images/check.png">
+  <img src="../images/check.png">
 
 
 

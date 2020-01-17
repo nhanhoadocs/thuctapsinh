@@ -1,4 +1,4 @@
-<img src="../../images/nginx/what-is-nginx-คืออะไร.png">  
+<img src="../../../images/nginx/what-is-nginx-คืออะไร.png">  
 
 # Tìm hiểu về NGINX  
 
@@ -12,15 +12,15 @@
 ## Các khái niệm liên quan tới nginx
 - ***Proxy Server:*** Một proxy server về cơ bản là một máy tính trên mạng internet với địa chỉ IP riêng mà máy tính của người dùng có thể nhận biết được. Khi bạn gửi đi một web request, request đó sẽ tới proxy server trước tiên. Proxy server sau đó sẽ thay bạn thực hiện web request, nhận các phản hồi từ web server và chuyển bạn đến trang web dữ liệu để bạn có thể xem trang trong trình duyệt của mình. Khi proxy server chuyển tiếp web request của bạn, server có thể gây ra các thay đổi trong dữ liệu gửi đi mà vẫn cung cấp cho bạn thông tin mà bạn mong muốn. Một proxy server có thể thay đổi địa chỉ IP nên web server sẽ không thể biết được vị trí chính xác của bạn là ở đâu. Proxy server có thể mã hóa dữ liệu và ẩn chúng (không thể đọc được) trong lúc chuyển tiếp. Và cuối cùng, một proxy server có thể chặn truy cập một trang web nhất định dựa trên địa chỉ IP.
 
-  <img src="../../images/nginx/Minh_họa_về_Proxy.png">
-  <img src="../../images/nginx/proxy-server.gif">
+  <img src="../../../images/nginx/Minh_họa_về_Proxy.png">
+  <img src="../../../images/nginx/proxy-server.gif">
 
   << Xem thêm [tại đây](https://tech.bizflycloud.vn/proxy-la-gi-20181029114707565.htm) >>
 
 - ***Reverse Proxy:*** Là một loại proxy server trung gian giữa server và các client. Nó được đặt bên phía server. Nó kiểm soát yêu cầu của các client, nếu hợp lệ, sẽ chuyển đến các server thích ứng.
   > Có 1 loại proxy server khác là forward proxy, nó là một trung gian cho các client liên hệ với nó liên lạc với bất kỳ server nào, còn reverse proxy là một trung gian cho các server liên hệ với nó được liên lạc bởi bất kỳ client nào.  
 
-  <img src="../../images/nginx/image1.jpg">  
+  <img src="../../../images/nginx/image1.jpg">  
 
   Ảnh từ: [https://docs.microsoft.com](https://docs.microsoft.com/en-us/iis/extensions/configuring-application-request-routing-arr/creating-a-forward-proxy-using-application-request-routing)
 
@@ -32,7 +32,8 @@
 
 ## Kiến trúc NGINX  
 
-  <img src="../../images/nginx/structure.png">  
+  <img src="../../../images/nginx/structure.png"> 
+   
 - Nginx hoạt động theo kiến trúc bất đồng bộ(asynchronous) và hướng sự kiện(event driven)
 - Khi khởi chạy service, Nginx khởi tạo 1 process được gọi là `master process` - tiến trình cha, đây cũng là process duy nhất tồn tại trong bộ nhớ.
   - Master process được chạy với quyền của tài khoản và nhóm tài khoản hiện tại (thường là root/root nếu service được chạy tại thời gian khởi động bởi script init).

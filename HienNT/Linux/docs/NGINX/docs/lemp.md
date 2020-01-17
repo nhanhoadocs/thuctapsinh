@@ -1,4 +1,4 @@
-<img src="images/Install_LAMP-twitter.png">  
+<img src="../images/Install_LAMP-twitter.png">  
 
 # Cài đặt LEMP Stack trên Centos 8  
 
@@ -51,7 +51,7 @@ Cũng giống với LAMP Stack, LEMP Stack là một bộ công cụ mã nguồn
 
 - Kiểm tra hoạt động của Nginx: trên trình duyệt của bạn, gõ vào thanh tìm kiếm địa chỉ IP của server. Kết quả:
 
-  <img src="images/test_2.png">  
+  <img src="../images/test_2.png">  
 
 
 ### Cài đặt MariaDB Database Server  
@@ -144,7 +144,7 @@ Cũng giống với LAMP Stack, LEMP Stack là một bộ công cụ mã nguồn
 
   - Sử dụng trình duyệt của bạn, truy cập theo địa chỉ `http://<server-IP>/info.php`. Kết quả:
 
-    <img src="images/php.png">  
+    <img src="../images/php.png">  
 
   - Xóa trang test sau khi test xong
 
