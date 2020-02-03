@@ -33,4 +33,4 @@ Hoặc chọn Vlan có sẵn:
 
 <img src= "..\images\Screenshot_64.png">
 
-Phần tùy chọn NIC có thể tham khảo tại bài [Network_mode](.\3-network_mode.md)
+Phần tùy chọn NIC có thể tham khảo thêm tại bài [Network_mode](.\3-network_mode.md)
