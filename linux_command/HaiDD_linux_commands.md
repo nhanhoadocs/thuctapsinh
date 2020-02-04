@@ -4,8 +4,8 @@
 |1-10|11-20|21-30|31-40|41-50|
 |-|-|-|-|-|
 |[1. man](#man)|[11. mv](#mv)|[21. alias](#alias)|[31. sed](#31)|[41. bzcat - bzmore](#41)|
-|[2. pwd](#pwd)|[12. rename](#rename)|[22. tee](#tee)|[32. find](#32)|[42. ](#42)|
-|[3. cd](#cd)|[13. head](#head)|[23. grep](#grep)|[33. locate](#33)|[43. ](#43)|
+|[2. pwd](#pwd)|[12. rename](#rename)|[22. tee](#tee)|[32. find](#32)|[42. who](#42)|
+|[3. cd](#cd)|[13. head](#head)|[23. grep](#grep)|[33. locate](#33)|[43. su](#43)|
 |[4. ls](#ls)|[14. tail](#tail)|[24. cut](#cut)|[34. date](#34)|[44. ](#44)|
 |[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|[35. cal](#35)|[45. ](#45)|
 |[6. rmdir](#rmdir)|[16. tac](#tac)|[26. wc](#26)|[36. sleep](#36)|[46. ](#46)|
@@ -1578,3 +1578,60 @@ Hiển thị quá trình
 
 <img src = "https://i.imgur.com/dXR69C8.png">
 
+## 42. Lệnh `who` <a name="42"></a>
+### 42.1. `whoami`
+Hiển thị tên user đang thực thi
+
+<img src ="https://i.imgur.com/C0KNcjD.png">
+
+### 42.2. `who`
+Cung cấp thông tin về người dùng đăng nhập vào hệ thống
+<img src ="https://i.imgur.com/abhGEis.png">
+
+### 42.3. `who am i`
+Hiển thị dòng trỏ đến phiên hiện tại
+
+<img src= "https://i.imgur.com/xxNMAwu.png">
+
+### 42.4. `w`
+Cho biết ai đã đăng nhập và đang làm gi
+
+<img src = "https://i.imgur.com/PG7ypTF.png">
+
+### 42.5. `id`
+Cung cấp id user, group
+
+<img src= "https://i.imgur.com/8nEUlBg.png">
+
+## 43. Lệnh `su` <a name ="43"></a>
+Lệnh su cho phép người dùng chạy shell như một người dùng khác
+```
+su <user_name>
+```
+
+### 43.1. `su root`
+Sử dụng với quyền của user root
+
+## 44. Lệnh `useradd` <a name="44"></a>
+Thêm user.
+
+<img src="https://i.imgur.com/RpSzIoK.png">
+
+### 44.1. `useradd -m`
+Tạo user cùng thư mục tại `/home`
+
+<img src= "https://i.imgur.com/UbpxE3K.png">
+
+### 44.2. `useradd -d`
+Tạo thư mục của user tại thư mục chỉ định
+
+<img src ="https://i.imgur.com/dHxDVqs.png">
+
+### 44.3. `useradd -e`
+Tạo user với ngày hết hạn xác định
+
+<img src= "https://i.imgur.com/9z03rWf.png">
+
+Để xem kiểm chứng ngày hết hạn của user. Ta dùng lệnh `chage`
+
+<img src= "https://i.imgur.com/LsZqTZL.png">
