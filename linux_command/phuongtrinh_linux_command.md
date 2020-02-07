@@ -600,16 +600,99 @@ alias ls='ls --color=auto'
 nptr@ThinkPad-T460:~$ 
 ```
 
+## Xóa alias
+`unalias name`
 
+## 6.6 tee
 
+`tee` đọc đầu vào tiêu chuẩn và ghi nó vào đầu ra tiêu chuẩn một hoặc nhiều tệp
 
+```
+nptr@ThinkPad-T460:~$ cat list 
+1
+2
+3
+4
+5
+nptr@ThinkPad-T460:~$ echo 6 | tee list 
+6
+nptr@ThinkPad-T460:~$ cat list 
+6
+nptr@ThinkPad-T460:~$ 
+```
 
+## tee -a 
+Không ghi đè mà viết thêm vào tệp 
 
+```
+nptr@ThinkPad-T460:~$ echo 6 | tee -a list 
+6
+nptr@ThinkPad-T460:~$ cat list 
+6
+6
+nptr@ThinkPad-T460:~$ 
+```
 
+## 6.7 Grep 
+So sánh và in ra màn hình chuỗi chứa từ khóa, có phần biệt chữ hoa và thường
 
+```
+nptr@ThinkPad-T460:~$ grep "6" list 
+6
+6
+nptr@ThinkPad-T460:~$ 
+```
+## grep -i 
+bỏ  qua phân biệt hoa thường
 
+## grep -c 
+đếm số dòng có kết quả tìm kiếm 
+```
+nptr@ThinkPad-T460:~$ grep "6" list 
+6
+6
+nptr@ThinkPad-T460:~$ grep -c "6" list 
+2
+nptr@ThinkPad-T460:~$ 
+```
+## grep -l 
+tìm kiếm và in ra tên file có từ khóa
 
+```
+nptr@ThinkPad-T460:~$ grep -l "6" list 
+list
+nptr@ThinkPad-T460:~$ 
+```
 
+## grep -w 
+Chỉ hiển thị khi đúng là từ đó.
+
+## grep -o 
+chỉ hiển thị từ khóa cần tìm
+```
+nptr@ThinkPad-T460:~$ cat list 
+6
+6
+aaa
+nptr@ThinkPad-T460:~$ grep -o "aaa" list 
+aaa
+nptr@ThinkPad-T460:~$ 
+``` 
+
+## grep -n 
+In kết quả kèm số dòng 
+```
+nptr@ThinkPad-T460:~$ grep -n  "6" list 
+1:6
+2:6
+```
+
+## Grep ^string
+
+Tìm các dòng bắt đầu bằng từ khóa được chọn
+
+## grep $string
+Tìm các dòng kết thúc bằng từ khóa
 
 
 
