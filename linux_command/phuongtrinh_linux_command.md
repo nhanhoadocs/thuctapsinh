@@ -482,6 +482,136 @@ _ITM_registerTMCloneTable
 
 ```
 
+## PHẦN 6:
+
+## 6.1 echo
+Sử dụng để in nội dung thông báo ra màn hình.
+```
+nptr@ThinkPad-T460:~$ echo nguyenphuongtrinh
+nguyenphuongtrinh
+nptr@ThinkPad-T460:~$ echo "nguyenphuongtrinh"
+nguyenphuongtrinh
+```
+## echo -e \b
+b - backspace:
+xóa một ký tự trước nó.
+
+```
+nptr@ThinkPad-T460:~$ echo -e "nguyen\bphuong"
+nguyephuong
+nptr@ThinkPad-T460:~$
+```
+## echo -e \c 
+Ngắt chuỗi ở vị trí đã chọn
+
+```
+nptr@ThinkPad-T460:~$ echo -e "nguyen\cphuong"
+nguyennptr@ThinkPad-T460:~$ 
+```
+## echo -e \n
+
+xuống dòng ở vị trí đã chọn
+```
+nptr@ThinkPad-T460:~$ echo -e "nguyen\nphuong"
+nguyen
+phuong
+nptr@ThinkPad-T460:~$
+```
+## echo -e \r
+trả về chuỗi sau vị trí đã chọn
+```
+nptr@ThinkPad-T460:~$ echo -e "nguyen\rphuong"
+phuong
+nptr@ThinkPad-T460:~$ 
+```
+
+## echo -e \v
+Tab đầu dòng ở vị trí đã chọn 
+```
+nptr@ThinkPad-T460:~$ echo -e "nguyen\vphuong"
+nguyen
+      phuong
+nptr@ThinkPad-T460:~$ 
+```
+
+## echo * 
+Giống như `ls`
+```
+nptr@ThinkPad-T460:~$ echo *
+cloud Desktop Documents Downloads go Music Pictures Public Templates test Videos vmware
+nptr@ThinkPad-T460:~$
+```
+## 6.2 Type và which 
+
+**Type** Để tìm hiểu xem 1 lệnh cung cấp cho shell sẽ được thực thi như 1 lệnh bên ngoài shell hay 1 lệnh dựng sẵn.
+
+- alias: nếu là bí danh trong shell
+- keywork : nếu là 1 từ dành riêng cho shell
+- function : nếu là 1 shell dựng sẵn
+- file : nếu là một tệp trên disk
+
+```
+nptr@ThinkPad-T460:~$ type ls 
+ls is aliased to `ls --color=auto'
+nptr@ThinkPad-T460:~$
+```
+## 6.3 type -a
+
+Dùng như `type` nhưng cũng hiển thị đường dẫn của tệp thực thi nếu cos:
+```
+nptr@ThinkPad-T460:~$ type -a ls 
+ls is aliased to `ls --color=auto'
+ls is /bin/ls
+nptr@ThinkPad-T460:~$
+```
+
+## 6.4 type -t 
+hiển thị ngắn ngọn: 
+```
+nptr@ThinkPad-T460:~$ type -t ls 
+alias
+```
+## 6.5 alias 
+cho phép shell thay thế một chuỗi string bằng chuỗi string khác khi thực hiện lệnh.
+giống như việc ta có một lệnh dài và đặt bí danh cho lệnh dài đó để tiện việc thực thi.
+
+## Tạo một alias 
+
+`alias name="value"`
+## Xem tất cả alias đang có
+```
+nptr@ThinkPad-T460:~$ alias
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls='ls --color=auto'
+nptr@ThinkPad-T460:~$ 
+```
+
+## Xem alias chỉ định: 
+
+```
+nptr@ThinkPad-T460:~$ alias ls
+alias ls='ls --color=auto'
+nptr@ThinkPad-T460:~$ 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
