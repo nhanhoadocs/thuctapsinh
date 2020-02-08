@@ -694,6 +694,157 @@ Tìm các dòng bắt đầu bằng từ khóa được chọn
 ## grep $string
 Tìm các dòng kết thúc bằng từ khóa
 
+## Lệnh tr
+tr - translate :  dùng để dịch hoặc xóa các ký tự
+` tr [optione] SET1 SET2`
+## 7.1 tr
+Đổi chữ hoa - thường:
+
+```
+nptr@ThinkPad-T460:~$ cat nguyen.phuong | tr "a-z" "A-Z" 
+A B C D
+A C DS ASAS
+AVCBA
+AASSA2020123412
+nptr@ThinkPad-T460:~$
+```
+Đổi khoảng trắng thành tab 
+```
+nptr@ThinkPad-T460:~$ cat nguyen.phuong | tr [:space:] '\t'
+a	b	c	d	a	c	ds	asas	avcba	aassa2020123412	nptr@ThinkPad-T460:~$ 
+```
+
+Đổi kiểu ngoặc:
+```
+nptr@ThinkPad-T460:~$ cat nguyen.phuong | tr '{}' '()'
+
+() () () ()
+a b c d
+a c ds asas
+
+nptr@ThinkPad-T460:~$ 
+```
+
+## 7.2 tr -s
+s - squeeze repeat: loại bỏ sự lặp lại
+```
+nptr@ThinkPad-T460:~$ cat nguyen.phuong | tr '{}' '()'
+() () () ()
+a b c d
+a c ds asas
+nptr@ThinkPad-T460:~$ cat nguyen.phuong | tr [:space:] ' '
+ {} () {} {} a b c d a c ds asas
+nptr@ThinkPad-T460:~$ 
+```
+
+## 7.3 tr -d 
+d - delete : xóa bỏ ký tự được chỉ định 
+```
+nptr@ThinkPad-T460:~$ cat nguyen.phuong 
+
+{} () {} {}
+a b c d
+a c ds asas
+
+nptr@ThinkPad-T460:~$ cat nguyen.phuong | tr -d 'a'
+
+{} () {} {}
+ b c d
+ c ds ss
+
+nptr@ThinkPad-T460:~$ 
+```
+Xóa bỏ chữ số khỏi văn bản 
+
+```
+nptr@ThinkPad-T460:~$ cat nguyen.phuong 
+1 2 3 4 5
+{} () {} {}
+a b c d
+a c ds asas
+nptr@ThinkPad-T460:~$ cat nguyen.phuong | tr -d [:digit:]
+    
+{} () {} {}
+a b c d
+a c ds asas
+nptr@ThinkPad-T460:~$ 
+```
+
+## Lệnh wc
+Đếm số dòng , số từ, số ký tự có trong tệp. 3 giá trị được hiển thị lần lượt trên 3 cột
+`wc [option]  [filename1]  [filename2] ...`
+
+```
+nptr@ThinkPad-T460:~$ wc nguyen.phuong 
+ 4 17 42 nguyen.phuong
+nptr@ThinkPad-T460:~$ 
+```
+
+##  wc -l
+chỉ đếm số dòng 
+
+## wc -w 
+chỉ đếm số từ 
+
+## wc -c 
+
+chỉ đếm số byte 
+## wc -m 
+chỉ đếm số ký tự 
+## wc -L 
+
+in ra chiều dài ký tự của dòng dài nhất trong file 
+
+## Lệnh sort
+Dùng để sắp  xếp các dòng từ tất cả các file đầu vào rồi xuất ra đầu ra tiêu chuẩn 
+
+`sort [option] [file1] [file2] ...`
+
+Ưu tiên sắp xếp các dòng 
+
+- Bắt đầu bằng `space`
+- Bắt đầu bằng số (0-9)
+- Bắt đầu bằng chữ (a-A-b-B-...-z-Z)
+
+## sort filename 
+```
+nptr@ThinkPad-T460:~$ sort nguyen.phuong 
+{} () {} {}
+1 2 3 4 5
+a b c d
+a c ds asas
+nptr@ThinkPad-T460:~$ 
+```
+## sort -r 
+
+`r - reverse` : đảo ngược thứ tự sắp xếp (theo dòng) 
+```
+nptr@ThinkPad-T460:~$ sort -r nguyen.phuong 
+a c ds asas
+a b c d
+1 2 3 4 5
+{} () {} {}
+nptr@ThinkPad-T460:~$ 
+```
+
+## sort -k 
+k - key: sắp xếp theo 1 cột chỉ định
+
+## sort -c
+c - check : kiểm tra file. In ra dòng đầu tiên sai vị trí sắp xếp 
+```
+nptr@ThinkPad-T460:~$ sort -c nguyen.phuong 
+sort: nguyen.phuong:2: disorder: {} () {} {}
+nptr@ThinkPad-T460:~$
+```
+## sort -u :
+u(unique) : loại bỏ dòng trùng lặp  
+
+## sort -M 
+M - month : sắp xếp theo thứ tự tháng 
+
+
+
 
 
 
