@@ -17,32 +17,32 @@ Không giống như các chương trình máy chủ khác, Nginx không dựa v�
 
 ![](image/kiến-trúc-của-nginx.png)
 
-Nginx có tính năng gì?
-Những tính năng của máy chủ HTTP Nginx
-Có khả năng xử lý hơn 10.000 kết nối cùng lúc với bộ nhớ thấp.
-Phục vụ tập tin tĩnh (static files) và lập chỉ mục tập tin.
-Tăng tốc reverse proxy bằng bộ nhớ đệm (cache), cân bằng tải đơn giản và khả năng chịu lỗi.
-Hỗ trợ tăng tốc với bộ nhớ đệm của FastCGI, uwsgi, SCGI, và các máy chủ memcached.
-Kiến trúc modular, tăng tốc độ nạp trang bằng nén gzip tự động.
-Hỗ trợ mã hoá SSL và TLS.
-Cấu hình linh hoạt; lưu lại nhật ký truy vấn
-Chuyển hướng lỗi 3XX-5XX
-Rewrite URL (URL rewriting) dùng regular expressions
-Hạn chế tỷ lệ đáp ứng truy vấn
-Giới hạn số kết nối đồng thời hoặc truy vấn từ 1 địa chỉ
-Khả năng nhúng mã PERL
-Hỗ trợ và tương thích với IPv6
-Hỗ trợ WebSockets
-Hỗ trợ truyền tải file FLV và MP4
-Những tính năng máy chủ mail proxy của Nginx
-Các phương pháp xác thực :
+## Nginx có tính năng gì?
+## Những tính năng của máy chủ HTTP Nginx
+- Có khả năng xử lý hơn 10.000 kết nối cùng lúc với bộ nhớ thấp.
+- Phục vụ tập tin tĩnh (static files) và lập chỉ mục tập tin.
+- Tăng tốc reverse proxy bằng bộ nhớ đệm (cache), cân bằng tải đơn giản và khả năng chịu lỗi.
+- Hỗ trợ tăng tốc với bộ nhớ đệm của FastCGI, uwsgi, SCGI, và các máy chủ memcached.
+- Kiến trúc modular, tăng tốc độ nạp trang bằng nén gzip tự động.
+- Hỗ trợ mã hoá SSL và TLS.
+- Cấu hình linh hoạt; lưu lại nhật ký truy vấn
+- Chuyển hướng lỗi 3XX-5XX
+- Rewrite URL (URL rewriting) dùng regular expressions
+- Hạn chế tỷ lệ đáp ứng truy vấn
+- Giới hạn số kết nối đồng thời hoặc truy vấn từ 1 địa chỉ
+- Khả năng nhúng mã PERL
+- Hỗ trợ và tương thích với IPv6
+- Hỗ trợ WebSockets
+- Hỗ trợ truyền tải file FLV và MP4
+## Những tính năng máy chủ mail proxy của Nginx
+## Các phương pháp xác thực :
 
-POP3: USER/PASS, APOP, AUTH LOGIN/PLAIN/CRAM-MD5;
+- POP3: USER/PASS, APOP, AUTH LOGIN/PLAIN/CRAM-MD5;
 
-IMAP: LOGIN, AUTH LOGIN/PLAIN/CRAM-MD5;
+- IMAP: LOGIN, AUTH LOGIN/PLAIN/CRAM-MD5;
 
-SMTP: AUTH LOGIN/PLAIN/CRAM-MD5;
+- SMTP: AUTH LOGIN/PLAIN/CRAM-MD5;
+    Hỗ trợ SSL, STARTTLS và STLS
 
-Hỗ trợ SSL, STARTTLS và STLS
-Hạn chế của Nginx
+## Hạn chế của Nginx
 Không support .htaccess
