@@ -10,6 +10,9 @@ Mô hình
 
 <img src = "..\images\Screenshot_98.png">
 
+Ping ra ngoài internet và ping máy trong cùng mạng Host-only
+
+<img src = "..\images\Screenshot_99.png">
 
 ## III. NAT
 **Mô hình**
