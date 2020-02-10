@@ -843,6 +843,146 @@ u(unique) : loại bỏ dòng trùng lặp
 ## sort -M 
 M - month : sắp xếp theo thứ tự tháng 
 
+## uniq <filename>
+DÙng để hợp nhất những dòng lặp liền kề nhau trong một file
+
+```
+nptr@ThinkPad-T460:~$ cat nguyen.phuong 
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+{} () {} {}
+a b c d
+a c ds asas
+nptr@ThinkPad-T460:~$ uniq nguyen.phuong 
+1 2 3 4 5
+{} () {} {}
+a b c d
+a c ds asas
+nptr@ThinkPad-T460:~$ 
+
+```
+
+## uniq -c 
+c: count 
+đếm số lần 1 dòng được lặp lại   
+```
+nptr@ThinkPad-T460:~$ uniq -c nguyen.phuong 
+      3 1 2 3 4 5
+      1 {} () {} {}
+      1 a b c d
+      1 a c ds asas
+nptr@ThinkPad-T460:~$
+```
+
+## uniq -d 
+
+Chỉ in ra các dòng bị lặp lại
+```
+nptr@ThinkPad-T460:~$ uniq -d  nguyen.phuong 
+1 2 3 4 5
+nptr@ThinkPad-T460:~$ 
+```
+
+## uniq -u 
+u: unique
+Chỉ in ra những dòng riêng biệt  
+```
+nptr@ThinkPad-T460:~$ uniq -u  nguyen.phuong 
+{} () {} {}
+a b c d
+a c ds asas
+nptr@ThinkPad-T460:~$ 
+```
+
+## uniq -f <number> 
+
+f: field 
+chọn cột để thực hiện uniq
+
+
+## uniq -s <number>
+
+Bỏ qua một số ký tự đầu tiên để thực hiện lệnh 
+```
+nptr@ThinkPad-T460:~$ uniq -s 1 nguyen.phuong 
+1 2 3 4 5
+{} () {} {}
+a b c d
+a c ds asas
+nptr@ThinkPad-T460:~$ 
+```
+
+## uniq -w <number>
+  Giới hạn ký tự so sánh: 
+  
+  ```
+nptr@ThinkPad-T460:~$ uniq -w 5 nguyen.phuong 
+1 2 3 4 5
+{} () {} {}
+a b c d
+a c ds asas
+nptr@ThinkPad-T460:~$ 
+```
+
+## Lệnh comm 
+comm : compare (so sánh)
+Dùng để so sánh 2 tệp đã chọn , 2 tệp đã được sắp xếp theo dòng
+Nếu tệp đã chọn chưa sắp xếp sẽ báo lỗi 
+```
+nptr@ThinkPad-T460:~$ comm phuong.nguyen nguyen.phuong 
+		1 2 3 4 5
+	1 2 3 4 5
+	1 2 3 4 5
+comm: file 2 is not in sorted order
+	{} () {} {}
+5 4 3 2 1
+a asd asdds asdds 
+comm: file 1 is not in sorted order
+aaa asdd bbb asdasd 
+
+	a b c d
+	a c ds asas
+nptr@ThinkPad-T460:~$ 
+```
+
+## lệnh od 
+
+chuyển đổi nội dung file thành chuỗi 8bit
+```
+nptr@ThinkPad-T460:~$ od nguyen.phuong 
+0000000 020061 020062 020063 020064 005065 020061 020062 020063
+0000020 020064 005065 020061 020062 020063 020064 005065 076573
+0000040 024040 020051 076573 075440 005175 020141 020142 020143
+0000060 005144 020141 020143 071544 060440 060563 005163
+0000076
+nptr@ThinkPad-T460:~$ 
+```
+
+## od -c 
+Hiển thị nội dung đầu vào dưới dạng ký tự: `c: char`
+
+```
+nptr@ThinkPad-T460:~$ od -c nguyen.phuong 
+0000000   1       2       3       4       5  \n   1       2       3    
+0000020   4       5  \n   1       2       3       4       5  \n   {   }
+0000040       (   )       {   }       {   }  \n   a       b       c    
+0000060   d  \n   a       c       d   s       a   s   a   s  \n
+0000076
+nptr@ThinkPad-T460:~$ 
+```
+## od - 
+
+Nhập input bằng lệnh 
+```
+nptr@ThinkPad-T460:~$ od -
+cat nguyen.phuong 
+0000000 060543 020164 063556 074565 067145 070056 072550 067157
+```
+
+
+
+
 
 
 
