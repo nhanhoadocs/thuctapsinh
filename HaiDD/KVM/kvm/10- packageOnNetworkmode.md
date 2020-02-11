@@ -29,3 +29,10 @@ Ping `8.8.8.8` để xem gói tin đi qua những điểm nào
 **Sơ đồ quá trình gói tin đi:**
 
 <img src ="..\images\Screenshot_97.png">
+
+Thành phần cấp DHCP cho máy ảo trong chế độ NAT này: là Virtual Router, ở đây là `virbr1` cấp IP cho VM. Tham khảo tại [đây](https://blog.cloud365.vn/ccna/dhcp_KVM/).
+
+<img src = "..\images\Screenshot_117.png">
+
+
+Tham khảo thêm về NAT ở [bài viết](https://blog.cloud365.vn/linux/mo-hinh-mang-nat-kvm/).
