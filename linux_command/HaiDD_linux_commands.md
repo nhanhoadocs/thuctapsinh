@@ -6,10 +6,10 @@
 |[1. man](#man)|[11. mv](#mv)|[21. alias](#alias)|[31. sed](#31)|[41. bzcat - bzmore](#41)|
 |[2. pwd](#pwd)|[12. rename](#rename)|[22. tee](#tee)|[32. find](#32)|[42. who](#42)|
 |[3. cd](#cd)|[13. head](#head)|[23. grep](#grep)|[33. locate](#33)|[43. su](#43)|
-|[4. ls](#ls)|[14. tail](#tail)|[24. cut](#cut)|[34. date](#34)|[44. ](#44)|
-|[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|[35. cal](#35)|[45. ](#45)|
-|[6. rmdir](#rmdir)|[16. tac](#tac)|[26. wc](#26)|[36. sleep](#36)|[46. ](#46)|
-|[7. file](#file)|[17. more và less](#moreless)|[27. sort](#27)|[37. time](#37)|[47. ](#47)|
+|[4. ls](#ls)|[14. tail](#tail)|[24. cut](#cut)|[34. date](#34)|[44. useradd](#44)|
+|[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|[35. cal](#35)|[45. userdel](#45)|
+|[6. rmdir](#rmdir)|[16. tac](#tac)|[26. wc](#26)|[36. sleep](#36)|[46. usermod](#46)|
+|[7. file](#file)|[17. more và less](#moreless)|[27. sort](#27)|[37. time](#37)|[47. passwd](#47)|
 |[8. touch](#touch)|[18. strings](#strings)|[28. uniq](#28)|[38. gzip & gunzip](#38)|[48. ](#48)|
 |[9. rm](#rm)|[19. echo](#echo)|[29. comm](#29)|[39. zcat & zmore](#39)|[49. ](#49)|
 |[10. cp](#cp)|[20. type & which](#typewhich)|[30. od](#30)|[40. bzip2 - bunzip2](#40)|[50. ](#50)|
@@ -1586,6 +1586,7 @@ Hiển thị tên user đang thực thi
 
 ### 42.2. `who`
 Cung cấp thông tin về người dùng đăng nhập vào hệ thống
+
 <img src ="https://i.imgur.com/abhGEis.png">
 
 ### 42.3. `who am i`
@@ -1635,3 +1636,70 @@ Tạo user với ngày hết hạn xác định
 Để xem kiểm chứng ngày hết hạn của user. Ta dùng lệnh `chage`
 
 <img src= "https://i.imgur.com/LsZqTZL.png">
+
+## 45. Lệnh `userdell` <a name ="45"></a>
+Dùng để xóa user và các mục liên quan đến user
+
+### 45.1. `userdel <ten_user>`
+Xóa user
+
+<img src="https://i.imgur.com/8Cmfb2q.png">
+
+### 45.2. `userdel -r <ten_user>`
+Xóa user và cả thư mục home của nó.
+
+<img src="https://i.imgur.com/pnIrdM7.png">
+
+## 46. Lệnh `usermod` <a name="46"></a>
+Được sử dụng để sửa đổi hoặc thay đổi bất kỳ thuộc tính nào của tài khoản người dùng
+
+### 46.1. `usermod -c`
+Đặt mô tả ngắn gọn về user
+<img src ="https://i.imgur.com/UBhUjef.png">
+
+### 46.2. `usermod -d`
+Thay đổi thư mục home của user
+
+<img src="https://i.imgur.com/iRje1UP.png">
+
+<img src ="https://i.imgur.com/iUR6zQq.png">
+
+### 46.3. `usermod -g`
+Thay đổi group của user
+
+<img src= "https://i.imgur.com/sqEUbqS.png">
+
+### 46.4. `usermod -G`
+Thêm group vào user
+
+<img src="https://i.imgur.com/89mkYBr.png">
+
+### 46.5. `usermod -a -G`
+Thêm group primary (group chính) cho user
+
+<img src="">
+
+### 46.6. `usermod -u uid`
+Thay đổi uid của user
+
+<img src= "https://i.imgur.com/YY6kovZ.png">
+
+### 46.7. `usermod -u uid -g gid`
+Thay đổi gid của group
+
+<img src= "">
+
+## 47. Lệnh `passwd` <a name="47"></a>
+Dùng để thay đổi mật khẩu của user hiện tại
+
+<img src= "https://i.imgur.com/6mr99ns.png">
+
+### 47.1. `passwd <user_name>`
+Thay đổi mật khẩu của user chỉ định. Cần thực hiện ở quyền root
+
+<img src="https://i.imgur.com/YuYHaiI.png">
+
+### 47.2. `passwd -d <user_name>`
+Xóa mật khẩu của 1 tài khoản. Thực hiện ở quyền root
+
+<img src="https://i.imgur.com/u5RK2Bz.png">
