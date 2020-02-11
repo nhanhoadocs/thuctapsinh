@@ -980,13 +980,75 @@ cat nguyen.phuong
 0000000 060543 020164 063556 074565 067145 070056 072550 067157
 ```
 
+## Lệnh sed 
+
+Là một tool chỉnh sửa văn bản mạnh mẽ. 
+
+## sed 's/<từ cần thay>/<từ thay thế>' file
+```
+nptr@ThinkPad-T460:~$ cat nguyen.phuong 
+toi la nguyen phuong trinh
+nptr@ThinkPad-T460:~$ sed 's/phuong/van/' nguyen.phuong 
+toi la nguyen van trinh
+nptr@ThinkPad-T460:~$ 
+```
+
+Để thay thế từ thứ n của 1 dòng, ta thêm /n
+Thay tất cả các từ trên dòng ta thêm /g 
+## sed -n s/<từ cần thay>/<từ thay thế>/p
+Chỉ in ra các dòng được thay thế 
+```
+nptr@ThinkPad-T460:~$ sed 's/phuong/van/p' nguyen.phuong 
+toi la nguyen van trinh
+toi la nguyen van trinh
+nptr@ThinkPad-T460:~$ 
+```
+## Lệnh find
+Dùng để tìm kiếm đường dẫn tập tin trong 1 phân cấp thư mục 
+
+## find /root -name text1.txt
+## sudo find /root -empty : Tìm kiếm tập tin và thư mục rỗng
+```
+nptr@ThinkPad-T460:~$ sudo find /root -empty
+/root/.cache
+/root/snap/anbox/186/.local/share/icons
+/root/snap/anbox/186/.local/share/glib-2.0/schemas
+nptr@ThinkPad-T460:~$ 
+```
+
+## find /root/A -perm 644 : Tìm theo permission
+```
+nptr@ThinkPad-T460:~$ sudo sudo find /root -empty
+/root/.cache
+/root/snap/anbox/186/.local/share/icons
+/root/snap/anbox/186/.local/share/glib-2.0/schemas
+nptr@ThinkPad-T460:~$ 
+```
+
+## find ./ -type f -name "*" -exec grep 'nguyenphuongtrinh'  {} \;
+Tìm "nguyenphuongtrinh" trong nhiều file
+
+## fine -size +1M : để tìm lớn hơn 1MB
 
 
+## Lệnh locate
+
+Dùng để tìm kiếm tệp theo tên 
+`locate [option]... pattern...`
+
+## locate filename
+
+```
+nptr@ThinkPad-T460:~$ locate nguyen.phuong 
+/home/nptr/nguyen.phuong
+nptr@ThinkPad-T460:~$ 
+```
+## locate -n (number) filename
+Giới hạn số kết quả 
 
 
-
-
-
+## locate -i filename
+Không phân biệt chữ hoa và thường 
 
 
 
