@@ -34,14 +34,84 @@ Khi ta kết nối vào switch ảo các VM sẽ nhận địa chỉ IP cùng v�
 
 <img src = "..\images\Screenshot_105.png">
 
-## 3. Tạo và quản lí Linux bridge
-Để tạo 1 linux bridge (switch ảo) ta dùng lệnh `brctl addbr tên_switch`
+## 3. Chức năng của một switch ảo do Linux bridge tạo ra
+- **STP**: là tính năng chống loop gói tin trong switch
+- **VLan**: là tính năng rất quan trọng trong một switch
+- **FDB**: là tính năng chuyển gói tin theo database được xây dựng giúp tăng tốc độ của switch
 
-<img src="..\images\Screenshot_106.png">
+## 4. Tạo và quản lí Linux bridge
+Ta tạo bridge và tiến hành set IP, rồi gắn card mạng vào nó
 
-Add card mạng cho switch, dùng lệnh `brctl addif <tên_switch> <tên_card>`
+<img src= "..\images\Screenshot_108.png">
 
-Và kiểm tra những switch ảo trên máy và những card đã được add vào switch ảo đó, ta dùng lệnh `brctl show`
+Sau đó, ta tiến hành reboot lại máy.
 
-<img src="..\images\Screenshot_107.png">
+Khi máy reboot xong, ra kiểm tra lại switch ảo trên máy và các card add vào nó. Sử dụng lệnh `brctl show`
 
+<img src="..\images\Screenshot_109.png">
+
+Bây giờ ta thấy IP của `testbr`
+
+<img src= "..\images\Screenshot_110.png">
+
+Bây giờ, trên VM ta có thể kết nối đến switch ảo đó
+
+<img src= "..\images\Screenshot_111.png">
+
+Ta có thể thấy VM đã nhận IP và kết nối ra ngoài internet
+
+<img src  ="..\images\Screenshot_114.png">
+
+**Lưu ý:** Khi lab trên VMware cần lưu ý dải mạng của máy cài KVM phải có quyền DHCP (tức là được quyền cấp IP)
+
+<img src = "..\images\Screenshot_113.png">
+
+### Lab
+Ta ping từ VM1 ra server của Google `8.8.8.8`.
+
+Ta thực hiện bắt gói tin ICMP trên các điểm `eth0` của VM, `vnet0`(tap), `testbr`, `ens33` của KVM
+
+```
+Trên KVM
+tcpdump -i ens33 icmp -w ens33.pcap
+tcpdump -i testbr icmp -w testbr.pcap
+tcpdump -i vnet0 icmp -w vnet0.pcap
+
+# Trên VM
+tcpdump -i eth0 icmp -w vm1.pcap
+```
+
+Ping tới `8.8.8.8`:
+```
+ping -c 1 8.8.8.8
+```
+
+**Kết quả:**
+- Card `ens33` của KVM
+
+<img src ="..\images\Screenshot_127.png">
+
+- Card `vnet0` trên KVM
+
+<img src ="..\images\Screenshot_128.png">
+
+- Card `testbr` trên KVM
+
+<img src ="..\images\Screenshot_129.png">
+
+- Card `eth0` của VM
+
+<img src ="..\images\Screenshot_130.png">
+
+Như vậy ta thấy rằng card `eth0` của VM đã được gắn thằng với switch được tạo ra bởi kiểu mạng bridge của host KVM tạo ra nên ta mới thấy rằng đường đi với nó có địa chỉ đầu và cuối giống nhau dù ta có bắt gói tin ở 4 điểm khác nhau. Có nghĩa là đường đi của nó đều đi qua tất cả các điểm này đầu là VM(192.168.37.129) và điểm cuối là (8.8.8.8)
+
+**Mô hình ta vừa tạo như sau:**
+
+<img src="..\images\Screenshot_115.png">
+
+<img src ="..\images\Screenshot_126.png">
+
+
+**Tham khảo**:
+- https://github.com/hocchudong/Linux-bridge
+- https://blog.cloud365.vn/linux/huong-dan-tao-su-dung-mo-hinh-mang-linux-bridge-KVM/
