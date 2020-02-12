@@ -65,9 +65,9 @@ setenforce 0
     ```
     yum install -y nfs-utils nfs-utils-lib
     ```
-- Tạo 1 thư mục share
+- Chọn 1 thư mục để làm thư mục share hoặc tạo mới 1 thư mục. Ở đây, ta tạo 1 thư mục `/root/storage`
     ```
-    mkdir storage
+    mkdir /root/storage
     ```
 - Chia sẻ thư mực này với các máy KVM host bằng cách ghi các thông tin như sau vào trong file `/etc/exports`
     ```
@@ -91,11 +91,11 @@ Trên 2 máy KVM host đều thực hiện các câu lệnh sau:
     ```
     yum install -y nfs-utils nfs-utils-lib
     ```
-- Tạo thư mục
+- Sử dụng thư mục chứa file disk. Ở đây, ta tạo thư mục mới để lab
     ```
     mkdir storage
     ```
-- Moun thư mục chưa máy ảo với thư mục đã share. Lưu ý: chỉnh IP đúng với IP của NFS server
+- Mount thư mục chứa máy ảo với thư mục đã share. **Lưu ý**: địa chỉ IP đúng với IP của NFS server
     ```
     mount 10.10.34.161:/root/storage/  storage
     ```
