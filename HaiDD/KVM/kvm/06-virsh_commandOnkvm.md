@@ -120,3 +120,5 @@ virsh dominfo <tên_VM>
 <img src= "..\images\Screenshot_51.png">
 
 Ngoài ra ta muốn biết thông tin chi tiết của VM ta có thể vào đọc file xml của VM đó.
+
+**Link tham khảo:** https://github.com/meditechopen/meditech-thuctap/blob/6c279735a8904e33bc37fca61ee2018913fdd83c/ThaoNV/KVM/virt-install.md
