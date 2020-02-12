@@ -10,9 +10,9 @@
 |[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|[35. cal](#35)|[45. userdel](#45)|
 |[6. rmdir](#rmdir)|[16. tac](#tac)|[26. wc](#26)|[36. sleep](#36)|[46. usermod](#46)|
 |[7. file](#file)|[17. more và less](#moreless)|[27. sort](#27)|[37. time](#37)|[47. passwd](#47)|
-|[8. touch](#touch)|[18. strings](#strings)|[28. uniq](#28)|[38. gzip & gunzip](#38)|[48. ](#48)|
-|[9. rm](#rm)|[19. echo](#echo)|[29. comm](#29)|[39. zcat & zmore](#39)|[49. ](#49)|
-|[10. cp](#cp)|[20. type & which](#typewhich)|[30. od](#30)|[40. bzip2 - bunzip2](#40)|[50. ](#50)|
+|[8. touch](#touch)|[18. strings](#strings)|[28. uniq](#28)|[38. gzip & gunzip](#38)|[48. groupmod](#48)|
+|[9. rm](#rm)|[19. echo](#echo)|[29. comm](#29)|[39. zcat & zmore](#39)|[49. groupdel](#49)|
+|[10. cp](#cp)|[20. type & which](#typewhich)|[30. od](#30)|[40. bzip2 - bunzip2](#40)|[50. vigr](#50)|
 
 
 ## 1. Lệnh `man` (manual - hướng dẫn sử dụng) <a name="man"></a>
@@ -1703,3 +1703,29 @@ Thay đổi mật khẩu của user chỉ định. Cần thực hiện ở quy�
 Xóa mật khẩu của 1 tài khoản. Thực hiện ở quyền root
 
 <img src="https://i.imgur.com/u5RK2Bz.png">
+
+
+## 48. Lệnh `groupmod` <a name="48"></a>
+Dùng để thay đổi hoặc sửa đổi nhóm hiện có trên hệ thống.
+
+### 48.1. `groupmod -g`
+Thay đổi GID của group
+
+<img src="https://i.imgur.com/5MsHnSI.png">
+
+### 48.2. `groupmod -n`
+Đổi tên group : `groupmod -n gr_newname gr_oldname`
+
+<img src="https://i.imgur.com/ZH9Nm4a.png">
+
+## 49. Lệnh `groupdel` <a name="49"></a>
+Xóa group
+
+<img src="https://i.imgur.com/LeZsEOA.png">
+
+## 50. Lệnh `vigr` <a name="50"></a>
+Dùng để thay đổi file chứa tên và GID của các group
+
+<img src="https://i.imgur.com/wHJScyl.png">
+
+<img src="https://i.imgur.com/flNqqYc.png">
