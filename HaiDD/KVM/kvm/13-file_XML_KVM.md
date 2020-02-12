@@ -89,7 +89,6 @@ Chuẩn bị 1 file XML, lưu tại thư mục `/etc/libvirt/qemu/`
     </disk>
     <interface type='bridge'>
       <source bridge='testbr'/>
-      <mac address="00:0c:29:50:2f:16"/>
     </interface>
     <controller type="ide" index="0">
       <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x1"/>
@@ -142,3 +141,21 @@ Sử dụng virt-manager để quản lí VM
 <img src="..\images\Screenshot_141.png">
 
 ## IV. Chỉnh sửa cấu hình máy ảo bằng file XML
+Trước khi tiến hành chỉnh sửa cấu hình file XML thì sẽ tắt VM trước
+
+Ta dùng lệnh `virsh edit <tên_vm>` hoặc có thể sử dụng `vi`, `vim` để edit file `.xml` của VM.
+
+<img src= "..\images\Screenshot_150.png">
+
+Ở đây, ta sẽ thay đổi dung lượng RAM của **vm4** thành 600000 Kib. Sau đó define lại **vm4**
+
+<img src="..\images\Screenshot_151.png">
+
+Sau đó, start vm4 trở lại và kiểm tra lại dung lượng RAM
+
+<img src="..\images\Screenshot_153.png">
+
+Kiểm tra trên virt-manager
+
+<img src="..\images\Screenshot_152.png">
+
