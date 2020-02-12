@@ -72,7 +72,7 @@ setenforce 0
 - Chia sẻ thư mực này với các máy KVM host bằng cách ghi các thông tin như sau vào trong file `/etc/exports`
     ```
     /root/storage 10.10.34.162/24(rw,sync,no_root_squash)
-    /root/storage 10.10.34.162/24(rw,sync,no_root_squash)
+    /root/storage 10.10.34.163/24(rw,sync,no_root_squash)
     ```
     Địa chỉ IP bên trên là địa chỉ IP của 2 máy KVM host.
 - Cập nhật lại file vừa chỉnh sửa
@@ -99,8 +99,12 @@ Trên 2 máy KVM host đều thực hiện các câu lệnh sau:
     ```
     mount 10.10.34.161:/root/storage/  storage
     ```
+    hoặc khi sử dụng thư mục mặc định chứa file disk của VM
+    ```
+    mount 10.10.34.161:/root/storage/ /var/lib/libvirt/images/
+    ```
 
-**Lưu ý**: mỗi khi reboot lại máy ta cần mount lại các thư mục này. Nếu không muốn bạn muont nó bằng cách sửa file `/etc/fstab`
+**Lưu ý**: mỗi khi reboot lại máy ta cần mount lại các thư mục này. Nếu không muốn bạn mount nó bằng cách sửa file `/etc/fstab`
 
 ### 3. Cài đặt KVM
 Thực hiện cài đặt KVM trên cả 2 máy KVM host. Để cài đặt KVM bạn tham khảo [tại đây](https://gist.github.com/danghai1996/3e4cca15342527eba4fca260c960bb43).
