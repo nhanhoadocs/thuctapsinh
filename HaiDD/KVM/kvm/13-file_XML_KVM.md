@@ -53,7 +53,7 @@ Mục `interface` : phần mạng của VM
 
 ## III. Tạo 1 VM bằng file domain XML
 ### 1. Chuẩn bị file XML
-Chuẩn bị 1 file XML
+Chuẩn bị 1 file XML, lưu tại thư mục `/etc/libvirt/qemu/`
 ```xml
 <domain type='kvm'>
   <name>vm3</name>
@@ -140,3 +140,5 @@ Kiểm tra xem máy ảo đã được tạo hay chưa bằng câu lệnh `virsh
 Sử dụng virt-manager để quản lí VM
 
 <img src="..\images\Screenshot_141.png">
+
+## IV. Chỉnh sửa cấu hình máy ảo bằng file XML
