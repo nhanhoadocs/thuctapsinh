@@ -31,6 +31,17 @@ setenforce 0
 
 <img src= "..\images\Screenshot_154.png">
 
+### Cơ chế cơ bản của live-migrate: 
+Về cơ bản cơ chế di chuyển vm khi vm vẫn đang hoạt động. Quá trình trao đổi diễn ra nhanh các phiên làm việc kết nối hầu như không cảm nhận được sự gián đoạn nào. Quá trình Live Migrate được diễn ra như sau:
+
+- Bước đầu tiên của quá trình Live Migrate: 1 ảnh chụp ban đầu của VM cần chuyển trên host KVM162 được chuyển sang VM trên host KVM163.
+
+- Trong trường hợp người dùng đang truy cập VM tại host KVM162 thì những sự thay đổi và hoạt động trên host KVM162 vẫn diễn ra bình thường, tuy nhiên những thay đổi này sẽ không được ghi nhận.
+
+- Những thay đổi của VM trên host KVM162 được đồng bộ liên tục đến host KVM163.
+
+- Khi đã đồng bộ xong thì VM trên host KVM162 sẽ offline và các phiên truy cập trên host KVM162 được chuyển sang host KVM163.
+
 ## III. Cài đặt
 ### 1. Cấu hình phân dải tên miền
 Để có thể live migrate giữa 2 KVM host thì 2 máy này cần biết tên miền của nhau. Bạn có thể cấu hình dịch vụ DNS phân dải tên miền cho các 2 máy này.
