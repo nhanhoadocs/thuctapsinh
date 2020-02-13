@@ -70,3 +70,54 @@ Như vậy, isolated đã được start và có thể sử dụng. Dùng virt-m
 Trong trường hợp người dùng muốn thay đổi cấu hình:
 - tiến hành chỉnh sửa trong file xml
 - dùng lệnh `virsh net-destroy` và `virsh net-start` để reset lại virtual network.
+
+
+### 4. Ví dụ về file XML các kiểu mạng
+#### 4.1. NAT
+```xml
+<network>
+  <name>nat</name>
+  <bridge name="virbr1"/>
+  <forward mode="nat"/>
+  <ip address="192.168.123.1" netmask="255.255.255.0">
+    <dhcp>
+      <range start="192.168.123.128" end="192.168.123.254"/>
+    </dhcp>
+  </ip>
+</network>
+```
+
+- `<forward mode="nat"/>` : dòng này định nghĩa kiểu mạng là NAT
+
+#### 4.2. Host-only
+```xml
+<network>
+  <name>hostonly</name>
+  <bridge name="virbr2"/>
+  <ip address="192.168.125.1" netmask="255.255.255.0">
+    <dhcp>
+      <range start="192.168.125.128" end="192.168.125.254"/>
+    </dhcp>
+  </ip>
+</network>
+```
+
+Với kiểu Host-only sẽ không có thẻ chuyển tiếp `<forward>`
+
+#### 4.3. Bridge
+```xml
+<network>
+  <name>local</name>
+  <bridge name="virbr3"/>
+  <forward mode="route" dev="eth1"/>
+  <ip address="192.168.127.1" netmask="255.255.255.0">
+    <dhcp>
+      <range start="192.168.127.128" end="192.168.127.254"/>
+    </dhcp>
+  </ip>
+</network>
+```
+
+`<forward mode="route" dev="eth1"/>` :
+- `mode="route"` : kiểu mạng bridge
+- `dev="eth1"` : chọn card bridge mà nó gắn vào 
