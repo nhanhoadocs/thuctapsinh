@@ -1050,29 +1050,98 @@ Giới hạn số kết quả
 ## locate -i filename
 Không phân biệt chữ hoa và thường 
 
+## Lệnh date 
+Dùng để in ra ngày tháng và thời gian của hệ thống 
+```
+nptr@ThinkPad-T460:~$ date 
+Thứ sáu, 14 Tháng 2 năm 2020 17:30:06 +07
+nptr@ThinkPad-T460:~$ 
+
+```
+## date -u 
+
+Hiển thị tại múi giờ GMT 
+```
+nptr@ThinkPad-T460:~$ date -u
+Thứ sáu, 14 Tháng 2 năm 2020 10:30:45 UTC
+nptr@ThinkPad-T460:~$ 
+```
+## date --date=""
+Hiển thị thời gian cụ thể. 
+
+```
+nptr@ThinkPad-T460:~$ date --date="10 day ago"
+Thứ ba, 04 Tháng 2 năm 2020 17:31:43 +07
+nptr@ThinkPad-T460:~$ 
+```
+## date -s 
+Đặt tgian hệ thống 
+```
+date --set="Tue Nov 13 15:23:34 +08 2020"
+```
+## date -r 
+Sử dụng để hiển thị dấu tgian được sửa đổi lần cuối của tệp
+```
+nptr@ThinkPad-T460:~$ date -r nguyen.phuong 
+Thứ ba, 11 Tháng 2 năm 2020 17:42:53 +07
+nptr@ThinkPad-T460:~$ 
+```
+## date "+%<format_option>"
+Dùng để định dạng đầu ra tgian của hệ thống 
+
+## Lệnh cal 
+cal - calendar 
+Hiển thị lịch của hệ thống 
+```
+nptr@ThinkPad-T460:~$ cal
+    Tháng 2 2020      
+CN T2 T3 T4 T5 T6 T7  
+                   1  
+ 2  3  4  5  6  7  8  
+ 9 10 11 12 13 14 15  
+16 17 18 19 20 21 22  
+23 24 25 26 27 28 29  
+                      
+nptr@ThinkPad-T460:~$ 
+```
+## cal [month] [year]
+Hiển thị lịch của một tháng chỉ định 
+```
+nptr@ThinkPad-T460:~$ cal 01 2020
+    Tháng 1 2020      
+CN T2 T3 T4 T5 T6 T7  
+          1  2  3  4  
+ 5  6  7  8  9 10 11  
+12 13 14 15 16 17 18  
+19 20 21 22 23 24 25  
+26 27 28 29 30 31     
+                      
+nptr@ThinkPad-T460:~$
+```
+## cal [year]
+
+Lịch của 12 tháng của 1 năm chỉ định 
 
 
+## Lệnh sleep 
 
+Trì hoãn một tgian xác định 
+mặc định là giây 
 
+## Lệnh time 
 
+Dùng để thực thi 1 lệnh và hiển thị thời gian thực, thời gian CPU của hệ thống và user để thực thi lệnh đó.
 
+```
+nptr@ThinkPad-T460:~$ time ls
+cloud    Documents  Music          Pictures  snap       test    vmware
+Desktop  Downloads  nguyen.phuong  Public    Templates  Videos
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+real	0m0,005s
+user	0m0,001s
+sys	0m0,004s
+nptr@ThinkPad-T460:~$ 
+```
 
 
 
