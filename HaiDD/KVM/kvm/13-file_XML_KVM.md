@@ -43,7 +43,7 @@ Phần `devices`, các thông số của các device trên VM
 - disk : thông tin disk
     - source : nơi lưu VM
 
-Mục `interface` : phần mạng của VM
+Mục `interface` : phần card mạng của VM
 
 <img src = "..\images\Screenshot_134.png">
 
