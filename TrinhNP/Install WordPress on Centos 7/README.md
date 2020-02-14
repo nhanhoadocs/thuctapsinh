@@ -1,3 +1,5 @@
+![wp](./image/wordpress-logo-680x4004.png)
+
 **WordPress.org là gì?**
 
 WordPress.org là trang chủ chính thức của mã nguồn WordPress mà trang WordPress.com kia đang sử dụng để tạo Blog cho các thành viên. Tại đây, bạn có thể tải bản chính thức của mã nguồn WordPress về máy để tự cài đặt trên chính máy chủ riêng/hosting của mình và mình tự vận hành nó.
@@ -110,12 +112,12 @@ Với một mã nguồn đầy đủ như vậy bạn có thể tuỳ chỉnh v�
 - Mở file config với vi để sửa:  
 
   ```sh
-  vi wp-config.php
+  nano wp-config.php
   ```  
 
   Sửa những nội dung ở ô đỏ theo thông tin bạn đặt ở bước 1  
 
- 
+ ![](./image/vidu.png)
 
 - Lưu file cấu hình và thoát.  
 
@@ -127,9 +129,9 @@ Với một mã nguồn đầy đủ như vậy bạn có thể tuỳ chỉnh v�
 
 - Thiết lập thành công, bạn có thể đăng nhập vào Wordpress  
 
- 
+ ![](./image/1.png)
 
  
 - Màn hình sau khi bạn đăng nhập thành công vào Wordpress  
 
- 
+ ![](./image/2.png)
