@@ -12,14 +12,14 @@ Ta sẽ xem file `NAT.xml`
 
 <img src="..\images\Screenshot_136.png">
 
-- name : tên mạng
-- forward mode : kiểu mạng
-- bridge : card sử dụng
-- mac : địa chỉ MAC
-- domain : tên domain của mạng
-- ip : thông số IP của mạng
-    - dhcp : thông tin dhcp của mạng
-        - range : dải cấp dhcp cho các VM
+- `name` : tên mạng
+- `forward mode` : kiểu mạng
+- `bridge` : card sử dụng
+- `mac` : địa chỉ MAC
+- `domain` : tên domain của mạng
+- `ip` : thông số IP của mạng
+    - `dhcp` : thông tin dhcp của mạng
+        - `range` : dải cấp dhcp cho các VM
 
 ## II. Tạo virtual network bằng file XML
 ### 1. Chuẩn bị file XML
