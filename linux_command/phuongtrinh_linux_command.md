@@ -1144,21 +1144,95 @@ nptr@ThinkPad-T460:~$
 ```
 
 
+## Lệnh gzip - gunzip 
+Nén và giảni nén file. Mỗi file được nén thành một 1 file duy nhất.
+## gzip
+
+nén file thành file có tên .gz và xóa file ban đầu 
+
+## gzip -f 
+f - force: ép buộc nén 1 tệp dù đã có tệp trùng tên sau khi nén 
+
+```
+nptr@ThinkPad-T460:~$ gzip nguyen.phuong 
+nptr@ThinkPad-T460:~$ ls
+cloud    Documents  Music             Pictures  snap       test    vmware
+Desktop  Downloads  nguyen.phuong.gz  Public    Templates  Videos
+nptr@ThinkPad-T460:~$ 
+```
+
+## gzip -r [tên thư mục] 
+Nén từng gile trong thư mục 
+
+## gzip -[1-9]
+chọn mức độ nén file 
+1: Nén tối đa ở tốc độ chậm nhất 
+...
+9: Nén tối thiếu ở tốc độ chậm nhất 
+
+## gzip -v 
+v : view 
+hiểu thị quá trình nén 
+## gzip -d 
+giải nén file 
+
+```
+nptr@ThinkPad-T460:~$ gzip -d nguyen.phuong.gz 
+nptr@ThinkPad-T460:~$ ls
+cloud    Documents  Music          Pictures  snap       test    vmware
+Desktop  Downloads  nguyen.phuong  Public    Templates  Videos
+nptr@ThinkPad-T460:~$ 
+``` 
+## gunzip 
+dùng để giản nén file. sau khi giải nén sẽ xóa file nén lúc đầu 
+
+## gunzip -c 
+
+Xem một file nén mà k cần giải nén file đó 
+
+```
+nptr@ThinkPad-T460:~$ gzip nguyen.phuong 
+nptr@ThinkPad-T460:~$ gunzip -c nguyen.phuong.gz 
+toi la nguyen phuong trinh
+nptr@ThinkPad-T460:~$ 
+```
+## gunzip -f 
+Giải nén bất chấp 
+
+## gunzip -r 
+Giải nén  cả các file trong 1 thư mục 
+
+## gunzip -v 
+hiển thị quá trình giải nén 
 
 
+## Lệnh zcat - zmore 
+Dùng để đọc những file nén sử dụng gzip 
 
 
+- `zcat`
+
+```
+nptr@ThinkPad-T460:~$ zcat nguyen.phuong.gz 
+toi la nguyen phuong trinh
+nptr@ThinkPad-T460:~$ 
+```
+
+- `zmore`
+```
+nptr@ThinkPad-T460:~$ zmore nguyen.phuong.gz 
+toi la nguyen phuong trinh
+nptr@ThinkPad-T460:~$ 
+```
+
+## Lệnh bzip2 - bunzip2 
+Nén file tốt hơn gzip, nhưng phải cài đặt thêm gói hỗ trợ
+
+## -v hiển thị quá trình hoạt động 
 
 
-
-
-
-
-
-
-
-
-
+## Lệnh bzcat - bzmore 
+đọc file nén bằng bzip2 
 
 
 
