@@ -12,6 +12,7 @@ Một máy Centos7 có cấu hình tối thiểu
 * 20G disk
 * 2 interface
 
+| interface | ip address |
 | -------- | ---------- |
 | ens9 | 10.10.3.2 |
 | eth0 | 10.10.4.6 |
