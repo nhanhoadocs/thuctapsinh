@@ -1,4 +1,3 @@
-
 ## Truy cập console VM
 - Cần khởi động dịch vụ trên VM
 
