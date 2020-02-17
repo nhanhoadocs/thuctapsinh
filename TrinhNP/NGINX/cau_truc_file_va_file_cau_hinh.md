@@ -1,4 +1,4 @@
-# ile cấu hình của Nginx trên CentOS 7
+# File cấu hình của Nginx trên CentOS 7
 
 ## I - Cấu trúc và cách sử dụng tập tin cấu hình 
 
