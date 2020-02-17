@@ -28,3 +28,4 @@ Các firewall software khác chỉ đơn giản là sử dụng lại cơ chế 
 - Dùng NAT và masquerading để chia sẻ kết nối internet
 - Dùng NAT để xây dựng transparent proxies
 - Thực hiệm một số tác vụ với packet như thay đổi TOS/DSCP/ECN trong IP header
+
