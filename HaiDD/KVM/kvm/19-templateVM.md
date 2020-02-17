@@ -33,7 +33,7 @@ Sử dụng `virt-sysprep` để "niêm phong" máy ảo:
 
 Người dùng cũng có thể liệt kê các options cụ thể khi sử dụng với `virt-sysprep`. Ví dụ: `virt-sysprep --operations ssh-hostkeys,udev-persistent-net -d`
 
-## 4. Lab tạo template và cài đặt từ template
+## 4. Lab tạo template và cài đặt VM từ template
 ### Tạo template
 - Cài đặt 1 VM CentOS-7 trên host KVM1. Cài đặt các gói cần thiết để dùng làm template
 - Shutdown VM `virsh shutdown demo`
