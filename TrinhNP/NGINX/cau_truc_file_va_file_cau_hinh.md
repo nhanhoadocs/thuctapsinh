@@ -18,7 +18,7 @@
 
   Một config file điển hình của nginx có thể được minh họa như hình dưới. Một main context sẽ bao gồm nhiều directive đơn giản, nhiều contexxt(ví dụ: context A, context B) chứa các block directive.
 
-  <img src="../image/structure_nginx_config_file.png">
+  ![aaa](/image/structure_nginx_config_file.png)
 
 
 - Tạo 1 file cấu hình riêng cho mỗi tên miền sẽ giúp server dễ quản lý và hiệu quả hơn.
