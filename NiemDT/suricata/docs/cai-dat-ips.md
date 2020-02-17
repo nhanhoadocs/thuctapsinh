@@ -15,13 +15,13 @@ Một máy Centos7 có cấu hình tối thiểu
 | interface | ip address |
 | -------- | ---------- |
 | ens9 | 10.10.3.2 |
-| eth0 | 10.10.4.6 |
+| eth1 | 10.10.4.6 |
 
 Để sử dụng với mô hình này tất cả lưu lượng phải được đi qua máy cài đặt suricata. Tại đây suricata sẽ sử dụng iptables trên máy naỳ để có thể xử lý goí tin.
 
 ### Cài đặt
 
-Thực hiện cài đặt và cấu hình như với [cài đặt mode IPS](/docs/cai-dat-ids.md)
+Thực hiện cài đặt và cấu hình như với [cài đặt mode IDS](/docs/cai-dat-ids.md)
 
 Bỏ qua phần cấu hình để chạy deamon
 
@@ -33,6 +33,7 @@ Cấu hình iptables
 sysctl -w net.ipv4.ip_forward=1
 iptables -I FORWARD -i ens9 -o eth1 -j NFQUEUE
 iptables -I FORWARD -i eth1 -o ens9 -j NFQUEUE
+iptables -t nat -I POSTROUTING -s 10.10.3.0/24 -o eth1 -j SNAT --to-source 10.10.4.6
 ```
 
 Sửa file cấu hình
