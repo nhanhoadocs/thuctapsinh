@@ -1,18 +1,18 @@
 # Linux command
 
 ## Mục lục
-|1-10|11-20|21-30|31-40|41-50|
-|-|-|-|-|-|
-|[1. man](#man)|[11. mv](#mv)|[21. alias](#alias)|[31. sed](#31)|[41. bzcat - bzmore](#41)|
-|[2. pwd](#pwd)|[12. rename](#rename)|[22. tee](#tee)|[32. find](#32)|[42. who](#42)|
-|[3. cd](#cd)|[13. head](#head)|[23. grep](#grep)|[33. locate](#33)|[43. su](#43)|
-|[4. ls](#ls)|[14. tail](#tail)|[24. cut](#cut)|[34. date](#34)|[44. useradd](#44)|
-|[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|[35. cal](#35)|[45. userdel](#45)|
-|[6. rmdir](#rmdir)|[16. tac](#tac)|[26. wc](#26)|[36. sleep](#36)|[46. usermod](#46)|
-|[7. file](#file)|[17. more và less](#moreless)|[27. sort](#27)|[37. time](#37)|[47. passwd](#47)|
-|[8. touch](#touch)|[18. strings](#strings)|[28. uniq](#28)|[38. gzip & gunzip](#38)|[48. groupmod](#48)|
-|[9. rm](#rm)|[19. echo](#echo)|[29. comm](#29)|[39. zcat & zmore](#39)|[49. groupdel](#49)|
-|[10. cp](#cp)|[20. type & which](#typewhich)|[30. od](#30)|[40. bzip2 - bunzip2](#40)|[50. vigr](#50)|
+|1-10|11-20|21-30|31-40|41-50|51-60|
+|-|-|-|-|-|-|
+|[1. man](#man)|[11. mv](#mv)|[21. alias](#alias)|[31. sed](#31)|[41. bzcat - bzmore](#41)|[51. chgrp](#51)|
+|[2. pwd](#pwd)|[12. rename](#rename)|[22. tee](#tee)|[32. find](#32)|[42. who](#42)|[52. chown](#52)|
+|[3. cd](#cd)|[13. head](#head)|[23. grep](#grep)|[33. locate](#33)|[43. su](#43)|[53. chmod](#53)|
+|[4. ls](#ls)|[14. tail](#tail)|[24. cut](#cut)|[34. date](#34)|[44. useradd](#44)|[54.](#54)|
+|[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|[35. cal](#35)|[45. userdel](#45)|[55.](#55)|
+|[6. rmdir](#rmdir)|[16. tac](#tac)|[26. wc](#26)|[36. sleep](#36)|[46. usermod](#46)|[56.](#56)|
+|[7. file](#file)|[17. more và less](#moreless)|[27. sort](#27)|[37. time](#37)|[47. passwd](#47)|[57.](#57)|
+|[8. touch](#touch)|[18. strings](#strings)|[28. uniq](#28)|[38. gzip & gunzip](#38)|[48. groupmod](#48)|[58.](#58)|
+|[9. rm](#rm)|[19. echo](#echo)|[29. comm](#29)|[39. zcat & zmore](#39)|[49. groupdel](#49)|[59.](#59)|
+|[10. cp](#cp)|[20. type & which](#typewhich)|[30. od](#30)|[40. bzip2 - bunzip2](#40)|[50. vigr](#50)|[60.](#60)|
 
 
 ## 1. Lệnh `man` (manual - hướng dẫn sử dụng) <a name="man"></a>
@@ -1728,4 +1728,48 @@ Dùng để thay đổi file chứa tên và GID của các group
 
 <img src="https://i.imgur.com/wHJScyl.png">
 
+--
+
 <img src="https://i.imgur.com/flNqqYc.png">
+
+
+## 51. Lệnh `chgrp`
+Dùng để thay đổi quyền sở hữu nhóm của file hoặc thư mục
+```
+chgroup <grp_name> file_name
+```
+
+<img src= "https://i.imgur.com/7lV3lVt.png">
+
+### 51.1. `chgrp -R`
+Thay đổi quyền group của thư mục và tất cả phần tử bên trong nó
+```
+chgrp -R <grpname> <tên_thư_mục>
+```
+
+### 51.2. `chgrp -v`
+Hiện quá trình đổi
+
+<img src="https://i.imgur.com/DGFDerq.png">
+
+<img src="https://i.imgur.com/T13G9Uo.png">
+
+## 52. Lệnh `chown`
+Thay đổi quyền sở hữu của file hoặc thư mục
+```
+chown <user_name> file_name
+```
+
+<img src="https://i.imgur.com/WlMTCMo.png">
+
+### 52.1. `chown -v`
+Hiện quá trình đổi
+
+<img src="https://i.imgur.com/iuBrfQh.png">
+
+## 53. Lệnh `chmod`
+Thay đổi permission của file hay thư mục
+
+Xem thêm tại đây [File Permission](https://github.com/danghai1996/Linux/blob/master/LinuxBasicCommand/04-FilePermission.md)
+
+<img src="https://i.imgur.com/QfKjrvp.png">
