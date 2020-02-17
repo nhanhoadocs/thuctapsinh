@@ -91,7 +91,7 @@ Ta đã tạo xong file image Template.
     ```
     <img src="..\images\Screenshot_187.png">
 
-
+- Tiến hành download 1 số thứ rồi kiểm ta dung lượng. Máy ảo được tạo ra sẽ có dung lượng file image đúng bằng dung lượng file bạn vừa down. Cơ chế hoạt động giống như Thin Provisioning giúp tiết kiệm bộ nhớ tuy nhiên nếu file template bị remove, các máy ảo tạo từ nó cũng sẽ không thể chạy được nữa.
 
 
 
