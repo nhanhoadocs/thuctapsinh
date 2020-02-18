@@ -114,3 +114,50 @@ systemctl enable suricata
 Đến đây việc cài đặt và cấu hình đã xong. Ta có thể thêm các rule phù hợp vào file `/etc/suricata/rules/suricata/rules`
 
 Tong hướng dẫn này mới thực hiện cài để làm HIDS. Nếu muốn làm NIDS thì bạn cần phải cấu hình (ví dụ như mirror trên switch) để có thể copy lưu lượng đi trên mạng đẩy về máy cài suricata
+
+
+### Cấu hình tự động update rule
+
+Sử dụng Oinkmaster để thực hiện tự động update các rule của snort
+
+Cài đặt oinkmaster
+
+```
+yum install perl
+wget http://nchc.dl.sourceforge.net/project/oinkmaster/oinkmaster/2.0/oinkmaster-2.0.tar.gz
+tar zxvf oinkmaster-2.0.tar.gz
+cd oinkmaster-2.0
+cp oinkmaster.pl /usr/local/bin/
+chmod +x /usr/local/bin/oinkmaster.pl
+cp oinkmaster.conf /etc/suricata/
+```
+
+Mở file `/etc/suricata/oinkmaster.conf` thêm vào dòng sau
+
+```
+url = http://rules.emergingthreats.net/open/suricata/emerging.rules.tar.gz
+```
+
+![](../images/cai_dat/02.png)
+
+Chạy lệnh sau
+
+```
+oinkmaster.pl -C /etc/suricata/oinkmaster.conf -o /etc/suricata/rules
+```
+
+Kiểm tra các file rule mới được download
+
+```
+ls /etc/suricata/rules/*.rules
+```
+
+Mở file `/etc/suricata/suricata.yaml` khai báo các file rule vào đây
+
+```
+default-rule-path: /etc/suricata/rules
+rule-files:
+ - suricata.rules
+```
+
+Để tự động update thì có thể cho lệnh `oinkmaster.pl -C /etc/suricata/oinkmaster.conf -o /etc/suricata/rules` vào crontab để chạy định kỳ
