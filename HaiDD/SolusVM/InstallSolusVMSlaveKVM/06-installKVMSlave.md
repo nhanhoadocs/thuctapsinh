@@ -35,7 +35,7 @@ Cặp ID này ta có thể tìm trong file
 https://master_server_ip:5656/admincp/
 ```
 
-Ở đây, ta đã cài SolusVM Master trên server có địa chỉ `10.10.34.162`
+Ở đây, ta đã cài SolusVM Master trên server có địa chỉ `10.10.34.162`. Truy cập đường dẫn `https://10.10.34.162:5656/admincp/`
 
 <img src="..\images\Screenshot_12.png">
 
