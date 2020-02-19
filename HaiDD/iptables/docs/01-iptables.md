@@ -29,3 +29,7 @@ Các firewall software khác chỉ đơn giản là sử dụng lại cơ chế 
 - Dùng NAT để xây dựng transparent proxies
 - Thực hiệm một số tác vụ với packet như thay đổi TOS/DSCP/ECN trong IP header
 
+## II. Sự khác biệt giữa iptables với Firewalld
+Firewalld là phiên bản firewall mới mặc định được sử dụng trong các phiên bản RHEL 7 để thay thế cho interface của iptables. Về bản chất, nó vẫn kết nối tới netfilter kernel code. Firewalld tập trung chủ yếu vào việc cải thiện vấn đề quản lí rules bằng cách cho phép thay đổi cấu hình mà không bị mất các kết nối hiện tại.
+
+<img src= "..\images\Screenshot_1.png">
