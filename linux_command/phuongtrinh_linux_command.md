@@ -1234,18 +1234,127 @@ Nén file tốt hơn gzip, nhưng phải cài đặt thêm gói hỗ trợ
 ## Lệnh bzcat - bzmore 
 đọc file nén bằng bzip2 
 
+## Lệnh who
+
+Cung cấp thông tin về người dùng đăng nhập vào hệ thống 
+```
+nptr@ThinkPad-T460:~/cloud$ who
+nptr     :0           2020-02-19 16:47 (:0)
+nptr@ThinkPad-T460:~/cloud$ 
+```
+
+## Lệnh who am i
+Hiểu thị dòng trỏ đến phiên hiện tại 
 
 
+## Lệnh W 
+cho biết ai đã đăng nhập và làm gì 
+
+```
+nptr@ThinkPad-T460:~/cloud$ w 
+ 18:21:54 up  1:34,  1 user,  load average: 0,25, 0,88, 0,71
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+nptr     :0       :0               16:47   ?xdm?   1:18   0.02s /usr/lib/gdm3/g
+nptr@ThinkPad-T460:~/cloud$ 
+```
+## id 
+CUng cấp id user, group 
+```
+nptr@ThinkPad-T460:~/cloud$ id 
+uid=1000(nptr) gid=1000(nptr) groups=1000(nptr),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),104(input),116(lpadmin),126(sambashare)
+nptr@ThinkPad-T460:~/cloud$ 
+```
+## Lệnh su 
+Cấp quyền cho người dùng chạy shell như một người dùng khác 
+
+## su root 
+sử dụng với quyền của root 
+
+## Lệnh useradd 
+thêm một user vào hệ thống 
+
+## Useradd -m 
+Tạo user cùng thư mục tại /home 
+```
+nptr@ThinkPad-T460:~/cloud$ ls -la /home 
+total 28
+drwxr-xr-x  4 root root  4096 Thg 4 24  2018 .
+drwxr-xr-x 24 root root  4096 Thg 1 31 21:43 ..
+drwx------  2 root root 16384 Thg 1 14 23:47 lost+found
+drwxr-xr-x 32 nptr nptr  4096 Thg 2 19 16:47 nptr
+nptr@ThinkPad-T460:~/cloud$ 
+```
+
+## useradd -d 
+Tạo thư mục của user tại thư mục chỉ định 
+
+## useradd -e 
+Tạo user với ngày hết hạn xác định 
+
+Kiểm tra thử với user hiện tại 
+```
+nptr@ThinkPad-T460:~/cloud$ chage -l nptr 
+Last password change					: Thg 1 31, 2020
+Password expires					: never
+Password inactive					: never
+Account expires						: never
+Minimum number of days between password change		: 0
+Maximum number of days between password change		: 99999
+Number of days of warning before password expires	: 7
+nptr@ThinkPad-T460:~/cloud$ 
+```
+## Lệnh userdel 
+Dùng để xóa user 
+
+## userdel -r <username>
+	
+Xóa user và thư mục home của nó.
+## usermod 
+DÙng để sửa đổi hoặc thay đổi bất kỳ thuộc tính nào của tài khoản người dùng 
+
+## usermod -c
+
+Đặt mô tả về người dùng 
+
+## usermod -d 
+DÙng để thay đổi thuư mục home của user 
+
+## usermod -g 
+thay đổi group của user 
+
+## usermode -G 
+Thêm group vào user 
+
+## usermod -aG 
+Thêm group primary (group chisnh) cho user 
+## usermod -u uid 
+
+Thay đổi uid của user 
+
+## usermod -u uid -g gid 
 
 
+Thay đổi gid của group 
 
+## Lệnh passwd 
+DÙng để thay đổi password của user hiện tại 
 
+```
+nptr@ThinkPad-T460:~/cloud$ passwd 
+Changing password for nptr.
+(current) UNIX password: 
+Enter new UNIX password: 
+Retype new UNIX password: 
+```
 
+## passwd <username> 
+Thay đổi mật khẩu cho user chỉ định, cần quyền root 
 
-
-
-
-
+## passwd -d <username> 
+Xóa mật khẩu của một tài khoản chỉ định, cần quyền root 
+	
+	
+	
 
 
 
