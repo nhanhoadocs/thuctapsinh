@@ -1354,9 +1354,39 @@ Thay đổi mật khẩu cho user chỉ định, cần quyền root
 Xóa mật khẩu của một tài khoản chỉ định, cần quyền root 
 	
 	
-	
+## Lệnh groupmod 
+Dùng để thay đổi hoặc sửa đổi nhóm hiện có trên hệ thống 
 
 
+## groupmod -g 
+Thay đổi GID của group 
+
+```
+nptr@ThinkPad-T460:~$ sudo groupmod -g 4013 aaa 
+nptr@ThinkPad-T460:~$ cat /etc/group | grep 4013 
+aaa:x:4013:
+nptr@ThinkPad-T460:~$ 
+```
+
+
+## groupmod -n 
+đổi tên group 
+```
+nptr@ThinkPad-T460:~$ sudo groupmod -n bbb aaa 
+nptr@ThinkPad-T460:~$ cat /etc/group | grep bbb
+bbb:x:4013:
+nptr@ThinkPad-T460:~$ 
+```
+## groupdel 
+dùng để xóa group được chọn 
+
+```
+nptr@ThinkPad-T460:~$ sudo groupdel bbb 
+nptr@ThinkPad-T460:~$ cat /etc/group | grep bbb
+nptr@ThinkPad-T460:~$ 
+```
+## Lệnh vigr 
+Dùng để thay đổi file chứa tên và GID của các group 
 
 
 
