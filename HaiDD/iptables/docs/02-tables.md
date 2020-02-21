@@ -11,7 +11,7 @@ Trong kiến trúc của iptable có sử dụng các bảng để quy định c
 
 **CHÚ Ý**: file `/etc/sysconfig/iptables` không cập nhật những module tải về, vì vậy chúng ta phải thêm những trạng thái đó vào file `/etc/rc.local` và chạy nó tại cuối mỗi lần boot lại.   
 
-Những mẫu trong phần này bao gồm những trạng thái được lưu trong file /etc/rc.local:
+Những mẫu trong phần này bao gồm những trạng thái được lưu trong file `/etc/rc.local`:
 
 ```
 #File:/etc/rc.local
