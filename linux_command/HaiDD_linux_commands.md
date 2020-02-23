@@ -6,8 +6,8 @@
 |[1. man](#man)|[11. mv](#mv)|[21. alias](#alias)|[31. sed](#31)|[41. bzcat - bzmore](#41)|[51. chgrp](#51)|
 |[2. pwd](#pwd)|[12. rename](#rename)|[22. tee](#tee)|[32. find](#32)|[42. who](#42)|[52. chown](#52)|
 |[3. cd](#cd)|[13. head](#head)|[23. grep](#grep)|[33. locate](#33)|[43. su](#43)|[53. chmod](#53)|
-|[4. ls](#ls)|[14. tail](#tail)|[24. cut](#cut)|[34. date](#34)|[44. useradd](#44)|[54.](#54)|
-|[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|[35. cal](#35)|[45. userdel](#45)|[55.](#55)|
+|[4. ls](#ls)|[14. tail](#tail)|[24. cut](#cut)|[34. date](#34)|[44. useradd](#44)|[54. getfacl](#54)|
+|[5. mkdir](#mkdir)|[15. cat](#cat)|[25. tr](#25)|[35. cal](#35)|[45. userdel](#45)|[55. setfacl](#55)|
 |[6. rmdir](#rmdir)|[16. tac](#tac)|[26. wc](#26)|[36. sleep](#36)|[46. usermod](#46)|[56.](#56)|
 |[7. file](#file)|[17. more và less](#moreless)|[27. sort](#27)|[37. time](#37)|[47. passwd](#47)|[57.](#57)|
 |[8. touch](#touch)|[18. strings](#strings)|[28. uniq](#28)|[38. gzip & gunzip](#38)|[48. groupmod](#48)|[58.](#58)|
@@ -1773,3 +1773,47 @@ Thay đổi permission của file hay thư mục
 Xem thêm tại đây [File Permission](https://github.com/danghai1996/Linux/blob/master/LinuxBasicCommand/04-FilePermission.md)
 
 <img src="https://i.imgur.com/QfKjrvp.png">
+
+## 54. Lệnh `getfacl` <a name="54"></a>
+Lệnh `getfacl` được danh sách kiểm soát truy cập tập tin.
+
+<img src="https://i.imgur.com/4ygTaq4.png">
+
+### 54.1. `getfacl -R`
+
+Đệ quy thư mục
+
+<img src="https://i.imgur.com/6phePNC.png">
+
+### 54.2. `getfacl -d`
+Hiển thị danh sách kiểm soát truy cập mặc định.
+
+<img src="https://i.imgur.com/v2SULxd.png">
+
+## 55. Lệnh `setfacl`<a name="55"></a>
+### 55.1. Thêm permission
+User
+```
+setfacl -m "u:user:permissions" /path/to/file
+```
+
+Group
+```
+setfacl -m "g:group:permissions" /path/to/file 
+```
+
+<img src="https://i.imgur.com/ltSXwqM.png">
+
+### 55.2. Remove 
+```
+setfacl -x "entry" /path/to/file
+```
+
+<img src="https://i.imgur.com/fPCRK3G.png">
+
+### 55.4. Remove all
+```
+setfacl -b path/to/file
+```
+
+<img src="https://i.imgur.com/ehGjaor.png">
