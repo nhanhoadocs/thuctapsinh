@@ -2,21 +2,20 @@
 
 ## Mô hình
 
-![](../images/cai_dat_1/01.png)
+![](../images/cai_dat_1/mo_hinh_1.png)
 
-Cài đặt suricata để giám sát traffic ra vào các VM trong KVM host.
+## Phần 1: Cài đặt suricata
 
-Như mô hình trên KVM host có 2 interface vật lý là `em1` và `em2` được kết nối để ra ngòai internet. Mỗi interface này lại được cấu hình trunking gồm nhiều VLAN. Tại KVM host tạo các linux bridge tương ứng với các VLAN để các VM trong host kết nối được với VLAN này. Mỗi một VM được tạo trong host kết nối với bridge sẽ tạo ra một interface có tên là `vnetn`. Ở đây để có được tất cả traffic vào ra KVM host (vào ra các VM trong host) ta thực hiện mirror 2 interface `em1` và `em2` đến interface được kết nối với máy cài suricata (như mô hình trên là `vnet4` vì máy cài suricata trong mô hình này là một VM trong host KVM).
+**Bước 1: Tạo máy**
 
-## Chuẩn bị
+Tạo một VM Centos7 trong KVM host có cấu hình tối thiểu như sau:
 
-Một máy Centos7 có cấu hình tối thiểu:
  * 2G RAM
  * 2 core
  * 20G disk
- * 1 interface
+ * 1 interface kết nối đến linux bridge có thể ra được internet
 
-## Cài đặt
+**Bước 2: Cài đặt** 
 
 Cài các gói cần thiết
 
@@ -52,7 +51,7 @@ Nếu kết quả trả về như sau thì đã cài đặt thành công
 This is Suricata version 5.0.1 RELEASE
 ```
 
-## Cấu hình
+**Bước 3: Cấu hình**
 
 Mở file `/etc/suricata/suricata.yaml` để sửa một số thông tin
 
@@ -91,7 +90,7 @@ Trên terminal thứ nhất chạy lệnh
 suricata -c /etc/suricata/suricata.yaml -i eth0
 ```
 
-`eth0` là tên interface có traffic đi qua(giống như tcpdump trên interface này)
+`eth0` là tên interface của suricata kết nối với vnet4
 
 Terminal thứ 2 chạy lệnh
 
@@ -106,9 +105,7 @@ Bây giờ đứng từ một máy khác thực hiện lệnh ping đến máy c
 11/20/2019-18:02:51.951919  [**] [1:0:0] ICMP Packet found [**] [Classification: (null)] [Priority: 3] {ICMP} 10.10.3.2:0 -> 10.10.3.1:8
 ```
 
-Nếu không muốn rules vừa tạo bạn vào lại file `/etc/suricata/rules/suricata.rules` để xóa rule vừa tạo
-
-### Để suricata chạy như một chương trình deamon
+**Bước 4: Đặt suricata chạy deamon**
 
 ```
 cat <<EOF> /lib/systemd/system/suricata.service
@@ -132,7 +129,7 @@ systemctl start suricata
 systemctl enable suricata
 ```
 
-### Cấu hình tự động update các rule mới nhất
+**Bước 5: Cấu hình tự động update các rule mới nhất**
 
 Sử dụng Oinkmaster để thực hiện tự động update các rule của snort
 
@@ -177,13 +174,25 @@ Khai báo các file này vào file `/etc/suricata/suricata.yaml`
 * * */1 * * root /usr/local/bin/oinkmaster.pl -C /etc/suricata/oinkmaster.conf -o /etc/suricata/rules
 ```
 
-## Cấu hình mirror
+## Phần 2: Cấu hình mirror
 
-Thực hiện mirror để traffic được copy đến interface kết nối với máy cài suricata để giám sát. Như mô hình trên ta thực hiện mirror để traffic qua 2 interface `em1` và `em2` đều được copy đến interface `vnet4` để đi vào `suricata` để phân tích.
+Bước này thao tác trên KVM host
 
-Thao tác trên KVM host
+Thực hiện mirror `em1` và `em2` đến `vnet4`
 
-### Với em1
+**Bước 1: Xác định vnet của VM cài suricata**
+
+Địa chỉ MAC trên interface của VM và MAC trên vnet mà nó kết nối đến sẽ gần giống nhau. Nếu khác nhau chỉ khác nhau 8 bit đầu tiên
+
+Kiểm tra trên VM cài suricata
+
+![](../images/cai_dat_1/03.png)
+
+Tìm vnet trên KVM host
+
+![](../images/cai_dat_1/04.png)
+
+**Bước 2: Mirror em1**
 
 ```
 tc qdisc add dev em1 ingress
@@ -192,7 +201,7 @@ tc qdisc add dev em1 handle 1: root prio
 tc filter add dev em1 parent 1: protocol all u32 match u8 0 0 action mirred egress mirror dev vnet4
 ```
 
-### Với em2
+**Bước 3: Mirror em2**
 
 ```
 tc qdisc add dev em2 ingress
@@ -201,9 +210,23 @@ tc qdisc add dev em2 handle 1: root prio
 tc filter add dev em2 parent 1: protocol all u32 match u8 0 0 action mirred egress mirror dev vnet4
 ```
 
-### Up interface
+**Bước 4: Up interface vnet4**
 
 ```
 ip link set vnet4 up
 ```
 
+## Phần 3: Kiểm tra
+
+Trên máy cài suricata chạy lệnh sau
+
+```
+tailf /var/log/suricata/fast.log
+```
+
+Đứng từ một máy bên ngoài KVM host thực hiện ping đến một VM bất kỳ trong KVM host thấy log như sau xuất hiện là thành công
+
+```
+11/20/2019-18:02:51.951768  [**] [1:0:0] ICMP Packet found [**] [Classification: (null)] [Priority: 3] {ICMP} 10.10.3.1:8 -> 10.10.4.2:0
+11/20/2019-18:02:51.951919  [**] [1:0:0] ICMP Packet found [**] [Classification: (null)] [Priority: 3] {ICMP} 10.10.4.2:0 -> 10.10.3.1:8
+```
