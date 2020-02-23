@@ -2,11 +2,11 @@
 
 ## Check IP hiện tại của VM :
 
-Trên SolusVM:
+**Trên SolusVM:**
 
 <img src="..\images\Screenshot_38.png">
 
-Trên VM :
+**Trên VM :**
 
 <img src="..\images\Screenshot_39.png">
 
