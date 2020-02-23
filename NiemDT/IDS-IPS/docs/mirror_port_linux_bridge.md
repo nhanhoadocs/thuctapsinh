@@ -2,8 +2,9 @@
 
 ### Cấu hình mirror traffic incoming trên interface
 
-Source port là interface vnet0
-Destination port là interface vnet1
+![](../images/mirror/01.png)
+
+Thực hiện mirror để toàn bộ traffic đi qua interface vnet0 được copy đến interface vnet1
 
 ```
 tc qdisc add dev vnet0 ingress
