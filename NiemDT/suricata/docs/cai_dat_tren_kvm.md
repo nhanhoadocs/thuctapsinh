@@ -181,6 +181,8 @@ Khai báo các file này vào file `/etc/suricata/suricata.yaml`
 
 Thực hiện mirror để traffic được copy đến interface kết nối với máy cài suricata để giám sát. Như mô hình trên ta thực hiện mirror để traffic qua 2 interface `em1` và `em2` đều được copy đến interface `vnet4` để đi vào `suricata` để phân tích.
 
+Thao tác trên KVM host
+
 ### Với em1
 
 ```
