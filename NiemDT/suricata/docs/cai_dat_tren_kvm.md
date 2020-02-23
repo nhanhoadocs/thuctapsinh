@@ -8,7 +8,7 @@
 
 **Bước 1: Tạo máy**
 
-Tạo một VM Centos7 trong KVM host có cấu hình tối thiểu như sau:
+Tạo một VM Centos7 trên KVM host có cấu hình tối thiểu như sau:
 
  * 2G RAM
  * 2 core
@@ -218,13 +218,15 @@ ip link set vnet4 up
 
 ## Phần 3: Kiểm tra
 
+Đứng từ một máy bên ngoài KVM host thực hiện ping đến một VM bất kỳ trong KVM host.
+
 Trên máy cài suricata chạy lệnh sau
 
 ```
 tailf /var/log/suricata/fast.log
 ```
 
-Đứng từ một máy bên ngoài KVM host thực hiện ping đến một VM bất kỳ trong KVM host thấy log như sau xuất hiện là thành công
+Nếu thấy log như sau xuất hiện là thành công
 
 ```
 11/20/2019-18:02:51.951768  [**] [1:0:0] ICMP Packet found [**] [Classification: (null)] [Priority: 3] {ICMP} 10.10.3.1:8 -> 10.10.4.2:0
