@@ -3,17 +3,20 @@
 ## Mục lục
 
 [I. Mô hình](#mo_hinh)
+
 [II. Cài đặt suricata](#phan_1)
  * [Bước 1: Tạo máy để cài suricata](#1.1)
  * [Bước 2: Cài đặt](#1.2)
  * [Bước 3: Cấu hình](#1.3)
  * [Bước 4: Đặt suricata chạy deamon](#1.4)
  * [Bước 5: Cấu hình tự động update các rule mới nhất](#1.5)
+
 [III. Cấu hình mirror](#phan_2)
  * [Bước 1: Xác định vnet của VM cài suricata](#2.1)
  * [Bước 2: Mirorr eno1](#2.2)
  * [Bước 3: Mirror eno2](#2.3)
  * [Bước 4: Up interface vnet9](#2.4)
+
 [IV. Kiểm tra](#phan_3)
 
 <a name="mo_hinh">
