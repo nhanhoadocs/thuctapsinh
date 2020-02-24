@@ -23,7 +23,7 @@
 
 ## I. Mô hình
 
-![](../images/cai_dat_2/mo_hinh_kvm1.png)
+![](../images/cai_dat_2/mh3.png)
 
 <a name="phan_1">
 
