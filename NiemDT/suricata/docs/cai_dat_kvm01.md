@@ -23,7 +23,7 @@
 
 ## I. Mô hình
 
-![](../images/cai_dat_2/mh3.png)
+![](../images/cai_dat_2/mh4.png)
 
 <a name="phan_1">
 
