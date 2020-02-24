@@ -76,6 +76,10 @@ Tuy vậy, trong khi iptables service lưu cấu hình tại `/etc/sysconfig/ipt
     IPTABLES_SAVE_ON_RESTART="no"
     ```
     ta đổi các giá trị `no` thành `yes` sau đó lưu lại để hoàn tất.
+    ```
+    IPTABLES_SAVE_ON_STOP="yes"
+    IPTABLES_SAVE_ON_RESTART="yes"
+    ```
 
 **Một số lưu ý đối với iptables, firewalld và ufw**
 - Đối với CentOS/RHEL 7, khi bạn tắt firewalld (mặc định) hoặc tắt iptables service. Các iptables rules cũng sẽ biến mất -> Một số service hoạt động dựa trên nó như network default của KVM (LB) cũng sẽ bị ảnh hưởng.
