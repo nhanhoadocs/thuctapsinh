@@ -11,7 +11,7 @@ iptables [-t table] command [match] [target/jump]
 - `match` là chỗ để bạn gửi tới kernel các đặc tính chi tiết của gói tin, cái làm nó khác biệt với những packets còn lại
 - Nếu tất cả các `match` có trong packet, ta sẽ ra lệnh cho kernel thực thi hành động với nó, đó là `target`
 
-## 1. Command
+## Command
 |Option|Mô tả|Ví dụ|
 |------|-----|-----|
 |`-A`, `--append`|Chèn rule vào cuối chain hay nói cách khác là đây sẽ là rule được check cuối cùng trong chain này tới khi bạn thêm chain khác vào|`iptables -A INPUT ...`|
@@ -37,8 +37,9 @@ iptables [-t table] command [match] [target/jump]
 |`-c`, `--set-counters`|Thường dùng khi tạo mới rule. Ta có thể dùng nó để khai báo số packet và byte counter ban đầu|`--insert`, `--append`, `--replace`|
 |`--modprobe`|Khai báo modules nào sẽ được sử dụng|All|
 
-## 2. Match
-### 2.1. Generic matches
+## Match
+
+### Generic matches
 
 |Match|Mô tả|Ví dụ|
 |-----|-----|-----|
@@ -49,7 +50,7 @@ iptables [-t table] command [match] [target/jump]
 |`-o`, `--out-interface`|Dùng cho interface mà packet rời đi. chỉ dùng cho chain `OUTPUT`, `FORWARD` and `POSTROUTING`. hoạt động giống với `-i`|`iptables -A FORWARD -o eth0`|
 |`-f`, `--fragment`|Dùng để match với phần thứ 2 và 3 của gói tin phân mảnh|`iptables -A INPUT -f`|
 
-### 2.2. Implicit matches
+### Implicit matches
 **TCP**
 |Match|Mô tả|Ví dụ|
 |-----|-----|-----|
@@ -63,8 +64,9 @@ iptables [-t table] command [match] [target/jump]
 
 Hoạt động tương tự như TCP. Nhưng không có `--tcp-flags`
 
-## 3. Target và Jump
-### 3.1. Jumps
+## Target và Jump
+
+### Jumps
 Ví dụ ta tạo mới 1 chain trong cùng table, có tên `tcp_packets`:
 ```
 iptables -N tcp_packets
@@ -77,7 +79,7 @@ iptables -A INPUT -p tcp -j tcp_packets
 
 Ta có thể bắt đầu traverse trong chain mới. Khi tới cuối chain, nó sẽ trả về INPUT chain và packet sẽ traverse bắt đầu traverse từ rules phía dưới rule đã jump nó. Trong trường hợp packet được accept ở sub-chain, nó cũng sẽ được accept ở superset chain và không cần quay về nữa. Lưu ý rằng nó vẫn sẽ traverse ở các chain trong các bảng khác như bình thường.
 
-### 3.2. Target
+### Target
 **ACCEPT target**
 
 Target này không có thêm bất cứ options nào khác. Nếu packet match, nó sẽ được pass qua table nhưng nó sẽ vẫn phải traverse qua cùng chain ở tables khác.
