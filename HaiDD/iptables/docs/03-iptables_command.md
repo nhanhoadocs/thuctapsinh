@@ -1,5 +1,10 @@
 # Tìm hiểu Command trong Iptables
 
+## Lệnh show iptables
+```
+iptables --line -vnL
+```
+
 ## Cấu trúc câu lệnh cơ bản
 ```
 iptables [-t table] command [match] [target/jump]
