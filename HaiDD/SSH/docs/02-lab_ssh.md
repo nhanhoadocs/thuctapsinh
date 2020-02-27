@@ -92,3 +92,5 @@ Nếu bạn sử dụng Windows để SSH đến, tiến hành copy file private
 - Nếu bạn dùng Windows, có thể dùng PuTTY hoặc MobaXterm để gen ssh keys. Ở đây mình dùng MobaXterm.
 Chọn loại key là RSA và click generate.
     <img src="..\images\Screenshot_14.png">
+
+- Di chuột 
