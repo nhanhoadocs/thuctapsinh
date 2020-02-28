@@ -1,7 +1,8 @@
-# Lab SSH
+# Lab SSH Keypair
 
-Server: 192.168.37.15
-Client: 192.168.37.11
+**Server**: `192.168.37.15`
+
+**Client**: `192.168.37.11`
 
 
 # 1. Tạo khóa trên server
@@ -85,6 +86,8 @@ Nếu bạn sử dụng Windows để SSH đến, tiến hành copy file private
     <img src="..\images\Screenshot_13.png">
 
 
+----------------------------
+
 # 2. Tạo khóa trên Client
 ## Phía Client
 ### 1. Window
@@ -112,7 +115,7 @@ Nếu bạn sử dụng Windows để SSH đến, tiến hành copy file private
 ### 2. Linux
 #### **Bước 1:** Tạo key bằng câu lệnh `ssh-keygen -t rsa`
 
-    <img src="..\images\Screenshot_19.png">
+<img src="..\images\Screenshot_19.png">
 
 #### **Bước 2:** Đẩy public key lên server vào file `/root/.ssh/authorized_keys`. 
 Cách nhanh nhất để copy Public Key trên CentOS là sử dụng tiện ích `ssh-copy-id` vì nó khá đơn giản . Nếu không có sẵn `ssh-copy-id` , cần phải copy 1 cách thủ công .
