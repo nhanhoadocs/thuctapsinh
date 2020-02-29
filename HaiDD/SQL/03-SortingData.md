@@ -4,7 +4,7 @@
 Dùng để sắp xếp các dữ liệu được trả về từ truy vấn `SELECT`.
 
 ## Cú pháp
-```
+```sql
 SELECT 
    select_list
 FROM 
@@ -32,7 +32,7 @@ Sử dụng bảng `customers`
 
 ### 1. Sắp xếp dữ liệu theo 1 cột
 Sắp xếp `customers` theo giá trị tăng dần từ cột `contactLastName`
-```
+```sql
 SELECT
     contactLastname,
     contactFirstname
@@ -48,7 +48,7 @@ Kết quả:
 ### 2. Sắp xếp dữ liệu theo nhiều cột
 Sắp xếp các `customers` theo giảm dần của `contactLastname` và tăng dần của `contactFirstname`. Ta sử dụng `DESC` và `ASC`:
 
-```
+```sql
 SELECT
     contactLastname,
     contactFirstname
@@ -69,7 +69,7 @@ Sử dụng bảng `orderdetails`
 <img src = "https://i.imgur.com/XvbPT6O.png">
 
 Sắp xếp dựa trên phép tính `quantityOrdered` * `priceEach`
-```
+```sql
 SELECT 
     orderNumber, 
     orderlinenumber, 
@@ -84,7 +84,7 @@ Kết quả:
 <img src = "https://i.imgur.com/Y6ZUp18.png">
 
 Để kết quả truy vấn dễ đọc hơn, ta có thể gán cột `quantityOrdered * priceEach` bằng tên khác ngắn hơn, sử dụng `AS`:
-```
+```sql
 SELECT 
     orderNumber,
     orderLineNumber,
@@ -112,7 +112,7 @@ Bạn muốn sắp xếp đơn hàng theo thứ tự trạng thái như sau:
 - Disputed
 - Shipped
 
-```
+```sql
 SELECT 
     orderNumber, 
     status
