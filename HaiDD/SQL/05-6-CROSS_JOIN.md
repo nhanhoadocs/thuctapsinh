@@ -1,7 +1,7 @@
 # S5.6 - CROSS JOIN
 
 ## Cú pháp cơ bản
-```
+```sql
 SELECT * FROM t1
 CROSS JOIN t2;
 ```
@@ -12,7 +12,7 @@ CROSS JOIN t2;
 `CROSS JOIN` không sử dụng mệnh đề `ON` và `USING`.
 
 Trong trường hợp bảng t1 và t2 có quan hệ với nhau, `CROSS JOIN` làm việc giống như là `INNER JOIN`.
-```
+```sql
 SELECT * FROM t1
 CROSS JOIN t2
 WHERE t1.id = t2.id;
@@ -23,12 +23,12 @@ Chuẩn bị 1 số bảng để tìm hiểu cách `CROSS JOIN` hoạt động.
 
 Cài đặt 1 số bảng để test:
 Tạo 1 database mới `salesdb`:
-```
+```sql
 CREATE DATABASE IF NOT EXISTS salesdb;
 ```
 
 Tạo 1 vài bảng sau:
-```
+```sql
 CREATE TABLE products (
     id INT PRIMARY KEY AUTO_INCREMENT,
     product_name VARCHAR(100),
@@ -60,7 +60,7 @@ CREATE TABLE sales (
 - sales(product_id, store_id, quantity, sales_date) : các sản phẩm được bán trong một cửa hàng cụ thể theo số lượng và ngày.
 
 Nhập 1 vài dữ liệu cho các bảng:
-```
+```sql
 INSERT INTO products(product_name, price)
 VALUES('iPhone', 699),
       ('iPad',599),
@@ -87,7 +87,7 @@ Bảng products:
 <img src = "https://i.imgur.com/o5PA6T3.png">
 
 `CROSS JOIN` 2 bảng stores và products:
-```
+```sql
 SELECT 
     store_name,
     product_name
