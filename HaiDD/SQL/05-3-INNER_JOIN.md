@@ -6,7 +6,7 @@ Trong bài viết này, ta sẽ tìm hiểu cách sử dụng mệnh đề `INNE
 `INNER JOIN` khớp từng hàng trong 1 bảng với mỗi hàng trong bảng khác và cho phép bạn truy vấn các hàng có chứa các cột chung từ 2 bảng.
 
 ## Cú pháp cơ bản
-```
+```sql
 SELECT
     select_list
 FROM t1
@@ -37,7 +37,7 @@ Theo sơ đồ, ta thấy bảng `products` có cột `productLine` tham chiếu
 - Lấy `textDescription` của dòng sản phẩm từ bảng `productlines`
 
 Để làm điều này, ta sẽ lấy dữ liệu cả 2 bảng bằng cách khớp các hàng dựa trên các giá trị trong cột `productline` bẳng mệnh đề `INNER JOIN`:
-```
+```sql
 SELECT 
     productCode, 
     productName, 
@@ -52,7 +52,7 @@ Kết quả:
 <img src = "https://i.imgur.com/a9FIgfM.png">
 
 Vì các cột được nối của 2 bảng có cùng tên `productline` nên ta có thể sử dụng `USING` như sau:
-```
+```sql
 SELECT 
     productCode, 
     productName, 
@@ -68,7 +68,7 @@ Ta sử dụng 2 bảng `orders` và `orderdetails`
 <img src = "https://i.imgur.com/egkouFP.png">
 
 Truy vấn trả về số thứ tự, trạng thái đơn hàng và tổng doanh số từ 2 bảng `orders` và `orderdetails`:
-```
+```sql
 SELECT 
     t1.orderNumber,
     t1.status,
@@ -84,7 +84,7 @@ Kết quả:
 <img src = "https://i.imgur.com/IEnyxb3.png">
 
 Tương tự, ta có thể sử dụng với `USING`:
-```
+```sql
 SELECT 
     orderNumber,
     status,
@@ -100,7 +100,7 @@ Ta sẽ dùng 3 bảng `products`, `orders`, `orderdetails`. Truy vấn ra danh 
 
 <img src = "https://i.imgur.com/LVkuQRz.png">
 
-```
+```sql
 SELECT 
     orderNumber,
     orderDate,
@@ -124,7 +124,7 @@ Kết quả:
 
 ### 4. Sử dụng `INNER JOIN` với các toán tử khác
 Ta sẽ truy vấn để tìm giá sản phẩm có mã `S10_1949` có giá thấp hơn giá đề xuất của nhà sản xuất (`msrp`).
-```
+```sql
 SELECT 
     orderNumber, 
     productName, 
