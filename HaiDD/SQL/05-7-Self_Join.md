@@ -15,7 +15,7 @@ Sử dụng bảng `employees`:
 Bảng này lưu trữ không chỉ dữ liệu nhân viên mà còn có id của người quản lí nhân viên đó, được xác định bởi cột `reportsTo`.
 
 ### 1. Self Join sử dụng `INNER JOIN`
-```
+```sql
 SELECT 
     CONCAT(m.lastName, ', ', m.firstName) AS Manager,
     CONCAT(e.lastName, ', ', e.firstName) AS 'Direct report'
@@ -32,7 +32,7 @@ ORDER BY
 
 ### 2. Self Join sử dụng `LEFT JOIN`
 Để ra được cả nhân viên không có quản lí. Ta sử dụng `LEFT JOIN`
-```
+```sql
 SELECT 
     IFNULL(CONCAT(m.lastname, ', ', m.firstname),
             'Top Manager') AS 'Manager',
@@ -50,7 +50,7 @@ ORDER BY
 3. Self Join dùng để so sánh các hàng với nhau
 
 Hiển thị danh sách khách hàng định vị trong cùng thành phố bằng cách self join bảng `customers` với chính nó.
-```
+```sql
 SELECT 
     c1.city, 
     c1.customerName, 
