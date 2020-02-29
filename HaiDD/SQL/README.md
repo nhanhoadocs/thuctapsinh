@@ -12,7 +12,7 @@
 
 [5. Joining Tables](05-0-JoiningTables.md)
 
-[6. Grouping Data]()
+[6. Grouping Data](06-0-GroupingData.md)
 
 [7. Subqueries]()
 
