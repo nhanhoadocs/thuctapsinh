@@ -26,6 +26,7 @@ Giải nén và import:
 [root@localhost ~]# unzip mysqlsampledatabase.zip
 Archive:  mysqlsampledatabase.zip
   inflating: mysqlsampledatabase.sql
+
 [root@localhost ~]# mysql -u root -p
 Enter password:
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
