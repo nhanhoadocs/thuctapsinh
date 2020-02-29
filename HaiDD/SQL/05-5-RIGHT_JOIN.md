@@ -3,7 +3,7 @@
 Giống với `LEFT JOIN`, ngoại trừ việc đảo ngược các bảng được sử dụng.
 
 ## Cú pháp cơ bản
-```
+```sql
 SELECT 
     select_last
 FROM t1
@@ -33,7 +33,7 @@ Nếu giá trị trong cột `salesRepEmployeeNumber` là NULL, điều đó có
 
 ### 1. `RIGHT JOIN` đơn giản
 Truy vấn ra mã nhân viên và mã khách hàng tương ứng.
-```
+```sql
 SELECT 
     employeeNumber, 
     customerNumber
@@ -49,7 +49,7 @@ ORDER BY
 
 ### 2. `RIGHT JOIN` với `IS NULL`
 Truy vấn ra các nhân viên không phụ trách bất kí khách hàng nào.
-```
+```sql
 SELECT 
     employeeNumber, 
     customerNumber
