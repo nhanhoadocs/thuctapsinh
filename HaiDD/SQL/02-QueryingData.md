@@ -5,7 +5,7 @@
 `SELECT` : được sử dụng để truy vấn dữ liệu từ một hoặc nhiều bảng.
 
 ## Cú pháp cơ bản
-```
+```sql
 SELECT select_list
 FROM table_name;
 ```
@@ -23,7 +23,7 @@ Ta sẽ sử dụng bảng `employees` để ví dụ về sử dụng `SELECT`:
 
 ### 1. Lấy dữ liệu từ 1 cột:
 Lấy dữ liệu từ cột `email`
-```
+```sql
 SELECT email
 FROM employees;
 ```
@@ -35,7 +35,7 @@ FROM employees;
 
 ### 2. Lấy dữ liệu từ nhiều cột
 Lấy dữ liệu từ 3 cột `lastname`, `firstname`, `jobtitle`
-```
+```sql
 SELECT 
     lastname, 
     firstname, 
@@ -48,7 +48,7 @@ FROM
 <img src = "https://i.imgur.com/c5TAbO6.png">
 
 ### 3. Lấy tất cả dữ liệu của bảng:
-```
+```sql
 SELECT *
 FROM employees;
 ```
@@ -59,7 +59,7 @@ FROM employees;
 
 
 ### **Chú ý**
-Sử dụng SELECT * không nên được sử dụng bừa bãi vì một số lý do sau:
+Sử dụng `SELECT *` không nên được sử dụng bừa bãi vì một số lý do sau:
 - Nó trả về dữ liệu từ tất cả các cột mà có thể ta không dùng đến.
 - Khi chỉ định rõ tên cột sẽ dễ dàng quản lý hơn.
 - Khi một bảng có sự thay đổi thì tập kết quả trả về sẽ thay đổi và có thể dẫn đến những lỗi xử lý.
