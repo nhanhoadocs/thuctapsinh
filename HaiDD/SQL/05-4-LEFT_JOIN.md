@@ -3,7 +3,7 @@
 Trong bài viết này, ta sẽ tìm hiểu cách sử dụng mệnh đề `LEFT JOIN` để lấy dữ liệu từ nhiều bảng dựa trên các điều kiện.
 
 ## Cú pháp cơ bản
-```
+```sql
 SELECT 
     select_list
 FROM
@@ -36,7 +36,7 @@ Ta sử dụng 2 bảng `customers` và `orders`
 Theo sơ đồ thì mỗi `customers` có thể có nhiều `orders`, còn mỗi `orders` chỉ từ 1 `customers`.
 
 Truy vấn lấy ra tất cả các khách hàng và đơn hàng của họ.
-```
+```sql
 SELECT 
     customers.customerNumber, 
     customerName, 
@@ -48,7 +48,7 @@ LEFT JOIN orders ON
     orders.customerNumber = customers.customerNumber;
 ```
 Ta có thể sử dụng cách đặt bí danh bảng:
-```
+```sql
 SELECT
     c.customerNumber,
     customerName,
@@ -64,7 +64,7 @@ Kết quả:
 <img src = "https://i.imgur.com/DD5Igl0.png">
 
 Do 2 cột `customerNumber` của 2 bảng giống nhau nên ta có thể sử dụng `USING` như sau:
-```
+```sql
 SELECT
     customerNumber,
     customerName,
@@ -77,7 +77,7 @@ LEFT JOIN orders USING (customerNumber);
 
 ### 2. `LEFT JOIN` với `IS NULL`
 Tìm những khách hàng không có đơn hàng.
-```
+```sql
 SELECT 
     c.customerNumber, 
     c.customerName, 
@@ -99,7 +99,7 @@ Sử dụng 3 bảng `employees`, `customers`, và `payments`:
 <img src  ="https://i.imgur.com/IPLbBPC.png">
 
 Truy vấn ra danh sách tất cả các nhân viên và các khách hàng mà họ phụ trách.
-```
+```sql
 SELECT 
     e.lastName, 
     e.firstName, 
@@ -127,7 +127,7 @@ Kết quả:
 **Sử dụng mệnh đề `WHERE`:**
 
 Truy vấn dữ liệu trong bảng `orders` và `orderDetails` trả về đơn hàng chi tiết đơn hàng của số đơn hàng '*10123*'
-```
+```sql
 SELECT 
     o.orderNumber, 
     o.customerNumber, 
@@ -143,7 +143,7 @@ WHERE
 
 
 **Nếu ta sử dụng mệnh đề `ON`:**
-```
+```sql
 SELECT 
     o.orderNumber, 
     o.customerNumber, 
