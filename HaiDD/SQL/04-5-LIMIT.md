@@ -4,7 +4,7 @@
 Dùng để hạn chế số lượng kết quả trả về bởi một truy vấn.
 
 ## Cú pháp cơ bản
-```
+```sql
 SELECT 
     select_list
 FROM
@@ -31,7 +31,7 @@ Ta sử dụng bảng `customers` để thực hiện.
 
 1. Lấy một số lượng nhất định có giá trị cao nhất hoặc thấp nhất
 Lấy ra 5 khách hàng có mức tín dụng cao nhất
-```
+```sql
 SELECT 
     customerNumber, 
     customerName, 
@@ -51,7 +51,7 @@ Khi bạn hiển thị dữ liệu trên các ứng dụng, bạn thường mu�
 Để tính số lượng trang, bạn lấy tổng số hàng chia cho số lượng hàng trên mỗi trang. Để tìm nạp các hàng của một trang cụ thể, bạn có thể sử dụng mệnh đề LIMIT.
 
 `COUNT(*)` để lấy tổng số hàng từ bảng `customers`:
-```
+```sql
 SELECT COUNT(*) FROM customers;
 ```
 <img src = "https://i.imgur.com/UDR0cck.png">
@@ -59,7 +59,7 @@ SELECT COUNT(*) FROM customers;
 Giả sử mỗi trang có 10 hàng, để hiển thị 122 khách hàng, bạn có 13 trang. Trang thứ 13 cuối cùng chỉ chứa hai hàng.
 
 Truy vấn này sử dụng mệnh đề LIMIT để lấy các hàng của trang 1 chứa 10 khách hàng đầu tiên được sắp xếp theo tên khách hàng:
-```
+```sql
 SELECT 
     customerNumber, 
     customerName
@@ -71,7 +71,7 @@ LIMIT 10;
 <img src = "https://i.imgur.com/PfHXAuF.png">
 
 Truy vấn này sử dụng mệnh đề LIMIT để lấy các hàng của trang thứ hai bao gồm hàng 11 - 20:
-```
+```sql
 SELECT 
     customerNumber, 
     customerName
@@ -83,7 +83,7 @@ LIMIT 10, 10;
 <img src = "https://i.imgur.com/pmIivFj.png">
 
 3. Lấy giá trị cao nhất, thấp nhất thứ n:
-```
+```sql
 SELECT select_list
 FROM table_name
 ORDER BY sort_expression
@@ -91,7 +91,7 @@ LIMIT n-1, 1;
 ```
 
 Ví dụ: Lấy giá trị cao thứ 3 tín dụng:
-```
+```sql
 SELECT 
     customerName, 
     creditLimit
@@ -104,7 +104,7 @@ LIMIT 2,1;
 <img src = "https://i.imgur.com/SETbfof.png">
 
 Kiểm tra lại danh sách đầy đủ:
-```
+```sql
 SELECT 
     customerName, 
     creditLimit
