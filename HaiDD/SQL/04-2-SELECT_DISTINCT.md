@@ -4,7 +4,7 @@
 `DISTINCT`  dùng để loại bỏ các hàng trùng lặp trong tập kết quả truy vấn.
 
 ## Cú pháp cơ bản
-```
+```sql
 SELECT DISTINCT
     select_list
 FROM
@@ -17,7 +17,7 @@ Ta sẽ sử dụng bảng `employees` để thử truy vấn.
 <img src = "https://i.imgur.com/KWTyRMo.png">
 
 Trước tiên, ta sẽ thử truy vấn không có `DISTINCT`:
-```
+```sql
 SELECT 
     lastname
 FROM
@@ -32,7 +32,7 @@ Kết quả:
 -> Có những tên trùng nhau
 
 Bây giờ ta sẽ thêm `DISTINCT`:
-```
+```sql
 SELECT DISTINCT
     lastname
 FROM
