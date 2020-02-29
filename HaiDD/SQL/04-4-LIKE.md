@@ -7,7 +7,7 @@ LIKE dùng để truy vấn dữ liệu dựa trên một mô hình cụ thể.
 Toán tử `LIKE` là toán tử logic kiểm tra xem một chuỗi có chứa một mẫu đã chỉ định hay không. 
 
 Đây là cú pháp của toán tử `LIKE`:
-```
+```sql
 expression LIKE pattern ESCAPE escape_character
 ```
 
@@ -20,7 +20,7 @@ Ví dụ: s_n -> sin, sun, son, ...
 Nếu dữ liệu bạn cần có chứa "`%`" hay "`_`" thì bạn cần dùng "`\`" để chỉ định kí tự thoát. Nếu bạn không chỉ định rõ ràng ký tự thoát, ký tự dấu gạch chéo ngược "`\`" là ký tự thoát mặc định.
 
 Ví dụ: 
-```
+```sql
 SELECT 
     productCode, 
     productName
@@ -32,7 +32,7 @@ WHERE
 <img src ="https://i.imgur.com/DhBZqr3.png">
 
 Hoặc bạn có thể chỉ định một ký tự thoát khác, ví dụ: `$` bằng cách sử dụng mệnh đề `ESCAPE`:
-```
+```sql
 SELECT 
     productCode, 
     productName
