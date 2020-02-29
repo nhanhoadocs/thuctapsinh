@@ -7,14 +7,14 @@ MySQL Aliases dùng để cải thiện đọc của các truy vấn bằng các
 Đôi khi các tên của cột thực tế dài và khó hiểu, vì vậy đặt bí danh cho cột là một ý tưởng hợp lí.
 
 ### Cú pháp
-```
+```sql
 SELECT 
    [column_1 | expression] AS descriptive_name
 FROM table_name;
 ```
 
 Nếu bí danh có dấu khoảng trắng thì ta sử dụng thêm dấu 
-```
+```sql
 `descriptive name`
 ```
 
@@ -24,7 +24,7 @@ Sử dụng bảng `employese`
 <img src = "https://i.imgur.com/CjSGH6D.png">
 
 Truy vấn sau đây chọn tên và họ của nhân viên. Nó sử dụng hàm `CONCAT_WS ()` để ghép tên và họ thành tên đầy đủ.
-```
+```sql
 SELECT 
     CONCAT_WS(', ', lastName, firstname)
 FROM
@@ -34,7 +34,7 @@ FROM
 
 
 Bảng kết quả tên cột nhìn dài và khó hiểu. Nên ta sẽ đặt bí danh cho nó:
-```
+```sql
 SELECT
    CONCAT_WS(', ', lastName, firstname) AS `Full name`
 FROM
@@ -47,7 +47,7 @@ Trong MySQL, bạn có thể sử dụng bí danh cột trong `ORDER BY`, `GROUP
 ## Đặt bí danh cho bảng
 Cũng giống như cột, bạn có thể đặt bí danh cho bảng.
 ### Cú pháp
-```
+```sql
 table_name AS table_alias
 ```
 
@@ -63,7 +63,7 @@ Sử dụng bảng `employese`. Truy vấn danh sách nhân viên sắp xếp th
 
 <img src = "https://i.imgur.com/CjSGH6D.png">
 
-```
+```sql
 SELECT 
     e.firstName, 
     e.lastName
