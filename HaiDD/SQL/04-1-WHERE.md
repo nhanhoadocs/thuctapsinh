@@ -4,7 +4,7 @@
 `WHERE` : Dùng để lọc kết quả truy vấn(SELECT), cập nhật(UPDATE), xóa (DELETE)
 
 ## Cú pháp cơ bản
-```
+```sql
 SELECT 
     select_list
 FROM
@@ -27,7 +27,7 @@ Ta sẽ sử dụng bảng `employees` để thực hiện
 ### 1. Sử dụng `WHERE` với toán tử `=`:
 
 Lọc các nhân viên có `jobtitle` là "*Sales Rep*"
-```
+```sql
 SELECT 
     lastname, 
     firstname, 
@@ -45,7 +45,7 @@ Kết quả:
 ### 2. Sử dụng `WHERE` với toán tử `AND`:
 
 Lọc các nhân viên có `jobtitle` là "*Sales Rep*" và `officeCode` = 2;
-```
+```sql
 SELECT 
     lastname, 
     firstname, 
@@ -65,7 +65,7 @@ Kết quả:
 
 Lọc các nhân viên có `jobtitle` là "*Sales Rep*" hoặc `officeCode` = 1;
 
-```
+```sql
 SELECT 
     lastName, 
     firstName, 
@@ -86,7 +86,7 @@ Kết quả:
 `expression BETWEEN low AND high`
 
 Lọc các nhân viên có `officeCode` trong khoảng từ 1 đến 3:
-```
+```sql
 select 
 	firstName,
 	lastName,
@@ -103,7 +103,7 @@ Kết quả:
 ### 5. Sử dụng `WHERE` với toán tử `LIKE`:
 
 Truy vấn các nhân viên có tên kết thúc là '`son`':
-```
+```sql
 SELECT 
     firstName, 
     lastName
@@ -122,7 +122,7 @@ Kết quả:
 `value IN (value1, value2,...)`
 
 Lọc ra những nhân viên có `officeCode` có giá trị là 1 và 3.
-```
+```sql
 SELECT 
     firstName, 
     lastName, 
@@ -141,7 +141,7 @@ Kết quả:
 `value IS NULL`
 
 Lọc những nhân viên mà cột `reportTo` có giá trị `NULL`:
-```
+```sql
 SELECT 
 	lastName,
     firstName,
@@ -167,7 +167,7 @@ Kết quả:
 |>=|Lớn hơn hoặc bằng|
 
 Ta sẽ lọc các nhân viên mà `jobtitle` không phải "*Sales Rep*":
-```
+```sql
 SELECT
     lastname,
     firstname,
