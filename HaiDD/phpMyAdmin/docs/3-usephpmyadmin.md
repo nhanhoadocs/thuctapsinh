@@ -43,6 +43,11 @@ Sau khi tạo thành công, ta sẽ thấy Database vừa tạo ở phần bên 
 
     <img src="..\images\Screenshot_12.png">
 
+### 3. Vị trí đang làm việc
+Ta có thể thấy nơi ta đang làm việc với database như hình bên dưới
+
+<img src="..\images\Screenshot_17.png">
+
 ## II. Thao tác với Databases
 ### 1. Truy cập Database
 Ta chọn Database ở list bên trái, hoặc vào tab Database rồi chọn Database cần truy cập
@@ -57,5 +62,67 @@ Chọn Database, chọn tab **Operations** -> **Drop the database (DROP)**
 
 <img src="..\images\Screenshot_16.png">
 
+
 ## III. Thao tác với bảng
-### 1. 
+### 1. Xem bảng
+Ta có thể click chuột vào tên bảng hoặc click vào **Browse**
+
+<img src="..\images\Screenshot_18.png">
+
+Sau đó, ta sẽ vào giao diện của bảng vừa chọn:
+
+<img src="..\images\Screenshot_20.png">
+
+### 2. Chỉnh sửa bản ghi trong bảng
+Để chỉnh sửa bản ghi nào đó trong bảng, ta click chuột **Edit** tại bản ghi
+
+<img src="..\images\Screenshot_19.png">
+
+Ta sẽ thấy cấu trúc bản ghi kèm giá trị hiện tại, ta có thể chỉnh sửa và click **Go** để hoàn tất thay đổi.
+
+<img src="..\images\Screenshot_21.png">
+
+### 3. Thêm bản ghi
+Ta có thể click **Insert** tại bảng cần thêm bản ghi
+
+<img src="..\images\Screenshot_22.png">
+
+Sau đó, ta sẽ thêm các bản ghi vào bảng rồi click chuột **Go** để thêm bản ghi
+
+<img src="..\images\Screenshot_23.png">
+
+Ta sẽ thấy bản ghi được thêm trong bảng
+
+<img src="..\images\Screenshot_24.png">
+
+### 4. Xóa bản ghi
+Click chuột vào **Delete** trên bản ghi muốn xóa
+
+<img src="..\images\Screenshot_25.png">
+
+Click **OK** để xác nhận Xóa
+
+<img src="..\images\Screenshot_26.png">
+
+### 5. Làm trống bảng cơ sở dữ liệu
+Để xóa hết dữ liệu bảng ta click **Empty**
+
+<img src="..\images\Screenshot_27.png">
+
+Click **OK** để xác nhận xóa
+
+<img src="..\images\Screenshot_28.png">
+
+### 6. Xóa bảng
+Click **Drop** trên bảng để xóa
+
+<img src="..\images\Screenshot_29.png">
+
+Click **OK** để xác nhận
+
+<img src="..\images\Screenshot_30.png">
+
+## IV. Query
+Ta có thể truy vấn dữ liệu thông qua các câu truy vấn.
+
+Để làm điều này, ta chọn Tab **Query** rồi viết truy vấn. Click **Go** để chạy truy vấn
