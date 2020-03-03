@@ -125,4 +125,4 @@ Click **OK** để xác nhận
 ## IV. Query
 Ta có thể truy vấn dữ liệu thông qua các câu truy vấn.
 
-Để làm điều này, ta chọn Tab **Query** rồi viết truy vấn. Click **Go** để chạy truy vấn
+Để làm điều này, ta chọn Tab **Query** rồi viết truy vấn. Click **Go** để chạy truy vấn.
