@@ -1,0 +1,23 @@
+[mysql]
+host = 10.10.34.129
+passwd = passwd
+username = niemdt
+DB = Info_IP
+
+[redis]
+host = 10.10.34.129
+
+[graylog]
+token = token-graylog
+url = http://10.10.34.127:9000/api/search/universal/absolute
+search = http://10.10.34.127:9000/search?rangetype=relative&fields=message%2Csource&width=1853&highlightMessage=&relative=28800&q=%20
+
+
+[telegram]
+token_tele = token-tele
+chat_id = chat-id
+chat_id_er = chat-id
+
+[virustotal]
+url = https://www.virustotal.com/api/v3/ip_addresses/
+api_key = token-virustotal
