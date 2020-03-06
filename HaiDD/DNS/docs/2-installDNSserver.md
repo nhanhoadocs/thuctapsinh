@@ -221,7 +221,7 @@ firewall-cmd --reload
 
     <img src="..\images\Screenshot_19.png">
 
-- Để chi tiết hơn, ta sử dụng [***lệnh `dig`***](.4-digCommand.md).
+- Để chi tiết hơn, ta sử dụng [***lệnh `dig`***](4-digCommand.md).
     ```
     dig www.dangdohai.com
     ```
