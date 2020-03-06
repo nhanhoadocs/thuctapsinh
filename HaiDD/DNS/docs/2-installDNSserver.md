@@ -22,6 +22,8 @@ yum install -y bind bind-utils
 
 ## 2. Tạo file zone forward và zone reverse(bản ghi PTR)
 ### 2.1. Tạo forward DNS zone file cho tên miền `dangdohai.com`
+- File lưu trữ thông tin mối quan hệ giữa địa chỉ IP và host name. Khi được truy vấn, nó cung cấp địa chỉ IP của host system bằng host name
+
 - Tạo file :
     ```
     vim /var/named/dangdohai.com.fwd
@@ -73,6 +75,8 @@ yum install -y bind bind-utils
     - `PTR`: là viết tắt của Pointer. Thuộc tính này phân giải địa chỉ IP thành domain.
 
 ### 2.2. Tạo reserse DNS zone file cho tên miền `dangdohai.com`
+- File trả về tên miền đủ điều kiện(Fully Qualified Domain Name (FQDN)) của máy chủ liên quan tới địa chỉ IP của nó.
+
 - Tạo file :
     ```
     vim /var/named/dangdohai.com.rev
