@@ -1,6 +1,6 @@
 # TÌM HIỂU VỀ DNS
 
-### [1. Tìm hiểu về DNS](.\docs\1-DNS.md)
+### [1. Tìm hiểu về DNS](./docs/1-DNS.md)
 
 ### [2. Cài đặt DNS server](docs\2-installDNSserver.md)
 
