@@ -271,3 +271,33 @@ dig -x 31.13.95.36 +noall +answer
 
 
 ### [10]. Truy vấn số lượng lớn tên miền
+- Nếu bạn muốn truy vấn một số lượng lớn tên miền, bạn có thể thêm chúng vào một tệp và sử dụng tùy chọn `-f` để truy vấn.
+
+**Ví dụ**: Ta sẽ sử dụng các tên miền được liệt kê trong file `domain.txt`
+
+    ```
+    dig -f domain.txt +noall +answer
+    ```
+**Output**:
+
+<img src="..\images\Screenshot_36.png">
+
+### [11]. Truy vấn DNS bằng TCP
+Theo mặc định thì lệnh dig truy vấn DNS qua udp, để có thể dùng lệnh dig truy vấn DNS qua tcp chúng ta thực hiện như sau:
+```
+dig +tcp [domain]
+```
+
+**Ví dụ:**
+```
+dig +tcp dns-server.dangdohai.com
+```
+<img src="..\images\Screenshot_37.png">
+
+### [12]. Điều chỉnh mặc định với tệp `~/.digrc`
+- Chúng ta có thể tạo tệp `.digrc` trong thư mục chính để bao gồm tùy chọn mà chúng ta muốn lệnh dig thực hiện. Chúng ta có thể chỉ định các tùy chọn khác nhau trong tệp `~/.digrc` sẽ luôn tự động chạy khi sử dụng lệnh dig.
+
+**Ví dụ:**
+Ta thêm tùy chọn `+short` vào file `~/.digrc` và thực hiện lệnh `dig`:
+
+<img src="..\images\Screenshot_38.png">
