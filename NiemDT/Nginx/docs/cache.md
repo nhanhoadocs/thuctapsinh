@@ -17,13 +17,15 @@ chmod 700 /var/lib/nginx/cache/
 
 ## Chỉnh sửa file config của site
 
-Thêm những dòng sau vào đầu file
+Thêm những dòng sau vào block `http`
 
 ```
+cat > /etc/nginx/conf.d/cache.conf << EOF
 proxy_cache_path /var/lib/nginx/cache levels=1:2 keys_zone=backcache:8m max_size=50m;
 proxy_cache_key "$scheme$request_method$host$request_uri$is_args$args";
 proxy_cache_valid 200 302 10m;
 proxy_cache_valid 404 1m;
+EOF
 ```
 
 Trong đó:
@@ -46,17 +48,22 @@ add_header X-Proxy-Cache $upstream_cache_status;
 Ví dụ
 
 ```
-location / {
+[root@nginx-lab conf.d]# cat test.niemdt.com.conf 
+server {
+    server_name test.niemdt.com;
+    client_max_body_size 1024M;
+
+        location / {
             proxy_cache backcache;
             add_header X-Proxy-Cache $upstream_cache_status;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header Host $http_host;
             proxy_set_header X-NginX-Proxy true;
-            proxy_pass http://10.10.35.121:80;
+            proxy_pass http://10.10.35.123:80;
         }
+}
 ```
 
  * `proxy_cache`: chỉ định vùng cache `backcache`. Nginx sẽ kiểm tra entry hợp lệ trước khi chuyển tới backend
  * `add_header`: thêm vào header `X-Proxy-Cache` Giá trị của header này là `$upstream_cache_status`. Header sẽ cho cho ta biết response sẽ được lấy từ cache hay yêu cầu trực tiếp từ web server
-
