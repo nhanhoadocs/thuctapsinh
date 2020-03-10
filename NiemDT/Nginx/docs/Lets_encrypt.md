@@ -215,3 +215,17 @@ server {
     return 404; # managed by Certbot
 }
 ```
+
+## Cấu hình tự động renew Certification
+
+Vì Certification sẽ bị hêt hạn trong vòng 3 tháng nên ta có thể sử dung  crontab để tự động renew Certification
+
+```
+yum install wget -y
+wget https://dl.eff.org/certbot-auto && chmod a+x certbot-auto
+mv certbot-auto /etc/letsencrypt/
+echo "0 2 * * 1 cd /etc/letsencrypt/ && ./certbot-auto renew && systemctl restart nginx" >> /etc/crontab
+systemctl restart crond
+```
+
+Như vậy Certification sẽ được làm mới vào 2:00 thứ 2 hàng tuần
