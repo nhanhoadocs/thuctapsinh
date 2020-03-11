@@ -20,12 +20,6 @@ Kết quả
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 Plugins selected: Authenticator nginx, Installer nginx
 Enter email address (used for urgent renewal and security notices) (Enter 'c' to
-cancel): c
-An e-mail address or --register-unsafely-without-email must be provided.
-[root@nginx-lab ~]# certbot --nginx -d test.niemdt.com
-Saving debug log to /var/log/letsencrypt/letsencrypt.log
-Plugins selected: Authenticator nginx, Installer nginx
-Enter email address (used for urgent renewal and security notices) (Enter 'c' to
 cancel): niemdt9@gmail.com
 Starting new HTTPS connection (1): acme-v02.api.letsencrypt.org
 
