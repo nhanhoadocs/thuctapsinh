@@ -1,4 +1,4 @@
-# Hướng dẫn xóa Netplan và cài đặt ifupdown thay thế trên Ubuntu server 20.04
+# Hướng dẫn xóa Netplan và cài đặt ifupdown thay thế trên Ubuntu server 20.04 bản Develop
 
 Từ trong những bản phát hành mới đây của Ubuntu, **Netplan** là tiện ích mặc định giúp ta cấu hình network, tuy nếu bạn chưa quen với **netplan** hoặc vì một lý do nào đó bạn hoàn toàn có thể xóa bỏ **netplan** và sử dụng ifupdown thay thế, trong bài viết này Cloud365 sẽ hướng dẫn bạn cách xóa bỏ **netplan** và cài đặt **ifupdown** để thay thế.
 
