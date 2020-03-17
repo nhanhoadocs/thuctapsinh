@@ -87,10 +87,10 @@ Nhập các thông tin cần thiết rồi click **Install WordPress**.
 
 ## 6. Phân quyền WordPress
 Phân quyền thư mục wordpress cho user `www-data` để user này được phép tạo các thư mục và lưu trữ các tệp tin tải lên.
-    ```
-    chown -R www-data:www-data /var/www/html/*
-    chmod -R 755 /var/www/html/*
-    ```
+```
+chown -R www-data:www-data /var/www/html/*
+chmod -R 755 /var/www/html/*
+```
 
 Như vậy là bạn đã có thể tiến hành upload ảnh và đăng bài viết lên trang wordpress của mình.
 
