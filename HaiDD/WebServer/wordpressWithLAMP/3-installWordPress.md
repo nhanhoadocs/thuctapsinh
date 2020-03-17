@@ -10,7 +10,7 @@ Trong bài này, mình sẽ hướng dẫn cài đặt WordPress trên hệ đi�
 ## II. Cài đặt
 
 ### 1. Chuẩn bị
-Đầu tiên, ta cần [cài đặt LAMP stack](/wordpressWithLAMP\2-InstallLAMP.md) trên máy của bạn.
+Đầu tiên, ta cần [cài đặt LAMP stack](.\2-InstallLAMPonCentOS7.md) trên máy của bạn.
 
 ### 2. Tạo cơ sở dữ liệu và tài khoản cho WP
 
