@@ -95,5 +95,29 @@ Vậy là ta đã thêm thành công khóa học. Ra ngoài trang chủ ta sẽ 
 
 <img src="..\images\Screenshot_31.png">
 
+## Thêm thành viên vào khóa học
+Để thêm thành viên vào khóa học, ta làm theo các bước sau:
+
+1. Chọn khóa học
+
+2. Trong giao diện của khóa học, ta chọn mục **Participants** -> **Enrol users**
+
+    <img src="..\images\Screenshot_41.png">
+
+3. Giao diện thêm enrol users hiện ra, ta chọn các users thêm vào, chọn role, và click **Enroll users**
+
+    <img src="..\images\Screenshot_42.png">
+
+    - **Assign role** : Chọn role cho user
+        - *Manager* : Quản lí - có thể quản lí, thêm, sửa, xóa bài viết, users, ....
+        - *Teacher* : Người có thể chỉnh sửa các bài giảng trong khóa học, thêm users
+        - *Non-editing teache*r : Giảng viên dạy nhưng không có quyền chỉnh sửa khóa học hay tài liệu
+        - *Student* : Người học
+
+4. Sau khi thêm, ta sẽ thấy giao thông tin các thành viên trong khóa học
+
+    <img src="..\images\Screenshot_43.png">
+
+
 # Tham khảo
 Tham khảo tại [docs của Moodle](https://docs.moodle.org/38/en/Main_page) trên trang chủ.
