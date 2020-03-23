@@ -54,7 +54,7 @@
 
 ### 1. Chọn  **Site administration** -> **Courses** -> **Add a new course**
 
-    <img src="..\images\Screenshot_27.png">
+<img src="..\images\Screenshot_27.png">
 
 ### 2. Giao diện **Add a new course**
 #### Phần General
