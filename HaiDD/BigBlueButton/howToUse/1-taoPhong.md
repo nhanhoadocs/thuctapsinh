@@ -68,3 +68,12 @@
     - 5 : Một số công cụ thêm cho buổi họp như : tạo 1 poll, upload slide, chia sẻ video ngoài
     - 6 : Điều khiển âm thanh, mic, webcam, chia sẻ màn hình
     - 7 : Các công cụ thao tác với slide và bảng như viết chữ, đánh dấu, vẽ hình, ...
+
+## Xóa một phòng 
+1. Chọn phòng cần xóa. Chọn biểu tượng 3 chấm -> **Delete**
+
+    <img src="..\images\Screenshot_54.png">
+
+2. Chọn **I'm sure, delete this room**
+
+    <img src="..\images\Screenshot_55.png">
