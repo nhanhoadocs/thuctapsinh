@@ -208,3 +208,18 @@ Một số phím tắt giúp bạn sử dụng nhanh các tính năng trong phò
     - **Spacebar** : Kích hoạt công cụ trình bày
     - **Right Arrow** (mũi tên phải) : Chuyển sang trang slide tiếp theo
     - **Left Arrow** (mũi tên trái) : Chuyển về trang slide trước đó
+
+## 12. Kết thúc cuộc họp
+Để kết thúc cuộc họp, 
+
+1. Ta chọn biểu tưởng 3 chấm **Option** -> **End Meeting**
+
+    <img src="..\images\Screenshot_51.png">
+
+2. Chọn **Yes**
+
+    <img src="..\images\Screenshot_52.png">
+
+3. Giao diện trở về màn hình chính
+
+    <img src="..\images\Screenshot_53.png">
