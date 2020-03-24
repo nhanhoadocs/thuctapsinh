@@ -1,15 +1,20 @@
 # #1 - Hướng dẫn tạo phòng meeting trực tuyến trên BigBlueButton (BBB)
 
 ## Đăng nhập vào hệ thống BBB
-- Truy cập trang hệ thống BBB của bạn. Chọn phần Login (Đăng nhập)
+### Yêu cầu
+- Đã có tài khoản đăng nhập hệ thống
+
+### Thực hiện
+
+1. Truy cập trang hệ thống BBB của bạn. Chọn phần Login (Đăng nhập)
 
     <img src="..\images\Screenshot_1.png">
 
-- Đăng nhập bằng email và mật khẩu
+2. Đăng nhập bằng email và mật khẩu
 
     <img src="..\images\Screenshot_2.png">
 
-- Giao diện sau khi đăng nhập
+3. Giao diện sau khi đăng nhập
 
     <img src="..\images\Screenshot_3.png">
 
