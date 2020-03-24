@@ -16,7 +16,7 @@
 
         <img src="..\images\Screenshot_15.png">
 
-3. Gửi thông tin cho những người tham dự cuộc họp
+3. Gửi thông tin cho những người tham dự cuộc họp bao gồm link và code truy cập.
 
 ## 2. Upload slide
 1. Chọn biểu tượng dấu + (Actions) dưới góc trái -> chọn **Upload a presentation**
