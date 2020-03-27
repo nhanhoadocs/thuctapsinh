@@ -1,14 +1,26 @@
-# Cấu hình domain cho Moodle và cài đặt Let's Encrypt
+# Hướng dẫn cấu hình domain cho Moodle(phần 2)
 
 Trong bài viết trước, Cloud365 đã hướng dẫn các bạn cấu hình domanin trên trên Moodle.
 
+# Các bước thực hiện cấu hình domain cho Moodle
+- [x] **Bước 1**: Truy cập Moodle bằng địa chỉ IP
+
+- [x] **Bước 2**: Trỏ domain về IP public của VPS cài đặt Moodle
+
+- [ ] **Bước 3**: Xử lí cấu hình Domain trên Moodle
+
+- [ ] **Bước 4**: Cài đặt Let's Encrypt cho hệ thống Moodle
+
+---
 
 ## Thông tin VPS cài đặt Moodle
-- VPS cài đặt Moodle trong bài viết này được cài CentOS-7.
+Bước 1 và Bước 2 đã được Cloud365 trình bày trong phần trước.
 
-- Thực hiện bằng tài khoản `root`.
+Trong bài viết này, Cloud365 sẽ hướng dẫn xử lí cấu hình domain trên Moodle và cài đặt chứng chỉ Let's Encrypt cho hệ thống Moodle của bạn.
 
-## I. Thiết lập hiển thị tên domain trên trình duyệt
+-----
+
+## **Bước 3**: Xử lí cấu hình Domain trên Moodle
 1. SSH tới VPS của bạn. 
     
     **Lưu ý:** Thông tin remote và ssh quản trị VPS đều được gửi trong mail đăng kí VPS của bạn
@@ -35,7 +47,7 @@ Trong bài viết trước, Cloud365 đã hướng dẫn các bạn cấu hình 
 
     <img src="https://i.imgur.com/bVRcFOv.png">
 
-## II. Cấu hình Let's Encrypt
+## **Bước 4:** Cài đặt Let's Encrypt cho hệ thống Moodle
 Có thể thấy trang web của ta đang ở dạng `http`. Để tăng tính bảo mật, bạn nên thiết lập chứng nhận SSL cho trang của bạn. Ở đây, Cloud365 sẽ hướng dẫn bạn sử dụng Let's Encrypt để tạo chứng chỉ SSL miễn phí.
 
 ### 1. Cài đặt SSL Let's Encrypt
