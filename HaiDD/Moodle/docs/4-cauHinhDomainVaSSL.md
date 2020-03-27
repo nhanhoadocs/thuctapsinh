@@ -1,8 +1,12 @@
 # Hướng dẫn cấu hình domain cho Moodle(phần 2)
 
-Trong bài viết trước, Cloud365 đã hướng dẫn các bạn cấu hình domanin trên trên Moodle.
+Trong bài viết trước, Cloud365 đã hướng dẫn các bạn thực hiện 2 bước đầu tiên để cấu hình domain cho hệ thống Moodle.
+
+Trong bài viết này, Cloud365 sẽ hướng dẫn các bạn thực hiện 2 bước còn lại.
 
 # Các bước thực hiện cấu hình domain cho Moodle
+Bước 1 và Bước 2 đã được Cloud365 trình bày trong bài viết trước.
+
 - [x] **Bước 1**: Truy cập Moodle bằng địa chỉ IP
 
 - [x] **Bước 2**: Trỏ domain về IP public của VPS cài đặt Moodle
@@ -14,7 +18,9 @@ Trong bài viết trước, Cloud365 đã hướng dẫn các bạn cấu hình 
 ---
 
 ## Thông tin VPS cài đặt Moodle
-Bước 1 và Bước 2 đã được Cloud365 trình bày trong phần trước.
+- Bước 1 và Bước 2 đã được Cloud365 trình bày trong bài viết trước.
+
+- Domain đã được trỏ về IP public của VPS
 
 Trong bài viết này, Cloud365 sẽ hướng dẫn xử lí cấu hình domain trên Moodle và cài đặt chứng chỉ Let's Encrypt cho hệ thống Moodle của bạn.
 
