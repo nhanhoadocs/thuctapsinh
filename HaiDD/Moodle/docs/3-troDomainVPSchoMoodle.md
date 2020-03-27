@@ -5,7 +5,7 @@
 1. Sở hữu domain trên [Zone DNS](https://zonedns.vn/)
     - Thông tin về domain, cũng như mật khẩu truy cập sẽ có trong email mà bạn dùng để mua domain
 
-    - Trong hướng dẫn dưới đây là domain : *workfromhome.vn*
+    - Trong hướng dẫn dưới đây là domain : workfromhome.vn
 
 2. Sở hữu VPS trên [Portal của Cloud365](https://portal.cloud365.vn/) và cài đặt Moodle trên CentOS-7.
 
@@ -23,9 +23,9 @@
 ## Mục tiêu bài viết
 Trong bài viết này, Cloud365 sẽ hướng dẫn bạn thực hiện bước 1 và 2.
 
-- Trỏ sub-domain *e-learning.workfromhome.vn* về IP public của VPS
+- Trỏ sub-domain e-learning.workfromhome.vn về IP public của VPS
 
-- Sau khi thành công thì truy cập *e-learning.workfromhome.vn* sẽ dẫn tới trang Moodle được cài trên VPS của bạn
+- Sau khi thành công thì truy cập e-learning.workfromhome.vn sẽ dẫn tới trang Moodle được cài trên VPS của bạn
 
 > # Các bước thực hiện cấu hình domain cho Moodle
 **Bước 1**: Truy cập Moodle bằng địa chỉ IP
@@ -70,7 +70,7 @@ Khi VPS của bạn cài đặt xong Moodle, bạn sử dụng IP để truy c�
     <img src="https://i.imgur.com/wREsAVk.png">
 
 5. Kiểm tra việc trỏ domain bằng trang [MXToolBox](https://mxtoolbox.com/NetworkTools.aspx)
-    - Gõ domain *e-learning.workfromhome.vn* vào phần bản ghi A rồi Enter:
+    - Gõ domain e-learning.workfromhome.vn vào phần bản ghi A rồi Enter:
         
         <img src="https://i.imgur.com/D0w8S1d.png">
 
@@ -78,7 +78,7 @@ Khi VPS của bạn cài đặt xong Moodle, bạn sử dụng IP để truy c�
         
         <img src="https://i.imgur.com/SLVvaLy.png">
 
-6. Truy cập domain *e-learning.workfromhome.vn*
+6. Truy cập domain e-learning.workfromhome.vn
 
     <img src="https://i.imgur.com/udgRdFm.png">
 
