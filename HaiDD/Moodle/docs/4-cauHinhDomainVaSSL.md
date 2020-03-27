@@ -155,11 +155,11 @@ Có thể thấy trang web của ta đang ở dạng `http`. Để tăng tính b
 
 ### Kiểm tra
 1. Truy cập thử lần lượt 
-    - *https://e-learning.workfromhome.vn*
+    - https://e-learning.workfromhome.vn
 
-    - *https://e-learning.workfromhome.vn*
+    - https://e-learning.workfromhome.vn
 
-    - *e-learning.workfromhome.vn*
+    - e-learning.workfromhome.vn
 
     Đều cho một kết quả giống nhau. Trang web đã được cài đặt chứng chỉ thành công và dòng chữ **Kết nối an toàn**
 
@@ -169,7 +169,7 @@ Có thể thấy trang web của ta đang ở dạng `http`. Để tăng tính b
 
     <img src="https://i.imgur.com/imNzryq.png">
 
-2. Ngoài ra, bạn có thể truy cập SSLLabs theo đường dẫn *https://www.ssllabs.com/ssltest/analyze.html?d=e-learning.workfromhome.vn*
+2. Ngoài ra, bạn có thể truy cập SSLLabs theo đường dẫn https://www.ssllabs.com/ssltest/analyze.html?d=e-learning.workfromhome.vn
 
 ### 2. Thiết lập gia hạn tự động chứng chỉ
 Chứng chỉ Let'Encrypt có thời hạn 90 ngày, nhưng nó khuyên bạn nên gia hạn chứng chỉ sau mỗi 60 ngày để hạn chế lỗi. Bạn hoàn toàn có thể đặt lịch và ra hạn bằng tay, nhưng cách tốt nhất là tự động hóa việc này.
