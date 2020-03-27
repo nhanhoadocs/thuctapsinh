@@ -1,5 +1,8 @@
 # Cấu hình domain cho Moodle và cài đặt Let's Encrypt
 
+Trong bài viết trước, Cloud365 đã hướng dẫn các bạn cấu hình domanin trên trên Moodle.
+
+
 ## Thông tin VPS cài đặt Moodle
 - VPS cài đặt Moodle trong bài viết này được cài CentOS-7.
 
