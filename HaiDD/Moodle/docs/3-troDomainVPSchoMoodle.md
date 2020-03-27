@@ -27,7 +27,7 @@ Trong bài viết này, Cloud365 sẽ hướng dẫn bạn thực hiện bước
 
 - Sau khi thành công thì truy cập e-learning.workfromhome.vn sẽ dẫn tới trang Moodle được cài trên VPS của bạn
 
-> # Các bước thực hiện cấu hình domain cho Moodle
+># Các bước thực hiện cấu hình domain cho Moodle
 **Bước 1**: Truy cập Moodle bằng địa chỉ IP
 
 **Bước 2**: Trỏ domain về IP public của VPS cài đặt Moodle
@@ -38,12 +38,12 @@ Trong bài viết này, Cloud365 sẽ hướng dẫn bạn thực hiện bước
 
 -----
 
-## **Bước 1**: Truy cập trang Moodle bằng IP
+>## **Bước 1**: Truy cập trang Moodle bằng IP
 Khi VPS của bạn cài đặt xong Moodle, bạn sử dụng IP để truy cập tới trang Moodle mà bạn đã cài đặt:
 
 <img src="https://i.imgur.com/udgRdFm.png">
 
-## **Bước 2**: Trỏ domain về IP public của VPS cài đặt Moodle
+>## **Bước 2**: Trỏ domain về IP public của VPS cài đặt Moodle
 1. Truy cập Zone DNS : https://zonedns.vn/ 
 
 2. Đăng nhập bằng domain và mật khẩu đã được cấp trong email -> Click **Đăng nhập**
