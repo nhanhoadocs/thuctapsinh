@@ -1,4 +1,4 @@
-# Hướng dẫn cấu hình domain trên ZoneDNS cho Moodle
+# Hướng dẫn cấu hình domain cho Moodle (phần 1)
 
 # Yêu cầu
 
