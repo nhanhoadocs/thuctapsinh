@@ -1,4 +1,4 @@
-# Hướng dẫn cấu hình nginx với SSL làm reverse proxy cho wordpress
+# Hướng dẫn cấu hình nginx với SSL làm reverse proxy cho wordpress trên CentOS-7
 
 Theo mặc định, wordpress sẽ đi kèm với máy chủ web tích hợp của riêng nó. Điều này thuận tiện nếu ta chạy wordpress riêng tư hoặc sử dụng chỉ hướng đến sự nhanh chóng đạt được việc gì đó mà không quan tâm đến bảo mật. Tuy nhiên, khi ta có dữ liệu cần được bảo mật và muốn tăng hiệu suất web ta nên sử dụng một máy chủ web an toàn hơn như nginx.
 
