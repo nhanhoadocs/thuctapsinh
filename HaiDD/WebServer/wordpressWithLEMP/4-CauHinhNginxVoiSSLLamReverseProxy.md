@@ -14,21 +14,21 @@ Theo mặc định, wordpress sẽ đi kèm với máy chủ web tích hợp c�
 ## Cấu hình trên Nginx server
 ### Cài đặt Nginx
 1. Cài đặt nginx
-```
-rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
-yum -y install nginx
-```
+    ```
+    rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+    yum -y install nginx
+    ```
 
 2. Backup file cấu hình
-```
-cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bk
-```
+    ```
+    cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bk
+    ```
 
 3. Khởi chạy dịch vụ nginx
-```
-systemctl restart nginx
-systemctl enable nginx
-```
+    ```
+    systemctl restart nginx
+    systemctl enable nginx
+    ```
 
 ### Tạo file config site
 1. Trước khi tạo file config cho địa chỉ truy cập, ta cần kiểm tra bản ghi dns đối với địa chỉ sẽ sử dụng :
@@ -250,3 +250,6 @@ systemctl enable nginx
 3. Truy cập trang web bằng địa chỉ https://home.dangdohai.xyz/ đã có SSL.
 
     <img src="https://i.imgur.com/dIIFxyy.png">
+
+
+## Cấu hình 2 site wordpress
