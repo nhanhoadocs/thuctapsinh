@@ -1,11 +1,11 @@
 # Hướng dẫn cấu hình nginx với SSL làm reverse proxy cho wordpress trên CentOS-7
 
 ## Mô hình và IP Planing
-**Mô hình**
+### **Mô hình**
 
-<img src="https://i.imgur.com/YjlE9Ev.png">
+<img src="https://i.imgur.com/CJoqvQm.png">
 
-**IP Planing**
+### **IP Planing**
 
 <img src="https://i.imgur.com/OocFw75.png">
 
