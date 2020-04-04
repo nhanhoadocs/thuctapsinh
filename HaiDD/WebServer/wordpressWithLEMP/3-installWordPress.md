@@ -41,7 +41,7 @@
 ## 3. Tải và cài đặt WordPress
 - Cài gói hỗ trợ
     ```
-    apt install -y php php-common php-mbstring php-gd php-intl php-xml php-mysql php-mcrypt php-fpm
+    apt install -y php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip
     ```
 
 - Tải xuống WordPress phiên bản mới nhất: Nếu chưa cài đặt `wget` thì có thể cài bằng câu lệnh `apt -y install wget`.
