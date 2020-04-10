@@ -243,4 +243,4 @@ Trong khi hệ thống càng lớn, tỷ lệ check tối đa sẽ trở nên r�
 - Là một chương trình được cài đặt trên máy chủ cần theo dõi
 - Các nhà sản xuất thiết bị mạng và nhiều thiết bị thường bao gồm một tác nhân được cài đặt sẵn mà Checkmk có thể dễ dàng truy vấn bằng giao thức SNMP được tiêu chuẩn hóa
 - Các dịch vụ đám mây như AWS hoặc Azure cũng có các tính năng tương tự như các đại lý, nhưng chúng được gọi là ‘APIs và được Checkmk truy vấn thông qua HTTP.
-- Máy chủ chạy Windows, Linux hoặc Unix chỉ có thể được giám sát bởi Checkmk nếu bạn cài đặt một trong các tác nhân CMK
+- Máy chủ chạy Windows, Linux hoặc Unix chỉ có thể được giám sát bởi Checkmk nếu bạn cài đặt một trong các tác nhân CMK 
