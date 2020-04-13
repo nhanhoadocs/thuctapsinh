@@ -33,7 +33,7 @@
 
 - **Phiên bản hiện tại của trang Wordpress là** : `5.3.2`
 
-**Tham khảo**: [Hướng dẫn cài đặt Wordpress trên CentOS-7](..\wordpressWithLAMP\3-installWordPress.md)
+**Tham khảo**: [Hướng dẫn cài đặt Wordpress trên CentOS-7](https://github.com/danghai1996/thuctapsinh/blob/master/HaiDD/WebServer/wordpressWithLAMP/3-installWordPress.md)
 
 - Tạo 1 bài viết trên trang wordpress để lát ta kiểm tra lại sự bảo toàn dữ liệu.
 
