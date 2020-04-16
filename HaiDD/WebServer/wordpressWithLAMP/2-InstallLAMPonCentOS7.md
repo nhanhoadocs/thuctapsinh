@@ -102,28 +102,28 @@ Cần lưu ý các phiên bản của PHP, hiện tại đã có phiên bản 7.
     - Phiên bản 7.0:
         ```
         yum-config-manager --enable remi-php70
-        yum install -y php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysqlnd
+        yum install -y php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysqlnd php-xml
         ```
     - Phiên bản 7.1:
         ```
         yum-config-manager --enable remi-php71
-        yum install -y php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysqlnd
+        yum install -y php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysqlnd php-xml
         ```
     - Phiên bản 7.2:
         ```
         yum-config-manager --enable remi-php72
-        yum install -y php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysqlnd
+        yum install -y php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysqlnd php-xml
         ```
     - Phiên bản 7.3:
         ```
         yum-config-manager --enable remi-php73
-        yum install -y php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysqlnd
+        yum install -y php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysqlnd php-xml
         ```
     - Phiên bản 7.4:
         ```
         yum-config-manager --enable remi-php74
-        yum install -y php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysqlnd
-        ```
+        yum install -y php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysqlnd php-xml
+        ``` 
 
 - Trong bài viết này, ta cài bản 7.4.
 
