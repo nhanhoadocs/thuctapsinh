@@ -417,6 +417,7 @@ Còn nếu đã cài đặt, thì ta sẽ chuyển sang Bước 3 cấu hình Ji
     ```
     service jibri restart
     service jibri status
+    systemctl enable jibri
     ```
 
 
