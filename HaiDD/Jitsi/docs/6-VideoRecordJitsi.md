@@ -196,21 +196,14 @@ Trong hướng dẫn ở youtube tác giả cài đặt Jibri trên 1 node khác
     uname -a
     ```
 
-    <img src="https://i.imgur.com/lGXJNML.png">
+    <img src="https://i.imgur.com/J09x1au.png">
 
     Kiểm tra phiên bản `linux-image-extra-virtual`
     ```
     dpkg -l | grep linux-image-extra-virtual
     ```
 
-    <img src="https://i.imgur.com/4eVI58P.png">
-
-    Như trên ta thấy Kernel là **4.16.0-91** nhưng phiên bản `linux-image-extra-virtual` dành cho Kernel **4.15.0.96**. Nên cần update Kernel lên.
-    ```
-    apt-get update
-    apt-get dist-upgrade
-    apt upgrade
-    ```
+    <img src="https://i.imgur.com/l19snVV.png">
 
 - Reboot server
     ```
