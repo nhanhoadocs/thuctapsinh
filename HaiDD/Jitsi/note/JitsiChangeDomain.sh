@@ -139,3 +139,4 @@ systemctl start jitsi-*
 systemctl start jicofo
 service jibri start
 systemctl restart jitsi-videobridge
+systemctl restart jitsi-videobridge2
