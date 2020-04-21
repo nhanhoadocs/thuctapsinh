@@ -138,3 +138,4 @@ prosodyctl start
 systemctl start jitsi-*
 systemctl start jicofo
 service jibri start
+systemctl restart jitsi-videobridge
