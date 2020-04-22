@@ -205,6 +205,13 @@ Trong hướng dẫn ở youtube tác giả cài đặt Jibri trên 1 node khác
 
     <img src="https://i.imgur.com/l19snVV.png">
 
+- Lưu ý: Nếu a thấy 2 phiên bản không giống nhau, ta cần update để đưa cùng về 1 phiên bản
+    ```
+    apt update -y
+    apt upgrade
+    apt install --reinstall linux-image-generic
+    ```
+
 - Reboot server
     ```
     reboot
