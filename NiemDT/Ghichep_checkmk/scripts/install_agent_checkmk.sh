@@ -20,7 +20,7 @@ then
     systemctl enable xinetd
     sed -i "s/#only_from      = 127.0.0.1 10.0.20.1 10.0.20.2/only_from      = $ip_server/g" /etc/xinetd.d/check_mk
     systemctl restart xinetd
-    ufw allow 5665/tcp
+    ufw allow 6556/tcp
     ufw reload
 elif [ "$os" = '"CentOS Linux"' ]
 then
