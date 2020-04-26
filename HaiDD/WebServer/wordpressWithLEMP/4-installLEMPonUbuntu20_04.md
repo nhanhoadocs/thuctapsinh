@@ -85,7 +85,7 @@ Trước khi cài đặt, ta sẽ gỡ phiên bản hiện tại của MariaDB t
 ## IV. Cài đặt PHP
 Không giống với Apache, Nginx không tích hợp hỗ trợ xử lý các tệp PHP. Vì vậy, ta cài đặt một ứng dụng riêng biệt để xử lý các tệp PHP. Chẳng hạn như PHP FPM (`fastCGI process manager`)
 
-- Cài đặt module `php-fpm` và `php-mysql` để khiến 
+- Cài đặt module `php-fpm` và `php-mysql`
     ```
     apt -y install php-fpm php-mysql
     ```
