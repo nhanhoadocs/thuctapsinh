@@ -37,6 +37,19 @@
     service jitsi-videobridge restart
     ```
 
+## Để thay đổi port lấy API ta làm như sau
+Thêm dòng sau vào file `/etc/jitsi/videobridge/sip-communicator.properties`
+```
+org.jitsi.videobridge.rest.private.jetty.port=9999
+```
+Trong đó: 9999 là port bạn muốn sử dụng.
+
+Lưu ý: Nên kiểm tra port có đang chạy dịch vụ nào không trước khi gán.
+
+Sau đó restart lại dịch vụ
+```
+service jitsi-videobridge restart
+```
 
 ## Ví dụ kết quả thống kê dưới dạng json
 
