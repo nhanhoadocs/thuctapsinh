@@ -1,4 +1,4 @@
-# Setup TIG (Telegraf, InfluxDB and Grafana) on Ubuntu 20.04 LTS
+# Setup TIG (Telegraf, InfluxDB and Grafana) on Ubuntu 18.04 LTS
 
 ## Giới thiệu
 Trong tất cả các công cụ giám sát hiện đại hiện có thì có lẽ **TIG(Telegraf, InfluxDB and Grafana)** stack là một trong nhưng công cụ được sử dụng phổ biến nhất.
