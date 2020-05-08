@@ -166,9 +166,17 @@ main(){
     clear
 	
 	echo -e "${GREEN}xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx${NOCOLOR}"
-	echo -e "${GREEN}x    >>>>>>>>>QUA TRINH CAI DAT TIG STACK HOAN TAT<<<<<<<<<    x${NOCOLOR}"
-	echo -e "${GREEN}x    Truy cap dia chi: ${RED}http://<IP>:3000 ${GREEN}De bat dau su dung     x${NOCOLOR}"
+	echo -e "${GREEN}    >>>>>>>>>QUA TRINH CAI DAT TIG STACK HOAN TAT<<<<<<<<<    ${NOCOLOR}"
+	echo -e "${GREEN}    Truy cap dia chi: ${RED}http://<IP>:3000 ${GREEN}De bat dau su dung     ${NOCOLOR}"
 	echo -e "${GREEN}xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx${NOCOLOR}"
+    echo -e "================================================"
+    echo -e "${GREEN}THÔNG TIN InfluxDB :${NOCOLOR}"
+    echo -e "Tài khoản Admin"
+    echo -e "username : admin      |  password: admin"
+    echo -e "========="
+    echo -e "Database : telegraf"
+    echo -e "username : telegraf   |  password: telegraf"
+    echo -e "================================================"
 }
 
 
