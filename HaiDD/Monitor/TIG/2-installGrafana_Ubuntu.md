@@ -8,7 +8,7 @@ apt-get install -y software-properties-common wget
 
 apt-get update
 
-apt-get upgrade
+apt-get -y upgrade
 
 reboot
 ```
