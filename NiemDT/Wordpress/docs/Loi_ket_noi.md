@@ -30,4 +30,6 @@ Thực hiện tailf log accept của http trong khoảng thời gian này
 cat /var/log/httpd/access_log | grep -B 500 "9:58"
 ```
 
-Ta thấy IP 10.10.34.196 thục hiện truy cập rất nhiều lần trong khoảng thời gian này với truy vấn rất lạ. Ta có thể xác định IP này đang cố tình tấn công Dos trang web.
+![](../images/error_mysql/07.png)
+
+Ta thấy IP 10.10.34.196 thục hiện truy cập rất nhiều lần trong khoảng thời gian này với truy vấn rất lạ, có cùng một kiểu truy vấn và không load các file như css đi kèm. Ta có thể xác định IP này đang cố tình tấn công DOS trang web.
