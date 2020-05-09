@@ -24,6 +24,8 @@ tailf -n 500 /var/log/messages
 
 Thấy thời gian `mysqld` bị kill vào lúc `9:58:43`. Trước đó đang có rất nhiều tiến trình `httpd`.
 
+![](../images/error_mysql/06.png)
+
 Thực hiện tailf log accept của http trong khoảng thời gian này
 
 ```
