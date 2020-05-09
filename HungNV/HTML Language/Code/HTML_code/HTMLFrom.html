@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+
+<html lang="vi">
+    <title>Form on HTML</title>
+<body>
+
+    <h1>Nhập vào thông tin người dùng</h1><br>
+    <h2>Nhập vào thông tin cơ bản</h2>
+<!--Tạo 1 from nhập dữ liệu--> 
+    <form id="form1">
+    <fieldset style="background-color:darkkhaki">
+        <legend style="color:white; text-align: center; background-color: black; font-size: 20px;" >Form dữ liệu:</legend>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" form="form1"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" form="form1"><br><br>
+   
+<!--Tạo form hiển thị nút-->
+
+        <input type="radio" id="male" value="male" name="gender" form="form1">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" value="female" name="gender" form="form1">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" value="other" name="gender" form="form1">
+        <label for="other">Other</label><br><br>
+
+<!--Tạo 1 danh sách ẩn-->
+    <label for="Ngay">Chọn ngày sinh:</label>
+    <select id="Ngay" name="Ngay" form="form1">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="30" selected>30</option>
+    </select> <br> <br>
+    <label for="Thang">Chọn tháng sinh:</label>
+    <select id="Thang" name="Thang" form="form1">
+        <option value="1">1</option>    
+        <option value="2" selected>2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select> <br> <br>
+        <label for="message"> Nhập thông tin bổ sung nếu có:</label><br><br>
+        <textarea  name="message" rows="4" cols="30"></textarea><br><br form="form1">
+    </fieldset><br>
+        <input type="submit" value="Nhập">
+    </form>
+
+
+ <h2>Nhập vào thành phố</h2>
+    <form method="POST">
+    <input list="City" name="City"> 
+    <datalist id="City">
+        <option value="Hà Nội">
+        <option value="Hồ Chí Minh">
+        <option value="Đà Nẵng">
+        <option value="Huế">
+        <option value="Quảng Ninh">
+    </datalist>     
+    <input type="submit">
+    </form>
+<h2>Bảng tính</h2>
+
+    <form oninput="z.value=parseInt(x.value)+parseInt(y.value)">
+        0 <input type="range" id="x" name="x" value="30"> 80 + 
+        <input type="number" id="y" name="y" value="50"> = 
+        <output name="z" for="x y"></output>
+        <br><br>
+        <input type="submit">
+    </form>
+    <br>
+<!--Tạo tích lấy thông tin-->
+<h2>Tích để chọn thông tin phù hợp</h2>
+    <form>
+        <input type="checkbox" id="ckb1" name="ckb1" value="Tham khảo">
+        <label for="ckb1">Tạo tài khoản để tham khảo thông tin</label><br>
+        <input type="checkbox" id="ckb2" name="ckb2" value="Tương tác">
+        <label for="ckb2">Tạo tài khoản để tương tác với mọi người</label><br>
+        <input type="checkbox" id="ckb3" name="ckb3" value="Khác">
+        <label for="ckb3">Mục đích khác</label><br><br>
+        <input type="submit" value="Gửi đi">
+    </form>
+
+
+<h3>Chọn 1 màu phù hợp nhất</h3>
+<!--Chọn màu hiển thị-->
+    <form> 
+        <label for="fcolor">Chọn 1 màu mà bạn thích nhất :</label><br><br>
+        <input type="color" id="fcolor" name="fcolor" value="#000000">
+        <input type="submit" value="Nhập">
+    </form>
+<h3>Nhập ngày đăng Ký</h3>
+    <form>
+        <label for="ReDate">Ngày đăng ký :</label><br><br>
+        <input type="date" id="ReDate" name="ReDate" min="1975-01-01">
+        <input type="submit" value="Hoàn tất">
+    </form>
+
+<h2>Nhập vào Email</h2>
+    <form>
+        <label for="email">Nhập Email đăng ký: </label><br><br>
+        <input type="email" id="email" name="email">
+        <input type="submit" value="Submit">
+    </form>
+<h2>Tải 1 tệp lên</h2>    
+    <form> 
+        <label for="mfile">Chọn 1 tệp để tải lên: </label><br><br>
+        <input type="file" id="mfile" name="mfile"><br><br>
+        <input type="submit" value="Tải lên">
+    </form>
+<h2>Định lượng 1 dãy số</h2>
+    <form>
+        <label for="Sott">Nhập vào số: </label><br><br>
+        <input type="number" id="Sott" name="Sott" min="0" max="20">
+        <input type="submit" value="OK">
+    </form><br><br>
+<!--Nhập số điện thoại-->
+    <form>
+        <label for="phone"> Nhập vào số điện thoại</label><br><br>
+        <input type="tel" id="phone" name="phone" placeholder="0123-456-789" pattern="[0-9]{4}[0-9]{3}[0-9]{3}" required><br><br>
+        <input type="submit" value="Nhập">
+
+    </form>
+
+
+
+<!--Demo nhập vào user name và password-->
+<h2>Nhập user và password</h2>
+    <form method="POST">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" placeholder="Nhập vào user"><br>
+        <label for="pwd">Password</label><br>
+        <input type="password" id="pwd" name="pwd" maxlength="8"><br>
+        <samp>Nhập vào mật khẩu có 8 ký tự !</samp><br><br>
+        <input type="submit" value="Đăng Ký">   
+        <input type="reset">
+    </form>
+<!--Search-->
+<h3>Tạo 1 Search</h3>    
+    <form>
+    <label for="Search">Search :</label><br><br>
+    <input type="search" id="Search" name="Search">
+    <input type="submit" value="Tìm kiếm">
+    </form>
+
+
+</body>
+
+</html>

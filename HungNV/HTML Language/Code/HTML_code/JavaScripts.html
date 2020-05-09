@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html> 
+    <body id="nen">
+        <h1>Java Script</h1>
+<!--Bài thực hành đầu tiên với JavaScript-->
+        <hr> 
+            <button type="button" onclick="myFuntion()">Click</button>
+            <p id="demo">Clik vao nut tren<p>
+               <script>
+                function myFuntion() {document.getElementById("demo").innerHTML = "Hello JavaScript";}
+               </script>
+
+<hr> 
+
+<!--Tạo click chuyển nền từ nền sáng sang nền tối.--> <br>
+                <script> 
+                function mefuntion() 
+                    {
+                        document.getElementById("nen").style.color ="white";
+                     document.getElementById("nen").style.backgroundColor="black";
+                      }
+                </script><br>
+
+        <button type="button" onclick="mefuntion()">Dark</button>
+                <script>
+                    function mfuntion() 
+                    {
+                        document.getElementById("nen").style.color="black";
+                        document.getElementById("nen").style.backgroundColor="white";
+                    }
+                </script>
+       <button type="button" onclick="mfuntion()">Shinnig</button>
+
+       <noscript>Sorry, your browser does not support JavaScript!</noscript>
+    </body>
+</html>   
