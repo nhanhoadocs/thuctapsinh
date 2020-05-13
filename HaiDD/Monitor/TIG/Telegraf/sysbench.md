@@ -87,3 +87,5 @@ apt -y install sysbench
     ```
     sysbench /usr/share/sysbench/oltp_read_write.lua --db-driver=mysql --mysql-db=sysbench --mysql-user=root --mysql-password='thuctap@2020' --tables=1 cleanup
     ```
+
+    **Lưu ý:** Lệnh trên chỉ xóa các bảng, muốn xóa db cần thực hiện thủ công.
