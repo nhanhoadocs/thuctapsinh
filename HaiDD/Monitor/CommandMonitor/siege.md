@@ -64,7 +64,7 @@ Nếu không chỉ định option, nó sẽ mặc định để là 25 khách tr
 ```
 siege 10.10.34.163
 ```
-Sau khi dừng:
+**Sau khi dừng:**
 ```
 New configuration template added to /root/.siege
 Run siege -C to view the current settings in that file
@@ -86,6 +86,20 @@ Failed transactions:               0
 Longest transaction:            0.88
 Shortest transaction:           0.00
 ```
+
+### Các thông số kết quả
+- `Transactions`: Số lần trao đổi
+- `Availability`: Tỉ lệ thành công
+- `Elapsed time`: Tổng thời gian test
+- `Data transferred`: Dung lượng dữ liệu trao đổi
+- `Response time`: Thời gian phản hồi của trang web
+- `Transaction rate`: Tốc độ trao đổi thông tin
+- `Throughput`: Thông lượng (Tốc độ truyền tải thực tế. Luông nhỏ hơn Bandwidth)
+- `Concurrency`: Số lượng khách truy cập đồng thời
+- `Successful transactions`: Số lần trao đổi thành công (Mã code trả về < 400)
+- `Failed transactions`: Số lần trao đổi thất bại
+- `Longest transaction`: Thời gian trao đổi dài nhất
+- `Shortest transaction`: Thời gian trao đổi ngắn nhất
 
 ### 2. Xác định thời gian test
 Sử dụng option `-t<khoảng_thời_gian>`
