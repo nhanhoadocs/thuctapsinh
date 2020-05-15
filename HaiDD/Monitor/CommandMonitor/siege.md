@@ -13,6 +13,45 @@ yum -y install siege
 apt-get install siege -y
 ```
 
+### Cài đặt Open SSL
+Siege yêu cầu cài đặt openssl để kiểm tra các trang web https. Chạy các lệnh sau để cài đặt và cấu hình openssl.
+
+**Cài đặt OpenSSL**
+```
+wget https://www.openssl.org/source/openssl-1.1.0e.tar.gz
+
+tar -xvzf openssl-1.1.0e.tar.gz
+
+cd openssl-1.1.0e
+
+./config --prefix=/usr/local/openssl --openssldir=/usr/local/openssl
+
+yum -y install gcc gcc-c++
+
+make
+
+make install
+
+export PATH="/usr/local/bin/openssl/bin:$PATH"
+
+ln -s /usr/local/openssl /usr/local/bin/openssl
+```
+
+**Cài đặt Siege với SSL**
+```
+cd
+
+wget http://download.joedog.org/siege/siege-latest.tar.gz
+
+tar -zxvf siege-latest.tar.gz
+
+cd siege-*/
+
+./configure --prefix=/usr/local --with-ssl=/usr/bin/openssl
+
+make && make install
+```
+
 ## Cú pháp
 ```
 siege [options] <URL>
