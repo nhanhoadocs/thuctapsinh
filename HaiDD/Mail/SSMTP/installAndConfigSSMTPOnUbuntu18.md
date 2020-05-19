@@ -89,7 +89,7 @@ echo "Test message from Linux server using ssmtp" | ssmtp -v des.email@mail.com
 {
     echo Subject: canh bao
     echo Hello ssmtp
-} | ssmtp danghai.hy.1996@gmail.com
+} | ssmtp des.email@mail.com
 ```
 
 Sử dụng nội dung từ file:
@@ -103,3 +103,8 @@ Sử dụng nội dung từ file:
     ```
     ssmtp des_email@gmail.com < test.txt
     ```
+
+**Lưu ý:** sử dụng ssmtp trong script với crontab sẽ cần dùng đường dẫn thư mục ssmtp.
+
+Có thể tìm bằng cách sử dụng lệnh `locate ssmtp`. Thường sẽ là `/usr/sbin/ssmtp`
+
