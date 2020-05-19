@@ -31,11 +31,11 @@ Thông thường, ta sẽ có các máy chủ thực hiện giám sát. Tuy nhi�
     #!/bin/bash
     MAIL="youremail@gmail.com"
 
-    if md5sum -c /root/passwd.md5; then
+    if md5sum -c /opt/passwd.md5; then
             echo "OK"
     else
             (echo "Subject:File changed"; echo "File /etc/passwd changed on $HOSTNAME!";) | /usr/sbin/sendmail $MAIL
-            md5sum /etc/passwd > /root/passwd.md5
+            md5sum /etc/passwd > /opt/passwd.md5
     fi
     ```
 
