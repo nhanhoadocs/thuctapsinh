@@ -6,8 +6,8 @@ DATE=$(date)
 IP=$(hostname -I)
 HOSTNAME=$(hostname -f)
 
-TOKEN="936053035:AAGbl5y7463f0BCCx4RjzpB3_eRhUUNfKKw"
-ID="-456008539"
+TOKEN="TOKEN_API_bot"
+ID="ID_chat"
 URL="https://api.telegram.org/bot$TOKEN/sendMessage"
 
 DIR='/var/www/html/'
