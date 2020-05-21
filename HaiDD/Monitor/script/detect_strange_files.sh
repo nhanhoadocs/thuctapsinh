@@ -5,7 +5,7 @@
 DATE=$(date)
 IP=$(hostname -I)
 HOSTNAME=$(hostname -f)
-MAIL='danghai.hy.1996@gmail.com'
+MAIL='yourmail@gmail.com'
 
 DIR='/var/www/html/'
 FILE_LIST='/opt/listPHP'
