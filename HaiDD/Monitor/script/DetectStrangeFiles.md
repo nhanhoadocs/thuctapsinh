@@ -108,7 +108,7 @@ crontab -e
 
 Thêm dòng sau:
 ```
-*/30 * * * * /opt/detect_strange_files.sh
+*/30 * * * * /opt/detect_strange_files.sh 
 ```
 
 Bạn có thể đặt thời gian ngắn để kiểm tra trước khi cho hoạt động chính thức.
