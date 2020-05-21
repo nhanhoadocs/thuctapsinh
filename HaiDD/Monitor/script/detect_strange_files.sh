@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#~~~ SCRIPT DETECT STRANGE FILES ~~~#
+#~~~ SCRIPT DETECT STRANGE FILES WITH MAIL~~~#
 
 DATE=$(date)
 IP=$(hostname -I)
