@@ -24,5 +24,8 @@
 &emsp;2. [Cấu hình static IP trên CentOS 8](docs/CentOS_8/network.md)  
 &emsp;3. [Cài đặt MariaDB 10.4.8](docs/CentOS_8/install_mariadb.md)  
 &emsp;4. [Cập nhật hệ thống](docs/CentOS_8/update_system.md)   
-&emsp;5. [Replication](docs/Replication) 
+&emsp;5. [Replication](docs/Replication)   
+&emsp;6. [NginX](docs/NGINX)  
+&emsp;7. [DNS](docs/DNS) 
+
 
