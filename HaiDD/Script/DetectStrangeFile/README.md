@@ -1,1 +1,2 @@
-# Hướng dẫn sử dụng Script
+# Hướng dẫn sử dụng Script DetectStrangeFile
+
