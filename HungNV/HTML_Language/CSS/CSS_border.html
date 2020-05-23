@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- 
+            Border Style
+- Border Style quy định cụ thể sở hữu những loại viền để hiển thị 
+
+    * dotted : Xác định đường viền chấm 
+    * dashed : Xác định đường viền nét đứt 
+    * solid : Xác định đường viền chắc chắn 
+    * double : Xác định đường viền đôi 
+    * groove : Xác định đường viền có rãnh 3D. Hiệu ứng phụ thuộc vào giá trị màu viền 
+    * ridge : Xác định đường viền có viền 3D. Hiệu ứng phụ thuộc vào giá trị màu viền 
+    * inset : Xác định đường viền đầu 3D. Hiệu ứng phụ thuộc vào giá trị màu viền 
+    * outset : Xác định đường viền đầu 3D. Hiệu ứng phụ thuộc vào giá trị màu viền 
+    * none: Xác định không biên giới 
+    * Hidden : Xác định đường viền ẩn 
+-->
+<!--
+                Border Widths
+Border with chỉ định chiều rộng của viền 
+
+Chiều rộng có thể được đặt thành các kích thước cụ thể như : px, pt, cm, em, ...
+
+border-radius : Quy định độ tròn của viền
+-->
+
+<html> 
+<head>
+<style> 
+p.dotted {
+    border-style: dotted;
+    border-width: 5px; 
+}
+p.dashed {border-style: dashed;
+    border-width: 8px; 
+}
+p.solid {border-style: solid;
+    border-width: 5px; 
+}
+p.double {border-style: double;
+    border-width: 5px 20px;   /* Phía trên và phía dưới là 5px, Bên trái và phải là 20px */
+}
+p.groove {border-style: groove;
+    border-width: 25px 10px 4px 35px; /* Phía trên là 25px, Phải là 10px, dưới là 4px, trái là 35px */
+}
+p.ridge {border-style: ridge;
+
+}
+p.inset {border-style: inset;
+    border: 5px solid red;  /* Có viền = 5px và viền có màu đỏ */
+}
+p.outset {border-style: outset;
+    border-radius: 12px;  /* Bo tròn viền 12px */
+}
+p.none {border-style: none;}
+p.hidden {border-style: hidden;}
+p.mix {border-style: dotted dashed solid double;}
+</style>
+</head>
+<body> 
+    <h1>Mo ta cac loai vien </h1>
+    <p class="dotted">A dotted border.</p>
+    <p class="dashed">A dashed border.</p>
+    <p class="solid">A solid border.</p>
+    <p class="double">A double border.</p>
+    <p class="groove">A groove border.</p>
+    <p class="ridge">A ridge border.</p>
+    <p class="inset">An inset border.</p>
+    <p class="outset">An outset border.</p>
+    <p class="none">No border.</p>
+    <p class="hidden">A hidden border.</p>
+    <p class="mix">A mixed border.</p>
+</body>
+</html>
+

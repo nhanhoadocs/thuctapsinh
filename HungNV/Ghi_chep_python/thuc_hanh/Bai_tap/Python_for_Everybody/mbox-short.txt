@@ -1,0 +1,58 @@
+From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
+Return-Path: <postmaster@collab.sakaiproject.org>
+Received: from murder (mail.umich.edu [141.211.14.90])
+	 by frankenstein.mail.umich.edu (Cyrus v2.3.8) with LMTPA;
+	 Sat, 05 Jan 2008 09:14:16 -0500
+X-Sieve: CMU Sieve 2.3
+Received: from murder ([unix socket])
+	 by mail.umich.edu (Cyrus v2.2.12) with LMTPA;
+	 Sat, 05 Jan 2008 09:14:16 -0500
+Received: from holes.mr.itd.umich.edu (holes.mr.itd.umich.edu [141.211.14.79])
+	by flawless.mail.umich.edu () with ESMTP id m05EEFR1013674;
+	Sat, 5 Jan 2008 09:14:15 -0500
+Received: FROM paploo.uhi.ac.uk (app1.prod.collab.uhi.ac.uk [194.35.219.184])
+	BY holes.mr.itd.umich.edu ID 477F90B0.2DB2F.12494 ; 
+	 5 Jan 2008 09:14:10 -0500
+Received: from paploo.uhi.ac.uk (localhost [127.0.0.1])
+	by paploo.uhi.ac.uk (Postfix) with ESMTP id 5F919BC2F2;
+	Sat,  5 Jan 2008 14:10:05 +0000 (GMT)
+Message-ID: <200801051412.m05ECIaH010327@nakamura.uits.iupui.edu>
+Mime-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Received: from prod.collab.uhi.ac.uk ([194.35.219.182])
+          by paploo.uhi.ac.uk (JAMES SMTP Server 2.1.3) with SMTP ID 899
+          for <source@collab.sakaiproject.org>;
+          Sat, 5 Jan 2008 14:09:50 +0000 (GMT)
+Received: from nakamura.uits.iupui.edu (nakamura.uits.iupui.edu [134.68.220.122])
+	by shmi.uhi.ac.uk (Postfix) with ESMTP id A215243002
+	for <source@collab.sakaiproject.org>; Sat,  5 Jan 2008 14:13:33 +0000 (GMT)
+Received: from nakamura.uits.iupui.edu (localhost [127.0.0.1])
+	by nakamura.uits.iupui.edu (8.12.11.20060308/8.12.11) with ESMTP id m05ECJVp010329
+	for <source@collab.sakaiproject.org>; Sat, 5 Jan 2008 09:12:19 -0500
+Received: (from apache@localhost)
+	by nakamura.uits.iupui.edu (8.12.11.20060308/8.12.11/Submit) id m05ECIaH010327
+	for source@collab.sakaiproject.org; Sat, 5 Jan 2008 09:12:18 -0500
+Date: Sat, 5 Jan 2008 09:12:18 -0500
+X-Authentication-Warning: nakamura.uits.iupui.edu: apache set sender to stephen.marquard@uct.ac.za using -f
+To: source@collab.sakaiproject.org
+From: stephen.marquard@uct.ac.za
+Subject: [sakai] svn commit: r39772 - content/branches/sakai_2-5-x/content-impl/impl/src/java/org/sakaiproject/content/impl
+X-Content-Type-Outer-Envelope: text/plain; charset=UTF-8
+X-Content-Type-Message-Body: text/plain; charset=UTF-8
+Content-Type: text/plain; charset=UTF-8
+X-DSPAM-Result: Innocent
+X-DSPAM-Processed: Sat Jan  5 09:14:16 2008
+X-DSPAM-Confidence: 0.8475
+X-DSPAM-Probability: 0.0000
+
+Details: http://source.sakaiproject.org/viewsvn/?view=rev&rev=39772
+
+Author: stephen.marquard@uct.ac.za
+Date: 2008-01-05 09:12:07 -0500 (Sat, 05 Jan 2008)
+New Revision: 39772
+
+Modified:
+content/branches/sakai_2-5-x/content-impl/impl/src/java/org/sakaiproject/content/impl/ContentServiceSqlOracle.java
+content/branches/sakai_2-5-x/content-impl/impl/src/java/org/sakaiproject/content/impl/DbContentService.java
+Log:
+SAK-12501 merge to 2-5-x: r39622, r39624:5, r39632:3 (resolve conflict from differing linebreaks for r39622)

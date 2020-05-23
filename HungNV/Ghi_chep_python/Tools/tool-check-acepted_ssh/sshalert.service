@@ -1,0 +1,10 @@
+[Unit]
+Description=Tutorialinux sshalert service - alerts when someone logs in or sudos
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=
+Restart=always

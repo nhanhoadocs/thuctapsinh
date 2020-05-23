@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    box-sizing: border-box;
+}
+
+.menu {
+    float: left;
+    width: 20%;
+    text-align: center;
+    background: palegreen;
+}
+.menu a {
+  background-color:#e5e5e5;
+  padding:8px;
+  margin-top:7px;
+  display:block;
+  width:100%;
+  color:black;
+}
+.main {
+    float: left;
+    width: 60%;
+    padding: 0 20px;
+}
+.right {
+    float: left;
+    text-align: center;
+    width: 20%;
+    background-color: burlywood;
+    margin-top: 7px;
+
+}
+@media only screen and (max-width: 1000px){
+    .menu, .right, .main {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif; color: grey;">
+
+<div style="background-color: khaki; color: black; text-align: center; padding: 15px;">
+<h1>Thuc hanh Responsive</h1>
+</div>   
+<div style="overflow: auto;">
+<div class="menu">
+    <a href="#">Link 1</a><br>
+    <a href="#">Link 2</a><br>
+    <a href="#">Link 3</a><br>
+    <a href="#">Link 4</a><br>
+</div>
+<div class="main">  
+<h2>Phan tu chinh</h2> 
+<p>Phần tử HTML hay còn được biết đến với tên Tag hay Entity hay thẻ. HTML là ngôn ngữ đánh dấu (markup-language) do đó có thể hiểu một phần tử HTML chính là một đoạn văn bản được đánh dấu để thể hiện theo một cách nào đó.</p>
+<p>Phần tử bao gồm thẻ đóng, thẻ mở và toàn bộ nội nằm bên trong 2 thẻ này</p>
+<p>Một phần tử HTML thường được xác định dựa trên ba thành phần:
+
+ Thẻ mở
+ Nội dung nằm bên trong cặp thẻ (hay còn được gọi là nội dung của phần tử)
+ Thẻ đóng
+- Tuy nhiên, có một số trường hợp đặc biệt mà phần tử chỉ có một thành phần duy nhất chính là thẻ mở, những phần tử này được gọi là phần tử rỗng.</p>
+<p>Đối với các thẻ HTML tự đóng như thẻ <b>br, img, hr ..</b> thì phần tử HTML tương ứng với chúng được gọi là phần tử rỗng (hay phần tử trống).</p>
+</div>
+
+<div class="right"> 
+<h2>Phan tu phu</h2>
+ <p>Khi nói về thẻ chúng ta thường sẽ để tên thẻ bao bọc bởi cặp dấu ngoặc nhọn <> ví dụ <tagname>, ngược lại khi nói về phần tử chúng ta chỉ cần tới tên thẻ mà không cần cặp dấu ngoặc này ví dụ tagname. - Mặc dù tên phần tử được lấy trùng với tên thẻ và đồng thời phần tử và thẻ có mối quan hệ mật thiết với nhau tuy nhiên chúng vẫn là hai khái niệm khác biệt.</p>
+</div>
+</div>
+
+<div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">© copyright w3schools.com</div>
+
+
+</body>
+</html>

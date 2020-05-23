@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div style="text-align: left">
+        <button onclick="playPause()"></button>
+        <button onclick="big()">+</button>
+        <button onclick="small()">-</button>
+        <button onclick="normal()">Normal</button>
+        <br><br>
+        <video id="video1" width="500">
+            <source src="https://imgur.com/efmfG6J.mp4" type="video/mp4">
+        </video>
+    </div>
+    <script>
+        var myVideo = document.getElementById("video1");
+
+        function playPause() {
+            if (myVideo.paused)
+                myVideo.play();
+                else 
+                myVideo.pause();
+        }
+
+        function big() {
+            myVideo.width = 800;
+        }
+        function small() {
+            myVideo.width = 300;
+        }
+        function normal() {
+            myVideo.width = 500;
+        }
+    </script>
+<hr>
+<iframe width="853" height="480" src="https://www.youtube.com/embed/lCN_xasQ7YY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+</body>
+</html>

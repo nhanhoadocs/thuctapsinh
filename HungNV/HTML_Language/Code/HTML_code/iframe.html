@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+- Thực hành iframe, gán 1 trang web lên 1 trang web html<br>
+        <iframe src="https://tv.zing.vn/" width="1000" height="500">This page is displayed in an iframe
+        </iframe><br>
+- Sử dụng Style cho trích dẫn trang web: <br>
+<br>
+        <iframe src="https://tv.zing.vn/" style="width:1000px; height: 500px;">This page is displayed in an iframe</iframe><br>
+
+- Bỏ đi phần viền của iframe <br>
+        <iframe src="https://tv.zing.vn/" style="border: none;" width="1000px" height="500px"></iframe><br>
+
+- Sử dụng viền có màu viền là màu đỏ<br>
+        <iframe src="https://tv.zing.vn/" style="border:2px solid red" width="1000px" height="500px"></iframe><br>
+
+- Sử dụng thuộc tính target để gán 1 link vào 1 iframe <br>
+        <iframe src="web.html" style="border:2px solid black" width="1000px" height="500px" name="iframe_a"></iframe><br>
+            <a href="https://tv.zing.vn/" target="iframe_a">tv.zing.vn</a>
+    </body>
+</html>

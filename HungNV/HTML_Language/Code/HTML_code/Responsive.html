@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+* {
+    box-sizing: border-box;
+}
+.left {
+    background-color: wheat;
+    padding: 20px;
+    float: left;
+    width: 25%;
+
+}
+.main {
+    background-color: mediumturquoise;
+    padding: 20px;
+    float: left;
+    width: 50%;
+}
+.right {
+    background-color: palegreen;
+    padding: 20px;
+    float: left;
+    width: 25%;
+}
+@media screen and (max-width:1000px) {.left, .main, .right { width: 100%;
+
+}
+}
+}
+        </style>
+
+</head>
+
+   <body>
+      <h1>Thuc hanh thay doi kich thuoc</h1>
+
+<!--Thay đổi kích thước trình duyệt để thấy sự thay đổi-->     
+    <picture>
+        <source srcset="https://imgur.com/Wkn6T5P.jpg" media="(max-width: 1000px)">
+        <source srcset="https://imgur.com/WtJUnU3.jpg" media="(max-width: 800px)">
+        <source srcset="https://imgur.com/3i35rfW.jpg">
+        <img src="https://imgur.com/WtJUnU3.jpg" alt="Flowers" style="width:auto;">
+      </picture>
+<!---->
+
+      <h1 style="font-size: 8vw;">header 1</h1>
+
+      <p style="font-size: 5vw;">Phan mo ta cho truong h1</p>
+
+      <p style="font-size: 3vw;">Use the "vw" unit when sizing the text. 10vw will set the size to 10% of the viewport width.</p>
+
+<div class="left"><p>Trai</p></div>
+<div class="main"><p>Giua</p></div>
+<div class="right"><p>Phai</p></div>
+
+
+
+
+
+   </body>
+</html>

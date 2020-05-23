@@ -385,3 +385,322 @@ mkdir: created directory ‘folder/folder1/folder2’
 ```
 Ở đây thư mục folder1 chưa được tạo nên nó tạo luôn thư mục có tên là folder1. 
 
+### 6. rmdir command ( remove directory)
+
+rmdir dùng để xóa 1 thư mục , nếu thư mục đó chứa các thư mục con hoặc chứa các file sẽ không xóa được.
+
+Để xem phiên bản của lệnh ta sử dụng : 
+```
+[root@Sidecar ~]# rmdir --version
+rmdir (GNU coreutils) 8.22
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by David MacKenzie.
+```
+
+
+- xóa đồng thời 2 thư mục không chứa thư mục con hoặc file 
+
+```
+[root@Sidecar ~]# rmdir -v viethung/viethung1/viethung2/ hung
+rmdir: removing directory, ‘viethung/viethung1/viethung2/’
+rmdir: removing directory, ‘hung’
+```
+
+nếu thư mục đầu tiên muốn xóa chứa thư mục con, nó sẽ bỏ qua và chuyển sang xóa thư mục thứ 2 
+
+```
+[root@Sidecar ~]# rmdir -v viethung/ hung
+rmdir: removing directory, ‘viethung/’
+rmdir: failed to remove ‘viethung/’: Directory not empty
+rmdir: removing directory, ‘hung’
+```
+
+### 7. File command 
+
+Được sử dụng để xác định loại tệp tin 
+
+**Syntax** : 
+```
+File [Option] [Filename]
+```
+
+- Để xác định loại tệp tin, ta sử dụng cú pháp như sau : 
+
+```
+[root@Client2 ~]# file anaconda-ks.cfg
+anaconda-ks.cfg: ASCII text
+[root@Client2 etc]# file aliases.db
+aliases.db: Berkeley DB (Hash, version 9, native byte-order)
+[root@Client2 etc]# file cron.deny
+cron.deny: empty
+```
+- Hiển thị loại tệp trong chế độ ngắn gọn : 
+```
+[root@Client2 ~]# file -b anaconda-ks.cfg
+ASCII text
+```
+
+- Có thể hiển thị cùng lúc loại tệp của nhiều tệp.  
+
+```
+[root@Client2 etc]# file login.defs tcsd.conf rc1.d/
+login.defs: ASCII text
+tcsd.conf:  ASCII text
+rc1.d/:     directory
+```
+- Để xem các option của lệnh, ta sử dụng help. 
+```
+[root@Client2 etc]# file --help
+Usage: file [OPTION...] [FILE...]
+Determine type of FILEs.
+
+      --help                 display this help and exit
+  -v, --version              output version information and exit
+  -m, --magic-file LIST      use LIST as a colon-separated list of magic
+                               number files
+  -z, --uncompress           try to look inside compressed files
+  -b, --brief                do not prepend filenames to output lines
+  -c, --checking-printout    print the parsed form of the magic file, use in
+                               conjunction with -m to debug a new magic file
+                               before installing it
+  -e, --exclude TEST         exclude TEST from the list of test to be
+                               performed for file. Valid tests are:
+                               ascii, apptype, compress, elf, soft, tar, tokens, troff
+  -f, --files-from FILE      read the filenames to be examined from FILE
+  -F, --separator STRING     use string as separator instead of `:'
+  -i, --mime                 output MIME type strings (--mime-type and
+                               --mime-encoding)
+      --apple                output the Apple CREATOR/TYPE
+      --mime-type            output the MIME type
+      --mime-encoding        output the MIME encoding
+  -k, --keep-going           don't stop at the first match
+  -l, --list                 list magic strength
+  -L, --dereference          follow symlinks (default)
+  -h, --no-dereference       don't follow symlinks
+  -n, --no-buffer            do not buffer output
+  -N, --no-pad               do not pad output
+  -0, --print0               terminate filenames with ASCII NUL
+  -p, --preserve-date        preserve access times on files
+  -r, --raw                  don't translate unprintable chars to \ooo
+  -s, --special-files        treat special (block/char devices) files as
+                             ordinary ones
+  -C, --compile              compile file specified by -m
+  -d, --debug                print debugging messages
+
+Report bugs to http://bugs.gw.com/
+```
+### 8. touch command 
+
+Lệnh touch được sử dụng để tạo 1 file trống. 
+
+- Để tạo 1 file : 
+```
+[root@Client2 ~]# touch file1
+[root@Client2 ~]# ls
+anaconda-ks.cfg  ca.pem  file  file1
+```
+
+- Để tạo cùng lúc nhiều file trống : 
+```
+[root@Client2 ~]# touch file2 file3 doc1 doc2
+[root@Client2 ~]# ls
+anaconda-ks.cfg  ca.pem  doc1  doc2  file  file1  file2  file3
+```
+
+- Để cập nhật thời gian sửa file gần nhất ta sử dụng -m 
+```
+[root@Client2 ~]# ls -al
+total 28
+dr-xr-x---.  4 root root  185 Dec 25 21:56 .
+dr-xr-xr-x. 17 root root  224 Dec  4 16:11 ..
+-rw-------.  1 root root 1726 Dec  4 16:12 anaconda-ks.cfg
+-rw-------.  1 root root 1687 Dec 25 12:12 .bash_history
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root    0 Dec  5 17:52 ca.pem
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root    0 Dec 25 18:18 file
+drwxr-----.  3 root root   19 Dec 23 16:21 .pki
+drwx------.  2 root root   25 Dec  5 18:39 .ssh
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+[root@Client2 ~]# touch -m file
+[root@Client2 ~]# ls -al
+total 28
+dr-xr-x---.  4 root root  185 Dec 25 21:56 .
+dr-xr-xr-x. 17 root root  224 Dec  4 16:11 ..
+-rw-------.  1 root root 1726 Dec  4 16:12 anaconda-ks.cfg
+-rw-------.  1 root root 1687 Dec 25 12:12 .bash_history
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root    0 Dec  5 17:52 ca.pem
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root    0 Dec 25 22:00 file
+drwxr-----.  3 root root   19 Dec 23 16:21 .pki
+drwx------.  2 root root   25 Dec  5 18:39 .ssh
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+```
+- Tạo file và chỉ định thời gian : 
+```
+[root@Client2 ~]# touch -t 201912240005 filetime
+[root@Client2 ~]# stat filetime
+  File: ‘filetime’
+  Size: 0               Blocks: 0          IO Block: 4096   regular empty file
+Device: fd00h/64768d    Inode: 134313286   Links: 1
+Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
+Context: unconfined_u:object_r:admin_home_t:s0
+Access: 2019-12-24 00:05:00.000000000 +0700
+Modify: 2019-12-24 00:05:00.000000000 +0700
+Change: 2019-12-25 22:09:43.669371605 +0700
+ Birth: -
+```
+# 9. rm command (remove command) 
+
+Sử dụng để xóa 1 file hoặc thư mục. 
+
+- Để xóa 1 file : 
+```
+[root@Client2 ~]# rm file
+rm: remove regular empty file ‘file’? y
+```
+- Sử dụng tùy chọn -f để xóa không cần hỏi lại. 
+```
+[root@Client2 ~]# rm -f hung.txt
+```
+Tuy nhiên đối với các thư mục chống ghi, ta không thể sử dụng tùy chọn -f. 
+
+- Để xem version của lệnh, ta sử dụng `--version` 
+```
+[root@Client2 ~]# rm --version
+rm (GNU coreutils) 8.22
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Paul Rubin, David MacKenzie, Richard M. Stallman,
+and Jim Meyering.
+```
+- Để xóa 1 thư mục hoặc file mà không cần hỏi 
+```
+[root@Client2 ~]# ls
+anaconda-ks.cfg  ca.pem  filetime  vhung
+[root@Client2 ~]# rm -rf vhung/
+[root@Client2 ~]# ls
+anaconda-ks.cfg  ca.pem  filetime
+[root@Client2 ~]#
+```
+hoặc xóa cùng lúc nhiều file hoặc thư mục : 
+```
+[root@Client2 ~]# ls
+anaconda-ks.cfg  ca.pem  filetime  hung
+[root@Client2 ~]# rm -rf filetime hung/
+[root@Client2 ~]# ls
+anaconda-ks.cfg  ca.pem
+```
+Lưu ý: tùy chọn này có thể xóa bất cứ file hoặc thư mục nào. Nên cân nhắc khi sử dụng. 
+
+### 10. cp command 
+
+Cp command dùng để sao chép tệp tin và thư mục, Khi sao chép cp đồng thời cũng có thể tạo tệp mới. 
+
+- Để sao chép 1 thư mục đồng thời tạo thư mục cần sao chép : 
+```
+[root@server ~]# cat hung1
+Nguyen Viet Hung
+NS : 29/06/1999
+Noi Sinh : Thai Binh
+[root@server ~]# cp hung1 hung2
+[root@server ~]# ls
+anaconda-ks.cfg  hung1  hung2
+[root@server ~]# cat hung2
+Nguyen Viet Hung
+NS : 29/06/1999
+Noi Sinh : Thai Binh
+```
+- Nếu copy vào 1 file đã có dữ liệu, hệ thống sẽ đưa ra câu hỏi có muốn ghi đè dữ liệu hay không. 
+```
+[root@server ~]# cp hung1 hung2
+cp: overwrite ‘hung2’? n
+```
+
+- Để sao chép 1 thư mục, ta sử dụng tùy chọn -R. 
+```
+[root@server viethung]# cp /root/viethung /root/viethung01
+cp: omitting directory ‘/root/viethung’
+[root@server viethung]# cp -R /root/viethung /root/viethung01
+```
+```
+[root@server ~]# pwd
+/root
+[root@server ~]# ls
+anaconda-ks.cfg  hung1  hung2  viethung  viethung01
+```
+
+### 11. mv command
+
+Sử dụng để di chuyển tập tin hoặc thư mục từ nơi này sang nơi khác. 
+
+- Để di chuyển thư mục đến 1 thư mục không tồn tại, thư mục sẽ tự động đổi thành tên thư mục đó.  
+```
+[root@server ~]# mv viethung /root/viethung01/nguyenviethung
+[root@server ~]# cd /root/viethung01/
+[root@server viethung01]# ls
+nguyenviethung
+```
+
+- Nếu di chuyển thư mục đến 1 thư mục đã tồn tại, thư mục sẽ di chuyển đến và giữ nguyên tên. 
+```
+[root@server ~]# mv hung11 /root/viethung01
+[root@server ~]# cd viethung01/
+[root@server viethung01]# ls
+hung11  nguyenviethung
+```
+
+- Để di chuyển 1 file đến 1 thư mục khác : 
+```
+[root@server ~]# mv hung1 viethung01/
+[root@server ~]# cd viethung01/
+[root@server viethung01]# ls
+hung1  hung11  nguyenviethung
+```
+
+- Để di chuyển nhiều file. ví dụ các file có phần mở rộng là txt. Thay vì di chuyển từng file hoặc nhập tên từng file để di chuyển, ta sử dụng * 
+
+```
+[root@server ~]# ls
+anaconda-ks.cfg  hung1.txt  hung2  hung.txt  viethung01  viethung.txt
+[root@server ~]# mv *.txt /root/viethung01
+[root@server ~]# cd viethung01/
+[root@server viethung01]# ls
+hung1  hung11  hung1.txt  hung.txt  nguyenviethung  viethung.txt
+```
+
+- Nếu di chuyển 1 file hoặc thư mục đến 1 file hoặc thư mục đã tồn tại, ta sẽ được nhắc có ghi đè hay không ? 
+
+```
+[root@server viethung01]# mv hung.txt /root/viethung01/hung1
+mv: overwrite ‘/root/viethung01/hung1’? y
+```
+
+# 12. rename command 
+
+Sử dụng để thay đổi tên các file.
+
+vd : 
+
+- Để đổi tên 1 file hoặc nhiều file.( Đổi tất cả các file có đổi txt thahf đôi pdf) 
+```
+[root@server viethung01]# ls
+hung1  hung11  hung1.txt  nguyenviethung  viethung.txt
+[root@server viethung01]# rename .txt .pdf *.txt
+[root@server viethung01]# ls
+hung1  hung11  hung1.pdf  nguyenviethung  viethung.pdf
+```
+
+
