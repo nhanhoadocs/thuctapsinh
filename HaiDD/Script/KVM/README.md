@@ -21,19 +21,19 @@ yum -y install wget
 Tải file scipt về thư mục `/root/`
 
 ```
-wget -P /root/ https://gist.githubusercontent.com/danghai1996/3e4cca15342527eba4fca260c960bb43/raw/afd455f957a3a59279cc028e2f7d7e3c77caf856/kvmcentos7.sh
+wget -P /root/ https://raw.githubusercontent.com/danghai1996/thuctapsinh/master/HaiDD/Script/KVM/kvm_centos7.sh
 ```
-Sau khi dùng lệnh trên tải về, file script sẽ ở tại thư mục `/root/` và có tên là: `kvmcentos7.sh`
+Sau khi dùng lệnh trên tải về, file script sẽ ở tại thư mục `/root/` và có tên là: `kvm_centos7.sh`
 
 ### 3. Phân quyền
 Cấp quyền thực thi cho file script
 ```
-chmod +x kvmcentos7.sh
+chmod +x kvm_centos7.sh
 ```
 
 ### 4. Thực hiện chạy script
 ```
-bash /root/kvmcentos7.sh
+bash /root/kvm_centos7.sh
 ```
 
 Sau khi cài đặt các gói xong, đến phần tạo card Bridge ta sẽ đặt tên cho card Bridge. Tên không được trùng với các tên đang có.
