@@ -47,6 +47,22 @@
 Thay đổi API Token bot và ID nhận cảnh báo trong Script thành của bạn:
 
 `USERID="<target_user_id>"` : Điền ID chat nhận cảnh báo
+
 `TOKEN="<bot_private_TOKEN>"` : Điền API Token bot bắn tin
 
-Sau đó, lưu lại.
+Hoặc chạy 2 lệnh sau với API Token bot và ID nhận cảnh báo của bạn:
+```
+sed -i 's|USERID=""|USERID="<ID Chat nhận cảnh báo>"|' /etc/profile.d/sshLoginMonitor.sh
+
+sed -i 's|TOKEN=""|TOKEN="<API Token bot>"|' /etc/profile.d/sshLoginMonitor.sh
+```
+
+**Ví dụ:**
+```
+sed -i 's|USERID=""|USERID="-12837873492"|' /etc/profile.d/sshLoginMonitor.sh
+
+sed -i 's|TOKEN=""|TOKEN="132907487sadkaAAABE:dao"|' /etc/profile.d/sshLoginMonitor.sh
+```
+
+
+Sau đó, lưu lại là hoàn thành.
