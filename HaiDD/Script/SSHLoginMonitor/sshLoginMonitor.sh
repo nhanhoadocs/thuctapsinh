@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # ID chat Telegram
-USERID="<target_user_id>"
+USERID=""
     
 # API Token bot
-TOKEN="<bot_private_TOKEN>"
+TOKEN=""
 
 TIMEOUT="10"
 
