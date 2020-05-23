@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # ID chat Telegram
 USERID="<target_user_id>"
     
