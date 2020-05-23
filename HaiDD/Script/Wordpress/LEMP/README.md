@@ -17,18 +17,18 @@
 ### 2. Tải script và cấp quyền thực thi
 - Tải scripts
     ```
-    wget https://gist.githubusercontent.com/danghai1996/ed5b4c1bf5993296601090b264fcd211/raw/6939e3972399a22d8ba93ac21c6cc49e4d3da681/wplempubuntu18.sh
+    wget https://raw.githubusercontent.com/danghai1996/thuctapsinh/master/HaiDD/Script/Wordpress/LEMP/wp_lemp_u18.sh
     ```
 
 - Cấp quyền thực thi
     ```
-    chmod 755 wplempubuntu18.sh
+    chmod +x wp_lemp_u18.sh
     ```
 
 ### 3. Thực hiện chạy script
 - Chạy script
     ```
-    bash wplempubuntu18.sh
+    bash wp_lemp_u18.sh
     ```
 
 - Script sẽ tự động cài đặt.

@@ -17,18 +17,18 @@
 ### 2. Tải script và cấp quyền thực thi
 - Tải scripts
     ```
-    wget https://gist.githubusercontent.com/danghai1996/4af659bdd217493ea764f3e9b22abf5e/raw/fe045dcbdbed68181d80edf9dce4bc976dea34cc/wplampcentos7.sh
+    wget https://raw.githubusercontent.com/danghai1996/thuctapsinh/master/HaiDD/Script/Wordpress/LAMP/wp_lamp_centos7.sh
     ```
 
 - Cấp quyền thực thi
     ```
-    chmod 755 wplampcentos7.sh
+    chmod +x wp_lamp_centos7.sh
     ```
 
 ### 3. Thực hiện chạy script
 - Chạy script
     ```
-    bash wplampcentos7.sh
+    bash wp_lamp_centos7.sh
     ```
 
 - Script sẽ tự động cài đặt.
