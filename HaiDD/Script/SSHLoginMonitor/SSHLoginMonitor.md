@@ -32,7 +32,7 @@ Xem thêm cách `jq` tại : https://stedolan.github.io/jq/
 
 - Trên CentOS 7
     ```
-    yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    yum install epel-release -y
 
     yum install jq -y
     ```
