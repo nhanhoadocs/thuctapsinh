@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# TODO:
+# - Cảnh báo qua Slack
+# - Check IP login để chỉnh lại tin nhắn cảnh báo khi lấy thông tin từ ipinfo.io
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
 # ID chat Telegram
 USERID=""
     
