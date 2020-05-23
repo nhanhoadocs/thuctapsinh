@@ -1,0 +1,4 @@
+
+Cấu tạo tủ rack gồm tủ, nguồn,  thanh quản lý  cáp, tay rack. Ở segment 1,2 thì dùng tủ 42U, segment 3 dùng tủ 48U. Cứ 2 đến 3 thiết bị thì tách ra một U cho đỡ nóng. Một tủ thường lắp 20 - 25 thiết bị. Nguồn trung bình 1 tủ 14kW. Dây đi phía trên (có thể đi phía dưới được). Các dãy tủ đánh ký hiệu theo alphabet, các tủ trong dãy đánh số 1, 2, 3... Nhiệt độ trong phòng là 18 độ C. Em có quan sát thấy có các loại thiêt bị dùng nguồn 460W, 500W, 750W. FPT trang bị mỗi tủ 1 switch. Họ hỗ trợ thêm nguồn và lắp đặt. Tay rack do mình chế mang theo (Cũng có loại tay rack kèm theo server)
+
+https://github.com/QuocCuong97/Server_Hardwares/blob/master/Hardwares/01_Form_Factors.md

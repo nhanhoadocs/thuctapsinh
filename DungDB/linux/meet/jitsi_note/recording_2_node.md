@@ -1,0 +1,1 @@
+https://community.jitsi.org/t/how-to-to-setup-integrated-jitsi-and-jibri-for-dummies-my-comprehensive-tutorial-for-the-beginner/35718
