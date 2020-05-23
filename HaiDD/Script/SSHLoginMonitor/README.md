@@ -66,3 +66,5 @@ sed -i 's|TOKEN=""|TOKEN="132907487sadkaAAABE:dao"|' /etc/profile.d/sshLoginMoni
 
 
 Sau đó, lưu lại là hoàn thành.
+
+Bài viết: [Giám sát truy cập ssh vào hệ thống](https://news.cloud365.vn/script-3-giam-sat-truy-cap-ssh-vao-he-thong/)
