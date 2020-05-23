@@ -21,7 +21,7 @@ if [ -n "$SSH_CLIENT" ]; then
     IP=$(echo $SSH_CLIENT | awk '{print $1}')
     PORT=$(echo $SSH_CLIENT | awk '{print $3}')
     HOSTNAME=$(hostname -f)
-    IPADDR=$(hostname -I | awk '{print $1}')
+    IPADDR=$(echo $SSH_CONNECTION | awk '{print $3}')
 
     # Lấy các thông tin từ IP người truy cập theo trang ipinfo.io
     curl http://ipinfo.io/$IP -s -o $TMPFILE
