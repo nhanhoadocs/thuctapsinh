@@ -2,7 +2,9 @@
 import hashlib
 import ast
 
-FILES = ['/root/file1.txt']
+# Khai bao cac file can kiem tra 
+# Vi du nhu sau FILES = ['/root/file1.txt', '/etc/passwd']
+FILES = []
 
 try:
     r_file = open('/tmp/checkmk_md5')
