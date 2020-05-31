@@ -41,8 +41,8 @@ for file_c in FILES:
         status = 0
         statustxt = "OK"
     else:
-        status = 1
-        statustxt = "WARNING: File changes"
+        status = 2
+        statustxt = "CRITICAL: File changes"
         md5_change = {file_c:md5}
         value_md5.update(md5_change)
     print('{} File_md5:{} - {} status {}'.format(status, file_c, file_c, statustxt))
