@@ -60,7 +60,7 @@ Hoặc có thể để trống phần inventory và thêm sau khi lắp lên t�
 
 Phần device sẽ thêm thẳng trên tủ rack cho dễ thao tác.
 
-- Thêm tủ rack tại địa điểm mong muốn. Thêm power feed và 2 PDU cho tủ rack (Mỗi PDU 35 chân cắm). Click vào vị trí U đề thêm thiết bị. Khai báo nguồn cho thiết bị (power port kết nối với PDU để lấy điện). Thêm các interface mạng. Thêm IP, MAC cho port và kết nối với các thiết bị khác. 
+- Khai báo rack role và rack group. Thêm tủ rack tại địa điểm mong muốn. Thêm power feed và 2 PDU cho tủ rack (Mỗi PDU 35 chân cắm). Click vào vị trí U đề thêm thiết bị. Khai báo nguồn cho thiết bị (power port kết nối với PDU để lấy điện). Thêm các interface mạng. Thêm IP, MAC cho port và kết nối với các thiết bị khác. 
 
 ![Imgur](https://i.imgur.com/QKtMy3S.png)
 

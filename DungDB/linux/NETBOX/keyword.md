@@ -1,5 +1,9 @@
 # Các từ khóa liên quan
 
+- DCIM — DataCenter Infrastructure Management: Quản lý cơ sở hạ tầng trung tâm dữ liệu
+
+- IPAM — IP Address Management: Quản lý địa chỉ IP
+
 - ASN: (Autonomous System Number) là số thường được dùng trong các thủ tục định tuyến động trên mạng Internet. Bắt đầu từ ngày 01/01/2007, các tổ chức quản lý địa chỉ trên thế giới đã quyết định đưa vào sử dụng thế hệ số hiệu mạng mới với cấu trúc 32 bit. ASN Việt Nam: 10595
 
 Xem tại: https://www.whatismyip.com/asn/
@@ -8,9 +12,11 @@ Xem tại: https://www.whatismyip.com/asn/
 
 https://vnpro.vn/thu-vien/kien-truc-tong-quan-mpls-vpn-virtual-routing-forwarding-vrf-2105.html
 
-Nhân hòa dùng loại tủ rack với thông tin bên dưới, 42U hoặc 48U
+Nhân hòa dùng loại tủ rack với thông tin bên dưới, 
 
 ![Imgur](https://i.imgur.com/IPMw711.png)
+
+Wall-mounted cabinet, 23 inches, 42U ở FPT hoặc 48U ở CMC
 
 - Part number: Số lô của các thiết bị (có thể trùng)
 - Serial number: Số serial của thiết bị (duy nhất)
@@ -20,7 +26,7 @@ Nhân hòa dùng loại tủ rack với thông tin bên dưới, 42U hoặc 48U
 
 **Tìm inventory**: Chỉ tìm được bằng serial number 
 
-Tìm hiểu các khái niệm:
+Tìm hiểu các khái niệm role IP:
 
 ![Imgur](https://i.imgur.com/iSzVTEL.png)
 
@@ -98,11 +104,23 @@ Mô hình điện:
 
 ![Imgur](https://i.imgur.com/Rprx0hr.png)
 
-- PDU: là ổ cắm điện. Mỗi rack có 2 PDU đặt dọc, mặt sau tủ rack
-- port outlet: ổ cắm của PDU (C13)
-- power port: port nguồn của server hoặc thiết bị khác (C14)
+- PDU - Power Distribution Unit: là ổ cắm điện. Mỗi rack có 2 PDU đặt dọc, mặt sau tủ rack
+- Port outlet: ổ cắm của PDU (C13)
+- Power port: port nguồn của server hoặc thiết bị khác (C14)
+
+![Imgur](https://i.imgur.com/AUo8VtC.png)
 
 Power Panel - Power feed - PDU - Power outlet - Power port - Server
 
 Power panel dùng để quản lý nguồn điện, cung cấp điện cho toàn bộ hệ thống. Nối đến power feed. Từ power feed nối đến PDU. PDU có các outlet. Kết nối Power port của server đến outlet để láy điện sử dụng.
 
+Trang tính công suất tiêu thụ của thiết bị: https://outervision.com/power-supply-calculator
+
+Các switch port mode:
+- access: Còn được gọi là untagged mode. Interface thuộc mode này chỉ có thể thuộc 1 VLAN
+- tagged: Interface có thể thuộc nhiều VLAN
+- trunk: Interface hoạt động với mode trunk
+
+Địa chỉ MAC của port switch sẽ giống như sau: `001d:7172:6aca`
+
+Nhưng khi khai báo vào netbox thì sẽ có dạng như sau: `00:1D:71:72:6A:CA`
