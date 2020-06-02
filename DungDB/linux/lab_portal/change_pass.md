@@ -28,7 +28,7 @@ Bước 5: Sửa các tham số `ro console=ttyS0` thành `rw init=/bin/bash`
 
 ![Imgur](https://i.imgur.com/sm78E5f.png)
 
-Bước 6: Nhấn tổ hợp phím Ctrl + x hoặc nhấn phím F10 để vào Single Mode. Sau đó thực hiện các lệnh sau:
+Bước 6: Nhấn tổ hợp phím `Ctrl + x` hoặc nhấn phím `F10` để vào Single Mode. Sau đó thực hiện các lệnh sau:
 
 Đổi mật khẩu
 
