@@ -1,4 +1,4 @@
-# Cấu hình bonding giữa 2 server 
+# Cấu hình bonding 2 interface mạng trên 1 server
 
 Thêm cho server 2 card mạng cùng ở dải VLAN34
 
