@@ -152,6 +152,7 @@ pings    = 20
 "Last 10 Days"    10d
 "Last 30 Days"    30d
 "Last 90 Days"    90d
+"Last 180 Days"    180d
 "Last 365 Days"    365d
 ```
 
