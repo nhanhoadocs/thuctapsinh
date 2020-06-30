@@ -4,4 +4,4 @@ Apache ghi lại các bản ghi của nó trong hai tệp: `/var/log/httpd-acces
 
 SmokePing có một tệp nhật ký, là `/var/log/smokeping.log`. 
 
-Hãy nhớ rằng nếu bạn thay đổi cấu hình của SmokePing, bạn sẽ cần phải tải lại daemon bằng lệnh `sudo service smokeping reload`.
+Hãy nhớ rằng nếu bạn thay đổi cấu hình của SmokePing, bạn sẽ cần phải reload daemon bằng lệnh `sudo service smokeping reload`.

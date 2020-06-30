@@ -29,7 +29,7 @@ Biểu đồ tổng quan hiển thị các phép đo hiện tại cho mục tiê
 
 ![Imgur](https://i.imgur.com/LIZwkZz.png)
 
-Dòng có màu miêu tả số lượng gói tin mất và vùng tối xung quanh đường kẻ cho thấy mức độ biến đổi giữa các thăm dò cá nhân.
+Dòng có màu miêu tả số lượng gói tin mất và vùng tối xung quanh đường kẻ cho thấy mức độ biến đổi giữa các probe riêng lẻ. Ta có thể zoom trong biểu đồ này.
 
 - avg, max, min, now: average, maximum, minimum, current median
 - sd: standard deviation of the median. Sai lệch chuẩn của số trung bình
@@ -43,3 +43,7 @@ Dòng có màu miêu tả số lượng gói tin mất và vùng tối xung quan
 - av ls: average loss
 - av sd: độ lệch chuẩn trung bình của nhiều phép đo trong mỗi vòng
 - am/as: tỉ lệ của average median và average standard deviation
+
+Tham khảo: 
+
+https://oss.oetiker.ch/smokeping/doc/reading.en.html
