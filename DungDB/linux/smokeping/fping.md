@@ -1,0 +1,5 @@
+# FPing
+
+fping là 1 chương trình giống như ping khi sử dụng các gói tin echo ICMP để xác định 1 địa chỉ trên mạng có phản hồi không. fping khác ping khi mà chúng ta có thể chỉ ra nhiều địa chỉ đích trong 1 dòng lệnh, hoặc chỉ ra 1 tập tin chứa danh sách các địa chỉ mạng cần ping. Thay cho việc gửi đến 1 địa chỉ đến khi nó hết giờ hoặc trả lời, fping sẽ gửi đi 1 gói tin  và di chuyển sang mục tiêu kế tiếp theo kiểu Round-Robin. Ở chế độ mặc định, nếu 1 mục tiêu trả lời gói tin echo, nó sẽ được ghi chú và xóa khỏi danh sách các mục tiêu cần kiểm tra; nếu 1 mục tiêu không phản hồi trong giới hạn thời gian quy định, nó sẽ được xem là không thể kết nối (unreachable). fping cũng hỗ trợ việc gửi 1 só lượng gói tin nhất định đến 1 địa chỉ, hay lặp vô hạn (giống như ping). Không giống ping, fping có ý nghĩa khi được dùng trong các kịch bản, vì kết quả xuất ra của nó được thiết kế để dễ phân tích.
+
+https://www.justpassion.net/tech/programming/bash-shell/lenh-fping-trong-linux.html

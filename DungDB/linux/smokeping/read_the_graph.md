@@ -21,7 +21,7 @@ Smokeping không chỉ giới hạn trong việc kiểm tra RTT của các gói 
 Biểu đồ tổng quan hiển thị các phép đo hiện tại cho mục tiêu. Nếu mục tiêu đang được đo bởi cả master lẫn slave thì dữ liệu từ cả hai sẽ được hiển thị.
 
 - av md: average median () 
-- av ls: average loss (tổn thất trung bình)
+- av ls: average loss (tổn thất trung bình). Số lượng gói tin bị mất trung bình
 - av sd: average standard deviation of the multiple measurements in each round (độ lệch chuẩn trung bình của nhiều phép đo trong mỗi vòng)
 - am/as: tỉ lệ của average median và average standard deviation
 

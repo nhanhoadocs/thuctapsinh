@@ -136,7 +136,7 @@ step     = 60
 pings    = 20
 ```
 
-- Phần Presentation: Thêm thời gian mà biểu đồ hiển thị
+- Phần Presentation: Thêm thời gian mà biểu đồ hiển thị. Phần này thay đổi tùy ý, dữ liệu sẽ không bị ảnh hưởng. Khởi động lại dịch vụ smokeping và http sẽ cập nhật ngay.
 
 ```
 "Last 5 Minutes"    5m
@@ -159,6 +159,8 @@ pings    = 20
 - **Phần Probes**: Chỉ định probe nào hoạt động. Mặc định chỉ có probe `FPing` được bật. Phần này ta không cần cấu hình thêm.
 - Phần Slaves: Chưa tìm hiểu, để mặc định hoặc comment out phần này. Lưu ý nếu sử dụng cài đặt `smokeping_secrets` trong phần Slaves, thì cần phải chạy lệnh `chmod 600 /etc/smokeping/smokeping_secrets` nếu không smokeping sẽ lỗi.
 - **Phần Target**: Chỉ định host nào được thăm dò (ping đến). Tùy chỉnh phần này để để lấy số liệu thống kê từ các host bạn muốn thăm dò.
+
+Nếu thay đổi các host để thăm dò thì khi khởi động lại dịch vụ smokeping sẽ không hiển thị. Cần phải xóa các file dữ liệu liên quan đến host cũ đi thì mới hiển thị được thông tin của các host mới thêm.
 
 Tham khảo các probe khác tại đây: https://oss.oetiker.ch/smokeping/probe/index.en.html
 
