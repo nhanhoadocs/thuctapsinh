@@ -39,11 +39,46 @@ Dòng có màu miêu tả số lượng gói tin mất và vùng tối xung quan
 
 ![Imgur](https://i.imgur.com/cRo5nzd.png)
 
-- av md: average median
-- av ls: average loss
+- av md: average median RTT
+- av ls: average loss (trung bình cộng số lượng gói tin mất của các host)
 - av sd: độ lệch chuẩn trung bình của nhiều phép đo trong mỗi vòng
 - am/as: tỉ lệ của average median và average standard deviation
 
 Tham khảo: 
 
 https://oss.oetiker.ch/smokeping/doc/reading.en.html
+
+Ví dụ: 
+
+Hệ thống test đã dựng, biểu đồ ví dụ:
+
+![Imgur](https://i.imgur.com/tMyKx8W.png)
+
+Cột dọc là RTT. Đơn vị sẽ là ms (mili giây) hoặc us (micro giây)
+
+- 1s = 1.000 ms
+- 1s = 1.000.000 us
+
+Hàng ngang là thời gian trong ngày, trong tháng, trong năm.
+
+Các thông số bên dưới:
+
+**median RTT** là giá trị RTT **điển hình**, **phổ biến** trong biểu đồ. Màu xanh nghĩa là thông thường thì có thể ping từ smokeping đến host này.
+
+**average median** là av md, trong biểu đồ trên là 697us. Tất cả các median trong biểu đồ này có giá trị trung bình là 697us.
+
+**average loss** là trung bình cộng các gói tin bị mất là 0.1%.
+
+**Tỉ lệ average median và average deviation**: chưa hiểu ý nghĩa để làm gì
+
+Biểu đồ ví dụ 2: Biểu đồ chi tiết
+
+![Imgur](https://i.imgur.com/tqVaiAL.png)
+
+**median RTT** là giá trị RTT điển hình, phổ biến trong biểu đồ. Màu xanh nghĩa là thông thường thì có thể ping từ smokeping đến host này. Ở đây có các giá trị chi tiết hơn như trung bình cộng med RTT, max med RTT, min med RTT, và med RTT hiện tại.
+
+Tương tự như trên có các giá trị trung bình cọng, max, min, now cho số gói tin bị mất
+
+Màu sắc thể hiện số gói tin bị mất trong các lần đo.
+
+Probe: Phương pháp thăm dò (Dùng mặc định là FPing)
