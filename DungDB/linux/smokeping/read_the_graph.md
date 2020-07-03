@@ -50,7 +50,7 @@ https://oss.oetiker.ch/smokeping/doc/reading.en.html
 
 Ví dụ: 
 
-Hệ thống test đã dựng, biểu đồ ví dụ:
+Hệ thống test đã dựng, biểu đồ tổng quát ví dụ:
 
 ![Imgur](https://i.imgur.com/tMyKx8W.png)
 
@@ -63,22 +63,24 @@ Hàng ngang là thời gian trong ngày, trong tháng, trong năm.
 
 Các thông số bên dưới:
 
-**median RTT** là giá trị RTT **điển hình**, **phổ biến** trong biểu đồ. Màu xanh nghĩa là thông thường thì có thể ping từ smokeping đến host này.
+- **median RTT** là giá trị RTT **điển hình**, **phổ biến** trong biểu đồ. Màu xanh là màu hiển thị cho host này. Thông tin chi tiết hiển thị trong biểu đồ chi tiết.
 
-**average median** là av md, trong biểu đồ trên là 697us. Tất cả các median trong biểu đồ này có giá trị trung bình là 697us.
+- **average median** là av md, trong biểu đồ trên là 697us. Tất cả các median trong biểu đồ này có giá trị trung bình là 697us.
 
-**average loss** là trung bình cộng các gói tin bị mất là 0.1%.
+- **average loss** là trung bình cộng các gói tin bị mất là 0.1%.
 
-**Tỉ lệ average median và average deviation**: chưa hiểu ý nghĩa để làm gì
+- **Tỉ lệ average median và average deviation**: chưa hiểu ý nghĩa để làm gì
 
 Biểu đồ ví dụ 2: Biểu đồ chi tiết
 
 ![Imgur](https://i.imgur.com/tqVaiAL.png)
 
-**median RTT** là giá trị RTT điển hình, phổ biến trong biểu đồ. Màu xanh nghĩa là thông thường thì có thể ping từ smokeping đến host này. Ở đây có các giá trị chi tiết hơn như trung bình cộng med RTT, max med RTT, min med RTT, và med RTT hiện tại.
+- **median RTT** là giá trị RTT điển hình, phổ biến trong biểu đồ. Mỗi chấm xanh là một giá trị median. Cột chứa dấu chấm đó là 1 lần đo. Phần màu xám hoặc màu đen là các giá trị khác của lần đo. Màu xám càng đậm thì mạng càng không ổn định. Cột càng cao thì thời gian RTT càng cao.
 
-Tương tự như trên có các giá trị trung bình cọng, max, min, now cho số gói tin bị mất
+- Ở đây có các giá trị chi tiết hơn như trung bình cộng med RTT, max med RTT, min med RTT, và med RTT hiện tại.
 
-Màu sắc thể hiện số gói tin bị mất trong các lần đo.
+- Tương tự như trên có các giá trị trung bình cộng, max, min, now cho số gói tin bị mất
 
-Probe: Phương pháp thăm dò (Dùng mặc định là FPing)
+- Màu sắc thể hiện số gói tin bị mất trong các lần đo.
+
+- Probe: Phương pháp thăm dò (Dùng mặc định là FPing)
