@@ -134,3 +134,5 @@ Thử tắt host 10.10.10.173 thử xem có nhận được cảnh báo không.
 ![Imgur](https://i.imgur.com/gJ0o0cU.png)
 
 Nhận được cảnh báo không ping được đến host 10.10.10.173 (lost 100%, host down)
+
+Tham khảo: https://blog.sleeplessbeastie.eu/2017/09/11/how-to-keep-track-of-network-latency/
