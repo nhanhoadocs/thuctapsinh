@@ -245,3 +245,38 @@ Giải thích:
 
 Target được phân cấp, nghĩa là bạn có thể lồng các cấp Target để việc tổ chức dễ dàng hơn. Mỗi cấp độ Target lồng nhau sẽ tạo ra một menu con mới trong GUI của SmokePing hiển thị các biểu đồ khác nhau.
 
+## Cấu hình multihost trên cùng một graph
+
+Để cấu hình multi host thì các host phải được khai báo trước đó. Sau đó khai báo thêm một biểu đồ. Các host trong biểu đồ cần nhập đúng phần menu.
+
+Ví dụ cụ thể:
+
+```
+ + Site1
+
+ menu = Site1
+ title = Site1
+
+ ++ Host1-175
+
+ menu = Host1
+ title = 10.10.34.175
+ host = 10.10.34.175
+
+ ++ Host2-176
+ menu = Host2
+ title = 10.10.34.176
+ host = 10.10.34.176
+
+++ MultiHost
+
+menu = Multihost
+title = 175 va 176
+host = /Site1/Host1-175 /Site1/Host2-176
+```
+
+Kết quả:
+
+![Imgur](https://i.imgur.com/2tpD5Ny.png)
+
+![Imgur](https://i.imgur.com/wb98j9x.png)
