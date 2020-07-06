@@ -14,8 +14,6 @@ Kết quả:
 
 **Lưu ý:** 
 
-
-
 Cách làm này sẽ áp dụng rule lên toàn bộ các host đặt trong folder. Trong host 10.10.10.115 tôi đã cài dịch vụ http và mysql nên sẽ thấy dịch vụ đang được giám sát như trên hình.
 
 Đối với host Windows đặt chung thư mục thì sẽ báo không có tiến trình nào của 2 dịch vụ trên đang chạy:
@@ -23,5 +21,3 @@ Cách làm này sẽ áp dụng rule lên toàn bộ các host đặt trong fold
 ![Imgur](https://i.imgur.com/ItZ4o7b.png)
 
 Vì thế cần lưu ý đặt các host có điểm chung với nhau trong cùng một thư mục để tiện việc giám sát.
-
-Đối với host Ubuntu thì 
