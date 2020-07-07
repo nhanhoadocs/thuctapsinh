@@ -58,7 +58,7 @@ Cài đặt cấu hình bảo mật
 
 Trả lời theo thứ tự
 
-Enter -> y -> Nhập mật khẩu -> xác nhận mật khẩu -> y -> y -> y -> y
+Enter -> n -> y -> Nhập mật khẩu -> xác nhận mật khẩu -> y -> y -> y -> y
 
 Tạo database cho zabbix
 
@@ -77,7 +77,7 @@ Cài đặt zabbix 5.0 repository
 
 Cài Zabbix 5.0 Server và frontend với MySQL support:
 
-    sudo yum install zabbix-server-mysql zabbix-agent zabbix-get
+    sudo yum install -y zabbix-server-mysql zabbix-agent zabbix-get
 
 Cài Zabbix Frontend:
 
@@ -96,7 +96,7 @@ Sửa các chỗ sau:
     DBHost=localhost
     DBName=zabbix
     DBUser=zabbix
-    DBPassword=yourpassword             #Nhập mật khẩu của bận tại đây
+    DBPassword=yourpassword             #Nhập mật khẩu của bạn tại đây
 
 Cấu hình PHP cho zabbix frontend. Sửa file `/etc/opt/rh/rh-php72/php-fpm.d/zabbix.conf`
 
@@ -117,7 +117,7 @@ Truy cập vào `http://(Zabbix server’s hostname or IP address)/zabbix/` đ�
 
 Bước này thực hiện giống trong bài này: https://news.cloud365.vn/zabbix-cai-dat-zabbix-server-phien-ban-4-4-tren-centos7/
 
-Next -> Next -> Dùng port 3306, Nhập password của bạn, Next -> Đặt hostname, Next -> Finnish
+Next -> Next -> DB dùng port mặc định (port 0), Nhập password của bạn, Next -> Đặt hostname, Next -> Finnish
 
 Đăng nhập bằng tài khoản mặc định ID/pass: `Admin/zabbix`
 
