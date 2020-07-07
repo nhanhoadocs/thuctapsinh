@@ -12,4 +12,10 @@ Chú ý phần key của tiến trình
 
 ![Imgur](https://i.imgur.com/hJ1BoQO.png)
 
-Xem thêm ở đây https://www.zabbix.com/documentation/2.4/manual/config/items/itemtypes/zabbix_agent#zabbix_agent
+Có thể dùng các loại key sau để giám sát tiến trình:
+
+- proc.num - Giám sát số lượng tiến trình
+- proc.mem - Giám sát lượng RAM tiến trình tiêu thụ
+- proc.cpu.util - Giám sát lượng CPU mà tiến trình sử dụng
+
+Xem thêm cú pháp key ở đây https://www.zabbix.com/documentation/2.4/manual/config/items/itemtypes/zabbix_agent#zabbix_agent
