@@ -14,4 +14,4 @@ Kết quả thực hiện trên host 10.10.10.115 chạy Centos 7
 
 ![Imgur](https://i.imgur.com/XYPvwny.png)
 
-Đã giám sát được dịch vụ Mysql
+Đã giám sát được dịch vụ Mysql 
