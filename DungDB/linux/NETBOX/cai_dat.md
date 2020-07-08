@@ -1,10 +1,12 @@
 # Cài đặt Netbox
 
+Cài đặt theo tài liệu:
+
 https://news.cloud365.vn/huong-dan-cai-dat-netbox-tren-centos-7/
 
 https://github.com/domanhduy/ghichep/blob/master/DuyDM/Netbox/Thuc-hanh/docs/1.Cai-dat-netbox-tren-CentOS7.md
 
-Sửa lỗi migrate:
+Sửa lỗi migrate nếu gặp:
 
 https://github.com/netbox-community/netbox/issues/4633
 
@@ -16,6 +18,7 @@ Khai báo thêm trong file `/opt/netbox/netbox/netbox/configuration.py` để kh
 
 ![Imgur](https://i.imgur.com/ErT6l0k.png)
 
-Phải chạy dịch vụ bằng lệnh `python manage.py runserver 0.0.0.0:8000 --insecure` mới sử dụng được
+Phải chạy dịch vụ bằng lệnh `python manage.py runserver 0.0.0.0:8000 --insecure` mới sử dụng được nếu chưa cấu hình systemd.
 
-Chưa cấu hình được phần systemd để dịch vụ luôn chạy
+
+

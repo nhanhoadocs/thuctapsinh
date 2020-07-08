@@ -1,0 +1,124 @@
+# Add inventory hardware monitor server vật lý
+
+Hướng dẫn:
+
+https://github.com/domanhduy/ghichep/blob/master/DuyDM/Check-MK/thuc-hanh/docs/6.add-monitor-inventory-hardware-checkmk.md
+
+## Thao tác trên client:
+
+    cd /usr/lib/check_mk_agent/local/
+
+    nano mk_inventory
+
+Nội dung file:
+
+```
+#!/bin/bash
+# +------------------------------------------------------------------+
+# |             ____ _               _        __  __ _  __           |
+# |            / ___| |__   ___  ___| | __   |  \/  | |/ /           |
+# |           | |   | '_ \ / _ \/ __| |/ /   | |\/| | ' /            |
+# |           | |___| | | |  __/ (__|   <    | |  | | . \            |
+# |            \____|_| |_|\___|\___|_|\_\___|_|  |_|_|\_\           |
+# |                                                                  |
+# | Copyright Mathias Kettner 2014             mk@mathias-kettner.de |
+# +------------------------------------------------------------------+
+#
+# This file is part of Check_MK.
+# The official homepage is at http://mathias-kettner.de/check_mk.
+#
+# check_mk is free software;  you can redistribute it and/or modify it
+# under the  terms of the  GNU General Public License  as published by
+# the Free Software Foundation in version 2.  check_mk is  distributed
+# in the hope that it will be useful, but WITHOUT ANY WARRANTY;  with-
+# out even the implied warranty of  MERCHANTABILITY  or  FITNESS FOR A
+# PARTICULAR PURPOSE. See the  GNU General Public License for more de-
+# tails. You should have  received  a copy of the  GNU  General Public
+# License along with GNU Make; see the file  COPYING.  If  not,  write
+# to the Free Software Foundation, Inc., 51 Franklin St,  Fifth Floor,
+# Boston, MA 02110-1301 USA.
+
+# Run and *send* only once every __ seconds
+. $MK_CONFDIR/mk_inventory.cfg 2>/dev/null || true
+
+# Default to four hours
+INTERVAL=${INVENTORY_INTERVAL:-14400}
+
+FLAGFILE=$MK_VARDIR/mk_inventory.last.$REMOTE
+LAST_RUN=$(stat -c %Y $FLAGFILE)
+NOW=$(date +%s)
+UNTIL=$((NOW + INTERVAL + 600))
+
+if [ $(( NOW - LAST_RUN )) -ge $INTERVAL ]
+then
+    touch $FLAGFILE
+
+    # List of DEB packages
+    if type dpkg-query >/dev/null; then
+        echo "<<<lnx_packages:sep(124):persist($UNTIL)>>>"
+        dpkg-query --show --showformat='${Package}|${Version}|${Architecture}|deb|-|${Summary}|${Status}\n'
+    fi
+
+    # List of RPM packages in same format
+    if type rpm >/dev/null; then
+        echo "<<<lnx_packages:sep(9):persist($UNTIL)>>>"
+        rpm -qa --qf '%{NAME}\t%{VERSION}\t%{ARCH}\trpm\t%{RELEASE}\t%{SUMMARY}\t-\n'
+    fi
+
+    # List Gentoo packages
+    if type equery >/dev/null; then
+        echo "<<<lnx_packages:sep(124):persist($UNTIL)>>>"
+        equery -C list --format '$category/$name|$fullversion|$mask2|ebuild|Repository $repo|installed' \* | head -n -1
+    fi
+
+    # Information about distribution
+    echo "<<<lnx_distro:sep(124):persist($UNTIL)>>>"
+    for f in {/etc/{oracle-release,debian_version,gentoo-release,lsb-release,redhat-release,SuSE-release,os-release},/usr/share/cma/version} ; do
+        if [ -e $f ] ; then
+            echo "[[[$f]]]"
+            tr \\n \| < $f | sed 's/|$//' ; echo
+        fi
+    done
+
+    # CPU Information. We need just the first one
+    if [ -e /proc/cpuinfo ] ; then
+        echo "<<<lnx_cpuinfo:sep(58):persist($UNTIL)>>>"
+        sed 's/[[:space:]]*:[[:space:]]*/:/' < /proc/cpuinfo
+    fi
+
+    # Information about main board, memory, etc.
+    if type dmidecode >/dev/null ; then
+        echo "<<<dmidecode:sep(58):persist($UNTIL)>>>"
+        dmidecode -q | sed 's/\t/:/g'
+    fi
+
+    # Information about kernel architecture
+    if type uname >/dev/null ; then
+        echo "<<<lnx_uname:persist($UNTIL)>>>"
+        uname -m
+        uname -r
+    fi
+    if type lspci > /dev/null ; then
+        echo "<<<lnx_video:sep(58):persist($UNTIL)>>>"
+        lspci  -v -s  $(lspci | grep VGA | cut -d" " -f 1)
+    fi
+
+    # Some networking information
+    if type ip > /dev/null ; then
+        echo "<<<lnx_ip_a:persist($UNTIL)>>>"
+        ip a
+        echo "<<<lnx_ip_r:persist($UNTIL)>>>"
+        ip r
+    fi
+
+fi
+```
+
+Thêm quyền và thực thi file
+
+    chmod +x /usr/lib/check_mk_agent/local/mk_inventory
+    ./mk_inventory
+
+Kết quả:
+
+![Imgur](https://i.imgur.com/jaaPVD3.png)
