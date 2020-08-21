@@ -36,7 +36,7 @@ Câu lệnh này trả về các thông tin của CPU sau
  * `S`: đang tạm nghỉ nhưng có thể bị gián đoạn
  * `T`: đã tạm dừng
  * `Z`: tiến trình chưa dừng hẳn
-* `%CPU` là %CPU mà nó chiếm trên tổng số CPU
+* `%CPU` là %CPU mà nó chiếm tính trên 1 core. Nên với hệ thống có nhiều core thì giá trị này có thể lớn hơn 100%.
 * `%MEM` số RAM sử dụng cho tiến trình trên tổng số RAM available
 
 **Giá trị load average**

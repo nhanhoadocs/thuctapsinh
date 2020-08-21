@@ -1,9 +1,10 @@
 ## Cấu hình mirror trên linux bridge
 
-### Cấu hình mirror traffic incoming trên interface
+![](../images/mirror/01.png)
 
-Source port là interface vnet0
-Destination port là interface vnet1
+Thực hiện mirror để toàn bộ traffic đi qua interface vnet0 được copy đến interface vnet1
+
+### Cấu hình mirror traffic incoming trên interface
 
 ```
 tc qdisc add dev vnet0 ingress
